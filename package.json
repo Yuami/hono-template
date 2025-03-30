@@ -12,7 +12,11 @@
     "lint": "eslint .",
     "lint:fix": "npm run lint --fix",
     "test": "cross-env NODE_ENV=test vitest",
-    "build": "tsc && tsc-alias"
+    "build": "tsc && tsc-alias",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:make-migration": "drizzle-kit make-migration",
+    "drizzle:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
@@ -43,6 +47,6 @@
     "turso": "^0.1.0",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8",
-    "wrangler": "^3.99.0"
+    "wrangler": "^4.6.0"
   }
 }

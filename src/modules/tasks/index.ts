@@ -10,4 +10,4 @@ const router = createRouter()
   .openapi(routes.patch, handlers.patch)
   .openapi(routes.remove, handlers.remove);
 
-export default router; 
+export default router;

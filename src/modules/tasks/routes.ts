@@ -3,7 +3,7 @@ import * as HttpStatusCodes from "stoker/http-status-codes";
 import { jsonContent, jsonContentRequired } from "stoker/openapi/helpers";
 import { createErrorSchema, IdParamsSchema } from "stoker/openapi/schemas";
 
-import { insertTasksSchema, patchTasksSchema, selectTasksSchema } from "@/db/schema";
+import { insertTasksSchema, patchTasksSchema, selectTasksSchema } from "@/modules/tasks/schema";
 import { notFoundSchema } from "@/lib/constants";
 
 const tags = ["Tasks"];
@@ -119,4 +119,4 @@ export type ListRoute = typeof list;
 export type CreateRoute = typeof create;
 export type GetOneRoute = typeof getOne;
 export type PatchRoute = typeof patch;
-export type RemoveRoute = typeof remove; 
+export type RemoveRoute = typeof remove;
