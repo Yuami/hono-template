@@ -4,30 +4,30 @@ import * as HttpStatusPhrases from "stoker/http-status-phrases";
 
 import type { AppRouteHandler } from "@/lib/types";
 
-import { createDb } from "@/db";
-import { tasks } from "@/modules/tasks/schema";
+import { getDb } from "@/db";
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from "@/lib/constants";
+import { tasks } from "@/modules/tasks/schema";
 
 import type { CreateRoute, GetOneRoute, ListRoute, PatchRoute, RemoveRoute } from "./routes";
 
 export const list: AppRouteHandler<ListRoute> = async (c) => {
-  const { db } = createDb(c.env);
-  const tasks = await db.query.tasks.findMany();
-  return c.json(tasks);
+  const { db } = getDb();
+  const tasksList = await db.query.tasks.findMany();
+  return c.json(tasksList);
 };
 
 export const create: AppRouteHandler<CreateRoute> = async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const task = c.req.valid("json");
   const [inserted] = await db.insert(tasks).values(task).returning();
   return c.json(inserted, HttpStatusCodes.OK);
 };
 
 export const getOne: AppRouteHandler<GetOneRoute> = async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const task = await db.query.tasks.findFirst({
-    where(fields, operators) {
+    where(fields: typeof tasks.$inferSelect, operators: any) {
       return operators.eq(fields.id, id);
     },
   });
@@ -45,7 +45,7 @@ export const getOne: AppRouteHandler<GetOneRoute> = async (c) => {
 };
 
 export const patch: AppRouteHandler<PatchRoute> = async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const updates = c.req.valid("json");
 
@@ -86,7 +86,7 @@ export const patch: AppRouteHandler<PatchRoute> = async (c) => {
 };
 
 export const remove: AppRouteHandler<RemoveRoute> = async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const result = await db.delete(tasks)
     .where(eq(tasks.id, id));

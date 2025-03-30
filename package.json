@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
     "start": "node ./dist/src/index.js",
     "dev:db": "turso dev --db-file dev.db",
     "typecheck": "tsc --noEmit",
@@ -15,14 +14,15 @@
     "build": "tsc && tsc-alias",
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:migrate": "drizzle-kit migrate",
-    "drizzle:make-migration": "drizzle-kit make-migration",
-    "drizzle:studio": "drizzle-kit studio"
+    "drizzle:studio": "drizzle-kit studio",
+    "cloudflare:deploy": "wrangler deploy --minify"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
     "@hono/zod-openapi": "^0.18.3",
     "@libsql/client": "^0.14.0",
     "@scalar/hono-api-reference": "^0.5.165",
+    "better-auth": "^1.2.5",
     "dotenv": "^16.4.7",
     "dotenv-expand": "^12.0.1",
     "drizzle-orm": "^0.38.3",

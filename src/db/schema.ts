@@ -1,1 +1,1 @@
-export * from "@/modules/tasks/schema";
+export * from '@/modules/tasks/schema';

@@ -1355,7 +1355,7 @@ function callbackify(fn) {
   fnc.native = fnc;
   return fnc;
 }
-var access2, appendFile2, chown2, chmod2, copyFile2, cp2, lchown2, lchmod2, link2, lstat2, lutimes2, mkdir2, mkdtemp2, realpath2, open2, opendir2, readdir2, readFile2, readlink2, rename2, rm2, rmdir2, stat2, symlink2, truncate2, unlink2, utimes2, writeFile2, statfs2, close, createReadStream, createWriteStream, exists, fchown, fchmod, fdatasync, fstat, fsync, ftruncate, futimes, lstatSync, read, readv, realpathSync, statSync, unwatchFile, watch2, watchFile, write, writev, _toUnixTimestamp, openAsBlob, glob2, appendFileSync, accessSync, chownSync, chmodSync, closeSync, copyFileSync, cpSync, existsSync, fchownSync, fchmodSync, fdatasyncSync, fstatSync, fsyncSync, ftruncateSync, futimesSync, lchownSync, lchmodSync, linkSync, lutimesSync, mkdirSync, mkdtempSync, openSync, opendirSync, readdirSync, readSync, readvSync, readFileSync, readlinkSync, renameSync, rmSync, rmdirSync, symlinkSync, truncateSync, unlinkSync, utimesSync, writeFileSync, writeSync, writevSync, statfsSync, globSync;
+var access2, appendFile2, chown2, chmod2, copyFile2, cp2, lchown2, lchmod2, link2, lstat2, lutimes2, mkdir2, mkdtemp2, realpath2, open2, opendir2, readdir2, readFile2, readlink2, rename2, rm2, rmdir2, stat2, symlink2, truncate2, unlink2, utimes2, writeFile2, statfs2, close, createReadStream, createWriteStream, exists2, fchown, fchmod, fdatasync, fstat, fsync, ftruncate, futimes, lstatSync, read, readv, realpathSync, statSync, unwatchFile, watch2, watchFile, write, writev, _toUnixTimestamp, openAsBlob, glob2, appendFileSync, accessSync, chownSync, chmodSync, closeSync, copyFileSync, cpSync, existsSync, fchownSync, fchmodSync, fdatasyncSync, fstatSync, fsyncSync, ftruncateSync, futimesSync, lchownSync, lchmodSync, linkSync, lutimesSync, mkdirSync, mkdtempSync, openSync, opendirSync, readdirSync, readSync, readvSync, readFileSync, readlinkSync, renameSync, rmSync, rmdirSync, symlinkSync, truncateSync, unlinkSync, utimesSync, writeFileSync, writeSync, writevSync, statfsSync, globSync;
 var init_fs = __esm({
   "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs"() {
     init_modules_watch_stub();
@@ -1397,7 +1397,7 @@ var init_fs = __esm({
     close = /* @__PURE__ */ notImplementedAsync("fs.close");
     createReadStream = /* @__PURE__ */ notImplementedAsync("fs.createReadStream");
     createWriteStream = /* @__PURE__ */ notImplementedAsync("fs.createWriteStream");
-    exists = /* @__PURE__ */ notImplementedAsync("fs.exists");
+    exists2 = /* @__PURE__ */ notImplementedAsync("fs.exists");
     fchown = /* @__PURE__ */ notImplementedAsync("fs.fchown");
     fchmod = /* @__PURE__ */ notImplementedAsync("fs.fchmod");
     fdatasync = /* @__PURE__ */ notImplementedAsync("fs.fdatasync");
@@ -1507,7 +1507,7 @@ var init_fs2 = __esm({
       cpSync,
       createReadStream,
       createWriteStream,
-      exists,
+      exists: exists2,
       existsSync,
       fchmod,
       fchmodSync,
@@ -1755,7 +1755,7 @@ var init_constants2 = __esm({
 });
 
 // node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/os.mjs
-var constants, NUM_CPUS, availableParallelism, arch2, machine, endianness, cpus, getPriority, setPriority, homedir, tmpdir, devNull, freemem, totalmem, loadavg, uptime2, hostname, networkInterfaces, platform2, type, release2, version2, userInfo, EOL, os_default;
+var constants, NUM_CPUS, availableParallelism, arch2, machine, endianness, cpus, getPriority, setPriority, homedir, tmpdir, devNull, freemem, totalmem, loadavg, uptime2, hostname, networkInterfaces, platform2, type, release2, version3, userInfo, EOL, os_default;
 var init_os = __esm({
   "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/os.mjs"() {
     init_modules_watch_stub();
@@ -1837,9 +1837,9 @@ var init_os = __esm({
     platform2 = /* @__PURE__ */ __name(() => "linux", "platform");
     type = /* @__PURE__ */ __name(() => "Linux", "type");
     release2 = /* @__PURE__ */ __name(() => "", "release");
-    version2 = /* @__PURE__ */ __name(() => "", "version");
+    version3 = /* @__PURE__ */ __name(() => "", "version");
     userInfo = /* @__PURE__ */ __name((opts) => {
-      const encode2 = /* @__PURE__ */ __name((str) => {
+      const encode = /* @__PURE__ */ __name((str) => {
         if (opts?.encoding) {
           const buff = Buffer.from(str);
           return opts.encoding === "buffer" ? buff : buff.toString(opts.encoding);
@@ -1849,9 +1849,9 @@ var init_os = __esm({
       return {
         gid: 1e3,
         uid: 1e3,
-        homedir: encode2("/"),
-        shell: encode2("/bin/sh"),
-        username: encode2("root")
+        homedir: encode("/"),
+        shell: encode("/bin/sh"),
+        username: encode("root")
       };
     }, "userInfo");
     EOL = "\n";
@@ -1878,7 +1878,7 @@ var init_os = __esm({
       type,
       uptime: uptime2,
       userInfo,
-      version: version2
+      version: version3
     };
   }
 });
@@ -2341,7 +2341,7 @@ var require_main = __commonJS({
     var os = require_os();
     var crypto2 = require_crypto();
     var packageJson = require_package();
-    var version5 = packageJson.version;
+    var version4 = packageJson.version;
     var LINE = /(?:^|^)\s*(?:export\s+)?([\w.-]+)(?:\s*=\s*?|:\s+?)(\s*'(?:\\'|[^'])*'|\s*"(?:\\"|[^"])*"|\s*`(?:\\`|[^`])*`|[^#\r\n]+)?\s*(?:#.*)?(?:$|$)/mg;
     function parse2(src) {
       const obj = {};
@@ -2390,15 +2390,15 @@ var require_main = __commonJS({
     }
     __name(_parseVault, "_parseVault");
     function _log(message) {
-      console.log(`[dotenv@${version5}][INFO] ${message}`);
+      console.log(`[dotenv@${version4}][INFO] ${message}`);
     }
     __name(_log, "_log");
     function _warn(message) {
-      console.log(`[dotenv@${version5}][WARN] ${message}`);
+      console.log(`[dotenv@${version4}][WARN] ${message}`);
     }
     __name(_warn, "_warn");
     function _debug(message) {
-      console.log(`[dotenv@${version5}][DEBUG] ${message}`);
+      console.log(`[dotenv@${version4}][DEBUG] ${message}`);
     }
     __name(_debug, "_debug");
     function _dotenvKey(options) {
@@ -3326,11 +3326,11 @@ var require_colorette = __commonJS({
     var isCompatibleTerminal = tty__namespace && tty__namespace.isatty && tty__namespace.isatty(1) && env3.TERM && !isDumbTerminal;
     var isCI = "CI" in env3 && ("GITHUB_ACTIONS" in env3 || "GITLAB_CI" in env3 || "CIRCLECI" in env3);
     var isColorSupported = !isDisabled && (isForced || isWindows && !isDumbTerminal || isCompatibleTerminal || isCI);
-    var replaceClose = /* @__PURE__ */ __name((index, string2, close2, replace, head = string2.substring(0, index) + replace, tail = string2.substring(index + close2.length), next = tail.indexOf(close2)) => head + (next < 0 ? tail : replaceClose(next, tail, close2, replace)), "replaceClose");
-    var clearBleed = /* @__PURE__ */ __name((index, string2, open3, close2, replace) => index < 0 ? open3 + string2 + close2 : open3 + replaceClose(index, string2, close2, replace) + close2, "clearBleed");
-    var filterEmpty = /* @__PURE__ */ __name((open3, close2, replace = open3, at = open3.length + 1) => (string2) => string2 || !(string2 === "" || string2 === void 0) ? clearBleed(
-      ("" + string2).indexOf(close2, at),
-      string2,
+    var replaceClose = /* @__PURE__ */ __name((index, string, close2, replace, head = string.substring(0, index) + replace, tail = string.substring(index + close2.length), next = tail.indexOf(close2)) => head + (next < 0 ? tail : replaceClose(next, tail, close2, replace)), "replaceClose");
+    var clearBleed = /* @__PURE__ */ __name((index, string, open3, close2, replace) => index < 0 ? open3 + string + close2 : open3 + replaceClose(index, string, close2, replace) + close2, "clearBleed");
+    var filterEmpty = /* @__PURE__ */ __name((open3, close2, replace = open3, at = open3.length + 1) => (string) => string || !(string === "" || string === void 0) ? clearBleed(
+      ("" + string).indexOf(close2, at),
+      string,
       open3,
       close2,
       replace
@@ -4369,7 +4369,7 @@ var require_events = __commonJS({
 });
 
 // node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/util/legacy-types.mjs
-var isRegExp, isDate, isBoolean, isNull, isNullOrUndefined, isNumber, isString2, isSymbol, isUndefined, isFunction, isBuffer, isObject, isError, isPrimitive;
+var isRegExp, isDate, isBoolean, isNull2, isNullOrUndefined, isNumber, isString2, isSymbol, isUndefined, isFunction, isBuffer, isObject, isError, isPrimitive;
 var init_legacy_types = __esm({
   "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/util/legacy-types.mjs"() {
     init_modules_watch_stub();
@@ -4379,7 +4379,7 @@ var init_legacy_types = __esm({
     isRegExp = /* @__PURE__ */ __name((val) => val instanceof RegExp, "isRegExp");
     isDate = /* @__PURE__ */ __name((val) => val instanceof Date, "isDate");
     isBoolean = /* @__PURE__ */ __name((val) => typeof val === "boolean", "isBoolean");
-    isNull = /* @__PURE__ */ __name((val) => val === null, "isNull");
+    isNull2 = /* @__PURE__ */ __name((val) => val === null, "isNull");
     isNullOrUndefined = /* @__PURE__ */ __name((val) => val === null || val === void 0, "isNullOrUndefined");
     isNumber = /* @__PURE__ */ __name((val) => typeof val === "number", "isNumber");
     isString2 = /* @__PURE__ */ __name((val) => typeof val === "string", "isString");
@@ -4492,7 +4492,7 @@ var init_util2 = __esm({
       isDate,
       isError,
       isFunction,
-      isNull,
+      isNull: isNull2,
       isNullOrUndefined,
       isNumber,
       isObject,
@@ -5608,8 +5608,8 @@ var require_cjs = __commonJS({
     var hasOwnProperty = _a2.hasOwnProperty;
     var propertyIsEnumerable = _a2.propertyIsEnumerable;
     var SUPPORTS_SYMBOL = typeof getOwnPropertySymbols === "function";
-    function getStrictPropertiesModern(object2) {
-      return getOwnPropertyNames(object2).concat(getOwnPropertySymbols(object2));
+    function getStrictPropertiesModern(object) {
+      return getOwnPropertyNames(object).concat(getOwnPropertySymbols(object));
     }
     __name(getStrictPropertiesModern, "getStrictPropertiesModern");
     var getStrictProperties = SUPPORTS_SYMBOL ? getStrictPropertiesModern : getOwnPropertyNames;
@@ -5637,19 +5637,19 @@ var require_cjs = __commonJS({
       return clone;
     }
     __name(copyOwnPropertiesStrict, "copyOwnPropertiesStrict");
-    function copyArrayLoose(array2, state) {
+    function copyArrayLoose(array, state) {
       var clone = new state.Constructor();
-      state.cache.set(array2, clone);
-      for (var index2 = 0, length_2 = array2.length; index2 < length_2; ++index2) {
-        clone[index2] = state.copier(array2[index2], state);
+      state.cache.set(array, clone);
+      for (var index2 = 0, length_2 = array.length; index2 < length_2; ++index2) {
+        clone[index2] = state.copier(array[index2], state);
       }
       return clone;
     }
     __name(copyArrayLoose, "copyArrayLoose");
-    function copyArrayStrict(array2, state) {
+    function copyArrayStrict(array, state) {
       var clone = new state.Constructor();
-      state.cache.set(array2, clone);
-      return copyOwnPropertiesStrict(array2, clone, state);
+      state.cache.set(array, clone);
+      return copyOwnPropertiesStrict(array, clone, state);
     }
     __name(copyArrayStrict, "copyArrayStrict");
     function copyArrayBuffer(arrayBuffer, _state) {
@@ -5681,40 +5681,40 @@ var require_cjs = __commonJS({
       return copyOwnPropertiesStrict(map, copyMapLoose(map, state), state);
     }
     __name(copyMapStrict, "copyMapStrict");
-    function copyObjectLooseLegacy(object2, state) {
+    function copyObjectLooseLegacy(object, state) {
       var clone = getCleanClone(state.prototype);
-      state.cache.set(object2, clone);
-      for (var key in object2) {
-        if (hasOwnProperty.call(object2, key)) {
-          clone[key] = state.copier(object2[key], state);
+      state.cache.set(object, clone);
+      for (var key in object) {
+        if (hasOwnProperty.call(object, key)) {
+          clone[key] = state.copier(object[key], state);
         }
       }
       return clone;
     }
     __name(copyObjectLooseLegacy, "copyObjectLooseLegacy");
-    function copyObjectLooseModern(object2, state) {
+    function copyObjectLooseModern(object, state) {
       var clone = getCleanClone(state.prototype);
-      state.cache.set(object2, clone);
-      for (var key in object2) {
-        if (hasOwnProperty.call(object2, key)) {
-          clone[key] = state.copier(object2[key], state);
+      state.cache.set(object, clone);
+      for (var key in object) {
+        if (hasOwnProperty.call(object, key)) {
+          clone[key] = state.copier(object[key], state);
         }
       }
-      var symbols = getOwnPropertySymbols(object2);
+      var symbols = getOwnPropertySymbols(object);
       for (var index2 = 0, length_3 = symbols.length, symbol = void 0; index2 < length_3; ++index2) {
         symbol = symbols[index2];
-        if (propertyIsEnumerable.call(object2, symbol)) {
-          clone[symbol] = state.copier(object2[symbol], state);
+        if (propertyIsEnumerable.call(object, symbol)) {
+          clone[symbol] = state.copier(object[symbol], state);
         }
       }
       return clone;
     }
     __name(copyObjectLooseModern, "copyObjectLooseModern");
     var copyObjectLoose = SUPPORTS_SYMBOL ? copyObjectLooseModern : copyObjectLooseLegacy;
-    function copyObjectStrict(object2, state) {
+    function copyObjectStrict(object, state) {
       var clone = getCleanClone(state.prototype);
-      state.cache.set(object2, clone);
-      return copyOwnPropertiesStrict(object2, clone, state);
+      state.cache.set(object, clone);
+      return copyOwnPropertiesStrict(object, clone, state);
     }
     __name(copyObjectStrict, "copyObjectStrict");
     function copyPrimitiveWrapper(primitiveObject, state) {
@@ -5802,7 +5802,7 @@ var require_cjs = __commonJS({
     function createCopier(options) {
       var normalizedOptions = assign({}, DEFAULT_LOOSE_OPTIONS, options);
       var tagSpecificCopiers = getTagSpecificCopiers(normalizedOptions);
-      var array2 = tagSpecificCopiers.Array, object2 = tagSpecificCopiers.Object;
+      var array = tagSpecificCopiers.Array, object = tagSpecificCopiers.Object;
       function copier(value, state) {
         state.prototype = state.Constructor = void 0;
         if (!value || typeof value !== "object") {
@@ -5814,16 +5814,16 @@ var require_cjs = __commonJS({
         state.prototype = getPrototypeOf(value);
         state.Constructor = state.prototype && state.prototype.constructor;
         if (!state.Constructor || state.Constructor === Object) {
-          return object2(value, state);
+          return object(value, state);
         }
         if (isArray2(value)) {
-          return array2(value, state);
+          return array(value, state);
         }
         var tagSpecificCopier = tagSpecificCopiers[getTag(value)];
         if (tagSpecificCopier) {
           return tagSpecificCopier(value, state);
         }
-        return typeof value.then === "function" ? value : object2(value, state);
+        return typeof value.then === "function" ? value : object(value, state);
       }
       __name(copier, "copier");
       return /* @__PURE__ */ __name(function copy(value) {
@@ -7341,105 +7341,13 @@ var require_pino_pretty = __commonJS({
   }
 });
 
-// node_modules/.pnpm/promise-limit@2.7.0/node_modules/promise-limit/index.js
-var require_promise_limit = __commonJS({
-  "node_modules/.pnpm/promise-limit@2.7.0/node_modules/promise-limit/index.js"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    function limiter(count3) {
-      var outstanding = 0;
-      var jobs = [];
-      function remove3() {
-        outstanding--;
-        if (outstanding < count3) {
-          dequeue();
-        }
-      }
-      __name(remove3, "remove");
-      function dequeue() {
-        var job = jobs.shift();
-        semaphore.queue = jobs.length;
-        if (job) {
-          run(job.fn).then(job.resolve).catch(job.reject);
-        }
-      }
-      __name(dequeue, "dequeue");
-      function queue(fn) {
-        return new Promise(function(resolve, reject) {
-          jobs.push({ fn, resolve, reject });
-          semaphore.queue = jobs.length;
-        });
-      }
-      __name(queue, "queue");
-      function run(fn) {
-        outstanding++;
-        try {
-          return Promise.resolve(fn()).then(function(result) {
-            remove3();
-            return result;
-          }, function(error3) {
-            remove3();
-            throw error3;
-          });
-        } catch (err) {
-          remove3();
-          return Promise.reject(err);
-        }
-      }
-      __name(run, "run");
-      var semaphore = /* @__PURE__ */ __name(function(fn) {
-        if (outstanding >= count3) {
-          return queue(fn);
-        } else {
-          return run(fn);
-        }
-      }, "semaphore");
-      return semaphore;
-    }
-    __name(limiter, "limiter");
-    function map(items, mapper) {
-      var failed = false;
-      var limit = this;
-      return Promise.all(items.map(function() {
-        var args = arguments;
-        return limit(function() {
-          if (!failed) {
-            return mapper.apply(void 0, args).catch(function(e) {
-              failed = true;
-              throw e;
-            });
-          }
-        });
-      }));
-    }
-    __name(map, "map");
-    function addExtras(fn) {
-      fn.queue = 0;
-      fn.map = map;
-      return fn;
-    }
-    __name(addExtras, "addExtras");
-    module.exports = function(count3) {
-      if (count3) {
-        return addExtras(limiter(count3));
-      } else {
-        return addExtras(function(fn) {
-          return fn();
-        });
-      }
-    };
-  }
-});
-
-// .wrangler/tmp/bundle-1FyUxv/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-wXuvKu/middleware-loader.entry.ts
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// .wrangler/tmp/bundle-1FyUxv/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-wXuvKu/middleware-insertion-facade.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -7776,7 +7684,6 @@ var package_default = {
   license: "MIT",
   scripts: {
     dev: "wrangler dev",
-    deploy: "wrangler deploy --minify",
     start: "node ./dist/src/index.js",
     "dev:db": "turso dev --db-file dev.db",
     typecheck: "tsc --noEmit",
@@ -7786,14 +7693,15 @@ var package_default = {
     build: "tsc && tsc-alias",
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:migrate": "drizzle-kit migrate",
-    "drizzle:make-migration": "drizzle-kit make-migration",
-    "drizzle:studio": "drizzle-kit studio"
+    "drizzle:studio": "drizzle-kit studio",
+    "cloudflare:deploy": "wrangler deploy --minify"
   },
   dependencies: {
     "@hono/node-server": "^1.13.7",
     "@hono/zod-openapi": "^0.18.3",
     "@libsql/client": "^0.14.0",
     "@scalar/hono-api-reference": "^0.5.165",
+    "better-auth": "^1.2.5",
     dotenv: "^16.4.7",
     "dotenv-expand": "^12.0.1",
     "drizzle-orm": "^0.38.3",
@@ -8021,25 +7929,25 @@ var ObjectSet = class {
     const hashEffectiveness = totalBuckets / totalValues;
     return { totalBuckets, collisions, totalValues, hashEffectiveness };
   }
-  hashCodeOf(object2) {
+  hashCodeOf(object) {
     let hashCode = 0;
-    if (Array.isArray(object2)) {
-      for (let i = 0; i < object2.length; i++) {
-        hashCode ^= this.hashCodeOf(object2[i]) * i;
+    if (Array.isArray(object)) {
+      for (let i = 0; i < object.length; i++) {
+        hashCode ^= this.hashCodeOf(object[i]) * i;
       }
       return hashCode;
     }
-    if (typeof object2 === "string") {
-      for (let i = 0; i < object2.length; i++) {
-        hashCode ^= object2.charCodeAt(i) * i;
+    if (typeof object === "string") {
+      for (let i = 0; i < object.length; i++) {
+        hashCode ^= object.charCodeAt(i) * i;
       }
       return hashCode;
     }
-    if (typeof object2 === "number") {
-      return object2;
+    if (typeof object === "number") {
+      return object;
     }
-    if (typeof object2 === "object") {
-      for (const [key, value] of Object.entries(object2)) {
+    if (typeof object === "object") {
+      for (const [key, value] of Object.entries(object)) {
         hashCode ^= this.hashCodeOf(key) + this.hashCodeOf(value !== null && value !== void 0 ? value : "");
       }
     }
@@ -8050,17 +7958,17 @@ function isNil(value) {
   return value === null || value === void 0;
 }
 __name(isNil, "isNil");
-function mapValues(object2, mapper) {
+function mapValues(object, mapper) {
   const result = {};
-  Object.entries(object2).forEach(([key, value]) => {
+  Object.entries(object).forEach(([key, value]) => {
     result[key] = mapper(value);
   });
   return result;
 }
 __name(mapValues, "mapValues");
-function omit(object2, keys) {
+function omit(object, keys) {
   const result = {};
-  Object.entries(object2).forEach(([key, value]) => {
+  Object.entries(object).forEach(([key, value]) => {
     if (!keys.some((keyToOmit) => keyToOmit === key)) {
       result[key] = value;
     }
@@ -8068,9 +7976,9 @@ function omit(object2, keys) {
   return result;
 }
 __name(omit, "omit");
-function omitBy(object2, predicate) {
+function omitBy(object, predicate) {
   const result = {};
-  Object.entries(object2).forEach(([key, value]) => {
+  Object.entries(object).forEach(([key, value]) => {
     if (!predicate(value, key)) {
       result[key] = value;
     }
@@ -9630,10 +9538,10 @@ var util;
       return obj[e];
     });
   };
-  util2.objectKeys = typeof Object.keys === "function" ? (obj) => Object.keys(obj) : (object2) => {
+  util2.objectKeys = typeof Object.keys === "function" ? (obj) => Object.keys(obj) : (object) => {
     const keys = [];
-    for (const key in object2) {
-      if (Object.prototype.hasOwnProperty.call(object2, key)) {
+    for (const key in object) {
+      if (Object.prototype.hasOwnProperty.call(object, key)) {
         keys.push(key);
       }
     }
@@ -9647,8 +9555,8 @@ var util;
     return void 0;
   };
   util2.isInteger = typeof Number.isInteger === "function" ? (val) => Number.isInteger(val) : (val) => typeof val === "number" && isFinite(val) && Math.floor(val) === val;
-  function joinValues(array2, separator = " | ") {
-    return array2.map((val) => typeof val === "string" ? `'${val}'` : val).join(separator);
+  function joinValues(array, separator = " | ") {
+    return array.map((val) => typeof val === "string" ? `'${val}'` : val).join(separator);
   }
   __name(joinValues, "joinValues");
   util2.joinValues = joinValues;
@@ -10485,11 +10393,11 @@ function datetimeRegex(args) {
   return new RegExp(`^${regex}$`);
 }
 __name(datetimeRegex, "datetimeRegex");
-function isValidIP(ip, version5) {
-  if ((version5 === "v4" || !version5) && ipv4Regex.test(ip)) {
+function isValidIP(ip, version4) {
+  if ((version4 === "v4" || !version4) && ipv4Regex.test(ip)) {
     return true;
   }
-  if ((version5 === "v6" || !version5) && ipv6Regex.test(ip)) {
+  if ((version4 === "v6" || !version4) && ipv6Regex.test(ip)) {
     return true;
   }
   return false;
@@ -10514,11 +10422,11 @@ function isValidJWT(jwt, alg) {
   }
 }
 __name(isValidJWT, "isValidJWT");
-function isValidCidr(ip, version5) {
-  if ((version5 === "v4" || !version5) && ipv4CidrRegex.test(ip)) {
+function isValidCidr(ip, version4) {
+  if ((version4 === "v4" || !version4) && ipv4CidrRegex.test(ip)) {
     return true;
   }
-  if ((version5 === "v6" || !version5) && ipv6CidrRegex.test(ip)) {
+  if ((version4 === "v6" || !version4) && ipv6CidrRegex.test(ip)) {
     return true;
   }
   return false;
@@ -14261,8 +14169,8 @@ var Context = class {
     }
     return this.#newResponse(text2, arg);
   }, "text");
-  json = /* @__PURE__ */ __name((object2, arg, headers) => {
-    const body = JSON.stringify(object2);
+  json = /* @__PURE__ */ __name((object, arg, headers) => {
+    const body = JSON.stringify(object);
     this.#preparedHeaders ??= {};
     this.#preparedHeaders["content-type"] = "application/json";
     return typeof arg === "number" ? this.#newResponse(body, arg, headers) : this.#newResponse(body, arg);
@@ -15676,443 +15584,19 @@ var IdParamsSchema = z.object({
 });
 var id_params_default = IdParamsSchema;
 
-// src/env.ts
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var import_dotenv = __toESM(require_main(), 1);
-var import_dotenv_expand = __toESM(require_main2(), 1);
-import path from "node:path";
-(0, import_dotenv_expand.expand)((0, import_dotenv.config)({
-  path: path.resolve(
-    process.cwd(),
-    false ? ".env.test" : ".env"
-  )
-}));
-var EnvSchema = z.object({
-  NODE_ENV: z.string().default("development"),
-  PORT: z.coerce.number().default(9999),
-  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
-  DATABASE_URL: z.string().url(),
-  DATABASE_AUTH_TOKEN: z.string().optional()
-}).superRefine((input, ctx) => {
-  if (input.NODE_ENV === "production" && !input.DATABASE_AUTH_TOKEN) {
-    ctx.addIssue({
-      code: z.ZodIssueCode.invalid_type,
-      expected: "string",
-      received: "undefined",
-      path: ["DATABASE_AUTH_TOKEN"],
-      message: "Must be set when NODE_ENV is 'production'"
-    });
-  }
-});
-function parseEnv(data) {
-  const { data: env3, error: error3 } = EnvSchema.safeParse(data);
-  if (error3) {
-    const errorMessage = `\u274C Invalid env - ${Object.entries(error3.flatten().fieldErrors).map(([key, errors]) => `${key}: ${errors.join(",")}`).join(" | ")}`;
-    throw new Error(errorMessage);
-  }
-  return env3;
-}
-__name(parseEnv, "parseEnv");
-
-// src/middlewares/pino-logger.ts
+// src/db/index.ts
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/hono-pino@0.7.0_hono@4.6.15_pino@9.6.0/node_modules/hono-pino/dist/index.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var import_pino = __toESM(require_browser(), 1);
-
-// node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function isPlainObject(value) {
-  if (value === null || typeof value !== "object") {
-    return false;
-  }
-  const prototype = Object.getPrototypeOf(value);
-  if (prototype !== null && prototype !== Object.prototype && Object.getPrototypeOf(prototype) !== null) {
-    return false;
-  }
-  if (Symbol.iterator in value) {
-    return false;
-  }
-  if (Symbol.toStringTag in value) {
-    return Object.prototype.toString.call(value) === "[object Module]";
-  }
-  return true;
-}
-__name(isPlainObject, "isPlainObject");
-function _defu(baseObject, defaults, namespace = ".", merger) {
-  if (!isPlainObject(defaults)) {
-    return _defu(baseObject, {}, namespace, merger);
-  }
-  const object2 = Object.assign({}, defaults);
-  for (const key in baseObject) {
-    if (key === "__proto__" || key === "constructor") {
-      continue;
-    }
-    const value = baseObject[key];
-    if (value === null || value === void 0) {
-      continue;
-    }
-    if (merger && merger(object2, key, value, namespace)) {
-      continue;
-    }
-    if (Array.isArray(value) && Array.isArray(object2[key])) {
-      object2[key] = [...value, ...object2[key]];
-    } else if (isPlainObject(value) && isPlainObject(object2[key])) {
-      object2[key] = _defu(
-        value,
-        object2[key],
-        (namespace ? `${namespace}.` : "") + key.toString(),
-        merger
-      );
-    } else {
-      object2[key] = value;
-    }
-  }
-  return object2;
-}
-__name(_defu, "_defu");
-function createDefu(merger) {
-  return (...arguments_) => (
-    // eslint-disable-next-line unicorn/no-array-reduce
-    arguments_.reduce((p, c) => _defu(p, c, "", merger), {})
-  );
-}
-__name(createDefu, "createDefu");
-var defu = createDefu();
-var defuFn = createDefu((object2, key, currentValue) => {
-  if (object2[key] !== void 0 && typeof currentValue === "function") {
-    object2[key] = currentValue(object2[key]);
-    return true;
-  }
-});
-var defuArrayFn = createDefu((object2, key, currentValue) => {
-  if (Array.isArray(object2[key]) && typeof currentValue === "function") {
-    object2[key] = currentValue(object2[key]);
-    return true;
-  }
-});
-
-// node_modules/.pnpm/hono@4.6.15/node_modules/hono/dist/helper/adapter/index.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var env2 = /* @__PURE__ */ __name((c, runtime) => {
-  const global2 = globalThis;
-  const globalEnv = global2?.process?.env;
-  runtime ??= getRuntimeKey();
-  const runtimeEnvHandlers = {
-    bun: /* @__PURE__ */ __name(() => globalEnv, "bun"),
-    node: /* @__PURE__ */ __name(() => globalEnv, "node"),
-    "edge-light": /* @__PURE__ */ __name(() => globalEnv, "edge-light"),
-    deno: /* @__PURE__ */ __name(() => {
-      return Deno.env.toObject();
-    }, "deno"),
-    workerd: /* @__PURE__ */ __name(() => c.env, "workerd"),
-    fastly: /* @__PURE__ */ __name(() => ({}), "fastly"),
-    other: /* @__PURE__ */ __name(() => ({}), "other")
-  };
-  return runtimeEnvHandlers[runtime]();
-}, "env");
-var knownUserAgents = {
-  deno: "Deno",
-  bun: "Bun",
-  workerd: "Cloudflare-Workers",
-  node: "Node.js"
-};
-var getRuntimeKey = /* @__PURE__ */ __name(() => {
-  const global2 = globalThis;
-  const userAgentSupported = typeof navigator !== "undefined" && true;
-  if (userAgentSupported) {
-    for (const [runtimeKey, userAgent] of Object.entries(knownUserAgents)) {
-      if (checkUserAgentEquals(userAgent)) {
-        return runtimeKey;
-      }
-    }
-  }
-  if (typeof global2?.EdgeRuntime === "string") {
-    return "edge-light";
-  }
-  if (global2?.fastly !== void 0) {
-    return "fastly";
-  }
-  if (global2?.process?.release?.name === "node") {
-    return "node";
-  }
-  return "other";
-}, "getRuntimeKey");
-var checkUserAgentEquals = /* @__PURE__ */ __name((platform3) => {
-  const userAgent = "Cloudflare-Workers";
-  return userAgent.startsWith(platform3);
-}, "checkUserAgentEquals");
-
-// node_modules/.pnpm/hono-pino@0.7.0_hono@4.6.15_pino@9.6.0/node_modules/hono-pino/dist/index.js
-function isPino(value) {
-  return typeof value === "object" && value !== null && // issue: https://github.com/pinojs/pino/issues/2079
-  // pino.symbols.messageKeySym in value
-  "info" in value && typeof value.info === "function" && "child" in value && typeof value.child === "function";
-}
-__name(isPino, "isPino");
-var httpCfgSym = Symbol("httpCfgSym");
-var PinoLogger = class {
-  static {
-    __name(this, "PinoLogger");
-  }
-  /**
-   * Internal pino logger instance
-   *
-   * If you want to interact with the internal pino logger,
-   * you can use it (not recommended)
-   */
-  _rootLogger;
-  /**
-   * Internal child pino logger instance, recreated after each update bindings.
-   *
-   * If you want to interact with the internal pino logger,
-   * you can use it (not recommended)
-   */
-  _logger;
-  [httpCfgSym] = {};
-  constructor(rootLogger, childOptions) {
-    this._rootLogger = rootLogger.child({}, childOptions);
-    this._logger = rootLogger;
-  }
-  /**
-   * Get bindings from http log context
-   */
-  bindings() {
-    return this._logger.bindings();
-  }
-  /**
-   * Clear bindings from http log context
-   */
-  clearBindings() {
-    this._logger = this._rootLogger.child({});
-    return this;
-  }
-  /**
-   * Assign bindings to http log context
-   */
-  assign(bindings, opts) {
-    const newBindings = opts?.deep ? defu(bindings, this._logger.bindings()) : { ...this._logger.bindings(), ...bindings };
-    this._logger = this._rootLogger.child(newBindings);
-    return this;
-  }
-  /**
-   * Override response log message
-   */
-  setResMessage(message) {
-    this[httpCfgSym].resMessage = message;
-    return this;
-  }
-  /**
-   * Override response log level
-   */
-  setResLevel(level) {
-    this[httpCfgSym].resLevel = level;
-    return this;
-  }
-};
-PinoLogger.prototype.trace = function(...args) {
-  this._logger.trace(...args);
-};
-PinoLogger.prototype.debug = function(...args) {
-  this._logger.debug(...args);
-};
-PinoLogger.prototype.info = function(...args) {
-  this._logger.info(...args);
-};
-PinoLogger.prototype.warn = function(...args) {
-  this._logger.warn(...args);
-};
-PinoLogger.prototype.error = function(...args) {
-  this._logger.error(...args);
-};
-PinoLogger.prototype.fatal = function(...args) {
-  this._logger.fatal(...args);
-};
-var pinoLogger = /* @__PURE__ */ __name((opts) => {
-  const contextKey = opts?.contextKey ?? "logger";
-  let rootLogger = createStaticRootLogger(opts?.pino);
-  return async (c, next) => {
-    const [dynamicRootLogger, loggerChildOptions] = parseDynamicRootLogger(
-      opts?.pino,
-      c
-    );
-    rootLogger ??= dynamicRootLogger ?? getDefaultRootLogger();
-    const logger2 = new PinoLogger(rootLogger, loggerChildOptions);
-    c.set(contextKey, logger2);
-    if (opts?.http === false) {
-      await next();
-      return;
-    }
-    let bindings = opts?.http?.onReqBindings?.(c) ?? {
-      req: {
-        url: c.req.path,
-        method: c.req.method,
-        headers: c.req.header()
-      }
-    };
-    const referRequestIdKey = opts?.http?.referRequestIdKey ?? "requestId";
-    if (referRequestIdKey in c.var) {
-      bindings.reqId = c.var[referRequestIdKey];
-    } else if (opts?.http?.reqId !== false) {
-      bindings.reqId = opts?.http?.reqId?.() ?? defaultReqIdGenerator();
-    }
-    if (opts?.http?.onReqMessage) {
-      const level = opts.http.onReqLevel?.(c) ?? "info";
-      const msg = opts.http.onReqMessage(c);
-      logger2[level](bindings, msg);
-    }
-    if (opts?.http?.responseTime ?? true) {
-      const startTime = performance.now();
-      await next();
-      const endTime = performance.now();
-      const responseTime = Math.round(endTime - startTime);
-      bindings.responseTime = responseTime;
-    } else {
-      await next();
-    }
-    if (opts?.http?.onResMessage !== false) {
-      const onResBindings = opts?.http?.onResBindings?.(c) ?? {
-        res: {
-          status: c.res.status,
-          headers: c.res.headers
-        }
-      };
-      bindings = defu(bindings, onResBindings);
-      const level = logger2[httpCfgSym].resLevel ?? opts?.http?.onResLevel?.(c) ?? (c.error ? "error" : "info");
-      const msg = logger2[httpCfgSym].resMessage ?? opts?.http?.onResMessage?.(c) ?? (c.error ? c.error.message : "Request completed");
-      logger2[level](bindings, msg);
-    }
-  };
-}, "pinoLogger");
-var defaultReqId = 0;
-var defaultReqIdGenerator = /* @__PURE__ */ __name(() => defaultReqId += 1, "defaultReqIdGenerator");
-var createStaticRootLogger = /* @__PURE__ */ __name((opt) => {
-  if (typeof opt === "function") return null;
-  if (isPino(opt)) return opt;
-  return (0, import_pino.pino)(opt);
-}, "createStaticRootLogger");
-var parseDynamicRootLogger = /* @__PURE__ */ __name((opt, c) => {
-  if (opt === void 0) {
-    const { LOG_LEVEL } = env2(c);
-    return [
-      void 0,
-      {
-        level: LOG_LEVEL ?? "info"
-      }
-    ];
-  }
-  if (typeof opt !== "function") return [void 0, void 0];
-  const v = opt(c);
-  if (isPino(v)) return [v, void 0];
-  return [void 0, v];
-}, "parseDynamicRootLogger");
-var getDefaultRootLogger = /* @__PURE__ */ __name(() => _defaultRootLogger ??= (0, import_pino.pino)(), "getDefaultRootLogger");
-var _defaultRootLogger = void 0;
-
-// src/middlewares/pino-logger.ts
-init_crypto2();
-var import_pino2 = __toESM(require_browser(), 1);
-var import_pino_pretty = __toESM(require_pino_pretty(), 1);
-function pinoLogger2() {
-  return (c, next) => pinoLogger({
-    pino: (0, import_pino2.default)({
-      level: c.env.LOG_LEVEL || "info"
-    }, c.env.NODE_ENV === "production" ? void 0 : (0, import_pino_pretty.default)()),
-    http: {
-      reqId: /* @__PURE__ */ __name(() => randomUUID(), "reqId")
-    }
-  })(c, next);
-}
-__name(pinoLogger2, "pinoLogger");
-
-// src/lib/create-app.ts
-function createRouter() {
-  return new OpenAPIHono({
-    strict: false,
-    defaultHook: default_hook_default
-  });
-}
-__name(createRouter, "createRouter");
-function createApp() {
-  const app2 = createRouter();
-  app2.use((c, next) => {
-    c.env = parseEnv(Object.assign(c.env || {}, process.env));
-    return next();
-  });
-  app2.use(serve_emoji_favicon_default("\u{1F4DD}"));
-  app2.use(pinoLogger2());
-  app2.notFound(not_found_default);
-  app2.onError(on_error_default);
-  return app2;
-}
-__name(createApp, "createApp");
-
-// src/modules/index/index.ts
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var router = createRouter().openapi(
-  createRoute({
-    tags: ["Index"],
-    method: "get",
-    path: "/",
-    responses: {
-      [OK2]: json_content_default(
-        create_message_object_default("Tasks API"),
-        "Tasks API Index"
-      )
-    }
-  }),
-  (c) => {
-    return c.json({
-      message: "Tasks API on Cloudflare"
-    }, OK2);
-  }
-);
-var index_default = router;
-
-// src/modules/tasks/index.ts
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/d1/driver.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// src/modules/tasks/handlers.ts
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/alias.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/column.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/entity.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/entity.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -16144,7 +15628,145 @@ function is(value, type2) {
 }
 __name(is, "is");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/column.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/logger.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var ConsoleLogWriter = class {
+  static {
+    __name(this, "ConsoleLogWriter");
+  }
+  static [entityKind] = "ConsoleLogWriter";
+  write(message) {
+    console.log(message);
+  }
+};
+var DefaultLogger = class {
+  static {
+    __name(this, "DefaultLogger");
+  }
+  static [entityKind] = "DefaultLogger";
+  writer;
+  constructor(config3) {
+    this.writer = config3?.writer ?? new ConsoleLogWriter();
+  }
+  logQuery(query, params) {
+    const stringifiedParams = params.map((p) => {
+      try {
+        return JSON.stringify(p);
+      } catch {
+        return String(p);
+      }
+    });
+    const paramsStr = stringifiedParams.length ? ` -- params: [${stringifiedParams.join(", ")}]` : "";
+    this.writer.write(`Query: ${query}${paramsStr}`);
+  }
+};
+var NoopLogger = class {
+  static {
+    __name(this, "NoopLogger");
+  }
+  static [entityKind] = "NoopLogger";
+  logQuery() {
+  }
+};
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/relations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/table.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/table.utils.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var TableName = Symbol.for("drizzle:Name");
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/table.js
+var Schema = Symbol.for("drizzle:Schema");
+var Columns = Symbol.for("drizzle:Columns");
+var ExtraConfigColumns = Symbol.for("drizzle:ExtraConfigColumns");
+var OriginalName = Symbol.for("drizzle:OriginalName");
+var BaseName = Symbol.for("drizzle:BaseName");
+var IsAlias = Symbol.for("drizzle:IsAlias");
+var ExtraConfigBuilder = Symbol.for("drizzle:ExtraConfigBuilder");
+var IsDrizzleTable = Symbol.for("drizzle:IsDrizzleTable");
+var Table = class {
+  static {
+    __name(this, "Table");
+  }
+  static [entityKind] = "Table";
+  /** @internal */
+  static Symbol = {
+    Name: TableName,
+    Schema,
+    OriginalName,
+    Columns,
+    ExtraConfigColumns,
+    BaseName,
+    IsAlias,
+    ExtraConfigBuilder
+  };
+  /**
+   * @internal
+   * Can be changed if the table is aliased.
+   */
+  [TableName];
+  /**
+   * @internal
+   * Used to store the original name of the table, before any aliasing.
+   */
+  [OriginalName];
+  /** @internal */
+  [Schema];
+  /** @internal */
+  [Columns];
+  /** @internal */
+  [ExtraConfigColumns];
+  /**
+   *  @internal
+   * Used to store the table name before the transformation via the `tableCreator` functions.
+   */
+  [BaseName];
+  /** @internal */
+  [IsAlias] = false;
+  /** @internal */
+  [IsDrizzleTable] = true;
+  /** @internal */
+  [ExtraConfigBuilder] = void 0;
+  constructor(name, schema, baseName) {
+    this[TableName] = this[OriginalName] = name;
+    this[Schema] = schema;
+    this[BaseName] = baseName;
+  }
+};
+function isTable(table3) {
+  return typeof table3 === "object" && table3 !== null && IsDrizzleTable in table3;
+}
+__name(isTable, "isTable");
+function getTableName(table3) {
+  return table3[TableName];
+}
+__name(getTableName, "getTableName");
+function getTableUniqueName(table3) {
+  return `${table3[Schema] ?? "public"}.${table3[TableName]}`;
+}
+__name(getTableUniqueName, "getTableUniqueName");
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/column.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
 var Column = class {
   static {
     __name(this, "Column");
@@ -16198,25 +15820,43 @@ var Column = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sql/sql.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/primary-keys.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/columns/enum.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/table.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/columns/common.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/utils.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/column-builder.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sql/sql.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/columns/enum.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/columns/common.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/column-builder.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -16327,20 +15967,11 @@ var ColumnBuilder = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/foreign-keys.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/foreign-keys.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/table.utils.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var TableName = Symbol.for("drizzle:Name");
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/foreign-keys.js
 var ForeignKeyBuilder = class {
   static {
     __name(this, "ForeignKeyBuilder");
@@ -16403,7 +16034,7 @@ var ForeignKey = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/tracing-utils.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/tracing-utils.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -16413,7 +16044,7 @@ function iife(fn, ...args) {
 }
 __name(iife, "iife");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/unique-constraint.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/unique-constraint.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -16477,7 +16108,7 @@ var UniqueConstraint = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/utils/array.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/utils/array.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -16548,8 +16179,8 @@ function parsePgArray(arrayString) {
   return result;
 }
 __name(parsePgArray, "parsePgArray");
-function makePgArray(array2) {
-  return `{${array2.map((item) => {
+function makePgArray(array) {
+  return `{${array.map((item) => {
     if (Array.isArray(item)) {
       return makePgArray(item);
     }
@@ -16561,7 +16192,7 @@ function makePgArray(array2) {
 }
 __name(makePgArray, "makePgArray");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/columns/common.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/columns/common.js
 var PgColumnBuilder = class extends ColumnBuilder {
   static {
     __name(this, "PgColumnBuilder");
@@ -16764,7 +16395,7 @@ var PgArray = class _PgArray extends PgColumn {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/columns/enum.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/columns/enum.js
 var isPgEnumSym = Symbol.for("drizzle:isPgEnum");
 function isPgEnum(obj) {
   return !!obj && typeof obj === "function" && isPgEnumSym in obj && obj[isPgEnumSym] === true;
@@ -16803,7 +16434,7 @@ var PgEnumColumn = class extends PgColumn {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/subquery.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/subquery.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -16833,20 +16464,20 @@ var WithSubquery = class extends Subquery {
   static [entityKind] = "WithSubquery";
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/tracing.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/tracing.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/version.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/version.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var version3 = "0.38.3";
+var version2 = "0.38.3";
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/tracing.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/tracing.js
 var otel;
 var rawTracer;
 var tracer = {
@@ -16855,7 +16486,7 @@ var tracer = {
       return fn();
     }
     if (!rawTracer) {
-      rawTracer = otel.trace.getTracer("drizzle-orm", version3);
+      rawTracer = otel.trace.getTracer("drizzle-orm", version2);
     }
     return iife(
       (otel2, rawTracer2) => rawTracer2.startActiveSpan(
@@ -16881,89 +16512,14 @@ var tracer = {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/view-common.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/view-common.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 var ViewBaseConfig = Symbol.for("drizzle:ViewBaseConfig");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/table.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Schema = Symbol.for("drizzle:Schema");
-var Columns = Symbol.for("drizzle:Columns");
-var ExtraConfigColumns = Symbol.for("drizzle:ExtraConfigColumns");
-var OriginalName = Symbol.for("drizzle:OriginalName");
-var BaseName = Symbol.for("drizzle:BaseName");
-var IsAlias = Symbol.for("drizzle:IsAlias");
-var ExtraConfigBuilder = Symbol.for("drizzle:ExtraConfigBuilder");
-var IsDrizzleTable = Symbol.for("drizzle:IsDrizzleTable");
-var Table = class {
-  static {
-    __name(this, "Table");
-  }
-  static [entityKind] = "Table";
-  /** @internal */
-  static Symbol = {
-    Name: TableName,
-    Schema,
-    OriginalName,
-    Columns,
-    ExtraConfigColumns,
-    BaseName,
-    IsAlias,
-    ExtraConfigBuilder
-  };
-  /**
-   * @internal
-   * Can be changed if the table is aliased.
-   */
-  [TableName];
-  /**
-   * @internal
-   * Used to store the original name of the table, before any aliasing.
-   */
-  [OriginalName];
-  /** @internal */
-  [Schema];
-  /** @internal */
-  [Columns];
-  /** @internal */
-  [ExtraConfigColumns];
-  /**
-   *  @internal
-   * Used to store the table name before the transformation via the `tableCreator` functions.
-   */
-  [BaseName];
-  /** @internal */
-  [IsAlias] = false;
-  /** @internal */
-  [IsDrizzleTable] = true;
-  /** @internal */
-  [ExtraConfigBuilder] = void 0;
-  constructor(name, schema, baseName) {
-    this[TableName] = this[OriginalName] = name;
-    this[Schema] = schema;
-    this[BaseName] = baseName;
-  }
-};
-function isTable(table3) {
-  return typeof table3 === "object" && table3 !== null && IsDrizzleTable in table3;
-}
-__name(isTable, "isTable");
-function getTableName(table3) {
-  return table3[TableName];
-}
-__name(getTableName, "getTableName");
-function getTableUniqueName(table3) {
-  return `${table3[Schema] ?? "public"}.${table3[TableName]}`;
-}
-__name(getTableUniqueName, "getTableUniqueName");
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sql/sql.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sql/sql.js
 var FakePrimitiveParam = class {
   static {
     __name(this, "FakePrimitiveParam");
@@ -17387,388 +16943,7 @@ Subquery.prototype.getSQL = function() {
   return new SQL([this]);
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/alias.js
-var ColumnAliasProxyHandler = class {
-  static {
-    __name(this, "ColumnAliasProxyHandler");
-  }
-  constructor(table3) {
-    this.table = table3;
-  }
-  static [entityKind] = "ColumnAliasProxyHandler";
-  get(columnObj, prop) {
-    if (prop === "table") {
-      return this.table;
-    }
-    return columnObj[prop];
-  }
-};
-var TableAliasProxyHandler = class {
-  static {
-    __name(this, "TableAliasProxyHandler");
-  }
-  constructor(alias, replaceOriginalName) {
-    this.alias = alias;
-    this.replaceOriginalName = replaceOriginalName;
-  }
-  static [entityKind] = "TableAliasProxyHandler";
-  get(target, prop) {
-    if (prop === Table.Symbol.IsAlias) {
-      return true;
-    }
-    if (prop === Table.Symbol.Name) {
-      return this.alias;
-    }
-    if (this.replaceOriginalName && prop === Table.Symbol.OriginalName) {
-      return this.alias;
-    }
-    if (prop === ViewBaseConfig) {
-      return {
-        ...target[ViewBaseConfig],
-        name: this.alias,
-        isAlias: true
-      };
-    }
-    if (prop === Table.Symbol.Columns) {
-      const columns = target[Table.Symbol.Columns];
-      if (!columns) {
-        return columns;
-      }
-      const proxiedColumns = {};
-      Object.keys(columns).map((key) => {
-        proxiedColumns[key] = new Proxy(
-          columns[key],
-          new ColumnAliasProxyHandler(new Proxy(target, this))
-        );
-      });
-      return proxiedColumns;
-    }
-    const value = target[prop];
-    if (is(value, Column)) {
-      return new Proxy(value, new ColumnAliasProxyHandler(new Proxy(target, this)));
-    }
-    return value;
-  }
-};
-var RelationTableAliasProxyHandler = class {
-  static {
-    __name(this, "RelationTableAliasProxyHandler");
-  }
-  constructor(alias) {
-    this.alias = alias;
-  }
-  static [entityKind] = "RelationTableAliasProxyHandler";
-  get(target, prop) {
-    if (prop === "sourceTable") {
-      return aliasedTable(target.sourceTable, this.alias);
-    }
-    return target[prop];
-  }
-};
-function aliasedTable(table3, tableAlias) {
-  return new Proxy(table3, new TableAliasProxyHandler(tableAlias, false));
-}
-__name(aliasedTable, "aliasedTable");
-function aliasedTableColumn(column, tableAlias) {
-  return new Proxy(
-    column,
-    new ColumnAliasProxyHandler(new Proxy(column.table, new TableAliasProxyHandler(tableAlias, false)))
-  );
-}
-__name(aliasedTableColumn, "aliasedTableColumn");
-function mapColumnsInAliasedSQLToAlias(query, alias) {
-  return new SQL.Aliased(mapColumnsInSQLToAlias(query.sql, alias), query.fieldAlias);
-}
-__name(mapColumnsInAliasedSQLToAlias, "mapColumnsInAliasedSQLToAlias");
-function mapColumnsInSQLToAlias(query, alias) {
-  return sql.join(query.queryChunks.map((c) => {
-    if (is(c, Column)) {
-      return aliasedTableColumn(c, alias);
-    }
-    if (is(c, SQL)) {
-      return mapColumnsInSQLToAlias(c, alias);
-    }
-    if (is(c, SQL.Aliased)) {
-      return mapColumnsInAliasedSQLToAlias(c, alias);
-    }
-    return c;
-  }));
-}
-__name(mapColumnsInSQLToAlias, "mapColumnsInSQLToAlias");
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/errors.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var DrizzleError = class extends Error {
-  static {
-    __name(this, "DrizzleError");
-  }
-  static [entityKind] = "DrizzleError";
-  constructor({ message, cause }) {
-    super(message);
-    this.name = "DrizzleError";
-    this.cause = cause;
-  }
-};
-var TransactionRollbackError = class extends DrizzleError {
-  static {
-    __name(this, "TransactionRollbackError");
-  }
-  static [entityKind] = "TransactionRollbackError";
-  constructor() {
-    super({ message: "Rollback" });
-  }
-};
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sql/expressions/conditions.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function bindIfParam(value, column) {
-  if (isDriverValueEncoder(column) && !isSQLWrapper(value) && !is(value, Param) && !is(value, Placeholder) && !is(value, Column) && !is(value, Table) && !is(value, View)) {
-    return new Param(value, column);
-  }
-  return value;
-}
-__name(bindIfParam, "bindIfParam");
-var eq = /* @__PURE__ */ __name((left, right) => {
-  return sql`${left} = ${bindIfParam(right, left)}`;
-}, "eq");
-var ne = /* @__PURE__ */ __name((left, right) => {
-  return sql`${left} <> ${bindIfParam(right, left)}`;
-}, "ne");
-function and(...unfilteredConditions) {
-  const conditions = unfilteredConditions.filter(
-    (c) => c !== void 0
-  );
-  if (conditions.length === 0) {
-    return void 0;
-  }
-  if (conditions.length === 1) {
-    return new SQL(conditions);
-  }
-  return new SQL([
-    new StringChunk("("),
-    sql.join(conditions, new StringChunk(" and ")),
-    new StringChunk(")")
-  ]);
-}
-__name(and, "and");
-function or(...unfilteredConditions) {
-  const conditions = unfilteredConditions.filter(
-    (c) => c !== void 0
-  );
-  if (conditions.length === 0) {
-    return void 0;
-  }
-  if (conditions.length === 1) {
-    return new SQL(conditions);
-  }
-  return new SQL([
-    new StringChunk("("),
-    sql.join(conditions, new StringChunk(" or ")),
-    new StringChunk(")")
-  ]);
-}
-__name(or, "or");
-function not(condition) {
-  return sql`not ${condition}`;
-}
-__name(not, "not");
-var gt = /* @__PURE__ */ __name((left, right) => {
-  return sql`${left} > ${bindIfParam(right, left)}`;
-}, "gt");
-var gte = /* @__PURE__ */ __name((left, right) => {
-  return sql`${left} >= ${bindIfParam(right, left)}`;
-}, "gte");
-var lt = /* @__PURE__ */ __name((left, right) => {
-  return sql`${left} < ${bindIfParam(right, left)}`;
-}, "lt");
-var lte = /* @__PURE__ */ __name((left, right) => {
-  return sql`${left} <= ${bindIfParam(right, left)}`;
-}, "lte");
-function inArray(column, values) {
-  if (Array.isArray(values)) {
-    if (values.length === 0) {
-      return sql`false`;
-    }
-    return sql`${column} in ${values.map((v) => bindIfParam(v, column))}`;
-  }
-  return sql`${column} in ${bindIfParam(values, column)}`;
-}
-__name(inArray, "inArray");
-function notInArray(column, values) {
-  if (Array.isArray(values)) {
-    if (values.length === 0) {
-      return sql`true`;
-    }
-    return sql`${column} not in ${values.map((v) => bindIfParam(v, column))}`;
-  }
-  return sql`${column} not in ${bindIfParam(values, column)}`;
-}
-__name(notInArray, "notInArray");
-function isNull2(value) {
-  return sql`${value} is null`;
-}
-__name(isNull2, "isNull");
-function isNotNull(value) {
-  return sql`${value} is not null`;
-}
-__name(isNotNull, "isNotNull");
-function exists2(subquery) {
-  return sql`exists ${subquery}`;
-}
-__name(exists2, "exists");
-function notExists(subquery) {
-  return sql`not exists ${subquery}`;
-}
-__name(notExists, "notExists");
-function between(column, min, max) {
-  return sql`${column} between ${bindIfParam(min, column)} and ${bindIfParam(
-    max,
-    column
-  )}`;
-}
-__name(between, "between");
-function notBetween(column, min, max) {
-  return sql`${column} not between ${bindIfParam(
-    min,
-    column
-  )} and ${bindIfParam(max, column)}`;
-}
-__name(notBetween, "notBetween");
-function like(column, value) {
-  return sql`${column} like ${value}`;
-}
-__name(like, "like");
-function notLike(column, value) {
-  return sql`${column} not like ${value}`;
-}
-__name(notLike, "notLike");
-function ilike(column, value) {
-  return sql`${column} ilike ${value}`;
-}
-__name(ilike, "ilike");
-function notIlike(column, value) {
-  return sql`${column} not ilike ${value}`;
-}
-__name(notIlike, "notIlike");
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sql/expressions/select.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function asc(column) {
-  return sql`${column} asc`;
-}
-__name(asc, "asc");
-function desc(column) {
-  return sql`${column} desc`;
-}
-__name(desc, "desc");
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/logger.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var ConsoleLogWriter = class {
-  static {
-    __name(this, "ConsoleLogWriter");
-  }
-  static [entityKind] = "ConsoleLogWriter";
-  write(message) {
-    console.log(message);
-  }
-};
-var DefaultLogger = class {
-  static {
-    __name(this, "DefaultLogger");
-  }
-  static [entityKind] = "DefaultLogger";
-  writer;
-  constructor(config3) {
-    this.writer = config3?.writer ?? new ConsoleLogWriter();
-  }
-  logQuery(query, params) {
-    const stringifiedParams = params.map((p) => {
-      try {
-        return JSON.stringify(p);
-      } catch {
-        return String(p);
-      }
-    });
-    const paramsStr = stringifiedParams.length ? ` -- params: [${stringifiedParams.join(", ")}]` : "";
-    this.writer.write(`Query: ${query}${paramsStr}`);
-  }
-};
-var NoopLogger = class {
-  static {
-    __name(this, "NoopLogger");
-  }
-  static [entityKind] = "NoopLogger";
-  logQuery() {
-  }
-};
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/query-promise.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var QueryPromise = class {
-  static {
-    __name(this, "QueryPromise");
-  }
-  static [entityKind] = "QueryPromise";
-  [Symbol.toStringTag] = "QueryPromise";
-  catch(onRejected) {
-    return this.then(void 0, onRejected);
-  }
-  finally(onFinally) {
-    return this.then(
-      (value) => {
-        onFinally?.();
-        return value;
-      },
-      (reason) => {
-        onFinally?.();
-        throw reason;
-      }
-    );
-  }
-  then(onFulfilled, onRejected) {
-    return this.execute().then(onFulfilled, onRejected);
-  }
-};
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/relations.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/primary-keys.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/table.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/utils.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/utils.js
 function mapResultRow(columns, row, joinsNotNullableMap) {
   const nullifyMap = {};
   const result = columns.reduce(
@@ -17893,53 +17068,8 @@ function getColumnNameAndConfig(a, b) {
   };
 }
 __name(getColumnNameAndConfig, "getColumnNameAndConfig");
-function isConfig(data) {
-  if (typeof data !== "object" || data === null)
-    return false;
-  if (data.constructor.name !== "Object")
-    return false;
-  if ("logger" in data) {
-    const type2 = typeof data["logger"];
-    if (type2 !== "boolean" && (type2 !== "object" || typeof data["logger"]["logQuery"] !== "function") && type2 !== "undefined")
-      return false;
-    return true;
-  }
-  if ("schema" in data) {
-    const type2 = typeof data["logger"];
-    if (type2 !== "object" && type2 !== "undefined")
-      return false;
-    return true;
-  }
-  if ("casing" in data) {
-    const type2 = typeof data["logger"];
-    if (type2 !== "string" && type2 !== "undefined")
-      return false;
-    return true;
-  }
-  if ("mode" in data) {
-    if (data["mode"] !== "default" || data["mode"] !== "planetscale" || data["mode"] !== void 0)
-      return false;
-    return true;
-  }
-  if ("connection" in data) {
-    const type2 = typeof data["connection"];
-    if (type2 !== "string" && type2 !== "object" && type2 !== "undefined")
-      return false;
-    return true;
-  }
-  if ("client" in data) {
-    const type2 = typeof data["client"];
-    if (type2 !== "object" && type2 !== "function" && type2 !== "undefined")
-      return false;
-    return true;
-  }
-  if (Object.keys(data).length === 0)
-    return true;
-  return false;
-}
-__name(isConfig, "isConfig");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/table.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/table.js
 var InlineForeignKeys = Symbol.for("drizzle:PgInlineForeignKeys");
 var EnableRLS = Symbol.for("drizzle:EnableRLS");
 var PgTable = class extends Table {
@@ -17960,7 +17090,7 @@ var PgTable = class extends Table {
   [Table.Symbol.ExtraConfigBuilder] = void 0;
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/pg-core/primary-keys.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/pg-core/primary-keys.js
 var PrimaryKeyBuilder = class {
   static {
     __name(this, "PrimaryKeyBuilder");
@@ -17996,7 +17126,156 @@ var PrimaryKey = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/relations.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sql/expressions/conditions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+function bindIfParam(value, column) {
+  if (isDriverValueEncoder(column) && !isSQLWrapper(value) && !is(value, Param) && !is(value, Placeholder) && !is(value, Column) && !is(value, Table) && !is(value, View)) {
+    return new Param(value, column);
+  }
+  return value;
+}
+__name(bindIfParam, "bindIfParam");
+var eq = /* @__PURE__ */ __name((left, right) => {
+  return sql`${left} = ${bindIfParam(right, left)}`;
+}, "eq");
+var ne = /* @__PURE__ */ __name((left, right) => {
+  return sql`${left} <> ${bindIfParam(right, left)}`;
+}, "ne");
+function and(...unfilteredConditions) {
+  const conditions = unfilteredConditions.filter(
+    (c) => c !== void 0
+  );
+  if (conditions.length === 0) {
+    return void 0;
+  }
+  if (conditions.length === 1) {
+    return new SQL(conditions);
+  }
+  return new SQL([
+    new StringChunk("("),
+    sql.join(conditions, new StringChunk(" and ")),
+    new StringChunk(")")
+  ]);
+}
+__name(and, "and");
+function or(...unfilteredConditions) {
+  const conditions = unfilteredConditions.filter(
+    (c) => c !== void 0
+  );
+  if (conditions.length === 0) {
+    return void 0;
+  }
+  if (conditions.length === 1) {
+    return new SQL(conditions);
+  }
+  return new SQL([
+    new StringChunk("("),
+    sql.join(conditions, new StringChunk(" or ")),
+    new StringChunk(")")
+  ]);
+}
+__name(or, "or");
+function not(condition) {
+  return sql`not ${condition}`;
+}
+__name(not, "not");
+var gt = /* @__PURE__ */ __name((left, right) => {
+  return sql`${left} > ${bindIfParam(right, left)}`;
+}, "gt");
+var gte = /* @__PURE__ */ __name((left, right) => {
+  return sql`${left} >= ${bindIfParam(right, left)}`;
+}, "gte");
+var lt = /* @__PURE__ */ __name((left, right) => {
+  return sql`${left} < ${bindIfParam(right, left)}`;
+}, "lt");
+var lte = /* @__PURE__ */ __name((left, right) => {
+  return sql`${left} <= ${bindIfParam(right, left)}`;
+}, "lte");
+function inArray(column, values) {
+  if (Array.isArray(values)) {
+    if (values.length === 0) {
+      return sql`false`;
+    }
+    return sql`${column} in ${values.map((v) => bindIfParam(v, column))}`;
+  }
+  return sql`${column} in ${bindIfParam(values, column)}`;
+}
+__name(inArray, "inArray");
+function notInArray(column, values) {
+  if (Array.isArray(values)) {
+    if (values.length === 0) {
+      return sql`true`;
+    }
+    return sql`${column} not in ${values.map((v) => bindIfParam(v, column))}`;
+  }
+  return sql`${column} not in ${bindIfParam(values, column)}`;
+}
+__name(notInArray, "notInArray");
+function isNull(value) {
+  return sql`${value} is null`;
+}
+__name(isNull, "isNull");
+function isNotNull(value) {
+  return sql`${value} is not null`;
+}
+__name(isNotNull, "isNotNull");
+function exists(subquery) {
+  return sql`exists ${subquery}`;
+}
+__name(exists, "exists");
+function notExists(subquery) {
+  return sql`not exists ${subquery}`;
+}
+__name(notExists, "notExists");
+function between(column, min, max) {
+  return sql`${column} between ${bindIfParam(min, column)} and ${bindIfParam(
+    max,
+    column
+  )}`;
+}
+__name(between, "between");
+function notBetween(column, min, max) {
+  return sql`${column} not between ${bindIfParam(
+    min,
+    column
+  )} and ${bindIfParam(max, column)}`;
+}
+__name(notBetween, "notBetween");
+function like(column, value) {
+  return sql`${column} like ${value}`;
+}
+__name(like, "like");
+function notLike(column, value) {
+  return sql`${column} not like ${value}`;
+}
+__name(notLike, "notLike");
+function ilike(column, value) {
+  return sql`${column} ilike ${value}`;
+}
+__name(ilike, "ilike");
+function notIlike(column, value) {
+  return sql`${column} not ilike ${value}`;
+}
+__name(notIlike, "notIlike");
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sql/expressions/select.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+function asc(column) {
+  return sql`${column} asc`;
+}
+__name(asc, "asc");
+function desc(column) {
+  return sql`${column} desc`;
+}
+__name(desc, "desc");
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/relations.js
 var Relation = class {
   static {
     __name(this, "Relation");
@@ -18066,12 +17345,12 @@ function getOperators() {
     and,
     between,
     eq,
-    exists: exists2,
+    exists,
     gt,
     gte,
     ilike,
     inArray,
-    isNull: isNull2,
+    isNull,
     isNotNull,
     like,
     lt,
@@ -18277,5069 +17556,132 @@ function mapRelationalRow(tablesConfig, tableConfig, row, buildQueryResultSelect
 }
 __name(mapRelationalRow, "mapRelationalRow");
 
-// src/db/index.ts
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/db.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/libsql/driver.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/selection-proxy.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/web.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/alias.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-
-// node_modules/.pnpm/@libsql+core@0.14.0/node_modules/@libsql/core/lib-esm/api.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var LibsqlError = class extends Error {
+var ColumnAliasProxyHandler = class {
   static {
-    __name(this, "LibsqlError");
+    __name(this, "ColumnAliasProxyHandler");
   }
-  /** Machine-readable error code. */
-  code;
-  /** Raw numeric error code */
-  rawCode;
-  constructor(message, code, rawCode, cause) {
-    if (code !== void 0) {
-      message = `${code}: ${message}`;
+  constructor(table3) {
+    this.table = table3;
+  }
+  static [entityKind] = "ColumnAliasProxyHandler";
+  get(columnObj, prop) {
+    if (prop === "table") {
+      return this.table;
     }
-    super(message, { cause });
-    this.code = code;
-    this.rawCode = rawCode;
-    this.name = "LibsqlError";
+    return columnObj[prop];
   }
 };
-
-// node_modules/.pnpm/@libsql+core@0.14.0/node_modules/@libsql/core/lib-esm/config.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+core@0.14.0/node_modules/@libsql/core/lib-esm/uri.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function parseUri(text2) {
-  const match = URI_RE.exec(text2);
-  if (match === null) {
-    throw new LibsqlError(`The URL '${text2}' is not in a valid format`, "URL_INVALID");
-  }
-  const groups = match.groups;
-  const scheme = groups["scheme"];
-  const authority = groups["authority"] !== void 0 ? parseAuthority(groups["authority"]) : void 0;
-  const path2 = percentDecode(groups["path"]);
-  const query = groups["query"] !== void 0 ? parseQuery(groups["query"]) : void 0;
-  const fragment = groups["fragment"] !== void 0 ? percentDecode(groups["fragment"]) : void 0;
-  return { scheme, authority, path: path2, query, fragment };
-}
-__name(parseUri, "parseUri");
-var URI_RE = (() => {
-  const SCHEME = "(?<scheme>[A-Za-z][A-Za-z.+-]*)";
-  const AUTHORITY = "(?<authority>[^/?#]*)";
-  const PATH = "(?<path>[^?#]*)";
-  const QUERY = "(?<query>[^#]*)";
-  const FRAGMENT = "(?<fragment>.*)";
-  return new RegExp(`^${SCHEME}:(//${AUTHORITY})?${PATH}(\\?${QUERY})?(#${FRAGMENT})?$`, "su");
-})();
-function parseAuthority(text2) {
-  const match = AUTHORITY_RE.exec(text2);
-  if (match === null) {
-    throw new LibsqlError("The authority part of the URL is not in a valid format", "URL_INVALID");
-  }
-  const groups = match.groups;
-  const host = percentDecode(groups["host_br"] ?? groups["host"]);
-  const port = groups["port"] ? parseInt(groups["port"], 10) : void 0;
-  const userinfo = groups["username"] !== void 0 ? {
-    username: percentDecode(groups["username"]),
-    password: groups["password"] !== void 0 ? percentDecode(groups["password"]) : void 0
-  } : void 0;
-  return { host, port, userinfo };
-}
-__name(parseAuthority, "parseAuthority");
-var AUTHORITY_RE = (() => {
-  return new RegExp(`^((?<username>[^:]*)(:(?<password>.*))?@)?((?<host>[^:\\[\\]]*)|(\\[(?<host_br>[^\\[\\]]*)\\]))(:(?<port>[0-9]*))?$`, "su");
-})();
-function parseQuery(text2) {
-  const sequences = text2.split("&");
-  const pairs = [];
-  for (const sequence of sequences) {
-    if (sequence === "") {
-      continue;
-    }
-    let key;
-    let value;
-    const splitIdx = sequence.indexOf("=");
-    if (splitIdx < 0) {
-      key = sequence;
-      value = "";
-    } else {
-      key = sequence.substring(0, splitIdx);
-      value = sequence.substring(splitIdx + 1);
-    }
-    pairs.push({
-      key: percentDecode(key.replaceAll("+", " ")),
-      value: percentDecode(value.replaceAll("+", " "))
-    });
-  }
-  return { pairs };
-}
-__name(parseQuery, "parseQuery");
-function percentDecode(text2) {
-  try {
-    return decodeURIComponent(text2);
-  } catch (e) {
-    if (e instanceof URIError) {
-      throw new LibsqlError(`URL component has invalid percent encoding: ${e}`, "URL_INVALID", void 0, e);
-    }
-    throw e;
-  }
-}
-__name(percentDecode, "percentDecode");
-function encodeBaseUrl(scheme, authority, path2) {
-  if (authority === void 0) {
-    throw new LibsqlError(`URL with scheme ${JSON.stringify(scheme + ":")} requires authority (the "//" part)`, "URL_INVALID");
-  }
-  const schemeText = `${scheme}:`;
-  const hostText = encodeHost(authority.host);
-  const portText = encodePort(authority.port);
-  const userinfoText = encodeUserinfo(authority.userinfo);
-  const authorityText = `//${userinfoText}${hostText}${portText}`;
-  let pathText = path2.split("/").map(encodeURIComponent).join("/");
-  if (pathText !== "" && !pathText.startsWith("/")) {
-    pathText = "/" + pathText;
-  }
-  return new URL(`${schemeText}${authorityText}${pathText}`);
-}
-__name(encodeBaseUrl, "encodeBaseUrl");
-function encodeHost(host) {
-  return host.includes(":") ? `[${encodeURI(host)}]` : encodeURI(host);
-}
-__name(encodeHost, "encodeHost");
-function encodePort(port) {
-  return port !== void 0 ? `:${port}` : "";
-}
-__name(encodePort, "encodePort");
-function encodeUserinfo(userinfo) {
-  if (userinfo === void 0) {
-    return "";
-  }
-  const usernameText = encodeURIComponent(userinfo.username);
-  const passwordText = userinfo.password !== void 0 ? `:${encodeURIComponent(userinfo.password)}` : "";
-  return `${usernameText}${passwordText}@`;
-}
-__name(encodeUserinfo, "encodeUserinfo");
-
-// node_modules/.pnpm/@libsql+core@0.14.0/node_modules/@libsql/core/lib-esm/util.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/js-base64@3.7.7/node_modules/js-base64/base64.mjs
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var version4 = "3.7.7";
-var VERSION = version4;
-var _hasBuffer = typeof Buffer === "function";
-var _TD = typeof TextDecoder === "function" ? new TextDecoder() : void 0;
-var _TE = typeof TextEncoder === "function" ? new TextEncoder() : void 0;
-var b64ch = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-var b64chs = Array.prototype.slice.call(b64ch);
-var b64tab = ((a) => {
-  let tab = {};
-  a.forEach((c, i) => tab[c] = i);
-  return tab;
-})(b64chs);
-var b64re = /^(?:[A-Za-z\d+\/]{4})*?(?:[A-Za-z\d+\/]{2}(?:==)?|[A-Za-z\d+\/]{3}=?)?$/;
-var _fromCC = String.fromCharCode.bind(String);
-var _U8Afrom = typeof Uint8Array.from === "function" ? Uint8Array.from.bind(Uint8Array) : (it) => new Uint8Array(Array.prototype.slice.call(it, 0));
-var _mkUriSafe = /* @__PURE__ */ __name((src) => src.replace(/=/g, "").replace(/[+\/]/g, (m0) => m0 == "+" ? "-" : "_"), "_mkUriSafe");
-var _tidyB64 = /* @__PURE__ */ __name((s) => s.replace(/[^A-Za-z0-9\+\/]/g, ""), "_tidyB64");
-var btoaPolyfill = /* @__PURE__ */ __name((bin) => {
-  let u32, c0, c1, c2, asc2 = "";
-  const pad = bin.length % 3;
-  for (let i = 0; i < bin.length; ) {
-    if ((c0 = bin.charCodeAt(i++)) > 255 || (c1 = bin.charCodeAt(i++)) > 255 || (c2 = bin.charCodeAt(i++)) > 255)
-      throw new TypeError("invalid character found");
-    u32 = c0 << 16 | c1 << 8 | c2;
-    asc2 += b64chs[u32 >> 18 & 63] + b64chs[u32 >> 12 & 63] + b64chs[u32 >> 6 & 63] + b64chs[u32 & 63];
-  }
-  return pad ? asc2.slice(0, pad - 3) + "===".substring(pad) : asc2;
-}, "btoaPolyfill");
-var _btoa = typeof btoa === "function" ? (bin) => btoa(bin) : _hasBuffer ? (bin) => Buffer.from(bin, "binary").toString("base64") : btoaPolyfill;
-var _fromUint8Array = _hasBuffer ? (u8a) => Buffer.from(u8a).toString("base64") : (u8a) => {
-  const maxargs = 4096;
-  let strs = [];
-  for (let i = 0, l = u8a.length; i < l; i += maxargs) {
-    strs.push(_fromCC.apply(null, u8a.subarray(i, i + maxargs)));
-  }
-  return _btoa(strs.join(""));
-};
-var fromUint8Array = /* @__PURE__ */ __name((u8a, urlsafe = false) => urlsafe ? _mkUriSafe(_fromUint8Array(u8a)) : _fromUint8Array(u8a), "fromUint8Array");
-var cb_utob = /* @__PURE__ */ __name((c) => {
-  if (c.length < 2) {
-    var cc = c.charCodeAt(0);
-    return cc < 128 ? c : cc < 2048 ? _fromCC(192 | cc >>> 6) + _fromCC(128 | cc & 63) : _fromCC(224 | cc >>> 12 & 15) + _fromCC(128 | cc >>> 6 & 63) + _fromCC(128 | cc & 63);
-  } else {
-    var cc = 65536 + (c.charCodeAt(0) - 55296) * 1024 + (c.charCodeAt(1) - 56320);
-    return _fromCC(240 | cc >>> 18 & 7) + _fromCC(128 | cc >>> 12 & 63) + _fromCC(128 | cc >>> 6 & 63) + _fromCC(128 | cc & 63);
-  }
-}, "cb_utob");
-var re_utob = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g;
-var utob = /* @__PURE__ */ __name((u) => u.replace(re_utob, cb_utob), "utob");
-var _encode = _hasBuffer ? (s) => Buffer.from(s, "utf8").toString("base64") : _TE ? (s) => _fromUint8Array(_TE.encode(s)) : (s) => _btoa(utob(s));
-var encode = /* @__PURE__ */ __name((src, urlsafe = false) => urlsafe ? _mkUriSafe(_encode(src)) : _encode(src), "encode");
-var encodeURI2 = /* @__PURE__ */ __name((src) => encode(src, true), "encodeURI");
-var re_btou = /[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}/g;
-var cb_btou = /* @__PURE__ */ __name((cccc) => {
-  switch (cccc.length) {
-    case 4:
-      var cp3 = (7 & cccc.charCodeAt(0)) << 18 | (63 & cccc.charCodeAt(1)) << 12 | (63 & cccc.charCodeAt(2)) << 6 | 63 & cccc.charCodeAt(3), offset = cp3 - 65536;
-      return _fromCC((offset >>> 10) + 55296) + _fromCC((offset & 1023) + 56320);
-    case 3:
-      return _fromCC((15 & cccc.charCodeAt(0)) << 12 | (63 & cccc.charCodeAt(1)) << 6 | 63 & cccc.charCodeAt(2));
-    default:
-      return _fromCC((31 & cccc.charCodeAt(0)) << 6 | 63 & cccc.charCodeAt(1));
-  }
-}, "cb_btou");
-var btou = /* @__PURE__ */ __name((b) => b.replace(re_btou, cb_btou), "btou");
-var atobPolyfill = /* @__PURE__ */ __name((asc2) => {
-  asc2 = asc2.replace(/\s+/g, "");
-  if (!b64re.test(asc2))
-    throw new TypeError("malformed base64.");
-  asc2 += "==".slice(2 - (asc2.length & 3));
-  let u24, bin = "", r1, r2;
-  for (let i = 0; i < asc2.length; ) {
-    u24 = b64tab[asc2.charAt(i++)] << 18 | b64tab[asc2.charAt(i++)] << 12 | (r1 = b64tab[asc2.charAt(i++)]) << 6 | (r2 = b64tab[asc2.charAt(i++)]);
-    bin += r1 === 64 ? _fromCC(u24 >> 16 & 255) : r2 === 64 ? _fromCC(u24 >> 16 & 255, u24 >> 8 & 255) : _fromCC(u24 >> 16 & 255, u24 >> 8 & 255, u24 & 255);
-  }
-  return bin;
-}, "atobPolyfill");
-var _atob = typeof atob === "function" ? (asc2) => atob(_tidyB64(asc2)) : _hasBuffer ? (asc2) => Buffer.from(asc2, "base64").toString("binary") : atobPolyfill;
-var _toUint8Array = _hasBuffer ? (a) => _U8Afrom(Buffer.from(a, "base64")) : (a) => _U8Afrom(_atob(a).split("").map((c) => c.charCodeAt(0)));
-var toUint8Array = /* @__PURE__ */ __name((a) => _toUint8Array(_unURI(a)), "toUint8Array");
-var _decode = _hasBuffer ? (a) => Buffer.from(a, "base64").toString("utf8") : _TD ? (a) => _TD.decode(_toUint8Array(a)) : (a) => btou(_atob(a));
-var _unURI = /* @__PURE__ */ __name((a) => _tidyB64(a.replace(/[-_]/g, (m0) => m0 == "-" ? "+" : "/")), "_unURI");
-var decode = /* @__PURE__ */ __name((src) => _decode(_unURI(src)), "decode");
-var isValid2 = /* @__PURE__ */ __name((src) => {
-  if (typeof src !== "string")
-    return false;
-  const s = src.replace(/\s+/g, "").replace(/={0,2}$/, "");
-  return !/[^\s0-9a-zA-Z\+/]/.test(s) || !/[^\s0-9a-zA-Z\-_]/.test(s);
-}, "isValid");
-var _noEnum = /* @__PURE__ */ __name((v) => {
-  return {
-    value: v,
-    enumerable: false,
-    writable: true,
-    configurable: true
-  };
-}, "_noEnum");
-var extendString = /* @__PURE__ */ __name(function() {
-  const _add = /* @__PURE__ */ __name((name, body) => Object.defineProperty(String.prototype, name, _noEnum(body)), "_add");
-  _add("fromBase64", function() {
-    return decode(this);
-  });
-  _add("toBase64", function(urlsafe) {
-    return encode(this, urlsafe);
-  });
-  _add("toBase64URI", function() {
-    return encode(this, true);
-  });
-  _add("toBase64URL", function() {
-    return encode(this, true);
-  });
-  _add("toUint8Array", function() {
-    return toUint8Array(this);
-  });
-}, "extendString");
-var extendUint8Array = /* @__PURE__ */ __name(function() {
-  const _add = /* @__PURE__ */ __name((name, body) => Object.defineProperty(Uint8Array.prototype, name, _noEnum(body)), "_add");
-  _add("toBase64", function(urlsafe) {
-    return fromUint8Array(this, urlsafe);
-  });
-  _add("toBase64URI", function() {
-    return fromUint8Array(this, true);
-  });
-  _add("toBase64URL", function() {
-    return fromUint8Array(this, true);
-  });
-}, "extendUint8Array");
-var extendBuiltins = /* @__PURE__ */ __name(() => {
-  extendString();
-  extendUint8Array();
-}, "extendBuiltins");
-var gBase64 = {
-  version: version4,
-  VERSION,
-  atob: _atob,
-  atobPolyfill,
-  btoa: _btoa,
-  btoaPolyfill,
-  fromBase64: decode,
-  toBase64: encode,
-  encode,
-  encodeURI: encodeURI2,
-  encodeURL: encodeURI2,
-  utob,
-  btou,
-  decode,
-  isValid: isValid2,
-  fromUint8Array,
-  toUint8Array,
-  extendString,
-  extendUint8Array,
-  extendBuiltins
-};
-
-// node_modules/.pnpm/@libsql+core@0.14.0/node_modules/@libsql/core/lib-esm/util.js
-var supportedUrlLink = "https://github.com/libsql/libsql-client-ts#supported-urls";
-function transactionModeToBegin(mode) {
-  if (mode === "write") {
-    return "BEGIN IMMEDIATE";
-  } else if (mode === "read") {
-    return "BEGIN TRANSACTION READONLY";
-  } else if (mode === "deferred") {
-    return "BEGIN DEFERRED";
-  } else {
-    throw RangeError('Unknown transaction mode, supported values are "write", "read" and "deferred"');
-  }
-}
-__name(transactionModeToBegin, "transactionModeToBegin");
-var ResultSetImpl = class {
+var TableAliasProxyHandler = class {
   static {
-    __name(this, "ResultSetImpl");
+    __name(this, "TableAliasProxyHandler");
   }
-  columns;
-  columnTypes;
-  rows;
-  rowsAffected;
-  lastInsertRowid;
-  constructor(columns, columnTypes, rows, rowsAffected, lastInsertRowid) {
-    this.columns = columns;
-    this.columnTypes = columnTypes;
-    this.rows = rows;
-    this.rowsAffected = rowsAffected;
-    this.lastInsertRowid = lastInsertRowid;
+  constructor(alias, replaceOriginalName) {
+    this.alias = alias;
+    this.replaceOriginalName = replaceOriginalName;
   }
-  toJSON() {
-    return {
-      columns: this.columns,
-      columnTypes: this.columnTypes,
-      rows: this.rows.map(rowToJson),
-      rowsAffected: this.rowsAffected,
-      lastInsertRowid: this.lastInsertRowid !== void 0 ? "" + this.lastInsertRowid : null
-    };
-  }
-};
-function rowToJson(row) {
-  return Array.prototype.map.call(row, valueToJson);
-}
-__name(rowToJson, "rowToJson");
-function valueToJson(value) {
-  if (typeof value === "bigint") {
-    return "" + value;
-  } else if (value instanceof ArrayBuffer) {
-    return gBase64.fromUint8Array(new Uint8Array(value));
-  } else {
-    return value;
-  }
-}
-__name(valueToJson, "valueToJson");
-
-// node_modules/.pnpm/@libsql+core@0.14.0/node_modules/@libsql/core/lib-esm/config.js
-var inMemoryMode = ":memory:";
-function expandConfig(config3, preferHttp) {
-  if (typeof config3 !== "object") {
-    throw new TypeError(`Expected client configuration as object, got ${typeof config3}`);
-  }
-  let { url, authToken, tls, intMode, concurrency } = config3;
-  concurrency = Math.max(0, concurrency || 20);
-  intMode ??= "number";
-  let connectionQueryParams = [];
-  if (url === inMemoryMode) {
-    url = "file::memory:";
-  }
-  const uri = parseUri(url);
-  const originalUriScheme = uri.scheme.toLowerCase();
-  const isInMemoryMode = originalUriScheme === "file" && uri.path === inMemoryMode && uri.authority === void 0;
-  let queryParamsDef;
-  if (isInMemoryMode) {
-    queryParamsDef = {
-      cache: {
-        values: ["shared", "private"],
-        update: /* @__PURE__ */ __name((key, value) => connectionQueryParams.push(`${key}=${value}`), "update")
-      }
-    };
-  } else {
-    queryParamsDef = {
-      tls: {
-        values: ["0", "1"],
-        update: /* @__PURE__ */ __name((_, value) => tls = value === "1", "update")
-      },
-      authToken: {
-        update: /* @__PURE__ */ __name((_, value) => authToken = value, "update")
-      }
-    };
-  }
-  for (const { key, value } of uri.query?.pairs ?? []) {
-    if (!Object.hasOwn(queryParamsDef, key)) {
-      throw new LibsqlError(`Unsupported URL query parameter ${JSON.stringify(key)}`, "URL_PARAM_NOT_SUPPORTED");
-    }
-    const queryParamDef = queryParamsDef[key];
-    if (queryParamDef.values !== void 0 && !queryParamDef.values.includes(value)) {
-      throw new LibsqlError(`Unknown value for the "${key}" query argument: ${JSON.stringify(value)}. Supported values are: [${queryParamDef.values.map((x) => '"' + x + '"').join(", ")}]`, "URL_INVALID");
-    }
-    if (queryParamDef.update !== void 0) {
-      queryParamDef?.update(key, value);
-    }
-  }
-  const connectionQueryParamsString = connectionQueryParams.length === 0 ? "" : `?${connectionQueryParams.join("&")}`;
-  const path2 = uri.path + connectionQueryParamsString;
-  let scheme;
-  if (originalUriScheme === "libsql") {
-    if (tls === false) {
-      if (uri.authority?.port === void 0) {
-        throw new LibsqlError('A "libsql:" URL with ?tls=0 must specify an explicit port', "URL_INVALID");
-      }
-      scheme = preferHttp ? "http" : "ws";
-    } else {
-      scheme = preferHttp ? "https" : "wss";
-    }
-  } else {
-    scheme = originalUriScheme;
-  }
-  if (scheme === "http" || scheme === "ws") {
-    tls ??= false;
-  } else {
-    tls ??= true;
-  }
-  if (scheme !== "http" && scheme !== "ws" && scheme !== "https" && scheme !== "wss" && scheme !== "file") {
-    throw new LibsqlError(`The client supports only "libsql:", "wss:", "ws:", "https:", "http:" and "file:" URLs, got ${JSON.stringify(uri.scheme + ":")}. For more information, please read ${supportedUrlLink}`, "URL_SCHEME_NOT_SUPPORTED");
-  }
-  if (intMode !== "number" && intMode !== "bigint" && intMode !== "string") {
-    throw new TypeError(`Invalid value for intMode, expected "number", "bigint" or "string", got ${JSON.stringify(intMode)}`);
-  }
-  if (uri.fragment !== void 0) {
-    throw new LibsqlError(`URL fragments are not supported: ${JSON.stringify("#" + uri.fragment)}`, "URL_INVALID");
-  }
-  if (isInMemoryMode) {
-    return {
-      scheme: "file",
-      tls: false,
-      path: path2,
-      intMode,
-      concurrency,
-      syncUrl: config3.syncUrl,
-      syncInterval: config3.syncInterval,
-      fetch: config3.fetch,
-      authToken: void 0,
-      encryptionKey: void 0,
-      authority: void 0
-    };
-  }
-  return {
-    scheme,
-    tls,
-    authority: uri.authority,
-    path: path2,
-    authToken,
-    intMode,
-    concurrency,
-    encryptionKey: config3.encryptionKey,
-    syncUrl: config3.syncUrl,
-    syncInterval: config3.syncInterval,
-    fetch: config3.fetch
-  };
-}
-__name(expandConfig, "expandConfig");
-
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/ws.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/index.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+isomorphic-ws@0.1.5/node_modules/@libsql/isomorphic-ws/web.mjs
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var _WebSocket;
-if (typeof WebSocket !== "undefined") {
-  _WebSocket = WebSocket;
-} else if (typeof global !== "undefined") {
-  _WebSocket = global.WebSocket;
-} else if (typeof window !== "undefined") {
-  _WebSocket = window.WebSocket;
-} else if (typeof self !== "undefined") {
-  _WebSocket = self.WebSocket;
-}
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/client.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/client.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Client = class {
-  static {
-    __name(this, "Client");
-  }
-  /** @private */
-  constructor() {
-    this.intMode = "number";
-  }
-  /** Representation of integers returned from the database. See {@link IntMode}.
-   *
-   * This value is inherited by {@link Stream} objects created with {@link openStream}, but you can
-   * override the integer mode for every stream by setting {@link Stream.intMode} on the stream.
-   */
-  intMode;
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/index.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/json/decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/errors.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var ClientError = class extends Error {
-  static {
-    __name(this, "ClientError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "ClientError";
-  }
-};
-var ProtoError = class extends ClientError {
-  static {
-    __name(this, "ProtoError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "ProtoError";
-  }
-};
-var ResponseError = class extends ClientError {
-  static {
-    __name(this, "ResponseError");
-  }
-  code;
-  /** @internal */
-  proto;
-  /** @private */
-  constructor(message, protoError) {
-    super(message);
-    this.name = "ResponseError";
-    this.code = protoError.code;
-    this.proto = protoError;
-    this.stack = void 0;
-  }
-};
-var ClosedError = class extends ClientError {
-  static {
-    __name(this, "ClosedError");
-  }
-  /** @private */
-  constructor(message, cause) {
-    if (cause !== void 0) {
-      super(`${message}: ${cause}`);
-      this.cause = cause;
-    } else {
-      super(message);
-    }
-    this.name = "ClosedError";
-  }
-};
-var WebSocketUnsupportedError = class extends ClientError {
-  static {
-    __name(this, "WebSocketUnsupportedError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "WebSocketUnsupportedError";
-  }
-};
-var WebSocketError = class extends ClientError {
-  static {
-    __name(this, "WebSocketError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "WebSocketError";
-  }
-};
-var HttpServerError = class extends ClientError {
-  static {
-    __name(this, "HttpServerError");
-  }
-  status;
-  /** @private */
-  constructor(message, status) {
-    super(message);
-    this.status = status;
-    this.name = "HttpServerError";
-  }
-};
-var ProtocolVersionError = class extends ClientError {
-  static {
-    __name(this, "ProtocolVersionError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "ProtocolVersionError";
-  }
-};
-var InternalError = class extends ClientError {
-  static {
-    __name(this, "InternalError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "InternalError";
-  }
-};
-var MisuseError = class extends ClientError {
-  static {
-    __name(this, "MisuseError");
-  }
-  /** @private */
-  constructor(message) {
-    super(message);
-    this.name = "MisuseError";
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/json/decode.js
-function string(value) {
-  if (typeof value === "string") {
-    return value;
-  }
-  throw typeError(value, "string");
-}
-__name(string, "string");
-function stringOpt(value) {
-  if (value === null || value === void 0) {
-    return void 0;
-  } else if (typeof value === "string") {
-    return value;
-  }
-  throw typeError(value, "string or null");
-}
-__name(stringOpt, "stringOpt");
-function number(value) {
-  if (typeof value === "number") {
-    return value;
-  }
-  throw typeError(value, "number");
-}
-__name(number, "number");
-function boolean(value) {
-  if (typeof value === "boolean") {
-    return value;
-  }
-  throw typeError(value, "boolean");
-}
-__name(boolean, "boolean");
-function array(value) {
-  if (Array.isArray(value)) {
-    return value;
-  }
-  throw typeError(value, "array");
-}
-__name(array, "array");
-function object(value) {
-  if (value !== null && typeof value === "object" && !Array.isArray(value)) {
-    return value;
-  }
-  throw typeError(value, "object");
-}
-__name(object, "object");
-function arrayObjectsMap(value, fun) {
-  return array(value).map((elemValue) => fun(object(elemValue)));
-}
-__name(arrayObjectsMap, "arrayObjectsMap");
-function typeError(value, expected) {
-  if (value === void 0) {
-    return new ProtoError(`Expected ${expected}, but the property was missing`);
-  }
-  let received = typeof value;
-  if (value === null) {
-    received = "null";
-  } else if (Array.isArray(value)) {
-    received = "array";
-  }
-  return new ProtoError(`Expected ${expected}, received ${received}`);
-}
-__name(typeError, "typeError");
-function readJsonObject(value, fun) {
-  return fun(object(value));
-}
-__name(readJsonObject, "readJsonObject");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/json/encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var ObjectWriter = class {
-  static {
-    __name(this, "ObjectWriter");
-  }
-  #output;
-  #isFirst;
-  constructor(output) {
-    this.#output = output;
-    this.#isFirst = false;
-  }
-  begin() {
-    this.#output.push("{");
-    this.#isFirst = true;
-  }
-  end() {
-    this.#output.push("}");
-    this.#isFirst = false;
-  }
-  #key(name) {
-    if (this.#isFirst) {
-      this.#output.push('"');
-      this.#isFirst = false;
-    } else {
-      this.#output.push(',"');
-    }
-    this.#output.push(name);
-    this.#output.push('":');
-  }
-  string(name, value) {
-    this.#key(name);
-    this.#output.push(JSON.stringify(value));
-  }
-  stringRaw(name, value) {
-    this.#key(name);
-    this.#output.push('"');
-    this.#output.push(value);
-    this.#output.push('"');
-  }
-  number(name, value) {
-    this.#key(name);
-    this.#output.push("" + value);
-  }
-  boolean(name, value) {
-    this.#key(name);
-    this.#output.push(value ? "true" : "false");
-  }
-  object(name, value, valueFun) {
-    this.#key(name);
-    this.begin();
-    valueFun(this, value);
-    this.end();
-  }
-  arrayObjects(name, values, valueFun) {
-    this.#key(name);
-    this.#output.push("[");
-    for (let i = 0; i < values.length; ++i) {
-      if (i !== 0) {
-        this.#output.push(",");
-      }
-      this.begin();
-      valueFun(this, values[i]);
-      this.end();
-    }
-    this.#output.push("]");
-  }
-};
-function writeJsonObject(value, fun) {
-  const output = [];
-  const writer = new ObjectWriter(output);
-  writer.begin();
-  fun(writer, value);
-  writer.end();
-  return output.join("");
-}
-__name(writeJsonObject, "writeJsonObject");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/protobuf/decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/protobuf/util.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var VARINT = 0;
-var FIXED_64 = 1;
-var LENGTH_DELIMITED = 2;
-var FIXED_32 = 5;
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/protobuf/decode.js
-var MessageReader = class {
-  static {
-    __name(this, "MessageReader");
-  }
-  #array;
-  #view;
-  #pos;
-  constructor(array2) {
-    this.#array = array2;
-    this.#view = new DataView(array2.buffer, array2.byteOffset, array2.byteLength);
-    this.#pos = 0;
-  }
-  varint() {
-    let value = 0;
-    for (let shift = 0; ; shift += 7) {
-      const byte = this.#array[this.#pos++];
-      value |= (byte & 127) << shift;
-      if (!(byte & 128)) {
-        break;
-      }
-    }
-    return value;
-  }
-  varintBig() {
-    let value = 0n;
-    for (let shift = 0n; ; shift += 7n) {
-      const byte = this.#array[this.#pos++];
-      value |= BigInt(byte & 127) << shift;
-      if (!(byte & 128)) {
-        break;
-      }
-    }
-    return value;
-  }
-  bytes(length) {
-    const array2 = new Uint8Array(this.#array.buffer, this.#array.byteOffset + this.#pos, length);
-    this.#pos += length;
-    return array2;
-  }
-  double() {
-    const value = this.#view.getFloat64(this.#pos, true);
-    this.#pos += 8;
-    return value;
-  }
-  skipVarint() {
-    for (; ; ) {
-      const byte = this.#array[this.#pos++];
-      if (!(byte & 128)) {
-        break;
-      }
-    }
-  }
-  skip(count3) {
-    this.#pos += count3;
-  }
-  eof() {
-    return this.#pos >= this.#array.byteLength;
-  }
-};
-var FieldReader = class {
-  static {
-    __name(this, "FieldReader");
-  }
-  #reader;
-  #wireType;
-  constructor(reader) {
-    this.#reader = reader;
-    this.#wireType = -1;
-  }
-  setup(wireType) {
-    this.#wireType = wireType;
-  }
-  #expect(expectedWireType) {
-    if (this.#wireType !== expectedWireType) {
-      throw new ProtoError(`Expected wire type ${expectedWireType}, got ${this.#wireType}`);
-    }
-    this.#wireType = -1;
-  }
-  bytes() {
-    this.#expect(LENGTH_DELIMITED);
-    const length = this.#reader.varint();
-    return this.#reader.bytes(length);
-  }
-  string() {
-    return new TextDecoder().decode(this.bytes());
-  }
-  message(def) {
-    return readProtobufMessage(this.bytes(), def);
-  }
-  int32() {
-    this.#expect(VARINT);
-    return this.#reader.varint();
-  }
-  uint32() {
-    return this.int32();
-  }
-  bool() {
-    return this.int32() !== 0;
-  }
-  uint64() {
-    this.#expect(VARINT);
-    return this.#reader.varintBig();
-  }
-  sint64() {
-    const value = this.uint64();
-    return value >> 1n ^ -(value & 1n);
-  }
-  double() {
-    this.#expect(FIXED_64);
-    return this.#reader.double();
-  }
-  maybeSkip() {
-    if (this.#wireType < 0) {
-      return;
-    } else if (this.#wireType === VARINT) {
-      this.#reader.skipVarint();
-    } else if (this.#wireType === FIXED_64) {
-      this.#reader.skip(8);
-    } else if (this.#wireType === LENGTH_DELIMITED) {
-      const length = this.#reader.varint();
-      this.#reader.skip(length);
-    } else if (this.#wireType === FIXED_32) {
-      this.#reader.skip(4);
-    } else {
-      throw new ProtoError(`Unexpected wire type ${this.#wireType}`);
-    }
-    this.#wireType = -1;
-  }
-};
-function readProtobufMessage(data, def) {
-  const msgReader = new MessageReader(data);
-  const fieldReader = new FieldReader(msgReader);
-  let value = def.default();
-  while (!msgReader.eof()) {
-    const key = msgReader.varint();
-    const tag = key >> 3;
-    const wireType = key & 7;
-    fieldReader.setup(wireType);
-    const tagFun = def[tag];
-    if (tagFun !== void 0) {
-      const returnedValue = tagFun(fieldReader, value);
-      if (returnedValue !== void 0) {
-        value = returnedValue;
-      }
-    }
-    fieldReader.maybeSkip();
-  }
-  return value;
-}
-__name(readProtobufMessage, "readProtobufMessage");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/encoding/protobuf/encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var MessageWriter = class _MessageWriter {
-  static {
-    __name(this, "MessageWriter");
-  }
-  #buf;
-  #array;
-  #view;
-  #pos;
-  constructor() {
-    this.#buf = new ArrayBuffer(256);
-    this.#array = new Uint8Array(this.#buf);
-    this.#view = new DataView(this.#buf);
-    this.#pos = 0;
-  }
-  #ensure(extra) {
-    if (this.#pos + extra <= this.#buf.byteLength) {
-      return;
-    }
-    let newCap = this.#buf.byteLength;
-    while (newCap < this.#pos + extra) {
-      newCap *= 2;
-    }
-    const newBuf = new ArrayBuffer(newCap);
-    const newArray = new Uint8Array(newBuf);
-    const newView = new DataView(newBuf);
-    newArray.set(new Uint8Array(this.#buf, 0, this.#pos));
-    this.#buf = newBuf;
-    this.#array = newArray;
-    this.#view = newView;
-  }
-  #varint(value) {
-    this.#ensure(5);
-    value = 0 | value;
-    do {
-      let byte = value & 127;
-      value >>>= 7;
-      byte |= value ? 128 : 0;
-      this.#array[this.#pos++] = byte;
-    } while (value);
-  }
-  #varintBig(value) {
-    this.#ensure(10);
-    value = value & 0xffffffffffffffffn;
-    do {
-      let byte = Number(value & 0x7fn);
-      value >>= 7n;
-      byte |= value ? 128 : 0;
-      this.#array[this.#pos++] = byte;
-    } while (value);
-  }
-  #tag(tag, wireType) {
-    this.#varint(tag << 3 | wireType);
-  }
-  bytes(tag, value) {
-    this.#tag(tag, LENGTH_DELIMITED);
-    this.#varint(value.byteLength);
-    this.#ensure(value.byteLength);
-    this.#array.set(value, this.#pos);
-    this.#pos += value.byteLength;
-  }
-  string(tag, value) {
-    this.bytes(tag, new TextEncoder().encode(value));
-  }
-  message(tag, value, fun) {
-    const writer = new _MessageWriter();
-    fun(writer, value);
-    this.bytes(tag, writer.data());
-  }
-  int32(tag, value) {
-    this.#tag(tag, VARINT);
-    this.#varint(value);
-  }
-  uint32(tag, value) {
-    this.int32(tag, value);
-  }
-  bool(tag, value) {
-    this.int32(tag, value ? 1 : 0);
-  }
-  sint64(tag, value) {
-    this.#tag(tag, VARINT);
-    this.#varintBig(value << 1n ^ value >> 63n);
-  }
-  double(tag, value) {
-    this.#tag(tag, FIXED_64);
-    this.#ensure(8);
-    this.#view.setFloat64(this.#pos, value, true);
-    this.#pos += 8;
-  }
-  data() {
-    return new Uint8Array(this.#buf, 0, this.#pos);
-  }
-};
-function writeProtobufMessage(value, fun) {
-  const w = new MessageWriter();
-  fun(w, value);
-  return w.data();
-}
-__name(writeProtobufMessage, "writeProtobufMessage");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/id_alloc.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var IdAlloc = class {
-  static {
-    __name(this, "IdAlloc");
-  }
-  // Set of all allocated ids
-  #usedIds;
-  // Set of all free ids lower than `#usedIds.size`
-  #freeIds;
-  constructor() {
-    this.#usedIds = /* @__PURE__ */ new Set();
-    this.#freeIds = /* @__PURE__ */ new Set();
-  }
-  // Returns an id that was free, and marks it as used.
-  alloc() {
-    for (const freeId2 of this.#freeIds) {
-      this.#freeIds.delete(freeId2);
-      this.#usedIds.add(freeId2);
-      if (!this.#usedIds.has(this.#usedIds.size - 1)) {
-        this.#freeIds.add(this.#usedIds.size - 1);
-      }
-      return freeId2;
-    }
-    const freeId = this.#usedIds.size;
-    this.#usedIds.add(freeId);
-    return freeId;
-  }
-  free(id) {
-    if (!this.#usedIds.delete(id)) {
-      throw new InternalError("Freeing an id that is not allocated");
-    }
-    this.#freeIds.delete(this.#usedIds.size);
-    if (id < this.#usedIds.size) {
-      this.#freeIds.add(id);
-    }
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/result.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/value.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/util.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function impossible(value, message) {
-  throw new InternalError(message);
-}
-__name(impossible, "impossible");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/value.js
-function valueToProto(value) {
-  if (value === null) {
-    return null;
-  } else if (typeof value === "string") {
-    return value;
-  } else if (typeof value === "number") {
-    if (!Number.isFinite(value)) {
-      throw new RangeError("Only finite numbers (not Infinity or NaN) can be passed as arguments");
-    }
-    return value;
-  } else if (typeof value === "bigint") {
-    if (value < minInteger || value > maxInteger) {
-      throw new RangeError("This bigint value is too large to be represented as a 64-bit integer and passed as argument");
-    }
-    return value;
-  } else if (typeof value === "boolean") {
-    return value ? 1n : 0n;
-  } else if (value instanceof ArrayBuffer) {
-    return new Uint8Array(value);
-  } else if (value instanceof Uint8Array) {
-    return value;
-  } else if (value instanceof Date) {
-    return +value.valueOf();
-  } else if (typeof value === "object") {
-    return "" + value.toString();
-  } else {
-    throw new TypeError("Unsupported type of value");
-  }
-}
-__name(valueToProto, "valueToProto");
-var minInteger = -9223372036854775808n;
-var maxInteger = 9223372036854775807n;
-function valueFromProto(value, intMode) {
-  if (value === null) {
-    return null;
-  } else if (typeof value === "number") {
-    return value;
-  } else if (typeof value === "string") {
-    return value;
-  } else if (typeof value === "bigint") {
-    if (intMode === "number") {
-      const num = Number(value);
-      if (!Number.isSafeInteger(num)) {
-        throw new RangeError("Received integer which is too large to be safely represented as a JavaScript number");
-      }
-      return num;
-    } else if (intMode === "bigint") {
-      return value;
-    } else if (intMode === "string") {
-      return "" + value;
-    } else {
-      throw new MisuseError("Invalid value for IntMode");
-    }
-  } else if (value instanceof Uint8Array) {
-    return value.slice().buffer;
-  } else if (value === void 0) {
-    throw new ProtoError("Received unrecognized type of Value");
-  } else {
-    throw impossible(value, "Impossible type of Value");
-  }
-}
-__name(valueFromProto, "valueFromProto");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/result.js
-function stmtResultFromProto(result) {
-  return {
-    affectedRowCount: result.affectedRowCount,
-    lastInsertRowid: result.lastInsertRowid,
-    columnNames: result.cols.map((col) => col.name),
-    columnDecltypes: result.cols.map((col) => col.decltype)
-  };
-}
-__name(stmtResultFromProto, "stmtResultFromProto");
-function rowsResultFromProto(result, intMode) {
-  const stmtResult = stmtResultFromProto(result);
-  const rows = result.rows.map((row) => rowFromProto(stmtResult.columnNames, row, intMode));
-  return { ...stmtResult, rows };
-}
-__name(rowsResultFromProto, "rowsResultFromProto");
-function rowResultFromProto(result, intMode) {
-  const stmtResult = stmtResultFromProto(result);
-  let row;
-  if (result.rows.length > 0) {
-    row = rowFromProto(stmtResult.columnNames, result.rows[0], intMode);
-  }
-  return { ...stmtResult, row };
-}
-__name(rowResultFromProto, "rowResultFromProto");
-function valueResultFromProto(result, intMode) {
-  const stmtResult = stmtResultFromProto(result);
-  let value;
-  if (result.rows.length > 0 && stmtResult.columnNames.length > 0) {
-    value = valueFromProto(result.rows[0][0], intMode);
-  }
-  return { ...stmtResult, value };
-}
-__name(valueResultFromProto, "valueResultFromProto");
-function rowFromProto(colNames, values, intMode) {
-  const row = {};
-  Object.defineProperty(row, "length", { value: values.length });
-  for (let i = 0; i < values.length; ++i) {
-    const value = valueFromProto(values[i], intMode);
-    Object.defineProperty(row, i, { value });
-    const colName = colNames[i];
-    if (colName !== void 0 && !Object.hasOwn(row, colName)) {
-      Object.defineProperty(row, colName, { value, enumerable: true, configurable: true, writable: true });
-    }
-  }
-  return row;
-}
-__name(rowFromProto, "rowFromProto");
-function errorFromProto(error3) {
-  return new ResponseError(error3.message, error3);
-}
-__name(errorFromProto, "errorFromProto");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/sql.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Sql = class {
-  static {
-    __name(this, "Sql");
-  }
-  #owner;
-  #sqlId;
-  #closed;
-  /** @private */
-  constructor(owner, sqlId) {
-    this.#owner = owner;
-    this.#sqlId = sqlId;
-    this.#closed = void 0;
-  }
-  /** @private */
-  _getSqlId(owner) {
-    if (this.#owner !== owner) {
-      throw new MisuseError("Attempted to use SQL text opened with other object");
-    } else if (this.#closed !== void 0) {
-      throw new ClosedError("SQL text is closed", this.#closed);
-    }
-    return this.#sqlId;
-  }
-  /** Remove the SQL text from the server, releasing resouces. */
-  close() {
-    this._setClosed(new ClientError("SQL text was manually closed"));
-  }
-  /** @private */
-  _setClosed(error3) {
-    if (this.#closed === void 0) {
-      this.#closed = error3;
-      this.#owner._closeSql(this.#sqlId);
-    }
-  }
-  /** True if the SQL text is closed (removed from the server). */
-  get closed() {
-    return this.#closed !== void 0;
-  }
-};
-function sqlToProto(owner, sql2) {
-  if (sql2 instanceof Sql) {
-    return { sqlId: sql2._getSqlId(owner) };
-  } else {
-    return { sql: "" + sql2 };
-  }
-}
-__name(sqlToProto, "sqlToProto");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/stream.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/queue.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Queue = class {
-  static {
-    __name(this, "Queue");
-  }
-  #pushStack;
-  #shiftStack;
-  constructor() {
-    this.#pushStack = [];
-    this.#shiftStack = [];
-  }
-  get length() {
-    return this.#pushStack.length + this.#shiftStack.length;
-  }
-  push(elem) {
-    this.#pushStack.push(elem);
-  }
-  shift() {
-    if (this.#shiftStack.length === 0 && this.#pushStack.length > 0) {
-      this.#shiftStack = this.#pushStack.reverse();
-      this.#pushStack = [];
-    }
-    return this.#shiftStack.pop();
-  }
-  first() {
-    return this.#shiftStack.length !== 0 ? this.#shiftStack[this.#shiftStack.length - 1] : this.#pushStack[0];
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/stream.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/batch.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/stmt.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Stmt = class {
-  static {
-    __name(this, "Stmt");
-  }
-  /** The SQL statement text. */
-  sql;
-  /** @private */
-  _args;
-  /** @private */
-  _namedArgs;
-  /** Initialize the statement with given SQL text. */
-  constructor(sql2) {
-    this.sql = sql2;
-    this._args = [];
-    this._namedArgs = /* @__PURE__ */ new Map();
-  }
-  /** Binds positional parameters from the given `values`. All previous positional bindings are cleared. */
-  bindIndexes(values) {
-    this._args.length = 0;
-    for (const value of values) {
-      this._args.push(valueToProto(value));
-    }
-    return this;
-  }
-  /** Binds a parameter by a 1-based index. */
-  bindIndex(index, value) {
-    if (index !== (index | 0) || index <= 0) {
-      throw new RangeError("Index of a positional argument must be positive integer");
-    }
-    while (this._args.length < index) {
-      this._args.push(null);
-    }
-    this._args[index - 1] = valueToProto(value);
-    return this;
-  }
-  /** Binds a parameter by name. */
-  bindName(name, value) {
-    this._namedArgs.set(name, valueToProto(value));
-    return this;
-  }
-  /** Clears all bindings. */
-  unbindAll() {
-    this._args.length = 0;
-    this._namedArgs.clear();
-    return this;
-  }
-};
-function stmtToProto(sqlOwner, stmt, wantRows) {
-  let inSql;
-  let args = [];
-  let namedArgs = [];
-  if (stmt instanceof Stmt) {
-    inSql = stmt.sql;
-    args = stmt._args;
-    for (const [name, value] of stmt._namedArgs.entries()) {
-      namedArgs.push({ name, value });
-    }
-  } else if (Array.isArray(stmt)) {
-    inSql = stmt[0];
-    if (Array.isArray(stmt[1])) {
-      args = stmt[1].map((arg) => valueToProto(arg));
-    } else {
-      namedArgs = Object.entries(stmt[1]).map(([name, value]) => {
-        return { name, value: valueToProto(value) };
-      });
-    }
-  } else {
-    inSql = stmt;
-  }
-  const { sql: sql2, sqlId } = sqlToProto(sqlOwner, inSql);
-  return { sql: sql2, sqlId, args, namedArgs, wantRows };
-}
-__name(stmtToProto, "stmtToProto");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/batch.js
-var Batch = class {
-  static {
-    __name(this, "Batch");
-  }
-  /** @private */
-  _stream;
-  #useCursor;
-  /** @private */
-  _steps;
-  #executed;
-  /** @private */
-  constructor(stream, useCursor) {
-    this._stream = stream;
-    this.#useCursor = useCursor;
-    this._steps = [];
-    this.#executed = false;
-  }
-  /** Return a builder for adding a step to the batch. */
-  step() {
-    return new BatchStep(this);
-  }
-  /** Execute the batch. */
-  execute() {
-    if (this.#executed) {
-      throw new MisuseError("This batch has already been executed");
-    }
-    this.#executed = true;
-    const batch = {
-      steps: this._steps.map((step) => step.proto)
-    };
-    if (this.#useCursor) {
-      return executeCursor(this._stream, this._steps, batch);
-    } else {
-      return executeRegular(this._stream, this._steps, batch);
-    }
-  }
-};
-function executeRegular(stream, steps, batch) {
-  return stream._batch(batch).then((result) => {
-    for (let step = 0; step < steps.length; ++step) {
-      const stepResult = result.stepResults.get(step);
-      const stepError = result.stepErrors.get(step);
-      steps[step].callback(stepResult, stepError);
-    }
-  });
-}
-__name(executeRegular, "executeRegular");
-async function executeCursor(stream, steps, batch) {
-  const cursor = await stream._openCursor(batch);
-  try {
-    let nextStep = 0;
-    let beginEntry = void 0;
-    let rows = [];
-    for (; ; ) {
-      const entry = await cursor.next();
-      if (entry === void 0) {
-        break;
-      }
-      if (entry.type === "step_begin") {
-        if (entry.step < nextStep || entry.step >= steps.length) {
-          throw new ProtoError("Server produced StepBeginEntry for unexpected step");
-        } else if (beginEntry !== void 0) {
-          throw new ProtoError("Server produced StepBeginEntry before terminating previous step");
-        }
-        for (let step = nextStep; step < entry.step; ++step) {
-          steps[step].callback(void 0, void 0);
-        }
-        nextStep = entry.step + 1;
-        beginEntry = entry;
-        rows = [];
-      } else if (entry.type === "step_end") {
-        if (beginEntry === void 0) {
-          throw new ProtoError("Server produced StepEndEntry but no step is active");
-        }
-        const stmtResult = {
-          cols: beginEntry.cols,
-          rows,
-          affectedRowCount: entry.affectedRowCount,
-          lastInsertRowid: entry.lastInsertRowid
-        };
-        steps[beginEntry.step].callback(stmtResult, void 0);
-        beginEntry = void 0;
-        rows = [];
-      } else if (entry.type === "step_error") {
-        if (beginEntry === void 0) {
-          if (entry.step >= steps.length) {
-            throw new ProtoError("Server produced StepErrorEntry for unexpected step");
-          }
-          for (let step = nextStep; step < entry.step; ++step) {
-            steps[step].callback(void 0, void 0);
-          }
-        } else {
-          if (entry.step !== beginEntry.step) {
-            throw new ProtoError("Server produced StepErrorEntry for unexpected step");
-          }
-          beginEntry = void 0;
-          rows = [];
-        }
-        steps[entry.step].callback(void 0, entry.error);
-        nextStep = entry.step + 1;
-      } else if (entry.type === "row") {
-        if (beginEntry === void 0) {
-          throw new ProtoError("Server produced RowEntry but no step is active");
-        }
-        rows.push(entry.row);
-      } else if (entry.type === "error") {
-        throw errorFromProto(entry.error);
-      } else if (entry.type === "none") {
-        throw new ProtoError("Server produced unrecognized CursorEntry");
-      } else {
-        throw impossible(entry, "Impossible CursorEntry");
-      }
-    }
-    if (beginEntry !== void 0) {
-      throw new ProtoError("Server closed Cursor before terminating active step");
-    }
-    for (let step = nextStep; step < steps.length; ++step) {
-      steps[step].callback(void 0, void 0);
-    }
-  } finally {
-    cursor.close();
-  }
-}
-__name(executeCursor, "executeCursor");
-var BatchStep = class {
-  static {
-    __name(this, "BatchStep");
-  }
-  /** @private */
-  _batch;
-  #conds;
-  /** @private */
-  _index;
-  /** @private */
-  constructor(batch) {
-    this._batch = batch;
-    this.#conds = [];
-    this._index = void 0;
-  }
-  /** Add the condition that needs to be satisfied to execute the statement. If you use this method multiple
-   * times, we join the conditions with a logical AND. */
-  condition(cond) {
-    this.#conds.push(cond._proto);
-    return this;
-  }
-  /** Add a statement that returns rows. */
-  query(stmt) {
-    return this.#add(stmt, true, rowsResultFromProto);
-  }
-  /** Add a statement that returns at most a single row. */
-  queryRow(stmt) {
-    return this.#add(stmt, true, rowResultFromProto);
-  }
-  /** Add a statement that returns at most a single value. */
-  queryValue(stmt) {
-    return this.#add(stmt, true, valueResultFromProto);
-  }
-  /** Add a statement without returning rows. */
-  run(stmt) {
-    return this.#add(stmt, false, stmtResultFromProto);
-  }
-  #add(inStmt, wantRows, fromProto) {
-    if (this._index !== void 0) {
-      throw new MisuseError("This BatchStep has already been added to the batch");
-    }
-    const stmt = stmtToProto(this._batch._stream._sqlOwner(), inStmt, wantRows);
-    let condition;
-    if (this.#conds.length === 0) {
-      condition = void 0;
-    } else if (this.#conds.length === 1) {
-      condition = this.#conds[0];
-    } else {
-      condition = { type: "and", conds: this.#conds.slice() };
-    }
-    const proto = { stmt, condition };
-    return new Promise((outputCallback, errorCallback) => {
-      const callback = /* @__PURE__ */ __name((stepResult, stepError) => {
-        if (stepResult !== void 0 && stepError !== void 0) {
-          errorCallback(new ProtoError("Server returned both result and error"));
-        } else if (stepError !== void 0) {
-          errorCallback(errorFromProto(stepError));
-        } else if (stepResult !== void 0) {
-          outputCallback(fromProto(stepResult, this._batch._stream.intMode));
-        } else {
-          outputCallback(void 0);
-        }
-      }, "callback");
-      this._index = this._batch._steps.length;
-      this._batch._steps.push({ proto, callback });
-    });
-  }
-};
-var BatchCond = class _BatchCond {
-  static {
-    __name(this, "BatchCond");
-  }
-  /** @private */
-  _batch;
-  /** @private */
-  _proto;
-  /** @private */
-  constructor(batch, proto) {
-    this._batch = batch;
-    this._proto = proto;
-  }
-  /** Create a condition that evaluates to true when the given step executes successfully.
-   *
-   * If the given step fails error or is skipped because its condition evaluated to false, this
-   * condition evaluates to false.
-   */
-  static ok(step) {
-    return new _BatchCond(step._batch, { type: "ok", step: stepIndex(step) });
-  }
-  /** Create a condition that evaluates to true when the given step fails.
-   *
-   * If the given step succeeds or is skipped because its condition evaluated to false, this condition
-   * evaluates to false.
-   */
-  static error(step) {
-    return new _BatchCond(step._batch, { type: "error", step: stepIndex(step) });
-  }
-  /** Create a condition that is a logical negation of another condition.
-   */
-  static not(cond) {
-    return new _BatchCond(cond._batch, { type: "not", cond: cond._proto });
-  }
-  /** Create a condition that is a logical AND of other conditions.
-   */
-  static and(batch, conds) {
-    for (const cond of conds) {
-      checkCondBatch(batch, cond);
-    }
-    return new _BatchCond(batch, { type: "and", conds: conds.map((e) => e._proto) });
-  }
-  /** Create a condition that is a logical OR of other conditions.
-   */
-  static or(batch, conds) {
-    for (const cond of conds) {
-      checkCondBatch(batch, cond);
-    }
-    return new _BatchCond(batch, { type: "or", conds: conds.map((e) => e._proto) });
-  }
-  /** Create a condition that evaluates to true when the SQL connection is in autocommit mode (not inside an
-   * explicit transaction). This requires protocol version 3 or higher.
-   */
-  static isAutocommit(batch) {
-    batch._stream.client()._ensureVersion(3, "BatchCond.isAutocommit()");
-    return new _BatchCond(batch, { type: "is_autocommit" });
-  }
-};
-function stepIndex(step) {
-  if (step._index === void 0) {
-    throw new MisuseError("Cannot add a condition referencing a step that has not been added to the batch");
-  }
-  return step._index;
-}
-__name(stepIndex, "stepIndex");
-function checkCondBatch(expectedBatch, cond) {
-  if (cond._batch !== expectedBatch) {
-    throw new MisuseError("Cannot mix BatchCond objects for different Batch objects");
-  }
-}
-__name(checkCondBatch, "checkCondBatch");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/describe.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function describeResultFromProto(result) {
-  return {
-    paramNames: result.params.map((p) => p.name),
-    columns: result.cols,
-    isExplain: result.isExplain,
-    isReadonly: result.isReadonly
-  };
-}
-__name(describeResultFromProto, "describeResultFromProto");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/stream.js
-var Stream = class {
-  static {
-    __name(this, "Stream");
-  }
-  /** @private */
-  constructor(intMode) {
-    this.intMode = intMode;
-  }
-  /** Execute a statement and return rows. */
-  query(stmt) {
-    return this.#execute(stmt, true, rowsResultFromProto);
-  }
-  /** Execute a statement and return at most a single row. */
-  queryRow(stmt) {
-    return this.#execute(stmt, true, rowResultFromProto);
-  }
-  /** Execute a statement and return at most a single value. */
-  queryValue(stmt) {
-    return this.#execute(stmt, true, valueResultFromProto);
-  }
-  /** Execute a statement without returning rows. */
-  run(stmt) {
-    return this.#execute(stmt, false, stmtResultFromProto);
-  }
-  #execute(inStmt, wantRows, fromProto) {
-    const stmt = stmtToProto(this._sqlOwner(), inStmt, wantRows);
-    return this._execute(stmt).then((r) => fromProto(r, this.intMode));
-  }
-  /** Return a builder for creating and executing a batch.
-   *
-   * If `useCursor` is true, the batch will be executed using a Hrana cursor, which will stream results from
-   * the server to the client, which consumes less memory on the server. This requires protocol version 3 or
-   * higher.
-   */
-  batch(useCursor = false) {
-    return new Batch(this, useCursor);
-  }
-  /** Parse and analyze a statement. This requires protocol version 2 or higher. */
-  describe(inSql) {
-    const protoSql = sqlToProto(this._sqlOwner(), inSql);
-    return this._describe(protoSql).then(describeResultFromProto);
-  }
-  /** Execute a sequence of statements separated by semicolons. This requires protocol version 2 or higher.
-   * */
-  sequence(inSql) {
-    const protoSql = sqlToProto(this._sqlOwner(), inSql);
-    return this._sequence(protoSql);
-  }
-  /** Representation of integers returned from the database. See {@link IntMode}.
-   *
-   * This value affects the results of all operations on this stream.
-   */
-  intMode;
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/cursor.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/cursor.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Cursor = class {
-  static {
-    __name(this, "Cursor");
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/cursor.js
-var fetchChunkSize = 1e3;
-var fetchQueueSize = 10;
-var WsCursor = class extends Cursor {
-  static {
-    __name(this, "WsCursor");
-  }
-  #client;
-  #stream;
-  #cursorId;
-  #entryQueue;
-  #fetchQueue;
-  #closed;
-  #done;
-  /** @private */
-  constructor(client, stream, cursorId) {
-    super();
-    this.#client = client;
-    this.#stream = stream;
-    this.#cursorId = cursorId;
-    this.#entryQueue = new Queue();
-    this.#fetchQueue = new Queue();
-    this.#closed = void 0;
-    this.#done = false;
-  }
-  /** Fetch the next entry from the cursor. */
-  async next() {
-    for (; ; ) {
-      if (this.#closed !== void 0) {
-        throw new ClosedError("Cursor is closed", this.#closed);
-      }
-      while (!this.#done && this.#fetchQueue.length < fetchQueueSize) {
-        this.#fetchQueue.push(this.#fetch());
-      }
-      const entry = this.#entryQueue.shift();
-      if (this.#done || entry !== void 0) {
-        return entry;
-      }
-      await this.#fetchQueue.shift().then((response) => {
-        if (response === void 0) {
-          return;
-        }
-        for (const entry2 of response.entries) {
-          this.#entryQueue.push(entry2);
-        }
-        this.#done ||= response.done;
-      });
-    }
-  }
-  #fetch() {
-    return this.#stream._sendCursorRequest(this, {
-      type: "fetch_cursor",
-      cursorId: this.#cursorId,
-      maxCount: fetchChunkSize
-    }).then((resp) => resp, (error3) => {
-      this._setClosed(error3);
-      return void 0;
-    });
-  }
-  /** @private */
-  _setClosed(error3) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#closed = error3;
-    this.#stream._sendCursorRequest(this, {
-      type: "close_cursor",
-      cursorId: this.#cursorId
-    }).catch(() => void 0);
-    this.#stream._cursorClosed(this);
-  }
-  /** Close the cursor. */
-  close() {
-    this._setClosed(new ClientError("Cursor was manually closed"));
-  }
-  /** True if the cursor is closed. */
-  get closed() {
-    return this.#closed !== void 0;
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/stream.js
-var WsStream = class _WsStream extends Stream {
-  static {
-    __name(this, "WsStream");
-  }
-  #client;
-  #streamId;
-  #queue;
-  #cursor;
-  #closing;
-  #closed;
-  /** @private */
-  static open(client) {
-    const streamId = client._streamIdAlloc.alloc();
-    const stream = new _WsStream(client, streamId);
-    const responseCallback = /* @__PURE__ */ __name(() => void 0, "responseCallback");
-    const errorCallback = /* @__PURE__ */ __name((e) => stream.#setClosed(e), "errorCallback");
-    const request = { type: "open_stream", streamId };
-    client._sendRequest(request, { responseCallback, errorCallback });
-    return stream;
-  }
-  /** @private */
-  constructor(client, streamId) {
-    super(client.intMode);
-    this.#client = client;
-    this.#streamId = streamId;
-    this.#queue = new Queue();
-    this.#cursor = void 0;
-    this.#closing = false;
-    this.#closed = void 0;
-  }
-  /** Get the {@link WsClient} object that this stream belongs to. */
-  client() {
-    return this.#client;
-  }
-  /** @private */
-  _sqlOwner() {
-    return this.#client;
-  }
-  /** @private */
-  _execute(stmt) {
-    return this.#sendStreamRequest({
-      type: "execute",
-      streamId: this.#streamId,
-      stmt
-    }).then((response) => {
-      return response.result;
-    });
-  }
-  /** @private */
-  _batch(batch) {
-    return this.#sendStreamRequest({
-      type: "batch",
-      streamId: this.#streamId,
-      batch
-    }).then((response) => {
-      return response.result;
-    });
-  }
-  /** @private */
-  _describe(protoSql) {
-    this.#client._ensureVersion(2, "describe()");
-    return this.#sendStreamRequest({
-      type: "describe",
-      streamId: this.#streamId,
-      sql: protoSql.sql,
-      sqlId: protoSql.sqlId
-    }).then((response) => {
-      return response.result;
-    });
-  }
-  /** @private */
-  _sequence(protoSql) {
-    this.#client._ensureVersion(2, "sequence()");
-    return this.#sendStreamRequest({
-      type: "sequence",
-      streamId: this.#streamId,
-      sql: protoSql.sql,
-      sqlId: protoSql.sqlId
-    }).then((_response) => {
-      return void 0;
-    });
-  }
-  /** Check whether the SQL connection underlying this stream is in autocommit state (i.e., outside of an
-   * explicit transaction). This requires protocol version 3 or higher.
-   */
-  getAutocommit() {
-    this.#client._ensureVersion(3, "getAutocommit()");
-    return this.#sendStreamRequest({
-      type: "get_autocommit",
-      streamId: this.#streamId
-    }).then((response) => {
-      return response.isAutocommit;
-    });
-  }
-  #sendStreamRequest(request) {
-    return new Promise((responseCallback, errorCallback) => {
-      this.#pushToQueue({ type: "request", request, responseCallback, errorCallback });
-    });
-  }
-  /** @private */
-  _openCursor(batch) {
-    this.#client._ensureVersion(3, "cursor");
-    return new Promise((cursorCallback, errorCallback) => {
-      this.#pushToQueue({ type: "cursor", batch, cursorCallback, errorCallback });
-    });
-  }
-  /** @private */
-  _sendCursorRequest(cursor, request) {
-    if (cursor !== this.#cursor) {
-      throw new InternalError("Cursor not associated with the stream attempted to execute a request");
-    }
-    return new Promise((responseCallback, errorCallback) => {
-      if (this.#closed !== void 0) {
-        errorCallback(new ClosedError("Stream is closed", this.#closed));
-      } else {
-        this.#client._sendRequest(request, { responseCallback, errorCallback });
-      }
-    });
-  }
-  /** @private */
-  _cursorClosed(cursor) {
-    if (cursor !== this.#cursor) {
-      throw new InternalError("Cursor was closed, but it was not associated with the stream");
-    }
-    this.#cursor = void 0;
-    this.#flushQueue();
-  }
-  #pushToQueue(entry) {
-    if (this.#closed !== void 0) {
-      entry.errorCallback(new ClosedError("Stream is closed", this.#closed));
-    } else if (this.#closing) {
-      entry.errorCallback(new ClosedError("Stream is closing", void 0));
-    } else {
-      this.#queue.push(entry);
-      this.#flushQueue();
-    }
-  }
-  #flushQueue() {
-    for (; ; ) {
-      const entry = this.#queue.first();
-      if (entry === void 0 && this.#cursor === void 0 && this.#closing) {
-        this.#setClosed(new ClientError("Stream was gracefully closed"));
-        break;
-      } else if (entry?.type === "request" && this.#cursor === void 0) {
-        const { request, responseCallback, errorCallback } = entry;
-        this.#queue.shift();
-        this.#client._sendRequest(request, { responseCallback, errorCallback });
-      } else if (entry?.type === "cursor" && this.#cursor === void 0) {
-        const { batch, cursorCallback } = entry;
-        this.#queue.shift();
-        const cursorId = this.#client._cursorIdAlloc.alloc();
-        const cursor = new WsCursor(this.#client, this, cursorId);
-        const request = {
-          type: "open_cursor",
-          streamId: this.#streamId,
-          cursorId,
-          batch
-        };
-        const responseCallback = /* @__PURE__ */ __name(() => void 0, "responseCallback");
-        const errorCallback = /* @__PURE__ */ __name((e) => cursor._setClosed(e), "errorCallback");
-        this.#client._sendRequest(request, { responseCallback, errorCallback });
-        this.#cursor = cursor;
-        cursorCallback(cursor);
-      } else {
-        break;
-      }
-    }
-  }
-  #setClosed(error3) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#closed = error3;
-    if (this.#cursor !== void 0) {
-      this.#cursor._setClosed(error3);
-    }
-    for (; ; ) {
-      const entry = this.#queue.shift();
-      if (entry !== void 0) {
-        entry.errorCallback(error3);
-      } else {
-        break;
-      }
-    }
-    const request = { type: "close_stream", streamId: this.#streamId };
-    const responseCallback = /* @__PURE__ */ __name(() => this.#client._streamIdAlloc.free(this.#streamId), "responseCallback");
-    const errorCallback = /* @__PURE__ */ __name(() => void 0, "errorCallback");
-    this.#client._sendRequest(request, { responseCallback, errorCallback });
-  }
-  /** Immediately close the stream. */
-  close() {
-    this.#setClosed(new ClientError("Stream was manually closed"));
-  }
-  /** Gracefully close the stream. */
-  closeGracefully() {
-    this.#closing = true;
-    this.#flushQueue();
-  }
-  /** True if the stream is closed or closing. */
-  get closed() {
-    return this.#closed !== void 0 || this.#closing;
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/json_encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/shared/json_encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function Stmt2(w, msg) {
-  if (msg.sql !== void 0) {
-    w.string("sql", msg.sql);
-  }
-  if (msg.sqlId !== void 0) {
-    w.number("sql_id", msg.sqlId);
-  }
-  w.arrayObjects("args", msg.args, Value);
-  w.arrayObjects("named_args", msg.namedArgs, NamedArg);
-  w.boolean("want_rows", msg.wantRows);
-}
-__name(Stmt2, "Stmt");
-function NamedArg(w, msg) {
-  w.string("name", msg.name);
-  w.object("value", msg.value, Value);
-}
-__name(NamedArg, "NamedArg");
-function Batch2(w, msg) {
-  w.arrayObjects("steps", msg.steps, BatchStep2);
-}
-__name(Batch2, "Batch");
-function BatchStep2(w, msg) {
-  if (msg.condition !== void 0) {
-    w.object("condition", msg.condition, BatchCond2);
-  }
-  w.object("stmt", msg.stmt, Stmt2);
-}
-__name(BatchStep2, "BatchStep");
-function BatchCond2(w, msg) {
-  w.stringRaw("type", msg.type);
-  if (msg.type === "ok" || msg.type === "error") {
-    w.number("step", msg.step);
-  } else if (msg.type === "not") {
-    w.object("cond", msg.cond, BatchCond2);
-  } else if (msg.type === "and" || msg.type === "or") {
-    w.arrayObjects("conds", msg.conds, BatchCond2);
-  } else if (msg.type === "is_autocommit") {
-  } else {
-    throw impossible(msg, "Impossible type of BatchCond");
-  }
-}
-__name(BatchCond2, "BatchCond");
-function Value(w, msg) {
-  if (msg === null) {
-    w.stringRaw("type", "null");
-  } else if (typeof msg === "bigint") {
-    w.stringRaw("type", "integer");
-    w.stringRaw("value", "" + msg);
-  } else if (typeof msg === "number") {
-    w.stringRaw("type", "float");
-    w.number("value", msg);
-  } else if (typeof msg === "string") {
-    w.stringRaw("type", "text");
-    w.string("value", msg);
-  } else if (msg instanceof Uint8Array) {
-    w.stringRaw("type", "blob");
-    w.stringRaw("base64", gBase64.fromUint8Array(msg));
-  } else if (msg === void 0) {
-  } else {
-    throw impossible(msg, "Impossible type of Value");
-  }
-}
-__name(Value, "Value");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/json_encode.js
-function ClientMsg(w, msg) {
-  w.stringRaw("type", msg.type);
-  if (msg.type === "hello") {
-    if (msg.jwt !== void 0) {
-      w.string("jwt", msg.jwt);
-    }
-  } else if (msg.type === "request") {
-    w.number("request_id", msg.requestId);
-    w.object("request", msg.request, Request2);
-  } else {
-    throw impossible(msg, "Impossible type of ClientMsg");
-  }
-}
-__name(ClientMsg, "ClientMsg");
-function Request2(w, msg) {
-  w.stringRaw("type", msg.type);
-  if (msg.type === "open_stream") {
-    w.number("stream_id", msg.streamId);
-  } else if (msg.type === "close_stream") {
-    w.number("stream_id", msg.streamId);
-  } else if (msg.type === "execute") {
-    w.number("stream_id", msg.streamId);
-    w.object("stmt", msg.stmt, Stmt2);
-  } else if (msg.type === "batch") {
-    w.number("stream_id", msg.streamId);
-    w.object("batch", msg.batch, Batch2);
-  } else if (msg.type === "open_cursor") {
-    w.number("stream_id", msg.streamId);
-    w.number("cursor_id", msg.cursorId);
-    w.object("batch", msg.batch, Batch2);
-  } else if (msg.type === "close_cursor") {
-    w.number("cursor_id", msg.cursorId);
-  } else if (msg.type === "fetch_cursor") {
-    w.number("cursor_id", msg.cursorId);
-    w.number("max_count", msg.maxCount);
-  } else if (msg.type === "sequence") {
-    w.number("stream_id", msg.streamId);
-    if (msg.sql !== void 0) {
-      w.string("sql", msg.sql);
-    }
-    if (msg.sqlId !== void 0) {
-      w.number("sql_id", msg.sqlId);
-    }
-  } else if (msg.type === "describe") {
-    w.number("stream_id", msg.streamId);
-    if (msg.sql !== void 0) {
-      w.string("sql", msg.sql);
-    }
-    if (msg.sqlId !== void 0) {
-      w.number("sql_id", msg.sqlId);
-    }
-  } else if (msg.type === "store_sql") {
-    w.number("sql_id", msg.sqlId);
-    w.string("sql", msg.sql);
-  } else if (msg.type === "close_sql") {
-    w.number("sql_id", msg.sqlId);
-  } else if (msg.type === "get_autocommit") {
-    w.number("stream_id", msg.streamId);
-  } else {
-    throw impossible(msg, "Impossible type of Request");
-  }
-}
-__name(Request2, "Request");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/protobuf_encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/shared/protobuf_encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function Stmt3(w, msg) {
-  if (msg.sql !== void 0) {
-    w.string(1, msg.sql);
-  }
-  if (msg.sqlId !== void 0) {
-    w.int32(2, msg.sqlId);
-  }
-  for (const arg of msg.args) {
-    w.message(3, arg, Value2);
-  }
-  for (const arg of msg.namedArgs) {
-    w.message(4, arg, NamedArg2);
-  }
-  w.bool(5, msg.wantRows);
-}
-__name(Stmt3, "Stmt");
-function NamedArg2(w, msg) {
-  w.string(1, msg.name);
-  w.message(2, msg.value, Value2);
-}
-__name(NamedArg2, "NamedArg");
-function Batch3(w, msg) {
-  for (const step of msg.steps) {
-    w.message(1, step, BatchStep3);
-  }
-}
-__name(Batch3, "Batch");
-function BatchStep3(w, msg) {
-  if (msg.condition !== void 0) {
-    w.message(1, msg.condition, BatchCond3);
-  }
-  w.message(2, msg.stmt, Stmt3);
-}
-__name(BatchStep3, "BatchStep");
-function BatchCond3(w, msg) {
-  if (msg.type === "ok") {
-    w.uint32(1, msg.step);
-  } else if (msg.type === "error") {
-    w.uint32(2, msg.step);
-  } else if (msg.type === "not") {
-    w.message(3, msg.cond, BatchCond3);
-  } else if (msg.type === "and") {
-    w.message(4, msg.conds, BatchCondList);
-  } else if (msg.type === "or") {
-    w.message(5, msg.conds, BatchCondList);
-  } else if (msg.type === "is_autocommit") {
-    w.message(6, void 0, Empty);
-  } else {
-    throw impossible(msg, "Impossible type of BatchCond");
-  }
-}
-__name(BatchCond3, "BatchCond");
-function BatchCondList(w, msg) {
-  for (const cond of msg) {
-    w.message(1, cond, BatchCond3);
-  }
-}
-__name(BatchCondList, "BatchCondList");
-function Value2(w, msg) {
-  if (msg === null) {
-    w.message(1, void 0, Empty);
-  } else if (typeof msg === "bigint") {
-    w.sint64(2, msg);
-  } else if (typeof msg === "number") {
-    w.double(3, msg);
-  } else if (typeof msg === "string") {
-    w.string(4, msg);
-  } else if (msg instanceof Uint8Array) {
-    w.bytes(5, msg);
-  } else if (msg === void 0) {
-  } else {
-    throw impossible(msg, "Impossible type of Value");
-  }
-}
-__name(Value2, "Value");
-function Empty(_w, _msg) {
-}
-__name(Empty, "Empty");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/protobuf_encode.js
-function ClientMsg2(w, msg) {
-  if (msg.type === "hello") {
-    w.message(1, msg, HelloMsg);
-  } else if (msg.type === "request") {
-    w.message(2, msg, RequestMsg);
-  } else {
-    throw impossible(msg, "Impossible type of ClientMsg");
-  }
-}
-__name(ClientMsg2, "ClientMsg");
-function HelloMsg(w, msg) {
-  if (msg.jwt !== void 0) {
-    w.string(1, msg.jwt);
-  }
-}
-__name(HelloMsg, "HelloMsg");
-function RequestMsg(w, msg) {
-  w.int32(1, msg.requestId);
-  const request = msg.request;
-  if (request.type === "open_stream") {
-    w.message(2, request, OpenStreamReq);
-  } else if (request.type === "close_stream") {
-    w.message(3, request, CloseStreamReq);
-  } else if (request.type === "execute") {
-    w.message(4, request, ExecuteReq);
-  } else if (request.type === "batch") {
-    w.message(5, request, BatchReq);
-  } else if (request.type === "open_cursor") {
-    w.message(6, request, OpenCursorReq);
-  } else if (request.type === "close_cursor") {
-    w.message(7, request, CloseCursorReq);
-  } else if (request.type === "fetch_cursor") {
-    w.message(8, request, FetchCursorReq);
-  } else if (request.type === "sequence") {
-    w.message(9, request, SequenceReq);
-  } else if (request.type === "describe") {
-    w.message(10, request, DescribeReq);
-  } else if (request.type === "store_sql") {
-    w.message(11, request, StoreSqlReq);
-  } else if (request.type === "close_sql") {
-    w.message(12, request, CloseSqlReq);
-  } else if (request.type === "get_autocommit") {
-    w.message(13, request, GetAutocommitReq);
-  } else {
-    throw impossible(request, "Impossible type of Request");
-  }
-}
-__name(RequestMsg, "RequestMsg");
-function OpenStreamReq(w, msg) {
-  w.int32(1, msg.streamId);
-}
-__name(OpenStreamReq, "OpenStreamReq");
-function CloseStreamReq(w, msg) {
-  w.int32(1, msg.streamId);
-}
-__name(CloseStreamReq, "CloseStreamReq");
-function ExecuteReq(w, msg) {
-  w.int32(1, msg.streamId);
-  w.message(2, msg.stmt, Stmt3);
-}
-__name(ExecuteReq, "ExecuteReq");
-function BatchReq(w, msg) {
-  w.int32(1, msg.streamId);
-  w.message(2, msg.batch, Batch3);
-}
-__name(BatchReq, "BatchReq");
-function OpenCursorReq(w, msg) {
-  w.int32(1, msg.streamId);
-  w.int32(2, msg.cursorId);
-  w.message(3, msg.batch, Batch3);
-}
-__name(OpenCursorReq, "OpenCursorReq");
-function CloseCursorReq(w, msg) {
-  w.int32(1, msg.cursorId);
-}
-__name(CloseCursorReq, "CloseCursorReq");
-function FetchCursorReq(w, msg) {
-  w.int32(1, msg.cursorId);
-  w.uint32(2, msg.maxCount);
-}
-__name(FetchCursorReq, "FetchCursorReq");
-function SequenceReq(w, msg) {
-  w.int32(1, msg.streamId);
-  if (msg.sql !== void 0) {
-    w.string(2, msg.sql);
-  }
-  if (msg.sqlId !== void 0) {
-    w.int32(3, msg.sqlId);
-  }
-}
-__name(SequenceReq, "SequenceReq");
-function DescribeReq(w, msg) {
-  w.int32(1, msg.streamId);
-  if (msg.sql !== void 0) {
-    w.string(2, msg.sql);
-  }
-  if (msg.sqlId !== void 0) {
-    w.int32(3, msg.sqlId);
-  }
-}
-__name(DescribeReq, "DescribeReq");
-function StoreSqlReq(w, msg) {
-  w.int32(1, msg.sqlId);
-  w.string(2, msg.sql);
-}
-__name(StoreSqlReq, "StoreSqlReq");
-function CloseSqlReq(w, msg) {
-  w.int32(1, msg.sqlId);
-}
-__name(CloseSqlReq, "CloseSqlReq");
-function GetAutocommitReq(w, msg) {
-  w.int32(1, msg.streamId);
-}
-__name(GetAutocommitReq, "GetAutocommitReq");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/json_decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/shared/json_decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function Error2(obj) {
-  const message = string(obj["message"]);
-  const code = stringOpt(obj["code"]);
-  return { message, code };
-}
-__name(Error2, "Error");
-function StmtResult(obj) {
-  const cols = arrayObjectsMap(obj["cols"], Col);
-  const rows = array(obj["rows"]).map((rowObj) => arrayObjectsMap(rowObj, Value3));
-  const affectedRowCount = number(obj["affected_row_count"]);
-  const lastInsertRowidStr = stringOpt(obj["last_insert_rowid"]);
-  const lastInsertRowid = lastInsertRowidStr !== void 0 ? BigInt(lastInsertRowidStr) : void 0;
-  return { cols, rows, affectedRowCount, lastInsertRowid };
-}
-__name(StmtResult, "StmtResult");
-function Col(obj) {
-  const name = stringOpt(obj["name"]);
-  const decltype = stringOpt(obj["decltype"]);
-  return { name, decltype };
-}
-__name(Col, "Col");
-function BatchResult(obj) {
-  const stepResults = /* @__PURE__ */ new Map();
-  array(obj["step_results"]).forEach((value, i) => {
-    if (value !== null) {
-      stepResults.set(i, StmtResult(object(value)));
-    }
-  });
-  const stepErrors = /* @__PURE__ */ new Map();
-  array(obj["step_errors"]).forEach((value, i) => {
-    if (value !== null) {
-      stepErrors.set(i, Error2(object(value)));
-    }
-  });
-  return { stepResults, stepErrors };
-}
-__name(BatchResult, "BatchResult");
-function CursorEntry(obj) {
-  const type2 = string(obj["type"]);
-  if (type2 === "step_begin") {
-    const step = number(obj["step"]);
-    const cols = arrayObjectsMap(obj["cols"], Col);
-    return { type: "step_begin", step, cols };
-  } else if (type2 === "step_end") {
-    const affectedRowCount = number(obj["affected_row_count"]);
-    const lastInsertRowidStr = stringOpt(obj["last_insert_rowid"]);
-    const lastInsertRowid = lastInsertRowidStr !== void 0 ? BigInt(lastInsertRowidStr) : void 0;
-    return { type: "step_end", affectedRowCount, lastInsertRowid };
-  } else if (type2 === "step_error") {
-    const step = number(obj["step"]);
-    const error3 = Error2(object(obj["error"]));
-    return { type: "step_error", step, error: error3 };
-  } else if (type2 === "row") {
-    const row = arrayObjectsMap(obj["row"], Value3);
-    return { type: "row", row };
-  } else if (type2 === "error") {
-    const error3 = Error2(object(obj["error"]));
-    return { type: "error", error: error3 };
-  } else {
-    throw new ProtoError("Unexpected type of CursorEntry");
-  }
-}
-__name(CursorEntry, "CursorEntry");
-function DescribeResult(obj) {
-  const params = arrayObjectsMap(obj["params"], DescribeParam);
-  const cols = arrayObjectsMap(obj["cols"], DescribeCol);
-  const isExplain = boolean(obj["is_explain"]);
-  const isReadonly = boolean(obj["is_readonly"]);
-  return { params, cols, isExplain, isReadonly };
-}
-__name(DescribeResult, "DescribeResult");
-function DescribeParam(obj) {
-  const name = stringOpt(obj["name"]);
-  return { name };
-}
-__name(DescribeParam, "DescribeParam");
-function DescribeCol(obj) {
-  const name = string(obj["name"]);
-  const decltype = stringOpt(obj["decltype"]);
-  return { name, decltype };
-}
-__name(DescribeCol, "DescribeCol");
-function Value3(obj) {
-  const type2 = string(obj["type"]);
-  if (type2 === "null") {
-    return null;
-  } else if (type2 === "integer") {
-    const value = string(obj["value"]);
-    return BigInt(value);
-  } else if (type2 === "float") {
-    return number(obj["value"]);
-  } else if (type2 === "text") {
-    return string(obj["value"]);
-  } else if (type2 === "blob") {
-    return gBase64.toUint8Array(string(obj["base64"]));
-  } else {
-    throw new ProtoError("Unexpected type of Value");
-  }
-}
-__name(Value3, "Value");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/json_decode.js
-function ServerMsg(obj) {
-  const type2 = string(obj["type"]);
-  if (type2 === "hello_ok") {
-    return { type: "hello_ok" };
-  } else if (type2 === "hello_error") {
-    const error3 = Error2(object(obj["error"]));
-    return { type: "hello_error", error: error3 };
-  } else if (type2 === "response_ok") {
-    const requestId = number(obj["request_id"]);
-    const response = Response2(object(obj["response"]));
-    return { type: "response_ok", requestId, response };
-  } else if (type2 === "response_error") {
-    const requestId = number(obj["request_id"]);
-    const error3 = Error2(object(obj["error"]));
-    return { type: "response_error", requestId, error: error3 };
-  } else {
-    throw new ProtoError("Unexpected type of ServerMsg");
-  }
-}
-__name(ServerMsg, "ServerMsg");
-function Response2(obj) {
-  const type2 = string(obj["type"]);
-  if (type2 === "open_stream") {
-    return { type: "open_stream" };
-  } else if (type2 === "close_stream") {
-    return { type: "close_stream" };
-  } else if (type2 === "execute") {
-    const result = StmtResult(object(obj["result"]));
-    return { type: "execute", result };
-  } else if (type2 === "batch") {
-    const result = BatchResult(object(obj["result"]));
-    return { type: "batch", result };
-  } else if (type2 === "open_cursor") {
-    return { type: "open_cursor" };
-  } else if (type2 === "close_cursor") {
-    return { type: "close_cursor" };
-  } else if (type2 === "fetch_cursor") {
-    const entries = arrayObjectsMap(obj["entries"], CursorEntry);
-    const done = boolean(obj["done"]);
-    return { type: "fetch_cursor", entries, done };
-  } else if (type2 === "sequence") {
-    return { type: "sequence" };
-  } else if (type2 === "describe") {
-    const result = DescribeResult(object(obj["result"]));
-    return { type: "describe", result };
-  } else if (type2 === "store_sql") {
-    return { type: "store_sql" };
-  } else if (type2 === "close_sql") {
-    return { type: "close_sql" };
-  } else if (type2 === "get_autocommit") {
-    const isAutocommit = boolean(obj["is_autocommit"]);
-    return { type: "get_autocommit", isAutocommit };
-  } else {
-    throw new ProtoError("Unexpected type of Response");
-  }
-}
-__name(Response2, "Response");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/protobuf_decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/shared/protobuf_decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var Error3 = {
-  default() {
-    return { message: "", code: void 0 };
-  },
-  1(r, msg) {
-    msg.message = r.string();
-  },
-  2(r, msg) {
-    msg.code = r.string();
-  }
-};
-var StmtResult2 = {
-  default() {
-    return {
-      cols: [],
-      rows: [],
-      affectedRowCount: 0,
-      lastInsertRowid: void 0
-    };
-  },
-  1(r, msg) {
-    msg.cols.push(r.message(Col2));
-  },
-  2(r, msg) {
-    msg.rows.push(r.message(Row));
-  },
-  3(r, msg) {
-    msg.affectedRowCount = Number(r.uint64());
-  },
-  4(r, msg) {
-    msg.lastInsertRowid = r.sint64();
-  }
-};
-var Col2 = {
-  default() {
-    return { name: void 0, decltype: void 0 };
-  },
-  1(r, msg) {
-    msg.name = r.string();
-  },
-  2(r, msg) {
-    msg.decltype = r.string();
-  }
-};
-var Row = {
-  default() {
-    return [];
-  },
-  1(r, msg) {
-    msg.push(r.message(Value4));
-  }
-};
-var BatchResult2 = {
-  default() {
-    return { stepResults: /* @__PURE__ */ new Map(), stepErrors: /* @__PURE__ */ new Map() };
-  },
-  1(r, msg) {
-    const [key, value] = r.message(BatchResultStepResult);
-    msg.stepResults.set(key, value);
-  },
-  2(r, msg) {
-    const [key, value] = r.message(BatchResultStepError);
-    msg.stepErrors.set(key, value);
-  }
-};
-var BatchResultStepResult = {
-  default() {
-    return [0, StmtResult2.default()];
-  },
-  1(r, msg) {
-    msg[0] = r.uint32();
-  },
-  2(r, msg) {
-    msg[1] = r.message(StmtResult2);
-  }
-};
-var BatchResultStepError = {
-  default() {
-    return [0, Error3.default()];
-  },
-  1(r, msg) {
-    msg[0] = r.uint32();
-  },
-  2(r, msg) {
-    msg[1] = r.message(Error3);
-  }
-};
-var CursorEntry2 = {
-  default() {
-    return { type: "none" };
-  },
-  1(r) {
-    return r.message(StepBeginEntry);
-  },
-  2(r) {
-    return r.message(StepEndEntry);
-  },
-  3(r) {
-    return r.message(StepErrorEntry);
-  },
-  4(r) {
-    return { type: "row", row: r.message(Row) };
-  },
-  5(r) {
-    return { type: "error", error: r.message(Error3) };
-  }
-};
-var StepBeginEntry = {
-  default() {
-    return { type: "step_begin", step: 0, cols: [] };
-  },
-  1(r, msg) {
-    msg.step = r.uint32();
-  },
-  2(r, msg) {
-    msg.cols.push(r.message(Col2));
-  }
-};
-var StepEndEntry = {
-  default() {
-    return {
-      type: "step_end",
-      affectedRowCount: 0,
-      lastInsertRowid: void 0
-    };
-  },
-  1(r, msg) {
-    msg.affectedRowCount = r.uint32();
-  },
-  2(r, msg) {
-    msg.lastInsertRowid = r.uint64();
-  }
-};
-var StepErrorEntry = {
-  default() {
-    return {
-      type: "step_error",
-      step: 0,
-      error: Error3.default()
-    };
-  },
-  1(r, msg) {
-    msg.step = r.uint32();
-  },
-  2(r, msg) {
-    msg.error = r.message(Error3);
-  }
-};
-var DescribeResult2 = {
-  default() {
-    return {
-      params: [],
-      cols: [],
-      isExplain: false,
-      isReadonly: false
-    };
-  },
-  1(r, msg) {
-    msg.params.push(r.message(DescribeParam2));
-  },
-  2(r, msg) {
-    msg.cols.push(r.message(DescribeCol2));
-  },
-  3(r, msg) {
-    msg.isExplain = r.bool();
-  },
-  4(r, msg) {
-    msg.isReadonly = r.bool();
-  }
-};
-var DescribeParam2 = {
-  default() {
-    return { name: void 0 };
-  },
-  1(r, msg) {
-    msg.name = r.string();
-  }
-};
-var DescribeCol2 = {
-  default() {
-    return { name: "", decltype: void 0 };
-  },
-  1(r, msg) {
-    msg.name = r.string();
-  },
-  2(r, msg) {
-    msg.decltype = r.string();
-  }
-};
-var Value4 = {
-  default() {
-    return void 0;
-  },
-  1(r) {
-    return null;
-  },
-  2(r) {
-    return r.sint64();
-  },
-  3(r) {
-    return r.double();
-  },
-  4(r) {
-    return r.string();
-  },
-  5(r) {
-    return r.bytes();
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/protobuf_decode.js
-var ServerMsg2 = {
-  default() {
-    return { type: "none" };
-  },
-  1(r) {
-    return { type: "hello_ok" };
-  },
-  2(r) {
-    return r.message(HelloErrorMsg);
-  },
-  3(r) {
-    return r.message(ResponseOkMsg);
-  },
-  4(r) {
-    return r.message(ResponseErrorMsg);
-  }
-};
-var HelloErrorMsg = {
-  default() {
-    return { type: "hello_error", error: Error3.default() };
-  },
-  1(r, msg) {
-    msg.error = r.message(Error3);
-  }
-};
-var ResponseErrorMsg = {
-  default() {
-    return { type: "response_error", requestId: 0, error: Error3.default() };
-  },
-  1(r, msg) {
-    msg.requestId = r.int32();
-  },
-  2(r, msg) {
-    msg.error = r.message(Error3);
-  }
-};
-var ResponseOkMsg = {
-  default() {
-    return {
-      type: "response_ok",
-      requestId: 0,
-      response: { type: "none" }
-    };
-  },
-  1(r, msg) {
-    msg.requestId = r.int32();
-  },
-  2(r, msg) {
-    msg.response = { type: "open_stream" };
-  },
-  3(r, msg) {
-    msg.response = { type: "close_stream" };
-  },
-  4(r, msg) {
-    msg.response = r.message(ExecuteResp);
-  },
-  5(r, msg) {
-    msg.response = r.message(BatchResp);
-  },
-  6(r, msg) {
-    msg.response = { type: "open_cursor" };
-  },
-  7(r, msg) {
-    msg.response = { type: "close_cursor" };
-  },
-  8(r, msg) {
-    msg.response = r.message(FetchCursorResp);
-  },
-  9(r, msg) {
-    msg.response = { type: "sequence" };
-  },
-  10(r, msg) {
-    msg.response = r.message(DescribeResp);
-  },
-  11(r, msg) {
-    msg.response = { type: "store_sql" };
-  },
-  12(r, msg) {
-    msg.response = { type: "close_sql" };
-  },
-  13(r, msg) {
-    msg.response = r.message(GetAutocommitResp);
-  }
-};
-var ExecuteResp = {
-  default() {
-    return { type: "execute", result: StmtResult2.default() };
-  },
-  1(r, msg) {
-    msg.result = r.message(StmtResult2);
-  }
-};
-var BatchResp = {
-  default() {
-    return { type: "batch", result: BatchResult2.default() };
-  },
-  1(r, msg) {
-    msg.result = r.message(BatchResult2);
-  }
-};
-var FetchCursorResp = {
-  default() {
-    return { type: "fetch_cursor", entries: [], done: false };
-  },
-  1(r, msg) {
-    msg.entries.push(r.message(CursorEntry2));
-  },
-  2(r, msg) {
-    msg.done = r.bool();
-  }
-};
-var DescribeResp = {
-  default() {
-    return { type: "describe", result: DescribeResult2.default() };
-  },
-  1(r, msg) {
-    msg.result = r.message(DescribeResult2);
-  }
-};
-var GetAutocommitResp = {
-  default() {
-    return { type: "get_autocommit", isAutocommit: false };
-  },
-  1(r, msg) {
-    msg.isAutocommit = r.bool();
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/ws/client.js
-var subprotocolsV2 = /* @__PURE__ */ new Map([
-  ["hrana2", { version: 2, encoding: "json" }],
-  ["hrana1", { version: 1, encoding: "json" }]
-]);
-var subprotocolsV3 = /* @__PURE__ */ new Map([
-  ["hrana3-protobuf", { version: 3, encoding: "protobuf" }],
-  ["hrana3", { version: 3, encoding: "json" }],
-  ["hrana2", { version: 2, encoding: "json" }],
-  ["hrana1", { version: 1, encoding: "json" }]
-]);
-var WsClient = class extends Client {
-  static {
-    __name(this, "WsClient");
-  }
-  #socket;
-  // List of callbacks that we queue until the socket transitions from the CONNECTING to the OPEN state.
-  #openCallbacks;
-  // Have we already transitioned from CONNECTING to OPEN and fired the callbacks in #openCallbacks?
-  #opened;
-  // Stores the error that caused us to close the client (and the socket). If we are not closed, this is
-  // `undefined`.
-  #closed;
-  // Have we received a response to our "hello" from the server?
-  #recvdHello;
-  // Subprotocol negotiated with the server. It is only available after the socket transitions to the OPEN
-  // state.
-  #subprotocol;
-  // Has the `getVersion()` function been called? This is only used to validate that the API is used
-  // correctly.
-  #getVersionCalled;
-  // A map from request id to the responses that we expect to receive from the server.
-  #responseMap;
-  // An allocator of request ids.
-  #requestIdAlloc;
-  // An allocator of stream ids.
-  /** @private */
-  _streamIdAlloc;
-  // An allocator of cursor ids.
-  /** @private */
-  _cursorIdAlloc;
-  // An allocator of SQL text ids.
-  #sqlIdAlloc;
-  /** @private */
-  constructor(socket, jwt) {
-    super();
-    this.#socket = socket;
-    this.#openCallbacks = [];
-    this.#opened = false;
-    this.#closed = void 0;
-    this.#recvdHello = false;
-    this.#subprotocol = void 0;
-    this.#getVersionCalled = false;
-    this.#responseMap = /* @__PURE__ */ new Map();
-    this.#requestIdAlloc = new IdAlloc();
-    this._streamIdAlloc = new IdAlloc();
-    this._cursorIdAlloc = new IdAlloc();
-    this.#sqlIdAlloc = new IdAlloc();
-    this.#socket.binaryType = "arraybuffer";
-    this.#socket.addEventListener("open", () => this.#onSocketOpen());
-    this.#socket.addEventListener("close", (event) => this.#onSocketClose(event));
-    this.#socket.addEventListener("error", (event) => this.#onSocketError(event));
-    this.#socket.addEventListener("message", (event) => this.#onSocketMessage(event));
-    this.#send({ type: "hello", jwt });
-  }
-  // Send (or enqueue to send) a message to the server.
-  #send(msg) {
-    if (this.#closed !== void 0) {
-      throw new InternalError("Trying to send a message on a closed client");
-    }
-    if (this.#opened) {
-      this.#sendToSocket(msg);
-    } else {
-      const openCallback = /* @__PURE__ */ __name(() => this.#sendToSocket(msg), "openCallback");
-      const errorCallback = /* @__PURE__ */ __name(() => void 0, "errorCallback");
-      this.#openCallbacks.push({ openCallback, errorCallback });
-    }
-  }
-  // The socket transitioned from CONNECTING to OPEN
-  #onSocketOpen() {
-    const protocol = this.#socket.protocol;
-    if (protocol === void 0) {
-      this.#setClosed(new ClientError("The `WebSocket.protocol` property is undefined. This most likely means that the WebSocket implementation provided by the environment is broken. If you are using Miniflare 2, please update to Miniflare 3, which fixes this problem."));
-      return;
-    } else if (protocol === "") {
-      this.#subprotocol = { version: 1, encoding: "json" };
-    } else {
-      this.#subprotocol = subprotocolsV3.get(protocol);
-      if (this.#subprotocol === void 0) {
-        this.#setClosed(new ProtoError(`Unrecognized WebSocket subprotocol: ${JSON.stringify(protocol)}`));
-        return;
-      }
-    }
-    for (const callbacks of this.#openCallbacks) {
-      callbacks.openCallback();
-    }
-    this.#openCallbacks.length = 0;
-    this.#opened = true;
-  }
-  #sendToSocket(msg) {
-    const encoding = this.#subprotocol.encoding;
-    if (encoding === "json") {
-      const jsonMsg = writeJsonObject(msg, ClientMsg);
-      this.#socket.send(jsonMsg);
-    } else if (encoding === "protobuf") {
-      const protobufMsg = writeProtobufMessage(msg, ClientMsg2);
-      this.#socket.send(protobufMsg);
-    } else {
-      throw impossible(encoding, "Impossible encoding");
-    }
-  }
-  /** Get the protocol version negotiated with the server, possibly waiting until the socket is open. */
-  getVersion() {
-    return new Promise((versionCallback, errorCallback) => {
-      this.#getVersionCalled = true;
-      if (this.#closed !== void 0) {
-        errorCallback(this.#closed);
-      } else if (!this.#opened) {
-        const openCallback = /* @__PURE__ */ __name(() => versionCallback(this.#subprotocol.version), "openCallback");
-        this.#openCallbacks.push({ openCallback, errorCallback });
-      } else {
-        versionCallback(this.#subprotocol.version);
-      }
-    });
-  }
-  // Make sure that the negotiated version is at least `minVersion`.
-  /** @private */
-  _ensureVersion(minVersion, feature) {
-    if (this.#subprotocol === void 0 || !this.#getVersionCalled) {
-      throw new ProtocolVersionError(`${feature} is supported only on protocol version ${minVersion} and higher, but the version supported by the WebSocket server is not yet known. Use Client.getVersion() to wait until the version is available.`);
-    } else if (this.#subprotocol.version < minVersion) {
-      throw new ProtocolVersionError(`${feature} is supported on protocol version ${minVersion} and higher, but the WebSocket server only supports version ${this.#subprotocol.version}`);
-    }
-  }
-  // Send a request to the server and invoke a callback when we get the response.
-  /** @private */
-  _sendRequest(request, callbacks) {
-    if (this.#closed !== void 0) {
-      callbacks.errorCallback(new ClosedError("Client is closed", this.#closed));
-      return;
-    }
-    const requestId = this.#requestIdAlloc.alloc();
-    this.#responseMap.set(requestId, { ...callbacks, type: request.type });
-    this.#send({ type: "request", requestId, request });
-  }
-  // The socket encountered an error.
-  #onSocketError(event) {
-    const eventMessage = event.message;
-    const message = eventMessage ?? "WebSocket was closed due to an error";
-    this.#setClosed(new WebSocketError(message));
-  }
-  // The socket was closed.
-  #onSocketClose(event) {
-    let message = `WebSocket was closed with code ${event.code}`;
-    if (event.reason) {
-      message += `: ${event.reason}`;
-    }
-    this.#setClosed(new WebSocketError(message));
-  }
-  // Close the client with the given error.
-  #setClosed(error3) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#closed = error3;
-    for (const callbacks of this.#openCallbacks) {
-      callbacks.errorCallback(error3);
-    }
-    this.#openCallbacks.length = 0;
-    for (const [requestId, responseState] of this.#responseMap.entries()) {
-      responseState.errorCallback(error3);
-      this.#requestIdAlloc.free(requestId);
-    }
-    this.#responseMap.clear();
-    this.#socket.close();
-  }
-  // We received a message from the socket.
-  #onSocketMessage(event) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    try {
-      let msg;
-      const encoding = this.#subprotocol.encoding;
-      if (encoding === "json") {
-        if (typeof event.data !== "string") {
-          this.#socket.close(3003, "Only text messages are accepted with JSON encoding");
-          this.#setClosed(new ProtoError("Received non-text message from server with JSON encoding"));
-          return;
-        }
-        msg = readJsonObject(JSON.parse(event.data), ServerMsg);
-      } else if (encoding === "protobuf") {
-        if (!(event.data instanceof ArrayBuffer)) {
-          this.#socket.close(3003, "Only binary messages are accepted with Protobuf encoding");
-          this.#setClosed(new ProtoError("Received non-binary message from server with Protobuf encoding"));
-          return;
-        }
-        msg = readProtobufMessage(new Uint8Array(event.data), ServerMsg2);
-      } else {
-        throw impossible(encoding, "Impossible encoding");
-      }
-      this.#handleMsg(msg);
-    } catch (e) {
-      this.#socket.close(3007, "Could not handle message");
-      this.#setClosed(e);
-    }
-  }
-  // Handle a message from the server.
-  #handleMsg(msg) {
-    if (msg.type === "none") {
-      throw new ProtoError("Received an unrecognized ServerMsg");
-    } else if (msg.type === "hello_ok" || msg.type === "hello_error") {
-      if (this.#recvdHello) {
-        throw new ProtoError("Received a duplicated hello response");
-      }
-      this.#recvdHello = true;
-      if (msg.type === "hello_error") {
-        throw errorFromProto(msg.error);
-      }
-      return;
-    } else if (!this.#recvdHello) {
-      throw new ProtoError("Received a non-hello message before a hello response");
-    }
-    if (msg.type === "response_ok") {
-      const requestId = msg.requestId;
-      const responseState = this.#responseMap.get(requestId);
-      this.#responseMap.delete(requestId);
-      if (responseState === void 0) {
-        throw new ProtoError("Received unexpected OK response");
-      }
-      this.#requestIdAlloc.free(requestId);
-      try {
-        if (responseState.type !== msg.response.type) {
-          console.dir({ responseState, msg });
-          throw new ProtoError("Received unexpected type of response");
-        }
-        responseState.responseCallback(msg.response);
-      } catch (e) {
-        responseState.errorCallback(e);
-        throw e;
-      }
-    } else if (msg.type === "response_error") {
-      const requestId = msg.requestId;
-      const responseState = this.#responseMap.get(requestId);
-      this.#responseMap.delete(requestId);
-      if (responseState === void 0) {
-        throw new ProtoError("Received unexpected error response");
-      }
-      this.#requestIdAlloc.free(requestId);
-      responseState.errorCallback(errorFromProto(msg.error));
-    } else {
-      throw impossible(msg, "Impossible ServerMsg type");
-    }
-  }
-  /** Open a {@link WsStream}, a stream for executing SQL statements. */
-  openStream() {
-    return WsStream.open(this);
-  }
-  /** Cache a SQL text on the server. This requires protocol version 2 or higher. */
-  storeSql(sql2) {
-    this._ensureVersion(2, "storeSql()");
-    const sqlId = this.#sqlIdAlloc.alloc();
-    const sqlObj = new Sql(this, sqlId);
-    const responseCallback = /* @__PURE__ */ __name(() => void 0, "responseCallback");
-    const errorCallback = /* @__PURE__ */ __name((e) => sqlObj._setClosed(e), "errorCallback");
-    const request = { type: "store_sql", sqlId, sql: sql2 };
-    this._sendRequest(request, { responseCallback, errorCallback });
-    return sqlObj;
-  }
-  /** @private */
-  _closeSql(sqlId) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    const responseCallback = /* @__PURE__ */ __name(() => this.#sqlIdAlloc.free(sqlId), "responseCallback");
-    const errorCallback = /* @__PURE__ */ __name((e) => this.#setClosed(e), "errorCallback");
-    const request = { type: "close_sql", sqlId };
-    this._sendRequest(request, { responseCallback, errorCallback });
-  }
-  /** Close the client and the WebSocket. */
-  close() {
-    this.#setClosed(new ClientError("Client was manually closed"));
-  }
-  /** True if the client is closed. */
-  get closed() {
-    return this.#closed !== void 0;
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/client.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+isomorphic-fetch@0.3.1/node_modules/@libsql/isomorphic-fetch/web.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var _fetch = fetch;
-var _Request = Request;
-var _Headers = Headers;
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/stream.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/queue_microtask.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var _queueMicrotask;
-if (typeof queueMicrotask !== "undefined") {
-  _queueMicrotask = queueMicrotask;
-} else {
-  const resolved = Promise.resolve();
-  _queueMicrotask = /* @__PURE__ */ __name((callback) => {
-    resolved.then(callback);
-  }, "_queueMicrotask");
-}
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/cursor.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/byte_queue.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var ByteQueue = class {
-  static {
-    __name(this, "ByteQueue");
-  }
-  #array;
-  #shiftPos;
-  #pushPos;
-  constructor(initialCap) {
-    this.#array = new Uint8Array(new ArrayBuffer(initialCap));
-    this.#shiftPos = 0;
-    this.#pushPos = 0;
-  }
-  get length() {
-    return this.#pushPos - this.#shiftPos;
-  }
-  data() {
-    return this.#array.slice(this.#shiftPos, this.#pushPos);
-  }
-  push(chunk) {
-    this.#ensurePush(chunk.byteLength);
-    this.#array.set(chunk, this.#pushPos);
-    this.#pushPos += chunk.byteLength;
-  }
-  #ensurePush(pushLength) {
-    if (this.#pushPos + pushLength <= this.#array.byteLength) {
-      return;
-    }
-    const filledLength = this.#pushPos - this.#shiftPos;
-    if (filledLength + pushLength <= this.#array.byteLength && 2 * this.#pushPos >= this.#array.byteLength) {
-      this.#array.copyWithin(0, this.#shiftPos, this.#pushPos);
-    } else {
-      let newCap = this.#array.byteLength;
-      do {
-        newCap *= 2;
-      } while (filledLength + pushLength > newCap);
-      const newArray = new Uint8Array(new ArrayBuffer(newCap));
-      newArray.set(this.#array.slice(this.#shiftPos, this.#pushPos), 0);
-      this.#array = newArray;
-    }
-    this.#pushPos = filledLength;
-    this.#shiftPos = 0;
-  }
-  shift(length) {
-    this.#shiftPos += length;
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/json_decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function PipelineRespBody(obj) {
-  const baton = stringOpt(obj["baton"]);
-  const baseUrl = stringOpt(obj["base_url"]);
-  const results = arrayObjectsMap(obj["results"], StreamResult);
-  return { baton, baseUrl, results };
-}
-__name(PipelineRespBody, "PipelineRespBody");
-function StreamResult(obj) {
-  const type2 = string(obj["type"]);
-  if (type2 === "ok") {
-    const response = StreamResponse(object(obj["response"]));
-    return { type: "ok", response };
-  } else if (type2 === "error") {
-    const error3 = Error2(object(obj["error"]));
-    return { type: "error", error: error3 };
-  } else {
-    throw new ProtoError("Unexpected type of StreamResult");
-  }
-}
-__name(StreamResult, "StreamResult");
-function StreamResponse(obj) {
-  const type2 = string(obj["type"]);
-  if (type2 === "close") {
-    return { type: "close" };
-  } else if (type2 === "execute") {
-    const result = StmtResult(object(obj["result"]));
-    return { type: "execute", result };
-  } else if (type2 === "batch") {
-    const result = BatchResult(object(obj["result"]));
-    return { type: "batch", result };
-  } else if (type2 === "sequence") {
-    return { type: "sequence" };
-  } else if (type2 === "describe") {
-    const result = DescribeResult(object(obj["result"]));
-    return { type: "describe", result };
-  } else if (type2 === "store_sql") {
-    return { type: "store_sql" };
-  } else if (type2 === "close_sql") {
-    return { type: "close_sql" };
-  } else if (type2 === "get_autocommit") {
-    const isAutocommit = boolean(obj["is_autocommit"]);
-    return { type: "get_autocommit", isAutocommit };
-  } else {
-    throw new ProtoError("Unexpected type of StreamResponse");
-  }
-}
-__name(StreamResponse, "StreamResponse");
-function CursorRespBody(obj) {
-  const baton = stringOpt(obj["baton"]);
-  const baseUrl = stringOpt(obj["base_url"]);
-  return { baton, baseUrl };
-}
-__name(CursorRespBody, "CursorRespBody");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/protobuf_decode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var PipelineRespBody2 = {
-  default() {
-    return { baton: void 0, baseUrl: void 0, results: [] };
-  },
-  1(r, msg) {
-    msg.baton = r.string();
-  },
-  2(r, msg) {
-    msg.baseUrl = r.string();
-  },
-  3(r, msg) {
-    msg.results.push(r.message(StreamResult2));
-  }
-};
-var StreamResult2 = {
-  default() {
-    return { type: "none" };
-  },
-  1(r) {
-    return { type: "ok", response: r.message(StreamResponse2) };
-  },
-  2(r) {
-    return { type: "error", error: r.message(Error3) };
-  }
-};
-var StreamResponse2 = {
-  default() {
-    return { type: "none" };
-  },
-  1(r) {
-    return { type: "close" };
-  },
-  2(r) {
-    return r.message(ExecuteStreamResp);
-  },
-  3(r) {
-    return r.message(BatchStreamResp);
-  },
-  4(r) {
-    return { type: "sequence" };
-  },
-  5(r) {
-    return r.message(DescribeStreamResp);
-  },
-  6(r) {
-    return { type: "store_sql" };
-  },
-  7(r) {
-    return { type: "close_sql" };
-  },
-  8(r) {
-    return r.message(GetAutocommitStreamResp);
-  }
-};
-var ExecuteStreamResp = {
-  default() {
-    return { type: "execute", result: StmtResult2.default() };
-  },
-  1(r, msg) {
-    msg.result = r.message(StmtResult2);
-  }
-};
-var BatchStreamResp = {
-  default() {
-    return { type: "batch", result: BatchResult2.default() };
-  },
-  1(r, msg) {
-    msg.result = r.message(BatchResult2);
-  }
-};
-var DescribeStreamResp = {
-  default() {
-    return { type: "describe", result: DescribeResult2.default() };
-  },
-  1(r, msg) {
-    msg.result = r.message(DescribeResult2);
-  }
-};
-var GetAutocommitStreamResp = {
-  default() {
-    return { type: "get_autocommit", isAutocommit: false };
-  },
-  1(r, msg) {
-    msg.isAutocommit = r.bool();
-  }
-};
-var CursorRespBody2 = {
-  default() {
-    return { baton: void 0, baseUrl: void 0 };
-  },
-  1(r, msg) {
-    msg.baton = r.string();
-  },
-  2(r, msg) {
-    msg.baseUrl = r.string();
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/cursor.js
-var HttpCursor = class extends Cursor {
-  static {
-    __name(this, "HttpCursor");
-  }
-  #stream;
-  #encoding;
-  #reader;
-  #queue;
-  #closed;
-  #done;
-  /** @private */
-  constructor(stream, encoding) {
-    super();
-    this.#stream = stream;
-    this.#encoding = encoding;
-    this.#reader = void 0;
-    this.#queue = new ByteQueue(16 * 1024);
-    this.#closed = void 0;
-    this.#done = false;
-  }
-  async open(response) {
-    if (response.body === null) {
-      throw new ProtoError("No response body for cursor request");
-    }
-    this.#reader = response.body.getReader();
-    const respBody = await this.#nextItem(CursorRespBody, CursorRespBody2);
-    if (respBody === void 0) {
-      throw new ProtoError("Empty response to cursor request");
-    }
-    return respBody;
-  }
-  /** Fetch the next entry from the cursor. */
-  next() {
-    return this.#nextItem(CursorEntry, CursorEntry2);
-  }
-  /** Close the cursor. */
-  close() {
-    this._setClosed(new ClientError("Cursor was manually closed"));
-  }
-  /** @private */
-  _setClosed(error3) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#closed = error3;
-    this.#stream._cursorClosed(this);
-    if (this.#reader !== void 0) {
-      this.#reader.cancel();
-    }
-  }
-  /** True if the cursor is closed. */
-  get closed() {
-    return this.#closed !== void 0;
-  }
-  async #nextItem(jsonFun, protobufDef) {
-    for (; ; ) {
-      if (this.#done) {
-        return void 0;
-      } else if (this.#closed !== void 0) {
-        throw new ClosedError("Cursor is closed", this.#closed);
-      }
-      if (this.#encoding === "json") {
-        const jsonData = this.#parseItemJson();
-        if (jsonData !== void 0) {
-          const jsonText = new TextDecoder().decode(jsonData);
-          const jsonValue = JSON.parse(jsonText);
-          return readJsonObject(jsonValue, jsonFun);
-        }
-      } else if (this.#encoding === "protobuf") {
-        const protobufData = this.#parseItemProtobuf();
-        if (protobufData !== void 0) {
-          return readProtobufMessage(protobufData, protobufDef);
-        }
-      } else {
-        throw impossible(this.#encoding, "Impossible encoding");
-      }
-      if (this.#reader === void 0) {
-        throw new InternalError("Attempted to read from HTTP cursor before it was opened");
-      }
-      const { value, done } = await this.#reader.read();
-      if (done && this.#queue.length === 0) {
-        this.#done = true;
-      } else if (done) {
-        throw new ProtoError("Unexpected end of cursor stream");
-      } else {
-        this.#queue.push(value);
-      }
-    }
-  }
-  #parseItemJson() {
-    const data = this.#queue.data();
-    const newlineByte = 10;
-    const newlinePos = data.indexOf(newlineByte);
-    if (newlinePos < 0) {
-      return void 0;
-    }
-    const jsonData = data.slice(0, newlinePos);
-    this.#queue.shift(newlinePos + 1);
-    return jsonData;
-  }
-  #parseItemProtobuf() {
-    const data = this.#queue.data();
-    let varintValue = 0;
-    let varintLength = 0;
-    for (; ; ) {
-      if (varintLength >= data.byteLength) {
-        return void 0;
-      }
-      const byte = data[varintLength];
-      varintValue |= (byte & 127) << 7 * varintLength;
-      varintLength += 1;
-      if (!(byte & 128)) {
-        break;
-      }
-    }
-    if (data.byteLength < varintLength + varintValue) {
-      return void 0;
-    }
-    const protobufData = data.slice(varintLength, varintLength + varintValue);
-    this.#queue.shift(varintLength + varintValue);
-    return protobufData;
-  }
-};
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/json_encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function PipelineReqBody(w, msg) {
-  if (msg.baton !== void 0) {
-    w.string("baton", msg.baton);
-  }
-  w.arrayObjects("requests", msg.requests, StreamRequest);
-}
-__name(PipelineReqBody, "PipelineReqBody");
-function StreamRequest(w, msg) {
-  w.stringRaw("type", msg.type);
-  if (msg.type === "close") {
-  } else if (msg.type === "execute") {
-    w.object("stmt", msg.stmt, Stmt2);
-  } else if (msg.type === "batch") {
-    w.object("batch", msg.batch, Batch2);
-  } else if (msg.type === "sequence") {
-    if (msg.sql !== void 0) {
-      w.string("sql", msg.sql);
-    }
-    if (msg.sqlId !== void 0) {
-      w.number("sql_id", msg.sqlId);
-    }
-  } else if (msg.type === "describe") {
-    if (msg.sql !== void 0) {
-      w.string("sql", msg.sql);
-    }
-    if (msg.sqlId !== void 0) {
-      w.number("sql_id", msg.sqlId);
-    }
-  } else if (msg.type === "store_sql") {
-    w.number("sql_id", msg.sqlId);
-    w.string("sql", msg.sql);
-  } else if (msg.type === "close_sql") {
-    w.number("sql_id", msg.sqlId);
-  } else if (msg.type === "get_autocommit") {
-  } else {
-    throw impossible(msg, "Impossible type of StreamRequest");
-  }
-}
-__name(StreamRequest, "StreamRequest");
-function CursorReqBody(w, msg) {
-  if (msg.baton !== void 0) {
-    w.string("baton", msg.baton);
-  }
-  w.object("batch", msg.batch, Batch2);
-}
-__name(CursorReqBody, "CursorReqBody");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/protobuf_encode.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-function PipelineReqBody2(w, msg) {
-  if (msg.baton !== void 0) {
-    w.string(1, msg.baton);
-  }
-  for (const req of msg.requests) {
-    w.message(2, req, StreamRequest2);
-  }
-}
-__name(PipelineReqBody2, "PipelineReqBody");
-function StreamRequest2(w, msg) {
-  if (msg.type === "close") {
-    w.message(1, msg, CloseStreamReq2);
-  } else if (msg.type === "execute") {
-    w.message(2, msg, ExecuteStreamReq);
-  } else if (msg.type === "batch") {
-    w.message(3, msg, BatchStreamReq);
-  } else if (msg.type === "sequence") {
-    w.message(4, msg, SequenceStreamReq);
-  } else if (msg.type === "describe") {
-    w.message(5, msg, DescribeStreamReq);
-  } else if (msg.type === "store_sql") {
-    w.message(6, msg, StoreSqlStreamReq);
-  } else if (msg.type === "close_sql") {
-    w.message(7, msg, CloseSqlStreamReq);
-  } else if (msg.type === "get_autocommit") {
-    w.message(8, msg, GetAutocommitStreamReq);
-  } else {
-    throw impossible(msg, "Impossible type of StreamRequest");
-  }
-}
-__name(StreamRequest2, "StreamRequest");
-function CloseStreamReq2(_w, _msg) {
-}
-__name(CloseStreamReq2, "CloseStreamReq");
-function ExecuteStreamReq(w, msg) {
-  w.message(1, msg.stmt, Stmt3);
-}
-__name(ExecuteStreamReq, "ExecuteStreamReq");
-function BatchStreamReq(w, msg) {
-  w.message(1, msg.batch, Batch3);
-}
-__name(BatchStreamReq, "BatchStreamReq");
-function SequenceStreamReq(w, msg) {
-  if (msg.sql !== void 0) {
-    w.string(1, msg.sql);
-  }
-  if (msg.sqlId !== void 0) {
-    w.int32(2, msg.sqlId);
-  }
-}
-__name(SequenceStreamReq, "SequenceStreamReq");
-function DescribeStreamReq(w, msg) {
-  if (msg.sql !== void 0) {
-    w.string(1, msg.sql);
-  }
-  if (msg.sqlId !== void 0) {
-    w.int32(2, msg.sqlId);
-  }
-}
-__name(DescribeStreamReq, "DescribeStreamReq");
-function StoreSqlStreamReq(w, msg) {
-  w.int32(1, msg.sqlId);
-  w.string(2, msg.sql);
-}
-__name(StoreSqlStreamReq, "StoreSqlStreamReq");
-function CloseSqlStreamReq(w, msg) {
-  w.int32(1, msg.sqlId);
-}
-__name(CloseSqlStreamReq, "CloseSqlStreamReq");
-function GetAutocommitStreamReq(_w, _msg) {
-}
-__name(GetAutocommitStreamReq, "GetAutocommitStreamReq");
-function CursorReqBody2(w, msg) {
-  if (msg.baton !== void 0) {
-    w.string(1, msg.baton);
-  }
-  w.message(2, msg.batch, Batch3);
-}
-__name(CursorReqBody2, "CursorReqBody");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/stream.js
-var HttpStream = class extends Stream {
-  static {
-    __name(this, "HttpStream");
-  }
-  #client;
-  #baseUrl;
-  #jwt;
-  #fetch;
-  #baton;
-  #queue;
-  #flushing;
-  #cursor;
-  #closing;
-  #closeQueued;
-  #closed;
-  #sqlIdAlloc;
-  /** @private */
-  constructor(client, baseUrl, jwt, customFetch) {
-    super(client.intMode);
-    this.#client = client;
-    this.#baseUrl = baseUrl.toString();
-    this.#jwt = jwt;
-    this.#fetch = customFetch;
-    this.#baton = void 0;
-    this.#queue = new Queue();
-    this.#flushing = false;
-    this.#closing = false;
-    this.#closeQueued = false;
-    this.#closed = void 0;
-    this.#sqlIdAlloc = new IdAlloc();
-  }
-  /** Get the {@link HttpClient} object that this stream belongs to. */
-  client() {
-    return this.#client;
-  }
-  /** @private */
-  _sqlOwner() {
-    return this;
-  }
-  /** Cache a SQL text on the server. */
-  storeSql(sql2) {
-    const sqlId = this.#sqlIdAlloc.alloc();
-    this.#sendStreamRequest({ type: "store_sql", sqlId, sql: sql2 }).then(() => void 0, (error3) => this._setClosed(error3));
-    return new Sql(this, sqlId);
-  }
-  /** @private */
-  _closeSql(sqlId) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#sendStreamRequest({ type: "close_sql", sqlId }).then(() => this.#sqlIdAlloc.free(sqlId), (error3) => this._setClosed(error3));
-  }
-  /** @private */
-  _execute(stmt) {
-    return this.#sendStreamRequest({ type: "execute", stmt }).then((response) => {
-      return response.result;
-    });
-  }
-  /** @private */
-  _batch(batch) {
-    return this.#sendStreamRequest({ type: "batch", batch }).then((response) => {
-      return response.result;
-    });
-  }
-  /** @private */
-  _describe(protoSql) {
-    return this.#sendStreamRequest({
-      type: "describe",
-      sql: protoSql.sql,
-      sqlId: protoSql.sqlId
-    }).then((response) => {
-      return response.result;
-    });
-  }
-  /** @private */
-  _sequence(protoSql) {
-    return this.#sendStreamRequest({
-      type: "sequence",
-      sql: protoSql.sql,
-      sqlId: protoSql.sqlId
-    }).then((_response) => {
-      return void 0;
-    });
-  }
-  /** Check whether the SQL connection underlying this stream is in autocommit state (i.e., outside of an
-   * explicit transaction). This requires protocol version 3 or higher.
-   */
-  getAutocommit() {
-    this.#client._ensureVersion(3, "getAutocommit()");
-    return this.#sendStreamRequest({
-      type: "get_autocommit"
-    }).then((response) => {
-      return response.isAutocommit;
-    });
-  }
-  #sendStreamRequest(request) {
-    return new Promise((responseCallback, errorCallback) => {
-      this.#pushToQueue({ type: "pipeline", request, responseCallback, errorCallback });
-    });
-  }
-  /** @private */
-  _openCursor(batch) {
-    return new Promise((cursorCallback, errorCallback) => {
-      this.#pushToQueue({ type: "cursor", batch, cursorCallback, errorCallback });
-    });
-  }
-  /** @private */
-  _cursorClosed(cursor) {
-    if (cursor !== this.#cursor) {
-      throw new InternalError("Cursor was closed, but it was not associated with the stream");
-    }
-    this.#cursor = void 0;
-    _queueMicrotask(() => this.#flushQueue());
-  }
-  /** Immediately close the stream. */
-  close() {
-    this._setClosed(new ClientError("Stream was manually closed"));
-  }
-  /** Gracefully close the stream. */
-  closeGracefully() {
-    this.#closing = true;
-    _queueMicrotask(() => this.#flushQueue());
-  }
-  /** True if the stream is closed. */
-  get closed() {
-    return this.#closed !== void 0 || this.#closing;
-  }
-  /** @private */
-  _setClosed(error3) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#closed = error3;
-    if (this.#cursor !== void 0) {
-      this.#cursor._setClosed(error3);
-    }
-    this.#client._streamClosed(this);
-    for (; ; ) {
-      const entry = this.#queue.shift();
-      if (entry !== void 0) {
-        entry.errorCallback(error3);
-      } else {
-        break;
-      }
-    }
-    if ((this.#baton !== void 0 || this.#flushing) && !this.#closeQueued) {
-      this.#queue.push({
-        type: "pipeline",
-        request: { type: "close" },
-        responseCallback: /* @__PURE__ */ __name(() => void 0, "responseCallback"),
-        errorCallback: /* @__PURE__ */ __name(() => void 0, "errorCallback")
-      });
-      this.#closeQueued = true;
-      _queueMicrotask(() => this.#flushQueue());
-    }
-  }
-  #pushToQueue(entry) {
-    if (this.#closed !== void 0) {
-      throw new ClosedError("Stream is closed", this.#closed);
-    } else if (this.#closing) {
-      throw new ClosedError("Stream is closing", void 0);
-    } else {
-      this.#queue.push(entry);
-      _queueMicrotask(() => this.#flushQueue());
-    }
-  }
-  #flushQueue() {
-    if (this.#flushing || this.#cursor !== void 0) {
-      return;
-    }
-    if (this.#closing && this.#queue.length === 0) {
-      this._setClosed(new ClientError("Stream was gracefully closed"));
-      return;
-    }
-    const endpoint = this.#client._endpoint;
-    if (endpoint === void 0) {
-      this.#client._endpointPromise.then(() => this.#flushQueue(), (error3) => this._setClosed(error3));
-      return;
-    }
-    const firstEntry = this.#queue.shift();
-    if (firstEntry === void 0) {
-      return;
-    } else if (firstEntry.type === "pipeline") {
-      const pipeline = [firstEntry];
-      for (; ; ) {
-        const entry = this.#queue.first();
-        if (entry !== void 0 && entry.type === "pipeline") {
-          pipeline.push(entry);
-          this.#queue.shift();
-        } else if (entry === void 0 && this.#closing && !this.#closeQueued) {
-          pipeline.push({
-            type: "pipeline",
-            request: { type: "close" },
-            responseCallback: /* @__PURE__ */ __name(() => void 0, "responseCallback"),
-            errorCallback: /* @__PURE__ */ __name(() => void 0, "errorCallback")
-          });
-          this.#closeQueued = true;
-          break;
-        } else {
-          break;
-        }
-      }
-      this.#flushPipeline(endpoint, pipeline);
-    } else if (firstEntry.type === "cursor") {
-      this.#flushCursor(endpoint, firstEntry);
-    } else {
-      throw impossible(firstEntry, "Impossible type of QueueEntry");
-    }
-  }
-  #flushPipeline(endpoint, pipeline) {
-    this.#flush(() => this.#createPipelineRequest(pipeline, endpoint), (resp) => decodePipelineResponse(resp, endpoint.encoding), (respBody) => respBody.baton, (respBody) => respBody.baseUrl, (respBody) => handlePipelineResponse(pipeline, respBody), (error3) => pipeline.forEach((entry) => entry.errorCallback(error3)));
-  }
-  #flushCursor(endpoint, entry) {
-    const cursor = new HttpCursor(this, endpoint.encoding);
-    this.#cursor = cursor;
-    this.#flush(() => this.#createCursorRequest(entry, endpoint), (resp) => cursor.open(resp), (respBody) => respBody.baton, (respBody) => respBody.baseUrl, (_respBody) => entry.cursorCallback(cursor), (error3) => entry.errorCallback(error3));
-  }
-  #flush(createRequest, decodeResponse, getBaton, getBaseUrl, handleResponse, handleError) {
-    let promise;
-    try {
-      const request = createRequest();
-      const fetch2 = this.#fetch;
-      promise = fetch2(request);
-    } catch (error3) {
-      promise = Promise.reject(error3);
-    }
-    this.#flushing = true;
-    promise.then((resp) => {
-      if (!resp.ok) {
-        return errorFromResponse(resp).then((error3) => {
-          throw error3;
-        });
-      }
-      return decodeResponse(resp);
-    }).then((r) => {
-      this.#baton = getBaton(r);
-      this.#baseUrl = getBaseUrl(r) ?? this.#baseUrl;
-      handleResponse(r);
-    }).catch((error3) => {
-      this._setClosed(error3);
-      handleError(error3);
-    }).finally(() => {
-      this.#flushing = false;
-      this.#flushQueue();
-    });
-  }
-  #createPipelineRequest(pipeline, endpoint) {
-    return this.#createRequest(new URL(endpoint.pipelinePath, this.#baseUrl), {
-      baton: this.#baton,
-      requests: pipeline.map((entry) => entry.request)
-    }, endpoint.encoding, PipelineReqBody, PipelineReqBody2);
-  }
-  #createCursorRequest(entry, endpoint) {
-    if (endpoint.cursorPath === void 0) {
-      throw new ProtocolVersionError(`Cursors are supported only on protocol version 3 and higher, but the HTTP server only supports version ${endpoint.version}.`);
-    }
-    return this.#createRequest(new URL(endpoint.cursorPath, this.#baseUrl), {
-      baton: this.#baton,
-      batch: entry.batch
-    }, endpoint.encoding, CursorReqBody, CursorReqBody2);
-  }
-  #createRequest(url, reqBody, encoding, jsonFun, protobufFun) {
-    let bodyData;
-    let contentType;
-    if (encoding === "json") {
-      bodyData = writeJsonObject(reqBody, jsonFun);
-      contentType = "application/json";
-    } else if (encoding === "protobuf") {
-      bodyData = writeProtobufMessage(reqBody, protobufFun);
-      contentType = "application/x-protobuf";
-    } else {
-      throw impossible(encoding, "Impossible encoding");
-    }
-    const headers = new _Headers();
-    headers.set("content-type", contentType);
-    if (this.#jwt !== void 0) {
-      headers.set("authorization", `Bearer ${this.#jwt}`);
-    }
-    return new _Request(url.toString(), { method: "POST", headers, body: bodyData });
-  }
-};
-function handlePipelineResponse(pipeline, respBody) {
-  if (respBody.results.length !== pipeline.length) {
-    throw new ProtoError("Server returned unexpected number of pipeline results");
-  }
-  for (let i = 0; i < pipeline.length; ++i) {
-    const result = respBody.results[i];
-    const entry = pipeline[i];
-    if (result.type === "ok") {
-      if (result.response.type !== entry.request.type) {
-        throw new ProtoError("Received unexpected type of response");
-      }
-      entry.responseCallback(result.response);
-    } else if (result.type === "error") {
-      entry.errorCallback(errorFromProto(result.error));
-    } else if (result.type === "none") {
-      throw new ProtoError("Received unrecognized type of StreamResult");
-    } else {
-      throw impossible(result, "Received impossible type of StreamResult");
-    }
-  }
-}
-__name(handlePipelineResponse, "handlePipelineResponse");
-async function decodePipelineResponse(resp, encoding) {
-  if (encoding === "json") {
-    const respJson = await resp.json();
-    return readJsonObject(respJson, PipelineRespBody);
-  }
-  if (encoding === "protobuf") {
-    const respData = await resp.arrayBuffer();
-    return readProtobufMessage(new Uint8Array(respData), PipelineRespBody2);
-  }
-  await resp.body?.cancel();
-  throw impossible(encoding, "Impossible encoding");
-}
-__name(decodePipelineResponse, "decodePipelineResponse");
-async function errorFromResponse(resp) {
-  const respType = resp.headers.get("content-type") ?? "text/plain";
-  let message = `Server returned HTTP status ${resp.status}`;
-  if (respType === "application/json") {
-    const respBody = await resp.json();
-    if ("message" in respBody) {
-      return errorFromProto(respBody);
-    }
-    return new HttpServerError(message, resp.status);
-  }
-  if (respType === "text/plain") {
-    const respBody = (await resp.text()).trim();
-    if (respBody !== "") {
-      message += `: ${respBody}`;
-    }
-    return new HttpServerError(message, resp.status);
-  }
-  await resp.body?.cancel();
-  return new HttpServerError(message, resp.status);
-}
-__name(errorFromResponse, "errorFromResponse");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/http/client.js
-var checkEndpoints = [
-  {
-    versionPath: "v3-protobuf",
-    pipelinePath: "v3-protobuf/pipeline",
-    cursorPath: "v3-protobuf/cursor",
-    version: 3,
-    encoding: "protobuf"
-  }
-  /*
-  {
-      versionPath: "v3",
-      pipelinePath: "v3/pipeline",
-      cursorPath: "v3/cursor",
-      version: 3,
-      encoding: "json",
-  },
-  */
-];
-var fallbackEndpoint = {
-  versionPath: "v2",
-  pipelinePath: "v2/pipeline",
-  cursorPath: void 0,
-  version: 2,
-  encoding: "json"
-};
-var HttpClient = class extends Client {
-  static {
-    __name(this, "HttpClient");
-  }
-  #url;
-  #jwt;
-  #fetch;
-  #closed;
-  #streams;
-  /** @private */
-  _endpointPromise;
-  /** @private */
-  _endpoint;
-  /** @private */
-  constructor(url, jwt, customFetch, protocolVersion = 2) {
-    super();
-    this.#url = url;
-    this.#jwt = jwt;
-    this.#fetch = customFetch ?? _fetch;
-    this.#closed = void 0;
-    this.#streams = /* @__PURE__ */ new Set();
-    if (protocolVersion == 3) {
-      this._endpointPromise = findEndpoint(this.#fetch, this.#url);
-      this._endpointPromise.then((endpoint) => this._endpoint = endpoint, (error3) => this.#setClosed(error3));
-    } else {
-      this._endpointPromise = Promise.resolve(fallbackEndpoint);
-      this._endpointPromise.then((endpoint) => this._endpoint = endpoint, (error3) => this.#setClosed(error3));
-    }
-  }
-  /** Get the protocol version supported by the server. */
-  async getVersion() {
-    if (this._endpoint !== void 0) {
-      return this._endpoint.version;
-    }
-    return (await this._endpointPromise).version;
-  }
-  // Make sure that the negotiated version is at least `minVersion`.
-  /** @private */
-  _ensureVersion(minVersion, feature) {
-    if (minVersion <= fallbackEndpoint.version) {
-      return;
-    } else if (this._endpoint === void 0) {
-      throw new ProtocolVersionError(`${feature} is supported only on protocol version ${minVersion} and higher, but the version supported by the HTTP server is not yet known. Use Client.getVersion() to wait until the version is available.`);
-    } else if (this._endpoint.version < minVersion) {
-      throw new ProtocolVersionError(`${feature} is supported only on protocol version ${minVersion} and higher, but the HTTP server only supports version ${this._endpoint.version}.`);
-    }
-  }
-  /** Open a {@link HttpStream}, a stream for executing SQL statements. */
-  openStream() {
-    if (this.#closed !== void 0) {
-      throw new ClosedError("Client is closed", this.#closed);
-    }
-    const stream = new HttpStream(this, this.#url, this.#jwt, this.#fetch);
-    this.#streams.add(stream);
-    return stream;
-  }
-  /** @private */
-  _streamClosed(stream) {
-    this.#streams.delete(stream);
-  }
-  /** Close the client and all its streams. */
-  close() {
-    this.#setClosed(new ClientError("Client was manually closed"));
-  }
-  /** True if the client is closed. */
-  get closed() {
-    return this.#closed !== void 0;
-  }
-  #setClosed(error3) {
-    if (this.#closed !== void 0) {
-      return;
-    }
-    this.#closed = error3;
-    for (const stream of Array.from(this.#streams)) {
-      stream._setClosed(new ClosedError("Client was closed", error3));
-    }
-  }
-};
-async function findEndpoint(customFetch, clientUrl) {
-  const fetch2 = customFetch;
-  for (const endpoint of checkEndpoints) {
-    const url = new URL(endpoint.versionPath, clientUrl);
-    const request = new _Request(url.toString(), { method: "GET" });
-    const response = await fetch2(request);
-    await response.arrayBuffer();
-    if (response.ok) {
-      return endpoint;
-    }
-  }
-  return fallbackEndpoint;
-}
-__name(findEndpoint, "findEndpoint");
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/libsql_url.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/@libsql+hrana-client@0.7.0/node_modules/@libsql/hrana-client/lib-esm/index.js
-function openWs(url, jwt, protocolVersion = 2) {
-  if (typeof _WebSocket === "undefined") {
-    throw new WebSocketUnsupportedError("WebSockets are not supported in this environment");
-  }
-  var subprotocols = void 0;
-  if (protocolVersion == 3) {
-    subprotocols = Array.from(subprotocolsV3.keys());
-  } else {
-    subprotocols = Array.from(subprotocolsV2.keys());
-  }
-  const socket = new _WebSocket(url, subprotocols);
-  return new WsClient(socket, jwt);
-}
-__name(openWs, "openWs");
-function openHttp(url, jwt, customFetch, protocolVersion = 2) {
-  return new HttpClient(url instanceof URL ? url : new URL(url), jwt, customFetch, protocolVersion);
-}
-__name(openHttp, "openHttp");
-
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/hrana.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var HranaTransaction = class {
-  static {
-    __name(this, "HranaTransaction");
-  }
-  #mode;
-  #version;
-  // Promise that is resolved when the BEGIN statement completes, or `undefined` if we haven't executed the
-  // BEGIN statement yet.
-  #started;
-  /** @private */
-  constructor(mode, version5) {
-    this.#mode = mode;
-    this.#version = version5;
-    this.#started = void 0;
-  }
-  execute(stmt) {
-    return this.batch([stmt]).then((results) => results[0]);
-  }
-  async batch(stmts) {
-    const stream = this._getStream();
-    if (stream.closed) {
-      throw new LibsqlError("Cannot execute statements because the transaction is closed", "TRANSACTION_CLOSED");
-    }
-    try {
-      const hranaStmts = stmts.map(stmtToHrana);
-      let rowsPromises;
-      if (this.#started === void 0) {
-        this._getSqlCache().apply(hranaStmts);
-        const batch = stream.batch(this.#version >= 3);
-        const beginStep = batch.step();
-        const beginPromise = beginStep.run(transactionModeToBegin(this.#mode));
-        let lastStep = beginStep;
-        rowsPromises = hranaStmts.map((hranaStmt) => {
-          const stmtStep = batch.step().condition(BatchCond.ok(lastStep));
-          if (this.#version >= 3) {
-            stmtStep.condition(BatchCond.not(BatchCond.isAutocommit(batch)));
-          }
-          const rowsPromise = stmtStep.query(hranaStmt);
-          rowsPromise.catch(() => void 0);
-          lastStep = stmtStep;
-          return rowsPromise;
-        });
-        this.#started = batch.execute().then(() => beginPromise).then(() => void 0);
-        try {
-          await this.#started;
-        } catch (e) {
-          this.close();
-          throw e;
-        }
-      } else {
-        if (this.#version < 3) {
-          await this.#started;
-        } else {
-        }
-        this._getSqlCache().apply(hranaStmts);
-        const batch = stream.batch(this.#version >= 3);
-        let lastStep = void 0;
-        rowsPromises = hranaStmts.map((hranaStmt) => {
-          const stmtStep = batch.step();
-          if (lastStep !== void 0) {
-            stmtStep.condition(BatchCond.ok(lastStep));
-          }
-          if (this.#version >= 3) {
-            stmtStep.condition(BatchCond.not(BatchCond.isAutocommit(batch)));
-          }
-          const rowsPromise = stmtStep.query(hranaStmt);
-          rowsPromise.catch(() => void 0);
-          lastStep = stmtStep;
-          return rowsPromise;
-        });
-        await batch.execute();
-      }
-      const resultSets = [];
-      for (const rowsPromise of rowsPromises) {
-        const rows = await rowsPromise;
-        if (rows === void 0) {
-          throw new LibsqlError("Statement in a transaction was not executed, probably because the transaction has been rolled back", "TRANSACTION_CLOSED");
-        }
-        resultSets.push(resultSetFromHrana(rows));
-      }
-      return resultSets;
-    } catch (e) {
-      throw mapHranaError(e);
-    }
-  }
-  async executeMultiple(sql2) {
-    const stream = this._getStream();
-    if (stream.closed) {
-      throw new LibsqlError("Cannot execute statements because the transaction is closed", "TRANSACTION_CLOSED");
-    }
-    try {
-      if (this.#started === void 0) {
-        this.#started = stream.run(transactionModeToBegin(this.#mode)).then(() => void 0);
-        try {
-          await this.#started;
-        } catch (e) {
-          this.close();
-          throw e;
-        }
-      } else {
-        await this.#started;
-      }
-      await stream.sequence(sql2);
-    } catch (e) {
-      throw mapHranaError(e);
-    }
-  }
-  async rollback() {
-    try {
-      const stream = this._getStream();
-      if (stream.closed) {
-        return;
-      }
-      if (this.#started !== void 0) {
-      } else {
-        return;
-      }
-      const promise = stream.run("ROLLBACK").catch((e) => {
-        throw mapHranaError(e);
-      });
-      stream.closeGracefully();
-      await promise;
-    } catch (e) {
-      throw mapHranaError(e);
-    } finally {
-      this.close();
-    }
-  }
-  async commit() {
-    try {
-      const stream = this._getStream();
-      if (stream.closed) {
-        throw new LibsqlError("Cannot commit the transaction because it is already closed", "TRANSACTION_CLOSED");
-      }
-      if (this.#started !== void 0) {
-        await this.#started;
-      } else {
-        return;
-      }
-      const promise = stream.run("COMMIT").catch((e) => {
-        throw mapHranaError(e);
-      });
-      stream.closeGracefully();
-      await promise;
-    } catch (e) {
-      throw mapHranaError(e);
-    } finally {
-      this.close();
-    }
-  }
-};
-async function executeHranaBatch(mode, version5, batch, hranaStmts, disableForeignKeys = false) {
-  if (disableForeignKeys) {
-    batch.step().run("PRAGMA foreign_keys=off");
-  }
-  const beginStep = batch.step();
-  const beginPromise = beginStep.run(transactionModeToBegin(mode));
-  let lastStep = beginStep;
-  const stmtPromises = hranaStmts.map((hranaStmt) => {
-    const stmtStep = batch.step().condition(BatchCond.ok(lastStep));
-    if (version5 >= 3) {
-      stmtStep.condition(BatchCond.not(BatchCond.isAutocommit(batch)));
-    }
-    const stmtPromise = stmtStep.query(hranaStmt);
-    lastStep = stmtStep;
-    return stmtPromise;
-  });
-  const commitStep = batch.step().condition(BatchCond.ok(lastStep));
-  if (version5 >= 3) {
-    commitStep.condition(BatchCond.not(BatchCond.isAutocommit(batch)));
-  }
-  const commitPromise = commitStep.run("COMMIT");
-  const rollbackStep = batch.step().condition(BatchCond.not(BatchCond.ok(commitStep)));
-  rollbackStep.run("ROLLBACK").catch((_) => void 0);
-  if (disableForeignKeys) {
-    batch.step().run("PRAGMA foreign_keys=on");
-  }
-  await batch.execute();
-  const resultSets = [];
-  await beginPromise;
-  for (const stmtPromise of stmtPromises) {
-    const hranaRows = await stmtPromise;
-    if (hranaRows === void 0) {
-      throw new LibsqlError("Statement in a batch was not executed, probably because the transaction has been rolled back", "TRANSACTION_CLOSED");
-    }
-    resultSets.push(resultSetFromHrana(hranaRows));
-  }
-  await commitPromise;
-  return resultSets;
-}
-__name(executeHranaBatch, "executeHranaBatch");
-function stmtToHrana(stmt) {
-  if (typeof stmt === "string") {
-    return new Stmt(stmt);
-  }
-  const hranaStmt = new Stmt(stmt.sql);
-  if (Array.isArray(stmt.args)) {
-    hranaStmt.bindIndexes(stmt.args);
-  } else {
-    for (const [key, value] of Object.entries(stmt.args)) {
-      hranaStmt.bindName(key, value);
-    }
-  }
-  return hranaStmt;
-}
-__name(stmtToHrana, "stmtToHrana");
-function resultSetFromHrana(hranaRows) {
-  const columns = hranaRows.columnNames.map((c) => c ?? "");
-  const columnTypes = hranaRows.columnDecltypes.map((c) => c ?? "");
-  const rows = hranaRows.rows;
-  const rowsAffected = hranaRows.affectedRowCount;
-  const lastInsertRowid = hranaRows.lastInsertRowid !== void 0 ? hranaRows.lastInsertRowid : void 0;
-  return new ResultSetImpl(columns, columnTypes, rows, rowsAffected, lastInsertRowid);
-}
-__name(resultSetFromHrana, "resultSetFromHrana");
-function mapHranaError(e) {
-  if (e instanceof ClientError) {
-    const code = mapHranaErrorCode(e);
-    return new LibsqlError(e.message, code, void 0, e);
-  }
-  return e;
-}
-__name(mapHranaError, "mapHranaError");
-function mapHranaErrorCode(e) {
-  if (e instanceof ResponseError && e.code !== void 0) {
-    return e.code;
-  } else if (e instanceof ProtoError) {
-    return "HRANA_PROTO_ERROR";
-  } else if (e instanceof ClosedError) {
-    return e.cause instanceof ClientError ? mapHranaErrorCode(e.cause) : "HRANA_CLOSED_ERROR";
-  } else if (e instanceof WebSocketError) {
-    return "HRANA_WEBSOCKET_ERROR";
-  } else if (e instanceof HttpServerError) {
-    return "SERVER_ERROR";
-  } else if (e instanceof ProtocolVersionError) {
-    return "PROTOCOL_VERSION_ERROR";
-  } else if (e instanceof InternalError) {
-    return "INTERNAL_ERROR";
-  } else {
-    return "UNKNOWN";
-  }
-}
-__name(mapHranaErrorCode, "mapHranaErrorCode");
-
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/sql_cache.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var SqlCache = class {
-  static {
-    __name(this, "SqlCache");
-  }
-  #owner;
-  #sqls;
-  capacity;
-  constructor(owner, capacity) {
-    this.#owner = owner;
-    this.#sqls = new Lru();
-    this.capacity = capacity;
-  }
-  // Replaces SQL strings with cached `hrana.Sql` objects in the statements in `hranaStmts`. After this
-  // function returns, we guarantee that all `hranaStmts` refer to valid (not closed) `hrana.Sql` objects,
-  // but _we may invalidate any other `hrana.Sql` objects_ (by closing them, thus removing them from the
-  // server).
-  //
-  // In practice, this means that after calling this function, you can use the statements only up to the
-  // first `await`, because concurrent code may also use the cache and invalidate those statements.
-  apply(hranaStmts) {
-    if (this.capacity <= 0) {
-      return;
-    }
-    const usedSqlObjs = /* @__PURE__ */ new Set();
-    for (const hranaStmt of hranaStmts) {
-      if (typeof hranaStmt.sql !== "string") {
-        continue;
-      }
-      const sqlText = hranaStmt.sql;
-      if (sqlText.length >= 5e3) {
-        continue;
-      }
-      let sqlObj = this.#sqls.get(sqlText);
-      if (sqlObj === void 0) {
-        while (this.#sqls.size + 1 > this.capacity) {
-          const [evictSqlText, evictSqlObj] = this.#sqls.peekLru();
-          if (usedSqlObjs.has(evictSqlObj)) {
-            break;
-          }
-          evictSqlObj.close();
-          this.#sqls.delete(evictSqlText);
-        }
-        if (this.#sqls.size + 1 <= this.capacity) {
-          sqlObj = this.#owner.storeSql(sqlText);
-          this.#sqls.set(sqlText, sqlObj);
-        }
-      }
-      if (sqlObj !== void 0) {
-        hranaStmt.sql = sqlObj;
-        usedSqlObjs.add(sqlObj);
-      }
-    }
-  }
-};
-var Lru = class {
-  static {
-    __name(this, "Lru");
-  }
-  // This maps keys to the cache values. The entries are ordered by their last use (entires that were used
-  // most recently are at the end).
-  #cache;
-  constructor() {
-    this.#cache = /* @__PURE__ */ new Map();
-  }
-  get(key) {
-    const value = this.#cache.get(key);
-    if (value !== void 0) {
-      this.#cache.delete(key);
-      this.#cache.set(key, value);
-    }
-    return value;
-  }
-  set(key, value) {
-    this.#cache.set(key, value);
-  }
-  peekLru() {
-    for (const entry of this.#cache.entries()) {
-      return entry;
-    }
-    return void 0;
-  }
-  delete(key) {
-    this.#cache.delete(key);
-  }
-  get size() {
-    return this.#cache.size;
-  }
-};
-
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/ws.js
-var import_promise_limit = __toESM(require_promise_limit(), 1);
-function _createClient(config3) {
-  if (config3.scheme !== "wss" && config3.scheme !== "ws") {
-    throw new LibsqlError(`The WebSocket client supports only "libsql:", "wss:" and "ws:" URLs, got ${JSON.stringify(config3.scheme + ":")}. For more information, please read ${supportedUrlLink}`, "URL_SCHEME_NOT_SUPPORTED");
-  }
-  if (config3.encryptionKey !== void 0) {
-    throw new LibsqlError("Encryption key is not supported by the remote client.", "ENCRYPTION_KEY_NOT_SUPPORTED");
-  }
-  if (config3.scheme === "ws" && config3.tls) {
-    throw new LibsqlError(`A "ws:" URL cannot opt into TLS by using ?tls=1`, "URL_INVALID");
-  } else if (config3.scheme === "wss" && !config3.tls) {
-    throw new LibsqlError(`A "wss:" URL cannot opt out of TLS by using ?tls=0`, "URL_INVALID");
-  }
-  const url = encodeBaseUrl(config3.scheme, config3.authority, config3.path);
-  let client;
-  try {
-    client = openWs(url, config3.authToken);
-  } catch (e) {
-    if (e instanceof WebSocketUnsupportedError) {
-      const suggestedScheme = config3.scheme === "wss" ? "https" : "http";
-      const suggestedUrl = encodeBaseUrl(suggestedScheme, config3.authority, config3.path);
-      throw new LibsqlError(`This environment does not support WebSockets, please switch to the HTTP client by using a "${suggestedScheme}:" URL (${JSON.stringify(suggestedUrl)}). For more information, please read ${supportedUrlLink}`, "WEBSOCKETS_NOT_SUPPORTED");
-    }
-    throw mapHranaError(e);
-  }
-  return new WsClient2(client, url, config3.authToken, config3.intMode, config3.concurrency);
-}
-__name(_createClient, "_createClient");
-var maxConnAgeMillis = 60 * 1e3;
-var sqlCacheCapacity = 100;
-var WsClient2 = class {
-  static {
-    __name(this, "WsClient");
-  }
-  #url;
-  #authToken;
-  #intMode;
-  // State of the current connection. The `hrana.WsClient` inside may be closed at any moment due to an
-  // asynchronous error.
-  #connState;
-  // If defined, this is a connection that will be used in the future, once it is ready.
-  #futureConnState;
-  closed;
-  protocol;
-  #isSchemaDatabase;
-  #promiseLimitFunction;
-  /** @private */
-  constructor(client, url, authToken, intMode, concurrency) {
-    this.#url = url;
-    this.#authToken = authToken;
-    this.#intMode = intMode;
-    this.#connState = this.#openConn(client);
-    this.#futureConnState = void 0;
-    this.closed = false;
-    this.protocol = "ws";
-    this.#promiseLimitFunction = (0, import_promise_limit.default)(concurrency);
-  }
-  async limit(fn) {
-    return this.#promiseLimitFunction(fn);
-  }
-  async execute(stmtOrSql, args) {
-    let stmt;
-    if (typeof stmtOrSql === "string") {
-      stmt = {
-        sql: stmtOrSql,
-        args: args || []
-      };
-    } else {
-      stmt = stmtOrSql;
-    }
-    return this.limit(async () => {
-      const streamState = await this.#openStream();
-      try {
-        const hranaStmt = stmtToHrana(stmt);
-        streamState.conn.sqlCache.apply([hranaStmt]);
-        const hranaRowsPromise = streamState.stream.query(hranaStmt);
-        streamState.stream.closeGracefully();
-        const hranaRowsResult = await hranaRowsPromise;
-        return resultSetFromHrana(hranaRowsResult);
-      } catch (e) {
-        throw mapHranaError(e);
-      } finally {
-        this._closeStream(streamState);
-      }
-    });
-  }
-  async batch(stmts, mode = "deferred") {
-    return this.limit(async () => {
-      const streamState = await this.#openStream();
-      try {
-        const hranaStmts = stmts.map(stmtToHrana);
-        const version5 = await streamState.conn.client.getVersion();
-        streamState.conn.sqlCache.apply(hranaStmts);
-        const batch = streamState.stream.batch(version5 >= 3);
-        const resultsPromise = executeHranaBatch(mode, version5, batch, hranaStmts);
-        const results = await resultsPromise;
-        return results;
-      } catch (e) {
-        throw mapHranaError(e);
-      } finally {
-        this._closeStream(streamState);
-      }
-    });
-  }
-  async migrate(stmts) {
-    return this.limit(async () => {
-      const streamState = await this.#openStream();
-      try {
-        const hranaStmts = stmts.map(stmtToHrana);
-        const version5 = await streamState.conn.client.getVersion();
-        const batch = streamState.stream.batch(version5 >= 3);
-        const resultsPromise = executeHranaBatch("deferred", version5, batch, hranaStmts, true);
-        const results = await resultsPromise;
-        return results;
-      } catch (e) {
-        throw mapHranaError(e);
-      } finally {
-        this._closeStream(streamState);
-      }
-    });
-  }
-  async transaction(mode = "write") {
-    return this.limit(async () => {
-      const streamState = await this.#openStream();
-      try {
-        const version5 = await streamState.conn.client.getVersion();
-        return new WsTransaction(this, streamState, mode, version5);
-      } catch (e) {
-        this._closeStream(streamState);
-        throw mapHranaError(e);
-      }
-    });
-  }
-  async executeMultiple(sql2) {
-    return this.limit(async () => {
-      const streamState = await this.#openStream();
-      try {
-        const promise = streamState.stream.sequence(sql2);
-        streamState.stream.closeGracefully();
-        await promise;
-      } catch (e) {
-        throw mapHranaError(e);
-      } finally {
-        this._closeStream(streamState);
-      }
-    });
-  }
-  sync() {
-    throw new LibsqlError("sync not supported in ws mode", "SYNC_NOT_SUPPORTED");
-  }
-  async #openStream() {
-    if (this.closed) {
-      throw new LibsqlError("The client is closed", "CLIENT_CLOSED");
+  static [entityKind] = "TableAliasProxyHandler";
+  get(target, prop) {
+    if (prop === Table.Symbol.IsAlias) {
+      return true;
     }
-    const now = /* @__PURE__ */ new Date();
-    const ageMillis = now.valueOf() - this.#connState.openTime.valueOf();
-    if (ageMillis > maxConnAgeMillis && this.#futureConnState === void 0) {
-      const futureConnState = this.#openConn();
-      this.#futureConnState = futureConnState;
-      futureConnState.client.getVersion().then((_version) => {
-        if (this.#connState !== futureConnState) {
-          if (this.#connState.streamStates.size === 0) {
-            this.#connState.client.close();
-          } else {
-          }
-        }
-        this.#connState = futureConnState;
-        this.#futureConnState = void 0;
-      }, (_e) => {
-        this.#futureConnState = void 0;
-      });
+    if (prop === Table.Symbol.Name) {
+      return this.alias;
     }
-    if (this.#connState.client.closed) {
-      try {
-        if (this.#futureConnState !== void 0) {
-          this.#connState = this.#futureConnState;
-        } else {
-          this.#connState = this.#openConn();
-        }
-      } catch (e) {
-        throw mapHranaError(e);
-      }
+    if (this.replaceOriginalName && prop === Table.Symbol.OriginalName) {
+      return this.alias;
     }
-    const connState = this.#connState;
-    try {
-      if (connState.useSqlCache === void 0) {
-        connState.useSqlCache = await connState.client.getVersion() >= 2;
-        if (connState.useSqlCache) {
-          connState.sqlCache.capacity = sqlCacheCapacity;
-        }
-      }
-      const stream = connState.client.openStream();
-      stream.intMode = this.#intMode;
-      const streamState = { conn: connState, stream };
-      connState.streamStates.add(streamState);
-      return streamState;
-    } catch (e) {
-      throw mapHranaError(e);
-    }
-  }
-  #openConn(client) {
-    try {
-      client ??= openWs(this.#url, this.#authToken);
+    if (prop === ViewBaseConfig) {
       return {
-        client,
-        useSqlCache: void 0,
-        sqlCache: new SqlCache(client, 0),
-        openTime: /* @__PURE__ */ new Date(),
-        streamStates: /* @__PURE__ */ new Set()
+        ...target[ViewBaseConfig],
+        name: this.alias,
+        isAlias: true
       };
-    } catch (e) {
-      throw mapHranaError(e);
     }
-  }
-  _closeStream(streamState) {
-    streamState.stream.close();
-    const connState = streamState.conn;
-    connState.streamStates.delete(streamState);
-    if (connState.streamStates.size === 0 && connState !== this.#connState) {
-      connState.client.close();
+    if (prop === Table.Symbol.Columns) {
+      const columns = target[Table.Symbol.Columns];
+      if (!columns) {
+        return columns;
+      }
+      const proxiedColumns = {};
+      Object.keys(columns).map((key) => {
+        proxiedColumns[key] = new Proxy(
+          columns[key],
+          new ColumnAliasProxyHandler(new Proxy(target, this))
+        );
+      });
+      return proxiedColumns;
     }
-  }
-  close() {
-    this.#connState.client.close();
-    this.closed = true;
-  }
-};
-var WsTransaction = class extends HranaTransaction {
-  static {
-    __name(this, "WsTransaction");
-  }
-  #client;
-  #streamState;
-  /** @private */
-  constructor(client, state, mode, version5) {
-    super(mode, version5);
-    this.#client = client;
-    this.#streamState = state;
-  }
-  /** @private */
-  _getStream() {
-    return this.#streamState.stream;
-  }
-  /** @private */
-  _getSqlCache() {
-    return this.#streamState.conn.sqlCache;
-  }
-  close() {
-    this.#client._closeStream(this.#streamState);
-  }
-  get closed() {
-    return this.#streamState.stream.closed;
-  }
-};
-
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/http.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var import_promise_limit2 = __toESM(require_promise_limit(), 1);
-function _createClient2(config3) {
-  if (config3.scheme !== "https" && config3.scheme !== "http") {
-    throw new LibsqlError(`The HTTP client supports only "libsql:", "https:" and "http:" URLs, got ${JSON.stringify(config3.scheme + ":")}. For more information, please read ${supportedUrlLink}`, "URL_SCHEME_NOT_SUPPORTED");
-  }
-  if (config3.encryptionKey !== void 0) {
-    throw new LibsqlError("Encryption key is not supported by the remote client.", "ENCRYPTION_KEY_NOT_SUPPORTED");
-  }
-  if (config3.scheme === "http" && config3.tls) {
-    throw new LibsqlError(`A "http:" URL cannot opt into TLS by using ?tls=1`, "URL_INVALID");
-  } else if (config3.scheme === "https" && !config3.tls) {
-    throw new LibsqlError(`A "https:" URL cannot opt out of TLS by using ?tls=0`, "URL_INVALID");
-  }
-  const url = encodeBaseUrl(config3.scheme, config3.authority, config3.path);
-  return new HttpClient2(url, config3.authToken, config3.intMode, config3.fetch, config3.concurrency);
-}
-__name(_createClient2, "_createClient");
-var sqlCacheCapacity2 = 30;
-var HttpClient2 = class {
-  static {
-    __name(this, "HttpClient");
-  }
-  #client;
-  protocol;
-  #authToken;
-  #promiseLimitFunction;
-  /** @private */
-  constructor(url, authToken, intMode, customFetch, concurrency) {
-    this.#client = openHttp(url, authToken, customFetch);
-    this.#client.intMode = intMode;
-    this.protocol = "http";
-    this.#authToken = authToken;
-    this.#promiseLimitFunction = (0, import_promise_limit2.default)(concurrency);
-  }
-  async limit(fn) {
-    return this.#promiseLimitFunction(fn);
-  }
-  async execute(stmtOrSql, args) {
-    let stmt;
-    if (typeof stmtOrSql === "string") {
-      stmt = {
-        sql: stmtOrSql,
-        args: args || []
-      };
-    } else {
-      stmt = stmtOrSql;
+    const value = target[prop];
+    if (is(value, Column)) {
+      return new Proxy(value, new ColumnAliasProxyHandler(new Proxy(target, this)));
     }
-    return this.limit(async () => {
-      try {
-        const hranaStmt = stmtToHrana(stmt);
-        let rowsPromise;
-        const stream = this.#client.openStream();
-        try {
-          rowsPromise = stream.query(hranaStmt);
-        } finally {
-          stream.closeGracefully();
-        }
-        const rowsResult = await rowsPromise;
-        return resultSetFromHrana(rowsResult);
-      } catch (e) {
-        throw mapHranaError(e);
-      }
-    });
-  }
-  async batch(stmts, mode = "deferred") {
-    return this.limit(async () => {
-      try {
-        const hranaStmts = stmts.map(stmtToHrana);
-        const version5 = await this.#client.getVersion();
-        let resultsPromise;
-        const stream = this.#client.openStream();
-        try {
-          const sqlCache = new SqlCache(stream, sqlCacheCapacity2);
-          sqlCache.apply(hranaStmts);
-          const batch = stream.batch(false);
-          resultsPromise = executeHranaBatch(mode, version5, batch, hranaStmts);
-        } finally {
-          stream.closeGracefully();
-        }
-        const results = await resultsPromise;
-        return results;
-      } catch (e) {
-        throw mapHranaError(e);
-      }
-    });
-  }
-  async migrate(stmts) {
-    return this.limit(async () => {
-      try {
-        const hranaStmts = stmts.map(stmtToHrana);
-        const version5 = await this.#client.getVersion();
-        let resultsPromise;
-        const stream = this.#client.openStream();
-        try {
-          const batch = stream.batch(false);
-          resultsPromise = executeHranaBatch("deferred", version5, batch, hranaStmts, true);
-        } finally {
-          stream.closeGracefully();
-        }
-        const results = await resultsPromise;
-        return results;
-      } catch (e) {
-        throw mapHranaError(e);
-      }
-    });
-  }
-  async transaction(mode = "write") {
-    return this.limit(async () => {
-      try {
-        const version5 = await this.#client.getVersion();
-        return new HttpTransaction(this.#client.openStream(), mode, version5);
-      } catch (e) {
-        throw mapHranaError(e);
-      }
-    });
-  }
-  async executeMultiple(sql2) {
-    return this.limit(async () => {
-      try {
-        let promise;
-        const stream = this.#client.openStream();
-        try {
-          promise = stream.sequence(sql2);
-        } finally {
-          stream.closeGracefully();
-        }
-        await promise;
-      } catch (e) {
-        throw mapHranaError(e);
-      }
-    });
-  }
-  sync() {
-    throw new LibsqlError("sync not supported in http mode", "SYNC_NOT_SUPPORTED");
-  }
-  close() {
-    this.#client.close();
-  }
-  get closed() {
-    return this.#client.closed;
+    return value;
   }
 };
-var HttpTransaction = class extends HranaTransaction {
+var RelationTableAliasProxyHandler = class {
   static {
-    __name(this, "HttpTransaction");
+    __name(this, "RelationTableAliasProxyHandler");
   }
-  #stream;
-  #sqlCache;
-  /** @private */
-  constructor(stream, mode, version5) {
-    super(mode, version5);
-    this.#stream = stream;
-    this.#sqlCache = new SqlCache(stream, sqlCacheCapacity2);
+  constructor(alias) {
+    this.alias = alias;
   }
-  /** @private */
-  _getStream() {
-    return this.#stream;
-  }
-  /** @private */
-  _getSqlCache() {
-    return this.#sqlCache;
-  }
-  close() {
-    this.#stream.close();
-  }
-  get closed() {
-    return this.#stream.closed;
+  static [entityKind] = "RelationTableAliasProxyHandler";
+  get(target, prop) {
+    if (prop === "sourceTable") {
+      return aliasedTable(target.sourceTable, this.alias);
+    }
+    return target[prop];
   }
 };
-
-// node_modules/.pnpm/@libsql+client@0.14.0/node_modules/@libsql/client/lib-esm/web.js
-function createClient(config3) {
-  return _createClient3(expandConfig(config3, true));
+function aliasedTable(table3, tableAlias) {
+  return new Proxy(table3, new TableAliasProxyHandler(tableAlias, false));
 }
-__name(createClient, "createClient");
-function _createClient3(config3) {
-  if (config3.scheme === "ws" || config3.scheme === "wss") {
-    return _createClient(config3);
-  } else if (config3.scheme === "http" || config3.scheme === "https") {
-    return _createClient2(config3);
-  } else {
-    throw new LibsqlError(`The client that uses Web standard APIs supports only "libsql:", "wss:", "ws:", "https:" and "http:" URLs, got ${JSON.stringify(config3.scheme + ":")}. For more information, please read ${supportedUrlLink}`, "URL_SCHEME_NOT_SUPPORTED");
-  }
+__name(aliasedTable, "aliasedTable");
+function aliasedTableColumn(column, tableAlias) {
+  return new Proxy(
+    column,
+    new ColumnAliasProxyHandler(new Proxy(column.table, new TableAliasProxyHandler(tableAlias, false)))
+  );
 }
-__name(_createClient3, "_createClient");
+__name(aliasedTableColumn, "aliasedTableColumn");
+function mapColumnsInAliasedSQLToAlias(query, alias) {
+  return new SQL.Aliased(mapColumnsInSQLToAlias(query.sql, alias), query.fieldAlias);
+}
+__name(mapColumnsInAliasedSQLToAlias, "mapColumnsInAliasedSQLToAlias");
+function mapColumnsInSQLToAlias(query, alias) {
+  return sql.join(query.queryChunks.map((c) => {
+    if (is(c, Column)) {
+      return aliasedTableColumn(c, alias);
+    }
+    if (is(c, SQL)) {
+      return mapColumnsInSQLToAlias(c, alias);
+    }
+    if (is(c, SQL.Aliased)) {
+      return mapColumnsInAliasedSQLToAlias(c, alias);
+    }
+    return c;
+  }));
+}
+__name(mapColumnsInSQLToAlias, "mapColumnsInSQLToAlias");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/libsql/driver-core.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/db.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/selection-proxy.js
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/selection-proxy.js
 var SelectionProxyHandler = class _SelectionProxyHandler {
   static {
     __name(this, "SelectionProxyHandler");
@@ -23410,37 +17752,68 @@ var SelectionProxyHandler = class _SelectionProxyHandler {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/delete.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/delete.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/table.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/query-promise.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var QueryPromise = class {
+  static {
+    __name(this, "QueryPromise");
+  }
+  static [entityKind] = "QueryPromise";
+  [Symbol.toStringTag] = "QueryPromise";
+  catch(onRejected) {
+    return this.then(void 0, onRejected);
+  }
+  finally(onFinally) {
+    return this.then(
+      (value) => {
+        onFinally?.();
+        return value;
+      },
+      (reason) => {
+        onFinally?.();
+        throw reason;
+      }
+    );
+  }
+  then(onFulfilled, onRejected) {
+    return this.execute().then(onFulfilled, onRejected);
+  }
+};
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/table.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/all.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/all.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/blob.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/blob.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/common.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/common.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/foreign-keys.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/foreign-keys.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -23507,7 +17880,7 @@ var ForeignKey2 = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/unique-constraint.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/unique-constraint.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -23563,7 +17936,7 @@ var UniqueConstraint2 = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/common.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/common.js
 var SQLiteColumnBuilder = class extends ColumnBuilder {
   static {
     __name(this, "SQLiteColumnBuilder");
@@ -23620,7 +17993,7 @@ var SQLiteColumn = class extends Column {
   static [entityKind] = "SQLiteColumn";
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/blob.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/blob.js
 var SQLiteBigIntBuilder = class extends SQLiteColumnBuilder {
   static {
     __name(this, "SQLiteBigIntBuilder");
@@ -23728,7 +18101,7 @@ function blob(a, b) {
 }
 __name(blob, "blob");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/custom.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/custom.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -23787,7 +18160,7 @@ function customType(customTypeParams) {
 }
 __name(customType, "customType");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/integer.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/integer.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -23925,7 +18298,7 @@ function integer(a, b) {
 }
 __name(integer, "integer");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/numeric.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/numeric.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -23960,7 +18333,7 @@ function numeric(name) {
 }
 __name(numeric, "numeric");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/real.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/real.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -23992,7 +18365,7 @@ function real(name) {
 }
 __name(real, "real");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/text.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/text.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -24069,7 +18442,7 @@ function text(a, b = {}) {
 }
 __name(text, "text");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/columns/all.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/columns/all.js
 function getSQLiteColumnBuilders() {
   return {
     blob,
@@ -24082,7 +18455,7 @@ function getSQLiteColumnBuilders() {
 }
 __name(getSQLiteColumnBuilders, "getSQLiteColumnBuilders");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/table.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/table.js
 var InlineForeignKeys2 = Symbol.for("drizzle:SQLiteInlineForeignKeys");
 var SQLiteTable = class extends Table {
   static {
@@ -24125,7 +18498,7 @@ var sqliteTable = /* @__PURE__ */ __name((name, columns, extraConfig) => {
   return sqliteTableBase(name, columns, extraConfig);
 }, "sqliteTable");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/delete.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/delete.js
 var SQLiteDeleteBase = class extends QueryPromise {
   static {
     __name(this, "SQLiteDeleteBase");
@@ -24237,25 +18610,25 @@ var SQLiteDeleteBase = class extends QueryPromise {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/insert.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/insert.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/query-builder.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/query-builder.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/dialect.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/dialect.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/casing.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/casing.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -24318,7 +18691,33 @@ var CasingCache = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/view-base.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/errors.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var DrizzleError = class extends Error {
+  static {
+    __name(this, "DrizzleError");
+  }
+  static [entityKind] = "DrizzleError";
+  constructor({ message, cause }) {
+    super(message);
+    this.name = "DrizzleError";
+    this.cause = cause;
+  }
+};
+var TransactionRollbackError = class extends DrizzleError {
+  static {
+    __name(this, "TransactionRollbackError");
+  }
+  static [entityKind] = "TransactionRollbackError";
+  constructor() {
+    super({ message: "Rollback" });
+  }
+};
+
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/view-base.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -24330,7 +18729,7 @@ var SQLiteViewBase = class extends View {
   static [entityKind] = "SQLiteViewBase";
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/dialect.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/dialect.js
 var SQLiteDialect = class {
   static {
     __name(this, "SQLiteDialect");
@@ -24948,13 +19347,13 @@ var SQLiteAsyncDialect = class extends SQLiteDialect {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/select.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/select.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/query-builders/query-builder.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/query-builders/query-builder.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -24970,7 +19369,7 @@ var TypedQueryBuilder = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/select.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/select.js
 var SQLiteSelectBuilder = class {
   static {
     __name(this, "SQLiteSelectBuilder");
@@ -25593,7 +19992,7 @@ var unionAll = createSetOperator("union", true);
 var intersect = createSetOperator("intersect", false);
 var except = createSetOperator("except", false);
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/query-builder.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/query-builder.js
 var QueryBuilder = class {
   static {
     __name(this, "QueryBuilder");
@@ -25662,7 +20061,7 @@ var QueryBuilder = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/insert.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/insert.js
 var SQLiteInsertBuilder = class {
   static {
     __name(this, "SQLiteInsertBuilder");
@@ -25832,7 +20231,7 @@ var SQLiteInsertBase = class extends QueryPromise {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/update.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/update.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -26003,7 +20402,7 @@ var SQLiteUpdateBase = class extends QueryPromise {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/count.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/count.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -26054,7 +20453,7 @@ var SQLiteCountBuilder = class _SQLiteCountBuilder extends SQL {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/query.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/query.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -26211,7 +20610,7 @@ var SQLiteSyncRelationalQuery = class extends SQLiteRelationalQuery {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/query-builders/raw.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/query-builders/raw.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -26246,7 +20645,7 @@ var SQLiteRaw = class extends QueryPromise {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/db.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/db.js
 var BaseSQLiteDatabase = class {
   static {
     __name(this, "BaseSQLiteDatabase");
@@ -26538,13 +20937,13 @@ var BaseSQLiteDatabase = class {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/libsql/session.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/d1/session.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/sqlite-core/session.js
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/sqlite-core/session.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -26673,28 +21072,27 @@ var SQLiteTransaction = class extends BaseSQLiteDatabase {
   }
 };
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/libsql/session.js
-var LibSQLSession = class _LibSQLSession extends SQLiteSession {
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/d1/session.js
+var SQLiteD1Session = class extends SQLiteSession {
   static {
-    __name(this, "LibSQLSession");
+    __name(this, "SQLiteD1Session");
   }
-  constructor(client, dialect, schema, options, tx) {
+  constructor(client, dialect, schema, options = {}) {
     super(dialect);
     this.client = client;
     this.schema = schema;
     this.options = options;
-    this.tx = tx;
     this.logger = options.logger ?? new NoopLogger();
   }
-  static [entityKind] = "LibSQLSession";
+  static [entityKind] = "SQLiteD1Session";
   logger;
   prepareQuery(query, fields, executeMethod, isResponseInArrayMode, customResultMapper) {
-    return new LibSQLPreparedQuery(
-      this.client,
+    const stmt = this.client.prepare(query.sql);
+    return new D1PreparedQuery(
+      stmt,
       query,
       this.logger,
       fields,
-      this.tx,
       executeMethod,
       isResponseInArrayMode,
       customResultMapper
@@ -26707,60 +21105,48 @@ var LibSQLSession = class _LibSQLSession extends SQLiteSession {
       const preparedQuery = query._prepare();
       const builtQuery = preparedQuery.getQuery();
       preparedQueries.push(preparedQuery);
-      builtQueries.push({ sql: builtQuery.sql, args: builtQuery.params });
+      if (builtQuery.params.length > 0) {
+        builtQueries.push(preparedQuery.stmt.bind(...builtQuery.params));
+      } else {
+        const builtQuery2 = preparedQuery.getQuery();
+        builtQueries.push(
+          this.client.prepare(builtQuery2.sql).bind(...builtQuery2.params)
+        );
+      }
     }
     const batchResults = await this.client.batch(builtQueries);
     return batchResults.map((result, i) => preparedQueries[i].mapResult(result, true));
   }
-  async migrate(queries) {
-    const preparedQueries = [];
-    const builtQueries = [];
-    for (const query of queries) {
-      const preparedQuery = query._prepare();
-      const builtQuery = preparedQuery.getQuery();
-      preparedQueries.push(preparedQuery);
-      builtQueries.push({ sql: builtQuery.sql, args: builtQuery.params });
-    }
-    const batchResults = await this.client.migrate(builtQueries);
-    return batchResults.map((result, i) => preparedQueries[i].mapResult(result, true));
+  extractRawAllValueFromBatchResult(result) {
+    return result.results;
   }
-  async transaction(transaction, _config) {
-    const libsqlTx = await this.client.transaction();
-    const session = new _LibSQLSession(
-      this.client,
-      this.dialect,
-      this.schema,
-      this.options,
-      libsqlTx
-    );
-    const tx = new LibSQLTransaction("async", this.dialect, session, this.schema);
+  extractRawGetValueFromBatchResult(result) {
+    return result.results[0];
+  }
+  extractRawValuesValueFromBatchResult(result) {
+    return d1ToRawMapping(result.results);
+  }
+  async transaction(transaction, config3) {
+    const tx = new D1Transaction("async", this.dialect, this, this.schema);
+    await this.run(sql.raw(`begin${config3?.behavior ? " " + config3.behavior : ""}`));
     try {
       const result = await transaction(tx);
-      await libsqlTx.commit();
+      await this.run(sql`commit`);
       return result;
     } catch (err) {
-      await libsqlTx.rollback();
+      await this.run(sql`rollback`);
       throw err;
     }
   }
-  extractRawAllValueFromBatchResult(result) {
-    return result.rows;
-  }
-  extractRawGetValueFromBatchResult(result) {
-    return result.rows[0];
-  }
-  extractRawValuesValueFromBatchResult(result) {
-    return result.rows;
-  }
 };
-var LibSQLTransaction = class _LibSQLTransaction extends SQLiteTransaction {
+var D1Transaction = class _D1Transaction extends SQLiteTransaction {
   static {
-    __name(this, "LibSQLTransaction");
+    __name(this, "D1Transaction");
   }
-  static [entityKind] = "LibSQLTransaction";
+  static [entityKind] = "D1Transaction";
   async transaction(transaction) {
     const savepointName = `sp${this.nestedIndex}`;
-    const tx = new _LibSQLTransaction("async", this.dialect, this.session, this.schema, this.nestedIndex + 1);
+    const tx = new _D1Transaction("async", this.dialect, this.session, this.schema, this.nestedIndex + 1);
     await this.session.run(sql.raw(`savepoint ${savepointName}`));
     try {
       const result = await transaction(tx);
@@ -26772,136 +21158,111 @@ var LibSQLTransaction = class _LibSQLTransaction extends SQLiteTransaction {
     }
   }
 };
-var LibSQLPreparedQuery = class extends SQLitePreparedQuery {
-  static {
-    __name(this, "LibSQLPreparedQuery");
+function d1ToRawMapping(results) {
+  const rows = [];
+  for (const row of results) {
+    const entry = Object.keys(row).map((k) => row[k]);
+    rows.push(entry);
   }
-  constructor(client, query, logger, fields, tx, executeMethod, _isResponseInArrayMode, customResultMapper) {
+  return rows;
+}
+__name(d1ToRawMapping, "d1ToRawMapping");
+var D1PreparedQuery = class extends SQLitePreparedQuery {
+  static {
+    __name(this, "D1PreparedQuery");
+  }
+  constructor(stmt, query, logger, fields, executeMethod, _isResponseInArrayMode, customResultMapper) {
     super("async", executeMethod, query);
-    this.client = client;
     this.logger = logger;
-    this.fields = fields;
-    this.tx = tx;
     this._isResponseInArrayMode = _isResponseInArrayMode;
     this.customResultMapper = customResultMapper;
-    this.customResultMapper = customResultMapper;
     this.fields = fields;
+    this.stmt = stmt;
   }
-  static [entityKind] = "LibSQLPreparedQuery";
+  static [entityKind] = "D1PreparedQuery";
+  /** @internal */
+  customResultMapper;
+  /** @internal */
+  fields;
+  /** @internal */
+  stmt;
   run(placeholderValues) {
     const params = fillPlaceholders(this.query.params, placeholderValues ?? {});
     this.logger.logQuery(this.query.sql, params);
-    const stmt = { sql: this.query.sql, args: params };
-    return this.tx ? this.tx.execute(stmt) : this.client.execute(stmt);
+    return this.stmt.bind(...params).run();
   }
   async all(placeholderValues) {
-    const { fields, logger, query, tx, client, customResultMapper } = this;
+    const { fields, query, logger, stmt, customResultMapper } = this;
     if (!fields && !customResultMapper) {
       const params = fillPlaceholders(query.params, placeholderValues ?? {});
       logger.logQuery(query.sql, params);
-      const stmt = { sql: query.sql, args: params };
-      return (tx ? tx.execute(stmt) : client.execute(stmt)).then(({ rows: rows2 }) => this.mapAllResult(rows2));
+      return stmt.bind(...params).all().then(({ results }) => this.mapAllResult(results));
     }
     const rows = await this.values(placeholderValues);
     return this.mapAllResult(rows);
   }
   mapAllResult(rows, isFromBatch) {
     if (isFromBatch) {
-      rows = rows.rows;
+      rows = d1ToRawMapping(rows.results);
     }
     if (!this.fields && !this.customResultMapper) {
-      return rows.map((row) => normalizeRow(row));
+      return rows;
     }
     if (this.customResultMapper) {
-      return this.customResultMapper(rows, normalizeFieldValue);
+      return this.customResultMapper(rows);
     }
-    return rows.map((row) => {
-      return mapResultRow(
-        this.fields,
-        Array.prototype.slice.call(row).map((v) => normalizeFieldValue(v)),
-        this.joinsNotNullableMap
-      );
-    });
+    return rows.map((row) => mapResultRow(this.fields, row, this.joinsNotNullableMap));
   }
   async get(placeholderValues) {
-    const { fields, logger, query, tx, client, customResultMapper } = this;
+    const { fields, joinsNotNullableMap, query, logger, stmt, customResultMapper } = this;
     if (!fields && !customResultMapper) {
       const params = fillPlaceholders(query.params, placeholderValues ?? {});
       logger.logQuery(query.sql, params);
-      const stmt = { sql: query.sql, args: params };
-      return (tx ? tx.execute(stmt) : client.execute(stmt)).then(({ rows: rows2 }) => this.mapGetResult(rows2));
+      return stmt.bind(...params).all().then(({ results }) => results[0]);
     }
     const rows = await this.values(placeholderValues);
-    return this.mapGetResult(rows);
-  }
-  mapGetResult(rows, isFromBatch) {
-    if (isFromBatch) {
-      rows = rows.rows;
-    }
-    const row = rows[0];
-    if (!this.fields && !this.customResultMapper) {
-      return normalizeRow(row);
-    }
-    if (!row) {
+    if (!rows[0]) {
       return void 0;
     }
-    if (this.customResultMapper) {
-      return this.customResultMapper(rows, normalizeFieldValue);
+    if (customResultMapper) {
+      return customResultMapper(rows);
     }
-    return mapResultRow(
-      this.fields,
-      Array.prototype.slice.call(row).map((v) => normalizeFieldValue(v)),
-      this.joinsNotNullableMap
-    );
+    return mapResultRow(fields, rows[0], joinsNotNullableMap);
+  }
+  mapGetResult(result, isFromBatch) {
+    if (isFromBatch) {
+      result = d1ToRawMapping(result.results)[0];
+    }
+    if (!this.fields && !this.customResultMapper) {
+      return result;
+    }
+    if (this.customResultMapper) {
+      return this.customResultMapper([result]);
+    }
+    return mapResultRow(this.fields, result, this.joinsNotNullableMap);
   }
   values(placeholderValues) {
     const params = fillPlaceholders(this.query.params, placeholderValues ?? {});
     this.logger.logQuery(this.query.sql, params);
-    const stmt = { sql: this.query.sql, args: params };
-    return (this.tx ? this.tx.execute(stmt) : this.client.execute(stmt)).then(({ rows }) => rows);
+    return this.stmt.bind(...params).raw();
   }
   /** @internal */
   isResponseInArrayMode() {
     return this._isResponseInArrayMode;
   }
 };
-function normalizeRow(obj) {
-  return Object.keys(obj).reduce((acc, key) => {
-    if (Object.prototype.propertyIsEnumerable.call(obj, key)) {
-      acc[key] = obj[key];
-    }
-    return acc;
-  }, {});
-}
-__name(normalizeRow, "normalizeRow");
-function normalizeFieldValue(value) {
-  if (typeof ArrayBuffer !== "undefined" && value instanceof ArrayBuffer) {
-    if (typeof Buffer !== "undefined") {
-      if (!(value instanceof Buffer)) {
-        return Buffer.from(value);
-      }
-      return value;
-    }
-    if (typeof TextDecoder !== "undefined") {
-      return new TextDecoder().decode(value);
-    }
-    throw new Error("TextDecoder is not available. Please provide either Buffer or TextDecoder polyfill.");
-  }
-  return value;
-}
-__name(normalizeFieldValue, "normalizeFieldValue");
 
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/libsql/driver-core.js
-var LibSQLDatabase = class extends BaseSQLiteDatabase {
+// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_b311691e432f5502135eefa6adbc0da9/node_modules/drizzle-orm/d1/driver.js
+var DrizzleD1Database = class extends BaseSQLiteDatabase {
   static {
-    __name(this, "LibSQLDatabase");
+    __name(this, "DrizzleD1Database");
   }
-  static [entityKind] = "LibSQLDatabase";
+  static [entityKind] = "D1Database";
   async batch(batch) {
     return this.session.batch(batch);
   }
 };
-function construct(client, config3 = {}) {
+function drizzle(client, config3 = {}) {
   const dialect = new SQLiteAsyncDialect({ casing: config3.casing });
   let logger;
   if (config3.logger === true) {
@@ -26921,38 +21282,12 @@ function construct(client, config3 = {}) {
       tableNamesMap: tablesConfig.tableNamesMap
     };
   }
-  const session = new LibSQLSession(client, dialect, schema, { logger }, void 0);
-  const db = new LibSQLDatabase("async", dialect, session, schema);
+  const session = new SQLiteD1Session(client, dialect, schema, { logger });
+  const db = new DrizzleD1Database("async", dialect, session, schema);
   db.$client = client;
   return db;
 }
-__name(construct, "construct");
-
-// node_modules/.pnpm/drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+client-wasm@0.14.0_@l_bb530ace72e054f0076b82f6e5c4fb4b/node_modules/drizzle-orm/libsql/driver.js
-function drizzle(...params) {
-  if (typeof params[0] === "string") {
-    const instance = createClient({
-      url: params[0]
-    });
-    return construct(instance, params[1]);
-  }
-  if (isConfig(params[0])) {
-    const { connection, client, ...drizzleConfig } = params[0];
-    if (client)
-      return construct(client, drizzleConfig);
-    const instance = typeof connection === "string" ? createClient({ url: connection }) : createClient(connection);
-    return construct(instance, drizzleConfig);
-  }
-  return construct(params[0], params[1]);
-}
 __name(drizzle, "drizzle");
-((drizzle2) => {
-  function mock(config3) {
-    return construct({}, config3);
-  }
-  __name(mock, "mock");
-  drizzle2.mock = mock;
-})(drizzle || (drizzle = {}));
 
 // src/db/schema.ts
 var schema_exports = {};
@@ -26973,7 +21308,7 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// node_modules/.pnpm/drizzle-zod@0.6.1_drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+cli_86712310f42a86f2b506897777e8155a/node_modules/drizzle-zod/index.mjs
+// node_modules/.pnpm/drizzle-zod@0.6.1_drizzle-orm@0.38.3_@cloudflare+workers-types@4.20241230.0_@libsql+cli_6561611e008211da1dc5e3da0b47b09a/node_modules/drizzle-zod/index.mjs
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -27266,18 +21601,442 @@ var insertTasksSchema = createInsertSchema(
 var patchTasksSchema = insertTasksSchema.partial();
 
 // src/db/index.ts
-function createDb(env3) {
-  const db = drizzle({
-    connection: {
-      url: env3.DATABASE_URL,
-      authToken: env3.DATABASE_AUTH_TOKEN
-    },
-    casing: "snake_case",
-    schema: schema_exports
-  });
-  return { db };
+var dbInstance = null;
+function initDb(env3) {
+  if (!dbInstance) {
+    if (!env3.DB) {
+      throw new Error("Missing D1 binding in environment (expected 'DB')");
+    }
+    dbInstance = drizzle(env3.DB, { schema: schema_exports });
+  }
+  return { db: dbInstance };
 }
-__name(createDb, "createDb");
+__name(initDb, "initDb");
+function getDb() {
+  if (!dbInstance) {
+    throw new Error("Database not initialized. Call initDb first.");
+  }
+  return { db: dbInstance };
+}
+__name(getDb, "getDb");
+
+// src/env.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var import_dotenv = __toESM(require_main(), 1);
+var import_dotenv_expand = __toESM(require_main2(), 1);
+import path from "node:path";
+(0, import_dotenv_expand.expand)((0, import_dotenv.config)({
+  path: path.resolve(
+    process.cwd(),
+    false ? ".env.test" : ".env"
+  )
+}));
+var EnvSchema = z.object({
+  NODE_ENV: z.string().default("development"),
+  PORT: z.coerce.number().default(9999),
+  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
+  DB: z.any(),
+  BINDING_NAME: z.string().default("DB"),
+  CLOUDFLARE_DATABASE_ID: z.string().default(""),
+  CLOUDFLARE_ACCOUNT_ID: z.string().default(""),
+  CLOUDFLARE_TOKEN: z.string().default("")
+});
+function parseEnv(data) {
+  const { data: env3, error: error3 } = EnvSchema.safeParse(data);
+  if (error3) {
+    const errorMessage = `\u274C Invalid env - ${Object.entries(error3.flatten().fieldErrors).map(([key, errors]) => `${key}: ${errors.join(",")}`).join(" | ")}`;
+    throw new Error(errorMessage);
+  }
+  return env3;
+}
+__name(parseEnv, "parseEnv");
+
+// src/middlewares/pino-logger.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/hono-pino@0.7.0_hono@4.6.15_pino@9.6.0/node_modules/hono-pino/dist/index.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var import_pino = __toESM(require_browser(), 1);
+
+// node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+function isPlainObject(value) {
+  if (value === null || typeof value !== "object") {
+    return false;
+  }
+  const prototype = Object.getPrototypeOf(value);
+  if (prototype !== null && prototype !== Object.prototype && Object.getPrototypeOf(prototype) !== null) {
+    return false;
+  }
+  if (Symbol.iterator in value) {
+    return false;
+  }
+  if (Symbol.toStringTag in value) {
+    return Object.prototype.toString.call(value) === "[object Module]";
+  }
+  return true;
+}
+__name(isPlainObject, "isPlainObject");
+function _defu(baseObject, defaults, namespace = ".", merger) {
+  if (!isPlainObject(defaults)) {
+    return _defu(baseObject, {}, namespace, merger);
+  }
+  const object = Object.assign({}, defaults);
+  for (const key in baseObject) {
+    if (key === "__proto__" || key === "constructor") {
+      continue;
+    }
+    const value = baseObject[key];
+    if (value === null || value === void 0) {
+      continue;
+    }
+    if (merger && merger(object, key, value, namespace)) {
+      continue;
+    }
+    if (Array.isArray(value) && Array.isArray(object[key])) {
+      object[key] = [...value, ...object[key]];
+    } else if (isPlainObject(value) && isPlainObject(object[key])) {
+      object[key] = _defu(
+        value,
+        object[key],
+        (namespace ? `${namespace}.` : "") + key.toString(),
+        merger
+      );
+    } else {
+      object[key] = value;
+    }
+  }
+  return object;
+}
+__name(_defu, "_defu");
+function createDefu(merger) {
+  return (...arguments_) => (
+    // eslint-disable-next-line unicorn/no-array-reduce
+    arguments_.reduce((p, c) => _defu(p, c, "", merger), {})
+  );
+}
+__name(createDefu, "createDefu");
+var defu = createDefu();
+var defuFn = createDefu((object, key, currentValue) => {
+  if (object[key] !== void 0 && typeof currentValue === "function") {
+    object[key] = currentValue(object[key]);
+    return true;
+  }
+});
+var defuArrayFn = createDefu((object, key, currentValue) => {
+  if (Array.isArray(object[key]) && typeof currentValue === "function") {
+    object[key] = currentValue(object[key]);
+    return true;
+  }
+});
+
+// node_modules/.pnpm/hono@4.6.15/node_modules/hono/dist/helper/adapter/index.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var env2 = /* @__PURE__ */ __name((c, runtime) => {
+  const global2 = globalThis;
+  const globalEnv = global2?.process?.env;
+  runtime ??= getRuntimeKey();
+  const runtimeEnvHandlers = {
+    bun: /* @__PURE__ */ __name(() => globalEnv, "bun"),
+    node: /* @__PURE__ */ __name(() => globalEnv, "node"),
+    "edge-light": /* @__PURE__ */ __name(() => globalEnv, "edge-light"),
+    deno: /* @__PURE__ */ __name(() => {
+      return Deno.env.toObject();
+    }, "deno"),
+    workerd: /* @__PURE__ */ __name(() => c.env, "workerd"),
+    fastly: /* @__PURE__ */ __name(() => ({}), "fastly"),
+    other: /* @__PURE__ */ __name(() => ({}), "other")
+  };
+  return runtimeEnvHandlers[runtime]();
+}, "env");
+var knownUserAgents = {
+  deno: "Deno",
+  bun: "Bun",
+  workerd: "Cloudflare-Workers",
+  node: "Node.js"
+};
+var getRuntimeKey = /* @__PURE__ */ __name(() => {
+  const global2 = globalThis;
+  const userAgentSupported = typeof navigator !== "undefined" && true;
+  if (userAgentSupported) {
+    for (const [runtimeKey, userAgent] of Object.entries(knownUserAgents)) {
+      if (checkUserAgentEquals(userAgent)) {
+        return runtimeKey;
+      }
+    }
+  }
+  if (typeof global2?.EdgeRuntime === "string") {
+    return "edge-light";
+  }
+  if (global2?.fastly !== void 0) {
+    return "fastly";
+  }
+  if (global2?.process?.release?.name === "node") {
+    return "node";
+  }
+  return "other";
+}, "getRuntimeKey");
+var checkUserAgentEquals = /* @__PURE__ */ __name((platform3) => {
+  const userAgent = "Cloudflare-Workers";
+  return userAgent.startsWith(platform3);
+}, "checkUserAgentEquals");
+
+// node_modules/.pnpm/hono-pino@0.7.0_hono@4.6.15_pino@9.6.0/node_modules/hono-pino/dist/index.js
+function isPino(value) {
+  return typeof value === "object" && value !== null && // issue: https://github.com/pinojs/pino/issues/2079
+  // pino.symbols.messageKeySym in value
+  "info" in value && typeof value.info === "function" && "child" in value && typeof value.child === "function";
+}
+__name(isPino, "isPino");
+var httpCfgSym = Symbol("httpCfgSym");
+var PinoLogger = class {
+  static {
+    __name(this, "PinoLogger");
+  }
+  /**
+   * Internal pino logger instance
+   *
+   * If you want to interact with the internal pino logger,
+   * you can use it (not recommended)
+   */
+  _rootLogger;
+  /**
+   * Internal child pino logger instance, recreated after each update bindings.
+   *
+   * If you want to interact with the internal pino logger,
+   * you can use it (not recommended)
+   */
+  _logger;
+  [httpCfgSym] = {};
+  constructor(rootLogger, childOptions) {
+    this._rootLogger = rootLogger.child({}, childOptions);
+    this._logger = rootLogger;
+  }
+  /**
+   * Get bindings from http log context
+   */
+  bindings() {
+    return this._logger.bindings();
+  }
+  /**
+   * Clear bindings from http log context
+   */
+  clearBindings() {
+    this._logger = this._rootLogger.child({});
+    return this;
+  }
+  /**
+   * Assign bindings to http log context
+   */
+  assign(bindings, opts) {
+    const newBindings = opts?.deep ? defu(bindings, this._logger.bindings()) : { ...this._logger.bindings(), ...bindings };
+    this._logger = this._rootLogger.child(newBindings);
+    return this;
+  }
+  /**
+   * Override response log message
+   */
+  setResMessage(message) {
+    this[httpCfgSym].resMessage = message;
+    return this;
+  }
+  /**
+   * Override response log level
+   */
+  setResLevel(level) {
+    this[httpCfgSym].resLevel = level;
+    return this;
+  }
+};
+PinoLogger.prototype.trace = function(...args) {
+  this._logger.trace(...args);
+};
+PinoLogger.prototype.debug = function(...args) {
+  this._logger.debug(...args);
+};
+PinoLogger.prototype.info = function(...args) {
+  this._logger.info(...args);
+};
+PinoLogger.prototype.warn = function(...args) {
+  this._logger.warn(...args);
+};
+PinoLogger.prototype.error = function(...args) {
+  this._logger.error(...args);
+};
+PinoLogger.prototype.fatal = function(...args) {
+  this._logger.fatal(...args);
+};
+var pinoLogger = /* @__PURE__ */ __name((opts) => {
+  const contextKey = opts?.contextKey ?? "logger";
+  let rootLogger = createStaticRootLogger(opts?.pino);
+  return async (c, next) => {
+    const [dynamicRootLogger, loggerChildOptions] = parseDynamicRootLogger(
+      opts?.pino,
+      c
+    );
+    rootLogger ??= dynamicRootLogger ?? getDefaultRootLogger();
+    const logger2 = new PinoLogger(rootLogger, loggerChildOptions);
+    c.set(contextKey, logger2);
+    if (opts?.http === false) {
+      await next();
+      return;
+    }
+    let bindings = opts?.http?.onReqBindings?.(c) ?? {
+      req: {
+        url: c.req.path,
+        method: c.req.method,
+        headers: c.req.header()
+      }
+    };
+    const referRequestIdKey = opts?.http?.referRequestIdKey ?? "requestId";
+    if (referRequestIdKey in c.var) {
+      bindings.reqId = c.var[referRequestIdKey];
+    } else if (opts?.http?.reqId !== false) {
+      bindings.reqId = opts?.http?.reqId?.() ?? defaultReqIdGenerator();
+    }
+    if (opts?.http?.onReqMessage) {
+      const level = opts.http.onReqLevel?.(c) ?? "info";
+      const msg = opts.http.onReqMessage(c);
+      logger2[level](bindings, msg);
+    }
+    if (opts?.http?.responseTime ?? true) {
+      const startTime = performance.now();
+      await next();
+      const endTime = performance.now();
+      const responseTime = Math.round(endTime - startTime);
+      bindings.responseTime = responseTime;
+    } else {
+      await next();
+    }
+    if (opts?.http?.onResMessage !== false) {
+      const onResBindings = opts?.http?.onResBindings?.(c) ?? {
+        res: {
+          status: c.res.status,
+          headers: c.res.headers
+        }
+      };
+      bindings = defu(bindings, onResBindings);
+      const level = logger2[httpCfgSym].resLevel ?? opts?.http?.onResLevel?.(c) ?? (c.error ? "error" : "info");
+      const msg = logger2[httpCfgSym].resMessage ?? opts?.http?.onResMessage?.(c) ?? (c.error ? c.error.message : "Request completed");
+      logger2[level](bindings, msg);
+    }
+  };
+}, "pinoLogger");
+var defaultReqId = 0;
+var defaultReqIdGenerator = /* @__PURE__ */ __name(() => defaultReqId += 1, "defaultReqIdGenerator");
+var createStaticRootLogger = /* @__PURE__ */ __name((opt) => {
+  if (typeof opt === "function") return null;
+  if (isPino(opt)) return opt;
+  return (0, import_pino.pino)(opt);
+}, "createStaticRootLogger");
+var parseDynamicRootLogger = /* @__PURE__ */ __name((opt, c) => {
+  if (opt === void 0) {
+    const { LOG_LEVEL } = env2(c);
+    return [
+      void 0,
+      {
+        level: LOG_LEVEL ?? "info"
+      }
+    ];
+  }
+  if (typeof opt !== "function") return [void 0, void 0];
+  const v = opt(c);
+  if (isPino(v)) return [v, void 0];
+  return [void 0, v];
+}, "parseDynamicRootLogger");
+var getDefaultRootLogger = /* @__PURE__ */ __name(() => _defaultRootLogger ??= (0, import_pino.pino)(), "getDefaultRootLogger");
+var _defaultRootLogger = void 0;
+
+// src/middlewares/pino-logger.ts
+init_crypto2();
+var import_pino2 = __toESM(require_browser(), 1);
+var import_pino_pretty = __toESM(require_pino_pretty(), 1);
+function pinoLogger2() {
+  return (c, next) => pinoLogger({
+    pino: (0, import_pino2.default)({
+      level: c.env.LOG_LEVEL || "info"
+    }, c.env.NODE_ENV === "production" ? void 0 : (0, import_pino_pretty.default)()),
+    http: {
+      reqId: /* @__PURE__ */ __name(() => randomUUID(), "reqId")
+    }
+  })(c, next);
+}
+__name(pinoLogger2, "pinoLogger");
+
+// src/lib/create-app.ts
+function createRouter() {
+  return new OpenAPIHono({
+    strict: false,
+    defaultHook: default_hook_default
+  });
+}
+__name(createRouter, "createRouter");
+function createApp() {
+  const app2 = createRouter();
+  app2.use((c, next) => {
+    c.env = parseEnv(Object.assign(c.env || {}, process.env));
+    initDb(c.env);
+    return next();
+  });
+  app2.use(serve_emoji_favicon_default("\u{1F4DD}"));
+  app2.use(pinoLogger2());
+  app2.notFound(not_found_default);
+  app2.onError(on_error_default);
+  return app2;
+}
+__name(createApp, "createApp");
+
+// src/modules/index/index.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var router = createRouter().openapi(
+  createRoute({
+    tags: ["Index"],
+    method: "get",
+    path: "/",
+    responses: {
+      [OK2]: json_content_default(
+        create_message_object_default("Tasks API"),
+        "Tasks API Index"
+      )
+    }
+  }),
+  (c) => {
+    return c.json({
+      message: "Tasks API on Cloudflare"
+    }, OK2);
+  }
+);
+var index_default = router;
+
+// src/modules/tasks/index.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// src/modules/tasks/handlers.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
 
 // src/lib/constants.ts
 init_modules_watch_stub();
@@ -27296,18 +22055,18 @@ var notFoundSchema = create_message_object_default(NOT_FOUND2);
 
 // src/modules/tasks/handlers.ts
 var list = /* @__PURE__ */ __name(async (c) => {
-  const { db } = createDb(c.env);
-  const tasks2 = await db.query.tasks.findMany();
-  return c.json(tasks2);
+  const { db } = getDb();
+  const tasksList = await db.query.tasks.findMany();
+  return c.json(tasksList);
 }, "list");
 var create = /* @__PURE__ */ __name(async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const task = c.req.valid("json");
   const [inserted] = await db.insert(tasks).values(task).returning();
   return c.json(inserted, OK2);
 }, "create");
 var getOne = /* @__PURE__ */ __name(async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const task = await db.query.tasks.findFirst({
     where(fields, operators) {
@@ -27325,7 +22084,7 @@ var getOne = /* @__PURE__ */ __name(async (c) => {
   return c.json(task, OK2);
 }, "getOne");
 var patch = /* @__PURE__ */ __name(async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const updates = c.req.valid("json");
   if (Object.keys(updates).length === 0) {
@@ -27358,7 +22117,7 @@ var patch = /* @__PURE__ */ __name(async (c) => {
   return c.json(task, OK2);
 }, "patch");
 var remove = /* @__PURE__ */ __name(async (c) => {
-  const { db } = createDb(c.env);
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const result = await db.delete(tasks).where(eq(tasks.id, id));
   if (result.rowsAffected === 0) {
@@ -27545,7 +22304,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env3, _ctx, middlewareCtx
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// .wrangler/tmp/bundle-1FyUxv/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-wXuvKu/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -27581,7 +22340,7 @@ function __facade_invoke__(request, env3, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// .wrangler/tmp/bundle-1FyUxv/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-wXuvKu/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;

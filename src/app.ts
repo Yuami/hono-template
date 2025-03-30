@@ -1,7 +1,7 @@
-import configureOpenAPI from "@/lib/configure-open-api";
-import createApp from "@/lib/create-app";
-import indexModule from "@/modules/index";
-import tasksModule from "@/modules/tasks";
+import configureOpenAPI from '@/lib/configure-open-api';
+import createApp from '@/lib/create-app';
+import indexModule from '@/modules/index';
+import tasksModule from '@/modules/tasks';
 
 const app = createApp();
 
@@ -13,7 +13,7 @@ const routes = [
 ] as const;
 
 routes.forEach((route) => {
-  app.route("/api", route);
+  app.route('/api', route);
 });
 
 export type AppType = typeof routes[number];

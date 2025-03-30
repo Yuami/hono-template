@@ -1,18 +1,31 @@
-import { drizzle } from "drizzle-orm/libsql";
+import type { D1Database } from '@cloudflare/workers-types';
 
-import type { Environment } from "@/env";
+import { drizzle } from 'drizzle-orm/d1';
 
-import * as schema from "@/db/schema";
+import type { Environment } from '@/env';
 
-export function createDb(env: Environment) {
-  const db = drizzle({
-    connection: {
-      url: env.DATABASE_URL,
-      authToken: env.DATABASE_AUTH_TOKEN,
-    },
-    casing: "snake_case",
-    schema,
-  });
+import * as schema from '@/db/schema';
 
-  return { db };
+type DBType = ReturnType<typeof drizzle>;
+
+let dbInstance: DBType | null = null;
+
+export function initDb(env: Environment & { DB?: D1Database }) {
+  if (!dbInstance) {
+    if (!env.DB) {
+      throw new Error('Missing D1 binding in environment (expected \'DB\')');
+    }
+
+    dbInstance = drizzle(env.DB, { schema });
+  }
+
+  return { db: dbInstance };
+}
+
+export function getDb() {
+  if (!dbInstance) {
+    throw new Error('Database not initialized. Call initDb first.');
+  }
+
+  return { db: dbInstance };
 }
