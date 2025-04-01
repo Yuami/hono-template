@@ -1,33 +1,33 @@
 /* eslint-disable ts/ban-ts-comment */
-import { testClient } from "hono/testing";
-import { execSync } from "node:child_process";
-import fs from "node:fs";
-import * as HttpStatusPhrases from "stoker/http-status-phrases";
-import { afterAll, beforeAll, describe, expect, expectTypeOf, it } from "vitest";
-import { ZodIssueCode } from "zod";
+import { testClient } from 'hono/testing';
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
+import * as HttpStatusPhrases from 'stoker/http-status-phrases';
+import { afterAll, beforeAll, describe, expect, expectTypeOf, it } from 'vitest';
+import { ZodIssueCode } from 'zod';
 
-import env from "@/env-runtime";
-import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from "@/lib/constants";
-import createApp from "@/lib/create-app";
+import env from '@/env-runtime';
+import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@/lib/constants';
+import createApp from '@/lib/create-app';
 
-import router from "./index";
+import router from './index';
 
-if (env.NODE_ENV !== "test") {
-  throw new Error("NODE_ENV must be 'test'");
+if (env.NODE_ENV !== 'test') {
+  throw new Error('NODE_ENV must be \'test\'');
 }
 
-const client = testClient(createApp().route("/", router));
+const client = testClient(createApp().route('/', router));
 
-describe("tasks routes", () => {
+describe('tasks routes', () => {
   beforeAll(async () => {
-    execSync("pnpm drizzle-kit push");
+    execSync('pnpm drizzle-kit push');
   });
 
   afterAll(async () => {
-    fs.rmSync("test.db", { force: true });
+    fs.rmSync('test.db', { force: true });
   });
 
-  it("post /tasks validates the body when creating", async () => {
+  it('post /tasks validates the body when creating', async () => {
     const response = await client.tasks.$post({
       // @ts-expect-error
       json: {
@@ -37,15 +37,15 @@ describe("tasks routes", () => {
     expect(response.status).toBe(422);
     if (response.status === 422) {
       const json = await response.json();
-      expect(json.error.issues[0].path[0]).toBe("name");
+      expect(json.error.issues[0].path[0]).toBe('name');
       expect(json.error.issues[0].message).toBe(ZOD_ERROR_MESSAGES.REQUIRED);
     }
   });
 
   const id = 1;
-  const name = "Learn vitest";
+  const name = 'Learn vitest';
 
-  it("post /tasks creates a task", async () => {
+  it('post /tasks creates a task', async () => {
     const response = await client.tasks.$post({
       json: {
         name,
@@ -60,7 +60,7 @@ describe("tasks routes", () => {
     }
   });
 
-  it("get /tasks lists all tasks", async () => {
+  it('get /tasks lists all tasks', async () => {
     const response = await client.tasks.$get();
     expect(response.status).toBe(200);
     if (response.status === 200) {
@@ -70,23 +70,23 @@ describe("tasks routes", () => {
     }
   });
 
-  it("get /tasks/{id} validates the id param", async () => {
-    const response = await client.tasks[":id"].$get({
+  it('get /tasks/{id} validates the id param', async () => {
+    const response = await client.tasks[':id'].$get({
       param: {
         // @ts-expect-error
-        id: "wat",
+        id: 'wat',
       },
     });
     expect(response.status).toBe(422);
     if (response.status === 422) {
       const json = await response.json();
-      expect(json.error.issues[0].path[0]).toBe("id");
+      expect(json.error.issues[0].path[0]).toBe('id');
       expect(json.error.issues[0].message).toBe(ZOD_ERROR_MESSAGES.EXPECTED_NUMBER);
     }
   });
 
-  it("get /tasks/{id} returns 404 when task not found", async () => {
-    const response = await client.tasks[":id"].$get({
+  it('get /tasks/{id} returns 404 when task not found', async () => {
+    const response = await client.tasks[':id'].$get({
       param: {
         id: 999,
       },
@@ -98,8 +98,8 @@ describe("tasks routes", () => {
     }
   });
 
-  it("get /tasks/{id} gets a single task", async () => {
-    const response = await client.tasks[":id"].$get({
+  it('get /tasks/{id} gets a single task', async () => {
+    const response = await client.tasks[':id'].$get({
       param: {
         id,
       },
@@ -112,41 +112,41 @@ describe("tasks routes", () => {
     }
   });
 
-  it("patch /tasks/{id} validates the body when updating", async () => {
-    const response = await client.tasks[":id"].$patch({
+  it('patch /tasks/{id} validates the body when updating', async () => {
+    const response = await client.tasks[':id'].$patch({
       param: {
         id,
       },
       json: {
-        name: "",
+        name: '',
       },
     });
     expect(response.status).toBe(422);
     if (response.status === 422) {
       const json = await response.json();
-      expect(json.error.issues[0].path[0]).toBe("name");
+      expect(json.error.issues[0].path[0]).toBe('name');
       expect(json.error.issues[0].code).toBe(ZodIssueCode.too_small);
     }
   });
 
-  it("patch /tasks/{id} validates the id param", async () => {
-    const response = await client.tasks[":id"].$patch({
+  it('patch /tasks/{id} validates the id param', async () => {
+    const response = await client.tasks[':id'].$patch({
       param: {
         // @ts-expect-error
-        id: "wat",
+        id: 'wat',
       },
       json: {},
     });
     expect(response.status).toBe(422);
     if (response.status === 422) {
       const json = await response.json();
-      expect(json.error.issues[0].path[0]).toBe("id");
+      expect(json.error.issues[0].path[0]).toBe('id');
       expect(json.error.issues[0].message).toBe(ZOD_ERROR_MESSAGES.EXPECTED_NUMBER);
     }
   });
 
-  it("patch /tasks/{id} validates empty body", async () => {
-    const response = await client.tasks[":id"].$patch({
+  it('patch /tasks/{id} validates empty body', async () => {
+    const response = await client.tasks[':id'].$patch({
       param: {
         id,
       },
@@ -160,8 +160,8 @@ describe("tasks routes", () => {
     }
   });
 
-  it("patch /tasks/{id} updates a single property of a task", async () => {
-    const response = await client.tasks[":id"].$patch({
+  it('patch /tasks/{id} updates a single property of a task', async () => {
+    const response = await client.tasks[':id'].$patch({
       param: {
         id,
       },
@@ -176,23 +176,23 @@ describe("tasks routes", () => {
     }
   });
 
-  it("delete /tasks/{id} validates the id when deleting", async () => {
-    const response = await client.tasks[":id"].$delete({
+  it('delete /tasks/{id} validates the id when deleting', async () => {
+    const response = await client.tasks[':id'].$delete({
       param: {
         // @ts-expect-error
-        id: "wat",
+        id: 'wat',
       },
     });
     expect(response.status).toBe(422);
     if (response.status === 422) {
       const json = await response.json();
-      expect(json.error.issues[0].path[0]).toBe("id");
+      expect(json.error.issues[0].path[0]).toBe('id');
       expect(json.error.issues[0].message).toBe(ZOD_ERROR_MESSAGES.EXPECTED_NUMBER);
     }
   });
 
-  it("delete /tasks/{id} removes a task", async () => {
-    const response = await client.tasks[":id"].$delete({
+  it('delete /tasks/{id} removes a task', async () => {
+    const response = await client.tasks[':id'].$delete({
       param: {
         id,
       },

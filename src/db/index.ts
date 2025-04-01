@@ -6,7 +6,7 @@ import type { Environment } from '@/env';
 
 import * as schema from '@/db/schema';
 
-type DBType = ReturnType<typeof drizzle>;
+type DBType = ReturnType<typeof drizzle<typeof schema, any>>;
 
 let dbInstance: DBType | null = null;
 
@@ -16,7 +16,7 @@ export function initDb(env: Environment & { DB?: D1Database }) {
       throw new Error('Missing D1 binding in environment (expected \'DB\')');
     }
 
-    dbInstance = drizzle(env.DB, { schema });
+    dbInstance = drizzle(env.DB, { schema, casing: 'snake_case' });
   }
 
   return { db: dbInstance };

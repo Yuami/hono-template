@@ -1,7 +1,7 @@
 name = "hono-starter-cloudflare"
 main = "src/app.ts"
 compatibility_date = "2024-09-25"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = [ "nodejs_compat" ]
 keep_vars = true
 
 [vars]
@@ -17,8 +17,9 @@ database_id = "d39d22da-cd9b-4274-9794-2070db226ed5"
 migrations_dir = "src/db/migrations"
 
 [env.local]
- [env.local.vars]
- LOG_LEVEL = "debug"
+
+[env.local.vars]
+LOG_LEVEL = "debug"
 
 [[env.local.d1_databases]]
 binding = "DB"
