@@ -1,12 +1,15 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
-import { notFound, onError, serveEmojiFavicon } from 'stoker/middlewares';
-import { defaultHook } from 'stoker/openapi';
+
+import type { AppBindings, AppOpenAPI } from '@/modules/base/types';
 
 import { initDb } from '@/db';
 import { parseEnv } from '@/env';
-import { pinoLogger } from '@/middlewares/pino-logger';
-
-import type { AppBindings, AppOpenAPI } from './types';
+import notFound from '@/lib/stoker/middlewares/not-found';
+import onError from '@/lib/stoker/middlewares/on-error';
+import serveEmojiFavicon from '@/lib/stoker/middlewares/serve-emoji-favicon';
+import { defaultHook } from '@/lib/stoker/openapi';
+import { authMiddleware } from '@/modules/auth/auth-middleware';
+import { pinoLogger } from '@/modules/base/middlewares/pino-logger';
 
 export function createRouter() {
   return new OpenAPIHono<AppBindings>({
@@ -26,7 +29,9 @@ export default function createApp() {
 
     return next();
   });
-  app.use(serveEmojiFavicon('📝'));
+
+  app.use('*', authMiddleware);
+  app.use(serveEmojiFavicon('🔥'));
   app.use(pinoLogger());
 
   app.notFound(notFound);

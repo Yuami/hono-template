@@ -1,9 +1,9 @@
 import { createRoute } from '@hono/zod-openapi';
-import * as HttpStatusCodes from 'stoker/http-status-codes';
-import { jsonContent } from 'stoker/openapi/helpers';
-import { createMessageObjectSchema } from 'stoker/openapi/schemas';
 
-import { createRouter } from '@/lib/create-app';
+import { HttpStatusCodes } from '@/lib/hono-helpers/http-status-codes';
+import jsonContent from '@/lib/stoker/openapi/helpers/json-content';
+import createMessageObjectSchema from '@/lib/stoker/openapi/schemas/create-message-object';
+import { createRouter } from '@/modules/base/create-app';
 
 const router = createRouter()
   .openapi(

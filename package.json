@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "wrangler dev",
     "start": "node ./dist/src/index.js",
-    "dev:db": "turso dev --db-file dev.db",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

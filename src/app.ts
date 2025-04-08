@@ -1,5 +1,6 @@
-import configureOpenAPI from '@/lib/configure-open-api';
-import createApp from '@/lib/create-app';
+import authModule from '@/modules/auth';
+import configureOpenAPI from '@/modules/base/configure-open-api';
+import createApp from '@/modules/base/create-app';
 import indexModule from '@/modules/index';
 import tasksModule from '@/modules/tasks';
 
@@ -9,6 +10,7 @@ configureOpenAPI(app);
 
 const routes = [
   indexModule,
+  authModule,
   tasksModule,
 ] as const;
 

@@ -15,6 +15,7 @@ const EnvSchema = z.object({
   NODE_ENV: z.string().default('development'),
   PORT: z.coerce.number().default(9999),
   LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']),
+
   DB: z.any(),
   BINDING_NAME: z.string().default('DB'),
 

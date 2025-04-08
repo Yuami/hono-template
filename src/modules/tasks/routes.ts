@@ -1,9 +1,11 @@
 import { createRoute, z } from '@hono/zod-openapi';
-import * as HttpStatusCodes from 'stoker/http-status-codes';
-import { jsonContent, jsonContentRequired } from 'stoker/openapi/helpers';
-import { createErrorSchema, IdParamsSchema } from 'stoker/openapi/schemas';
 
 import { notFoundSchema } from '@/lib/constants';
+import { HttpStatusCodes } from '@/lib/hono-helpers/http-status-codes';
+import jsonContent from '@/lib/stoker/openapi/helpers/json-content';
+import jsonContentRequired from '@/lib/stoker/openapi/helpers/json-content-required';
+import createErrorSchema from '@/lib/stoker/openapi/schemas/create-error-schema';
+import IdParamsSchema from '@/lib/stoker/openapi/schemas/id-params';
 import { insertTasksSchema, patchTasksSchema, selectTasksSchema } from '@/modules/tasks/schema';
 
 const tags = ['Tasks'];

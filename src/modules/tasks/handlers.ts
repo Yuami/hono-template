@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm';
 
-import type { AppRouteHandler } from '@/lib/types';
+import type { AppRouteHandler } from '@/modules/base/types';
 
 import { getDb } from '@/db';
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@/lib/constants';
@@ -34,7 +34,7 @@ export const getOne: AppRouteHandler<GetOneRoute> = async (c) => {
     return notFound(c);
   }
 
-  return c.json(task, HttpStatusCodes.OK);
+  return c.json(task);
 };
 
 export const patch: AppRouteHandler<PatchRoute> = async (c) => {
