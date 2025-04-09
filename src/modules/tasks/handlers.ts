@@ -3,9 +3,10 @@ import { eq } from 'drizzle-orm';
 import type { AppRouteHandler } from '@/modules/base/types';
 
 import { getDb } from '@/db';
-import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@/lib/constants';
+import { ZOD_ERROR_MESSAGES } from '@/lib/constants';
 import { HttpStatusCodes } from '@/lib/hono-helpers/http-status-codes';
 import notFound from '@/lib/stoker/middlewares/not-found';
+import noUpdatesErrorHandler from '@/modules/base/errors/no-updates';
 import { tasks } from '@/modules/tasks/schema';
 
 import type { CreateRoute, GetOneRoute, ListRoute, PatchRoute, RemoveRoute } from './routes';
@@ -43,22 +44,7 @@ export const patch: AppRouteHandler<PatchRoute> = async (c) => {
   const updates = c.req.valid('json');
 
   if (Object.keys(updates).length === 0) {
-    return c.json(
-      {
-        success: false,
-        error: {
-          issues: [
-            {
-              code: ZOD_ERROR_CODES.INVALID_UPDATES,
-              path: [],
-              message: ZOD_ERROR_MESSAGES.NO_UPDATES,
-            },
-          ],
-          name: 'ZodError',
-        },
-      },
-      HttpStatusCodes.UNPROCESSABLE_ENTITY,
-    );
+    return noUpdatesErrorHandler(new Error(ZOD_ERROR_MESSAGES.NO_UPDATES), c);
   }
 
   const [task] = await db.update(tasks)

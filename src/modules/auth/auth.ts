@@ -1,17 +1,17 @@
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
+import { openAPI } from 'better-auth/plugins';
 
-import { getDb, initDb } from '@/db';
-
-// eslint-disable-next-line node/no-process-env
-initDb(process.env as any);
-
-const { db } = getDb();
+import { getDb } from '@/db';
+import { stripePlugin } from '@/modules/auth/auth-stripe-config';
 
 export const auth = betterAuth({
-  database: drizzleAdapter(db, {
+  database: drizzleAdapter(() => getDb().db, {
     provider: 'sqlite',
   }),
+  emailAndPassword: {
+    enabled: true,
+  },
   advanced: {
     defaultCookieAttributes: {
       sameSite: 'none',
@@ -19,4 +19,8 @@ export const auth = betterAuth({
       partitioned: true, // Recommended for new browser standards
     },
   },
+  plugins: [
+    stripePlugin,
+    openAPI(),
+  ],
 });

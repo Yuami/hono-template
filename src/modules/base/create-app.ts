@@ -2,8 +2,6 @@ import { OpenAPIHono } from '@hono/zod-openapi';
 
 import type { AppBindings, AppOpenAPI } from '@/modules/base/types';
 
-import { initDb } from '@/db';
-import { parseEnv } from '@/env';
 import notFound from '@/lib/stoker/middlewares/not-found';
 import onError from '@/lib/stoker/middlewares/on-error';
 import serveEmojiFavicon from '@/lib/stoker/middlewares/serve-emoji-favicon';
@@ -20,12 +18,8 @@ export function createRouter() {
 
 export default function createApp() {
   const app = createRouter();
-  app.use((c, next) => {
-    // eslint-disable-next-line node/no-process-env
-    c.env = parseEnv(Object.assign(c.env || {}, process.env));
-
-    // Initialize the database with environment variables
-    initDb(c.env);
+  app.use('*', (c, next) => {
+    // Parse environment from context
 
     return next();
   });

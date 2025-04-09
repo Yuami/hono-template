@@ -8,6 +8,7 @@ export const user = sqliteTable('user', {
   image: text('image'),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+  stripeCustomerId: text('stripe_customer_id'),
 });
 
 export const session = sqliteTable('session', {

@@ -15,6 +15,13 @@
       "when": 1743771758675,
       "tag": "0001_cloudy_fabian_cortez",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1744221708560,
+      "tag": "0002_classy_doctor_spectrum",
+      "breakpoints": true
     }
   ]
 }

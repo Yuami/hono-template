@@ -191,7 +191,7 @@ var init_performance = __esm({
       getEntriesByName(_name, _type) {
         return [];
       }
-      getEntriesByType(type2) {
+      getEntriesByType(type) {
         return [];
       }
     };
@@ -237,11 +237,11 @@ var init_performance = __esm({
       getEntries() {
         return this._entries;
       }
-      getEntriesByName(name, type2) {
-        return this._entries.filter((e) => e.name === name && (!type2 || e.entryType === type2));
+      getEntriesByName(name, type) {
+        return this._entries.filter((e) => e.name === name && (!type || e.entryType === type));
       }
-      getEntriesByType(type2) {
-        return this._entries.filter((e) => e.entryType === type2);
+      getEntriesByType(type) {
+        return this._entries.filter((e) => e.entryType === type);
       }
       mark(name, options) {
         const entry = new PerformanceMark(name, options);
@@ -271,10 +271,10 @@ var init_performance = __esm({
       setResourceTimingBufferSize(maxSize) {
         this._resourceTimingBufferSize = maxSize;
       }
-      addEventListener(type2, listener, options) {
+      addEventListener(type, listener, options) {
         throw createNotImplementedError("Performance.addEventListener");
       }
-      removeEventListener(type2, listener, options) {
+      removeEventListener(type, listener, options) {
         throw createNotImplementedError("Performance.removeEventListener");
       }
       dispatchEvent(event) {
@@ -532,10 +532,10 @@ var init_write_stream = __esm({
         callback && callback();
         return false;
       }
-      getColorDepth(env4) {
+      getColorDepth(env5) {
         return 1;
       }
-      hasColors(count4, env4) {
+      hasColors(count4, env5) {
         return false;
       }
       getWindowSize() {
@@ -634,8 +634,8 @@ var init_process = __esm({
           }
         }
       }
-      emitWarning(warning, type2, code) {
-        console.warn(`${code ? `[${code}] ` : ""}${type2 ? `${type2}: ` : ""}${warning}`);
+      emitWarning(warning, type, code) {
+        console.warn(`${code ? `[${code}] ` : ""}${type ? `${type}: ` : ""}${warning}`);
       }
       emit(...args) {
         return super.emit(...args);
@@ -1105,1591 +1105,2625 @@ var init_modules_watch_stub = __esm({
   }
 });
 
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs
-var access, copyFile, cp, open, opendir, rename, truncate, rm, rmdir, mkdir, readdir, readlink, symlink, lstat, stat, link, unlink, chmod, lchmod, lchown, chown, utimes, lutimes, realpath, mkdtemp, writeFile, appendFile, readFile, watch, statfs, glob;
-var init_promises = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    access = /* @__PURE__ */ notImplemented("fs.access");
-    copyFile = /* @__PURE__ */ notImplemented("fs.copyFile");
-    cp = /* @__PURE__ */ notImplemented("fs.cp");
-    open = /* @__PURE__ */ notImplemented("fs.open");
-    opendir = /* @__PURE__ */ notImplemented("fs.opendir");
-    rename = /* @__PURE__ */ notImplemented("fs.rename");
-    truncate = /* @__PURE__ */ notImplemented("fs.truncate");
-    rm = /* @__PURE__ */ notImplemented("fs.rm");
-    rmdir = /* @__PURE__ */ notImplemented("fs.rmdir");
-    mkdir = /* @__PURE__ */ notImplemented("fs.mkdir");
-    readdir = /* @__PURE__ */ notImplemented("fs.readdir");
-    readlink = /* @__PURE__ */ notImplemented("fs.readlink");
-    symlink = /* @__PURE__ */ notImplemented("fs.symlink");
-    lstat = /* @__PURE__ */ notImplemented("fs.lstat");
-    stat = /* @__PURE__ */ notImplemented("fs.stat");
-    link = /* @__PURE__ */ notImplemented("fs.link");
-    unlink = /* @__PURE__ */ notImplemented("fs.unlink");
-    chmod = /* @__PURE__ */ notImplemented("fs.chmod");
-    lchmod = /* @__PURE__ */ notImplemented("fs.lchmod");
-    lchown = /* @__PURE__ */ notImplemented("fs.lchown");
-    chown = /* @__PURE__ */ notImplemented("fs.chown");
-    utimes = /* @__PURE__ */ notImplemented("fs.utimes");
-    lutimes = /* @__PURE__ */ notImplemented("fs.lutimes");
-    realpath = /* @__PURE__ */ notImplemented("fs.realpath");
-    mkdtemp = /* @__PURE__ */ notImplemented("fs.mkdtemp");
-    writeFile = /* @__PURE__ */ notImplemented("fs.writeFile");
-    appendFile = /* @__PURE__ */ notImplemented("fs.appendFile");
-    readFile = /* @__PURE__ */ notImplemented("fs.readFile");
-    watch = /* @__PURE__ */ notImplemented("fs.watch");
-    statfs = /* @__PURE__ */ notImplemented("fs.statfs");
-    glob = /* @__PURE__ */ notImplemented("fs.glob");
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs
-var constants_exports = {};
-__export(constants_exports, {
-  COPYFILE_EXCL: () => COPYFILE_EXCL,
-  COPYFILE_FICLONE: () => COPYFILE_FICLONE,
-  COPYFILE_FICLONE_FORCE: () => COPYFILE_FICLONE_FORCE,
-  EXTENSIONLESS_FORMAT_JAVASCRIPT: () => EXTENSIONLESS_FORMAT_JAVASCRIPT,
-  EXTENSIONLESS_FORMAT_WASM: () => EXTENSIONLESS_FORMAT_WASM,
-  F_OK: () => F_OK,
-  O_APPEND: () => O_APPEND,
-  O_CREAT: () => O_CREAT,
-  O_DIRECT: () => O_DIRECT,
-  O_DIRECTORY: () => O_DIRECTORY,
-  O_DSYNC: () => O_DSYNC,
-  O_EXCL: () => O_EXCL,
-  O_NOATIME: () => O_NOATIME,
-  O_NOCTTY: () => O_NOCTTY,
-  O_NOFOLLOW: () => O_NOFOLLOW,
-  O_NONBLOCK: () => O_NONBLOCK,
-  O_RDONLY: () => O_RDONLY,
-  O_RDWR: () => O_RDWR,
-  O_SYNC: () => O_SYNC,
-  O_TRUNC: () => O_TRUNC,
-  O_WRONLY: () => O_WRONLY,
-  R_OK: () => R_OK,
-  S_IFBLK: () => S_IFBLK,
-  S_IFCHR: () => S_IFCHR,
-  S_IFDIR: () => S_IFDIR,
-  S_IFIFO: () => S_IFIFO,
-  S_IFLNK: () => S_IFLNK,
-  S_IFMT: () => S_IFMT,
-  S_IFREG: () => S_IFREG,
-  S_IFSOCK: () => S_IFSOCK,
-  S_IRGRP: () => S_IRGRP,
-  S_IROTH: () => S_IROTH,
-  S_IRUSR: () => S_IRUSR,
-  S_IRWXG: () => S_IRWXG,
-  S_IRWXO: () => S_IRWXO,
-  S_IRWXU: () => S_IRWXU,
-  S_IWGRP: () => S_IWGRP,
-  S_IWOTH: () => S_IWOTH,
-  S_IWUSR: () => S_IWUSR,
-  S_IXGRP: () => S_IXGRP,
-  S_IXOTH: () => S_IXOTH,
-  S_IXUSR: () => S_IXUSR,
-  UV_DIRENT_BLOCK: () => UV_DIRENT_BLOCK,
-  UV_DIRENT_CHAR: () => UV_DIRENT_CHAR,
-  UV_DIRENT_DIR: () => UV_DIRENT_DIR,
-  UV_DIRENT_FIFO: () => UV_DIRENT_FIFO,
-  UV_DIRENT_FILE: () => UV_DIRENT_FILE,
-  UV_DIRENT_LINK: () => UV_DIRENT_LINK,
-  UV_DIRENT_SOCKET: () => UV_DIRENT_SOCKET,
-  UV_DIRENT_UNKNOWN: () => UV_DIRENT_UNKNOWN,
-  UV_FS_COPYFILE_EXCL: () => UV_FS_COPYFILE_EXCL,
-  UV_FS_COPYFILE_FICLONE: () => UV_FS_COPYFILE_FICLONE,
-  UV_FS_COPYFILE_FICLONE_FORCE: () => UV_FS_COPYFILE_FICLONE_FORCE,
-  UV_FS_O_FILEMAP: () => UV_FS_O_FILEMAP,
-  UV_FS_SYMLINK_DIR: () => UV_FS_SYMLINK_DIR,
-  UV_FS_SYMLINK_JUNCTION: () => UV_FS_SYMLINK_JUNCTION,
-  W_OK: () => W_OK,
-  X_OK: () => X_OK
-});
-var UV_FS_SYMLINK_DIR, UV_FS_SYMLINK_JUNCTION, O_RDONLY, O_WRONLY, O_RDWR, UV_DIRENT_UNKNOWN, UV_DIRENT_FILE, UV_DIRENT_DIR, UV_DIRENT_LINK, UV_DIRENT_FIFO, UV_DIRENT_SOCKET, UV_DIRENT_CHAR, UV_DIRENT_BLOCK, EXTENSIONLESS_FORMAT_JAVASCRIPT, EXTENSIONLESS_FORMAT_WASM, S_IFMT, S_IFREG, S_IFDIR, S_IFCHR, S_IFBLK, S_IFIFO, S_IFLNK, S_IFSOCK, O_CREAT, O_EXCL, UV_FS_O_FILEMAP, O_NOCTTY, O_TRUNC, O_APPEND, O_DIRECTORY, O_NOATIME, O_NOFOLLOW, O_SYNC, O_DSYNC, O_DIRECT, O_NONBLOCK, S_IRWXU, S_IRUSR, S_IWUSR, S_IXUSR, S_IRWXG, S_IRGRP, S_IWGRP, S_IXGRP, S_IRWXO, S_IROTH, S_IWOTH, S_IXOTH, F_OK, R_OK, W_OK, X_OK, UV_FS_COPYFILE_EXCL, COPYFILE_EXCL, UV_FS_COPYFILE_FICLONE, COPYFILE_FICLONE, UV_FS_COPYFILE_FICLONE_FORCE, COPYFILE_FICLONE_FORCE;
-var init_constants = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    UV_FS_SYMLINK_DIR = 1;
-    UV_FS_SYMLINK_JUNCTION = 2;
-    O_RDONLY = 0;
-    O_WRONLY = 1;
-    O_RDWR = 2;
-    UV_DIRENT_UNKNOWN = 0;
-    UV_DIRENT_FILE = 1;
-    UV_DIRENT_DIR = 2;
-    UV_DIRENT_LINK = 3;
-    UV_DIRENT_FIFO = 4;
-    UV_DIRENT_SOCKET = 5;
-    UV_DIRENT_CHAR = 6;
-    UV_DIRENT_BLOCK = 7;
-    EXTENSIONLESS_FORMAT_JAVASCRIPT = 0;
-    EXTENSIONLESS_FORMAT_WASM = 1;
-    S_IFMT = 61440;
-    S_IFREG = 32768;
-    S_IFDIR = 16384;
-    S_IFCHR = 8192;
-    S_IFBLK = 24576;
-    S_IFIFO = 4096;
-    S_IFLNK = 40960;
-    S_IFSOCK = 49152;
-    O_CREAT = 64;
-    O_EXCL = 128;
-    UV_FS_O_FILEMAP = 0;
-    O_NOCTTY = 256;
-    O_TRUNC = 512;
-    O_APPEND = 1024;
-    O_DIRECTORY = 65536;
-    O_NOATIME = 262144;
-    O_NOFOLLOW = 131072;
-    O_SYNC = 1052672;
-    O_DSYNC = 4096;
-    O_DIRECT = 16384;
-    O_NONBLOCK = 2048;
-    S_IRWXU = 448;
-    S_IRUSR = 256;
-    S_IWUSR = 128;
-    S_IXUSR = 64;
-    S_IRWXG = 56;
-    S_IRGRP = 32;
-    S_IWGRP = 16;
-    S_IXGRP = 8;
-    S_IRWXO = 7;
-    S_IROTH = 4;
-    S_IWOTH = 2;
-    S_IXOTH = 1;
-    F_OK = 0;
-    R_OK = 4;
-    W_OK = 2;
-    X_OK = 1;
-    UV_FS_COPYFILE_EXCL = 1;
-    COPYFILE_EXCL = 1;
-    UV_FS_COPYFILE_FICLONE = 2;
-    COPYFILE_FICLONE = 2;
-    UV_FS_COPYFILE_FICLONE_FORCE = 4;
-    COPYFILE_FICLONE_FORCE = 4;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs
-var promises_default;
-var init_promises2 = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_promises();
-    init_constants();
-    init_promises();
-    promises_default = {
-      constants: constants_exports,
-      access,
-      appendFile,
-      chmod,
-      chown,
-      copyFile,
-      cp,
-      glob,
-      lchmod,
-      lchown,
-      link,
-      lstat,
-      lutimes,
-      mkdir,
-      mkdtemp,
-      open,
-      opendir,
-      readFile,
-      readdir,
-      readlink,
-      realpath,
-      rename,
-      rm,
-      rmdir,
-      stat,
-      statfs,
-      symlink,
-      truncate,
-      unlink,
-      utimes,
-      watch,
-      writeFile
-    };
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs
-var Dir, Dirent, Stats, ReadStream2, WriteStream2, FileReadStream, FileWriteStream;
-var init_classes = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    Dir = /* @__PURE__ */ notImplementedClass("fs.Dir");
-    Dirent = /* @__PURE__ */ notImplementedClass("fs.Dirent");
-    Stats = /* @__PURE__ */ notImplementedClass("fs.Stats");
-    ReadStream2 = /* @__PURE__ */ notImplementedClass("fs.ReadStream");
-    WriteStream2 = /* @__PURE__ */ notImplementedClass("fs.WriteStream");
-    FileReadStream = ReadStream2;
-    FileWriteStream = WriteStream2;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs
-function callbackify(fn) {
-  const fnc = /* @__PURE__ */ __name(function(...args) {
-    const cb = args.pop();
-    fn().catch((error4) => cb(error4)).then((val) => cb(void 0, val));
-  }, "fnc");
-  fnc.__promisify__ = fn;
-  fnc.native = fnc;
-  return fnc;
-}
-var access2, appendFile2, chown2, chmod2, copyFile2, cp2, lchown2, lchmod2, link2, lstat2, lutimes2, mkdir2, mkdtemp2, realpath2, open2, opendir2, readdir2, readFile2, readlink2, rename2, rm2, rmdir2, stat2, symlink2, truncate2, unlink2, utimes2, writeFile2, statfs2, close, createReadStream, createWriteStream, exists2, fchown, fchmod, fdatasync, fstat, fsync, ftruncate, futimes, lstatSync, read, readv, realpathSync, statSync, unwatchFile, watch2, watchFile, write, writev, _toUnixTimestamp, openAsBlob, glob2, appendFileSync, accessSync, chownSync, chmodSync, closeSync, copyFileSync, cpSync, existsSync, fchownSync, fchmodSync, fdatasyncSync, fstatSync, fsyncSync, ftruncateSync, futimesSync, lchownSync, lchmodSync, linkSync, lutimesSync, mkdirSync, mkdtempSync, openSync, opendirSync, readdirSync, readSync, readvSync, readFileSync, readlinkSync, renameSync, rmSync, rmdirSync, symlinkSync, truncateSync, unlinkSync, utimesSync, writeFileSync, writeSync, writevSync, statfsSync, globSync;
-var init_fs = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    init_promises();
-    __name(callbackify, "callbackify");
-    access2 = callbackify(access);
-    appendFile2 = callbackify(appendFile);
-    chown2 = callbackify(chown);
-    chmod2 = callbackify(chmod);
-    copyFile2 = callbackify(copyFile);
-    cp2 = callbackify(cp);
-    lchown2 = callbackify(lchown);
-    lchmod2 = callbackify(lchmod);
-    link2 = callbackify(link);
-    lstat2 = callbackify(lstat);
-    lutimes2 = callbackify(lutimes);
-    mkdir2 = callbackify(mkdir);
-    mkdtemp2 = callbackify(mkdtemp);
-    realpath2 = callbackify(realpath);
-    open2 = callbackify(open);
-    opendir2 = callbackify(opendir);
-    readdir2 = callbackify(readdir);
-    readFile2 = callbackify(readFile);
-    readlink2 = callbackify(readlink);
-    rename2 = callbackify(rename);
-    rm2 = callbackify(rm);
-    rmdir2 = callbackify(rmdir);
-    stat2 = callbackify(stat);
-    symlink2 = callbackify(symlink);
-    truncate2 = callbackify(truncate);
-    unlink2 = callbackify(unlink);
-    utimes2 = callbackify(utimes);
-    writeFile2 = callbackify(writeFile);
-    statfs2 = callbackify(statfs);
-    close = /* @__PURE__ */ notImplementedAsync("fs.close");
-    createReadStream = /* @__PURE__ */ notImplementedAsync("fs.createReadStream");
-    createWriteStream = /* @__PURE__ */ notImplementedAsync("fs.createWriteStream");
-    exists2 = /* @__PURE__ */ notImplementedAsync("fs.exists");
-    fchown = /* @__PURE__ */ notImplementedAsync("fs.fchown");
-    fchmod = /* @__PURE__ */ notImplementedAsync("fs.fchmod");
-    fdatasync = /* @__PURE__ */ notImplementedAsync("fs.fdatasync");
-    fstat = /* @__PURE__ */ notImplementedAsync("fs.fstat");
-    fsync = /* @__PURE__ */ notImplementedAsync("fs.fsync");
-    ftruncate = /* @__PURE__ */ notImplementedAsync("fs.ftruncate");
-    futimes = /* @__PURE__ */ notImplementedAsync("fs.futimes");
-    lstatSync = /* @__PURE__ */ notImplementedAsync("fs.lstatSync");
-    read = /* @__PURE__ */ notImplementedAsync("fs.read");
-    readv = /* @__PURE__ */ notImplementedAsync("fs.readv");
-    realpathSync = /* @__PURE__ */ notImplementedAsync("fs.realpathSync");
-    statSync = /* @__PURE__ */ notImplementedAsync("fs.statSync");
-    unwatchFile = /* @__PURE__ */ notImplementedAsync("fs.unwatchFile");
-    watch2 = /* @__PURE__ */ notImplementedAsync("fs.watch");
-    watchFile = /* @__PURE__ */ notImplementedAsync("fs.watchFile");
-    write = /* @__PURE__ */ notImplementedAsync("fs.write");
-    writev = /* @__PURE__ */ notImplementedAsync("fs.writev");
-    _toUnixTimestamp = /* @__PURE__ */ notImplementedAsync("fs._toUnixTimestamp");
-    openAsBlob = /* @__PURE__ */ notImplementedAsync("fs.openAsBlob");
-    glob2 = /* @__PURE__ */ notImplementedAsync("fs.glob");
-    appendFileSync = /* @__PURE__ */ notImplemented("fs.appendFileSync");
-    accessSync = /* @__PURE__ */ notImplemented("fs.accessSync");
-    chownSync = /* @__PURE__ */ notImplemented("fs.chownSync");
-    chmodSync = /* @__PURE__ */ notImplemented("fs.chmodSync");
-    closeSync = /* @__PURE__ */ notImplemented("fs.closeSync");
-    copyFileSync = /* @__PURE__ */ notImplemented("fs.copyFileSync");
-    cpSync = /* @__PURE__ */ notImplemented("fs.cpSync");
-    existsSync = /* @__PURE__ */ __name(() => false, "existsSync");
-    fchownSync = /* @__PURE__ */ notImplemented("fs.fchownSync");
-    fchmodSync = /* @__PURE__ */ notImplemented("fs.fchmodSync");
-    fdatasyncSync = /* @__PURE__ */ notImplemented("fs.fdatasyncSync");
-    fstatSync = /* @__PURE__ */ notImplemented("fs.fstatSync");
-    fsyncSync = /* @__PURE__ */ notImplemented("fs.fsyncSync");
-    ftruncateSync = /* @__PURE__ */ notImplemented("fs.ftruncateSync");
-    futimesSync = /* @__PURE__ */ notImplemented("fs.futimesSync");
-    lchownSync = /* @__PURE__ */ notImplemented("fs.lchownSync");
-    lchmodSync = /* @__PURE__ */ notImplemented("fs.lchmodSync");
-    linkSync = /* @__PURE__ */ notImplemented("fs.linkSync");
-    lutimesSync = /* @__PURE__ */ notImplemented("fs.lutimesSync");
-    mkdirSync = /* @__PURE__ */ notImplemented("fs.mkdirSync");
-    mkdtempSync = /* @__PURE__ */ notImplemented("fs.mkdtempSync");
-    openSync = /* @__PURE__ */ notImplemented("fs.openSync");
-    opendirSync = /* @__PURE__ */ notImplemented("fs.opendirSync");
-    readdirSync = /* @__PURE__ */ notImplemented("fs.readdirSync");
-    readSync = /* @__PURE__ */ notImplemented("fs.readSync");
-    readvSync = /* @__PURE__ */ notImplemented("fs.readvSync");
-    readFileSync = /* @__PURE__ */ notImplemented("fs.readFileSync");
-    readlinkSync = /* @__PURE__ */ notImplemented("fs.readlinkSync");
-    renameSync = /* @__PURE__ */ notImplemented("fs.renameSync");
-    rmSync = /* @__PURE__ */ notImplemented("fs.rmSync");
-    rmdirSync = /* @__PURE__ */ notImplemented("fs.rmdirSync");
-    symlinkSync = /* @__PURE__ */ notImplemented("fs.symlinkSync");
-    truncateSync = /* @__PURE__ */ notImplemented("fs.truncateSync");
-    unlinkSync = /* @__PURE__ */ notImplemented("fs.unlinkSync");
-    utimesSync = /* @__PURE__ */ notImplemented("fs.utimesSync");
-    writeFileSync = /* @__PURE__ */ notImplemented("fs.writeFileSync");
-    writeSync = /* @__PURE__ */ notImplemented("fs.writeSync");
-    writevSync = /* @__PURE__ */ notImplemented("fs.writevSync");
-    statfsSync = /* @__PURE__ */ notImplemented("fs.statfsSync");
-    globSync = /* @__PURE__ */ notImplemented("fs.globSync");
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs
-var fs_default;
-var init_fs2 = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_promises2();
-    init_classes();
-    init_fs();
-    init_constants();
-    init_constants();
-    init_fs();
-    init_classes();
-    fs_default = {
-      F_OK,
-      R_OK,
-      W_OK,
-      X_OK,
-      constants: constants_exports,
-      promises: promises_default,
-      Dir,
-      Dirent,
-      FileReadStream,
-      FileWriteStream,
-      ReadStream: ReadStream2,
-      Stats,
-      WriteStream: WriteStream2,
-      _toUnixTimestamp,
-      access: access2,
-      accessSync,
-      appendFile: appendFile2,
-      appendFileSync,
-      chmod: chmod2,
-      chmodSync,
-      chown: chown2,
-      chownSync,
-      close,
-      closeSync,
-      copyFile: copyFile2,
-      copyFileSync,
-      cp: cp2,
-      cpSync,
-      createReadStream,
-      createWriteStream,
-      exists: exists2,
-      existsSync,
-      fchmod,
-      fchmodSync,
-      fchown,
-      fchownSync,
-      fdatasync,
-      fdatasyncSync,
-      fstat,
-      fstatSync,
-      fsync,
-      fsyncSync,
-      ftruncate,
-      ftruncateSync,
-      futimes,
-      futimesSync,
-      glob: glob2,
-      lchmod: lchmod2,
-      globSync,
-      lchmodSync,
-      lchown: lchown2,
-      lchownSync,
-      link: link2,
-      linkSync,
-      lstat: lstat2,
-      lstatSync,
-      lutimes: lutimes2,
-      lutimesSync,
-      mkdir: mkdir2,
-      mkdirSync,
-      mkdtemp: mkdtemp2,
-      mkdtempSync,
-      open: open2,
-      openAsBlob,
-      openSync,
-      opendir: opendir2,
-      opendirSync,
-      read,
-      readFile: readFile2,
-      readFileSync,
-      readSync,
-      readdir: readdir2,
-      readdirSync,
-      readlink: readlink2,
-      readlinkSync,
-      readv,
-      readvSync,
-      realpath: realpath2,
-      realpathSync,
-      rename: rename2,
-      renameSync,
-      rm: rm2,
-      rmSync,
-      rmdir: rmdir2,
-      rmdirSync,
-      stat: stat2,
-      statSync,
-      statfs: statfs2,
-      statfsSync,
-      symlink: symlink2,
-      symlinkSync,
-      truncate: truncate2,
-      truncateSync,
-      unlink: unlink2,
-      unlinkSync,
-      unwatchFile,
-      utimes: utimes2,
-      utimesSync,
-      watch: watch2,
-      watchFile,
-      write,
-      writeFile: writeFile2,
-      writeFileSync,
-      writeSync,
-      writev,
-      writevSync
-    };
-  }
-});
-
-// node-built-in-modules:fs
-var require_fs = __commonJS({
-  "node-built-in-modules:fs"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_fs2();
-    module.exports = fs_default;
-  }
-});
-
-// node-built-in-modules:path
-import libDefault from "path";
-var require_path = __commonJS({
-  "node-built-in-modules:path"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    module.exports = libDefault;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/os/constants.mjs
-var UV_UDP_REUSEADDR, dlopen2, errno, signals, priority;
-var init_constants2 = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/os/constants.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    UV_UDP_REUSEADDR = 4;
-    dlopen2 = {
-      RTLD_LAZY: 1,
-      RTLD_NOW: 2,
-      RTLD_GLOBAL: 256,
-      RTLD_LOCAL: 0,
-      RTLD_DEEPBIND: 8
-    };
-    errno = {
-      E2BIG: 7,
-      EACCES: 13,
-      EADDRINUSE: 98,
-      EADDRNOTAVAIL: 99,
-      EAFNOSUPPORT: 97,
-      EAGAIN: 11,
-      EALREADY: 114,
-      EBADF: 9,
-      EBADMSG: 74,
-      EBUSY: 16,
-      ECANCELED: 125,
-      ECHILD: 10,
-      ECONNABORTED: 103,
-      ECONNREFUSED: 111,
-      ECONNRESET: 104,
-      EDEADLK: 35,
-      EDESTADDRREQ: 89,
-      EDOM: 33,
-      EDQUOT: 122,
-      EEXIST: 17,
-      EFAULT: 14,
-      EFBIG: 27,
-      EHOSTUNREACH: 113,
-      EIDRM: 43,
-      EILSEQ: 84,
-      EINPROGRESS: 115,
-      EINTR: 4,
-      EINVAL: 22,
-      EIO: 5,
-      EISCONN: 106,
-      EISDIR: 21,
-      ELOOP: 40,
-      EMFILE: 24,
-      EMLINK: 31,
-      EMSGSIZE: 90,
-      EMULTIHOP: 72,
-      ENAMETOOLONG: 36,
-      ENETDOWN: 100,
-      ENETRESET: 102,
-      ENETUNREACH: 101,
-      ENFILE: 23,
-      ENOBUFS: 105,
-      ENODATA: 61,
-      ENODEV: 19,
-      ENOENT: 2,
-      ENOEXEC: 8,
-      ENOLCK: 37,
-      ENOLINK: 67,
-      ENOMEM: 12,
-      ENOMSG: 42,
-      ENOPROTOOPT: 92,
-      ENOSPC: 28,
-      ENOSR: 63,
-      ENOSTR: 60,
-      ENOSYS: 38,
-      ENOTCONN: 107,
-      ENOTDIR: 20,
-      ENOTEMPTY: 39,
-      ENOTSOCK: 88,
-      ENOTSUP: 95,
-      ENOTTY: 25,
-      ENXIO: 6,
-      EOPNOTSUPP: 95,
-      EOVERFLOW: 75,
-      EPERM: 1,
-      EPIPE: 32,
-      EPROTO: 71,
-      EPROTONOSUPPORT: 93,
-      EPROTOTYPE: 91,
-      ERANGE: 34,
-      EROFS: 30,
-      ESPIPE: 29,
-      ESRCH: 3,
-      ESTALE: 116,
-      ETIME: 62,
-      ETIMEDOUT: 110,
-      ETXTBSY: 26,
-      EWOULDBLOCK: 11,
-      EXDEV: 18
-    };
-    signals = {
-      SIGHUP: 1,
-      SIGINT: 2,
-      SIGQUIT: 3,
-      SIGILL: 4,
-      SIGTRAP: 5,
-      SIGABRT: 6,
-      SIGIOT: 6,
-      SIGBUS: 7,
-      SIGFPE: 8,
-      SIGKILL: 9,
-      SIGUSR1: 10,
-      SIGSEGV: 11,
-      SIGUSR2: 12,
-      SIGPIPE: 13,
-      SIGALRM: 14,
-      SIGTERM: 15,
-      SIGCHLD: 17,
-      SIGSTKFLT: 16,
-      SIGCONT: 18,
-      SIGSTOP: 19,
-      SIGTSTP: 20,
-      SIGTTIN: 21,
-      SIGTTOU: 22,
-      SIGURG: 23,
-      SIGXCPU: 24,
-      SIGXFSZ: 25,
-      SIGVTALRM: 26,
-      SIGPROF: 27,
-      SIGWINCH: 28,
-      SIGIO: 29,
-      SIGPOLL: 29,
-      SIGPWR: 30,
-      SIGSYS: 31
-    };
-    priority = {
-      PRIORITY_LOW: 19,
-      PRIORITY_BELOW_NORMAL: 10,
-      PRIORITY_NORMAL: 0,
-      PRIORITY_ABOVE_NORMAL: -7,
-      PRIORITY_HIGH: -14,
-      PRIORITY_HIGHEST: -20
-    };
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/os.mjs
-var constants, NUM_CPUS, availableParallelism, arch2, machine, endianness, cpus, getPriority, setPriority, homedir, tmpdir, devNull, freemem, totalmem, loadavg, uptime2, hostname, networkInterfaces, platform2, type, release2, version3, userInfo, EOL, os_default;
-var init_os = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/os.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    init_constants2();
-    constants = {
-      UV_UDP_REUSEADDR,
-      dlopen: dlopen2,
-      errno,
-      signals,
-      priority
-    };
-    NUM_CPUS = 8;
-    availableParallelism = /* @__PURE__ */ __name(() => NUM_CPUS, "availableParallelism");
-    arch2 = /* @__PURE__ */ __name(() => "", "arch");
-    machine = /* @__PURE__ */ __name(() => "", "machine");
-    endianness = /* @__PURE__ */ __name(() => "LE", "endianness");
-    cpus = /* @__PURE__ */ __name(() => {
-      const info3 = {
-        model: "",
-        speed: 0,
-        times: {
-          user: 0,
-          nice: 0,
-          sys: 0,
-          idle: 0,
-          irq: 0
-        }
-      };
-      return Array.from({ length: NUM_CPUS }, () => info3);
-    }, "cpus");
-    getPriority = /* @__PURE__ */ __name(() => 0, "getPriority");
-    setPriority = /* @__PURE__ */ notImplemented("os.setPriority");
-    homedir = /* @__PURE__ */ __name(() => "/", "homedir");
-    tmpdir = /* @__PURE__ */ __name(() => "/tmp", "tmpdir");
-    devNull = "/dev/null";
-    freemem = /* @__PURE__ */ __name(() => 0, "freemem");
-    totalmem = /* @__PURE__ */ __name(() => 0, "totalmem");
-    loadavg = /* @__PURE__ */ __name(() => [
-      0,
-      0,
-      0
-    ], "loadavg");
-    uptime2 = /* @__PURE__ */ __name(() => 0, "uptime");
-    hostname = /* @__PURE__ */ __name(() => "", "hostname");
-    networkInterfaces = /* @__PURE__ */ __name(() => {
-      return { lo0: [
-        {
-          address: "127.0.0.1",
-          netmask: "255.0.0.0",
-          family: "IPv4",
-          mac: "00:00:00:00:00:00",
-          internal: true,
-          cidr: "127.0.0.1/8"
-        },
-        {
-          address: "::1",
-          netmask: "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
-          family: "IPv6",
-          mac: "00:00:00:00:00:00",
-          internal: true,
-          cidr: "::1/128",
-          scopeid: 0
-        },
-        {
-          address: "fe80::1",
-          netmask: "ffff:ffff:ffff:ffff::",
-          family: "IPv6",
-          mac: "00:00:00:00:00:00",
-          internal: true,
-          cidr: "fe80::1/64",
-          scopeid: 1
-        }
-      ] };
-    }, "networkInterfaces");
-    platform2 = /* @__PURE__ */ __name(() => "linux", "platform");
-    type = /* @__PURE__ */ __name(() => "Linux", "type");
-    release2 = /* @__PURE__ */ __name(() => "", "release");
-    version3 = /* @__PURE__ */ __name(() => "", "version");
-    userInfo = /* @__PURE__ */ __name((opts) => {
-      const encode2 = /* @__PURE__ */ __name((str) => {
-        if (opts?.encoding) {
-          const buff = Buffer.from(str);
-          return opts.encoding === "buffer" ? buff : buff.toString(opts.encoding);
-        }
-        return str;
-      }, "encode");
-      return {
-        gid: 1e3,
-        uid: 1e3,
-        homedir: encode2("/"),
-        shell: encode2("/bin/sh"),
-        username: encode2("root")
-      };
-    }, "userInfo");
-    EOL = "\n";
-    os_default = {
-      arch: arch2,
-      availableParallelism,
-      constants,
-      cpus,
-      EOL,
-      endianness,
-      devNull,
-      freemem,
-      getPriority,
-      homedir,
-      hostname,
-      loadavg,
-      machine,
-      networkInterfaces,
-      platform: platform2,
-      release: release2,
-      setPriority,
-      tmpdir,
-      totalmem,
-      type,
-      uptime: uptime2,
-      userInfo,
-      version: version3
-    };
-  }
-});
-
-// node-built-in-modules:os
-var require_os = __commonJS({
-  "node-built-in-modules:os"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_os();
-    module.exports = os_default;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/web.mjs
-var subtle2;
-var init_web = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/web.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    subtle2 = globalThis.crypto?.subtle;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/node.mjs
-var webcrypto, createCipher, createDecipher, pseudoRandomBytes, Cipher, Decipher;
-var init_node = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/node.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    webcrypto = new Proxy(globalThis.crypto, { get(_, key) {
-      if (key === "CryptoKey") {
-        return globalThis.CryptoKey;
-      }
-      if (typeof globalThis.crypto[key] === "function") {
-        return globalThis.crypto[key].bind(globalThis.crypto);
-      }
-      return globalThis.crypto[key];
-    } });
-    createCipher = /* @__PURE__ */ notImplemented("crypto.createCipher");
-    createDecipher = /* @__PURE__ */ notImplemented("crypto.createDecipher");
-    pseudoRandomBytes = /* @__PURE__ */ notImplemented("crypto.pseudoRandomBytes");
-    Cipher = /* @__PURE__ */ notImplementedClass("crypto.Cipher");
-    Decipher = /* @__PURE__ */ notImplementedClass("crypto.Decipher");
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/constants.mjs
-var SSL_OP_ALL, SSL_OP_ALLOW_NO_DHE_KEX, SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION, SSL_OP_CIPHER_SERVER_PREFERENCE, SSL_OP_CISCO_ANYCONNECT, SSL_OP_COOKIE_EXCHANGE, SSL_OP_CRYPTOPRO_TLSEXT_BUG, SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS, SSL_OP_LEGACY_SERVER_CONNECT, SSL_OP_NO_COMPRESSION, SSL_OP_NO_ENCRYPT_THEN_MAC, SSL_OP_NO_QUERY_MTU, SSL_OP_NO_RENEGOTIATION, SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION, SSL_OP_NO_SSLv2, SSL_OP_NO_SSLv3, SSL_OP_NO_TICKET, SSL_OP_NO_TLSv1, SSL_OP_NO_TLSv1_1, SSL_OP_NO_TLSv1_2, SSL_OP_NO_TLSv1_3, SSL_OP_PRIORITIZE_CHACHA, SSL_OP_TLS_ROLLBACK_BUG, ENGINE_METHOD_RSA, ENGINE_METHOD_DSA, ENGINE_METHOD_DH, ENGINE_METHOD_RAND, ENGINE_METHOD_EC, ENGINE_METHOD_CIPHERS, ENGINE_METHOD_DIGESTS, ENGINE_METHOD_PKEY_METHS, ENGINE_METHOD_PKEY_ASN1_METHS, ENGINE_METHOD_ALL, ENGINE_METHOD_NONE, DH_CHECK_P_NOT_SAFE_PRIME, DH_CHECK_P_NOT_PRIME, DH_UNABLE_TO_CHECK_GENERATOR, DH_NOT_SUITABLE_GENERATOR, RSA_PKCS1_PADDING, RSA_NO_PADDING, RSA_PKCS1_OAEP_PADDING, RSA_X931_PADDING, RSA_PKCS1_PSS_PADDING, RSA_PSS_SALTLEN_DIGEST, RSA_PSS_SALTLEN_MAX_SIGN, RSA_PSS_SALTLEN_AUTO, POINT_CONVERSION_COMPRESSED, POINT_CONVERSION_UNCOMPRESSED, POINT_CONVERSION_HYBRID, defaultCoreCipherList, defaultCipherList, OPENSSL_VERSION_NUMBER, TLS1_VERSION, TLS1_1_VERSION, TLS1_2_VERSION, TLS1_3_VERSION;
-var init_constants3 = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/constants.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    SSL_OP_ALL = 2147485776;
-    SSL_OP_ALLOW_NO_DHE_KEX = 1024;
-    SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION = 262144;
-    SSL_OP_CIPHER_SERVER_PREFERENCE = 4194304;
-    SSL_OP_CISCO_ANYCONNECT = 32768;
-    SSL_OP_COOKIE_EXCHANGE = 8192;
-    SSL_OP_CRYPTOPRO_TLSEXT_BUG = 2147483648;
-    SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS = 2048;
-    SSL_OP_LEGACY_SERVER_CONNECT = 4;
-    SSL_OP_NO_COMPRESSION = 131072;
-    SSL_OP_NO_ENCRYPT_THEN_MAC = 524288;
-    SSL_OP_NO_QUERY_MTU = 4096;
-    SSL_OP_NO_RENEGOTIATION = 1073741824;
-    SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION = 65536;
-    SSL_OP_NO_SSLv2 = 0;
-    SSL_OP_NO_SSLv3 = 33554432;
-    SSL_OP_NO_TICKET = 16384;
-    SSL_OP_NO_TLSv1 = 67108864;
-    SSL_OP_NO_TLSv1_1 = 268435456;
-    SSL_OP_NO_TLSv1_2 = 134217728;
-    SSL_OP_NO_TLSv1_3 = 536870912;
-    SSL_OP_PRIORITIZE_CHACHA = 2097152;
-    SSL_OP_TLS_ROLLBACK_BUG = 8388608;
-    ENGINE_METHOD_RSA = 1;
-    ENGINE_METHOD_DSA = 2;
-    ENGINE_METHOD_DH = 4;
-    ENGINE_METHOD_RAND = 8;
-    ENGINE_METHOD_EC = 2048;
-    ENGINE_METHOD_CIPHERS = 64;
-    ENGINE_METHOD_DIGESTS = 128;
-    ENGINE_METHOD_PKEY_METHS = 512;
-    ENGINE_METHOD_PKEY_ASN1_METHS = 1024;
-    ENGINE_METHOD_ALL = 65535;
-    ENGINE_METHOD_NONE = 0;
-    DH_CHECK_P_NOT_SAFE_PRIME = 2;
-    DH_CHECK_P_NOT_PRIME = 1;
-    DH_UNABLE_TO_CHECK_GENERATOR = 4;
-    DH_NOT_SUITABLE_GENERATOR = 8;
-    RSA_PKCS1_PADDING = 1;
-    RSA_NO_PADDING = 3;
-    RSA_PKCS1_OAEP_PADDING = 4;
-    RSA_X931_PADDING = 5;
-    RSA_PKCS1_PSS_PADDING = 6;
-    RSA_PSS_SALTLEN_DIGEST = -1;
-    RSA_PSS_SALTLEN_MAX_SIGN = -2;
-    RSA_PSS_SALTLEN_AUTO = -2;
-    POINT_CONVERSION_COMPRESSED = 2;
-    POINT_CONVERSION_UNCOMPRESSED = 4;
-    POINT_CONVERSION_HYBRID = 6;
-    defaultCoreCipherList = "";
-    defaultCipherList = "";
-    OPENSSL_VERSION_NUMBER = 0;
-    TLS1_VERSION = 0;
-    TLS1_1_VERSION = 0;
-    TLS1_2_VERSION = 0;
-    TLS1_3_VERSION = 0;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/crypto.mjs
-var constants2;
-var init_crypto = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/crypto.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_constants3();
-    init_web();
-    init_node();
-    constants2 = {
-      OPENSSL_VERSION_NUMBER,
-      SSL_OP_ALL,
-      SSL_OP_ALLOW_NO_DHE_KEX,
-      SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION,
-      SSL_OP_CIPHER_SERVER_PREFERENCE,
-      SSL_OP_CISCO_ANYCONNECT,
-      SSL_OP_COOKIE_EXCHANGE,
-      SSL_OP_CRYPTOPRO_TLSEXT_BUG,
-      SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS,
-      SSL_OP_LEGACY_SERVER_CONNECT,
-      SSL_OP_NO_COMPRESSION,
-      SSL_OP_NO_ENCRYPT_THEN_MAC,
-      SSL_OP_NO_QUERY_MTU,
-      SSL_OP_NO_RENEGOTIATION,
-      SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION,
-      SSL_OP_NO_SSLv2,
-      SSL_OP_NO_SSLv3,
-      SSL_OP_NO_TICKET,
-      SSL_OP_NO_TLSv1,
-      SSL_OP_NO_TLSv1_1,
-      SSL_OP_NO_TLSv1_2,
-      SSL_OP_NO_TLSv1_3,
-      SSL_OP_PRIORITIZE_CHACHA,
-      SSL_OP_TLS_ROLLBACK_BUG,
-      ENGINE_METHOD_RSA,
-      ENGINE_METHOD_DSA,
-      ENGINE_METHOD_DH,
-      ENGINE_METHOD_RAND,
-      ENGINE_METHOD_EC,
-      ENGINE_METHOD_CIPHERS,
-      ENGINE_METHOD_DIGESTS,
-      ENGINE_METHOD_PKEY_METHS,
-      ENGINE_METHOD_PKEY_ASN1_METHS,
-      ENGINE_METHOD_ALL,
-      ENGINE_METHOD_NONE,
-      DH_CHECK_P_NOT_SAFE_PRIME,
-      DH_CHECK_P_NOT_PRIME,
-      DH_UNABLE_TO_CHECK_GENERATOR,
-      DH_NOT_SUITABLE_GENERATOR,
-      RSA_PKCS1_PADDING,
-      RSA_NO_PADDING,
-      RSA_PKCS1_OAEP_PADDING,
-      RSA_X931_PADDING,
-      RSA_PKCS1_PSS_PADDING,
-      RSA_PSS_SALTLEN_DIGEST,
-      RSA_PSS_SALTLEN_MAX_SIGN,
-      RSA_PSS_SALTLEN_AUTO,
-      defaultCoreCipherList,
-      TLS1_VERSION,
-      TLS1_1_VERSION,
-      TLS1_2_VERSION,
-      TLS1_3_VERSION,
-      POINT_CONVERSION_COMPRESSED,
-      POINT_CONVERSION_UNCOMPRESSED,
-      POINT_CONVERSION_HYBRID,
-      defaultCipherList
-    };
-  }
-});
-
-// node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs
-var workerdCrypto, Certificate, checkPrime, checkPrimeSync, Cipheriv, createCipheriv, createDecipheriv, createDiffieHellman, createDiffieHellmanGroup, createECDH, createHash2, createHmac, createPrivateKey, createPublicKey, createSecretKey, createSign, createVerify, Decipheriv, diffieHellman, DiffieHellman, DiffieHellmanGroup, ECDH, fips, generateKey2, generateKeyPair, generateKeyPairSync, generateKeySync, generatePrime, generatePrimeSync, getCipherInfo, getCiphers, getCurves, getDiffieHellman, getFips, getHashes, getRandomValues2, hash, Hash2, hkdf, hkdfSync, Hmac, KeyObject, pbkdf22, pbkdf2Sync, privateDecrypt, privateEncrypt, publicDecrypt, publicEncrypt, randomBytes, randomFill, randomFillSync, randomInt, randomUUID, scrypt, scryptSync, secureHeapUsed, setEngine, setFips, sign2, Sign, subtle3, timingSafeEqual, verify2, Verify, X509Certificate, webcrypto2, crypto_default;
-var init_crypto2 = __esm({
-  "node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_crypto();
-    workerdCrypto = process.getBuiltinModule("node:crypto");
-    ({
-      Certificate,
-      checkPrime,
-      checkPrimeSync,
-      Cipheriv: (
-        // @ts-expect-error
-        Cipheriv
-      ),
-      createCipheriv,
-      createDecipheriv,
-      createDiffieHellman,
-      createDiffieHellmanGroup,
-      createECDH,
-      createHash: createHash2,
-      createHmac,
-      createPrivateKey,
-      createPublicKey,
-      createSecretKey,
-      createSign,
-      createVerify,
-      Decipheriv: (
-        // @ts-expect-error
-        Decipheriv
-      ),
-      diffieHellman,
-      DiffieHellman,
-      DiffieHellmanGroup,
-      ECDH,
-      fips,
-      generateKey: generateKey2,
-      generateKeyPair,
-      generateKeyPairSync,
-      generateKeySync,
-      generatePrime,
-      generatePrimeSync,
-      getCipherInfo,
-      getCiphers,
-      getCurves,
-      getDiffieHellman,
-      getFips,
-      getHashes,
-      getRandomValues: getRandomValues2,
-      hash,
-      Hash: Hash2,
-      hkdf,
-      hkdfSync,
-      Hmac,
-      KeyObject,
-      pbkdf2: pbkdf22,
-      pbkdf2Sync,
-      privateDecrypt,
-      privateEncrypt,
-      publicDecrypt,
-      publicEncrypt,
-      randomBytes,
-      randomFill,
-      randomFillSync,
-      randomInt,
-      randomUUID,
-      scrypt,
-      scryptSync,
-      secureHeapUsed,
-      setEngine,
-      setFips,
-      sign: sign2,
-      Sign,
-      subtle: subtle3,
-      timingSafeEqual,
-      verify: verify2,
-      Verify,
-      X509Certificate
-    } = workerdCrypto);
-    webcrypto2 = {
-      // @ts-expect-error
-      CryptoKey: webcrypto.CryptoKey,
-      getRandomValues: getRandomValues2,
-      randomUUID,
-      subtle: subtle3
-    };
-    crypto_default = {
-      /**
-       * manually unroll unenv-polyfilled-symbols to make it tree-shakeable
-       */
-      Certificate,
-      Cipher,
-      Cipheriv,
-      Decipher,
-      Decipheriv,
-      ECDH,
-      Sign,
-      Verify,
-      X509Certificate,
-      // @ts-expect-error @types/node is out of date - this is a bug in typings
-      constants: constants2,
-      createCipheriv,
-      createDecipheriv,
-      createECDH,
-      createSign,
-      createVerify,
-      diffieHellman,
-      getCipherInfo,
-      hash,
-      privateDecrypt,
-      privateEncrypt,
-      publicDecrypt,
-      publicEncrypt,
-      scrypt,
-      scryptSync,
-      sign: sign2,
-      verify: verify2,
-      // default-only export from unenv
-      // @ts-expect-error unenv has unknown type
-      createCipher,
-      // @ts-expect-error unenv has unknown type
-      createDecipher,
-      // @ts-expect-error unenv has unknown type
-      pseudoRandomBytes,
-      /**
-       * manually unroll workerd-polyfilled-symbols to make it tree-shakeable
-       */
-      DiffieHellman,
-      DiffieHellmanGroup,
-      Hash: Hash2,
-      Hmac,
-      KeyObject,
-      checkPrime,
-      checkPrimeSync,
-      createDiffieHellman,
-      createDiffieHellmanGroup,
-      createHash: createHash2,
-      createHmac,
-      createPrivateKey,
-      createPublicKey,
-      createSecretKey,
-      generateKey: generateKey2,
-      generateKeyPair,
-      generateKeyPairSync,
-      generateKeySync,
-      generatePrime,
-      generatePrimeSync,
-      getCiphers,
-      getCurves,
-      getDiffieHellman,
-      getFips,
-      getHashes,
-      getRandomValues: getRandomValues2,
-      hkdf,
-      hkdfSync,
-      pbkdf2: pbkdf22,
-      pbkdf2Sync,
-      randomBytes,
-      randomFill,
-      randomFillSync,
-      randomInt,
-      randomUUID,
-      secureHeapUsed,
-      setEngine,
-      setFips,
-      subtle: subtle3,
-      timingSafeEqual,
-      // default-only export from workerd
-      fips,
-      // special-cased deep merged symbols
-      webcrypto: webcrypto2
-    };
-  }
-});
-
-// node-built-in-modules:crypto
-var require_crypto = __commonJS({
-  "node-built-in-modules:crypto"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_crypto2();
-    module.exports = crypto_default;
-  }
-});
-
-// node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/package.json
-var require_package = __commonJS({
-  "node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/package.json"(exports, module) {
-    module.exports = {
-      name: "dotenv",
-      version: "16.4.7",
-      description: "Loads environment variables from .env file",
-      main: "lib/main.js",
-      types: "lib/main.d.ts",
-      exports: {
-        ".": {
-          types: "./lib/main.d.ts",
-          require: "./lib/main.js",
-          default: "./lib/main.js"
-        },
-        "./config": "./config.js",
-        "./config.js": "./config.js",
-        "./lib/env-options": "./lib/env-options.js",
-        "./lib/env-options.js": "./lib/env-options.js",
-        "./lib/cli-options": "./lib/cli-options.js",
-        "./lib/cli-options.js": "./lib/cli-options.js",
-        "./package.json": "./package.json"
-      },
-      scripts: {
-        "dts-check": "tsc --project tests/types/tsconfig.json",
-        lint: "standard",
-        pretest: "npm run lint && npm run dts-check",
-        test: "tap run --allow-empty-coverage --disable-coverage --timeout=60000",
-        "test:coverage": "tap run --show-full-coverage --timeout=60000 --coverage-report=lcov",
-        prerelease: "npm test",
-        release: "standard-version"
-      },
-      repository: {
-        type: "git",
-        url: "git://github.com/motdotla/dotenv.git"
-      },
-      funding: "https://dotenvx.com",
-      keywords: [
-        "dotenv",
-        "env",
-        ".env",
-        "environment",
-        "variables",
-        "config",
-        "settings"
-      ],
-      readmeFilename: "README.md",
-      license: "BSD-2-Clause",
-      devDependencies: {
-        "@types/node": "^18.11.3",
-        decache: "^4.6.2",
-        sinon: "^14.0.1",
-        standard: "^17.0.0",
-        "standard-version": "^9.5.0",
-        tap: "^19.2.0",
-        typescript: "^4.8.4"
-      },
-      engines: {
-        node: ">=12"
-      },
-      browser: {
-        fs: false
-      }
-    };
-  }
-});
-
-// node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/lib/main.js
-var require_main = __commonJS({
-  "node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/lib/main.js"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    var fs = require_fs();
-    var path2 = require_path();
-    var os = require_os();
-    var crypto2 = require_crypto();
-    var packageJson = require_package();
-    var version4 = packageJson.version;
-    var LINE = /(?:^|^)\s*(?:export\s+)?([\w.-]+)(?:\s*=\s*?|:\s+?)(\s*'(?:\\'|[^'])*'|\s*"(?:\\"|[^"])*"|\s*`(?:\\`|[^`])*`|[^#\r\n]+)?\s*(?:#.*)?(?:$|$)/mg;
-    function parse3(src) {
-      const obj = {};
-      let lines = src.toString();
-      lines = lines.replace(/\r\n?/mg, "\n");
-      let match;
-      while ((match = LINE.exec(lines)) != null) {
-        const key = match[1];
-        let value = match[2] || "";
-        value = value.trim();
-        const maybeQuote = value[0];
-        value = value.replace(/^(['"`])([\s\S]*)\1$/mg, "$2");
-        if (maybeQuote === '"') {
-          value = value.replace(/\\n/g, "\n");
-          value = value.replace(/\\r/g, "\r");
-        }
-        obj[key] = value;
-      }
-      return obj;
-    }
-    __name(parse3, "parse");
-    function _parseVault(options) {
-      const vaultPath = _vaultPath(options);
-      const result = DotenvModule.configDotenv({ path: vaultPath });
-      if (!result.parsed) {
-        const err = new Error(`MISSING_DATA: Cannot parse ${vaultPath} for an unknown reason`);
-        err.code = "MISSING_DATA";
-        throw err;
-      }
-      const keys = _dotenvKey(options).split(",");
-      const length = keys.length;
-      let decrypted;
-      for (let i = 0; i < length; i++) {
-        try {
-          const key = keys[i].trim();
-          const attrs = _instructions(result, key);
-          decrypted = DotenvModule.decrypt(attrs.ciphertext, attrs.key);
-          break;
-        } catch (error4) {
-          if (i + 1 >= length) {
-            throw error4;
-          }
-        }
-      }
-      return DotenvModule.parse(decrypted);
-    }
-    __name(_parseVault, "_parseVault");
-    function _log(message2) {
-      console.log(`[dotenv@${version4}][INFO] ${message2}`);
-    }
-    __name(_log, "_log");
-    function _warn(message2) {
-      console.log(`[dotenv@${version4}][WARN] ${message2}`);
-    }
-    __name(_warn, "_warn");
-    function _debug(message2) {
-      console.log(`[dotenv@${version4}][DEBUG] ${message2}`);
-    }
-    __name(_debug, "_debug");
-    function _dotenvKey(options) {
-      if (options && options.DOTENV_KEY && options.DOTENV_KEY.length > 0) {
-        return options.DOTENV_KEY;
-      }
-      if (process.env.DOTENV_KEY && process.env.DOTENV_KEY.length > 0) {
-        return process.env.DOTENV_KEY;
-      }
-      return "";
-    }
-    __name(_dotenvKey, "_dotenvKey");
-    function _instructions(result, dotenvKey) {
-      let uri;
-      try {
-        uri = new URL(dotenvKey);
-      } catch (error4) {
-        if (error4.code === "ERR_INVALID_URL") {
-          const err = new Error("INVALID_DOTENV_KEY: Wrong format. Must be in valid uri format like dotenv://:key_1234@dotenvx.com/vault/.env.vault?environment=development");
-          err.code = "INVALID_DOTENV_KEY";
-          throw err;
-        }
-        throw error4;
-      }
-      const key = uri.password;
-      if (!key) {
-        const err = new Error("INVALID_DOTENV_KEY: Missing key part");
-        err.code = "INVALID_DOTENV_KEY";
-        throw err;
-      }
-      const environment = uri.searchParams.get("environment");
-      if (!environment) {
-        const err = new Error("INVALID_DOTENV_KEY: Missing environment part");
-        err.code = "INVALID_DOTENV_KEY";
-        throw err;
-      }
-      const environmentKey = `DOTENV_VAULT_${environment.toUpperCase()}`;
-      const ciphertext = result.parsed[environmentKey];
-      if (!ciphertext) {
-        const err = new Error(`NOT_FOUND_DOTENV_ENVIRONMENT: Cannot locate environment ${environmentKey} in your .env.vault file.`);
-        err.code = "NOT_FOUND_DOTENV_ENVIRONMENT";
-        throw err;
-      }
-      return { ciphertext, key };
-    }
-    __name(_instructions, "_instructions");
-    function _vaultPath(options) {
-      let possibleVaultPath = null;
-      if (options && options.path && options.path.length > 0) {
-        if (Array.isArray(options.path)) {
-          for (const filepath of options.path) {
-            if (fs.existsSync(filepath)) {
-              possibleVaultPath = filepath.endsWith(".vault") ? filepath : `${filepath}.vault`;
-            }
-          }
-        } else {
-          possibleVaultPath = options.path.endsWith(".vault") ? options.path : `${options.path}.vault`;
-        }
-      } else {
-        possibleVaultPath = path2.resolve(process.cwd(), ".env.vault");
-      }
-      if (fs.existsSync(possibleVaultPath)) {
-        return possibleVaultPath;
-      }
-      return null;
-    }
-    __name(_vaultPath, "_vaultPath");
-    function _resolveHome(envPath) {
-      return envPath[0] === "~" ? path2.join(os.homedir(), envPath.slice(1)) : envPath;
-    }
-    __name(_resolveHome, "_resolveHome");
-    function _configVault(options) {
-      _log("Loading env from encrypted .env.vault");
-      const parsed = DotenvModule._parseVault(options);
-      let processEnv = process.env;
-      if (options && options.processEnv != null) {
-        processEnv = options.processEnv;
-      }
-      DotenvModule.populate(processEnv, parsed, options);
-      return { parsed };
-    }
-    __name(_configVault, "_configVault");
-    function configDotenv(options) {
-      const dotenvPath = path2.resolve(process.cwd(), ".env");
-      let encoding = "utf8";
-      const debug4 = Boolean(options && options.debug);
-      if (options && options.encoding) {
-        encoding = options.encoding;
-      } else {
-        if (debug4) {
-          _debug("No encoding is specified. UTF-8 is used by default");
-        }
-      }
-      let optionPaths = [dotenvPath];
-      if (options && options.path) {
-        if (!Array.isArray(options.path)) {
-          optionPaths = [_resolveHome(options.path)];
-        } else {
-          optionPaths = [];
-          for (const filepath of options.path) {
-            optionPaths.push(_resolveHome(filepath));
-          }
-        }
-      }
-      let lastError;
-      const parsedAll = {};
-      for (const path3 of optionPaths) {
-        try {
-          const parsed = DotenvModule.parse(fs.readFileSync(path3, { encoding }));
-          DotenvModule.populate(parsedAll, parsed, options);
-        } catch (e) {
-          if (debug4) {
-            _debug(`Failed to load ${path3} ${e.message}`);
-          }
-          lastError = e;
-        }
-      }
-      let processEnv = process.env;
-      if (options && options.processEnv != null) {
-        processEnv = options.processEnv;
-      }
-      DotenvModule.populate(processEnv, parsedAll, options);
-      if (lastError) {
-        return { parsed: parsedAll, error: lastError };
-      } else {
-        return { parsed: parsedAll };
-      }
-    }
-    __name(configDotenv, "configDotenv");
-    function config4(options) {
-      if (_dotenvKey(options).length === 0) {
-        return DotenvModule.configDotenv(options);
-      }
-      const vaultPath = _vaultPath(options);
-      if (!vaultPath) {
-        _warn(`You set DOTENV_KEY but you are missing a .env.vault file at ${vaultPath}. Did you forget to build it?`);
-        return DotenvModule.configDotenv(options);
-      }
-      return DotenvModule._configVault(options);
-    }
-    __name(config4, "config");
-    function decrypt(encrypted, keyStr) {
-      const key = Buffer.from(keyStr.slice(-64), "hex");
-      let ciphertext = Buffer.from(encrypted, "base64");
-      const nonce = ciphertext.subarray(0, 12);
-      const authTag = ciphertext.subarray(-16);
-      ciphertext = ciphertext.subarray(12, -16);
-      try {
-        const aesgcm = crypto2.createDecipheriv("aes-256-gcm", key, nonce);
-        aesgcm.setAuthTag(authTag);
-        return `${aesgcm.update(ciphertext)}${aesgcm.final()}`;
-      } catch (error4) {
-        const isRange = error4 instanceof RangeError;
-        const invalidKeyLength = error4.message === "Invalid key length";
-        const decryptionFailed = error4.message === "Unsupported state or unable to authenticate data";
-        if (isRange || invalidKeyLength) {
-          const err = new Error("INVALID_DOTENV_KEY: It must be 64 characters long (or more)");
-          err.code = "INVALID_DOTENV_KEY";
-          throw err;
-        } else if (decryptionFailed) {
-          const err = new Error("DECRYPTION_FAILED: Please check your DOTENV_KEY");
-          err.code = "DECRYPTION_FAILED";
-          throw err;
-        } else {
-          throw error4;
-        }
-      }
-    }
-    __name(decrypt, "decrypt");
-    function populate(processEnv, parsed, options = {}) {
-      const debug4 = Boolean(options && options.debug);
-      const override = Boolean(options && options.override);
-      if (typeof parsed !== "object") {
-        const err = new Error("OBJECT_REQUIRED: Please check the processEnv argument being passed to populate");
-        err.code = "OBJECT_REQUIRED";
-        throw err;
-      }
-      for (const key of Object.keys(parsed)) {
-        if (Object.prototype.hasOwnProperty.call(processEnv, key)) {
-          if (override === true) {
-            processEnv[key] = parsed[key];
-          }
-          if (debug4) {
-            if (override === true) {
-              _debug(`"${key}" is already defined and WAS overwritten`);
-            } else {
-              _debug(`"${key}" is already defined and was NOT overwritten`);
-            }
-          }
-        } else {
-          processEnv[key] = parsed[key];
-        }
-      }
-    }
-    __name(populate, "populate");
-    var DotenvModule = {
-      configDotenv,
-      _configVault,
-      _parseVault,
-      config: config4,
-      decrypt,
-      parse: parse3,
-      populate
-    };
-    module.exports.configDotenv = DotenvModule.configDotenv;
-    module.exports._configVault = DotenvModule._configVault;
-    module.exports._parseVault = DotenvModule._parseVault;
-    module.exports.config = DotenvModule.config;
-    module.exports.decrypt = DotenvModule.decrypt;
-    module.exports.parse = DotenvModule.parse;
-    module.exports.populate = DotenvModule.populate;
-    module.exports = DotenvModule;
-  }
-});
-
-// node_modules/.pnpm/dotenv-expand@12.0.1/node_modules/dotenv-expand/lib/main.js
-var require_main2 = __commonJS({
-  "node_modules/.pnpm/dotenv-expand@12.0.1/node_modules/dotenv-expand/lib/main.js"(exports, module) {
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/type.js
+var require_type = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/type.js"(exports, module) {
     "use strict";
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    function _resolveEscapeSequences(value) {
-      return value.replace(/\\\$/g, "$");
-    }
-    __name(_resolveEscapeSequences, "_resolveEscapeSequences");
-    function expandValue(value, processEnv, runningParsed) {
-      const env4 = { ...runningParsed, ...processEnv };
-      const regex = /(?<!\\)\${([^{}]+)}|(?<!\\)\$([A-Za-z_][A-Za-z0-9_]*)/g;
-      let result = value;
-      let match;
-      const seen = /* @__PURE__ */ new Set();
-      while ((match = regex.exec(result)) !== null) {
-        seen.add(result);
-        const [template, bracedExpression, unbracedExpression] = match;
-        const expression = bracedExpression || unbracedExpression;
-        const opRegex = /(:\+|\+|:-|-)/;
-        const opMatch = expression.match(opRegex);
-        const splitter = opMatch ? opMatch[0] : null;
-        const r = expression.split(splitter);
-        let defaultValue;
-        let value2;
-        const key = r.shift();
-        if ([":+", "+"].includes(splitter)) {
-          defaultValue = env4[key] ? r.join(splitter) : "";
-          value2 = null;
-        } else {
-          defaultValue = r.join(splitter);
-          value2 = env4[key];
+    module.exports = TypeError;
+  }
+});
+
+// (disabled):node_modules/.pnpm/object-inspect@1.13.4/node_modules/object-inspect/util.inspect
+var require_util = __commonJS({
+  "(disabled):node_modules/.pnpm/object-inspect@1.13.4/node_modules/object-inspect/util.inspect"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+  }
+});
+
+// node_modules/.pnpm/object-inspect@1.13.4/node_modules/object-inspect/index.js
+var require_object_inspect = __commonJS({
+  "node_modules/.pnpm/object-inspect@1.13.4/node_modules/object-inspect/index.js"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var hasMap = typeof Map === "function" && Map.prototype;
+    var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, "size") : null;
+    var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === "function" ? mapSizeDescriptor.get : null;
+    var mapForEach = hasMap && Map.prototype.forEach;
+    var hasSet = typeof Set === "function" && Set.prototype;
+    var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, "size") : null;
+    var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === "function" ? setSizeDescriptor.get : null;
+    var setForEach = hasSet && Set.prototype.forEach;
+    var hasWeakMap = typeof WeakMap === "function" && WeakMap.prototype;
+    var weakMapHas = hasWeakMap ? WeakMap.prototype.has : null;
+    var hasWeakSet = typeof WeakSet === "function" && WeakSet.prototype;
+    var weakSetHas = hasWeakSet ? WeakSet.prototype.has : null;
+    var hasWeakRef = typeof WeakRef === "function" && WeakRef.prototype;
+    var weakRefDeref = hasWeakRef ? WeakRef.prototype.deref : null;
+    var booleanValueOf = Boolean.prototype.valueOf;
+    var objectToString = Object.prototype.toString;
+    var functionToString = Function.prototype.toString;
+    var $match = String.prototype.match;
+    var $slice = String.prototype.slice;
+    var $replace = String.prototype.replace;
+    var $toUpperCase = String.prototype.toUpperCase;
+    var $toLowerCase = String.prototype.toLowerCase;
+    var $test = RegExp.prototype.test;
+    var $concat = Array.prototype.concat;
+    var $join = Array.prototype.join;
+    var $arrSlice = Array.prototype.slice;
+    var $floor = Math.floor;
+    var bigIntValueOf = typeof BigInt === "function" ? BigInt.prototype.valueOf : null;
+    var gOPS = Object.getOwnPropertySymbols;
+    var symToString = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? Symbol.prototype.toString : null;
+    var hasShammedSymbols = typeof Symbol === "function" && typeof Symbol.iterator === "object";
+    var toStringTag = typeof Symbol === "function" && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? "object" : "symbol") ? Symbol.toStringTag : null;
+    var isEnumerable = Object.prototype.propertyIsEnumerable;
+    var gPO = (typeof Reflect === "function" ? Reflect.getPrototypeOf : Object.getPrototypeOf) || ([].__proto__ === Array.prototype ? function(O) {
+      return O.__proto__;
+    } : null);
+    function addNumericSeparator(num, str) {
+      if (num === Infinity || num === -Infinity || num !== num || num && num > -1e3 && num < 1e3 || $test.call(/e/, str)) {
+        return str;
+      }
+      var sepRegex = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
+      if (typeof num === "number") {
+        var int = num < 0 ? -$floor(-num) : $floor(num);
+        if (int !== num) {
+          var intStr = String(int);
+          var dec = $slice.call(str, intStr.length + 1);
+          return $replace.call(intStr, sepRegex, "$&_") + "." + $replace.call($replace.call(dec, /([0-9]{3})/g, "$&_"), /_$/, "");
         }
-        if (value2) {
-          if (seen.has(value2)) {
-            result = result.replace(template, defaultValue);
+      }
+      return $replace.call(str, sepRegex, "$&_");
+    }
+    __name(addNumericSeparator, "addNumericSeparator");
+    var utilInspect = require_util();
+    var inspectCustom = utilInspect.custom;
+    var inspectSymbol = isSymbol2(inspectCustom) ? inspectCustom : null;
+    var quotes = {
+      __proto__: null,
+      "double": '"',
+      single: "'"
+    };
+    var quoteREs = {
+      __proto__: null,
+      "double": /(["\\])/g,
+      single: /(['\\])/g
+    };
+    module.exports = /* @__PURE__ */ __name(function inspect_(obj, options, depth, seen) {
+      var opts = options || {};
+      if (has(opts, "quoteStyle") && !has(quotes, opts.quoteStyle)) {
+        throw new TypeError('option "quoteStyle" must be "single" or "double"');
+      }
+      if (has(opts, "maxStringLength") && (typeof opts.maxStringLength === "number" ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity : opts.maxStringLength !== null)) {
+        throw new TypeError('option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`');
+      }
+      var customInspect = has(opts, "customInspect") ? opts.customInspect : true;
+      if (typeof customInspect !== "boolean" && customInspect !== "symbol") {
+        throw new TypeError("option \"customInspect\", if provided, must be `true`, `false`, or `'symbol'`");
+      }
+      if (has(opts, "indent") && opts.indent !== null && opts.indent !== "	" && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)) {
+        throw new TypeError('option "indent" must be "\\t", an integer > 0, or `null`');
+      }
+      if (has(opts, "numericSeparator") && typeof opts.numericSeparator !== "boolean") {
+        throw new TypeError('option "numericSeparator", if provided, must be `true` or `false`');
+      }
+      var numericSeparator = opts.numericSeparator;
+      if (typeof obj === "undefined") {
+        return "undefined";
+      }
+      if (obj === null) {
+        return "null";
+      }
+      if (typeof obj === "boolean") {
+        return obj ? "true" : "false";
+      }
+      if (typeof obj === "string") {
+        return inspectString(obj, opts);
+      }
+      if (typeof obj === "number") {
+        if (obj === 0) {
+          return Infinity / obj > 0 ? "0" : "-0";
+        }
+        var str = String(obj);
+        return numericSeparator ? addNumericSeparator(obj, str) : str;
+      }
+      if (typeof obj === "bigint") {
+        var bigIntStr = String(obj) + "n";
+        return numericSeparator ? addNumericSeparator(obj, bigIntStr) : bigIntStr;
+      }
+      var maxDepth = typeof opts.depth === "undefined" ? 5 : opts.depth;
+      if (typeof depth === "undefined") {
+        depth = 0;
+      }
+      if (depth >= maxDepth && maxDepth > 0 && typeof obj === "object") {
+        return isArray2(obj) ? "[Array]" : "[Object]";
+      }
+      var indent = getIndent(opts, depth);
+      if (typeof seen === "undefined") {
+        seen = [];
+      } else if (indexOf(seen, obj) >= 0) {
+        return "[Circular]";
+      }
+      function inspect2(value, from, noIndent) {
+        if (from) {
+          seen = $arrSlice.call(seen);
+          seen.push(from);
+        }
+        if (noIndent) {
+          var newOpts = {
+            depth: opts.depth
+          };
+          if (has(opts, "quoteStyle")) {
+            newOpts.quoteStyle = opts.quoteStyle;
+          }
+          return inspect_(value, newOpts, depth + 1, seen);
+        }
+        return inspect_(value, opts, depth + 1, seen);
+      }
+      __name(inspect2, "inspect");
+      if (typeof obj === "function" && !isRegExp2(obj)) {
+        var name = nameOf(obj);
+        var keys = arrObjKeys(obj, inspect2);
+        return "[Function" + (name ? ": " + name : " (anonymous)") + "]" + (keys.length > 0 ? " { " + $join.call(keys, ", ") + " }" : "");
+      }
+      if (isSymbol2(obj)) {
+        var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, "$1") : symToString.call(obj);
+        return typeof obj === "object" && !hasShammedSymbols ? markBoxed(symString) : symString;
+      }
+      if (isElement(obj)) {
+        var s = "<" + $toLowerCase.call(String(obj.nodeName));
+        var attrs = obj.attributes || [];
+        for (var i = 0; i < attrs.length; i++) {
+          s += " " + attrs[i].name + "=" + wrapQuotes(quote(attrs[i].value), "double", opts);
+        }
+        s += ">";
+        if (obj.childNodes && obj.childNodes.length) {
+          s += "...";
+        }
+        s += "</" + $toLowerCase.call(String(obj.nodeName)) + ">";
+        return s;
+      }
+      if (isArray2(obj)) {
+        if (obj.length === 0) {
+          return "[]";
+        }
+        var xs = arrObjKeys(obj, inspect2);
+        if (indent && !singleLineValues(xs)) {
+          return "[" + indentedJoin(xs, indent) + "]";
+        }
+        return "[ " + $join.call(xs, ", ") + " ]";
+      }
+      if (isError2(obj)) {
+        var parts = arrObjKeys(obj, inspect2);
+        if (!("cause" in Error.prototype) && "cause" in obj && !isEnumerable.call(obj, "cause")) {
+          return "{ [" + String(obj) + "] " + $join.call($concat.call("[cause]: " + inspect2(obj.cause), parts), ", ") + " }";
+        }
+        if (parts.length === 0) {
+          return "[" + String(obj) + "]";
+        }
+        return "{ [" + String(obj) + "] " + $join.call(parts, ", ") + " }";
+      }
+      if (typeof obj === "object" && customInspect) {
+        if (inspectSymbol && typeof obj[inspectSymbol] === "function" && utilInspect) {
+          return utilInspect(obj, { depth: maxDepth - depth });
+        } else if (customInspect !== "symbol" && typeof obj.inspect === "function") {
+          return obj.inspect();
+        }
+      }
+      if (isMap(obj)) {
+        var mapParts = [];
+        if (mapForEach) {
+          mapForEach.call(obj, function(value, key) {
+            mapParts.push(inspect2(key, obj, true) + " => " + inspect2(value, obj));
+          });
+        }
+        return collectionOf("Map", mapSize.call(obj), mapParts, indent);
+      }
+      if (isSet(obj)) {
+        var setParts = [];
+        if (setForEach) {
+          setForEach.call(obj, function(value) {
+            setParts.push(inspect2(value, obj));
+          });
+        }
+        return collectionOf("Set", setSize.call(obj), setParts, indent);
+      }
+      if (isWeakMap(obj)) {
+        return weakCollectionOf("WeakMap");
+      }
+      if (isWeakSet(obj)) {
+        return weakCollectionOf("WeakSet");
+      }
+      if (isWeakRef(obj)) {
+        return weakCollectionOf("WeakRef");
+      }
+      if (isNumber3(obj)) {
+        return markBoxed(inspect2(Number(obj)));
+      }
+      if (isBigInt2(obj)) {
+        return markBoxed(inspect2(bigIntValueOf.call(obj)));
+      }
+      if (isBoolean3(obj)) {
+        return markBoxed(booleanValueOf.call(obj));
+      }
+      if (isString4(obj)) {
+        return markBoxed(inspect2(String(obj)));
+      }
+      if (typeof window !== "undefined" && obj === window) {
+        return "{ [object Window] }";
+      }
+      if (typeof globalThis !== "undefined" && obj === globalThis || typeof global !== "undefined" && obj === global) {
+        return "{ [object globalThis] }";
+      }
+      if (!isDate3(obj) && !isRegExp2(obj)) {
+        var ys = arrObjKeys(obj, inspect2);
+        var isPlainObject2 = gPO ? gPO(obj) === Object.prototype : obj instanceof Object || obj.constructor === Object;
+        var protoTag = obj instanceof Object ? "" : "null prototype";
+        var stringTag = !isPlainObject2 && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? "Object" : "";
+        var constructorTag = isPlainObject2 || typeof obj.constructor !== "function" ? "" : obj.constructor.name ? obj.constructor.name + " " : "";
+        var tag2 = constructorTag + (stringTag || protoTag ? "[" + $join.call($concat.call([], stringTag || [], protoTag || []), ": ") + "] " : "");
+        if (ys.length === 0) {
+          return tag2 + "{}";
+        }
+        if (indent) {
+          return tag2 + "{" + indentedJoin(ys, indent) + "}";
+        }
+        return tag2 + "{ " + $join.call(ys, ", ") + " }";
+      }
+      return String(obj);
+    }, "inspect_");
+    function wrapQuotes(s, defaultStyle, opts) {
+      var style = opts.quoteStyle || defaultStyle;
+      var quoteChar = quotes[style];
+      return quoteChar + s + quoteChar;
+    }
+    __name(wrapQuotes, "wrapQuotes");
+    function quote(s) {
+      return $replace.call(String(s), /"/g, "&quot;");
+    }
+    __name(quote, "quote");
+    function canTrustToString(obj) {
+      return !toStringTag || !(typeof obj === "object" && (toStringTag in obj || typeof obj[toStringTag] !== "undefined"));
+    }
+    __name(canTrustToString, "canTrustToString");
+    function isArray2(obj) {
+      return toStr(obj) === "[object Array]" && canTrustToString(obj);
+    }
+    __name(isArray2, "isArray");
+    function isDate3(obj) {
+      return toStr(obj) === "[object Date]" && canTrustToString(obj);
+    }
+    __name(isDate3, "isDate");
+    function isRegExp2(obj) {
+      return toStr(obj) === "[object RegExp]" && canTrustToString(obj);
+    }
+    __name(isRegExp2, "isRegExp");
+    function isError2(obj) {
+      return toStr(obj) === "[object Error]" && canTrustToString(obj);
+    }
+    __name(isError2, "isError");
+    function isString4(obj) {
+      return toStr(obj) === "[object String]" && canTrustToString(obj);
+    }
+    __name(isString4, "isString");
+    function isNumber3(obj) {
+      return toStr(obj) === "[object Number]" && canTrustToString(obj);
+    }
+    __name(isNumber3, "isNumber");
+    function isBoolean3(obj) {
+      return toStr(obj) === "[object Boolean]" && canTrustToString(obj);
+    }
+    __name(isBoolean3, "isBoolean");
+    function isSymbol2(obj) {
+      if (hasShammedSymbols) {
+        return obj && typeof obj === "object" && obj instanceof Symbol;
+      }
+      if (typeof obj === "symbol") {
+        return true;
+      }
+      if (!obj || typeof obj !== "object" || !symToString) {
+        return false;
+      }
+      try {
+        symToString.call(obj);
+        return true;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isSymbol2, "isSymbol");
+    function isBigInt2(obj) {
+      if (!obj || typeof obj !== "object" || !bigIntValueOf) {
+        return false;
+      }
+      try {
+        bigIntValueOf.call(obj);
+        return true;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isBigInt2, "isBigInt");
+    var hasOwn = Object.prototype.hasOwnProperty || function(key) {
+      return key in this;
+    };
+    function has(obj, key) {
+      return hasOwn.call(obj, key);
+    }
+    __name(has, "has");
+    function toStr(obj) {
+      return objectToString.call(obj);
+    }
+    __name(toStr, "toStr");
+    function nameOf(f) {
+      if (f.name) {
+        return f.name;
+      }
+      var m = $match.call(functionToString.call(f), /^function\s*([\w$]+)/);
+      if (m) {
+        return m[1];
+      }
+      return null;
+    }
+    __name(nameOf, "nameOf");
+    function indexOf(xs, x) {
+      if (xs.indexOf) {
+        return xs.indexOf(x);
+      }
+      for (var i = 0, l = xs.length; i < l; i++) {
+        if (xs[i] === x) {
+          return i;
+        }
+      }
+      return -1;
+    }
+    __name(indexOf, "indexOf");
+    function isMap(x) {
+      if (!mapSize || !x || typeof x !== "object") {
+        return false;
+      }
+      try {
+        mapSize.call(x);
+        try {
+          setSize.call(x);
+        } catch (s) {
+          return true;
+        }
+        return x instanceof Map;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isMap, "isMap");
+    function isWeakMap(x) {
+      if (!weakMapHas || !x || typeof x !== "object") {
+        return false;
+      }
+      try {
+        weakMapHas.call(x, weakMapHas);
+        try {
+          weakSetHas.call(x, weakSetHas);
+        } catch (s) {
+          return true;
+        }
+        return x instanceof WeakMap;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isWeakMap, "isWeakMap");
+    function isWeakRef(x) {
+      if (!weakRefDeref || !x || typeof x !== "object") {
+        return false;
+      }
+      try {
+        weakRefDeref.call(x);
+        return true;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isWeakRef, "isWeakRef");
+    function isSet(x) {
+      if (!setSize || !x || typeof x !== "object") {
+        return false;
+      }
+      try {
+        setSize.call(x);
+        try {
+          mapSize.call(x);
+        } catch (m) {
+          return true;
+        }
+        return x instanceof Set;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isSet, "isSet");
+    function isWeakSet(x) {
+      if (!weakSetHas || !x || typeof x !== "object") {
+        return false;
+      }
+      try {
+        weakSetHas.call(x, weakSetHas);
+        try {
+          weakMapHas.call(x, weakMapHas);
+        } catch (s) {
+          return true;
+        }
+        return x instanceof WeakSet;
+      } catch (e) {
+      }
+      return false;
+    }
+    __name(isWeakSet, "isWeakSet");
+    function isElement(x) {
+      if (!x || typeof x !== "object") {
+        return false;
+      }
+      if (typeof HTMLElement !== "undefined" && x instanceof HTMLElement) {
+        return true;
+      }
+      return typeof x.nodeName === "string" && typeof x.getAttribute === "function";
+    }
+    __name(isElement, "isElement");
+    function inspectString(str, opts) {
+      if (str.length > opts.maxStringLength) {
+        var remaining = str.length - opts.maxStringLength;
+        var trailer = "... " + remaining + " more character" + (remaining > 1 ? "s" : "");
+        return inspectString($slice.call(str, 0, opts.maxStringLength), opts) + trailer;
+      }
+      var quoteRE = quoteREs[opts.quoteStyle || "single"];
+      quoteRE.lastIndex = 0;
+      var s = $replace.call($replace.call(str, quoteRE, "\\$1"), /[\x00-\x1f]/g, lowbyte);
+      return wrapQuotes(s, "single", opts);
+    }
+    __name(inspectString, "inspectString");
+    function lowbyte(c) {
+      var n = c.charCodeAt(0);
+      var x = {
+        8: "b",
+        9: "t",
+        10: "n",
+        12: "f",
+        13: "r"
+      }[n];
+      if (x) {
+        return "\\" + x;
+      }
+      return "\\x" + (n < 16 ? "0" : "") + $toUpperCase.call(n.toString(16));
+    }
+    __name(lowbyte, "lowbyte");
+    function markBoxed(str) {
+      return "Object(" + str + ")";
+    }
+    __name(markBoxed, "markBoxed");
+    function weakCollectionOf(type) {
+      return type + " { ? }";
+    }
+    __name(weakCollectionOf, "weakCollectionOf");
+    function collectionOf(type, size, entries, indent) {
+      var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ", ");
+      return type + " (" + size + ") {" + joinedEntries + "}";
+    }
+    __name(collectionOf, "collectionOf");
+    function singleLineValues(xs) {
+      for (var i = 0; i < xs.length; i++) {
+        if (indexOf(xs[i], "\n") >= 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+    __name(singleLineValues, "singleLineValues");
+    function getIndent(opts, depth) {
+      var baseIndent;
+      if (opts.indent === "	") {
+        baseIndent = "	";
+      } else if (typeof opts.indent === "number" && opts.indent > 0) {
+        baseIndent = $join.call(Array(opts.indent + 1), " ");
+      } else {
+        return null;
+      }
+      return {
+        base: baseIndent,
+        prev: $join.call(Array(depth + 1), baseIndent)
+      };
+    }
+    __name(getIndent, "getIndent");
+    function indentedJoin(xs, indent) {
+      if (xs.length === 0) {
+        return "";
+      }
+      var lineJoiner = "\n" + indent.prev + indent.base;
+      return lineJoiner + $join.call(xs, "," + lineJoiner) + "\n" + indent.prev;
+    }
+    __name(indentedJoin, "indentedJoin");
+    function arrObjKeys(obj, inspect2) {
+      var isArr = isArray2(obj);
+      var xs = [];
+      if (isArr) {
+        xs.length = obj.length;
+        for (var i = 0; i < obj.length; i++) {
+          xs[i] = has(obj, i) ? inspect2(obj[i], obj) : "";
+        }
+      }
+      var syms = typeof gOPS === "function" ? gOPS(obj) : [];
+      var symMap;
+      if (hasShammedSymbols) {
+        symMap = {};
+        for (var k = 0; k < syms.length; k++) {
+          symMap["$" + syms[k]] = syms[k];
+        }
+      }
+      for (var key in obj) {
+        if (!has(obj, key)) {
+          continue;
+        }
+        if (isArr && String(Number(key)) === key && key < obj.length) {
+          continue;
+        }
+        if (hasShammedSymbols && symMap["$" + key] instanceof Symbol) {
+          continue;
+        } else if ($test.call(/[^\w$]/, key)) {
+          xs.push(inspect2(key, obj) + ": " + inspect2(obj[key], obj));
+        } else {
+          xs.push(key + ": " + inspect2(obj[key], obj));
+        }
+      }
+      if (typeof gOPS === "function") {
+        for (var j = 0; j < syms.length; j++) {
+          if (isEnumerable.call(obj, syms[j])) {
+            xs.push("[" + inspect2(syms[j]) + "]: " + inspect2(obj[syms[j]], obj));
+          }
+        }
+      }
+      return xs;
+    }
+    __name(arrObjKeys, "arrObjKeys");
+  }
+});
+
+// node_modules/.pnpm/side-channel-list@1.0.0/node_modules/side-channel-list/index.js
+var require_side_channel_list = __commonJS({
+  "node_modules/.pnpm/side-channel-list@1.0.0/node_modules/side-channel-list/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var inspect2 = require_object_inspect();
+    var $TypeError = require_type();
+    var listGetNode = /* @__PURE__ */ __name(function(list3, key, isDelete) {
+      var prev = list3;
+      var curr;
+      for (; (curr = prev.next) != null; prev = curr) {
+        if (curr.key === key) {
+          prev.next = curr.next;
+          if (!isDelete) {
+            curr.next = /** @type {NonNullable<typeof list.next>} */
+            list3.next;
+            list3.next = curr;
+          }
+          return curr;
+        }
+      }
+    }, "listGetNode");
+    var listGet = /* @__PURE__ */ __name(function(objects, key) {
+      if (!objects) {
+        return void 0;
+      }
+      var node = listGetNode(objects, key);
+      return node && node.value;
+    }, "listGet");
+    var listSet = /* @__PURE__ */ __name(function(objects, key, value) {
+      var node = listGetNode(objects, key);
+      if (node) {
+        node.value = value;
+      } else {
+        objects.next = /** @type {import('./list.d.ts').ListNode<typeof value, typeof key>} */
+        {
+          // eslint-disable-line no-param-reassign, no-extra-parens
+          key,
+          next: objects.next,
+          value
+        };
+      }
+    }, "listSet");
+    var listHas = /* @__PURE__ */ __name(function(objects, key) {
+      if (!objects) {
+        return false;
+      }
+      return !!listGetNode(objects, key);
+    }, "listHas");
+    var listDelete = /* @__PURE__ */ __name(function(objects, key) {
+      if (objects) {
+        return listGetNode(objects, key, true);
+      }
+    }, "listDelete");
+    module.exports = /* @__PURE__ */ __name(function getSideChannelList() {
+      var $o;
+      var channel2 = {
+        assert: /* @__PURE__ */ __name(function(key) {
+          if (!channel2.has(key)) {
+            throw new $TypeError("Side channel does not contain " + inspect2(key));
+          }
+        }, "assert"),
+        "delete": /* @__PURE__ */ __name(function(key) {
+          var root = $o && $o.next;
+          var deletedNode = listDelete($o, key);
+          if (deletedNode && root && root === deletedNode) {
+            $o = void 0;
+          }
+          return !!deletedNode;
+        }, "delete"),
+        get: /* @__PURE__ */ __name(function(key) {
+          return listGet($o, key);
+        }, "get"),
+        has: /* @__PURE__ */ __name(function(key) {
+          return listHas($o, key);
+        }, "has"),
+        set: /* @__PURE__ */ __name(function(key, value) {
+          if (!$o) {
+            $o = {
+              next: void 0
+            };
+          }
+          listSet(
+            /** @type {NonNullable<typeof $o>} */
+            $o,
+            key,
+            value
+          );
+        }, "set")
+      };
+      return channel2;
+    }, "getSideChannelList");
+  }
+});
+
+// node_modules/.pnpm/es-object-atoms@1.1.1/node_modules/es-object-atoms/index.js
+var require_es_object_atoms = __commonJS({
+  "node_modules/.pnpm/es-object-atoms@1.1.1/node_modules/es-object-atoms/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Object;
+  }
+});
+
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/index.js
+var require_es_errors = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Error;
+  }
+});
+
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/eval.js
+var require_eval = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/eval.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = EvalError;
+  }
+});
+
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/range.js
+var require_range = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/range.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = RangeError;
+  }
+});
+
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/ref.js
+var require_ref = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/ref.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = ReferenceError;
+  }
+});
+
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/syntax.js
+var require_syntax = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/syntax.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = SyntaxError;
+  }
+});
+
+// node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/uri.js
+var require_uri = __commonJS({
+  "node_modules/.pnpm/es-errors@1.3.0/node_modules/es-errors/uri.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = URIError;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/abs.js
+var require_abs = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/abs.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Math.abs;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/floor.js
+var require_floor = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/floor.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Math.floor;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/max.js
+var require_max = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/max.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Math.max;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/min.js
+var require_min = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/min.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Math.min;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/pow.js
+var require_pow = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/pow.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Math.pow;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/round.js
+var require_round = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/round.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Math.round;
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/isNaN.js
+var require_isNaN = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/isNaN.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Number.isNaN || /* @__PURE__ */ __name(function isNaN2(a) {
+      return a !== a;
+    }, "isNaN");
+  }
+});
+
+// node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/sign.js
+var require_sign = __commonJS({
+  "node_modules/.pnpm/math-intrinsics@1.1.0/node_modules/math-intrinsics/sign.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var $isNaN = require_isNaN();
+    module.exports = /* @__PURE__ */ __name(function sign3(number) {
+      if ($isNaN(number) || number === 0) {
+        return number;
+      }
+      return number < 0 ? -1 : 1;
+    }, "sign");
+  }
+});
+
+// node_modules/.pnpm/gopd@1.2.0/node_modules/gopd/gOPD.js
+var require_gOPD = __commonJS({
+  "node_modules/.pnpm/gopd@1.2.0/node_modules/gopd/gOPD.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Object.getOwnPropertyDescriptor;
+  }
+});
+
+// node_modules/.pnpm/gopd@1.2.0/node_modules/gopd/index.js
+var require_gopd = __commonJS({
+  "node_modules/.pnpm/gopd@1.2.0/node_modules/gopd/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var $gOPD = require_gOPD();
+    if ($gOPD) {
+      try {
+        $gOPD([], "length");
+      } catch (e) {
+        $gOPD = null;
+      }
+    }
+    module.exports = $gOPD;
+  }
+});
+
+// node_modules/.pnpm/es-define-property@1.0.1/node_modules/es-define-property/index.js
+var require_es_define_property = __commonJS({
+  "node_modules/.pnpm/es-define-property@1.0.1/node_modules/es-define-property/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var $defineProperty = Object.defineProperty || false;
+    if ($defineProperty) {
+      try {
+        $defineProperty({}, "a", { value: 1 });
+      } catch (e) {
+        $defineProperty = false;
+      }
+    }
+    module.exports = $defineProperty;
+  }
+});
+
+// node_modules/.pnpm/has-symbols@1.1.0/node_modules/has-symbols/shams.js
+var require_shams = __commonJS({
+  "node_modules/.pnpm/has-symbols@1.1.0/node_modules/has-symbols/shams.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = /* @__PURE__ */ __name(function hasSymbols() {
+      if (typeof Symbol !== "function" || typeof Object.getOwnPropertySymbols !== "function") {
+        return false;
+      }
+      if (typeof Symbol.iterator === "symbol") {
+        return true;
+      }
+      var obj = {};
+      var sym = Symbol("test");
+      var symObj = Object(sym);
+      if (typeof sym === "string") {
+        return false;
+      }
+      if (Object.prototype.toString.call(sym) !== "[object Symbol]") {
+        return false;
+      }
+      if (Object.prototype.toString.call(symObj) !== "[object Symbol]") {
+        return false;
+      }
+      var symVal = 42;
+      obj[sym] = symVal;
+      for (var _ in obj) {
+        return false;
+      }
+      if (typeof Object.keys === "function" && Object.keys(obj).length !== 0) {
+        return false;
+      }
+      if (typeof Object.getOwnPropertyNames === "function" && Object.getOwnPropertyNames(obj).length !== 0) {
+        return false;
+      }
+      var syms = Object.getOwnPropertySymbols(obj);
+      if (syms.length !== 1 || syms[0] !== sym) {
+        return false;
+      }
+      if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) {
+        return false;
+      }
+      if (typeof Object.getOwnPropertyDescriptor === "function") {
+        var descriptor = (
+          /** @type {PropertyDescriptor} */
+          Object.getOwnPropertyDescriptor(obj, sym)
+        );
+        if (descriptor.value !== symVal || descriptor.enumerable !== true) {
+          return false;
+        }
+      }
+      return true;
+    }, "hasSymbols");
+  }
+});
+
+// node_modules/.pnpm/has-symbols@1.1.0/node_modules/has-symbols/index.js
+var require_has_symbols = __commonJS({
+  "node_modules/.pnpm/has-symbols@1.1.0/node_modules/has-symbols/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var origSymbol = typeof Symbol !== "undefined" && Symbol;
+    var hasSymbolSham = require_shams();
+    module.exports = /* @__PURE__ */ __name(function hasNativeSymbols() {
+      if (typeof origSymbol !== "function") {
+        return false;
+      }
+      if (typeof Symbol !== "function") {
+        return false;
+      }
+      if (typeof origSymbol("foo") !== "symbol") {
+        return false;
+      }
+      if (typeof Symbol("bar") !== "symbol") {
+        return false;
+      }
+      return hasSymbolSham();
+    }, "hasNativeSymbols");
+  }
+});
+
+// node_modules/.pnpm/get-proto@1.0.1/node_modules/get-proto/Reflect.getPrototypeOf.js
+var require_Reflect_getPrototypeOf = __commonJS({
+  "node_modules/.pnpm/get-proto@1.0.1/node_modules/get-proto/Reflect.getPrototypeOf.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = typeof Reflect !== "undefined" && Reflect.getPrototypeOf || null;
+  }
+});
+
+// node_modules/.pnpm/get-proto@1.0.1/node_modules/get-proto/Object.getPrototypeOf.js
+var require_Object_getPrototypeOf = __commonJS({
+  "node_modules/.pnpm/get-proto@1.0.1/node_modules/get-proto/Object.getPrototypeOf.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var $Object = require_es_object_atoms();
+    module.exports = $Object.getPrototypeOf || null;
+  }
+});
+
+// node_modules/.pnpm/function-bind@1.1.2/node_modules/function-bind/implementation.js
+var require_implementation = __commonJS({
+  "node_modules/.pnpm/function-bind@1.1.2/node_modules/function-bind/implementation.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var ERROR_MESSAGE = "Function.prototype.bind called on incompatible ";
+    var toStr = Object.prototype.toString;
+    var max = Math.max;
+    var funcType = "[object Function]";
+    var concatty = /* @__PURE__ */ __name(function concatty2(a, b) {
+      var arr = [];
+      for (var i = 0; i < a.length; i += 1) {
+        arr[i] = a[i];
+      }
+      for (var j = 0; j < b.length; j += 1) {
+        arr[j + a.length] = b[j];
+      }
+      return arr;
+    }, "concatty");
+    var slicy = /* @__PURE__ */ __name(function slicy2(arrLike, offset) {
+      var arr = [];
+      for (var i = offset || 0, j = 0; i < arrLike.length; i += 1, j += 1) {
+        arr[j] = arrLike[i];
+      }
+      return arr;
+    }, "slicy");
+    var joiny = /* @__PURE__ */ __name(function(arr, joiner) {
+      var str = "";
+      for (var i = 0; i < arr.length; i += 1) {
+        str += arr[i];
+        if (i + 1 < arr.length) {
+          str += joiner;
+        }
+      }
+      return str;
+    }, "joiny");
+    module.exports = /* @__PURE__ */ __name(function bind(that) {
+      var target = this;
+      if (typeof target !== "function" || toStr.apply(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
+      }
+      var args = slicy(arguments, 1);
+      var bound;
+      var binder = /* @__PURE__ */ __name(function() {
+        if (this instanceof bound) {
+          var result = target.apply(
+            this,
+            concatty(args, arguments)
+          );
+          if (Object(result) === result) {
+            return result;
+          }
+          return this;
+        }
+        return target.apply(
+          that,
+          concatty(args, arguments)
+        );
+      }, "binder");
+      var boundLength = max(0, target.length - args.length);
+      var boundArgs = [];
+      for (var i = 0; i < boundLength; i++) {
+        boundArgs[i] = "$" + i;
+      }
+      bound = Function("binder", "return function (" + joiny(boundArgs, ",") + "){ return binder.apply(this,arguments); }")(binder);
+      if (target.prototype) {
+        var Empty = /* @__PURE__ */ __name(function Empty2() {
+        }, "Empty");
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+      }
+      return bound;
+    }, "bind");
+  }
+});
+
+// node_modules/.pnpm/function-bind@1.1.2/node_modules/function-bind/index.js
+var require_function_bind = __commonJS({
+  "node_modules/.pnpm/function-bind@1.1.2/node_modules/function-bind/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var implementation = require_implementation();
+    module.exports = Function.prototype.bind || implementation;
+  }
+});
+
+// node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/functionCall.js
+var require_functionCall = __commonJS({
+  "node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/functionCall.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Function.prototype.call;
+  }
+});
+
+// node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/functionApply.js
+var require_functionApply = __commonJS({
+  "node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/functionApply.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = Function.prototype.apply;
+  }
+});
+
+// node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/reflectApply.js
+var require_reflectApply = __commonJS({
+  "node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/reflectApply.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = typeof Reflect !== "undefined" && Reflect && Reflect.apply;
+  }
+});
+
+// node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/actualApply.js
+var require_actualApply = __commonJS({
+  "node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/actualApply.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var bind = require_function_bind();
+    var $apply = require_functionApply();
+    var $call = require_functionCall();
+    var $reflectApply = require_reflectApply();
+    module.exports = $reflectApply || bind.call($call, $apply);
+  }
+});
+
+// node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/index.js
+var require_call_bind_apply_helpers = __commonJS({
+  "node_modules/.pnpm/call-bind-apply-helpers@1.0.2/node_modules/call-bind-apply-helpers/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var bind = require_function_bind();
+    var $TypeError = require_type();
+    var $call = require_functionCall();
+    var $actualApply = require_actualApply();
+    module.exports = /* @__PURE__ */ __name(function callBindBasic(args) {
+      if (args.length < 1 || typeof args[0] !== "function") {
+        throw new $TypeError("a function is required");
+      }
+      return $actualApply(bind, $call, args);
+    }, "callBindBasic");
+  }
+});
+
+// node_modules/.pnpm/dunder-proto@1.0.1/node_modules/dunder-proto/get.js
+var require_get = __commonJS({
+  "node_modules/.pnpm/dunder-proto@1.0.1/node_modules/dunder-proto/get.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var callBind = require_call_bind_apply_helpers();
+    var gOPD = require_gopd();
+    var hasProtoAccessor;
+    try {
+      hasProtoAccessor = /** @type {{ __proto__?: typeof Array.prototype }} */
+      [].__proto__ === Array.prototype;
+    } catch (e) {
+      if (!e || typeof e !== "object" || !("code" in e) || e.code !== "ERR_PROTO_ACCESS") {
+        throw e;
+      }
+    }
+    var desc2 = !!hasProtoAccessor && gOPD && gOPD(
+      Object.prototype,
+      /** @type {keyof typeof Object.prototype} */
+      "__proto__"
+    );
+    var $Object = Object;
+    var $getPrototypeOf = $Object.getPrototypeOf;
+    module.exports = desc2 && typeof desc2.get === "function" ? callBind([desc2.get]) : typeof $getPrototypeOf === "function" ? (
+      /** @type {import('./get')} */
+      /* @__PURE__ */ __name(function getDunder(value) {
+        return $getPrototypeOf(value == null ? value : $Object(value));
+      }, "getDunder")
+    ) : false;
+  }
+});
+
+// node_modules/.pnpm/get-proto@1.0.1/node_modules/get-proto/index.js
+var require_get_proto = __commonJS({
+  "node_modules/.pnpm/get-proto@1.0.1/node_modules/get-proto/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var reflectGetProto = require_Reflect_getPrototypeOf();
+    var originalGetProto = require_Object_getPrototypeOf();
+    var getDunderProto = require_get();
+    module.exports = reflectGetProto ? /* @__PURE__ */ __name(function getProto(O) {
+      return reflectGetProto(O);
+    }, "getProto") : originalGetProto ? /* @__PURE__ */ __name(function getProto(O) {
+      if (!O || typeof O !== "object" && typeof O !== "function") {
+        throw new TypeError("getProto: not an object");
+      }
+      return originalGetProto(O);
+    }, "getProto") : getDunderProto ? /* @__PURE__ */ __name(function getProto(O) {
+      return getDunderProto(O);
+    }, "getProto") : null;
+  }
+});
+
+// node_modules/.pnpm/hasown@2.0.2/node_modules/hasown/index.js
+var require_hasown = __commonJS({
+  "node_modules/.pnpm/hasown@2.0.2/node_modules/hasown/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var call = Function.prototype.call;
+    var $hasOwn = Object.prototype.hasOwnProperty;
+    var bind = require_function_bind();
+    module.exports = bind.call(call, $hasOwn);
+  }
+});
+
+// node_modules/.pnpm/get-intrinsic@1.3.0/node_modules/get-intrinsic/index.js
+var require_get_intrinsic = __commonJS({
+  "node_modules/.pnpm/get-intrinsic@1.3.0/node_modules/get-intrinsic/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var undefined2;
+    var $Object = require_es_object_atoms();
+    var $Error = require_es_errors();
+    var $EvalError = require_eval();
+    var $RangeError = require_range();
+    var $ReferenceError = require_ref();
+    var $SyntaxError = require_syntax();
+    var $TypeError = require_type();
+    var $URIError = require_uri();
+    var abs = require_abs();
+    var floor = require_floor();
+    var max = require_max();
+    var min = require_min();
+    var pow = require_pow();
+    var round = require_round();
+    var sign3 = require_sign();
+    var $Function = Function;
+    var getEvalledConstructor = /* @__PURE__ */ __name(function(expressionSyntax) {
+      try {
+        return $Function('"use strict"; return (' + expressionSyntax + ").constructor;")();
+      } catch (e) {
+      }
+    }, "getEvalledConstructor");
+    var $gOPD = require_gopd();
+    var $defineProperty = require_es_define_property();
+    var throwTypeError = /* @__PURE__ */ __name(function() {
+      throw new $TypeError();
+    }, "throwTypeError");
+    var ThrowTypeError = $gOPD ? function() {
+      try {
+        arguments.callee;
+        return throwTypeError;
+      } catch (calleeThrows) {
+        try {
+          return $gOPD(arguments, "callee").get;
+        } catch (gOPDthrows) {
+          return throwTypeError;
+        }
+      }
+    }() : throwTypeError;
+    var hasSymbols = require_has_symbols()();
+    var getProto = require_get_proto();
+    var $ObjectGPO = require_Object_getPrototypeOf();
+    var $ReflectGPO = require_Reflect_getPrototypeOf();
+    var $apply = require_functionApply();
+    var $call = require_functionCall();
+    var needsEval = {};
+    var TypedArray = typeof Uint8Array === "undefined" || !getProto ? undefined2 : getProto(Uint8Array);
+    var INTRINSICS = {
+      __proto__: null,
+      "%AggregateError%": typeof AggregateError === "undefined" ? undefined2 : AggregateError,
+      "%Array%": Array,
+      "%ArrayBuffer%": typeof ArrayBuffer === "undefined" ? undefined2 : ArrayBuffer,
+      "%ArrayIteratorPrototype%": hasSymbols && getProto ? getProto([][Symbol.iterator]()) : undefined2,
+      "%AsyncFromSyncIteratorPrototype%": undefined2,
+      "%AsyncFunction%": needsEval,
+      "%AsyncGenerator%": needsEval,
+      "%AsyncGeneratorFunction%": needsEval,
+      "%AsyncIteratorPrototype%": needsEval,
+      "%Atomics%": typeof Atomics === "undefined" ? undefined2 : Atomics,
+      "%BigInt%": typeof BigInt === "undefined" ? undefined2 : BigInt,
+      "%BigInt64Array%": typeof BigInt64Array === "undefined" ? undefined2 : BigInt64Array,
+      "%BigUint64Array%": typeof BigUint64Array === "undefined" ? undefined2 : BigUint64Array,
+      "%Boolean%": Boolean,
+      "%DataView%": typeof DataView === "undefined" ? undefined2 : DataView,
+      "%Date%": Date,
+      "%decodeURI%": decodeURI,
+      "%decodeURIComponent%": decodeURIComponent,
+      "%encodeURI%": encodeURI,
+      "%encodeURIComponent%": encodeURIComponent,
+      "%Error%": $Error,
+      "%eval%": eval,
+      // eslint-disable-line no-eval
+      "%EvalError%": $EvalError,
+      "%Float16Array%": typeof Float16Array === "undefined" ? undefined2 : Float16Array,
+      "%Float32Array%": typeof Float32Array === "undefined" ? undefined2 : Float32Array,
+      "%Float64Array%": typeof Float64Array === "undefined" ? undefined2 : Float64Array,
+      "%FinalizationRegistry%": typeof FinalizationRegistry === "undefined" ? undefined2 : FinalizationRegistry,
+      "%Function%": $Function,
+      "%GeneratorFunction%": needsEval,
+      "%Int8Array%": typeof Int8Array === "undefined" ? undefined2 : Int8Array,
+      "%Int16Array%": typeof Int16Array === "undefined" ? undefined2 : Int16Array,
+      "%Int32Array%": typeof Int32Array === "undefined" ? undefined2 : Int32Array,
+      "%isFinite%": isFinite,
+      "%isNaN%": isNaN,
+      "%IteratorPrototype%": hasSymbols && getProto ? getProto(getProto([][Symbol.iterator]())) : undefined2,
+      "%JSON%": typeof JSON === "object" ? JSON : undefined2,
+      "%Map%": typeof Map === "undefined" ? undefined2 : Map,
+      "%MapIteratorPrototype%": typeof Map === "undefined" || !hasSymbols || !getProto ? undefined2 : getProto((/* @__PURE__ */ new Map())[Symbol.iterator]()),
+      "%Math%": Math,
+      "%Number%": Number,
+      "%Object%": $Object,
+      "%Object.getOwnPropertyDescriptor%": $gOPD,
+      "%parseFloat%": parseFloat,
+      "%parseInt%": parseInt,
+      "%Promise%": typeof Promise === "undefined" ? undefined2 : Promise,
+      "%Proxy%": typeof Proxy === "undefined" ? undefined2 : Proxy,
+      "%RangeError%": $RangeError,
+      "%ReferenceError%": $ReferenceError,
+      "%Reflect%": typeof Reflect === "undefined" ? undefined2 : Reflect,
+      "%RegExp%": RegExp,
+      "%Set%": typeof Set === "undefined" ? undefined2 : Set,
+      "%SetIteratorPrototype%": typeof Set === "undefined" || !hasSymbols || !getProto ? undefined2 : getProto((/* @__PURE__ */ new Set())[Symbol.iterator]()),
+      "%SharedArrayBuffer%": typeof SharedArrayBuffer === "undefined" ? undefined2 : SharedArrayBuffer,
+      "%String%": String,
+      "%StringIteratorPrototype%": hasSymbols && getProto ? getProto(""[Symbol.iterator]()) : undefined2,
+      "%Symbol%": hasSymbols ? Symbol : undefined2,
+      "%SyntaxError%": $SyntaxError,
+      "%ThrowTypeError%": ThrowTypeError,
+      "%TypedArray%": TypedArray,
+      "%TypeError%": $TypeError,
+      "%Uint8Array%": typeof Uint8Array === "undefined" ? undefined2 : Uint8Array,
+      "%Uint8ClampedArray%": typeof Uint8ClampedArray === "undefined" ? undefined2 : Uint8ClampedArray,
+      "%Uint16Array%": typeof Uint16Array === "undefined" ? undefined2 : Uint16Array,
+      "%Uint32Array%": typeof Uint32Array === "undefined" ? undefined2 : Uint32Array,
+      "%URIError%": $URIError,
+      "%WeakMap%": typeof WeakMap === "undefined" ? undefined2 : WeakMap,
+      "%WeakRef%": typeof WeakRef === "undefined" ? undefined2 : WeakRef,
+      "%WeakSet%": typeof WeakSet === "undefined" ? undefined2 : WeakSet,
+      "%Function.prototype.call%": $call,
+      "%Function.prototype.apply%": $apply,
+      "%Object.defineProperty%": $defineProperty,
+      "%Object.getPrototypeOf%": $ObjectGPO,
+      "%Math.abs%": abs,
+      "%Math.floor%": floor,
+      "%Math.max%": max,
+      "%Math.min%": min,
+      "%Math.pow%": pow,
+      "%Math.round%": round,
+      "%Math.sign%": sign3,
+      "%Reflect.getPrototypeOf%": $ReflectGPO
+    };
+    if (getProto) {
+      try {
+        null.error;
+      } catch (e) {
+        errorProto = getProto(getProto(e));
+        INTRINSICS["%Error.prototype%"] = errorProto;
+      }
+    }
+    var errorProto;
+    var doEval = /* @__PURE__ */ __name(function doEval2(name) {
+      var value;
+      if (name === "%AsyncFunction%") {
+        value = getEvalledConstructor("async function () {}");
+      } else if (name === "%GeneratorFunction%") {
+        value = getEvalledConstructor("function* () {}");
+      } else if (name === "%AsyncGeneratorFunction%") {
+        value = getEvalledConstructor("async function* () {}");
+      } else if (name === "%AsyncGenerator%") {
+        var fn = doEval2("%AsyncGeneratorFunction%");
+        if (fn) {
+          value = fn.prototype;
+        }
+      } else if (name === "%AsyncIteratorPrototype%") {
+        var gen = doEval2("%AsyncGenerator%");
+        if (gen && getProto) {
+          value = getProto(gen.prototype);
+        }
+      }
+      INTRINSICS[name] = value;
+      return value;
+    }, "doEval");
+    var LEGACY_ALIASES = {
+      __proto__: null,
+      "%ArrayBufferPrototype%": ["ArrayBuffer", "prototype"],
+      "%ArrayPrototype%": ["Array", "prototype"],
+      "%ArrayProto_entries%": ["Array", "prototype", "entries"],
+      "%ArrayProto_forEach%": ["Array", "prototype", "forEach"],
+      "%ArrayProto_keys%": ["Array", "prototype", "keys"],
+      "%ArrayProto_values%": ["Array", "prototype", "values"],
+      "%AsyncFunctionPrototype%": ["AsyncFunction", "prototype"],
+      "%AsyncGenerator%": ["AsyncGeneratorFunction", "prototype"],
+      "%AsyncGeneratorPrototype%": ["AsyncGeneratorFunction", "prototype", "prototype"],
+      "%BooleanPrototype%": ["Boolean", "prototype"],
+      "%DataViewPrototype%": ["DataView", "prototype"],
+      "%DatePrototype%": ["Date", "prototype"],
+      "%ErrorPrototype%": ["Error", "prototype"],
+      "%EvalErrorPrototype%": ["EvalError", "prototype"],
+      "%Float32ArrayPrototype%": ["Float32Array", "prototype"],
+      "%Float64ArrayPrototype%": ["Float64Array", "prototype"],
+      "%FunctionPrototype%": ["Function", "prototype"],
+      "%Generator%": ["GeneratorFunction", "prototype"],
+      "%GeneratorPrototype%": ["GeneratorFunction", "prototype", "prototype"],
+      "%Int8ArrayPrototype%": ["Int8Array", "prototype"],
+      "%Int16ArrayPrototype%": ["Int16Array", "prototype"],
+      "%Int32ArrayPrototype%": ["Int32Array", "prototype"],
+      "%JSONParse%": ["JSON", "parse"],
+      "%JSONStringify%": ["JSON", "stringify"],
+      "%MapPrototype%": ["Map", "prototype"],
+      "%NumberPrototype%": ["Number", "prototype"],
+      "%ObjectPrototype%": ["Object", "prototype"],
+      "%ObjProto_toString%": ["Object", "prototype", "toString"],
+      "%ObjProto_valueOf%": ["Object", "prototype", "valueOf"],
+      "%PromisePrototype%": ["Promise", "prototype"],
+      "%PromiseProto_then%": ["Promise", "prototype", "then"],
+      "%Promise_all%": ["Promise", "all"],
+      "%Promise_reject%": ["Promise", "reject"],
+      "%Promise_resolve%": ["Promise", "resolve"],
+      "%RangeErrorPrototype%": ["RangeError", "prototype"],
+      "%ReferenceErrorPrototype%": ["ReferenceError", "prototype"],
+      "%RegExpPrototype%": ["RegExp", "prototype"],
+      "%SetPrototype%": ["Set", "prototype"],
+      "%SharedArrayBufferPrototype%": ["SharedArrayBuffer", "prototype"],
+      "%StringPrototype%": ["String", "prototype"],
+      "%SymbolPrototype%": ["Symbol", "prototype"],
+      "%SyntaxErrorPrototype%": ["SyntaxError", "prototype"],
+      "%TypedArrayPrototype%": ["TypedArray", "prototype"],
+      "%TypeErrorPrototype%": ["TypeError", "prototype"],
+      "%Uint8ArrayPrototype%": ["Uint8Array", "prototype"],
+      "%Uint8ClampedArrayPrototype%": ["Uint8ClampedArray", "prototype"],
+      "%Uint16ArrayPrototype%": ["Uint16Array", "prototype"],
+      "%Uint32ArrayPrototype%": ["Uint32Array", "prototype"],
+      "%URIErrorPrototype%": ["URIError", "prototype"],
+      "%WeakMapPrototype%": ["WeakMap", "prototype"],
+      "%WeakSetPrototype%": ["WeakSet", "prototype"]
+    };
+    var bind = require_function_bind();
+    var hasOwn = require_hasown();
+    var $concat = bind.call($call, Array.prototype.concat);
+    var $spliceApply = bind.call($apply, Array.prototype.splice);
+    var $replace = bind.call($call, String.prototype.replace);
+    var $strSlice = bind.call($call, String.prototype.slice);
+    var $exec = bind.call($call, RegExp.prototype.exec);
+    var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+    var reEscapeChar = /\\(\\)?/g;
+    var stringToPath = /* @__PURE__ */ __name(function stringToPath2(string) {
+      var first = $strSlice(string, 0, 1);
+      var last = $strSlice(string, -1);
+      if (first === "%" && last !== "%") {
+        throw new $SyntaxError("invalid intrinsic syntax, expected closing `%`");
+      } else if (last === "%" && first !== "%") {
+        throw new $SyntaxError("invalid intrinsic syntax, expected opening `%`");
+      }
+      var result = [];
+      $replace(string, rePropName, function(match, number, quote, subString) {
+        result[result.length] = quote ? $replace(subString, reEscapeChar, "$1") : number || match;
+      });
+      return result;
+    }, "stringToPath");
+    var getBaseIntrinsic = /* @__PURE__ */ __name(function getBaseIntrinsic2(name, allowMissing) {
+      var intrinsicName = name;
+      var alias;
+      if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
+        alias = LEGACY_ALIASES[intrinsicName];
+        intrinsicName = "%" + alias[0] + "%";
+      }
+      if (hasOwn(INTRINSICS, intrinsicName)) {
+        var value = INTRINSICS[intrinsicName];
+        if (value === needsEval) {
+          value = doEval(intrinsicName);
+        }
+        if (typeof value === "undefined" && !allowMissing) {
+          throw new $TypeError("intrinsic " + name + " exists, but is not available. Please file an issue!");
+        }
+        return {
+          alias,
+          name: intrinsicName,
+          value
+        };
+      }
+      throw new $SyntaxError("intrinsic " + name + " does not exist!");
+    }, "getBaseIntrinsic");
+    module.exports = /* @__PURE__ */ __name(function GetIntrinsic(name, allowMissing) {
+      if (typeof name !== "string" || name.length === 0) {
+        throw new $TypeError("intrinsic name must be a non-empty string");
+      }
+      if (arguments.length > 1 && typeof allowMissing !== "boolean") {
+        throw new $TypeError('"allowMissing" argument must be a boolean');
+      }
+      if ($exec(/^%?[^%]*%?$/, name) === null) {
+        throw new $SyntaxError("`%` may not be present anywhere but at the beginning and end of the intrinsic name");
+      }
+      var parts = stringToPath(name);
+      var intrinsicBaseName = parts.length > 0 ? parts[0] : "";
+      var intrinsic = getBaseIntrinsic("%" + intrinsicBaseName + "%", allowMissing);
+      var intrinsicRealName = intrinsic.name;
+      var value = intrinsic.value;
+      var skipFurtherCaching = false;
+      var alias = intrinsic.alias;
+      if (alias) {
+        intrinsicBaseName = alias[0];
+        $spliceApply(parts, $concat([0, 1], alias));
+      }
+      for (var i = 1, isOwn = true; i < parts.length; i += 1) {
+        var part = parts[i];
+        var first = $strSlice(part, 0, 1);
+        var last = $strSlice(part, -1);
+        if ((first === '"' || first === "'" || first === "`" || (last === '"' || last === "'" || last === "`")) && first !== last) {
+          throw new $SyntaxError("property names with quotes must have matching quotes");
+        }
+        if (part === "constructor" || !isOwn) {
+          skipFurtherCaching = true;
+        }
+        intrinsicBaseName += "." + part;
+        intrinsicRealName = "%" + intrinsicBaseName + "%";
+        if (hasOwn(INTRINSICS, intrinsicRealName)) {
+          value = INTRINSICS[intrinsicRealName];
+        } else if (value != null) {
+          if (!(part in value)) {
+            if (!allowMissing) {
+              throw new $TypeError("base intrinsic for " + name + " exists, but the property is not available.");
+            }
+            return void 0;
+          }
+          if ($gOPD && i + 1 >= parts.length) {
+            var desc2 = $gOPD(value, part);
+            isOwn = !!desc2;
+            if (isOwn && "get" in desc2 && !("originalValue" in desc2.get)) {
+              value = desc2.get;
+            } else {
+              value = value[part];
+            }
           } else {
-            result = result.replace(template, value2);
+            isOwn = hasOwn(value, part);
+            value = value[part];
+          }
+          if (isOwn && !skipFurtherCaching) {
+            INTRINSICS[intrinsicRealName] = value;
+          }
+        }
+      }
+      return value;
+    }, "GetIntrinsic");
+  }
+});
+
+// node_modules/.pnpm/call-bound@1.0.4/node_modules/call-bound/index.js
+var require_call_bound = __commonJS({
+  "node_modules/.pnpm/call-bound@1.0.4/node_modules/call-bound/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var GetIntrinsic = require_get_intrinsic();
+    var callBindBasic = require_call_bind_apply_helpers();
+    var $indexOf = callBindBasic([GetIntrinsic("%String.prototype.indexOf%")]);
+    module.exports = /* @__PURE__ */ __name(function callBoundIntrinsic(name, allowMissing) {
+      var intrinsic = (
+        /** @type {(this: unknown, ...args: unknown[]) => unknown} */
+        GetIntrinsic(name, !!allowMissing)
+      );
+      if (typeof intrinsic === "function" && $indexOf(name, ".prototype.") > -1) {
+        return callBindBasic(
+          /** @type {const} */
+          [intrinsic]
+        );
+      }
+      return intrinsic;
+    }, "callBoundIntrinsic");
+  }
+});
+
+// node_modules/.pnpm/side-channel-map@1.0.1/node_modules/side-channel-map/index.js
+var require_side_channel_map = __commonJS({
+  "node_modules/.pnpm/side-channel-map@1.0.1/node_modules/side-channel-map/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var GetIntrinsic = require_get_intrinsic();
+    var callBound = require_call_bound();
+    var inspect2 = require_object_inspect();
+    var $TypeError = require_type();
+    var $Map = GetIntrinsic("%Map%", true);
+    var $mapGet = callBound("Map.prototype.get", true);
+    var $mapSet = callBound("Map.prototype.set", true);
+    var $mapHas = callBound("Map.prototype.has", true);
+    var $mapDelete = callBound("Map.prototype.delete", true);
+    var $mapSize = callBound("Map.prototype.size", true);
+    module.exports = !!$Map && /** @type {Exclude<import('.'), false>} */
+    /* @__PURE__ */ __name(function getSideChannelMap() {
+      var $m;
+      var channel2 = {
+        assert: /* @__PURE__ */ __name(function(key) {
+          if (!channel2.has(key)) {
+            throw new $TypeError("Side channel does not contain " + inspect2(key));
+          }
+        }, "assert"),
+        "delete": /* @__PURE__ */ __name(function(key) {
+          if ($m) {
+            var result = $mapDelete($m, key);
+            if ($mapSize($m) === 0) {
+              $m = void 0;
+            }
+            return result;
+          }
+          return false;
+        }, "delete"),
+        get: /* @__PURE__ */ __name(function(key) {
+          if ($m) {
+            return $mapGet($m, key);
+          }
+        }, "get"),
+        has: /* @__PURE__ */ __name(function(key) {
+          if ($m) {
+            return $mapHas($m, key);
+          }
+          return false;
+        }, "has"),
+        set: /* @__PURE__ */ __name(function(key, value) {
+          if (!$m) {
+            $m = new $Map();
+          }
+          $mapSet($m, key, value);
+        }, "set")
+      };
+      return channel2;
+    }, "getSideChannelMap");
+  }
+});
+
+// node_modules/.pnpm/side-channel-weakmap@1.0.2/node_modules/side-channel-weakmap/index.js
+var require_side_channel_weakmap = __commonJS({
+  "node_modules/.pnpm/side-channel-weakmap@1.0.2/node_modules/side-channel-weakmap/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var GetIntrinsic = require_get_intrinsic();
+    var callBound = require_call_bound();
+    var inspect2 = require_object_inspect();
+    var getSideChannelMap = require_side_channel_map();
+    var $TypeError = require_type();
+    var $WeakMap = GetIntrinsic("%WeakMap%", true);
+    var $weakMapGet = callBound("WeakMap.prototype.get", true);
+    var $weakMapSet = callBound("WeakMap.prototype.set", true);
+    var $weakMapHas = callBound("WeakMap.prototype.has", true);
+    var $weakMapDelete = callBound("WeakMap.prototype.delete", true);
+    module.exports = $WeakMap ? (
+      /** @type {Exclude<import('.'), false>} */
+      /* @__PURE__ */ __name(function getSideChannelWeakMap() {
+        var $wm;
+        var $m;
+        var channel2 = {
+          assert: /* @__PURE__ */ __name(function(key) {
+            if (!channel2.has(key)) {
+              throw new $TypeError("Side channel does not contain " + inspect2(key));
+            }
+          }, "assert"),
+          "delete": /* @__PURE__ */ __name(function(key) {
+            if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+              if ($wm) {
+                return $weakMapDelete($wm, key);
+              }
+            } else if (getSideChannelMap) {
+              if ($m) {
+                return $m["delete"](key);
+              }
+            }
+            return false;
+          }, "delete"),
+          get: /* @__PURE__ */ __name(function(key) {
+            if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+              if ($wm) {
+                return $weakMapGet($wm, key);
+              }
+            }
+            return $m && $m.get(key);
+          }, "get"),
+          has: /* @__PURE__ */ __name(function(key) {
+            if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+              if ($wm) {
+                return $weakMapHas($wm, key);
+              }
+            }
+            return !!$m && $m.has(key);
+          }, "has"),
+          set: /* @__PURE__ */ __name(function(key, value) {
+            if ($WeakMap && key && (typeof key === "object" || typeof key === "function")) {
+              if (!$wm) {
+                $wm = new $WeakMap();
+              }
+              $weakMapSet($wm, key, value);
+            } else if (getSideChannelMap) {
+              if (!$m) {
+                $m = getSideChannelMap();
+              }
+              $m.set(key, value);
+            }
+          }, "set")
+        };
+        return channel2;
+      }, "getSideChannelWeakMap")
+    ) : getSideChannelMap;
+  }
+});
+
+// node_modules/.pnpm/side-channel@1.1.0/node_modules/side-channel/index.js
+var require_side_channel = __commonJS({
+  "node_modules/.pnpm/side-channel@1.1.0/node_modules/side-channel/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var $TypeError = require_type();
+    var inspect2 = require_object_inspect();
+    var getSideChannelList = require_side_channel_list();
+    var getSideChannelMap = require_side_channel_map();
+    var getSideChannelWeakMap = require_side_channel_weakmap();
+    var makeChannel = getSideChannelWeakMap || getSideChannelMap || getSideChannelList;
+    module.exports = /* @__PURE__ */ __name(function getSideChannel() {
+      var $channelData;
+      var channel2 = {
+        assert: /* @__PURE__ */ __name(function(key) {
+          if (!channel2.has(key)) {
+            throw new $TypeError("Side channel does not contain " + inspect2(key));
+          }
+        }, "assert"),
+        "delete": /* @__PURE__ */ __name(function(key) {
+          return !!$channelData && $channelData["delete"](key);
+        }, "delete"),
+        get: /* @__PURE__ */ __name(function(key) {
+          return $channelData && $channelData.get(key);
+        }, "get"),
+        has: /* @__PURE__ */ __name(function(key) {
+          return !!$channelData && $channelData.has(key);
+        }, "has"),
+        set: /* @__PURE__ */ __name(function(key, value) {
+          if (!$channelData) {
+            $channelData = makeChannel();
+          }
+          $channelData.set(key, value);
+        }, "set")
+      };
+      return channel2;
+    }, "getSideChannel");
+  }
+});
+
+// node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/formats.js
+var require_formats = __commonJS({
+  "node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/formats.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var replace = String.prototype.replace;
+    var percentTwenties = /%20/g;
+    var Format = {
+      RFC1738: "RFC1738",
+      RFC3986: "RFC3986"
+    };
+    module.exports = {
+      "default": Format.RFC3986,
+      formatters: {
+        RFC1738: /* @__PURE__ */ __name(function(value) {
+          return replace.call(value, percentTwenties, "+");
+        }, "RFC1738"),
+        RFC3986: /* @__PURE__ */ __name(function(value) {
+          return String(value);
+        }, "RFC3986")
+      },
+      RFC1738: Format.RFC1738,
+      RFC3986: Format.RFC3986
+    };
+  }
+});
+
+// node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/utils.js
+var require_utils = __commonJS({
+  "node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/utils.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var formats = require_formats();
+    var has = Object.prototype.hasOwnProperty;
+    var isArray2 = Array.isArray;
+    var hexTable = function() {
+      var array = [];
+      for (var i = 0; i < 256; ++i) {
+        array.push("%" + ((i < 16 ? "0" : "") + i.toString(16)).toUpperCase());
+      }
+      return array;
+    }();
+    var compactQueue = /* @__PURE__ */ __name(function compactQueue2(queue) {
+      while (queue.length > 1) {
+        var item = queue.pop();
+        var obj = item.obj[item.prop];
+        if (isArray2(obj)) {
+          var compacted = [];
+          for (var j = 0; j < obj.length; ++j) {
+            if (typeof obj[j] !== "undefined") {
+              compacted.push(obj[j]);
+            }
+          }
+          item.obj[item.prop] = compacted;
+        }
+      }
+    }, "compactQueue");
+    var arrayToObject = /* @__PURE__ */ __name(function arrayToObject2(source, options) {
+      var obj = options && options.plainObjects ? { __proto__: null } : {};
+      for (var i = 0; i < source.length; ++i) {
+        if (typeof source[i] !== "undefined") {
+          obj[i] = source[i];
+        }
+      }
+      return obj;
+    }, "arrayToObject");
+    var merge = /* @__PURE__ */ __name(function merge2(target, source, options) {
+      if (!source) {
+        return target;
+      }
+      if (typeof source !== "object" && typeof source !== "function") {
+        if (isArray2(target)) {
+          target.push(source);
+        } else if (target && typeof target === "object") {
+          if (options && (options.plainObjects || options.allowPrototypes) || !has.call(Object.prototype, source)) {
+            target[source] = true;
           }
         } else {
-          result = result.replace(template, defaultValue);
+          return [target, source];
         }
-        if (result === runningParsed[key]) {
-          break;
-        }
-        regex.lastIndex = 0;
+        return target;
       }
-      return result;
-    }
-    __name(expandValue, "expandValue");
-    function expand2(options) {
-      const runningParsed = {};
-      let processEnv = process.env;
-      if (options && options.processEnv != null) {
-        processEnv = options.processEnv;
+      if (!target || typeof target !== "object") {
+        return [target].concat(source);
       }
-      for (const key in options.parsed) {
-        let value = options.parsed[key];
-        if (processEnv[key] && processEnv[key] !== value) {
-          value = processEnv[key];
+      var mergeTarget = target;
+      if (isArray2(target) && !isArray2(source)) {
+        mergeTarget = arrayToObject(target, options);
+      }
+      if (isArray2(target) && isArray2(source)) {
+        source.forEach(function(item, i) {
+          if (has.call(target, i)) {
+            var targetItem = target[i];
+            if (targetItem && typeof targetItem === "object" && item && typeof item === "object") {
+              target[i] = merge2(targetItem, item, options);
+            } else {
+              target.push(item);
+            }
+          } else {
+            target[i] = item;
+          }
+        });
+        return target;
+      }
+      return Object.keys(source).reduce(function(acc, key) {
+        var value = source[key];
+        if (has.call(acc, key)) {
+          acc[key] = merge2(acc[key], value, options);
         } else {
-          value = expandValue(value, processEnv, runningParsed);
+          acc[key] = value;
         }
-        options.parsed[key] = _resolveEscapeSequences(value);
-        runningParsed[key] = _resolveEscapeSequences(value);
+        return acc;
+      }, mergeTarget);
+    }, "merge");
+    var assign = /* @__PURE__ */ __name(function assignSingleSource(target, source) {
+      return Object.keys(source).reduce(function(acc, key) {
+        acc[key] = source[key];
+        return acc;
+      }, target);
+    }, "assignSingleSource");
+    var decode3 = /* @__PURE__ */ __name(function(str, defaultDecoder, charset) {
+      var strWithoutPlus = str.replace(/\+/g, " ");
+      if (charset === "iso-8859-1") {
+        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
       }
-      for (const processKey in options.parsed) {
-        processEnv[processKey] = options.parsed[processKey];
+      try {
+        return decodeURIComponent(strWithoutPlus);
+      } catch (e) {
+        return strWithoutPlus;
       }
-      return options;
-    }
-    __name(expand2, "expand");
-    module.exports.expand = expand2;
+    }, "decode");
+    var limit = 1024;
+    var encode2 = /* @__PURE__ */ __name(function encode3(str, defaultEncoder, charset, kind, format2) {
+      if (str.length === 0) {
+        return str;
+      }
+      var string = str;
+      if (typeof str === "symbol") {
+        string = Symbol.prototype.toString.call(str);
+      } else if (typeof str !== "string") {
+        string = String(str);
+      }
+      if (charset === "iso-8859-1") {
+        return escape(string).replace(/%u[0-9a-f]{4}/gi, function($0) {
+          return "%26%23" + parseInt($0.slice(2), 16) + "%3B";
+        });
+      }
+      var out = "";
+      for (var j = 0; j < string.length; j += limit) {
+        var segment = string.length >= limit ? string.slice(j, j + limit) : string;
+        var arr = [];
+        for (var i = 0; i < segment.length; ++i) {
+          var c = segment.charCodeAt(i);
+          if (c === 45 || c === 46 || c === 95 || c === 126 || c >= 48 && c <= 57 || c >= 65 && c <= 90 || c >= 97 && c <= 122 || format2 === formats.RFC1738 && (c === 40 || c === 41)) {
+            arr[arr.length] = segment.charAt(i);
+            continue;
+          }
+          if (c < 128) {
+            arr[arr.length] = hexTable[c];
+            continue;
+          }
+          if (c < 2048) {
+            arr[arr.length] = hexTable[192 | c >> 6] + hexTable[128 | c & 63];
+            continue;
+          }
+          if (c < 55296 || c >= 57344) {
+            arr[arr.length] = hexTable[224 | c >> 12] + hexTable[128 | c >> 6 & 63] + hexTable[128 | c & 63];
+            continue;
+          }
+          i += 1;
+          c = 65536 + ((c & 1023) << 10 | segment.charCodeAt(i) & 1023);
+          arr[arr.length] = hexTable[240 | c >> 18] + hexTable[128 | c >> 12 & 63] + hexTable[128 | c >> 6 & 63] + hexTable[128 | c & 63];
+        }
+        out += arr.join("");
+      }
+      return out;
+    }, "encode");
+    var compact2 = /* @__PURE__ */ __name(function compact3(value) {
+      var queue = [{ obj: { o: value }, prop: "o" }];
+      var refs = [];
+      for (var i = 0; i < queue.length; ++i) {
+        var item = queue[i];
+        var obj = item.obj[item.prop];
+        var keys = Object.keys(obj);
+        for (var j = 0; j < keys.length; ++j) {
+          var key = keys[j];
+          var val = obj[key];
+          if (typeof val === "object" && val !== null && refs.indexOf(val) === -1) {
+            queue.push({ obj, prop: key });
+            refs.push(val);
+          }
+        }
+      }
+      compactQueue(queue);
+      return value;
+    }, "compact");
+    var isRegExp2 = /* @__PURE__ */ __name(function isRegExp3(obj) {
+      return Object.prototype.toString.call(obj) === "[object RegExp]";
+    }, "isRegExp");
+    var isBuffer3 = /* @__PURE__ */ __name(function isBuffer4(obj) {
+      if (!obj || typeof obj !== "object") {
+        return false;
+      }
+      return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
+    }, "isBuffer");
+    var combine = /* @__PURE__ */ __name(function combine2(a, b) {
+      return [].concat(a, b);
+    }, "combine");
+    var maybeMap = /* @__PURE__ */ __name(function maybeMap2(val, fn) {
+      if (isArray2(val)) {
+        var mapped = [];
+        for (var i = 0; i < val.length; i += 1) {
+          mapped.push(fn(val[i]));
+        }
+        return mapped;
+      }
+      return fn(val);
+    }, "maybeMap");
+    module.exports = {
+      arrayToObject,
+      assign,
+      combine,
+      compact: compact2,
+      decode: decode3,
+      encode: encode2,
+      isBuffer: isBuffer3,
+      isRegExp: isRegExp2,
+      maybeMap,
+      merge
+    };
+  }
+});
+
+// node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/stringify.js
+var require_stringify = __commonJS({
+  "node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/stringify.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var getSideChannel = require_side_channel();
+    var utils = require_utils();
+    var formats = require_formats();
+    var has = Object.prototype.hasOwnProperty;
+    var arrayPrefixGenerators = {
+      brackets: /* @__PURE__ */ __name(function brackets(prefix) {
+        return prefix + "[]";
+      }, "brackets"),
+      comma: "comma",
+      indices: /* @__PURE__ */ __name(function indices(prefix, key) {
+        return prefix + "[" + key + "]";
+      }, "indices"),
+      repeat: /* @__PURE__ */ __name(function repeat(prefix) {
+        return prefix;
+      }, "repeat")
+    };
+    var isArray2 = Array.isArray;
+    var push = Array.prototype.push;
+    var pushToArray = /* @__PURE__ */ __name(function(arr, valueOrArray) {
+      push.apply(arr, isArray2(valueOrArray) ? valueOrArray : [valueOrArray]);
+    }, "pushToArray");
+    var toISO = Date.prototype.toISOString;
+    var defaultFormat = formats["default"];
+    var defaults = {
+      addQueryPrefix: false,
+      allowDots: false,
+      allowEmptyArrays: false,
+      arrayFormat: "indices",
+      charset: "utf-8",
+      charsetSentinel: false,
+      commaRoundTrip: false,
+      delimiter: "&",
+      encode: true,
+      encodeDotInKeys: false,
+      encoder: utils.encode,
+      encodeValuesOnly: false,
+      filter: void 0,
+      format: defaultFormat,
+      formatter: formats.formatters[defaultFormat],
+      // deprecated
+      indices: false,
+      serializeDate: /* @__PURE__ */ __name(function serializeDate(date) {
+        return toISO.call(date);
+      }, "serializeDate"),
+      skipNulls: false,
+      strictNullHandling: false
+    };
+    var isNonNullishPrimitive = /* @__PURE__ */ __name(function isNonNullishPrimitive2(v) {
+      return typeof v === "string" || typeof v === "number" || typeof v === "boolean" || typeof v === "symbol" || typeof v === "bigint";
+    }, "isNonNullishPrimitive");
+    var sentinel = {};
+    var stringify2 = /* @__PURE__ */ __name(function stringify3(object, prefix, generateArrayPrefix, commaRoundTrip, allowEmptyArrays, strictNullHandling, skipNulls, encodeDotInKeys, encoder3, filter, sort, allowDots, serializeDate, format2, formatter, encodeValuesOnly, charset, sideChannel) {
+      var obj = object;
+      var tmpSc = sideChannel;
+      var step = 0;
+      var findFlag = false;
+      while ((tmpSc = tmpSc.get(sentinel)) !== void 0 && !findFlag) {
+        var pos = tmpSc.get(object);
+        step += 1;
+        if (typeof pos !== "undefined") {
+          if (pos === step) {
+            throw new RangeError("Cyclic object value");
+          } else {
+            findFlag = true;
+          }
+        }
+        if (typeof tmpSc.get(sentinel) === "undefined") {
+          step = 0;
+        }
+      }
+      if (typeof filter === "function") {
+        obj = filter(prefix, obj);
+      } else if (obj instanceof Date) {
+        obj = serializeDate(obj);
+      } else if (generateArrayPrefix === "comma" && isArray2(obj)) {
+        obj = utils.maybeMap(obj, function(value2) {
+          if (value2 instanceof Date) {
+            return serializeDate(value2);
+          }
+          return value2;
+        });
+      }
+      if (obj === null) {
+        if (strictNullHandling) {
+          return encoder3 && !encodeValuesOnly ? encoder3(prefix, defaults.encoder, charset, "key", format2) : prefix;
+        }
+        obj = "";
+      }
+      if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
+        if (encoder3) {
+          var keyValue = encodeValuesOnly ? prefix : encoder3(prefix, defaults.encoder, charset, "key", format2);
+          return [formatter(keyValue) + "=" + formatter(encoder3(obj, defaults.encoder, charset, "value", format2))];
+        }
+        return [formatter(prefix) + "=" + formatter(String(obj))];
+      }
+      var values = [];
+      if (typeof obj === "undefined") {
+        return values;
+      }
+      var objKeys;
+      if (generateArrayPrefix === "comma" && isArray2(obj)) {
+        if (encodeValuesOnly && encoder3) {
+          obj = utils.maybeMap(obj, encoder3);
+        }
+        objKeys = [{ value: obj.length > 0 ? obj.join(",") || null : void 0 }];
+      } else if (isArray2(filter)) {
+        objKeys = filter;
+      } else {
+        var keys = Object.keys(obj);
+        objKeys = sort ? keys.sort(sort) : keys;
+      }
+      var encodedPrefix = encodeDotInKeys ? String(prefix).replace(/\./g, "%2E") : String(prefix);
+      var adjustedPrefix = commaRoundTrip && isArray2(obj) && obj.length === 1 ? encodedPrefix + "[]" : encodedPrefix;
+      if (allowEmptyArrays && isArray2(obj) && obj.length === 0) {
+        return adjustedPrefix + "[]";
+      }
+      for (var j = 0; j < objKeys.length; ++j) {
+        var key = objKeys[j];
+        var value = typeof key === "object" && key && typeof key.value !== "undefined" ? key.value : obj[key];
+        if (skipNulls && value === null) {
+          continue;
+        }
+        var encodedKey = allowDots && encodeDotInKeys ? String(key).replace(/\./g, "%2E") : String(key);
+        var keyPrefix = isArray2(obj) ? typeof generateArrayPrefix === "function" ? generateArrayPrefix(adjustedPrefix, encodedKey) : adjustedPrefix : adjustedPrefix + (allowDots ? "." + encodedKey : "[" + encodedKey + "]");
+        sideChannel.set(object, step);
+        var valueSideChannel = getSideChannel();
+        valueSideChannel.set(sentinel, sideChannel);
+        pushToArray(values, stringify3(
+          value,
+          keyPrefix,
+          generateArrayPrefix,
+          commaRoundTrip,
+          allowEmptyArrays,
+          strictNullHandling,
+          skipNulls,
+          encodeDotInKeys,
+          generateArrayPrefix === "comma" && encodeValuesOnly && isArray2(obj) ? null : encoder3,
+          filter,
+          sort,
+          allowDots,
+          serializeDate,
+          format2,
+          formatter,
+          encodeValuesOnly,
+          charset,
+          valueSideChannel
+        ));
+      }
+      return values;
+    }, "stringify");
+    var normalizeStringifyOptions = /* @__PURE__ */ __name(function normalizeStringifyOptions2(opts) {
+      if (!opts) {
+        return defaults;
+      }
+      if (typeof opts.allowEmptyArrays !== "undefined" && typeof opts.allowEmptyArrays !== "boolean") {
+        throw new TypeError("`allowEmptyArrays` option can only be `true` or `false`, when provided");
+      }
+      if (typeof opts.encodeDotInKeys !== "undefined" && typeof opts.encodeDotInKeys !== "boolean") {
+        throw new TypeError("`encodeDotInKeys` option can only be `true` or `false`, when provided");
+      }
+      if (opts.encoder !== null && typeof opts.encoder !== "undefined" && typeof opts.encoder !== "function") {
+        throw new TypeError("Encoder has to be a function.");
+      }
+      var charset = opts.charset || defaults.charset;
+      if (typeof opts.charset !== "undefined" && opts.charset !== "utf-8" && opts.charset !== "iso-8859-1") {
+        throw new TypeError("The charset option must be either utf-8, iso-8859-1, or undefined");
+      }
+      var format2 = formats["default"];
+      if (typeof opts.format !== "undefined") {
+        if (!has.call(formats.formatters, opts.format)) {
+          throw new TypeError("Unknown format option provided.");
+        }
+        format2 = opts.format;
+      }
+      var formatter = formats.formatters[format2];
+      var filter = defaults.filter;
+      if (typeof opts.filter === "function" || isArray2(opts.filter)) {
+        filter = opts.filter;
+      }
+      var arrayFormat;
+      if (opts.arrayFormat in arrayPrefixGenerators) {
+        arrayFormat = opts.arrayFormat;
+      } else if ("indices" in opts) {
+        arrayFormat = opts.indices ? "indices" : "repeat";
+      } else {
+        arrayFormat = defaults.arrayFormat;
+      }
+      if ("commaRoundTrip" in opts && typeof opts.commaRoundTrip !== "boolean") {
+        throw new TypeError("`commaRoundTrip` must be a boolean, or absent");
+      }
+      var allowDots = typeof opts.allowDots === "undefined" ? opts.encodeDotInKeys === true ? true : defaults.allowDots : !!opts.allowDots;
+      return {
+        addQueryPrefix: typeof opts.addQueryPrefix === "boolean" ? opts.addQueryPrefix : defaults.addQueryPrefix,
+        allowDots,
+        allowEmptyArrays: typeof opts.allowEmptyArrays === "boolean" ? !!opts.allowEmptyArrays : defaults.allowEmptyArrays,
+        arrayFormat,
+        charset,
+        charsetSentinel: typeof opts.charsetSentinel === "boolean" ? opts.charsetSentinel : defaults.charsetSentinel,
+        commaRoundTrip: !!opts.commaRoundTrip,
+        delimiter: typeof opts.delimiter === "undefined" ? defaults.delimiter : opts.delimiter,
+        encode: typeof opts.encode === "boolean" ? opts.encode : defaults.encode,
+        encodeDotInKeys: typeof opts.encodeDotInKeys === "boolean" ? opts.encodeDotInKeys : defaults.encodeDotInKeys,
+        encoder: typeof opts.encoder === "function" ? opts.encoder : defaults.encoder,
+        encodeValuesOnly: typeof opts.encodeValuesOnly === "boolean" ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
+        filter,
+        format: format2,
+        formatter,
+        serializeDate: typeof opts.serializeDate === "function" ? opts.serializeDate : defaults.serializeDate,
+        skipNulls: typeof opts.skipNulls === "boolean" ? opts.skipNulls : defaults.skipNulls,
+        sort: typeof opts.sort === "function" ? opts.sort : null,
+        strictNullHandling: typeof opts.strictNullHandling === "boolean" ? opts.strictNullHandling : defaults.strictNullHandling
+      };
+    }, "normalizeStringifyOptions");
+    module.exports = function(object, opts) {
+      var obj = object;
+      var options = normalizeStringifyOptions(opts);
+      var objKeys;
+      var filter;
+      if (typeof options.filter === "function") {
+        filter = options.filter;
+        obj = filter("", obj);
+      } else if (isArray2(options.filter)) {
+        filter = options.filter;
+        objKeys = filter;
+      }
+      var keys = [];
+      if (typeof obj !== "object" || obj === null) {
+        return "";
+      }
+      var generateArrayPrefix = arrayPrefixGenerators[options.arrayFormat];
+      var commaRoundTrip = generateArrayPrefix === "comma" && options.commaRoundTrip;
+      if (!objKeys) {
+        objKeys = Object.keys(obj);
+      }
+      if (options.sort) {
+        objKeys.sort(options.sort);
+      }
+      var sideChannel = getSideChannel();
+      for (var i = 0; i < objKeys.length; ++i) {
+        var key = objKeys[i];
+        var value = obj[key];
+        if (options.skipNulls && value === null) {
+          continue;
+        }
+        pushToArray(keys, stringify2(
+          value,
+          key,
+          generateArrayPrefix,
+          commaRoundTrip,
+          options.allowEmptyArrays,
+          options.strictNullHandling,
+          options.skipNulls,
+          options.encodeDotInKeys,
+          options.encode ? options.encoder : null,
+          options.filter,
+          options.sort,
+          options.allowDots,
+          options.serializeDate,
+          options.format,
+          options.formatter,
+          options.encodeValuesOnly,
+          options.charset,
+          sideChannel
+        ));
+      }
+      var joined = keys.join(options.delimiter);
+      var prefix = options.addQueryPrefix === true ? "?" : "";
+      if (options.charsetSentinel) {
+        if (options.charset === "iso-8859-1") {
+          prefix += "utf8=%26%2310003%3B&";
+        } else {
+          prefix += "utf8=%E2%9C%93&";
+        }
+      }
+      return joined.length > 0 ? prefix + joined : "";
+    };
+  }
+});
+
+// node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/parse.js
+var require_parse = __commonJS({
+  "node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/parse.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var utils = require_utils();
+    var has = Object.prototype.hasOwnProperty;
+    var isArray2 = Array.isArray;
+    var defaults = {
+      allowDots: false,
+      allowEmptyArrays: false,
+      allowPrototypes: false,
+      allowSparse: false,
+      arrayLimit: 20,
+      charset: "utf-8",
+      charsetSentinel: false,
+      comma: false,
+      decodeDotInKeys: false,
+      decoder: utils.decode,
+      delimiter: "&",
+      depth: 5,
+      duplicates: "combine",
+      ignoreQueryPrefix: false,
+      interpretNumericEntities: false,
+      parameterLimit: 1e3,
+      parseArrays: true,
+      plainObjects: false,
+      strictDepth: false,
+      strictNullHandling: false,
+      throwOnLimitExceeded: false
+    };
+    var interpretNumericEntities = /* @__PURE__ */ __name(function(str) {
+      return str.replace(/&#(\d+);/g, function($0, numberStr) {
+        return String.fromCharCode(parseInt(numberStr, 10));
+      });
+    }, "interpretNumericEntities");
+    var parseArrayValue = /* @__PURE__ */ __name(function(val, options, currentArrayLength) {
+      if (val && typeof val === "string" && options.comma && val.indexOf(",") > -1) {
+        return val.split(",");
+      }
+      if (options.throwOnLimitExceeded && currentArrayLength >= options.arrayLimit) {
+        throw new RangeError("Array limit exceeded. Only " + options.arrayLimit + " element" + (options.arrayLimit === 1 ? "" : "s") + " allowed in an array.");
+      }
+      return val;
+    }, "parseArrayValue");
+    var isoSentinel = "utf8=%26%2310003%3B";
+    var charsetSentinel = "utf8=%E2%9C%93";
+    var parseValues = /* @__PURE__ */ __name(function parseQueryStringValues(str, options) {
+      var obj = { __proto__: null };
+      var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, "") : str;
+      cleanStr = cleanStr.replace(/%5B/gi, "[").replace(/%5D/gi, "]");
+      var limit = options.parameterLimit === Infinity ? void 0 : options.parameterLimit;
+      var parts = cleanStr.split(
+        options.delimiter,
+        options.throwOnLimitExceeded ? limit + 1 : limit
+      );
+      if (options.throwOnLimitExceeded && parts.length > limit) {
+        throw new RangeError("Parameter limit exceeded. Only " + limit + " parameter" + (limit === 1 ? "" : "s") + " allowed.");
+      }
+      var skipIndex = -1;
+      var i;
+      var charset = options.charset;
+      if (options.charsetSentinel) {
+        for (i = 0; i < parts.length; ++i) {
+          if (parts[i].indexOf("utf8=") === 0) {
+            if (parts[i] === charsetSentinel) {
+              charset = "utf-8";
+            } else if (parts[i] === isoSentinel) {
+              charset = "iso-8859-1";
+            }
+            skipIndex = i;
+            i = parts.length;
+          }
+        }
+      }
+      for (i = 0; i < parts.length; ++i) {
+        if (i === skipIndex) {
+          continue;
+        }
+        var part = parts[i];
+        var bracketEqualsPos = part.indexOf("]=");
+        var pos = bracketEqualsPos === -1 ? part.indexOf("=") : bracketEqualsPos + 1;
+        var key;
+        var val;
+        if (pos === -1) {
+          key = options.decoder(part, defaults.decoder, charset, "key");
+          val = options.strictNullHandling ? null : "";
+        } else {
+          key = options.decoder(part.slice(0, pos), defaults.decoder, charset, "key");
+          val = utils.maybeMap(
+            parseArrayValue(
+              part.slice(pos + 1),
+              options,
+              isArray2(obj[key]) ? obj[key].length : 0
+            ),
+            function(encodedVal) {
+              return options.decoder(encodedVal, defaults.decoder, charset, "value");
+            }
+          );
+        }
+        if (val && options.interpretNumericEntities && charset === "iso-8859-1") {
+          val = interpretNumericEntities(String(val));
+        }
+        if (part.indexOf("[]=") > -1) {
+          val = isArray2(val) ? [val] : val;
+        }
+        var existing = has.call(obj, key);
+        if (existing && options.duplicates === "combine") {
+          obj[key] = utils.combine(obj[key], val);
+        } else if (!existing || options.duplicates === "last") {
+          obj[key] = val;
+        }
+      }
+      return obj;
+    }, "parseQueryStringValues");
+    var parseObject = /* @__PURE__ */ __name(function(chain, val, options, valuesParsed) {
+      var currentArrayLength = 0;
+      if (chain.length > 0 && chain[chain.length - 1] === "[]") {
+        var parentKey = chain.slice(0, -1).join("");
+        currentArrayLength = Array.isArray(val) && val[parentKey] ? val[parentKey].length : 0;
+      }
+      var leaf = valuesParsed ? val : parseArrayValue(val, options, currentArrayLength);
+      for (var i = chain.length - 1; i >= 0; --i) {
+        var obj;
+        var root = chain[i];
+        if (root === "[]" && options.parseArrays) {
+          obj = options.allowEmptyArrays && (leaf === "" || options.strictNullHandling && leaf === null) ? [] : utils.combine([], leaf);
+        } else {
+          obj = options.plainObjects ? { __proto__: null } : {};
+          var cleanRoot = root.charAt(0) === "[" && root.charAt(root.length - 1) === "]" ? root.slice(1, -1) : root;
+          var decodedRoot = options.decodeDotInKeys ? cleanRoot.replace(/%2E/g, ".") : cleanRoot;
+          var index = parseInt(decodedRoot, 10);
+          if (!options.parseArrays && decodedRoot === "") {
+            obj = { 0: leaf };
+          } else if (!isNaN(index) && root !== decodedRoot && String(index) === decodedRoot && index >= 0 && (options.parseArrays && index <= options.arrayLimit)) {
+            obj = [];
+            obj[index] = leaf;
+          } else if (decodedRoot !== "__proto__") {
+            obj[decodedRoot] = leaf;
+          }
+        }
+        leaf = obj;
+      }
+      return leaf;
+    }, "parseObject");
+    var parseKeys = /* @__PURE__ */ __name(function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
+      if (!givenKey) {
+        return;
+      }
+      var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, "[$1]") : givenKey;
+      var brackets = /(\[[^[\]]*])/;
+      var child = /(\[[^[\]]*])/g;
+      var segment = options.depth > 0 && brackets.exec(key);
+      var parent = segment ? key.slice(0, segment.index) : key;
+      var keys = [];
+      if (parent) {
+        if (!options.plainObjects && has.call(Object.prototype, parent)) {
+          if (!options.allowPrototypes) {
+            return;
+          }
+        }
+        keys.push(parent);
+      }
+      var i = 0;
+      while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
+        i += 1;
+        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
+          if (!options.allowPrototypes) {
+            return;
+          }
+        }
+        keys.push(segment[1]);
+      }
+      if (segment) {
+        if (options.strictDepth === true) {
+          throw new RangeError("Input depth exceeded depth option of " + options.depth + " and strictDepth is true");
+        }
+        keys.push("[" + key.slice(segment.index) + "]");
+      }
+      return parseObject(keys, val, options, valuesParsed);
+    }, "parseQueryStringKeys");
+    var normalizeParseOptions = /* @__PURE__ */ __name(function normalizeParseOptions2(opts) {
+      if (!opts) {
+        return defaults;
+      }
+      if (typeof opts.allowEmptyArrays !== "undefined" && typeof opts.allowEmptyArrays !== "boolean") {
+        throw new TypeError("`allowEmptyArrays` option can only be `true` or `false`, when provided");
+      }
+      if (typeof opts.decodeDotInKeys !== "undefined" && typeof opts.decodeDotInKeys !== "boolean") {
+        throw new TypeError("`decodeDotInKeys` option can only be `true` or `false`, when provided");
+      }
+      if (opts.decoder !== null && typeof opts.decoder !== "undefined" && typeof opts.decoder !== "function") {
+        throw new TypeError("Decoder has to be a function.");
+      }
+      if (typeof opts.charset !== "undefined" && opts.charset !== "utf-8" && opts.charset !== "iso-8859-1") {
+        throw new TypeError("The charset option must be either utf-8, iso-8859-1, or undefined");
+      }
+      if (typeof opts.throwOnLimitExceeded !== "undefined" && typeof opts.throwOnLimitExceeded !== "boolean") {
+        throw new TypeError("`throwOnLimitExceeded` option must be a boolean");
+      }
+      var charset = typeof opts.charset === "undefined" ? defaults.charset : opts.charset;
+      var duplicates = typeof opts.duplicates === "undefined" ? defaults.duplicates : opts.duplicates;
+      if (duplicates !== "combine" && duplicates !== "first" && duplicates !== "last") {
+        throw new TypeError("The duplicates option must be either combine, first, or last");
+      }
+      var allowDots = typeof opts.allowDots === "undefined" ? opts.decodeDotInKeys === true ? true : defaults.allowDots : !!opts.allowDots;
+      return {
+        allowDots,
+        allowEmptyArrays: typeof opts.allowEmptyArrays === "boolean" ? !!opts.allowEmptyArrays : defaults.allowEmptyArrays,
+        allowPrototypes: typeof opts.allowPrototypes === "boolean" ? opts.allowPrototypes : defaults.allowPrototypes,
+        allowSparse: typeof opts.allowSparse === "boolean" ? opts.allowSparse : defaults.allowSparse,
+        arrayLimit: typeof opts.arrayLimit === "number" ? opts.arrayLimit : defaults.arrayLimit,
+        charset,
+        charsetSentinel: typeof opts.charsetSentinel === "boolean" ? opts.charsetSentinel : defaults.charsetSentinel,
+        comma: typeof opts.comma === "boolean" ? opts.comma : defaults.comma,
+        decodeDotInKeys: typeof opts.decodeDotInKeys === "boolean" ? opts.decodeDotInKeys : defaults.decodeDotInKeys,
+        decoder: typeof opts.decoder === "function" ? opts.decoder : defaults.decoder,
+        delimiter: typeof opts.delimiter === "string" || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
+        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
+        depth: typeof opts.depth === "number" || opts.depth === false ? +opts.depth : defaults.depth,
+        duplicates,
+        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
+        interpretNumericEntities: typeof opts.interpretNumericEntities === "boolean" ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
+        parameterLimit: typeof opts.parameterLimit === "number" ? opts.parameterLimit : defaults.parameterLimit,
+        parseArrays: opts.parseArrays !== false,
+        plainObjects: typeof opts.plainObjects === "boolean" ? opts.plainObjects : defaults.plainObjects,
+        strictDepth: typeof opts.strictDepth === "boolean" ? !!opts.strictDepth : defaults.strictDepth,
+        strictNullHandling: typeof opts.strictNullHandling === "boolean" ? opts.strictNullHandling : defaults.strictNullHandling,
+        throwOnLimitExceeded: typeof opts.throwOnLimitExceeded === "boolean" ? opts.throwOnLimitExceeded : false
+      };
+    }, "normalizeParseOptions");
+    module.exports = function(str, opts) {
+      var options = normalizeParseOptions(opts);
+      if (str === "" || str === null || typeof str === "undefined") {
+        return options.plainObjects ? { __proto__: null } : {};
+      }
+      var tempObj = typeof str === "string" ? parseValues(str, options) : str;
+      var obj = options.plainObjects ? { __proto__: null } : {};
+      var keys = Object.keys(tempObj);
+      for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+        var newObj = parseKeys(key, tempObj[key], options, typeof str === "string");
+        obj = utils.merge(obj, newObj, options);
+      }
+      if (options.allowSparse === true) {
+        return obj;
+      }
+      return utils.compact(obj);
+    };
+  }
+});
+
+// node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/index.js
+var require_lib = __commonJS({
+  "node_modules/.pnpm/qs@6.14.0/node_modules/qs/lib/index.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var stringify2 = require_stringify();
+    var parse3 = require_parse();
+    var formats = require_formats();
+    module.exports = {
+      formats,
+      parse: parse3,
+      stringify: stringify2
+    };
   }
 });
 
@@ -2768,14 +3802,14 @@ var require_quick_format_unescaped = __commonJS({
               if (args[a] === void 0) break;
               if (lastPos < i)
                 str += f.slice(lastPos, i);
-              var type2 = typeof args[a];
-              if (type2 === "string") {
+              var type = typeof args[a];
+              if (type === "string") {
                 str += "'" + args[a] + "'";
                 lastPos = i + 2;
                 i++;
                 break;
               }
-              if (type2 === "function") {
+              if (type === "function") {
                 str += args[a].name || "<anonymous>";
                 lastPos = i + 2;
                 i++;
@@ -3315,16 +4349,16 @@ var require_colorette = __commonJS({
     __name(_interopNamespace, "_interopNamespace");
     var tty__namespace = /* @__PURE__ */ _interopNamespace(tty);
     var {
-      env: env4 = {},
+      env: env5 = {},
       argv: argv2 = [],
-      platform: platform3 = ""
+      platform: platform2 = ""
     } = typeof process === "undefined" ? {} : process;
-    var isDisabled = "NO_COLOR" in env4 || argv2.includes("--no-color");
-    var isForced = "FORCE_COLOR" in env4 || argv2.includes("--color");
-    var isWindows = platform3 === "win32";
-    var isDumbTerminal = env4.TERM === "dumb";
-    var isCompatibleTerminal = tty__namespace && tty__namespace.isatty && tty__namespace.isatty(1) && env4.TERM && !isDumbTerminal;
-    var isCI = "CI" in env4 && ("GITHUB_ACTIONS" in env4 || "GITLAB_CI" in env4 || "CIRCLECI" in env4);
+    var isDisabled = "NO_COLOR" in env5 || argv2.includes("--no-color");
+    var isForced = "FORCE_COLOR" in env5 || argv2.includes("--color");
+    var isWindows = platform2 === "win32";
+    var isDumbTerminal = env5.TERM === "dumb";
+    var isCompatibleTerminal = tty__namespace && tty__namespace.isatty && tty__namespace.isatty(1) && env5.TERM && !isDumbTerminal;
+    var isCI = "CI" in env5 && ("GITHUB_ACTIONS" in env5 || "GITLAB_CI" in env5 || "CIRCLECI" in env5);
     var isColorSupported = !isDisabled && (isForced || isWindows && !isDumbTerminal || isCompatibleTerminal || isCI);
     var replaceClose = /* @__PURE__ */ __name((index, string, close2, replace, head = string.substring(0, index) + replace, tail = string.substring(index + close2.length), next = tail.indexOf(close2)) => head + (next < 0 ? tail : replaceClose(next, tail, close2, replace)), "replaceClose");
     var clearBleed = /* @__PURE__ */ __name((index, string, open3, close2, replace) => index < 0 ? open3 + string + close2 : open3 + replaceClose(index, string, close2, replace) + close2, "clearBleed");
@@ -3644,6 +4678,500 @@ var require_end_of_stream = __commonJS({
   }
 });
 
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs
+var access, copyFile, cp, open, opendir, rename, truncate, rm, rmdir, mkdir, readdir, readlink, symlink, lstat, stat, link, unlink, chmod, lchmod, lchown, chown, utimes, lutimes, realpath, mkdtemp, writeFile, appendFile, readFile, watch, statfs, glob;
+var init_promises = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    access = /* @__PURE__ */ notImplemented("fs.access");
+    copyFile = /* @__PURE__ */ notImplemented("fs.copyFile");
+    cp = /* @__PURE__ */ notImplemented("fs.cp");
+    open = /* @__PURE__ */ notImplemented("fs.open");
+    opendir = /* @__PURE__ */ notImplemented("fs.opendir");
+    rename = /* @__PURE__ */ notImplemented("fs.rename");
+    truncate = /* @__PURE__ */ notImplemented("fs.truncate");
+    rm = /* @__PURE__ */ notImplemented("fs.rm");
+    rmdir = /* @__PURE__ */ notImplemented("fs.rmdir");
+    mkdir = /* @__PURE__ */ notImplemented("fs.mkdir");
+    readdir = /* @__PURE__ */ notImplemented("fs.readdir");
+    readlink = /* @__PURE__ */ notImplemented("fs.readlink");
+    symlink = /* @__PURE__ */ notImplemented("fs.symlink");
+    lstat = /* @__PURE__ */ notImplemented("fs.lstat");
+    stat = /* @__PURE__ */ notImplemented("fs.stat");
+    link = /* @__PURE__ */ notImplemented("fs.link");
+    unlink = /* @__PURE__ */ notImplemented("fs.unlink");
+    chmod = /* @__PURE__ */ notImplemented("fs.chmod");
+    lchmod = /* @__PURE__ */ notImplemented("fs.lchmod");
+    lchown = /* @__PURE__ */ notImplemented("fs.lchown");
+    chown = /* @__PURE__ */ notImplemented("fs.chown");
+    utimes = /* @__PURE__ */ notImplemented("fs.utimes");
+    lutimes = /* @__PURE__ */ notImplemented("fs.lutimes");
+    realpath = /* @__PURE__ */ notImplemented("fs.realpath");
+    mkdtemp = /* @__PURE__ */ notImplemented("fs.mkdtemp");
+    writeFile = /* @__PURE__ */ notImplemented("fs.writeFile");
+    appendFile = /* @__PURE__ */ notImplemented("fs.appendFile");
+    readFile = /* @__PURE__ */ notImplemented("fs.readFile");
+    watch = /* @__PURE__ */ notImplemented("fs.watch");
+    statfs = /* @__PURE__ */ notImplemented("fs.statfs");
+    glob = /* @__PURE__ */ notImplemented("fs.glob");
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs
+var constants_exports = {};
+__export(constants_exports, {
+  COPYFILE_EXCL: () => COPYFILE_EXCL,
+  COPYFILE_FICLONE: () => COPYFILE_FICLONE,
+  COPYFILE_FICLONE_FORCE: () => COPYFILE_FICLONE_FORCE,
+  EXTENSIONLESS_FORMAT_JAVASCRIPT: () => EXTENSIONLESS_FORMAT_JAVASCRIPT,
+  EXTENSIONLESS_FORMAT_WASM: () => EXTENSIONLESS_FORMAT_WASM,
+  F_OK: () => F_OK,
+  O_APPEND: () => O_APPEND,
+  O_CREAT: () => O_CREAT,
+  O_DIRECT: () => O_DIRECT,
+  O_DIRECTORY: () => O_DIRECTORY,
+  O_DSYNC: () => O_DSYNC,
+  O_EXCL: () => O_EXCL,
+  O_NOATIME: () => O_NOATIME,
+  O_NOCTTY: () => O_NOCTTY,
+  O_NOFOLLOW: () => O_NOFOLLOW,
+  O_NONBLOCK: () => O_NONBLOCK,
+  O_RDONLY: () => O_RDONLY,
+  O_RDWR: () => O_RDWR,
+  O_SYNC: () => O_SYNC,
+  O_TRUNC: () => O_TRUNC,
+  O_WRONLY: () => O_WRONLY,
+  R_OK: () => R_OK,
+  S_IFBLK: () => S_IFBLK,
+  S_IFCHR: () => S_IFCHR,
+  S_IFDIR: () => S_IFDIR,
+  S_IFIFO: () => S_IFIFO,
+  S_IFLNK: () => S_IFLNK,
+  S_IFMT: () => S_IFMT,
+  S_IFREG: () => S_IFREG,
+  S_IFSOCK: () => S_IFSOCK,
+  S_IRGRP: () => S_IRGRP,
+  S_IROTH: () => S_IROTH,
+  S_IRUSR: () => S_IRUSR,
+  S_IRWXG: () => S_IRWXG,
+  S_IRWXO: () => S_IRWXO,
+  S_IRWXU: () => S_IRWXU,
+  S_IWGRP: () => S_IWGRP,
+  S_IWOTH: () => S_IWOTH,
+  S_IWUSR: () => S_IWUSR,
+  S_IXGRP: () => S_IXGRP,
+  S_IXOTH: () => S_IXOTH,
+  S_IXUSR: () => S_IXUSR,
+  UV_DIRENT_BLOCK: () => UV_DIRENT_BLOCK,
+  UV_DIRENT_CHAR: () => UV_DIRENT_CHAR,
+  UV_DIRENT_DIR: () => UV_DIRENT_DIR,
+  UV_DIRENT_FIFO: () => UV_DIRENT_FIFO,
+  UV_DIRENT_FILE: () => UV_DIRENT_FILE,
+  UV_DIRENT_LINK: () => UV_DIRENT_LINK,
+  UV_DIRENT_SOCKET: () => UV_DIRENT_SOCKET,
+  UV_DIRENT_UNKNOWN: () => UV_DIRENT_UNKNOWN,
+  UV_FS_COPYFILE_EXCL: () => UV_FS_COPYFILE_EXCL,
+  UV_FS_COPYFILE_FICLONE: () => UV_FS_COPYFILE_FICLONE,
+  UV_FS_COPYFILE_FICLONE_FORCE: () => UV_FS_COPYFILE_FICLONE_FORCE,
+  UV_FS_O_FILEMAP: () => UV_FS_O_FILEMAP,
+  UV_FS_SYMLINK_DIR: () => UV_FS_SYMLINK_DIR,
+  UV_FS_SYMLINK_JUNCTION: () => UV_FS_SYMLINK_JUNCTION,
+  W_OK: () => W_OK,
+  X_OK: () => X_OK
+});
+var UV_FS_SYMLINK_DIR, UV_FS_SYMLINK_JUNCTION, O_RDONLY, O_WRONLY, O_RDWR, UV_DIRENT_UNKNOWN, UV_DIRENT_FILE, UV_DIRENT_DIR, UV_DIRENT_LINK, UV_DIRENT_FIFO, UV_DIRENT_SOCKET, UV_DIRENT_CHAR, UV_DIRENT_BLOCK, EXTENSIONLESS_FORMAT_JAVASCRIPT, EXTENSIONLESS_FORMAT_WASM, S_IFMT, S_IFREG, S_IFDIR, S_IFCHR, S_IFBLK, S_IFIFO, S_IFLNK, S_IFSOCK, O_CREAT, O_EXCL, UV_FS_O_FILEMAP, O_NOCTTY, O_TRUNC, O_APPEND, O_DIRECTORY, O_NOATIME, O_NOFOLLOW, O_SYNC, O_DSYNC, O_DIRECT, O_NONBLOCK, S_IRWXU, S_IRUSR, S_IWUSR, S_IXUSR, S_IRWXG, S_IRGRP, S_IWGRP, S_IXGRP, S_IRWXO, S_IROTH, S_IWOTH, S_IXOTH, F_OK, R_OK, W_OK, X_OK, UV_FS_COPYFILE_EXCL, COPYFILE_EXCL, UV_FS_COPYFILE_FICLONE, COPYFILE_FICLONE, UV_FS_COPYFILE_FICLONE_FORCE, COPYFILE_FICLONE_FORCE;
+var init_constants = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    UV_FS_SYMLINK_DIR = 1;
+    UV_FS_SYMLINK_JUNCTION = 2;
+    O_RDONLY = 0;
+    O_WRONLY = 1;
+    O_RDWR = 2;
+    UV_DIRENT_UNKNOWN = 0;
+    UV_DIRENT_FILE = 1;
+    UV_DIRENT_DIR = 2;
+    UV_DIRENT_LINK = 3;
+    UV_DIRENT_FIFO = 4;
+    UV_DIRENT_SOCKET = 5;
+    UV_DIRENT_CHAR = 6;
+    UV_DIRENT_BLOCK = 7;
+    EXTENSIONLESS_FORMAT_JAVASCRIPT = 0;
+    EXTENSIONLESS_FORMAT_WASM = 1;
+    S_IFMT = 61440;
+    S_IFREG = 32768;
+    S_IFDIR = 16384;
+    S_IFCHR = 8192;
+    S_IFBLK = 24576;
+    S_IFIFO = 4096;
+    S_IFLNK = 40960;
+    S_IFSOCK = 49152;
+    O_CREAT = 64;
+    O_EXCL = 128;
+    UV_FS_O_FILEMAP = 0;
+    O_NOCTTY = 256;
+    O_TRUNC = 512;
+    O_APPEND = 1024;
+    O_DIRECTORY = 65536;
+    O_NOATIME = 262144;
+    O_NOFOLLOW = 131072;
+    O_SYNC = 1052672;
+    O_DSYNC = 4096;
+    O_DIRECT = 16384;
+    O_NONBLOCK = 2048;
+    S_IRWXU = 448;
+    S_IRUSR = 256;
+    S_IWUSR = 128;
+    S_IXUSR = 64;
+    S_IRWXG = 56;
+    S_IRGRP = 32;
+    S_IWGRP = 16;
+    S_IXGRP = 8;
+    S_IRWXO = 7;
+    S_IROTH = 4;
+    S_IWOTH = 2;
+    S_IXOTH = 1;
+    F_OK = 0;
+    R_OK = 4;
+    W_OK = 2;
+    X_OK = 1;
+    UV_FS_COPYFILE_EXCL = 1;
+    COPYFILE_EXCL = 1;
+    UV_FS_COPYFILE_FICLONE = 2;
+    COPYFILE_FICLONE = 2;
+    UV_FS_COPYFILE_FICLONE_FORCE = 4;
+    COPYFILE_FICLONE_FORCE = 4;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs
+var promises_default;
+var init_promises2 = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_promises();
+    init_constants();
+    init_promises();
+    promises_default = {
+      constants: constants_exports,
+      access,
+      appendFile,
+      chmod,
+      chown,
+      copyFile,
+      cp,
+      glob,
+      lchmod,
+      lchown,
+      link,
+      lstat,
+      lutimes,
+      mkdir,
+      mkdtemp,
+      open,
+      opendir,
+      readFile,
+      readdir,
+      readlink,
+      realpath,
+      rename,
+      rm,
+      rmdir,
+      stat,
+      statfs,
+      symlink,
+      truncate,
+      unlink,
+      utimes,
+      watch,
+      writeFile
+    };
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs
+var Dir, Dirent, Stats, ReadStream2, WriteStream2, FileReadStream, FileWriteStream;
+var init_classes = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    Dir = /* @__PURE__ */ notImplementedClass("fs.Dir");
+    Dirent = /* @__PURE__ */ notImplementedClass("fs.Dirent");
+    Stats = /* @__PURE__ */ notImplementedClass("fs.Stats");
+    ReadStream2 = /* @__PURE__ */ notImplementedClass("fs.ReadStream");
+    WriteStream2 = /* @__PURE__ */ notImplementedClass("fs.WriteStream");
+    FileReadStream = ReadStream2;
+    FileWriteStream = WriteStream2;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs
+function callbackify(fn) {
+  const fnc = /* @__PURE__ */ __name(function(...args) {
+    const cb = args.pop();
+    fn().catch((error4) => cb(error4)).then((val) => cb(void 0, val));
+  }, "fnc");
+  fnc.__promisify__ = fn;
+  fnc.native = fnc;
+  return fnc;
+}
+var access2, appendFile2, chown2, chmod2, copyFile2, cp2, lchown2, lchmod2, link2, lstat2, lutimes2, mkdir2, mkdtemp2, realpath2, open2, opendir2, readdir2, readFile2, readlink2, rename2, rm2, rmdir2, stat2, symlink2, truncate2, unlink2, utimes2, writeFile2, statfs2, close, createReadStream, createWriteStream, exists2, fchown, fchmod, fdatasync, fstat, fsync, ftruncate, futimes, lstatSync, read, readv, realpathSync, statSync, unwatchFile, watch2, watchFile, write, writev, _toUnixTimestamp, openAsBlob, glob2, appendFileSync, accessSync, chownSync, chmodSync, closeSync, copyFileSync, cpSync, existsSync, fchownSync, fchmodSync, fdatasyncSync, fstatSync, fsyncSync, ftruncateSync, futimesSync, lchownSync, lchmodSync, linkSync, lutimesSync, mkdirSync, mkdtempSync, openSync, opendirSync, readdirSync, readSync, readvSync, readFileSync, readlinkSync, renameSync, rmSync, rmdirSync, symlinkSync, truncateSync, unlinkSync, utimesSync, writeFileSync, writeSync, writevSync, statfsSync, globSync;
+var init_fs = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    init_promises();
+    __name(callbackify, "callbackify");
+    access2 = callbackify(access);
+    appendFile2 = callbackify(appendFile);
+    chown2 = callbackify(chown);
+    chmod2 = callbackify(chmod);
+    copyFile2 = callbackify(copyFile);
+    cp2 = callbackify(cp);
+    lchown2 = callbackify(lchown);
+    lchmod2 = callbackify(lchmod);
+    link2 = callbackify(link);
+    lstat2 = callbackify(lstat);
+    lutimes2 = callbackify(lutimes);
+    mkdir2 = callbackify(mkdir);
+    mkdtemp2 = callbackify(mkdtemp);
+    realpath2 = callbackify(realpath);
+    open2 = callbackify(open);
+    opendir2 = callbackify(opendir);
+    readdir2 = callbackify(readdir);
+    readFile2 = callbackify(readFile);
+    readlink2 = callbackify(readlink);
+    rename2 = callbackify(rename);
+    rm2 = callbackify(rm);
+    rmdir2 = callbackify(rmdir);
+    stat2 = callbackify(stat);
+    symlink2 = callbackify(symlink);
+    truncate2 = callbackify(truncate);
+    unlink2 = callbackify(unlink);
+    utimes2 = callbackify(utimes);
+    writeFile2 = callbackify(writeFile);
+    statfs2 = callbackify(statfs);
+    close = /* @__PURE__ */ notImplementedAsync("fs.close");
+    createReadStream = /* @__PURE__ */ notImplementedAsync("fs.createReadStream");
+    createWriteStream = /* @__PURE__ */ notImplementedAsync("fs.createWriteStream");
+    exists2 = /* @__PURE__ */ notImplementedAsync("fs.exists");
+    fchown = /* @__PURE__ */ notImplementedAsync("fs.fchown");
+    fchmod = /* @__PURE__ */ notImplementedAsync("fs.fchmod");
+    fdatasync = /* @__PURE__ */ notImplementedAsync("fs.fdatasync");
+    fstat = /* @__PURE__ */ notImplementedAsync("fs.fstat");
+    fsync = /* @__PURE__ */ notImplementedAsync("fs.fsync");
+    ftruncate = /* @__PURE__ */ notImplementedAsync("fs.ftruncate");
+    futimes = /* @__PURE__ */ notImplementedAsync("fs.futimes");
+    lstatSync = /* @__PURE__ */ notImplementedAsync("fs.lstatSync");
+    read = /* @__PURE__ */ notImplementedAsync("fs.read");
+    readv = /* @__PURE__ */ notImplementedAsync("fs.readv");
+    realpathSync = /* @__PURE__ */ notImplementedAsync("fs.realpathSync");
+    statSync = /* @__PURE__ */ notImplementedAsync("fs.statSync");
+    unwatchFile = /* @__PURE__ */ notImplementedAsync("fs.unwatchFile");
+    watch2 = /* @__PURE__ */ notImplementedAsync("fs.watch");
+    watchFile = /* @__PURE__ */ notImplementedAsync("fs.watchFile");
+    write = /* @__PURE__ */ notImplementedAsync("fs.write");
+    writev = /* @__PURE__ */ notImplementedAsync("fs.writev");
+    _toUnixTimestamp = /* @__PURE__ */ notImplementedAsync("fs._toUnixTimestamp");
+    openAsBlob = /* @__PURE__ */ notImplementedAsync("fs.openAsBlob");
+    glob2 = /* @__PURE__ */ notImplementedAsync("fs.glob");
+    appendFileSync = /* @__PURE__ */ notImplemented("fs.appendFileSync");
+    accessSync = /* @__PURE__ */ notImplemented("fs.accessSync");
+    chownSync = /* @__PURE__ */ notImplemented("fs.chownSync");
+    chmodSync = /* @__PURE__ */ notImplemented("fs.chmodSync");
+    closeSync = /* @__PURE__ */ notImplemented("fs.closeSync");
+    copyFileSync = /* @__PURE__ */ notImplemented("fs.copyFileSync");
+    cpSync = /* @__PURE__ */ notImplemented("fs.cpSync");
+    existsSync = /* @__PURE__ */ __name(() => false, "existsSync");
+    fchownSync = /* @__PURE__ */ notImplemented("fs.fchownSync");
+    fchmodSync = /* @__PURE__ */ notImplemented("fs.fchmodSync");
+    fdatasyncSync = /* @__PURE__ */ notImplemented("fs.fdatasyncSync");
+    fstatSync = /* @__PURE__ */ notImplemented("fs.fstatSync");
+    fsyncSync = /* @__PURE__ */ notImplemented("fs.fsyncSync");
+    ftruncateSync = /* @__PURE__ */ notImplemented("fs.ftruncateSync");
+    futimesSync = /* @__PURE__ */ notImplemented("fs.futimesSync");
+    lchownSync = /* @__PURE__ */ notImplemented("fs.lchownSync");
+    lchmodSync = /* @__PURE__ */ notImplemented("fs.lchmodSync");
+    linkSync = /* @__PURE__ */ notImplemented("fs.linkSync");
+    lutimesSync = /* @__PURE__ */ notImplemented("fs.lutimesSync");
+    mkdirSync = /* @__PURE__ */ notImplemented("fs.mkdirSync");
+    mkdtempSync = /* @__PURE__ */ notImplemented("fs.mkdtempSync");
+    openSync = /* @__PURE__ */ notImplemented("fs.openSync");
+    opendirSync = /* @__PURE__ */ notImplemented("fs.opendirSync");
+    readdirSync = /* @__PURE__ */ notImplemented("fs.readdirSync");
+    readSync = /* @__PURE__ */ notImplemented("fs.readSync");
+    readvSync = /* @__PURE__ */ notImplemented("fs.readvSync");
+    readFileSync = /* @__PURE__ */ notImplemented("fs.readFileSync");
+    readlinkSync = /* @__PURE__ */ notImplemented("fs.readlinkSync");
+    renameSync = /* @__PURE__ */ notImplemented("fs.renameSync");
+    rmSync = /* @__PURE__ */ notImplemented("fs.rmSync");
+    rmdirSync = /* @__PURE__ */ notImplemented("fs.rmdirSync");
+    symlinkSync = /* @__PURE__ */ notImplemented("fs.symlinkSync");
+    truncateSync = /* @__PURE__ */ notImplemented("fs.truncateSync");
+    unlinkSync = /* @__PURE__ */ notImplemented("fs.unlinkSync");
+    utimesSync = /* @__PURE__ */ notImplemented("fs.utimesSync");
+    writeFileSync = /* @__PURE__ */ notImplemented("fs.writeFileSync");
+    writeSync = /* @__PURE__ */ notImplemented("fs.writeSync");
+    writevSync = /* @__PURE__ */ notImplemented("fs.writevSync");
+    statfsSync = /* @__PURE__ */ notImplemented("fs.statfsSync");
+    globSync = /* @__PURE__ */ notImplemented("fs.globSync");
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs
+var fs_default;
+var init_fs2 = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_promises2();
+    init_classes();
+    init_fs();
+    init_constants();
+    init_constants();
+    init_fs();
+    init_classes();
+    fs_default = {
+      F_OK,
+      R_OK,
+      W_OK,
+      X_OK,
+      constants: constants_exports,
+      promises: promises_default,
+      Dir,
+      Dirent,
+      FileReadStream,
+      FileWriteStream,
+      ReadStream: ReadStream2,
+      Stats,
+      WriteStream: WriteStream2,
+      _toUnixTimestamp,
+      access: access2,
+      accessSync,
+      appendFile: appendFile2,
+      appendFileSync,
+      chmod: chmod2,
+      chmodSync,
+      chown: chown2,
+      chownSync,
+      close,
+      closeSync,
+      copyFile: copyFile2,
+      copyFileSync,
+      cp: cp2,
+      cpSync,
+      createReadStream,
+      createWriteStream,
+      exists: exists2,
+      existsSync,
+      fchmod,
+      fchmodSync,
+      fchown,
+      fchownSync,
+      fdatasync,
+      fdatasyncSync,
+      fstat,
+      fstatSync,
+      fsync,
+      fsyncSync,
+      ftruncate,
+      ftruncateSync,
+      futimes,
+      futimesSync,
+      glob: glob2,
+      lchmod: lchmod2,
+      globSync,
+      lchmodSync,
+      lchown: lchown2,
+      lchownSync,
+      link: link2,
+      linkSync,
+      lstat: lstat2,
+      lstatSync,
+      lutimes: lutimes2,
+      lutimesSync,
+      mkdir: mkdir2,
+      mkdirSync,
+      mkdtemp: mkdtemp2,
+      mkdtempSync,
+      open: open2,
+      openAsBlob,
+      openSync,
+      opendir: opendir2,
+      opendirSync,
+      read,
+      readFile: readFile2,
+      readFileSync,
+      readSync,
+      readdir: readdir2,
+      readdirSync,
+      readlink: readlink2,
+      readlinkSync,
+      readv,
+      readvSync,
+      realpath: realpath2,
+      realpathSync,
+      rename: rename2,
+      renameSync,
+      rm: rm2,
+      rmSync,
+      rmdir: rmdir2,
+      rmdirSync,
+      stat: stat2,
+      statSync,
+      statfs: statfs2,
+      statfsSync,
+      symlink: symlink2,
+      symlinkSync,
+      truncate: truncate2,
+      truncateSync,
+      unlink: unlink2,
+      unlinkSync,
+      unwatchFile,
+      utimes: utimes2,
+      utimesSync,
+      watch: watch2,
+      watchFile,
+      write,
+      writeFile: writeFile2,
+      writeFileSync,
+      writeSync,
+      writev,
+      writevSync
+    };
+  }
+});
+
+// node-built-in-modules:fs
+var require_fs = __commonJS({
+  "node-built-in-modules:fs"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_fs2();
+    module.exports = fs_default;
+  }
+});
+
 // node_modules/.pnpm/pump@3.0.2/node_modules/pump/index.js
 var require_pump = __commonJS({
   "node_modules/.pnpm/pump@3.0.2/node_modules/pump/index.js"(exports, module) {
@@ -3724,26 +5252,26 @@ var require_pump = __commonJS({
 });
 
 // node-built-in-modules:stream
-import libDefault2 from "stream";
+import libDefault from "stream";
 var require_stream = __commonJS({
   "node-built-in-modules:stream"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = libDefault2;
+    module.exports = libDefault;
   }
 });
 
 // node-built-in-modules:string_decoder
-import libDefault3 from "string_decoder";
+import libDefault2 from "string_decoder";
 var require_string_decoder = __commonJS({
   "node-built-in-modules:string_decoder"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = libDefault3;
+    module.exports = libDefault2;
   }
 });
 
@@ -3911,11 +5439,11 @@ var init_message_port = __esm({
       }
       start() {
       }
-      addEventListener(type2, listener) {
-        this.on(type2, listener);
+      addEventListener(type, listener) {
+        this.on(type, listener);
       }
-      removeEventListener(type2, listener) {
-        this.off(type2, listener);
+      removeEventListener(type, listener) {
+        this.off(type, listener);
       }
       dispatchEvent(event) {
         return this.emit(event.type, event);
@@ -4357,19 +5885,19 @@ var require_colors = __commonJS({
 });
 
 // node-built-in-modules:events
-import libDefault4 from "events";
+import libDefault3 from "events";
 var require_events = __commonJS({
   "node-built-in-modules:events"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = libDefault4;
+    module.exports = libDefault3;
   }
 });
 
 // node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/util/legacy-types.mjs
-var isRegExp, isDate2, isBoolean2, isNull3, isNullOrUndefined, isNumber2, isString3, isSymbol, isUndefined2, isFunction3, isBuffer2, isObject3, isError, isPrimitive;
+var isRegExp, isDate2, isBoolean2, isNull3, isNullOrUndefined, isNumber2, isString3, isSymbol, isUndefined2, isFunction3, isBuffer2, isObject4, isError, isPrimitive;
 var init_legacy_types = __esm({
   "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/util/legacy-types.mjs"() {
     init_modules_watch_stub();
@@ -4389,7 +5917,7 @@ var init_legacy_types = __esm({
     isBuffer2 = /* @__PURE__ */ __name((val) => {
       return val && typeof val === "object" && typeof val.copy === "function" && typeof val.fill === "function" && typeof val.readUInt8 === "function";
     }, "isBuffer");
-    isObject3 = /* @__PURE__ */ __name((val) => val !== null && typeof val === "object" && Object.getPrototypeOf(val).isPrototypeOf(Object), "isObject");
+    isObject4 = /* @__PURE__ */ __name((val) => val !== null && typeof val === "object" && Object.getPrototypeOf(val).isPrototypeOf(Object), "isObject");
     isError = /* @__PURE__ */ __name((val) => val instanceof Error, "isError");
     isPrimitive = /* @__PURE__ */ __name((val) => {
       if (typeof val === "object") {
@@ -4413,7 +5941,7 @@ var init_log = __esm({
 // node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/util.mjs
 import types2 from "node:util/types";
 import { default as default2 } from "node:util/types";
-var TextDecoder2, TextEncoder2, _errnoException, _exceptionWithHostPort, getSystemErrorMap, getSystemErrorName, parseEnv2, styleText;
+var TextDecoder2, TextEncoder2, _errnoException, _exceptionWithHostPort, getSystemErrorMap, getSystemErrorName, parseEnv, styleText;
 var init_util = __esm({
   "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/util.mjs"() {
     init_modules_watch_stub();
@@ -4429,7 +5957,7 @@ var init_util = __esm({
     _exceptionWithHostPort = /* @__PURE__ */ notImplemented("util._exceptionWithHostPort");
     getSystemErrorMap = /* @__PURE__ */ notImplemented("util.getSystemErrorMap");
     getSystemErrorName = /* @__PURE__ */ notImplemented("util.getSystemErrorName");
-    parseEnv2 = /* @__PURE__ */ notImplemented("util.parseEnv");
+    parseEnv = /* @__PURE__ */ notImplemented("util.parseEnv");
     styleText = /* @__PURE__ */ notImplemented("util.styleText");
   }
 });
@@ -4495,14 +6023,14 @@ var init_util2 = __esm({
       isNull: isNull3,
       isNullOrUndefined,
       isNumber: isNumber2,
-      isObject: isObject3,
+      isObject: isObject4,
       isPrimitive,
       isRegExp,
       isString: isString3,
       isSymbol,
       isUndefined: isUndefined2,
       // @ts-expect-error unenv has unknown type
-      parseEnv: parseEnv2,
+      parseEnv,
       // @ts-expect-error unenv has unknown type
       styleText,
       /**
@@ -4539,7 +6067,7 @@ var init_util2 = __esm({
 });
 
 // node-built-in-modules:util
-var require_util = __commonJS({
+var require_util2 = __commonJS({
   "node-built-in-modules:util"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
@@ -4547,6 +6075,18 @@ var require_util = __commonJS({
     init_performance2();
     init_util2();
     module.exports = util_default;
+  }
+});
+
+// node-built-in-modules:path
+import libDefault4 from "path";
+var require_path = __commonJS({
+  "node-built-in-modules:path"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = libDefault4;
   }
 });
 
@@ -4613,8 +6153,8 @@ var require_sonic_boom = __commonJS({
     init_performance2();
     var fs = require_fs();
     var EventEmitter4 = require_events();
-    var inherits2 = require_util().inherits;
-    var path2 = require_path();
+    var inherits2 = require_util2().inherits;
+    var path = require_path();
     var sleep = require_atomic_sleep();
     var assert3 = require_assert();
     var BUSY_WRITE_TIMEOUT = 100;
@@ -4669,7 +6209,7 @@ var require_sonic_boom = __commonJS({
       const mode = sonic.mode;
       if (sonic.sync) {
         try {
-          if (sonic.mkdir) fs.mkdirSync(path2.dirname(file), { recursive: true });
+          if (sonic.mkdir) fs.mkdirSync(path.dirname(file), { recursive: true });
           const fd = fs.openSync(file, flags, mode);
           fileOpened(null, fd);
         } catch (err) {
@@ -4677,7 +6217,7 @@ var require_sonic_boom = __commonJS({
           throw err;
         }
       } else if (sonic.mkdir) {
-        fs.mkdir(path2.dirname(file), { recursive: true }, (err) => {
+        fs.mkdir(path.dirname(file), { recursive: true }, (err) => {
           if (err) return fileOpened(err);
           fs.open(file, flags, mode, fileOpened);
         });
@@ -5123,37 +6663,37 @@ var require_sonic_boom = __commonJS({
       actualClose(this);
     };
     function actualWrite() {
-      const release3 = this.release;
+      const release2 = this.release;
       this._writing = true;
       this._writingBuf = this._writingBuf || this._bufs.shift() || "";
       if (this.sync) {
         try {
           const written = fs.writeSync(this.fd, this._writingBuf, "utf8");
-          release3(null, written);
+          release2(null, written);
         } catch (err) {
-          release3(err);
+          release2(err);
         }
       } else {
-        fs.write(this.fd, this._writingBuf, "utf8", release3);
+        fs.write(this.fd, this._writingBuf, "utf8", release2);
       }
     }
     __name(actualWrite, "actualWrite");
     function actualWriteBuffer() {
-      const release3 = this.release;
+      const release2 = this.release;
       this._writing = true;
       this._writingBuf = this._writingBuf.length ? this._writingBuf : mergeBuf(this._bufs.shift(), this._lens.shift());
       if (this.sync) {
         try {
           const written = fs.writeSync(this.fd, this._writingBuf);
-          release3(null, written);
+          release2(null, written);
         } catch (err) {
-          release3(err);
+          release2(err);
         }
       } else {
         if (kCopyBuffer) {
           this._writingBuf = Buffer.from(this._writingBuf);
         }
-        fs.write(this.fd, this._writingBuf, release3);
+        fs.write(this.fd, this._writingBuf, release2);
       }
     }
     __name(actualWriteBuffer, "actualWriteBuffer");
@@ -5389,11 +6929,11 @@ var require_is_valid_date = __commonJS({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = isValidDate;
-    function isValidDate(date) {
+    module.exports = isValidDate2;
+    function isValidDate2(date) {
       return date instanceof Date && !Number.isNaN(date.getTime());
     }
-    __name(isValidDate, "isValidDate");
+    __name(isValidDate2, "isValidDate");
   }
 });
 
@@ -5406,10 +6946,10 @@ var require_create_date = __commonJS({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
     module.exports = createDate;
-    var isValidDate = require_is_valid_date();
+    var isValidDate2 = require_is_valid_date();
     function createDate(epoch) {
       let date = new Date(epoch);
-      if (isValidDate(date)) {
+      if (isValidDate2(date)) {
         return date;
       }
       date = /* @__PURE__ */ new Date(+epoch);
@@ -5591,8 +7131,8 @@ var require_cjs = __commonJS({
     __name(getRegExpFlagsModern, "getRegExpFlagsModern");
     var getRegExpFlags = /test/g.flags === "g" ? getRegExpFlagsModern : getRegExpFlagsLegacy;
     function getTagLegacy(value) {
-      var type2 = toStringObject.call(value);
-      return type2.substring(8, type2.length - 1);
+      var type = toStringObject.call(value);
+      return type.substring(8, type.length - 1);
     }
     __name(getTagLegacy, "getTagLegacy");
     function getTagModern(value) {
@@ -6153,13 +7693,13 @@ var require_format_time = __commonJS({
     } = require_constants();
     var dateformat = require_dateformat();
     var createDate = require_create_date();
-    var isValidDate = require_is_valid_date();
+    var isValidDate2 = require_is_valid_date();
     function formatTime(epoch, translateTime = false) {
       if (translateTime === false) {
         return epoch;
       }
       const instant = createDate(epoch);
-      if (!isValidDate(instant)) {
+      if (!isValidDate2(instant)) {
         return epoch;
       }
       if (translateTime === true) {
@@ -6282,11 +7822,11 @@ var require_is_object = __commonJS({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = isObject4;
-    function isObject4(input) {
+    module.exports = isObject5;
+    function isObject5(input) {
       return Object.prototype.toString.apply(input) === "[object Object]";
     }
-    __name(isObject4, "isObject");
+    __name(isObject5, "isObject");
   }
 });
 
@@ -6327,7 +7867,7 @@ var require_parse_factory_options = __commonJS({
     var handleCustomLevelsNamesOpts = require_handle_custom_levels_names_opts();
     var handleLevelLabelData = require_get_level_label_data();
     function parseFactoryOptions(options) {
-      const EOL2 = options.crlf ? "\r\n" : "\n";
+      const EOL = options.crlf ? "\r\n" : "\n";
       const IDENT = "    ";
       const {
         customPrettifiers,
@@ -6382,7 +7922,7 @@ var require_parse_factory_options = __commonJS({
       const colorizer = colors2(options.colorize, customColors, useOnlyCustomProps);
       const objectColorizer = options.colorizeObjects ? colorizer : colors2(false, [], false);
       return {
-        EOL: EOL2,
+        EOL,
         IDENT,
         colorizer,
         customColors,
@@ -6420,10 +7960,10 @@ var require_fast_safe_stringify = __commonJS({
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = stringify;
-    stringify.default = stringify;
-    stringify.stable = deterministicStringify;
-    stringify.stableStringify = deterministicStringify;
+    module.exports = stringify2;
+    stringify2.default = stringify2;
+    stringify2.stable = deterministicStringify;
+    stringify2.stableStringify = deterministicStringify;
     var LIMIT_REPLACE_NODE = "[...]";
     var CIRCULAR_REPLACE_NODE = "[Circular]";
     var arr = [];
@@ -6435,7 +7975,7 @@ var require_fast_safe_stringify = __commonJS({
       };
     }
     __name(defaultOptions, "defaultOptions");
-    function stringify(obj, replacer, spacer, options) {
+    function stringify2(obj, replacer, spacer, options) {
       if (typeof options === "undefined") {
         options = defaultOptions();
       }
@@ -6461,7 +8001,7 @@ var require_fast_safe_stringify = __commonJS({
       }
       return res;
     }
-    __name(stringify, "stringify");
+    __name(stringify2, "stringify");
     function setReplace(replace, val, k, parent) {
       var propertyDescriptor = Object.getOwnPropertyDescriptor(parent, k);
       if (propertyDescriptor.get !== void 0) {
@@ -6738,7 +8278,7 @@ var require_prettify_error_log = __commonJS({
     var {
       LOGGER_KEYS
     } = require_constants();
-    var isObject4 = require_is_object();
+    var isObject5 = require_is_object();
     var joinLinesWithIndentation = require_join_lines_with_indentation();
     var prettifyObject = require_prettify_object();
     function prettifyErrorLog({ log: log4, context: context2 }) {
@@ -6762,7 +8302,7 @@ var require_prettify_error_log = __commonJS({
         for (let i = 0; i < propertiesToPrint.length; i += 1) {
           const key = propertiesToPrint[i];
           if (key in log4 === false) continue;
-          if (isObject4(log4[key])) {
+          if (isObject5(log4[key])) {
             const prettifiedObject = prettifyObject({
               log: log4[key],
               excludeLoggerKeys: false,
@@ -6942,7 +8482,7 @@ var require_prettify_time = __commonJS({
 });
 
 // node_modules/.pnpm/pino-pretty@13.0.0/node_modules/pino-pretty/lib/utils/index.js
-var require_utils = __commonJS({
+var require_utils2 = __commonJS({
   "node_modules/.pnpm/pino-pretty@13.0.0/node_modules/pino-pretty/lib/utils/index.js"(exports, module) {
     "use strict";
     init_modules_watch_stub();
@@ -7099,7 +8639,7 @@ var require_pretty = __commonJS({
     init_performance2();
     module.exports = pretty2;
     var sjs = require_secure_json_parse();
-    var isObject4 = require_is_object();
+    var isObject5 = require_is_object();
     var prettifyErrorLog = require_prettify_error_log();
     var prettifyLevel = require_prettify_level();
     var prettifyMessage = require_prettify_message();
@@ -7121,9 +8661,9 @@ var require_pretty = __commonJS({
     }, "jsonParser");
     function pretty2(inputData) {
       let log4;
-      if (!isObject4(inputData)) {
+      if (!isObject5(inputData)) {
         const parsed = jsonParser(inputData);
-        if (parsed.err || !isObject4(parsed.value)) {
+        if (parsed.err || !isObject5(parsed.value)) {
           return inputData + this.EOL;
         }
         log4 = parsed.value;
@@ -7252,7 +8792,7 @@ var require_pino_pretty = __commonJS({
     var {
       buildSafeSonicBoom,
       parseFactoryOptions
-    } = require_utils();
+    } = require_utils2();
     var pretty2 = require_pretty();
     var defaultOptions = {
       colorize: isColorSupported,
@@ -7341,13 +8881,13 @@ var require_pino_pretty = __commonJS({
   }
 });
 
-// .wrangler/tmp/bundle-7rzM61/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-LSo1T3/middleware-loader.entry.ts
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// .wrangler/tmp/bundle-7rzM61/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-LSo1T3/middleware-insertion-facade.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -7388,13 +8928,13 @@ function __rest(s, e) {
   return t;
 }
 __name(__rest, "__rest");
-function isZodType(schema2, typeName) {
+function isZodType(schema3, typeName) {
   var _a2;
-  return ((_a2 = schema2 === null || schema2 === void 0 ? void 0 : schema2._def) === null || _a2 === void 0 ? void 0 : _a2.typeName) === typeName;
+  return ((_a2 = schema3 === null || schema3 === void 0 ? void 0 : schema3._def) === null || _a2 === void 0 ? void 0 : _a2.typeName) === typeName;
 }
 __name(isZodType, "isZodType");
-function isAnyZodType(schema2) {
-  return "_def" in schema2;
+function isAnyZodType(schema3) {
+  return "_def" in schema3;
 }
 __name(isAnyZodType, "isAnyZodType");
 function preserveMetadataFromModifier(zod, modifier) {
@@ -7665,16 +9205,16 @@ var OpenAPIRegistry = class {
    *             type in the resulting OpenAPI document
    * @param component The actual object to put there
    */
-  registerComponent(type2, name, component) {
+  registerComponent(type, name, component) {
     this._definitions.push({
       type: "component",
-      componentType: type2,
+      componentType: type,
       name,
       component
     });
     return {
       name,
-      ref: { $ref: `#/components/${type2}/${name}` }
+      ref: { $ref: `#/components/${type}/${name}` }
     };
   }
   schemaWithRefId(refId, zodSchema) {
@@ -7776,30 +9316,30 @@ var Metadata = class {
     var _a2;
     return (_a2 = this.getInternalMetadata(zodSchema)) === null || _a2 === void 0 ? void 0 : _a2.refId;
   }
-  static unwrapChained(schema2) {
-    return this.unwrapUntil(schema2);
+  static unwrapChained(schema3) {
+    return this.unwrapUntil(schema3);
   }
   static getDefaultValue(zodSchema) {
     const unwrapped = this.unwrapUntil(zodSchema, "ZodDefault");
     return unwrapped === null || unwrapped === void 0 ? void 0 : unwrapped._def.defaultValue();
   }
-  static unwrapUntil(schema2, typeName) {
-    if (typeName && isZodType(schema2, typeName)) {
-      return schema2;
+  static unwrapUntil(schema3, typeName) {
+    if (typeName && isZodType(schema3, typeName)) {
+      return schema3;
     }
-    if (isZodType(schema2, "ZodOptional") || isZodType(schema2, "ZodNullable") || isZodType(schema2, "ZodBranded")) {
-      return this.unwrapUntil(schema2.unwrap(), typeName);
+    if (isZodType(schema3, "ZodOptional") || isZodType(schema3, "ZodNullable") || isZodType(schema3, "ZodBranded")) {
+      return this.unwrapUntil(schema3.unwrap(), typeName);
     }
-    if (isZodType(schema2, "ZodDefault") || isZodType(schema2, "ZodReadonly")) {
-      return this.unwrapUntil(schema2._def.innerType, typeName);
+    if (isZodType(schema3, "ZodDefault") || isZodType(schema3, "ZodReadonly")) {
+      return this.unwrapUntil(schema3._def.innerType, typeName);
     }
-    if (isZodType(schema2, "ZodEffects")) {
-      return this.unwrapUntil(schema2._def.schema, typeName);
+    if (isZodType(schema3, "ZodEffects")) {
+      return this.unwrapUntil(schema3._def.schema, typeName);
     }
-    if (isZodType(schema2, "ZodPipeline")) {
-      return this.unwrapUntil(schema2._def.in, typeName);
+    if (isZodType(schema3, "ZodPipeline")) {
+      return this.unwrapUntil(schema3._def.in, typeName);
     }
-    return typeName ? void 0 : schema2;
+    return typeName ? void 0 : schema3;
   }
   static isOptionalSchema(zodSchema) {
     return zodSchema.isOptional();
@@ -7892,12 +9432,12 @@ var IntersectionTransformer = class {
     }
     return allOfSchema;
   }
-  flattenIntersectionTypes(schema2) {
-    if (!isZodType(schema2, "ZodIntersection")) {
-      return [schema2];
+  flattenIntersectionTypes(schema3) {
+    if (!isZodType(schema3, "ZodIntersection")) {
+      return [schema3];
     }
-    const leftSubTypes = this.flattenIntersectionTypes(schema2._def.left);
-    const rightSubTypes = this.flattenIntersectionTypes(schema2._def.right);
+    const leftSubTypes = this.flattenIntersectionTypes(schema3._def.left);
+    const rightSubTypes = this.flattenIntersectionTypes(schema3._def.right);
     return [...leftSubTypes, ...rightSubTypes];
   }
 };
@@ -7913,8 +9453,8 @@ function enumInfo(enumObject) {
   const keysExceptReverseMappings = Object.keys(enumObject).filter((key) => typeof enumObject[enumObject[key]] !== "number");
   const values = keysExceptReverseMappings.map((key) => enumObject[key]);
   const numericCount = values.filter((_) => typeof _ === "number").length;
-  const type2 = numericCount === 0 ? "string" : numericCount === values.length ? "numeric" : "mixed";
-  return { values, type: type2 };
+  const type = numericCount === 0 ? "string" : numericCount === values.length ? "numeric" : "mixed";
+  return { values, type };
 }
 __name(enumInfo, "enumInfo");
 var NativeEnumTransformer = class {
@@ -7922,11 +9462,11 @@ var NativeEnumTransformer = class {
     __name(this, "NativeEnumTransformer");
   }
   transform(zodSchema, mapNullableType) {
-    const { type: type2, values } = enumInfo(zodSchema._def.values);
-    if (type2 === "mixed") {
+    const { type, values } = enumInfo(zodSchema._def.values);
+    if (type === "mixed") {
       throw new ZodToOpenAPIError("Enum has mixed string and number values, please specify the OpenAPI type manually");
     }
-    return Object.assign(Object.assign({}, mapNullableType(type2 === "numeric" ? "integer" : "string")), { enum: values });
+    return Object.assign(Object.assign({}, mapNullableType(type === "numeric" ? "integer" : "string")), { enum: values });
   }
 };
 var NumberTransformer = class {
@@ -7953,8 +9493,8 @@ var ObjectTransformer = class {
     mapItem(parent);
     const keysRequiredByParent = this.requiredKeysOf(parent);
     const propsOfParent = mapValues(parent === null || parent === void 0 ? void 0 : parent._def.shape(), mapItem);
-    const propertiesToAdd = Object.fromEntries(Object.entries(properties).filter(([key, type2]) => {
-      return !objectEquals(propsOfParent[key], type2);
+    const propertiesToAdd = Object.fromEntries(Object.entries(properties).filter(([key, type]) => {
+      return !objectEquals(propsOfParent[key], type);
     }));
     const additionallyRequired = required.filter((prop) => !keysRequiredByParent.includes(prop));
     const objectData = Object.assign(Object.assign(Object.assign(Object.assign({}, mapNullableType("object")), { default: defaultValue, properties: propertiesToAdd }), additionallyRequired.length > 0 ? { required: additionallyRequired } : {}), this.generateAdditionalProperties(zodSchema, mapItem));
@@ -7977,7 +9517,7 @@ var ObjectTransformer = class {
     return { additionalProperties: mapItem(catchallSchema) };
   }
   requiredKeysOf(objectSchema) {
-    return Object.entries(objectSchema._def.shape()).filter(([_key, type2]) => !Metadata.isOptionalSchema(type2)).map(([key, _type]) => key);
+    return Object.entries(objectSchema._def.shape()).filter(([_key, type]) => !Metadata.isOptionalSchema(type)).map(([key, _type]) => key);
   }
 };
 var RecordTransformer = class {
@@ -8066,26 +9606,26 @@ var UnionTransformer = class {
   }
   transform(zodSchema, mapNullableOfArray, mapItem) {
     const options = this.flattenUnionTypes(zodSchema);
-    const schemas = options.map((schema2) => {
-      const optionToGenerate = this.unwrapNullable(schema2);
+    const schemas = options.map((schema3) => {
+      const optionToGenerate = this.unwrapNullable(schema3);
       return mapItem(optionToGenerate);
     });
     return {
       anyOf: mapNullableOfArray(schemas)
     };
   }
-  flattenUnionTypes(schema2) {
-    if (!isZodType(schema2, "ZodUnion")) {
-      return [schema2];
+  flattenUnionTypes(schema3) {
+    if (!isZodType(schema3, "ZodUnion")) {
+      return [schema3];
     }
-    const options = schema2._def.options;
+    const options = schema3._def.options;
     return options.flatMap((option) => this.flattenUnionTypes(option));
   }
-  unwrapNullable(schema2) {
-    if (isZodType(schema2, "ZodNullable")) {
-      return this.unwrapNullable(schema2.unwrap());
+  unwrapNullable(schema3) {
+    if (isZodType(schema3, "ZodNullable")) {
+      return this.unwrapNullable(schema3.unwrap());
     }
-    return schema2;
+    return schema3;
   }
 };
 var OpenApiTransformer = class {
@@ -8125,33 +9665,33 @@ var OpenApiTransformer = class {
         mapItem
       );
     }
-    const schema2 = this.transformSchemaWithoutDefault(zodSchema, isNullable, mapItem, generateSchemaRef);
-    return Object.assign(Object.assign({}, schema2), { default: defaultValue });
+    const schema3 = this.transformSchemaWithoutDefault(zodSchema, isNullable, mapItem, generateSchemaRef);
+    return Object.assign(Object.assign({}, schema3), { default: defaultValue });
   }
   transformSchemaWithoutDefault(zodSchema, isNullable, mapItem, generateSchemaRef) {
     if (isZodType(zodSchema, "ZodUnknown") || isZodType(zodSchema, "ZodAny")) {
       return this.versionSpecifics.mapNullableType(void 0, isNullable);
     }
     if (isZodType(zodSchema, "ZodString")) {
-      return this.stringTransformer.transform(zodSchema, (schema2) => this.versionSpecifics.mapNullableType(schema2, isNullable));
+      return this.stringTransformer.transform(zodSchema, (schema3) => this.versionSpecifics.mapNullableType(schema3, isNullable));
     }
     if (isZodType(zodSchema, "ZodNumber")) {
-      return this.numberTransformer.transform(zodSchema, (schema2) => this.versionSpecifics.mapNullableType(schema2, isNullable), (_) => this.versionSpecifics.getNumberChecks(_));
+      return this.numberTransformer.transform(zodSchema, (schema3) => this.versionSpecifics.mapNullableType(schema3, isNullable), (_) => this.versionSpecifics.getNumberChecks(_));
     }
     if (isZodType(zodSchema, "ZodBigInt")) {
-      return this.bigIntTransformer.transform((schema2) => this.versionSpecifics.mapNullableType(schema2, isNullable));
+      return this.bigIntTransformer.transform((schema3) => this.versionSpecifics.mapNullableType(schema3, isNullable));
     }
     if (isZodType(zodSchema, "ZodBoolean")) {
       return this.versionSpecifics.mapNullableType("boolean", isNullable);
     }
     if (isZodType(zodSchema, "ZodLiteral")) {
-      return this.literalTransformer.transform(zodSchema, (schema2) => this.versionSpecifics.mapNullableType(schema2, isNullable));
+      return this.literalTransformer.transform(zodSchema, (schema3) => this.versionSpecifics.mapNullableType(schema3, isNullable));
     }
     if (isZodType(zodSchema, "ZodEnum")) {
-      return this.enumTransformer.transform(zodSchema, (schema2) => this.versionSpecifics.mapNullableType(schema2, isNullable));
+      return this.enumTransformer.transform(zodSchema, (schema3) => this.versionSpecifics.mapNullableType(schema3, isNullable));
     }
     if (isZodType(zodSchema, "ZodNativeEnum")) {
-      return this.nativeEnumTransformer.transform(zodSchema, (schema2) => this.versionSpecifics.mapNullableType(schema2, isNullable));
+      return this.nativeEnumTransformer.transform(zodSchema, (schema3) => this.versionSpecifics.mapNullableType(schema3, isNullable));
     }
     if (isZodType(zodSchema, "ZodArray")) {
       return this.arrayTransformer.transform(zodSchema, (_) => this.versionSpecifics.mapNullableType(_, isNullable), mapItem);
@@ -8235,8 +9775,8 @@ var OpenAPIGenerator = class {
       if (!("type" in right)) {
         return 1;
       }
-      const leftIndex = generationOrder.findIndex((type2) => type2 === left.type);
-      const rightIndex = generationOrder.findIndex((type2) => type2 === right.type);
+      const leftIndex = generationOrder.findIndex((type) => type === left.type);
+      const rightIndex = generationOrder.findIndex((type) => type === right.type);
       return leftIndex - rightIndex;
     });
   }
@@ -8309,9 +9849,9 @@ var OpenAPIGenerator = class {
     }
     if (isZodType(zodSchema, "ZodObject")) {
       const propTypes = zodSchema._def.shape();
-      const parameters = Object.entries(propTypes).map(([key, schema2]) => {
+      const parameters = Object.entries(propTypes).map(([key, schema3]) => {
         var _a3, _b;
-        const innerMetadata = Metadata.getMetadata(schema2);
+        const innerMetadata = Metadata.getMetadata(schema3);
         const referencedSchema2 = this.getParameterRef(innerMetadata, {
           in: location,
           name: key
@@ -8332,7 +9872,7 @@ var OpenAPIGenerator = class {
             values: [location, innerParameterMetadata.in]
           });
         }
-        return this.generateParameter(schema2.openapi({ param: { name: key, in: location } }));
+        return this.generateParameter(schema3.openapi({ param: { name: key, in: location } }));
       });
       return parameters;
     }
@@ -8351,9 +9891,9 @@ var OpenAPIGenerator = class {
     const metadata = Metadata.getParamMetadata(zodSchema);
     const paramMetadata = (_a2 = metadata === null || metadata === void 0 ? void 0 : metadata.metadata) === null || _a2 === void 0 ? void 0 : _a2.param;
     const required = !Metadata.isOptionalSchema(zodSchema) && !zodSchema.isNullable();
-    const schema2 = this.generateSchemaWithRef(zodSchema);
+    const schema3 = this.generateSchemaWithRef(zodSchema);
     return Object.assign({
-      schema: schema2,
+      schema: schema3,
       required
     }, paramMetadata ? Metadata.buildParameterMetadata(paramMetadata) : {});
   }
@@ -8478,18 +10018,18 @@ var OpenAPIGenerator = class {
       ...cookieParameters
     ];
   }
-  cleanParameter(schema2) {
-    if (!schema2) {
+  cleanParameter(schema3) {
+    if (!schema3) {
       return void 0;
     }
-    return isZodType(schema2, "ZodEffects") ? this.cleanParameter(schema2._def.schema) : schema2;
+    return isZodType(schema3, "ZodEffects") ? this.cleanParameter(schema3._def.schema) : schema3;
   }
   generatePath(route) {
-    const { method, path: path2, request, responses } = route, pathItemConfig = __rest(route, ["method", "path", "request", "responses"]);
+    const { method, path, request, responses } = route, pathItemConfig = __rest(route, ["method", "path", "request", "responses"]);
     const generatedResponses = mapValues(responses, (response) => {
       return this.getResponse(response);
     });
-    const parameters = enhanceMissingParametersError(() => this.getParameters(request), { route: `${method} ${path2}` });
+    const parameters = enhanceMissingParametersError(() => this.getParameters(request), { route: `${method} ${path}` });
     const requestBody = this.getRequestBody(request === null || request === void 0 ? void 0 : request.body);
     const routeDoc = {
       [method]: Object.assign(Object.assign(Object.assign(Object.assign({}, pathItemConfig), parameters.length > 0 ? {
@@ -8519,8 +10059,8 @@ var OpenAPIGenerator = class {
     );
     return Object.assign(Object.assign(Object.assign({}, rest), { headers: responseHeaders }), responseContent);
   }
-  isReferenceObject(schema2) {
-    return "$ref" in schema2;
+  isReferenceObject(schema3) {
+    return "$ref" in schema3;
   }
   getResponseHeaders(headers) {
     const schemaShape = headers._def.shape();
@@ -8528,13 +10068,13 @@ var OpenAPIGenerator = class {
     return responseHeaders;
   }
   getBodyContent(content) {
-    return mapValues(content, (config4) => {
-      if (!config4 || !isAnyZodType(config4.schema)) {
-        return config4;
+    return mapValues(content, (config3) => {
+      if (!config3 || !isAnyZodType(config3.schema)) {
+        return config3;
       }
-      const { schema: configSchema } = config4, rest = __rest(config4, ["schema"]);
-      const schema2 = this.generateSchemaWithRef(configSchema);
-      return Object.assign({ schema: schema2 }, rest);
+      const { schema: configSchema } = config3, rest = __rest(config3, ["schema"]);
+      const schema3 = this.generateSchemaWithRef(configSchema);
+      return Object.assign({ schema: schema3 }, rest);
     });
   }
   toOpenAPISchema(zodSchema, isNullable, defaultValue) {
@@ -8554,8 +10094,8 @@ var OpenApiGeneratorV30Specifics = class {
     }
     return objects;
   }
-  mapNullableType(type2, isNullable) {
-    return Object.assign(Object.assign({}, type2 ? { type: type2 } : void 0), isNullable ? this.nullType : void 0);
+  mapNullableType(type, isNullable) {
+    return Object.assign(Object.assign({}, type ? { type } : void 0), isNullable ? this.nullType : void 0);
   }
   mapTupleItems(schemas) {
     const uniqueSchemas = uniq(schemas);
@@ -8586,9 +10126,9 @@ var OpenApiGeneratorV3 = class {
     const specifics = new OpenApiGeneratorV30Specifics();
     this.generator = new OpenAPIGenerator(definitions, specifics);
   }
-  generateDocument(config4) {
+  generateDocument(config3) {
     const baseData = this.generator.generateDocumentData();
-    return Object.assign(Object.assign({}, config4), baseData);
+    return Object.assign(Object.assign({}, config3), baseData);
   }
   generateComponents() {
     return this.generator.generateComponents();
@@ -8607,17 +10147,17 @@ var OpenApiGeneratorV31Specifics = class {
     }
     return objects;
   }
-  mapNullableType(type2, isNullable) {
-    if (!type2) {
+  mapNullableType(type, isNullable) {
+    if (!type) {
       return {};
     }
     if (isNullable) {
       return {
-        type: Array.isArray(type2) ? [...type2, "null"] : [type2, "null"]
+        type: Array.isArray(type) ? [...type, "null"] : [type, "null"]
       };
     }
     return {
-      type: type2
+      type
     };
   }
   mapTupleItems(schemas) {
@@ -8652,10 +10192,10 @@ var OpenApiGeneratorV31 = class {
     const specifics = new OpenApiGeneratorV31Specifics();
     this.generator = new OpenAPIGenerator(this.definitions, specifics);
   }
-  generateDocument(config4) {
+  generateDocument(config3) {
     const baseDocument = this.generator.generateDocumentData();
     this.definitions.filter(isWebhookDefinition).forEach((definition) => this.generateSingleWebhook(definition.webhook));
-    return Object.assign(Object.assign(Object.assign({}, config4), baseDocument), { webhooks: this.webhookRefs });
+    return Object.assign(Object.assign(Object.assign({}, config3), baseDocument), { webhooks: this.webhookRefs });
   }
   generateComponents() {
     return this.generator.generateComponents();
@@ -8702,38 +10242,38 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var splitPath = /* @__PURE__ */ __name((path2) => {
-  const paths2 = path2.split("/");
-  if (paths2[0] === "") {
-    paths2.shift();
+var splitPath = /* @__PURE__ */ __name((path) => {
+  const paths3 = path.split("/");
+  if (paths3[0] === "") {
+    paths3.shift();
   }
-  return paths2;
+  return paths3;
 }, "splitPath");
 var splitRoutingPath = /* @__PURE__ */ __name((routePath) => {
-  const { groups, path: path2 } = extractGroupsFromPath(routePath);
-  const paths2 = splitPath(path2);
-  return replaceGroupMarks(paths2, groups);
+  const { groups, path } = extractGroupsFromPath(routePath);
+  const paths3 = splitPath(path);
+  return replaceGroupMarks(paths3, groups);
 }, "splitRoutingPath");
-var extractGroupsFromPath = /* @__PURE__ */ __name((path2) => {
+var extractGroupsFromPath = /* @__PURE__ */ __name((path) => {
   const groups = [];
-  path2 = path2.replace(/\{[^}]+\}/g, (match, index) => {
+  path = path.replace(/\{[^}]+\}/g, (match, index) => {
     const mark = `@${index}`;
     groups.push([mark, match]);
     return mark;
   });
-  return { groups, path: path2 };
+  return { groups, path };
 }, "extractGroupsFromPath");
-var replaceGroupMarks = /* @__PURE__ */ __name((paths2, groups) => {
+var replaceGroupMarks = /* @__PURE__ */ __name((paths3, groups) => {
   for (let i = groups.length - 1; i >= 0; i--) {
     const [mark] = groups[i];
-    for (let j = paths2.length - 1; j >= 0; j--) {
-      if (paths2[j].includes(mark)) {
-        paths2[j] = paths2[j].replace(mark, groups[i][1]);
+    for (let j = paths3.length - 1; j >= 0; j--) {
+      if (paths3[j].includes(mark)) {
+        paths3[j] = paths3[j].replace(mark, groups[i][1]);
         break;
       }
     }
   }
-  return paths2;
+  return paths3;
 }, "replaceGroupMarks");
 var patternCache = {};
 var getPattern = /* @__PURE__ */ __name((label) => {
@@ -8775,8 +10315,8 @@ var getPath = /* @__PURE__ */ __name((request) => {
     const charCode = url.charCodeAt(i);
     if (charCode === 37) {
       const queryIndex = url.indexOf("?", i);
-      const path2 = url.slice(start, queryIndex === -1 ? void 0 : queryIndex);
-      return tryDecodeURI(path2.includes("%25") ? path2.replace(/%25/g, "%2525") : path2);
+      const path = url.slice(start, queryIndex === -1 ? void 0 : queryIndex);
+      return tryDecodeURI(path.includes("%25") ? path.replace(/%25/g, "%2525") : path);
     } else if (charCode === 63) {
       break;
     }
@@ -8787,33 +10327,33 @@ var getPathNoStrict = /* @__PURE__ */ __name((request) => {
   const result = getPath(request);
   return result.length > 1 && result.at(-1) === "/" ? result.slice(0, -1) : result;
 }, "getPathNoStrict");
-var mergePath = /* @__PURE__ */ __name((...paths2) => {
+var mergePath = /* @__PURE__ */ __name((...paths3) => {
   let p = "";
   let endsWithSlash = false;
-  for (let path2 of paths2) {
+  for (let path of paths3) {
     if (p.at(-1) === "/") {
       p = p.slice(0, -1);
       endsWithSlash = true;
     }
-    if (path2[0] !== "/") {
-      path2 = `/${path2}`;
+    if (path[0] !== "/") {
+      path = `/${path}`;
     }
-    if (path2 === "/" && endsWithSlash) {
+    if (path === "/" && endsWithSlash) {
       p = `${p}/`;
-    } else if (path2 !== "/") {
-      p = `${p}${path2}`;
+    } else if (path !== "/") {
+      p = `${p}${path}`;
     }
-    if (path2 === "/" && p === "") {
+    if (path === "/" && p === "") {
       p = "/";
     }
   }
   return p;
 }, "mergePath");
-var checkOptionalParameter = /* @__PURE__ */ __name((path2) => {
-  if (!path2.match(/\:.+\?$/)) {
+var checkOptionalParameter = /* @__PURE__ */ __name((path) => {
+  if (!path.match(/\:.+\?$/)) {
     return null;
   }
-  const segments = path2.split("/");
+  const segments = path.split("/");
   const results = [];
   let basePath = "";
   segments.forEach((segment) => {
@@ -9469,8 +11009,8 @@ function getErrorMap() {
 }
 __name(getErrorMap, "getErrorMap");
 var makeIssue = /* @__PURE__ */ __name((params) => {
-  const { data, path: path2, errorMaps, issueData } = params;
-  const fullPath = [...path2, ...issueData.path || []];
+  const { data, path, errorMaps, issueData } = params;
+  const fullPath = [...path, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -9604,11 +11144,11 @@ var ParseInputLazyPath = class {
   static {
     __name(this, "ParseInputLazyPath");
   }
-  constructor(parent, value, path2, key) {
+  constructor(parent, value, path, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path2;
+    this._path = path;
     this._key = key;
   }
   get path() {
@@ -9996,21 +11536,21 @@ function datetimeRegex(args) {
   return new RegExp(`^${regex}$`);
 }
 __name(datetimeRegex, "datetimeRegex");
-function isValidIP(ip, version4) {
-  if ((version4 === "v4" || !version4) && ipv4Regex.test(ip)) {
+function isValidIP(ip, version3) {
+  if ((version3 === "v4" || !version3) && ipv4Regex.test(ip)) {
     return true;
   }
-  if ((version4 === "v6" || !version4) && ipv6Regex.test(ip)) {
+  if ((version3 === "v6" || !version3) && ipv6Regex.test(ip)) {
     return true;
   }
   return false;
 }
 __name(isValidIP, "isValidIP");
-function isValidJWT(jwt, alg) {
-  if (!jwtRegex.test(jwt))
+function isValidJWT(jwt2, alg) {
+  if (!jwtRegex.test(jwt2))
     return false;
   try {
-    const [header] = jwt.split(".");
+    const [header] = jwt2.split(".");
     const base642 = header.replace(/-/g, "+").replace(/_/g, "/").padEnd(header.length + (4 - header.length % 4) % 4, "=");
     const decoded = JSON.parse(atob(base642));
     if (typeof decoded !== "object" || decoded === null)
@@ -10025,11 +11565,11 @@ function isValidJWT(jwt, alg) {
   }
 }
 __name(isValidJWT, "isValidJWT");
-function isValidCidr(ip, version4) {
-  if ((version4 === "v4" || !version4) && ipv4CidrRegex.test(ip)) {
+function isValidCidr(ip, version3) {
+  if ((version3 === "v4" || !version3) && ipv4CidrRegex.test(ip)) {
     return true;
   }
-  if ((version4 === "v6" || !version4) && ipv6CidrRegex.test(ip)) {
+  if ((version3 === "v6" || !version3) && ipv6CidrRegex.test(ip)) {
     return true;
   }
   return false;
@@ -11391,9 +12931,9 @@ var ZodArray = class _ZodArray2 extends ZodType {
     return this.min(1, message2);
   }
 };
-ZodArray.create = (schema2, params) => {
+ZodArray.create = (schema3, params) => {
   return new ZodArray({
-    type: schema2,
+    type: schema3,
     minLength: null,
     maxLength: null,
     exactLength: null,
@@ -11401,30 +12941,30 @@ ZodArray.create = (schema2, params) => {
     ...processCreateParams(params)
   });
 };
-function deepPartialify(schema2) {
-  if (schema2 instanceof ZodObject) {
+function deepPartialify(schema3) {
+  if (schema3 instanceof ZodObject) {
     const newShape = {};
-    for (const key in schema2.shape) {
-      const fieldSchema = schema2.shape[key];
+    for (const key in schema3.shape) {
+      const fieldSchema = schema3.shape[key];
       newShape[key] = ZodOptional.create(deepPartialify(fieldSchema));
     }
     return new ZodObject({
-      ...schema2._def,
+      ...schema3._def,
       shape: /* @__PURE__ */ __name(() => newShape, "shape")
     });
-  } else if (schema2 instanceof ZodArray) {
+  } else if (schema3 instanceof ZodArray) {
     return new ZodArray({
-      ...schema2._def,
-      type: deepPartialify(schema2.element)
+      ...schema3._def,
+      type: deepPartialify(schema3.element)
     });
-  } else if (schema2 instanceof ZodOptional) {
-    return ZodOptional.create(deepPartialify(schema2.unwrap()));
-  } else if (schema2 instanceof ZodNullable) {
-    return ZodNullable.create(deepPartialify(schema2.unwrap()));
-  } else if (schema2 instanceof ZodTuple) {
-    return ZodTuple.create(schema2.items.map((item) => deepPartialify(item)));
+  } else if (schema3 instanceof ZodOptional) {
+    return ZodOptional.create(deepPartialify(schema3.unwrap()));
+  } else if (schema3 instanceof ZodNullable) {
+    return ZodNullable.create(deepPartialify(schema3.unwrap()));
+  } else if (schema3 instanceof ZodTuple) {
+    return ZodTuple.create(schema3.items.map((item) => deepPartialify(item)));
   } else {
-    return schema2;
+    return schema3;
   }
 }
 __name(deepPartialify, "deepPartialify");
@@ -11644,8 +13184,8 @@ var ZodObject = class _ZodObject2 extends ZodType {
   //   }) as any;
   //   return merged;
   // }
-  setKey(key, schema2) {
-    return this.augment({ [key]: schema2 });
+  setKey(key, schema3) {
+    return this.augment({ [key]: schema3 });
   }
   // merge<Incoming extends AnyZodObject>(
   //   merging: Incoming
@@ -11864,33 +13404,33 @@ ZodUnion.create = (types4, params) => {
     ...processCreateParams(params)
   });
 };
-var getDiscriminator = /* @__PURE__ */ __name((type2) => {
-  if (type2 instanceof ZodLazy) {
-    return getDiscriminator(type2.schema);
-  } else if (type2 instanceof ZodEffects) {
-    return getDiscriminator(type2.innerType());
-  } else if (type2 instanceof ZodLiteral) {
-    return [type2.value];
-  } else if (type2 instanceof ZodEnum) {
-    return type2.options;
-  } else if (type2 instanceof ZodNativeEnum) {
-    return util.objectValues(type2.enum);
-  } else if (type2 instanceof ZodDefault) {
-    return getDiscriminator(type2._def.innerType);
-  } else if (type2 instanceof ZodUndefined) {
+var getDiscriminator = /* @__PURE__ */ __name((type) => {
+  if (type instanceof ZodLazy) {
+    return getDiscriminator(type.schema);
+  } else if (type instanceof ZodEffects) {
+    return getDiscriminator(type.innerType());
+  } else if (type instanceof ZodLiteral) {
+    return [type.value];
+  } else if (type instanceof ZodEnum) {
+    return type.options;
+  } else if (type instanceof ZodNativeEnum) {
+    return util.objectValues(type.enum);
+  } else if (type instanceof ZodDefault) {
+    return getDiscriminator(type._def.innerType);
+  } else if (type instanceof ZodUndefined) {
     return [void 0];
-  } else if (type2 instanceof ZodNull) {
+  } else if (type instanceof ZodNull) {
     return [null];
-  } else if (type2 instanceof ZodOptional) {
-    return [void 0, ...getDiscriminator(type2.unwrap())];
-  } else if (type2 instanceof ZodNullable) {
-    return [null, ...getDiscriminator(type2.unwrap())];
-  } else if (type2 instanceof ZodBranded) {
-    return getDiscriminator(type2.unwrap());
-  } else if (type2 instanceof ZodReadonly) {
-    return getDiscriminator(type2.unwrap());
-  } else if (type2 instanceof ZodCatch) {
-    return getDiscriminator(type2._def.innerType);
+  } else if (type instanceof ZodOptional) {
+    return [void 0, ...getDiscriminator(type.unwrap())];
+  } else if (type instanceof ZodNullable) {
+    return [null, ...getDiscriminator(type.unwrap())];
+  } else if (type instanceof ZodBranded) {
+    return getDiscriminator(type.unwrap());
+  } else if (type instanceof ZodReadonly) {
+    return getDiscriminator(type.unwrap());
+  } else if (type instanceof ZodCatch) {
+    return getDiscriminator(type._def.innerType);
   } else {
     return [];
   }
@@ -11953,8 +13493,8 @@ var ZodDiscriminatedUnion = class _ZodDiscriminatedUnion2 extends ZodType {
    */
   static create(discriminator, options, params) {
     const optionsMap = /* @__PURE__ */ new Map();
-    for (const type2 of options) {
-      const discriminatorValues = getDiscriminator(type2.shape[discriminator]);
+    for (const type of options) {
+      const discriminatorValues = getDiscriminator(type.shape[discriminator]);
       if (!discriminatorValues.length) {
         throw new Error(`A discriminator value for key \`${discriminator}\` could not be extracted from all schema options`);
       }
@@ -11962,7 +13502,7 @@ var ZodDiscriminatedUnion = class _ZodDiscriminatedUnion2 extends ZodType {
         if (optionsMap.has(value)) {
           throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value)}`);
         }
-        optionsMap.set(value, type2);
+        optionsMap.set(value, type);
       }
     }
     return new _ZodDiscriminatedUnion2({
@@ -12105,10 +13645,10 @@ var ZodTuple = class _ZodTuple2 extends ZodType {
       status.dirty();
     }
     const items = [...ctx.data].map((item, itemIndex) => {
-      const schema2 = this._def.items[itemIndex] || this._def.rest;
-      if (!schema2)
+      const schema3 = this._def.items[itemIndex] || this._def.rest;
+      if (!schema3)
         return null;
-      return schema2._parse(new ParseInputLazyPath(ctx, item, ctx.path, itemIndex));
+      return schema3._parse(new ParseInputLazyPath(ctx, item, ctx.path, itemIndex));
     }).filter((x) => !!x);
     if (ctx.common.async) {
       return Promise.all(items).then((results) => {
@@ -12673,9 +14213,9 @@ var ZodPromise = class extends ZodType {
     }));
   }
 };
-ZodPromise.create = (schema2, params) => {
+ZodPromise.create = (schema3, params) => {
   return new ZodPromise({
-    type: schema2,
+    type: schema3,
     typeName: ZodFirstPartyTypeKind.ZodPromise,
     ...processCreateParams(params)
   });
@@ -12803,17 +14343,17 @@ var ZodEffects = class extends ZodType {
     util.assertNever(effect);
   }
 };
-ZodEffects.create = (schema2, effect, params) => {
+ZodEffects.create = (schema3, effect, params) => {
   return new ZodEffects({
-    schema: schema2,
+    schema: schema3,
     typeName: ZodFirstPartyTypeKind.ZodEffects,
     effect,
     ...processCreateParams(params)
   });
 };
-ZodEffects.createWithPreprocess = (preprocess, schema2, params) => {
+ZodEffects.createWithPreprocess = (preprocess, schema3, params) => {
   return new ZodEffects({
-    schema: schema2,
+    schema: schema3,
     effect: { type: "preprocess", transform: preprocess },
     typeName: ZodFirstPartyTypeKind.ZodEffects,
     ...processCreateParams(params)
@@ -12834,9 +14374,9 @@ var ZodOptional = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodOptional.create = (type2, params) => {
+ZodOptional.create = (type, params) => {
   return new ZodOptional({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind.ZodOptional,
     ...processCreateParams(params)
   });
@@ -12856,9 +14396,9 @@ var ZodNullable = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodNullable.create = (type2, params) => {
+ZodNullable.create = (type, params) => {
   return new ZodNullable({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind.ZodNullable,
     ...processCreateParams(params)
   });
@@ -12883,9 +14423,9 @@ var ZodDefault = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodDefault.create = (type2, params) => {
+ZodDefault.create = (type, params) => {
   return new ZodDefault({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind.ZodDefault,
     defaultValue: typeof params.default === "function" ? params.default : () => params.default,
     ...processCreateParams(params)
@@ -12939,9 +14479,9 @@ var ZodCatch = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodCatch.create = (type2, params) => {
+ZodCatch.create = (type, params) => {
   return new ZodCatch({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind.ZodCatch,
     catchValue: typeof params.catch === "function" ? params.catch : () => params.catch,
     ...processCreateParams(params)
@@ -13065,9 +14605,9 @@ var ZodReadonly = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodReadonly.create = (type2, params) => {
+ZodReadonly.create = (type, params) => {
   return new ZodReadonly({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind.ZodReadonly,
     ...processCreateParams(params)
   });
@@ -13297,12 +14837,12 @@ var z = /* @__PURE__ */ Object.freeze({
 });
 
 // node_modules/.pnpm/@hono+zod-validator@0.4.2_hono@4.6.15_zod@3.24.1/node_modules/@hono/zod-validator/dist/index.js
-var zValidator = /* @__PURE__ */ __name((target, schema2, hook) => (
+var zValidator = /* @__PURE__ */ __name((target, schema3, hook) => (
   // @ts-expect-error not typed well
   validator(target, async (value, c) => {
     let validatorValue = value;
-    if (target === "header" && schema2 instanceof ZodObject) {
-      const schemaKeys = Object.keys(schema2.shape);
+    if (target === "header" && schema3 instanceof ZodObject) {
+      const schemaKeys = Object.keys(schema3.shape);
       const caseInsensitiveKeymap = Object.fromEntries(
         schemaKeys.map((key) => [key.toLowerCase(), key])
       );
@@ -13310,7 +14850,7 @@ var zValidator = /* @__PURE__ */ __name((target, schema2, hook) => (
         Object.entries(value).map(([key, value2]) => [caseInsensitiveKeymap[key] || key, value2])
       );
     }
-    const result = await schema2.safeParseAsync(validatorValue);
+    const result = await schema3.safeParseAsync(validatorValue);
     if (hook) {
       const hookResult = await hook({ data: validatorValue, ...result, target }, c);
       if (hookResult) {
@@ -13448,9 +14988,9 @@ var HonoRequest = class {
   routeIndex = 0;
   path;
   bodyCache = {};
-  constructor(request, path2 = "/", matchResult = [[]]) {
+  constructor(request, path = "/", matchResult = [[]]) {
     this.raw = request;
-    this.path = path2;
+    this.path = path;
     this.#matchResult = matchResult;
     this.#validatedData = {};
   }
@@ -13599,30 +15139,30 @@ var escapeToBuffer = /* @__PURE__ */ __name((str, buffer) => {
     buffer[0] += str;
     return;
   }
-  let escape;
+  let escape2;
   let index;
   let lastIndex = 0;
   for (index = match; index < str.length; index++) {
     switch (str.charCodeAt(index)) {
       case 34:
-        escape = "&quot;";
+        escape2 = "&quot;";
         break;
       case 39:
-        escape = "&#39;";
+        escape2 = "&#39;";
         break;
       case 38:
-        escape = "&amp;";
+        escape2 = "&amp;";
         break;
       case 60:
-        escape = "&lt;";
+        escape2 = "&lt;";
         break;
       case 62:
-        escape = "&gt;";
+        escape2 = "&gt;";
         break;
       default:
         continue;
     }
-    buffer[0] += str.substring(lastIndex, index) + escape;
+    buffer[0] += str.substring(lastIndex, index) + escape2;
     lastIndex = index + 1;
   }
   buffer[0] += str.substring(lastIndex, index);
@@ -14035,8 +15575,8 @@ var Hono = class {
         return this;
       };
     });
-    this.on = (method, path2, ...handlers) => {
-      for (const p of [path2].flat()) {
+    this.on = (method, path, ...handlers) => {
+      for (const p of [path].flat()) {
         this.#path = p;
         for (const m of [method].flat()) {
           handlers.map((handler) => {
@@ -14073,8 +15613,8 @@ var Hono = class {
   }
   #notFoundHandler = notFoundHandler;
   errorHandler = errorHandler;
-  route(path2, app2) {
-    const subApp = this.basePath(path2);
+  route(path, app2) {
+    const subApp = this.basePath(path);
     app2.routes.map((r) => {
       let handler;
       if (app2.errorHandler === errorHandler) {
@@ -14087,9 +15627,9 @@ var Hono = class {
     });
     return this;
   }
-  basePath(path2) {
+  basePath(path) {
     const subApp = this.#clone();
-    subApp._basePath = mergePath(this._basePath, path2);
+    subApp._basePath = mergePath(this._basePath, path);
     return subApp;
   }
   onError = /* @__PURE__ */ __name((handler) => {
@@ -14100,7 +15640,7 @@ var Hono = class {
     this.#notFoundHandler = handler;
     return this;
   }, "notFound");
-  mount(path2, applicationHandler, options) {
+  mount(path, applicationHandler, options) {
     let replaceRequest;
     let optionHandler;
     if (options) {
@@ -14123,7 +15663,7 @@ var Hono = class {
       return [c.env, executionContext];
     };
     replaceRequest ||= (() => {
-      const mergedPath = mergePath(this._basePath, path2);
+      const mergedPath = mergePath(this._basePath, path);
       const pathPrefixLength = mergedPath === "/" ? 0 : mergedPath.length;
       return (request) => {
         const url = new URL(request.url);
@@ -14138,14 +15678,14 @@ var Hono = class {
       }
       await next();
     }, "handler");
-    this.#addRoute(METHOD_NAME_ALL, mergePath(path2, "*"), handler);
+    this.#addRoute(METHOD_NAME_ALL, mergePath(path, "*"), handler);
     return this;
   }
-  #addRoute(method, path2, handler) {
+  #addRoute(method, path, handler) {
     method = method.toUpperCase();
-    path2 = mergePath(this._basePath, path2);
-    const r = { path: path2, method, handler };
-    this.router.add(method, path2, [handler, r]);
+    path = mergePath(this._basePath, path);
+    const r = { path, method, handler };
+    this.router.add(method, path, [handler, r]);
     this.routes.push(r);
   }
   #handleError(err, c) {
@@ -14154,16 +15694,16 @@ var Hono = class {
     }
     throw err;
   }
-  #dispatch(request, executionCtx, env4, method) {
+  #dispatch(request, executionCtx, env5, method) {
     if (method === "HEAD") {
-      return (async () => new Response(null, await this.#dispatch(request, executionCtx, env4, "GET")))();
+      return (async () => new Response(null, await this.#dispatch(request, executionCtx, env5, "GET")))();
     }
-    const path2 = this.getPath(request, { env: env4 });
-    const matchResult = this.router.match(method, path2);
+    const path = this.getPath(request, { env: env5 });
+    const matchResult = this.router.match(method, path);
     const c = new Context(request, {
-      path: path2,
+      path,
       matchResult,
-      env: env4,
+      env: env5,
       executionCtx,
       notFoundHandler: this.#notFoundHandler
     });
@@ -14355,12 +15895,12 @@ var Trie = class {
   }
   #context = { varIndex: 0 };
   #root = new Node();
-  insert(path2, index, pathErrorCheckOnly) {
+  insert(path, index, pathErrorCheckOnly) {
     const paramAssoc = [];
     const groups = [];
     for (let i = 0; ; ) {
       let replaced = false;
-      path2 = path2.replace(/\{[^}]+\}/g, (m) => {
+      path = path.replace(/\{[^}]+\}/g, (m) => {
         const mark = `@\\${i}`;
         groups[i] = [mark, m];
         i++;
@@ -14371,7 +15911,7 @@ var Trie = class {
         break;
       }
     }
-    const tokens = path2.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
+    const tokens = path.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
     for (let i = groups.length - 1; i >= 0; i--) {
       const [mark] = groups[i];
       for (let j = tokens.length - 1; j >= 0; j--) {
@@ -14411,9 +15951,9 @@ var Trie = class {
 var emptyParam = [];
 var nullMatcher = [/^$/, [], /* @__PURE__ */ Object.create(null)];
 var wildcardRegExpCache = /* @__PURE__ */ Object.create(null);
-function buildWildcardRegExp(path2) {
-  return wildcardRegExpCache[path2] ??= new RegExp(
-    path2 === "*" ? "" : `^${path2.replace(
+function buildWildcardRegExp(path) {
+  return wildcardRegExpCache[path] ??= new RegExp(
+    path === "*" ? "" : `^${path.replace(
       /\/\*$|([.\\+*[^\]$()])/g,
       (_, metaChar) => metaChar ? `\\${metaChar}` : "(?:|/.*)"
     )}$`
@@ -14437,17 +15977,17 @@ function buildMatcherFromPreprocessedRoutes(routes2) {
   );
   const staticMap = /* @__PURE__ */ Object.create(null);
   for (let i = 0, j = -1, len = routesWithStaticPathFlag.length; i < len; i++) {
-    const [pathErrorCheckOnly, path2, handlers] = routesWithStaticPathFlag[i];
+    const [pathErrorCheckOnly, path, handlers] = routesWithStaticPathFlag[i];
     if (pathErrorCheckOnly) {
-      staticMap[path2] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
+      staticMap[path] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
     } else {
       j++;
     }
     let paramAssoc;
     try {
-      paramAssoc = trie.insert(path2, j, pathErrorCheckOnly);
+      paramAssoc = trie.insert(path, j, pathErrorCheckOnly);
     } catch (e) {
-      throw e === PATH_ERROR ? new UnsupportedPathError(path2) : e;
+      throw e === PATH_ERROR ? new UnsupportedPathError(path) : e;
     }
     if (pathErrorCheckOnly) {
       continue;
@@ -14482,12 +16022,12 @@ function buildMatcherFromPreprocessedRoutes(routes2) {
   return [regexp, handlerMap, staticMap];
 }
 __name(buildMatcherFromPreprocessedRoutes, "buildMatcherFromPreprocessedRoutes");
-function findMiddleware(middleware, path2) {
+function findMiddleware(middleware, path) {
   if (!middleware) {
     return void 0;
   }
   for (const k of Object.keys(middleware).sort((a, b) => b.length - a.length)) {
-    if (buildWildcardRegExp(k).test(path2)) {
+    if (buildWildcardRegExp(k).test(path)) {
       return [...middleware[k]];
     }
   }
@@ -14505,7 +16045,7 @@ var RegExpRouter = class {
     this.#middleware = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
     this.#routes = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
   }
-  add(method, path2, handler) {
+  add(method, path, handler) {
     const middleware = this.#middleware;
     const routes2 = this.#routes;
     if (!middleware || !routes2) {
@@ -14520,18 +16060,18 @@ var RegExpRouter = class {
         });
       });
     }
-    if (path2 === "/*") {
-      path2 = "*";
+    if (path === "/*") {
+      path = "*";
     }
-    const paramCount = (path2.match(/\/:/g) || []).length;
-    if (/\*$/.test(path2)) {
-      const re = buildWildcardRegExp(path2);
+    const paramCount = (path.match(/\/:/g) || []).length;
+    if (/\*$/.test(path)) {
+      const re = buildWildcardRegExp(path);
       if (method === METHOD_NAME_ALL) {
         Object.keys(middleware).forEach((m) => {
-          middleware[m][path2] ||= findMiddleware(middleware[m], path2) || findMiddleware(middleware[METHOD_NAME_ALL], path2) || [];
+          middleware[m][path] ||= findMiddleware(middleware[m], path) || findMiddleware(middleware[METHOD_NAME_ALL], path) || [];
         });
       } else {
-        middleware[method][path2] ||= findMiddleware(middleware[method], path2) || findMiddleware(middleware[METHOD_NAME_ALL], path2) || [];
+        middleware[method][path] ||= findMiddleware(middleware[method], path) || findMiddleware(middleware[METHOD_NAME_ALL], path) || [];
       }
       Object.keys(middleware).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
@@ -14549,36 +16089,36 @@ var RegExpRouter = class {
       });
       return;
     }
-    const paths2 = checkOptionalParameter(path2) || [path2];
-    for (let i = 0, len = paths2.length; i < len; i++) {
-      const path22 = paths2[i];
+    const paths3 = checkOptionalParameter(path) || [path];
+    for (let i = 0, len = paths3.length; i < len; i++) {
+      const path2 = paths3[i];
       Object.keys(routes2).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
-          routes2[m][path22] ||= [
-            ...findMiddleware(middleware[m], path22) || findMiddleware(middleware[METHOD_NAME_ALL], path22) || []
+          routes2[m][path2] ||= [
+            ...findMiddleware(middleware[m], path2) || findMiddleware(middleware[METHOD_NAME_ALL], path2) || []
           ];
-          routes2[m][path22].push([handler, paramCount - len + i + 1]);
+          routes2[m][path2].push([handler, paramCount - len + i + 1]);
         }
       });
     }
   }
-  match(method, path2) {
+  match(method, path) {
     clearWildcardRegExpCache();
     const matchers = this.#buildAllMatchers();
-    this.match = (method2, path22) => {
+    this.match = (method2, path2) => {
       const matcher = matchers[method2] || matchers[METHOD_NAME_ALL];
-      const staticMatch = matcher[2][path22];
+      const staticMatch = matcher[2][path2];
       if (staticMatch) {
         return staticMatch;
       }
-      const match = path22.match(matcher[0]);
+      const match = path2.match(matcher[0]);
       if (!match) {
         return [[], emptyParam];
       }
       const index = match.indexOf("", 1);
       return [matcher[1][index], match];
     };
-    return this.match(method, path2);
+    return this.match(method, path);
   }
   #buildAllMatchers() {
     const matchers = /* @__PURE__ */ Object.create(null);
@@ -14592,13 +16132,13 @@ var RegExpRouter = class {
     const routes2 = [];
     let hasOwnRoute = method === METHOD_NAME_ALL;
     [this.#middleware, this.#routes].forEach((r) => {
-      const ownRoute = r[method] ? Object.keys(r[method]).map((path2) => [path2, r[method][path2]]) : [];
+      const ownRoute = r[method] ? Object.keys(r[method]).map((path) => [path, r[method][path]]) : [];
       if (ownRoute.length !== 0) {
         hasOwnRoute ||= true;
         routes2.push(...ownRoute);
       } else if (method !== METHOD_NAME_ALL) {
         routes2.push(
-          ...Object.keys(r[METHOD_NAME_ALL]).map((path2) => [path2, r[METHOD_NAME_ALL][path2]])
+          ...Object.keys(r[METHOD_NAME_ALL]).map((path) => [path, r[METHOD_NAME_ALL][path]])
         );
       }
     });
@@ -14631,13 +16171,13 @@ var SmartRouter = class {
   constructor(init2) {
     this.#routers = init2.routers;
   }
-  add(method, path2, handler) {
+  add(method, path, handler) {
     if (!this.#routes) {
       throw new Error(MESSAGE_MATCHER_IS_ALREADY_BUILT);
     }
-    this.#routes.push([method, path2, handler]);
+    this.#routes.push([method, path, handler]);
   }
-  match(method, path2) {
+  match(method, path) {
     if (!this.#routes) {
       throw new Error("Fatal error");
     }
@@ -14652,7 +16192,7 @@ var SmartRouter = class {
         for (let i2 = 0, len2 = routes2.length; i2 < len2; i2++) {
           router4.add(...routes2[i2]);
         }
-        res = router4.match(method, path2);
+        res = router4.match(method, path);
       } catch (e) {
         if (e instanceof UnsupportedPathError) {
           continue;
@@ -14715,10 +16255,10 @@ var Node2 = class {
     }
     this.#patterns = [];
   }
-  insert(method, path2, handler) {
+  insert(method, path, handler) {
     this.#order = ++this.#order;
     let curNode = this;
-    const parts = splitRoutingPath(path2);
+    const parts = splitRoutingPath(path);
     const possibleKeys = [];
     for (let i = 0, len = parts.length; i < len; i++) {
       const p = parts[i];
@@ -14769,12 +16309,12 @@ var Node2 = class {
     }
     return handlerSets;
   }
-  search(method, path2) {
+  search(method, path) {
     const handlerSets = [];
     this.#params = emptyParams;
     const curNode = this;
     let curNodes = [curNode];
-    const parts = splitPath(path2);
+    const parts = splitPath(path);
     for (let i = 0, len = parts.length; i < len; i++) {
       const part = parts[i];
       const isLast = i === len - 1;
@@ -14854,18 +16394,18 @@ var TrieRouter = class {
   constructor() {
     this.#node = new Node2();
   }
-  add(method, path2, handler) {
-    const results = checkOptionalParameter(path2);
+  add(method, path, handler) {
+    const results = checkOptionalParameter(path);
     if (results) {
       for (let i = 0, len = results.length; i < len; i++) {
         this.#node.insert(method, results[i], handler);
       }
       return;
     }
-    this.#node.insert(method, path2, handler);
+    this.#node.insert(method, path, handler);
   }
-  match(method, path2) {
-    return this.#node.search(method, path2);
+  match(method, path) {
+    return this.#node.search(method, path);
   }
 };
 
@@ -14950,12 +16490,12 @@ var OpenAPIHono = class _OpenAPIHono extends Hono2 {
         if (!bodyContent[mediaType]) {
           continue;
         }
-        const schema2 = bodyContent[mediaType]["schema"];
-        if (!(schema2 instanceof ZodType)) {
+        const schema3 = bodyContent[mediaType]["schema"];
+        if (!(schema3 instanceof ZodType)) {
           continue;
         }
         if (isJSONContentType(mediaType)) {
-          const validator2 = zValidator("json", schema2, hook);
+          const validator2 = zValidator("json", schema3, hook);
           if (route.request?.body?.required) {
             validators.push(validator2);
           } else {
@@ -14972,7 +16512,7 @@ var OpenAPIHono = class _OpenAPIHono extends Hono2 {
           }
         }
         if (isFormContentType(mediaType)) {
-          const validator2 = zValidator("form", schema2, hook);
+          const validator2 = zValidator("form", schema3, hook);
           if (route.request?.body?.required) {
             validators.push(validator2);
           } else {
@@ -15000,41 +16540,41 @@ var OpenAPIHono = class _OpenAPIHono extends Hono2 {
     );
     return this;
   }, "openapi");
-  getOpenAPIDocument = /* @__PURE__ */ __name((config4) => {
-    const generator2 = new OpenApiGeneratorV3(this.openAPIRegistry.definitions);
-    const document = generator2.generateDocument(config4);
+  getOpenAPIDocument = /* @__PURE__ */ __name((config3) => {
+    const generator3 = new OpenApiGeneratorV3(this.openAPIRegistry.definitions);
+    const document = generator3.generateDocument(config3);
     return this._basePath ? addBasePathToDocument(document, this._basePath) : document;
   }, "getOpenAPIDocument");
-  getOpenAPI31Document = /* @__PURE__ */ __name((config4) => {
-    const generator2 = new OpenApiGeneratorV31(this.openAPIRegistry.definitions);
-    const document = generator2.generateDocument(config4);
+  getOpenAPI31Document = /* @__PURE__ */ __name((config3) => {
+    const generator3 = new OpenApiGeneratorV31(this.openAPIRegistry.definitions);
+    const document = generator3.generateDocument(config3);
     return this._basePath ? addBasePathToDocument(document, this._basePath) : document;
   }, "getOpenAPI31Document");
-  doc = /* @__PURE__ */ __name((path2, configure) => {
-    return this.get(path2, (c) => {
-      const config4 = typeof configure === "function" ? configure(c) : configure;
+  doc = /* @__PURE__ */ __name((path, configure) => {
+    return this.get(path, (c) => {
+      const config3 = typeof configure === "function" ? configure(c) : configure;
       try {
-        const document = this.getOpenAPIDocument(config4);
+        const document = this.getOpenAPIDocument(config3);
         return c.json(document);
       } catch (e) {
         return c.json(e, 500);
       }
     });
   }, "doc");
-  doc31 = /* @__PURE__ */ __name((path2, configure) => {
-    return this.get(path2, (c) => {
-      const config4 = typeof configure === "function" ? configure(c) : configure;
+  doc31 = /* @__PURE__ */ __name((path, configure) => {
+    return this.get(path, (c) => {
+      const config3 = typeof configure === "function" ? configure(c) : configure;
       try {
-        const document = this.getOpenAPI31Document(config4);
+        const document = this.getOpenAPI31Document(config3);
         return c.json(document);
       } catch (e) {
         return c.json(e, 500);
       }
     });
   }, "doc31");
-  route(path2, app2) {
-    const pathForOpenAPI = path2.replaceAll(/:([^\/]+)/g, "{$1}");
-    super.route(path2, app2);
+  route(path, app2) {
+    const pathForOpenAPI = path.replaceAll(/:([^\/]+)/g, "{$1}");
+    super.route(path, app2);
     if (!(app2 instanceof _OpenAPIHono)) {
       return this;
     }
@@ -15067,8 +16607,8 @@ var OpenAPIHono = class _OpenAPIHono extends Hono2 {
     });
     return this;
   }
-  basePath(path2) {
-    return new _OpenAPIHono({ ...super.basePath(path2), defaultHook: this.defaultHook });
+  basePath(path) {
+    return new _OpenAPIHono({ ...super.basePath(path), defaultHook: this.defaultHook });
   }
 };
 var createRoute = /* @__PURE__ */ __name((routeConfig) => {
@@ -15083,8 +16623,8 @@ var createRoute = /* @__PURE__ */ __name((routeConfig) => {
 extendZodWithOpenApi(z);
 function addBasePathToDocument(document, basePath) {
   const updatedPaths = {};
-  Object.keys(document.paths).forEach((path2) => {
-    updatedPaths[mergePath(basePath, path2)] = document.paths[path2];
+  Object.keys(document.paths).forEach((path) => {
+    updatedPaths[mergePath(basePath, path)] = document.paths[path];
   });
   return {
     ...document,
@@ -15155,8 +16695,8 @@ function createRouter() {
   return ctx;
 }
 __name(createRouter, "createRouter");
-function splitPath2(path2) {
-  return path2.split("/").filter(Boolean);
+function splitPath2(path) {
+  return path.split("/").filter(Boolean);
 }
 __name(splitPath2, "splitPath");
 function getMatchParams(segments, paramsMap) {
@@ -15177,8 +16717,8 @@ function getMatchParams(segments, paramsMap) {
   return params;
 }
 __name(getMatchParams, "getMatchParams");
-function addRoute(ctx, method = "", path2, data) {
-  const segments = splitPath2(path2);
+function addRoute(ctx, method = "", path, data) {
+  const segments = splitPath2(path);
   let node = ctx.root;
   let _unnamedParamIndex = 0;
   const paramsMap = [];
@@ -15233,7 +16773,7 @@ function addRoute(ctx, method = "", path2, data) {
     paramsMap: hasParams ? paramsMap : void 0
   });
   if (!hasParams) {
-    ctx.static[path2] = node;
+    ctx.static[path] = node;
   }
 }
 __name(addRoute, "addRoute");
@@ -15245,18 +16785,18 @@ function _getParamMatcher(segment) {
   return new RegExp(`^${regex}$`);
 }
 __name(_getParamMatcher, "_getParamMatcher");
-function findRoute(ctx, method = "", path2, opts) {
-  if (path2[path2.length - 1] === "/") {
-    path2 = path2.slice(0, -1);
+function findRoute(ctx, method = "", path, opts) {
+  if (path[path.length - 1] === "/") {
+    path = path.slice(0, -1);
   }
-  const staticNode = ctx.static[path2];
+  const staticNode = ctx.static[path];
   if (staticNode && staticNode.methods) {
     const staticMatch = staticNode.methods[method] || staticNode.methods[""];
     if (staticMatch !== void 0) {
       return staticMatch[0];
     }
   }
-  const segments = splitPath2(path2);
+  const segments = splitPath2(path);
   const match = _lookupTree(ctx, ctx.root, method, segments, 0)?.[0];
   if (match === void 0) {
     return;
@@ -15320,11 +16860,11 @@ function _lookupTree(ctx, node, method, segments, index) {
   return;
 }
 __name(_lookupTree, "_lookupTree");
-function findAllRoutes(ctx, method = "", path2, opts) {
-  if (path2[path2.length - 1] === "/") {
-    path2 = path2.slice(0, -1);
+function findAllRoutes(ctx, method = "", path, opts) {
+  if (path[path.length - 1] === "/") {
+    path = path.slice(0, -1);
   }
-  const segments = splitPath2(path2);
+  const segments = splitPath2(path);
   const matches = _findAll(ctx, ctx.root, method, segments, 0);
   if (opts?.params === false) {
     return matches;
@@ -15769,7 +17309,7 @@ var serializeSignedCookie = /* @__PURE__ */ __name(async (key, value, secret, op
 }, "serializeSignedCookie");
 var createInternalContext = /* @__PURE__ */ __name(async (context2, {
   options,
-  path: path2
+  path
 }) => {
   const headers = new Headers();
   const { data, error: error4 } = await runValidation(options, context2);
@@ -15786,7 +17326,7 @@ var createInternalContext = /* @__PURE__ */ __name(async (context2, {
     ...context2,
     body: data.body,
     query: data.query,
-    path: context2.path || path2,
+    path: context2.path || path,
     context: "context" in context2 && context2.context ? context2.context : {},
     returned: void 0,
     headers: context2?.headers,
@@ -15924,12 +17464,12 @@ createMiddleware.create = (opts) => {
   __name(fn, "fn");
   return fn;
 };
-var createEndpoint2 = /* @__PURE__ */ __name((path2, options, handler) => {
+var createEndpoint2 = /* @__PURE__ */ __name((path, options, handler) => {
   const internalHandler = /* @__PURE__ */ __name(async (...inputCtx) => {
     const context2 = inputCtx[0] || {};
     const internalContext = await createInternalContext(context2, {
       options,
-      path: path2
+      path
     });
     const response = await handler(internalContext).catch((e) => {
       if (isAPIError(e) && context2.asResponse) {
@@ -15946,13 +17486,13 @@ var createEndpoint2 = /* @__PURE__ */ __name((path2, options, handler) => {
     } : response;
   }, "internalHandler");
   internalHandler.options = options;
-  internalHandler.path = path2;
+  internalHandler.path = path;
   return internalHandler;
 }, "createEndpoint2");
 createEndpoint2.create = (opts) => {
-  return (path2, options, handler) => {
+  return (path, options, handler) => {
     return createEndpoint2(
-      path2,
+      path,
       {
         ...options,
         use: [...options?.use || [], ...opts?.use || []]
@@ -16313,8 +17853,8 @@ function getErrorMap2() {
 }
 __name(getErrorMap2, "getErrorMap");
 var makeIssue2 = /* @__PURE__ */ __name((params) => {
-  const { data, path: path2, errorMaps, issueData } = params;
-  const fullPath = [...path2, ...issueData.path || []];
+  const { data, path, errorMaps, issueData } = params;
+  const fullPath = [...path, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -16447,11 +17987,11 @@ var ParseInputLazyPath2 = class {
   static {
     __name(this, "ParseInputLazyPath");
   }
-  constructor(parent, value, path2, key) {
+  constructor(parent, value, path, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path2;
+    this._path = path;
     this._key = key;
   }
   get path() {
@@ -16839,21 +18379,21 @@ function datetimeRegex2(args) {
   return new RegExp(`^${regex}$`);
 }
 __name(datetimeRegex2, "datetimeRegex");
-function isValidIP2(ip, version4) {
-  if ((version4 === "v4" || !version4) && ipv4Regex2.test(ip)) {
+function isValidIP2(ip, version3) {
+  if ((version3 === "v4" || !version3) && ipv4Regex2.test(ip)) {
     return true;
   }
-  if ((version4 === "v6" || !version4) && ipv6Regex2.test(ip)) {
+  if ((version3 === "v6" || !version3) && ipv6Regex2.test(ip)) {
     return true;
   }
   return false;
 }
 __name(isValidIP2, "isValidIP");
-function isValidJWT2(jwt, alg) {
-  if (!jwtRegex2.test(jwt))
+function isValidJWT2(jwt2, alg) {
+  if (!jwtRegex2.test(jwt2))
     return false;
   try {
-    const [header] = jwt.split(".");
+    const [header] = jwt2.split(".");
     const base642 = header.replace(/-/g, "+").replace(/_/g, "/").padEnd(header.length + (4 - header.length % 4) % 4, "=");
     const decoded = JSON.parse(atob(base642));
     if (typeof decoded !== "object" || decoded === null)
@@ -16868,11 +18408,11 @@ function isValidJWT2(jwt, alg) {
   }
 }
 __name(isValidJWT2, "isValidJWT");
-function isValidCidr2(ip, version4) {
-  if ((version4 === "v4" || !version4) && ipv4CidrRegex2.test(ip)) {
+function isValidCidr2(ip, version3) {
+  if ((version3 === "v4" || !version3) && ipv4CidrRegex2.test(ip)) {
     return true;
   }
-  if ((version4 === "v6" || !version4) && ipv6CidrRegex2.test(ip)) {
+  if ((version3 === "v6" || !version3) && ipv6CidrRegex2.test(ip)) {
     return true;
   }
   return false;
@@ -18234,9 +19774,9 @@ var ZodArray2 = class _ZodArray extends ZodType2 {
     return this.min(1, message2);
   }
 };
-ZodArray2.create = (schema2, params) => {
+ZodArray2.create = (schema3, params) => {
   return new ZodArray2({
-    type: schema2,
+    type: schema3,
     minLength: null,
     maxLength: null,
     exactLength: null,
@@ -18244,30 +19784,30 @@ ZodArray2.create = (schema2, params) => {
     ...processCreateParams2(params)
   });
 };
-function deepPartialify2(schema2) {
-  if (schema2 instanceof ZodObject2) {
+function deepPartialify2(schema3) {
+  if (schema3 instanceof ZodObject2) {
     const newShape = {};
-    for (const key in schema2.shape) {
-      const fieldSchema = schema2.shape[key];
+    for (const key in schema3.shape) {
+      const fieldSchema = schema3.shape[key];
       newShape[key] = ZodOptional2.create(deepPartialify2(fieldSchema));
     }
     return new ZodObject2({
-      ...schema2._def,
+      ...schema3._def,
       shape: /* @__PURE__ */ __name(() => newShape, "shape")
     });
-  } else if (schema2 instanceof ZodArray2) {
+  } else if (schema3 instanceof ZodArray2) {
     return new ZodArray2({
-      ...schema2._def,
-      type: deepPartialify2(schema2.element)
+      ...schema3._def,
+      type: deepPartialify2(schema3.element)
     });
-  } else if (schema2 instanceof ZodOptional2) {
-    return ZodOptional2.create(deepPartialify2(schema2.unwrap()));
-  } else if (schema2 instanceof ZodNullable2) {
-    return ZodNullable2.create(deepPartialify2(schema2.unwrap()));
-  } else if (schema2 instanceof ZodTuple2) {
-    return ZodTuple2.create(schema2.items.map((item) => deepPartialify2(item)));
+  } else if (schema3 instanceof ZodOptional2) {
+    return ZodOptional2.create(deepPartialify2(schema3.unwrap()));
+  } else if (schema3 instanceof ZodNullable2) {
+    return ZodNullable2.create(deepPartialify2(schema3.unwrap()));
+  } else if (schema3 instanceof ZodTuple2) {
+    return ZodTuple2.create(schema3.items.map((item) => deepPartialify2(item)));
   } else {
-    return schema2;
+    return schema3;
   }
 }
 __name(deepPartialify2, "deepPartialify");
@@ -18487,8 +20027,8 @@ var ZodObject2 = class _ZodObject extends ZodType2 {
   //   }) as any;
   //   return merged;
   // }
-  setKey(key, schema2) {
-    return this.augment({ [key]: schema2 });
+  setKey(key, schema3) {
+    return this.augment({ [key]: schema3 });
   }
   // merge<Incoming extends AnyZodObject>(
   //   merging: Incoming
@@ -18707,33 +20247,33 @@ ZodUnion2.create = (types4, params) => {
     ...processCreateParams2(params)
   });
 };
-var getDiscriminator2 = /* @__PURE__ */ __name((type2) => {
-  if (type2 instanceof ZodLazy2) {
-    return getDiscriminator2(type2.schema);
-  } else if (type2 instanceof ZodEffects2) {
-    return getDiscriminator2(type2.innerType());
-  } else if (type2 instanceof ZodLiteral2) {
-    return [type2.value];
-  } else if (type2 instanceof ZodEnum2) {
-    return type2.options;
-  } else if (type2 instanceof ZodNativeEnum2) {
-    return util2.objectValues(type2.enum);
-  } else if (type2 instanceof ZodDefault2) {
-    return getDiscriminator2(type2._def.innerType);
-  } else if (type2 instanceof ZodUndefined2) {
+var getDiscriminator2 = /* @__PURE__ */ __name((type) => {
+  if (type instanceof ZodLazy2) {
+    return getDiscriminator2(type.schema);
+  } else if (type instanceof ZodEffects2) {
+    return getDiscriminator2(type.innerType());
+  } else if (type instanceof ZodLiteral2) {
+    return [type.value];
+  } else if (type instanceof ZodEnum2) {
+    return type.options;
+  } else if (type instanceof ZodNativeEnum2) {
+    return util2.objectValues(type.enum);
+  } else if (type instanceof ZodDefault2) {
+    return getDiscriminator2(type._def.innerType);
+  } else if (type instanceof ZodUndefined2) {
     return [void 0];
-  } else if (type2 instanceof ZodNull2) {
+  } else if (type instanceof ZodNull2) {
     return [null];
-  } else if (type2 instanceof ZodOptional2) {
-    return [void 0, ...getDiscriminator2(type2.unwrap())];
-  } else if (type2 instanceof ZodNullable2) {
-    return [null, ...getDiscriminator2(type2.unwrap())];
-  } else if (type2 instanceof ZodBranded2) {
-    return getDiscriminator2(type2.unwrap());
-  } else if (type2 instanceof ZodReadonly2) {
-    return getDiscriminator2(type2.unwrap());
-  } else if (type2 instanceof ZodCatch2) {
-    return getDiscriminator2(type2._def.innerType);
+  } else if (type instanceof ZodOptional2) {
+    return [void 0, ...getDiscriminator2(type.unwrap())];
+  } else if (type instanceof ZodNullable2) {
+    return [null, ...getDiscriminator2(type.unwrap())];
+  } else if (type instanceof ZodBranded2) {
+    return getDiscriminator2(type.unwrap());
+  } else if (type instanceof ZodReadonly2) {
+    return getDiscriminator2(type.unwrap());
+  } else if (type instanceof ZodCatch2) {
+    return getDiscriminator2(type._def.innerType);
   } else {
     return [];
   }
@@ -18796,8 +20336,8 @@ var ZodDiscriminatedUnion2 = class _ZodDiscriminatedUnion extends ZodType2 {
    */
   static create(discriminator, options, params) {
     const optionsMap = /* @__PURE__ */ new Map();
-    for (const type2 of options) {
-      const discriminatorValues = getDiscriminator2(type2.shape[discriminator]);
+    for (const type of options) {
+      const discriminatorValues = getDiscriminator2(type.shape[discriminator]);
       if (!discriminatorValues.length) {
         throw new Error(`A discriminator value for key \`${discriminator}\` could not be extracted from all schema options`);
       }
@@ -18805,7 +20345,7 @@ var ZodDiscriminatedUnion2 = class _ZodDiscriminatedUnion extends ZodType2 {
         if (optionsMap.has(value)) {
           throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value)}`);
         }
-        optionsMap.set(value, type2);
+        optionsMap.set(value, type);
       }
     }
     return new _ZodDiscriminatedUnion({
@@ -18948,10 +20488,10 @@ var ZodTuple2 = class _ZodTuple extends ZodType2 {
       status.dirty();
     }
     const items = [...ctx.data].map((item, itemIndex) => {
-      const schema2 = this._def.items[itemIndex] || this._def.rest;
-      if (!schema2)
+      const schema3 = this._def.items[itemIndex] || this._def.rest;
+      if (!schema3)
         return null;
-      return schema2._parse(new ParseInputLazyPath2(ctx, item, ctx.path, itemIndex));
+      return schema3._parse(new ParseInputLazyPath2(ctx, item, ctx.path, itemIndex));
     }).filter((x) => !!x);
     if (ctx.common.async) {
       return Promise.all(items).then((results) => {
@@ -19516,9 +21056,9 @@ var ZodPromise2 = class extends ZodType2 {
     }));
   }
 };
-ZodPromise2.create = (schema2, params) => {
+ZodPromise2.create = (schema3, params) => {
   return new ZodPromise2({
-    type: schema2,
+    type: schema3,
     typeName: ZodFirstPartyTypeKind2.ZodPromise,
     ...processCreateParams2(params)
   });
@@ -19646,17 +21186,17 @@ var ZodEffects2 = class extends ZodType2 {
     util2.assertNever(effect);
   }
 };
-ZodEffects2.create = (schema2, effect, params) => {
+ZodEffects2.create = (schema3, effect, params) => {
   return new ZodEffects2({
-    schema: schema2,
+    schema: schema3,
     typeName: ZodFirstPartyTypeKind2.ZodEffects,
     effect,
     ...processCreateParams2(params)
   });
 };
-ZodEffects2.createWithPreprocess = (preprocess, schema2, params) => {
+ZodEffects2.createWithPreprocess = (preprocess, schema3, params) => {
   return new ZodEffects2({
-    schema: schema2,
+    schema: schema3,
     effect: { type: "preprocess", transform: preprocess },
     typeName: ZodFirstPartyTypeKind2.ZodEffects,
     ...processCreateParams2(params)
@@ -19677,9 +21217,9 @@ var ZodOptional2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodOptional2.create = (type2, params) => {
+ZodOptional2.create = (type, params) => {
   return new ZodOptional2({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind2.ZodOptional,
     ...processCreateParams2(params)
   });
@@ -19699,9 +21239,9 @@ var ZodNullable2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodNullable2.create = (type2, params) => {
+ZodNullable2.create = (type, params) => {
   return new ZodNullable2({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind2.ZodNullable,
     ...processCreateParams2(params)
   });
@@ -19726,9 +21266,9 @@ var ZodDefault2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodDefault2.create = (type2, params) => {
+ZodDefault2.create = (type, params) => {
   return new ZodDefault2({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind2.ZodDefault,
     defaultValue: typeof params.default === "function" ? params.default : () => params.default,
     ...processCreateParams2(params)
@@ -19782,9 +21322,9 @@ var ZodCatch2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodCatch2.create = (type2, params) => {
+ZodCatch2.create = (type, params) => {
   return new ZodCatch2({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind2.ZodCatch,
     catchValue: typeof params.catch === "function" ? params.catch : () => params.catch,
     ...processCreateParams2(params)
@@ -19908,9 +21448,9 @@ var ZodReadonly2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodReadonly2.create = (type2, params) => {
+ZodReadonly2.create = (type, params) => {
   return new ZodReadonly2({
-    innerType: type2,
+    innerType: type,
     typeName: ZodFirstPartyTypeKind2.ZodReadonly,
     ...processCreateParams2(params)
   });
@@ -20170,7 +21710,7 @@ function getResponse(responses) {
   };
 }
 __name(getResponse, "getResponse");
-async function generator(endpoints, config4) {
+async function generator(endpoints, config3) {
   const components = {
     schemas: {}
   };
@@ -20239,7 +21779,7 @@ async function generator(endpoints, config4) {
     ],
     servers: [
       {
-        url: config4?.url
+        url: config3?.url
       }
     ],
     tags: [
@@ -20253,7 +21793,7 @@ async function generator(endpoints, config4) {
   return res;
 }
 __name(generator, "generator");
-var getHTML = /* @__PURE__ */ __name((apiReference2, config4) => `<!doctype html>
+var getHTML = /* @__PURE__ */ __name((apiReference2, config3) => `<!doctype html>
 <html>
   <head>
     <title>Scalar API Reference</title>
@@ -20270,11 +21810,11 @@ var getHTML = /* @__PURE__ */ __name((apiReference2, config4) => `<!doctype html
     <\/script>
 	 <script>
       var configuration = {
-	  	favicon: ${config4?.logo ? `data:image/svg+xml;utf8,${encodeURIComponent(config4.logo)}` : void 0} ,
-	   	theme: ${config4?.theme || "saturn"},
+	  	favicon: ${config3?.logo ? `data:image/svg+xml;utf8,${encodeURIComponent(config3.logo)}` : void 0} ,
+	   	theme: ${config3?.theme || "saturn"},
         metaData: {
-			title: ${config4?.title || "Open API Reference"},
-			description: ${config4?.description || "Better Call Open API"},
+			title: ${config3?.title || "Open API Reference"},
+			description: ${config3?.description || "Better Call Open API"},
 		}
       }
       document.getElementById('api-reference').dataset.configuration =
@@ -20283,11 +21823,11 @@ var getHTML = /* @__PURE__ */ __name((apiReference2, config4) => `<!doctype html
 	  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"><\/script>
   </body>
 </html>`, "getHTML");
-var createRouter2 = /* @__PURE__ */ __name((endpoints, config4) => {
-  if (!config4?.openapi?.disabled) {
+var createRouter2 = /* @__PURE__ */ __name((endpoints, config3) => {
+  if (!config3?.openapi?.disabled) {
     const openapi = {
       path: "/api/reference",
-      ...config4?.openapi
+      ...config3?.openapi
     };
     endpoints["openapi"] = createEndpoint2(
       openapi.path,
@@ -20295,8 +21835,8 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config4) => {
         method: "GET"
       },
       async (c) => {
-        const schema2 = await generator(endpoints);
-        return new Response(getHTML(schema2, openapi.scalar), {
+        const schema3 = await generator(endpoints);
+        return new Response(getHTML(schema3, openapi.scalar), {
           headers: {
             "Content-Type": "text/html"
           }
@@ -20316,25 +21856,25 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config4) => {
       addRoute(router4, method, endpoint.path, endpoint);
     }
   }
-  if (config4?.routerMiddleware?.length) {
-    for (const { path: path2, middleware } of config4.routerMiddleware) {
-      addRoute(middlewareRouter, "*", path2, middleware);
+  if (config3?.routerMiddleware?.length) {
+    for (const { path, middleware } of config3.routerMiddleware) {
+      addRoute(middlewareRouter, "*", path, middleware);
     }
   }
   const processRequest = /* @__PURE__ */ __name(async (request) => {
     const url = new URL(request.url);
-    const path2 = config4?.basePath ? url.pathname.split(config4.basePath)[1] : url.pathname;
-    if (!path2?.length) {
-      config4?.onError?.(new Error("NOT_FOUND"));
+    const path = config3?.basePath ? url.pathname.split(config3.basePath)[1] : url.pathname;
+    if (!path?.length) {
+      config3?.onError?.(new Error("NOT_FOUND"));
       return new Response(null, { status: 404, statusText: "Not Found" });
     }
-    const route = findRoute(router4, request.method, path2);
+    const route = findRoute(router4, request.method, path);
     if (!route?.data) {
       return new Response(null, { status: 404, statusText: "Not Found" });
     }
     const handler = route.data;
     const context2 = {
-      path: path2,
+      path,
       method: request.method,
       headers: request.headers,
       params: route.params ? JSON.parse(JSON.stringify(route.params)) : {},
@@ -20343,10 +21883,10 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config4) => {
       query: Object.fromEntries(url.searchParams),
       _flag: "router",
       asResponse: true,
-      context: config4?.routerContext
+      context: config3?.routerContext
     };
     try {
-      const middlewareRoutes = findAllRoutes(middlewareRouter, "*", path2);
+      const middlewareRoutes = findAllRoutes(middlewareRouter, "*", path);
       if (middlewareRoutes?.length) {
         for (const { data: middleware, params } of middlewareRoutes) {
           const res = await middleware({
@@ -20372,13 +21912,13 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config4) => {
   }, "processRequest");
   return {
     handler: /* @__PURE__ */ __name(async (request) => {
-      const onReq = await config4?.onRequest?.(request);
+      const onReq = await config3?.onRequest?.(request);
       if (onReq instanceof Response) {
         return onReq;
       }
       const req = onReq instanceof Request ? onReq : request;
       const res = await processRequest(req);
-      const onRes = await config4?.onResponse?.(res);
+      const onRes = await config3?.onResponse?.(res);
       if (onRes instanceof Response) {
         return onRes;
       }
@@ -20699,27 +22239,27 @@ function checkHasPath(url) {
   }
 }
 __name(checkHasPath, "checkHasPath");
-function withPath(url, path2 = "/api/auth") {
+function withPath(url, path = "/api/auth") {
   const hasPath = checkHasPath(url);
   if (hasPath) {
     return url;
   }
-  path2 = path2.startsWith("/") ? path2 : `/${path2}`;
-  return `${url.replace(/\/+$/, "")}${path2}`;
+  path = path.startsWith("/") ? path : `/${path}`;
+  return `${url.replace(/\/+$/, "")}${path}`;
 }
 __name(withPath, "withPath");
-function getBaseURL(url, path2, request) {
+function getBaseURL(url, path, request) {
   if (url) {
-    return withPath(url, path2);
+    return withPath(url, path);
   }
   const fromEnv = env2.BETTER_AUTH_URL || env2.NEXT_PUBLIC_BETTER_AUTH_URL || env2.PUBLIC_BETTER_AUTH_URL || env2.NUXT_PUBLIC_BETTER_AUTH_URL || env2.NUXT_PUBLIC_AUTH_URL || (env2.BASE_URL !== "/" ? env2.BASE_URL : void 0);
   if (fromEnv) {
-    return withPath(fromEnv, path2);
+    return withPath(fromEnv, path);
   }
   const fromRequest = request?.headers.get("x-forwarded-host");
   const fromRequestProto = request?.headers.get("x-forwarded-proto");
   if (fromRequest && fromRequestProto) {
-    return withPath(`${fromRequestProto}://${fromRequest}`, path2);
+    return withPath(`${fromRequestProto}://${fromRequest}`, path);
   }
   if (request) {
     const url2 = getOrigin(request.url);
@@ -20728,10 +22268,10 @@ function getBaseURL(url, path2, request) {
         "Could not get origin from request. Please provide a valid base URL."
       );
     }
-    return withPath(url2, path2);
+    return withPath(url2, path);
   }
   if (typeof window !== "undefined" && window.location) {
-    return withPath(window.location.origin, path2);
+    return withPath(window.location.origin, path);
   }
   return void 0;
 }
@@ -21180,12 +22720,12 @@ var getAuthHeader = /* @__PURE__ */ __name(async (options) => {
       }
       headers["authorization"] = `Bearer ${token}`;
     } else if (options.auth.type === "Basic") {
-      const username = getValue(options.auth.username);
+      const username2 = getValue(options.auth.username);
       const password = getValue(options.auth.password);
-      if (!username || !password) {
+      if (!username2 || !password) {
         return headers;
       }
-      headers["authorization"] = `Basic ${btoa(`${username}:${password}`)}`;
+      headers["authorization"] = `Basic ${btoa(`${username2}:${password}`)}`;
     } else if (options.auth.type === "Custom") {
       const value = getValue(options.auth.value);
       if (!value) {
@@ -21350,8 +22890,8 @@ var ValidationError = class _ValidationError extends Error {
     Object.setPrototypeOf(this, _ValidationError.prototype);
   }
 };
-async function parseStandardSchema(schema2, input) {
-  let result = await schema2["~standard"].validate(input);
+async function parseStandardSchema(schema3, input) {
+  let result = await schema3["~standard"].validate(input);
   if (result.issues) {
     throw new ValidationError(result.issues);
   }
@@ -21373,7 +22913,7 @@ function getURL2(url, option) {
     }
   }
   if (!basePath.endsWith("/")) basePath += "/";
-  let [path2, urlQuery] = url.replace(basePath, "").split("?");
+  let [path, urlQuery] = url.replace(basePath, "").split("?");
   const queryParams = new URLSearchParams(urlQuery);
   for (const [key, value] of Object.entries(query || {})) {
     if (value == null) continue;
@@ -21381,25 +22921,25 @@ function getURL2(url, option) {
   }
   if (params) {
     if (Array.isArray(params)) {
-      const paramPaths = path2.split("/").filter((p) => p.startsWith(":"));
+      const paramPaths = path.split("/").filter((p) => p.startsWith(":"));
       for (const [index, key] of paramPaths.entries()) {
         const value = params[index];
-        path2 = path2.replace(key, value);
+        path = path.replace(key, value);
       }
     } else {
       for (const [key, value] of Object.entries(params)) {
-        path2 = path2.replace(`:${key}`, String(value));
+        path = path.replace(`:${key}`, String(value));
       }
     }
   }
-  path2 = path2.split("/").map(encodeURIComponent).join("/");
-  if (path2.startsWith("/")) path2 = path2.slice(1);
+  path = path.split("/").map(encodeURIComponent).join("/");
+  if (path.startsWith("/")) path = path.slice(1);
   let queryParamString = queryParams.toString();
   queryParamString = queryParamString.length > 0 ? `?${queryParamString}`.replace(/\+/g, "%20") : "";
   if (!basePath.startsWith("http")) {
-    return `${basePath}${path2}${queryParamString}`;
+    return `${basePath}${path}${queryParamString}`;
   }
-  const _url = new URL(`${path2}${queryParamString}`, basePath);
+  const _url = new URL(`${path}${queryParamString}`, basePath);
   return _url;
 }
 __name(getURL2, "getURL2");
@@ -22777,8 +24317,8 @@ var jwt_claims_set_default = /* @__PURE__ */ __name((protectedHeader, encodedPay
 }, "default");
 
 // node_modules/.pnpm/jose@5.10.0/node_modules/jose/dist/browser/jwt/verify.js
-async function jwtVerify(jwt, key, options) {
-  const verified = await compactVerify(jwt, key, options);
+async function jwtVerify(jwt2, key, options) {
+  const verified = await compactVerify(jwt2, key, options);
   if (verified.protectedHeader.crit?.includes("b64") && verified.protectedHeader.b64 === false) {
     throw new JWTInvalid("JWTs MUST NOT use unencoded payload");
   }
@@ -23369,10 +24909,10 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-function decodeJwt(jwt) {
-  if (typeof jwt !== "string")
+function decodeJwt(jwt2) {
+  if (typeof jwt2 !== "string")
     throw new JWTInvalid("JWTs must use Compact JWS serialization, JWT must be a string");
-  const { 1: payload, length } = jwt.split(".");
+  const { 1: payload, length } = jwt2.split(".");
   if (length === 5)
     throw new JWTInvalid("Only JWTs using Compact JWS serialization can be decoded");
   if (length !== 3)
@@ -26052,8 +27592,8 @@ var verificationSchema = z.object({
   identifier: z.string(),
   nonce: z.string().nullish()
 });
-function parseOutputData(data, schema2) {
-  const fields = schema2.fields;
+function parseOutputData(data, schema3) {
+  const fields = schema3.fields;
   const parsedData = {};
   for (const key in data) {
     const field = fields[key];
@@ -26070,34 +27610,34 @@ function parseOutputData(data, schema2) {
 }
 __name(parseOutputData, "parseOutputData");
 function getAllFields(options, table3) {
-  let schema2 = {
+  let schema3 = {
     ...table3 === "user" ? options.user?.additionalFields : {},
     ...table3 === "session" ? options.session?.additionalFields : {}
   };
   for (const plugin of options.plugins || []) {
     if (plugin.schema && plugin.schema[table3]) {
-      schema2 = {
-        ...schema2,
+      schema3 = {
+        ...schema3,
         ...plugin.schema[table3].fields
       };
     }
   }
-  return schema2;
+  return schema3;
 }
 __name(getAllFields, "getAllFields");
 function parseUserOutput(options, user2) {
-  const schema2 = getAllFields(options, "user");
-  return parseOutputData(user2, { fields: schema2 });
+  const schema3 = getAllFields(options, "user");
+  return parseOutputData(user2, { fields: schema3 });
 }
 __name(parseUserOutput, "parseUserOutput");
 function parseSessionOutput(options, session2) {
-  const schema2 = getAllFields(options, "session");
-  return parseOutputData(session2, { fields: schema2 });
+  const schema3 = getAllFields(options, "session");
+  return parseOutputData(session2, { fields: schema3 });
 }
 __name(parseSessionOutput, "parseSessionOutput");
-function parseInputData(data, schema2) {
-  const action = schema2.action || "create";
-  const fields = schema2.fields;
+function parseInputData(data, schema3) {
+  const action = schema3.action || "create";
+  const fields = schema3.fields;
   const parsedData = {};
   for (const key in fields) {
     if (key in data) {
@@ -26133,8 +27673,8 @@ function parseInputData(data, schema2) {
 }
 __name(parseInputData, "parseInputData");
 function parseUserInput(options, user2, action) {
-  const schema2 = getAllFields(options, "user");
-  return parseInputData(user2 || {}, { fields: schema2, action });
+  const schema3 = getAllFields(options, "user");
+  return parseInputData(user2 || {}, { fields: schema3, action });
 }
 __name(parseUserInput, "parseUserInput");
 
@@ -26219,8 +27759,8 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 async function signJWT(payload, secret, expiresIn = 3600) {
-  const jwt = await new SignJWT(payload).setProtectedHeader({ alg: "HS256" }).setIssuedAt().setExpirationTime(Math.floor(Date.now() / 1e3) + expiresIn).sign(new TextEncoder().encode(secret));
-  return jwt;
+  const jwt2 = await new SignJWT(payload).setProtectedHeader({ alg: "HS256" }).setIssuedAt().setExpirationTime(Math.floor(Date.now() / 1e3) + expiresIn).sign(new TextEncoder().encode(secret));
+  return jwt2;
 }
 __name(signJWT, "signJWT");
 
@@ -26656,7 +28196,7 @@ var getSession = /* @__PURE__ */ __name(() => createAuthEndpoint(
     }
   }
 ), "getSession");
-var getSessionFromCtx = /* @__PURE__ */ __name(async (ctx, config4) => {
+var getSessionFromCtx = /* @__PURE__ */ __name(async (ctx, config3) => {
   if (ctx.context.session) {
     return ctx.context.session;
   }
@@ -26666,7 +28206,7 @@ var getSessionFromCtx = /* @__PURE__ */ __name(async (ctx, config4) => {
     headers: ctx.headers,
     returnHeaders: false,
     query: {
-      ...config4,
+      ...config3,
       ...ctx.query
     }
   }).catch((e) => {
@@ -27094,9 +28634,9 @@ var verifyEmail = createAuthEndpoint(
     }
     __name(redirectOnError, "redirectOnError");
     const { token } = ctx.query;
-    let jwt;
+    let jwt2;
     try {
-      jwt = await jwtVerify(
+      jwt2 = await jwtVerify(
         token,
         new TextEncoder().encode(ctx.context.secret),
         {
@@ -27109,11 +28649,11 @@ var verifyEmail = createAuthEndpoint(
       }
       return redirectOnError("invalid_token");
     }
-    const schema2 = z.object({
+    const schema3 = z.object({
       email: z.string().email(),
       updateTo: z.string().optional()
     });
-    const parsed = schema2.parse(jwt.payload);
+    const parsed = schema3.parse(jwt2.payload);
     const user2 = await ctx.context.internalAdapter.findUserByEmail(
       parsed.email
     );
@@ -27228,13 +28768,13 @@ var verifyEmail = createAuthEndpoint(
   }
 );
 async function handleOAuthUserInfo(c, {
-  userInfo: userInfo2,
+  userInfo,
   account: account2,
   callbackURL,
   disableSignUp
 }) {
   const dbUser = await c.context.internalAdapter.findOAuthUser(
-    userInfo2.email.toLowerCase(),
+    userInfo.email.toLowerCase(),
     account2.accountId,
     account2.providerId
   ).catch((e) => {
@@ -27257,7 +28797,7 @@ async function handleOAuthUserInfo(c, {
       const isTrustedProvider = trustedProviders?.includes(
         account2.providerId
       );
-      if (!isTrustedProvider && !userInfo2.emailVerified || c.context.options.account?.accountLinking?.enabled === false) {
+      if (!isTrustedProvider && !userInfo.emailVerified || c.context.options.account?.accountLinking?.enabled === false) {
         if (isDevelopment) {
           logger.warn(
             `User already exist but account isn't linked to ${account2.providerId}. To read more about how account linking works in Better Auth see https://www.better-auth.com/docs/concepts/users-accounts#account-linking.`
@@ -27272,7 +28812,7 @@ async function handleOAuthUserInfo(c, {
         await c.context.internalAdapter.linkAccount(
           {
             providerId: account2.providerId,
-            accountId: userInfo2.id.toString(),
+            accountId: userInfo.id.toString(),
             userId: dbUser.user.id,
             accessToken: account2.accessToken,
             idToken: account2.idToken,
@@ -27320,8 +28860,8 @@ async function handleOAuthUserInfo(c, {
     try {
       user2 = await c.context.internalAdapter.createOAuthUser(
         {
-          ...userInfo2,
-          email: userInfo2.email.toLowerCase(),
+          ...userInfo,
+          email: userInfo.email.toLowerCase(),
           id: void 0
         },
         {
@@ -27332,11 +28872,11 @@ async function handleOAuthUserInfo(c, {
           refreshTokenExpiresAt: account2.refreshTokenExpiresAt,
           scope: account2.scope,
           providerId: account2.providerId,
-          accountId: userInfo2.id.toString()
+          accountId: userInfo.id.toString()
         },
         c
       ).then((res) => res?.user);
-      if (!userInfo2.emailVerified && user2 && c.context.options.emailVerification?.sendOnSignUp) {
+      if (!userInfo.emailVerified && user2 && c.context.options.emailVerification?.sendOnSignUp) {
         const token = await createEmailVerificationToken(
           c.context.secret,
           user2.email,
@@ -27576,12 +29116,12 @@ var signInSocial = createAuthEndpoint(
           message: BASE_ERROR_CODES.INVALID_TOKEN
         });
       }
-      const userInfo2 = await provider.getUserInfo({
+      const userInfo = await provider.getUserInfo({
         idToken: token,
         accessToken: c.body.idToken.accessToken,
         refreshToken: c.body.idToken.refreshToken
       });
-      if (!userInfo2 || !userInfo2?.user) {
+      if (!userInfo || !userInfo?.user) {
         c.context.logger.error("Failed to get user info", {
           provider: c.body.provider
         });
@@ -27589,7 +29129,7 @@ var signInSocial = createAuthEndpoint(
           message: BASE_ERROR_CODES.FAILED_TO_GET_USER_INFO
         });
       }
-      if (!userInfo2.user.email) {
+      if (!userInfo.user.email) {
         c.context.logger.error("User email not found", {
           provider: c.body.provider
         });
@@ -27599,15 +29139,15 @@ var signInSocial = createAuthEndpoint(
       }
       const data = await handleOAuthUserInfo(c, {
         userInfo: {
-          email: userInfo2.user.email,
-          id: userInfo2.user.id,
-          name: userInfo2.user.name || "",
-          image: userInfo2.user.image,
-          emailVerified: userInfo2.user.emailVerified || false
+          email: userInfo.user.email,
+          id: userInfo.user.id,
+          name: userInfo.user.name || "",
+          image: userInfo.user.image,
+          emailVerified: userInfo.user.emailVerified || false
         },
         account: {
           providerId: provider.id,
-          accountId: userInfo2.user.id,
+          accountId: userInfo.user.id,
           accessToken: c.body.idToken.accessToken
         },
         disableSignUp: provider.disableImplicitSignUp && !c.body.requestSignUp || provider.disableSignUp
@@ -27910,12 +29450,12 @@ var callbackOAuth = createAuthEndpoint(
       c.context.logger.error("", e);
       throw redirectOnError("invalid_code");
     }
-    const userInfo2 = await provider.getUserInfo(tokens).then((res) => res?.user);
-    if (!userInfo2) {
+    const userInfo = await provider.getUserInfo(tokens).then((res) => res?.user);
+    if (!userInfo) {
       c.context.logger.error("Unable to get user info");
       return redirectOnError("unable_to_get_user_info");
     }
-    if (!userInfo2.email) {
+    if (!userInfo.email) {
       c.context.logger.error(
         "Provider did not return email. This could be due to misconfiguration in the provider settings."
       );
@@ -27927,7 +29467,7 @@ var callbackOAuth = createAuthEndpoint(
     }
     if (link3) {
       const existingAccount = await c.context.internalAdapter.findAccount(
-        userInfo2.id
+        userInfo.id
       );
       if (existingAccount) {
         if (existingAccount.userId.toString() !== link3.userId.toString()) {
@@ -27938,7 +29478,7 @@ var callbackOAuth = createAuthEndpoint(
         {
           userId: link3.userId,
           providerId: provider.id,
-          accountId: userInfo2.id,
+          accountId: userInfo.id,
           ...tokens,
           scope: tokens.scopes?.join(",")
         },
@@ -27958,13 +29498,13 @@ var callbackOAuth = createAuthEndpoint(
     }
     const result = await handleOAuthUserInfo(c, {
       userInfo: {
-        ...userInfo2,
-        email: userInfo2.email,
-        name: userInfo2.name || userInfo2.email
+        ...userInfo,
+        email: userInfo.email,
+        name: userInfo.name || userInfo.email
       },
       account: {
         providerId: provider.id,
-        accountId: userInfo2.id,
+        accountId: userInfo.id,
         ...tokens,
         scope: tokens.scopes?.join(",")
       },
@@ -29605,10 +31145,10 @@ function getRetryAfter(lastRequest, window2) {
 __name(getRetryAfter, "getRetryAfter");
 function createDBStorage(ctx, modelName) {
   const model = ctx.options.rateLimit?.modelName || "rateLimit";
-  const db2 = ctx.adapter;
+  const db = ctx.adapter;
   return {
     get: /* @__PURE__ */ __name(async (key) => {
-      const res = await db2.findMany({
+      const res = await db.findMany({
         model,
         where: [{ field: "key", value: key }]
       });
@@ -29621,7 +31161,7 @@ function createDBStorage(ctx, modelName) {
     set: /* @__PURE__ */ __name(async (key, value, _update) => {
       try {
         if (_update) {
-          await db2.updateMany({
+          await db.updateMany({
             model: "rateLimit",
             where: [{ field: "key", value: key }],
             update: {
@@ -29630,7 +31170,7 @@ function createDBStorage(ctx, modelName) {
             }
           });
         } else {
-          await db2.create({
+          await db.create({
             model: "rateLimit",
             data: {
               key,
@@ -29680,7 +31220,7 @@ async function onRequestRateLimit(req, ctx) {
   if (!ctx.rateLimit.enabled) {
     return;
   }
-  const path2 = new URL(req.url).pathname.replace(
+  const path = new URL(req.url).pathname.replace(
     ctx.options.basePath || "/api/auth",
     ""
   );
@@ -29690,9 +31230,9 @@ async function onRequestRateLimit(req, ctx) {
   if (!ip) {
     return;
   }
-  const key = ip + path2;
+  const key = ip + path;
   const specialRules = getDefaultSpecialRules();
-  const specialRule = specialRules.find((rule) => rule.pathMatcher(path2));
+  const specialRule = specialRules.find((rule) => rule.pathMatcher(path));
   if (specialRule) {
     window2 = specialRule.window;
     max = specialRule.max;
@@ -29700,7 +31240,7 @@ async function onRequestRateLimit(req, ctx) {
   for (const plugin of ctx.options.plugins || []) {
     if (plugin.rateLimit) {
       const matchedRule = plugin.rateLimit.find(
-        (rule) => rule.pathMatcher(path2)
+        (rule) => rule.pathMatcher(path)
       );
       if (matchedRule) {
         window2 = matchedRule.window;
@@ -29712,10 +31252,10 @@ async function onRequestRateLimit(req, ctx) {
   if (ctx.rateLimit.customRules) {
     const _path = Object.keys(ctx.rateLimit.customRules).find((p) => {
       if (p.includes("*")) {
-        const isMatch2 = wildcardMatch(p)(path2);
+        const isMatch2 = wildcardMatch(p)(path);
         return isMatch2;
       }
-      return p === path2;
+      return p === path;
     });
     if (_path) {
       const customRule = ctx.rateLimit.customRules[_path];
@@ -29767,8 +31307,8 @@ __name(onRequestRateLimit, "onRequestRateLimit");
 function getDefaultSpecialRules() {
   const specialRules = [
     {
-      pathMatcher(path2) {
-        return path2.startsWith("/sign-in") || path2.startsWith("/sign-up") || path2.startsWith("/change-password") || path2.startsWith("/change-email");
+      pathMatcher(path) {
+        return path.startsWith("/sign-in") || path.startsWith("/sign-up") || path.startsWith("/change-password") || path.startsWith("/change-email");
       },
       window: 10,
       max: 3
@@ -30028,8 +31568,8 @@ var router = /* @__PURE__ */ __name((ctx, options) => {
     ],
     async onRequest(req) {
       const disabledPaths = ctx.options.disabledPaths || [];
-      const path2 = new URL(req.url).pathname.replace(basePath, "");
-      if (disabledPaths.includes(path2)) {
+      const path = new URL(req.url).pathname.replace(basePath, "");
+      if (disabledPaths.includes(path)) {
         return new Response("Not Found", { status: 404 });
       }
       for (const plugin of ctx.options.plugins || []) {
@@ -30151,9 +31691,9 @@ init_performance2();
 var getAuthTables = /* @__PURE__ */ __name((options) => {
   const pluginSchema = options.plugins?.reduce(
     (acc, plugin) => {
-      const schema2 = plugin.schema;
-      if (!schema2) return acc;
-      for (const [key, value] of Object.entries(schema2)) {
+      const schema3 = plugin.schema;
+      if (!schema3) return acc;
+      for (const [key, value] of Object.entries(schema3)) {
         acc[key] = {
           fields: {
             ...acc[key]?.fields,
@@ -30568,10 +32108,10 @@ var CreateSchemaNode = freeze({
   is(node) {
     return node.kind === "CreateSchemaNode";
   },
-  create(schema2, params) {
+  create(schema3, params) {
     return freeze({
       kind: "CreateSchemaNode",
-      schema: IdentifierNode.create(schema2),
+      schema: IdentifierNode.create(schema3),
       ...params
     });
   },
@@ -30653,10 +32193,10 @@ var SchemableIdentifierNode = freeze({
       identifier: IdentifierNode.create(identifier)
     });
   },
-  createWithSchema(schema2, identifier) {
+  createWithSchema(schema3, identifier) {
     return freeze({
       kind: "SchemableIdentifierNode",
-      schema: IdentifierNode.create(schema2),
+      schema: IdentifierNode.create(schema3),
       identifier: IdentifierNode.create(identifier)
     });
   }
@@ -30691,10 +32231,10 @@ var DropSchemaNode = freeze({
   is(node) {
     return node.kind === "DropSchemaNode";
   },
-  create(schema2, params) {
+  create(schema3, params) {
     return freeze({
       kind: "DropSchemaNode",
-      schema: IdentifierNode.create(schema2),
+      schema: IdentifierNode.create(schema3),
       ...params
     });
   },
@@ -30769,10 +32309,10 @@ var TableNode = freeze({
       table: SchemableIdentifierNode.create(table3)
     });
   },
-  createWithSchema(schema2, table3) {
+  createWithSchema(schema3, table3) {
     return freeze({
       kind: "TableNode",
-      table: SchemableIdentifierNode.createWithSchema(schema2, table3)
+      table: SchemableIdentifierNode.createWithSchema(schema3, table3)
     });
   }
 });
@@ -31423,8 +32963,8 @@ function parseOrderedColumnName(column) {
 }
 __name(parseOrderedColumnName, "parseOrderedColumnName");
 function parseStringReferenceWithTableAndSchema(parts) {
-  const [schema2, table3, column] = parts;
-  return ReferenceNode.create(ColumnNode.create(column), TableNode.createWithSchema(schema2, table3));
+  const [schema3, table3, column] = parts;
+  return ReferenceNode.create(ColumnNode.create(column), TableNode.createWithSchema(schema3, table3));
 }
 __name(parseStringReferenceWithTableAndSchema, "parseStringReferenceWithTableAndSchema");
 function parseStringReferenceWithTable(parts) {
@@ -36293,9 +37833,9 @@ var WithSchemaTransformer = class extends OperationNodeTransformer {
   #schema;
   #schemableIds = /* @__PURE__ */ new Set();
   #ctes = /* @__PURE__ */ new Set();
-  constructor(schema2) {
+  constructor(schema3) {
     super();
-    this.#schema = schema2;
+    this.#schema = schema3;
   }
   transformNodeImpl(node) {
     if (!this.#isRootOperationNode(node)) {
@@ -36420,8 +37960,8 @@ var WithSchemaPlugin = class {
     __name(this, "WithSchemaPlugin");
   }
   #transformer;
-  constructor(schema2) {
-    this.#transformer = new WithSchemaTransformer(schema2);
+  constructor(schema3) {
+    this.#transformer = new WithSchemaTransformer(schema3);
   }
   transformQuery(args) {
     return this.#transformer.transformNode(args.node);
@@ -36462,9 +38002,9 @@ var MatchedNode = freeze({
 });
 
 // node_modules/.pnpm/kysely@0.27.6/node_modules/kysely/dist/esm/parser/merge-parser.js
-function parseMergeWhen(type2, args, refRight) {
+function parseMergeWhen(type, args, refRight) {
   return WhenNode.create(parseFilterList([
-    MatchedNode.create(!type2.isMatched, type2.bySource),
+    MatchedNode.create(!type.isMatched, type.bySource),
     ...args && args.length > 0 ? [
       args.length === 3 && refRight ? parseReferentialBinaryOperation(args[0], args[1], args[2]) : parseValueBinaryOperationOrExpression(args)
     ] : []
@@ -37575,10 +39115,10 @@ var QueryCreator = class _QueryCreator {
    * select "p"."name" from "mammals"."pet" as "p"
    * ```
    */
-  withSchema(schema2) {
+  withSchema(schema3) {
     return new _QueryCreator({
       ...this.#props,
-      executor: this.#props.executor.withPluginAtFront(new WithSchemaPlugin(schema2))
+      executor: this.#props.executor.withPluginAtFront(new WithSchemaPlugin(schema3))
     });
   }
 };
@@ -38779,10 +40319,10 @@ var JSONPathLegNode = freeze({
   is(node) {
     return node.kind === "JSONPathLegNode";
   },
-  create(type2, value) {
+  create(type, value) {
     return freeze({
       kind: "JSONPathLegNode",
-      type: type2,
+      type,
       value
     });
   }
@@ -39207,8 +40747,8 @@ function createExpressionBuilder(executor = NOOP_QUERY_EXECUTOR) {
     cast(expr, dataType) {
       return new ExpressionWrapper(CastNode.create(parseReferenceExpression(expr), parseDataTypeExpression(dataType)));
     },
-    withSchema(schema2) {
-      return createExpressionBuilder(executor.withPluginAtFront(new WithSchemaPlugin(schema2)));
+    withSchema(schema3) {
+      return createExpressionBuilder(executor.withPluginAtFront(new WithSchemaPlugin(schema3)));
     }
   });
   eb.fn = createFunctionModule();
@@ -39275,8 +40815,8 @@ __name(parseAliasedTable, "parseAliasedTable");
 function parseTable(from) {
   const SCHEMA_SEPARATOR = ".";
   if (from.includes(SCHEMA_SEPARATOR)) {
-    const [schema2, table3] = from.split(SCHEMA_SEPARATOR).map(trim2);
-    return TableNode.createWithSchema(schema2, table3);
+    const [schema3, table3] = from.split(SCHEMA_SEPARATOR).map(trim2);
+    return TableNode.createWithSchema(schema3, table3);
   } else {
     return TableNode.create(from);
   }
@@ -42262,11 +43802,11 @@ var SchemaModule = class _SchemaModule {
    *   .execute()
    * ```
    */
-  createSchema(schema2) {
+  createSchema(schema3) {
     return new CreateSchemaBuilder({
       queryId: createQueryId(),
       executor: this.#executor,
-      node: CreateSchemaNode.create(schema2)
+      node: CreateSchemaNode.create(schema3)
     });
   }
   /**
@@ -42280,11 +43820,11 @@ var SchemaModule = class _SchemaModule {
    *   .execute()
    * ```
    */
-  dropSchema(schema2) {
+  dropSchema(schema3) {
     return new DropSchemaBuilder({
       queryId: createQueryId(),
       executor: this.#executor,
-      node: DropSchemaNode.create(schema2)
+      node: DropSchemaNode.create(schema3)
     });
   }
   /**
@@ -42402,8 +43942,8 @@ var SchemaModule = class _SchemaModule {
   /**
    * See {@link QueryCreator.withSchema}
    */
-  withSchema(schema2) {
-    return new _SchemaModule(this.#executor.withPluginAtFront(new WithSchemaPlugin(schema2)));
+  withSchema(schema3) {
+    return new _SchemaModule(this.#executor.withPluginAtFront(new WithSchemaPlugin(schema3)));
   }
 };
 
@@ -42765,9 +44305,9 @@ var Log = class {
   }
   #levels;
   #logger;
-  constructor(config4) {
-    if (isFunction2(config4)) {
-      this.#logger = config4;
+  constructor(config3) {
+    if (isFunction2(config3)) {
+      this.#logger = config3;
       this.#levels = freeze({
         query: true,
         error: true
@@ -42775,8 +44315,8 @@ var Log = class {
     } else {
       this.#logger = defaultLogger;
       this.#levels = freeze({
-        query: config4.includes("query"),
-        error: config4.includes("error")
+        query: config3.includes("query"),
+        error: config3.includes("error")
       });
     }
   }
@@ -43046,10 +44586,10 @@ var Kysely = class _Kysely extends QueryCreator {
   /**
    * @override
    */
-  withSchema(schema2) {
+  withSchema(schema3) {
     return new _Kysely({
       ...this.#props,
-      executor: this.#props.executor.withPluginAtFront(new WithSchemaPlugin(schema2))
+      executor: this.#props.executor.withPluginAtFront(new WithSchemaPlugin(schema3))
     });
   }
   /**
@@ -43154,10 +44694,10 @@ var Transaction = class _Transaction extends Kysely {
       executor: this.#props.executor.withoutPlugins()
     });
   }
-  withSchema(schema2) {
+  withSchema(schema3) {
     return new _Transaction({
       ...this.#props,
-      executor: this.#props.executor.withPluginAtFront(new WithSchemaPlugin(schema2))
+      executor: this.#props.executor.withPluginAtFront(new WithSchemaPlugin(schema3))
     });
   }
   withTables() {
@@ -43179,11 +44719,11 @@ var ConnectionBuilder = class {
   async execute(callback) {
     return this.#props.executor.provideConnection(async (connection) => {
       const executor = this.#props.executor.withConnectionProvider(new SingleConnectionProvider(connection));
-      const db2 = new Kysely({
+      const db = new Kysely({
         ...this.#props,
         executor
       });
-      return await callback(db2);
+      return await callback(db);
     });
   }
 };
@@ -44841,8 +46381,8 @@ var SqliteDriver = class {
   #connectionMutex = new ConnectionMutex();
   #db;
   #connection;
-  constructor(config4) {
-    this.#config = freeze({ ...config4 });
+  constructor(config3) {
+    this.#config = freeze({ ...config3 });
   }
   async init() {
     this.#db = isFunction2(this.#config.database) ? await this.#config.database() : this.#config.database;
@@ -44876,8 +46416,8 @@ var SqliteConnection = class {
     __name(this, "SqliteConnection");
   }
   #db;
-  constructor(db2) {
-    this.#db = db2;
+  constructor(db) {
+    this.#db = db;
   }
   executeQuery(compiledQuery) {
     const { sql: sql3, parameters } = compiledQuery;
@@ -44992,8 +46532,8 @@ var SqliteIntrospector = class {
     __name(this, "SqliteIntrospector");
   }
   #db;
-  constructor(db2) {
-    this.#db = db2;
+  constructor(db) {
+    this.#db = db;
   }
   async getSchemas() {
     return [];
@@ -45032,7 +46572,7 @@ var SqliteIntrospector = class {
       columnsByTable[row.table] ??= [];
       columnsByTable[row.table].push(row);
     }
-    return tablesResult.map(({ name, sql: sql3, type: type2 }) => {
+    return tablesResult.map(({ name, sql: sql3, type }) => {
       let autoIncrementCol = sql3?.split(/[\(\),]/)?.find((it) => it.toLowerCase().includes("autoincrement"))?.trimStart()?.split(/\s+/)?.[0]?.replace(/["`]/g, "");
       const columns = columnsByTable[name] ?? [];
       if (!autoIncrementCol) {
@@ -45043,7 +46583,7 @@ var SqliteIntrospector = class {
       }
       return {
         name,
-        isView: type2 === "view",
+        isView: type === "view",
         columns: columns.map((col) => ({
           name: col.name,
           dataType: col.type,
@@ -45084,8 +46624,8 @@ var SqliteDialect = class {
     __name(this, "SqliteDialect");
   }
   #config;
-  constructor(config4) {
-    this.#config = freeze({ ...config4 });
+  constructor(config3) {
+    this.#config = freeze({ ...config3 });
   }
   createDriver() {
     return new SqliteDriver(this.#config);
@@ -45096,8 +46636,8 @@ var SqliteDialect = class {
   createAdapter() {
     return new SqliteAdapter();
   }
-  createIntrospector(db2) {
-    return new SqliteIntrospector(db2);
+  createIntrospector(db) {
+    return new SqliteIntrospector(db);
   }
 };
 
@@ -45126,8 +46666,8 @@ var PostgresIntrospector = class {
     __name(this, "PostgresIntrospector");
   }
   #db;
-  constructor(db2) {
-    this.#db = db2;
+  constructor(db) {
+    this.#db = db;
   }
   async getSchemas() {
     let rawSchemas = await this.#db.selectFrom("pg_catalog.pg_namespace").select("nspname").$castTo().execute();
@@ -45205,8 +46745,8 @@ var PostgresAdapter = class extends DialectAdapterBase {
   get supportsReturning() {
     return true;
   }
-  async acquireMigrationLock(db2, _opt) {
-    await sql`select pg_advisory_xact_lock(${sql.lit(LOCK_ID)})`.execute(db2);
+  async acquireMigrationLock(db, _opt) {
+    await sql`select pg_advisory_xact_lock(${sql.lit(LOCK_ID)})`.execute(db);
   }
   async releaseMigrationLock(_db, _opt) {
   }
@@ -45459,8 +46999,8 @@ var MysqlIntrospector = class {
     __name(this, "MysqlIntrospector");
   }
   #db;
-  constructor(db2) {
-    this.#db = db2;
+  constructor(db) {
+    this.#db = db;
   }
   async getSchemas() {
     let rawSchemas = await this.#db.selectFrom("information_schema.schemata").select("schema_name").$castTo().execute();
@@ -45531,11 +47071,11 @@ var MysqlAdapter = class extends DialectAdapterBase {
   get supportsReturning() {
     return false;
   }
-  async acquireMigrationLock(db2, _opt) {
-    await sql`select get_lock(${sql.lit(LOCK_ID2)}, ${sql.lit(LOCK_TIMEOUT_SECONDS)})`.execute(db2);
+  async acquireMigrationLock(db, _opt) {
+    await sql`select get_lock(${sql.lit(LOCK_ID2)}, ${sql.lit(LOCK_TIMEOUT_SECONDS)})`.execute(db);
   }
-  async releaseMigrationLock(db2, _opt) {
-    await sql`select release_lock(${sql.lit(LOCK_ID2)})`.execute(db2);
+  async releaseMigrationLock(db, _opt) {
+    await sql`select release_lock(${sql.lit(LOCK_ID2)})`.execute(db);
   }
 };
 
@@ -45545,8 +47085,8 @@ var MysqlDialect = class {
     __name(this, "MysqlDialect");
   }
   #config;
-  constructor(config4) {
-    this.#config = config4;
+  constructor(config3) {
+    this.#config = config3;
   }
   createDriver() {
     return new MysqlDriver(this.#config);
@@ -45557,8 +47097,8 @@ var MysqlDialect = class {
   createAdapter() {
     return new MysqlAdapter();
   }
-  createIntrospector(db2) {
-    return new MysqlIntrospector(db2);
+  createIntrospector(db) {
+    return new MysqlIntrospector(db);
   }
 };
 
@@ -45575,8 +47115,8 @@ var PostgresDriver = class {
   #config;
   #connections = /* @__PURE__ */ new WeakMap();
   #pool;
-  constructor(config4) {
-    this.#config = freeze({ ...config4 });
+  constructor(config3) {
+    this.#config = freeze({ ...config3 });
   }
   async init() {
     this.#pool = isFunction2(this.#config.pool) ? await this.#config.pool() : this.#config.pool;
@@ -45690,8 +47230,8 @@ var PostgresDialect = class {
     __name(this, "PostgresDialect");
   }
   #config;
-  constructor(config4) {
-    this.#config = config4;
+  constructor(config3) {
+    this.#config = config3;
   }
   createDriver() {
     return new PostgresDriver(this.#config);
@@ -45702,8 +47242,8 @@ var PostgresDialect = class {
   createAdapter() {
     return new PostgresAdapter();
   }
-  createIntrospector(db2) {
-    return new PostgresIntrospector(db2);
+  createIntrospector(db) {
+    return new PostgresIntrospector(db);
   }
 };
 
@@ -45725,8 +47265,8 @@ var MssqlAdapter = class extends DialectAdapterBase {
   get supportsOutput() {
     return true;
   }
-  async acquireMigrationLock(db2) {
-    await sql`exec sp_getapplock @DbPrincipal = ${sql.lit("dbo")}, @Resource = ${sql.lit(DEFAULT_MIGRATION_TABLE)}, @LockMode = ${sql.lit("Exclusive")}`.execute(db2);
+  async acquireMigrationLock(db) {
+    await sql`exec sp_getapplock @DbPrincipal = ${sql.lit("dbo")}, @Resource = ${sql.lit(DEFAULT_MIGRATION_TABLE)}, @LockMode = ${sql.lit("Exclusive")}`.execute(db);
   }
   async releaseMigrationLock() {
   }
@@ -45751,8 +47291,8 @@ var MssqlDriver = class {
   }
   #config;
   #pool;
-  constructor(config4) {
-    this.#config = freeze({ ...config4 });
+  constructor(config3) {
+    this.#config = freeze({ ...config3 });
     const { tarn, tedious } = this.#config;
     const { validateConnections, ...poolOptions } = tarn.options;
     this.#pool = new tarn.Pool({
@@ -46073,8 +47613,8 @@ var MssqlIntrospector = class {
     __name(this, "MssqlIntrospector");
   }
   #db;
-  constructor(db2) {
-    this.#db = db2;
+  constructor(db) {
+    this.#db = db;
   }
   async getSchemas() {
     return await this.#db.selectFrom("sys.schemas").select("name").execute();
@@ -46217,8 +47757,8 @@ var MssqlDialect = class {
     __name(this, "MssqlDialect");
   }
   #config;
-  constructor(config4) {
-    this.#config = config4;
+  constructor(config3) {
+    this.#config = config3;
   }
   createDriver() {
     return new MssqlDriver(this.#config);
@@ -46229,8 +47769,8 @@ var MssqlDialect = class {
   createAdapter() {
     return new MssqlAdapter();
   }
-  createIntrospector(db2) {
-    return new MssqlIntrospector(db2);
+  createIntrospector(db) {
+    return new MssqlIntrospector(db);
   }
 };
 
@@ -46256,75 +47796,75 @@ function withApplyDefault(value, field, action) {
 __name(withApplyDefault, "withApplyDefault");
 
 // node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.BnRFp-t0.mjs
-function getDatabaseType(db2) {
-  if (!db2) {
+function getDatabaseType(db) {
+  if (!db) {
     return null;
   }
-  if ("dialect" in db2) {
-    return getDatabaseType(db2.dialect);
+  if ("dialect" in db) {
+    return getDatabaseType(db.dialect);
   }
-  if ("createDriver" in db2) {
-    if (db2 instanceof SqliteDialect) {
+  if ("createDriver" in db) {
+    if (db instanceof SqliteDialect) {
       return "sqlite";
     }
-    if (db2 instanceof MysqlDialect) {
+    if (db instanceof MysqlDialect) {
       return "mysql";
     }
-    if (db2 instanceof PostgresDialect) {
+    if (db instanceof PostgresDialect) {
       return "postgres";
     }
-    if (db2 instanceof MssqlDialect) {
+    if (db instanceof MssqlDialect) {
       return "mssql";
     }
   }
-  if ("aggregate" in db2) {
+  if ("aggregate" in db) {
     return "sqlite";
   }
-  if ("getConnection" in db2) {
+  if ("getConnection" in db) {
     return "mysql";
   }
-  if ("connect" in db2) {
+  if ("connect" in db) {
     return "postgres";
   }
   return null;
 }
 __name(getDatabaseType, "getDatabaseType");
-var createKyselyAdapter = /* @__PURE__ */ __name(async (config4) => {
-  const db2 = config4.database;
-  if (!db2) {
+var createKyselyAdapter = /* @__PURE__ */ __name(async (config3) => {
+  const db = config3.database;
+  if (!db) {
     return {
       kysely: null,
       databaseType: null
     };
   }
-  if ("db" in db2) {
+  if ("db" in db) {
     return {
-      kysely: db2.db,
-      databaseType: db2.type
+      kysely: db.db,
+      databaseType: db.type
     };
   }
-  if ("dialect" in db2) {
+  if ("dialect" in db) {
     return {
-      kysely: new Kysely({ dialect: db2.dialect }),
-      databaseType: db2.type
+      kysely: new Kysely({ dialect: db.dialect }),
+      databaseType: db.type
     };
   }
   let dialect = void 0;
-  const databaseType = getDatabaseType(db2);
-  if ("createDriver" in db2) {
-    dialect = db2;
+  const databaseType = getDatabaseType(db);
+  if ("createDriver" in db) {
+    dialect = db;
   }
-  if ("aggregate" in db2) {
+  if ("aggregate" in db) {
     dialect = new SqliteDialect({
-      database: db2
+      database: db
     });
   }
-  if ("getConnection" in db2) {
-    dialect = new MysqlDialect(db2);
+  if ("getConnection" in db) {
+    dialect = new MysqlDialect(db);
   }
-  if ("connect" in db2) {
+  if ("connect" in db) {
     dialect = new PostgresDialect({
-      pool: db2
+      pool: db
     });
   }
   return {
@@ -46332,13 +47872,13 @@ var createKyselyAdapter = /* @__PURE__ */ __name(async (config4) => {
     databaseType
   };
 }, "createKyselyAdapter");
-var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
-  const schema2 = getAuthTables(options);
+var createTransform = /* @__PURE__ */ __name((db, options, config3) => {
+  const schema3 = getAuthTables(options);
   function getField(model, field) {
     if (field === "id") {
       return field;
     }
-    const f = schema2[model].fields[field];
+    const f = schema3[model].fields[field];
     if (!f) {
       console.log("Field not found", model, field);
     }
@@ -46349,21 +47889,21 @@ var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
     if (field === "id") {
       return value;
     }
-    const { type: type2 = "sqlite" } = config4 || {};
-    const f = schema2[model].fields[field];
-    if (f.type === "boolean" && (type2 === "sqlite" || type2 === "mssql") && value !== null && value !== void 0) {
+    const { type = "sqlite" } = config3 || {};
+    const f = schema3[model].fields[field];
+    if (f.type === "boolean" && (type === "sqlite" || type === "mssql") && value !== null && value !== void 0) {
       return value ? 1 : 0;
     }
     if (f.type === "date" && value && value instanceof Date) {
-      return type2 === "sqlite" ? value.toISOString() : value;
+      return type === "sqlite" ? value.toISOString() : value;
     }
     return value;
   }
   __name(transformValueToDB, "transformValueToDB");
   function transformValueFromDB(value, model, field) {
-    const { type: type2 = "sqlite" } = config4 || {};
-    const f = schema2[model].fields[field];
-    if (f.type === "boolean" && (type2 === "sqlite" || type2 === "mssql") && value !== null) {
+    const { type = "sqlite" } = config3 || {};
+    const f = schema3[model].fields[field];
+    if (f.type === "boolean" && (type === "sqlite" || type === "mssql") && value !== null) {
       return value === 1;
     }
     if (f.type === "date" && value) {
@@ -46373,7 +47913,7 @@ var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
   }
   __name(transformValueFromDB, "transformValueFromDB");
   function getModelName(model) {
-    return schema2[model].modelName;
+    return schema3[model].modelName;
   }
   __name(getModelName, "getModelName");
   const useDatabaseGeneratedId = options?.advanced?.generateId === false;
@@ -46384,7 +47924,7 @@ var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
           model
         }) : data.id || generateId()
       };
-      const fields = schema2[model].fields;
+      const fields = schema3[model].fields;
       for (const field in fields) {
         const value = data[field];
         transformedData[fields[field].fieldName || field] = withApplyDefault(
@@ -46400,7 +47940,7 @@ var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
       const transformedData = data.id ? select.length === 0 || select.includes("id") ? {
         id: data.id
       } : {} : {};
-      const tableSchema = schema2[model].fields;
+      const tableSchema = schema3[model].fields;
       for (const key in tableSchema) {
         if (select.length && !select.includes(key)) {
           continue;
@@ -46481,14 +48021,14 @@ var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
     },
     async withReturning(values, builder, model, where) {
       let res;
-      if (config4?.type === "mysql") {
+      if (config3?.type === "mysql") {
         await builder.execute();
         const field = values.id ? "id" : where[0].field ? where[0].field : "id";
         const value = values[field] || where[0].value;
-        res = await db2.selectFrom(getModelName(model)).selectAll().where(getField(model, field), "=", value).executeTakeFirst();
+        res = await db.selectFrom(getModelName(model)).selectAll().where(getField(model, field), "=", value).executeTakeFirst();
         return res;
       }
-      if (config4?.type === "mssql") {
+      if (config3?.type === "mssql") {
         res = await builder.outputAll("inserted").executeTakeFirst();
         return res;
       }
@@ -46499,7 +48039,7 @@ var createTransform = /* @__PURE__ */ __name((db2, options, config4) => {
     getField
   };
 }, "createTransform");
-var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
+var kyselyAdapter = /* @__PURE__ */ __name((db, config3) => (opts) => {
   const {
     transformInput,
     withReturning,
@@ -46507,13 +48047,13 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
     convertWhereClause,
     getModelName,
     getField
-  } = createTransform(db2, opts, config4);
+  } = createTransform(db, opts, config3);
   return {
     id: "kysely",
     async create(data) {
       const { model, data: values, select } = data;
       const transformed = transformInput(values, model, "create");
-      const builder = db2.insertInto(getModelName(model)).values(transformed);
+      const builder = db.insertInto(getModelName(model)).values(transformed);
       return transformOutput(
         await withReturning(transformed, builder, model, []),
         model,
@@ -46523,7 +48063,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
     async findOne(data) {
       const { model, where, select } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
-      let query = db2.selectFrom(getModelName(model)).selectAll();
+      let query = db.selectFrom(getModelName(model)).selectAll();
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
@@ -46537,14 +48077,14 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
     async findMany(data) {
       const { model, where, limit, offset, sortBy } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
-      let query = db2.selectFrom(getModelName(model));
+      let query = db.selectFrom(getModelName(model));
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
       if (or2) {
         query = query.where((eb) => eb.or(or2.map((expr) => expr(eb))));
       }
-      if (config4?.type === "mssql") {
+      if (config3?.type === "mssql") {
         if (!offset) {
           query = query.top(limit || 100);
         }
@@ -46558,7 +48098,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
         );
       }
       if (offset) {
-        if (config4?.type === "mssql") {
+        if (config3?.type === "mssql") {
           if (!sortBy) {
             query = query.orderBy(getField(model, "id"));
           }
@@ -46575,7 +48115,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
       const { model, where, update: values } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
       const transformedData = transformInput(values, model, "update");
-      let query = db2.updateTable(getModelName(model)).set(transformedData);
+      let query = db.updateTable(getModelName(model)).set(transformedData);
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
@@ -46592,7 +48132,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
       const { model, where, update: values } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
       const transformedData = transformInput(values, model, "update");
-      let query = db2.updateTable(getModelName(model)).set(transformedData);
+      let query = db.updateTable(getModelName(model)).set(transformedData);
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
@@ -46605,7 +48145,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
     async count(data) {
       const { model, where } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
-      let query = db2.selectFrom(getModelName(model)).select(db2.fn.count("id").as("count"));
+      let query = db.selectFrom(getModelName(model)).select(db.fn.count("id").as("count"));
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
@@ -46618,7 +48158,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
     async delete(data) {
       const { model, where } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
-      let query = db2.deleteFrom(getModelName(model));
+      let query = db.deleteFrom(getModelName(model));
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
@@ -46630,7 +48170,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
     async deleteMany(data) {
       const { model, where } = data;
       const { and: and2, or: or2 } = convertWhereClause(model, where);
-      let query = db2.deleteFrom(getModelName(model));
+      let query = db.deleteFrom(getModelName(model));
       if (and2) {
         query = query.where((eb) => eb.and(and2.map((expr) => expr(eb))));
       }
@@ -46639,7 +48179,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db2, config4) => (opts) => {
       }
       return (await query.execute()).length;
     },
-    options: config4
+    options: config3
   };
 }, "kyselyAdapter");
 
@@ -46649,12 +48189,12 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 var createTransform2 = /* @__PURE__ */ __name((options) => {
-  const schema2 = getAuthTables(options);
+  const schema3 = getAuthTables(options);
   function getField(model, field) {
     if (field === "id") {
       return field;
     }
-    const f = schema2[model].fields[field];
+    const f = schema3[model].fields[field];
     return f.fieldName || field;
   }
   __name(getField, "getField");
@@ -46665,7 +48205,7 @@ var createTransform2 = /* @__PURE__ */ __name((options) => {
           model
         }) : data.id || generateId()
       };
-      const fields = schema2[model].fields;
+      const fields = schema3[model].fields;
       for (const field in fields) {
         const value = data[field];
         if (value === void 0 && !fields[field].defaultValue) {
@@ -46684,7 +48224,7 @@ var createTransform2 = /* @__PURE__ */ __name((options) => {
       const transformedData = data.id || data._id ? select.length === 0 || select.includes("id") ? {
         id: data.id
       } : {} : {};
-      const tableSchema = schema2[model].fields;
+      const tableSchema = schema3[model].fields;
       for (const key in tableSchema) {
         if (select.length && !select.includes(key)) {
           continue;
@@ -46721,23 +48261,23 @@ var createTransform2 = /* @__PURE__ */ __name((options) => {
     getField
   };
 }, "createTransform");
-var memoryAdapter = /* @__PURE__ */ __name((db2) => (options) => {
+var memoryAdapter = /* @__PURE__ */ __name((db) => (options) => {
   const { transformInput, transformOutput, convertWhereClause, getField } = createTransform2(options);
   return {
     id: "memory",
     create: /* @__PURE__ */ __name(async ({ model, data }) => {
       const transformed = transformInput(data, model, "create");
-      db2[model].push(transformed);
+      db[model].push(transformed);
       return transformOutput(transformed, model);
     }, "create"),
     findOne: /* @__PURE__ */ __name(async ({ model, where, select }) => {
-      const table3 = db2[model];
+      const table3 = db[model];
       const res = convertWhereClause(where, table3, model);
       const record = res[0] || null;
       return transformOutput(record, model, select);
     }, "findOne"),
     findMany: /* @__PURE__ */ __name(async ({ model, where, sortBy, limit, offset }) => {
-      let table3 = db2[model];
+      let table3 = db[model];
       if (where) {
         table3 = convertWhereClause(where, table3, model);
       }
@@ -46760,10 +48300,10 @@ var memoryAdapter = /* @__PURE__ */ __name((db2) => (options) => {
       return table3.map((record) => transformOutput(record, model));
     }, "findMany"),
     count: /* @__PURE__ */ __name(async ({ model }) => {
-      return db2[model].length;
+      return db[model].length;
     }, "count"),
     update: /* @__PURE__ */ __name(async ({ model, where, update }) => {
-      const table3 = db2[model];
+      const table3 = db[model];
       const res = convertWhereClause(where, table3, model);
       res.forEach((record) => {
         Object.assign(record, transformInput(update, model, "update"));
@@ -46771,15 +48311,15 @@ var memoryAdapter = /* @__PURE__ */ __name((db2) => (options) => {
       return transformOutput(res[0], model);
     }, "update"),
     delete: /* @__PURE__ */ __name(async ({ model, where }) => {
-      const table3 = db2[model];
+      const table3 = db[model];
       const res = convertWhereClause(where, table3, model);
-      db2[model] = table3.filter((record) => !res.includes(record));
+      db[model] = table3.filter((record) => !res.includes(record));
     }, "delete"),
     deleteMany: /* @__PURE__ */ __name(async ({ model, where }) => {
-      const table3 = db2[model];
+      const table3 = db[model];
       const res = convertWhereClause(where, table3, model);
       let count4 = 0;
-      db2[model] = table3.filter((record) => {
+      db[model] = table3.filter((record) => {
         if (res.includes(record)) {
           count4++;
           return false;
@@ -46790,7 +48330,7 @@ var memoryAdapter = /* @__PURE__ */ __name((db2) => (options) => {
     }, "deleteMany"),
     updateMany(data) {
       const { model, where, update } = data;
-      const table3 = db2[model];
+      const table3 = db[model];
       const res = convertWhereClause(where, table3, model);
       res.forEach((record) => {
         Object.assign(record, update);
@@ -46812,8 +48352,8 @@ function getWithHooks(adapter, ctx) {
         if (result === false) {
           return null;
         }
-        const isObject4 = typeof result === "object" && "data" in result;
-        if (isObject4) {
+        const isObject5 = typeof result === "object" && "data" in result;
+        if (isObject5) {
           actualData = {
             ...actualData,
             ...result.data
@@ -46844,8 +48384,8 @@ function getWithHooks(adapter, ctx) {
         if (result === false) {
           return null;
         }
-        const isObject4 = typeof result === "object";
-        actualData = isObject4 ? result.data : result;
+        const isObject5 = typeof result === "object";
+        actualData = isObject5 ? result.data : result;
       }
     }
     const customUpdated = customUpdateFn ? await customUpdateFn.fn(actualData) : null;
@@ -46872,8 +48412,8 @@ function getWithHooks(adapter, ctx) {
         if (result === false) {
           return null;
         }
-        const isObject4 = typeof result === "object";
-        actualData = isObject4 ? result.data : result;
+        const isObject5 = typeof result === "object";
+        actualData = isObject5 ? result.data : result;
       }
     }
     const customUpdated = customUpdateFn ? await customUpdateFn.fn(actualData) : null;
@@ -47616,9 +49156,9 @@ async function getAdapter(options) {
   })(options);
 }
 __name(getAdapter, "getAdapter");
-function getSchema(config4) {
-  const tables = getAuthTables(config4);
-  let schema2 = {};
+function getSchema(config3) {
+  const tables = getAuthTables(config3);
+  let schema3 = {};
   for (const key in tables) {
     const table3 = tables[key];
     const fields = table3.fields;
@@ -47635,19 +49175,19 @@ function getSchema(config4) {
         }
       }
     });
-    if (schema2[table3.modelName]) {
-      schema2[table3.modelName].fields = {
-        ...schema2[table3.modelName].fields,
+    if (schema3[table3.modelName]) {
+      schema3[table3.modelName].fields = {
+        ...schema3[table3.modelName].fields,
         ...actualFields
       };
       continue;
     }
-    schema2[table3.modelName] = {
+    schema3[table3.modelName] = {
       fields: actualFields,
       order: table3.order || Infinity
     };
   }
-  return schema2;
+  return schema3;
 }
 __name(getSchema, "getSchema");
 var postgresMap = {
@@ -47702,28 +49242,28 @@ function matchType(columnDataType, fieldType, dbType) {
     return columnDataType.toLowerCase().includes("json");
   }
   const types4 = map[dbType];
-  const type2 = Array.isArray(fieldType) ? types4["string"].map((t) => t.toLowerCase()) : types4[fieldType].map((t) => t.toLowerCase());
-  const matches = type2.includes(columnDataType.toLowerCase());
+  const type = Array.isArray(fieldType) ? types4["string"].map((t) => t.toLowerCase()) : types4[fieldType].map((t) => t.toLowerCase());
+  const matches = type.includes(columnDataType.toLowerCase());
   return matches;
 }
 __name(matchType, "matchType");
-async function getMigrations(config4) {
-  const betterAuthSchema = getSchema(config4);
-  const logger2 = createLogger(config4.logger);
-  let { kysely: db2, databaseType: dbType } = await createKyselyAdapter(config4);
+async function getMigrations(config3) {
+  const betterAuthSchema = getSchema(config3);
+  const logger2 = createLogger(config3.logger);
+  let { kysely: db, databaseType: dbType } = await createKyselyAdapter(config3);
   if (!dbType) {
     logger2.warn(
       "Could not determine database type, defaulting to sqlite. Please provide a type in the database options to avoid this."
     );
     dbType = "sqlite";
   }
-  if (!db2) {
+  if (!db) {
     logger2.error(
       "Only kysely adapter is supported for migrations. You can use `generate` command to generate the schema, if you're using a different adapter."
     );
     process.exit(1);
   }
-  const tableMetadata = await db2.introspection.getTables();
+  const tableMetadata = await db.introspection.getTables();
   const toBeCreated = [];
   const toBeAdded = [];
   for (const [key, value] of Object.entries(betterAuthSchema)) {
@@ -47777,7 +49317,7 @@ async function getMigrations(config4) {
   }
   const migrations = [];
   function getType(field) {
-    const type2 = field.type;
+    const type = field.type;
     const typeMap = {
       string: {
         sqlite: "text",
@@ -47804,23 +49344,23 @@ async function getMigrations(config4) {
         mssql: "datetime"
       }
     };
-    if (dbType === "sqlite" && (type2 === "string[]" || type2 === "number[]")) {
+    if (dbType === "sqlite" && (type === "string[]" || type === "number[]")) {
       return "text";
     }
-    if (type2 === "string[]" || type2 === "number[]") {
+    if (type === "string[]" || type === "number[]") {
       return "jsonb";
     }
-    if (Array.isArray(type2)) {
+    if (Array.isArray(type)) {
       return "text";
     }
-    return typeMap[type2][dbType || "sqlite"];
+    return typeMap[type][dbType || "sqlite"];
   }
   __name(getType, "getType");
   if (toBeAdded.length) {
     for (const table3 of toBeAdded) {
       for (const [fieldName, field] of Object.entries(table3.fields)) {
-        const type2 = getType(field);
-        const exec = db2.schema.alterTable(table3.table).addColumn(fieldName, type2, (col) => {
+        const type = getType(field);
+        const exec = db.schema.alterTable(table3.table).addColumn(fieldName, type, (col) => {
           col = field.required !== false ? col.notNull() : col;
           if (field.references) {
             col = col.references(
@@ -47838,14 +49378,14 @@ async function getMigrations(config4) {
   }
   if (toBeCreated.length) {
     for (const table3 of toBeCreated) {
-      let dbT = db2.schema.createTable(table3.table).addColumn(
+      let dbT = db.schema.createTable(table3.table).addColumn(
         "id",
         dbType === "mysql" || dbType === "mssql" ? "varchar(36)" : "text",
         (col) => col.primaryKey().notNull()
       );
       for (const [fieldName, field] of Object.entries(table3.fields)) {
-        const type2 = getType(field);
-        dbT = dbT.addColumn(fieldName, type2, (col) => {
+        const type = getType(field);
+        dbT = dbT.addColumn(fieldName, type, (col) => {
           col = field.required !== false ? col.notNull() : col;
           if (field.references) {
             col = col.references(
@@ -48145,22 +49685,22 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 var entityKind = Symbol.for("drizzle:entityKind");
 var hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
-function is(value, type2) {
+function is(value, type) {
   if (!value || typeof value !== "object") {
     return false;
   }
-  if (value instanceof type2) {
+  if (value instanceof type) {
     return true;
   }
-  if (!Object.prototype.hasOwnProperty.call(type2, entityKind)) {
+  if (!Object.prototype.hasOwnProperty.call(type, entityKind)) {
     throw new Error(
-      `Class "${type2.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`
+      `Class "${type.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`
     );
   }
   let cls = Object.getPrototypeOf(value).constructor;
   if (cls) {
     while (cls) {
-      if (entityKind in cls && cls[entityKind] === type2[entityKind]) {
+      if (entityKind in cls && cls[entityKind] === type[entityKind]) {
         return true;
       }
       cls = Object.getPrototypeOf(cls);
@@ -48175,24 +49715,24 @@ var Column = class {
   static {
     __name(this, "Column");
   }
-  constructor(table3, config4) {
+  constructor(table3, config3) {
     this.table = table3;
-    this.config = config4;
-    this.name = config4.name;
-    this.keyAsName = config4.keyAsName;
-    this.notNull = config4.notNull;
-    this.default = config4.default;
-    this.defaultFn = config4.defaultFn;
-    this.onUpdateFn = config4.onUpdateFn;
-    this.hasDefault = config4.hasDefault;
-    this.primary = config4.primaryKey;
-    this.isUnique = config4.isUnique;
-    this.uniqueName = config4.uniqueName;
-    this.uniqueType = config4.uniqueType;
-    this.dataType = config4.dataType;
-    this.columnType = config4.columnType;
-    this.generated = config4.generated;
-    this.generatedIdentity = config4.generatedIdentity;
+    this.config = config3;
+    this.name = config3.name;
+    this.keyAsName = config3.keyAsName;
+    this.notNull = config3.notNull;
+    this.default = config3.default;
+    this.defaultFn = config3.defaultFn;
+    this.onUpdateFn = config3.onUpdateFn;
+    this.hasDefault = config3.hasDefault;
+    this.primary = config3.primaryKey;
+    this.isUnique = config3.isUnique;
+    this.uniqueName = config3.uniqueName;
+    this.uniqueType = config3.uniqueType;
+    this.dataType = config3.dataType;
+    this.columnType = config3.columnType;
+    this.generated = config3.generated;
+    this.generatedIdentity = config3.generatedIdentity;
   }
   static [entityKind] = "Column";
   name;
@@ -48378,9 +49918,9 @@ var ForeignKeyBuilder = class {
   _onUpdate = "no action";
   /** @internal */
   _onDelete = "no action";
-  constructor(config4, actions) {
+  constructor(config3, actions) {
     this.reference = () => {
-      const { name, columns, foreignColumns } = config4();
+      const { name, columns, foreignColumns } = config3();
       return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
     };
     if (actions) {
@@ -48601,10 +50141,10 @@ var PgColumnBuilder = class extends ColumnBuilder {
     this.foreignKeyConfigs.push({ ref, actions });
     return this;
   }
-  unique(name, config4) {
+  unique(name, config3) {
     this.config.isUnique = true;
     this.config.uniqueName = name;
-    this.config.uniqueType = config4?.nulls;
+    this.config.uniqueType = config3?.nulls;
     return this;
   }
   generatedAlwaysAs(as) {
@@ -48646,11 +50186,11 @@ var PgColumn = class extends Column {
   static {
     __name(this, "PgColumn");
   }
-  constructor(table3, config4) {
-    if (!config4.uniqueName) {
-      config4.uniqueName = uniqueKeyName(table3, [config4.name]);
+  constructor(table3, config3) {
+    if (!config3.uniqueName) {
+      config3.uniqueName = uniqueKeyName(table3, [config3.name]);
     }
-    super(table3, config4);
+    super(table3, config3);
     this.table = table3;
   }
   static [entityKind] = "PgColumn";
@@ -48728,10 +50268,10 @@ var IndexedColumn = class {
     __name(this, "IndexedColumn");
   }
   static [entityKind] = "IndexedColumn";
-  constructor(name, keyAsName, type2, indexConfig) {
+  constructor(name, keyAsName, type, indexConfig) {
     this.name = name;
     this.keyAsName = keyAsName;
-    this.type = type2;
+    this.type = type;
     this.indexConfig = indexConfig;
   }
   name;
@@ -48763,11 +50303,11 @@ var PgArray = class _PgArray extends PgColumn {
   static {
     __name(this, "PgArray");
   }
-  constructor(table3, config4, baseColumn, range) {
-    super(table3, config4);
+  constructor(table3, config3, baseColumn, range) {
+    super(table3, config3);
     this.baseColumn = baseColumn;
     this.range = range;
-    this.size = config4.size;
+    this.size = config3.size;
   }
   size;
   static [entityKind] = "PgArray";
@@ -48820,9 +50360,9 @@ var PgEnumColumn = class extends PgColumn {
   static [entityKind] = "PgEnumColumn";
   enum = this.config.enum;
   enumValues = this.config.enum.enumValues;
-  constructor(table3, config4) {
-    super(table3, config4);
-    this.enum = config4.enum;
+  constructor(table3, config3) {
+    super(table3, config3);
+    this.enum = config3.enum;
   }
   getSQLType() {
     return this.enum.enumName;
@@ -48970,9 +50510,9 @@ var Table = class {
   [IsDrizzleTable] = true;
   /** @internal */
   [ExtraConfigBuilder] = void 0;
-  constructor(name, schema2, baseName) {
+  constructor(name, schema3, baseName) {
     this[TableName] = this[OriginalName] = name;
-    this[Schema] = schema2;
+    this[Schema] = schema3;
     this[BaseName] = baseName;
   }
 };
@@ -49043,9 +50583,9 @@ var SQL = class _SQL {
     this.queryChunks.push(...query.queryChunks);
     return this;
   }
-  toQuery(config4) {
+  toQuery(config3) {
     return tracer.startActiveSpan("drizzle.buildSQL", (span) => {
-      const query = this.buildQueryFromSourceParams(this.queryChunks, config4);
+      const query = this.buildQueryFromSourceParams(this.queryChunks, config3);
       span?.setAttributes({
         "drizzle.query.text": query.sql,
         "drizzle.query.params": JSON.stringify(query.params)
@@ -49054,7 +50594,7 @@ var SQL = class _SQL {
     });
   }
   buildQueryFromSourceParams(chunks, _config) {
-    const config4 = Object.assign({}, _config, {
+    const config3 = Object.assign({}, _config, {
       inlineParams: _config.inlineParams || this.shouldInlineParams,
       paramStartIndex: _config.paramStartIndex || { value: 0 }
     });
@@ -49065,7 +50605,7 @@ var SQL = class _SQL {
       prepareTyping,
       inlineParams,
       paramStartIndex
-    } = config4;
+    } = config3;
     return mergeQueries(chunks.map((chunk) => {
       if (is(chunk, StringChunk)) {
         return { sql: chunk.value.join(""), params: [] };
@@ -49085,11 +50625,11 @@ var SQL = class _SQL {
           }
         }
         result.push(new StringChunk(")"));
-        return this.buildQueryFromSourceParams(result, config4);
+        return this.buildQueryFromSourceParams(result, config3);
       }
       if (is(chunk, _SQL)) {
         return this.buildQueryFromSourceParams(chunk.queryChunks, {
-          ...config4,
+          ...config3,
           inlineParams: inlineParams || chunk.shouldInlineParams
         });
       }
@@ -49126,10 +50666,10 @@ var SQL = class _SQL {
         }
         const mappedValue = chunk.value === null ? null : chunk.encoder.mapToDriverValue(chunk.value);
         if (is(mappedValue, _SQL)) {
-          return this.buildQueryFromSourceParams([mappedValue], config4);
+          return this.buildQueryFromSourceParams([mappedValue], config3);
         }
         if (inlineParams) {
-          return { sql: this.mapInlineParam(mappedValue, config4), params: [] };
+          return { sql: this.mapInlineParam(mappedValue, config3), params: [] };
         }
         let typings = ["none"];
         if (prepareTyping) {
@@ -49152,7 +50692,7 @@ var SQL = class _SQL {
           chunk._.sql,
           new StringChunk(") "),
           new Name(chunk._.alias)
-        ], config4);
+        ], config3);
       }
       if (isPgEnum(chunk)) {
         if (chunk.schema) {
@@ -49162,16 +50702,16 @@ var SQL = class _SQL {
       }
       if (isSQLWrapper(chunk)) {
         if (chunk.shouldOmitSQLParens?.()) {
-          return this.buildQueryFromSourceParams([chunk.getSQL()], config4);
+          return this.buildQueryFromSourceParams([chunk.getSQL()], config3);
         }
         return this.buildQueryFromSourceParams([
           new StringChunk("("),
           chunk.getSQL(),
           new StringChunk(")")
-        ], config4);
+        ], config3);
       }
       if (inlineParams) {
-        return { sql: this.mapInlineParam(chunk, config4), params: [] };
+        return { sql: this.mapInlineParam(chunk, config3), params: [] };
       }
       return { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk], typings: ["none"] };
     }));
@@ -49384,11 +50924,11 @@ var View = class {
   [ViewBaseConfig];
   /** @internal */
   [IsDrizzleView] = true;
-  constructor({ name: name2, schema: schema2, selectedFields, query }) {
+  constructor({ name: name2, schema: schema3, selectedFields, query }) {
     this[ViewBaseConfig] = {
       name: name2,
       originalName: name2,
-      schema: schema2,
+      schema: schema3,
       selectedFields,
       query,
       isExisting: !query,
@@ -49717,8 +51257,8 @@ var DefaultLogger = class {
   }
   static [entityKind] = "DefaultLogger";
   writer;
-  constructor(config4) {
-    this.writer = config4?.writer ?? new ConsoleLogWriter();
+  constructor(config3) {
+    this.writer = config3?.writer ?? new ConsoleLogWriter();
   }
   logQuery(query, params) {
     const stringifiedParams = params.map((p) => {
@@ -49798,7 +51338,7 @@ init_performance2();
 function mapResultRow(columns, row, joinsNotNullableMap) {
   const nullifyMap = {};
   const result = columns.reduce(
-    (result2, { path: path2, field }, columnIndex) => {
+    (result2, { path, field }, columnIndex) => {
       let decoder2;
       if (is(field, Column)) {
         decoder2 = field;
@@ -49808,8 +51348,8 @@ function mapResultRow(columns, row, joinsNotNullableMap) {
         decoder2 = field.sql.decoder;
       }
       let node = result2;
-      for (const [pathChunkIndex, pathChunk] of path2.entries()) {
-        if (pathChunkIndex < path2.length - 1) {
+      for (const [pathChunkIndex, pathChunk] of path.entries()) {
+        if (pathChunkIndex < path.length - 1) {
           if (!(pathChunk in node)) {
             node[pathChunk] = {};
           }
@@ -49817,8 +51357,8 @@ function mapResultRow(columns, row, joinsNotNullableMap) {
         } else {
           const rawValue = row[columnIndex];
           const value = node[pathChunk] = rawValue === null ? null : decoder2.mapFromDriverValue(rawValue);
-          if (joinsNotNullableMap && is(field, Column) && path2.length === 2) {
-            const objectName = path2[0];
+          if (joinsNotNullableMap && is(field, Column) && path.length === 2) {
+            const objectName = path[0];
             if (!(objectName in nullifyMap)) {
               nullifyMap[objectName] = value === null ? getTableName(field.table) : false;
             } else if (typeof nullifyMap[objectName] === "string" && nullifyMap[objectName] !== getTableName(field.table)) {
@@ -49996,9 +51536,9 @@ var Relations = class {
   static {
     __name(this, "Relations");
   }
-  constructor(table3, config4) {
+  constructor(table3, config3) {
     this.table = table3;
-    this.config = config4;
+    this.config = config3;
   }
   static [entityKind] = "Relations";
 };
@@ -50006,9 +51546,9 @@ var One = class _One extends Relation {
   static {
     __name(this, "One");
   }
-  constructor(sourceTable, referencedTable, config4, isNullable) {
-    super(sourceTable, referencedTable, config4?.relationName);
-    this.config = config4;
+  constructor(sourceTable, referencedTable, config3, isNullable) {
+    super(sourceTable, referencedTable, config3?.relationName);
+    this.config = config3;
     this.isNullable = isNullable;
   }
   static [entityKind] = "One";
@@ -50027,9 +51567,9 @@ var Many = class _Many extends Relation {
   static {
     __name(this, "Many");
   }
-  constructor(sourceTable, referencedTable, config4) {
-    super(sourceTable, referencedTable, config4?.relationName);
-    this.config = config4;
+  constructor(sourceTable, referencedTable, config3) {
+    super(sourceTable, referencedTable, config3?.relationName);
+    this.config = config3;
   }
   static [entityKind] = "Many";
   withFieldName(fieldName) {
@@ -50077,14 +51617,14 @@ function getOrderByOperators() {
   };
 }
 __name(getOrderByOperators, "getOrderByOperators");
-function extractTablesRelationalConfig(schema2, configHelpers) {
-  if (Object.keys(schema2).length === 1 && "default" in schema2 && !is(schema2["default"], Table)) {
-    schema2 = schema2["default"];
+function extractTablesRelationalConfig(schema3, configHelpers) {
+  if (Object.keys(schema3).length === 1 && "default" in schema3 && !is(schema3["default"], Table)) {
+    schema3 = schema3["default"];
   }
   const tableNamesMap = {};
   const relationsBuffer = {};
   const tablesConfig = {};
-  for (const [key, value] of Object.entries(schema2)) {
+  for (const [key, value] of Object.entries(schema3)) {
     if (is(value, Table)) {
       const dbName = getTableUniqueName(value);
       const bufferedRelations = relationsBuffer[dbName];
@@ -50142,23 +51682,23 @@ function extractTablesRelationalConfig(schema2, configHelpers) {
 }
 __name(extractTablesRelationalConfig, "extractTablesRelationalConfig");
 function createOne(sourceTable) {
-  return /* @__PURE__ */ __name(function one(table3, config4) {
+  return /* @__PURE__ */ __name(function one(table3, config3) {
     return new One(
       sourceTable,
       table3,
-      config4,
-      config4?.fields.reduce((res, f) => res && f.notNull, true) ?? false
+      config3,
+      config3?.fields.reduce((res, f) => res && f.notNull, true) ?? false
     );
   }, "one");
 }
 __name(createOne, "createOne");
 function createMany(sourceTable) {
-  return /* @__PURE__ */ __name(function many(referencedTable, config4) {
-    return new Many(sourceTable, referencedTable, config4);
+  return /* @__PURE__ */ __name(function many(referencedTable, config3) {
+    return new Many(sourceTable, referencedTable, config3);
   }, "many");
 }
 __name(createMany, "createMany");
-function normalizeRelation(schema2, tableNamesMap, relation) {
+function normalizeRelation(schema3, tableNamesMap, relation) {
   if (is(relation, One) && relation.config) {
     return {
       fields: relation.config.fields,
@@ -50171,7 +51711,7 @@ function normalizeRelation(schema2, tableNamesMap, relation) {
       `Table "${relation.referencedTable[Table.Symbol.Name]}" not found in schema`
     );
   }
-  const referencedTableConfig = schema2[referencedTableTsName];
+  const referencedTableConfig = schema3[referencedTableTsName];
   if (!referencedTableConfig) {
     throw new Error(`Table "${referencedTableTsName}" not found in schema`);
   }
@@ -50269,18 +51809,18 @@ function count3(expression) {
 __name(count3, "count");
 
 // node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/adapters/drizzle-adapter/index.mjs
-var createTransform3 = /* @__PURE__ */ __name((db2, config4, options) => {
-  const schema2 = getAuthTables(options);
+var createTransform3 = /* @__PURE__ */ __name((db, config3, options) => {
+  const schema3 = getAuthTables(options);
   function getField(model, field) {
     if (field === "id") {
       return field;
     }
-    const f = schema2[model].fields[field];
+    const f = schema3[model].fields[field];
     return f.fieldName || field;
   }
   __name(getField, "getField");
-  function getSchema2(modelName) {
-    const schema22 = config4.schema || db2._.fullSchema;
+  function getSchema3(modelName) {
+    const schema22 = config3.schema || db._.fullSchema;
     if (!schema22) {
       throw new BetterAuthError(
         "Drizzle adapter failed to initialize. Schema not found. Please provide a schema object in the adapter options object."
@@ -50295,12 +51835,12 @@ var createTransform3 = /* @__PURE__ */ __name((db2, config4, options) => {
     }
     return schemaModel;
   }
-  __name(getSchema2, "getSchema");
+  __name(getSchema3, "getSchema");
   const getModelName = /* @__PURE__ */ __name((model) => {
-    return schema2[model].modelName !== model ? schema2[model].modelName : config4.usePlural ? `${model}s` : model;
+    return schema3[model].modelName !== model ? schema3[model].modelName : config3.usePlural ? `${model}s` : model;
   }, "getModelName");
   function convertWhereClause(where, model) {
-    const schemaModel = getSchema2(model);
+    const schemaModel = getSchema3(model);
     if (!where) return [];
     if (where.length === 1) {
       const w = where[0];
@@ -50368,14 +51908,14 @@ var createTransform3 = /* @__PURE__ */ __name((db2, config4, options) => {
   __name(convertWhereClause, "convertWhereClause");
   const useDatabaseGeneratedId = options?.advanced?.generateId === false;
   return {
-    getSchema: getSchema2,
+    getSchema: getSchema3,
     transformInput(data, model, action) {
       const transformedData = useDatabaseGeneratedId || action === "update" ? {} : {
         id: options.advanced?.generateId ? options.advanced.generateId({
           model
         }) : data.id || generateId()
       };
-      const fields = schema2[model].fields;
+      const fields = schema3[model].fields;
       for (const field in fields) {
         const value = data[field];
         if (value === void 0 && !fields[field].defaultValue) {
@@ -50394,7 +51934,7 @@ var createTransform3 = /* @__PURE__ */ __name((db2, config4, options) => {
       const transformedData = data.id || data._id ? select.length === 0 || select.includes("id") ? {
         id: data.id
       } : {} : {};
-      const tableSchema = schema2[model].fields;
+      const tableSchema = schema3[model].fields;
       for (const key in tableSchema) {
         if (select.length && !select.includes(key)) {
           continue;
@@ -50408,23 +51948,23 @@ var createTransform3 = /* @__PURE__ */ __name((db2, config4, options) => {
     },
     convertWhereClause,
     withReturning: /* @__PURE__ */ __name(async (model, builder, data, where) => {
-      if (config4.provider !== "mysql") {
+      if (config3.provider !== "mysql") {
         const c = await builder.returning();
         return c[0];
       }
       await builder.execute();
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const builderVal = builder.config?.values;
       if (where?.length) {
         const clause = convertWhereClause(where, model);
-        const res = await db2.select().from(schemaModel).where(...clause);
+        const res = await db.select().from(schemaModel).where(...clause);
         return res[0];
       } else if (builderVal) {
         const tId = builderVal[0]?.id.value;
-        const res = await db2.select().from(schemaModel).where(eq(schemaModel.id, tId));
+        const res = await db.select().from(schemaModel).where(eq(schemaModel.id, tId));
         return res[0];
       } else if (data.id) {
-        const res = await db2.select().from(schemaModel).where(eq(schemaModel.id, data.id));
+        const res = await db.select().from(schemaModel).where(eq(schemaModel.id, data.id));
         return res[0];
       }
     }, "withReturning"),
@@ -50432,14 +51972,14 @@ var createTransform3 = /* @__PURE__ */ __name((db2, config4, options) => {
     getModelName
   };
 }, "createTransform");
-function checkMissingFields(schema2, model, values) {
-  if (!schema2) {
+function checkMissingFields(schema3, model, values) {
+  if (!schema3) {
     throw new BetterAuthError(
       "Drizzle adapter failed to initialize. Schema not found. Please provide a schema object in the adapter options object."
     );
   }
   for (const key in values) {
-    if (!schema2[key]) {
+    if (!schema3[key]) {
       throw new BetterAuthError(
         `The field "${key}" does not exist in the "${model}" schema. Please update your drizzle schema or re-generate using "npx @better-auth/cli generate".`
       );
@@ -50447,41 +51987,41 @@ function checkMissingFields(schema2, model, values) {
   }
 }
 __name(checkMissingFields, "checkMissingFields");
-var drizzleAdapter = /* @__PURE__ */ __name((db2, config4) => (options) => {
+var drizzleAdapter = /* @__PURE__ */ __name((db, config3) => (options) => {
   const {
     transformInput,
     transformOutput,
     convertWhereClause,
-    getSchema: getSchema2,
+    getSchema: getSchema3,
     withReturning,
     getField,
     getModelName
-  } = createTransform3(db2, config4, options);
+  } = createTransform3(db, config3, options);
   return {
     id: "drizzle",
     async create(data) {
       const { model, data: values } = data;
       const transformed = transformInput(values, model, "create");
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       checkMissingFields(schemaModel, getModelName(model), transformed);
-      const builder = db2.insert(schemaModel).values(transformed);
+      const builder = db.insert(schemaModel).values(transformed);
       const returned = await withReturning(model, builder, transformed);
       return transformOutput(returned, model);
     },
     async findOne(data) {
       const { model, where, select } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = convertWhereClause(where, model);
-      const res = await db2.select().from(schemaModel).where(...clause);
+      const res = await db.select().from(schemaModel).where(...clause);
       if (!res.length) return null;
       return transformOutput(res[0], model, select);
     },
     async findMany(data) {
       const { model, where, sortBy, limit, offset } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = where ? convertWhereClause(where, model) : [];
       const sortFn = sortBy?.direction === "desc" ? desc : asc;
-      const builder = db2.select().from(schemaModel).limit(limit || 100).offset(offset || 0);
+      const builder = db.select().from(schemaModel).limit(limit || 100).offset(offset || 0);
       if (sortBy?.field) {
         builder.orderBy(sortFn(schemaModel[getField(model, sortBy?.field)]));
       }
@@ -50490,17 +52030,17 @@ var drizzleAdapter = /* @__PURE__ */ __name((db2, config4) => (options) => {
     },
     async count(data) {
       const { model, where } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = where ? convertWhereClause(where, model) : [];
-      const res = await db2.select({ count: count3() }).from(schemaModel).where(...clause);
+      const res = await db.select({ count: count3() }).from(schemaModel).where(...clause);
       return res.count;
     },
     async update(data) {
       const { model, where, update: values } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = convertWhereClause(where, model);
       const transformed = transformInput(values, model, "update");
-      const builder = db2.update(schemaModel).set(transformed).where(...clause);
+      const builder = db.update(schemaModel).set(transformed).where(...clause);
       const returned = await withReturning(
         model,
         builder,
@@ -50511,31 +52051,2856 @@ var drizzleAdapter = /* @__PURE__ */ __name((db2, config4) => (options) => {
     },
     async updateMany(data) {
       const { model, where, update: values } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = convertWhereClause(where, model);
       const transformed = transformInput(values, model, "update");
-      const builder = db2.update(schemaModel).set(transformed).where(...clause);
+      const builder = db.update(schemaModel).set(transformed).where(...clause);
       const res = await builder;
       return res ? res.changes : 0;
     },
     async delete(data) {
       const { model, where } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = convertWhereClause(where, model);
-      const builder = db2.delete(schemaModel).where(...clause);
+      const builder = db.delete(schemaModel).where(...clause);
       await builder;
     },
     async deleteMany(data) {
       const { model, where } = data;
-      const schemaModel = getSchema2(model);
+      const schemaModel = getSchema3(model);
       const clause = convertWhereClause(where, model);
-      const builder = db2.delete(schemaModel).where(...clause);
+      const builder = db.delete(schemaModel).where(...clause);
       const res = await builder;
       return res ? res.length : 0;
     },
-    options: config4
+    options: config3
   };
 }, "drizzleAdapter");
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.9knM1kR4.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.ffWeg50w.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var PROTO_POLLUTION_PATTERNS = {
+  proto: /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/,
+  constructor: /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/,
+  protoShort: /"__proto__"\s*:/,
+  constructorShort: /"constructor"\s*:/
+};
+var JSON_SIGNATURE = /^\s*["[{]|^\s*-?\d{1,16}(\.\d{1,17})?([Ee][+-]?\d+)?\s*$/;
+var SPECIAL_VALUES = {
+  true: true,
+  false: false,
+  null: null,
+  undefined: void 0,
+  nan: Number.NaN,
+  infinity: Number.POSITIVE_INFINITY,
+  "-infinity": Number.NEGATIVE_INFINITY
+};
+var ISO_DATE_REGEX = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,7}))?(?:Z|([+-])(\d{2}):(\d{2}))$/;
+function isValidDate(date) {
+  return date instanceof Date && !isNaN(date.getTime());
+}
+__name(isValidDate, "isValidDate");
+function parseISODate(value) {
+  const match = ISO_DATE_REGEX.exec(value);
+  if (!match) return null;
+  const [
+    ,
+    year2,
+    month,
+    day2,
+    hour2,
+    minute2,
+    second,
+    ms,
+    offsetSign,
+    offsetHour,
+    offsetMinute
+  ] = match;
+  let date = new Date(
+    Date.UTC(
+      parseInt(year2, 10),
+      parseInt(month, 10) - 1,
+      parseInt(day2, 10),
+      parseInt(hour2, 10),
+      parseInt(minute2, 10),
+      parseInt(second, 10),
+      ms ? parseInt(ms.padEnd(3, "0"), 10) : 0
+    )
+  );
+  if (offsetSign) {
+    const offset = (parseInt(offsetHour, 10) * 60 + parseInt(offsetMinute, 10)) * (offsetSign === "+" ? -1 : 1);
+    date.setUTCMinutes(date.getUTCMinutes() + offset);
+  }
+  return isValidDate(date) ? date : null;
+}
+__name(parseISODate, "parseISODate");
+function betterJSONParse(value, options = {}) {
+  const {
+    strict = false,
+    warnings = false,
+    reviver,
+    parseDates = true
+  } = options;
+  if (typeof value !== "string") {
+    return value;
+  }
+  const trimmed = value.trim();
+  if (trimmed[0] === '"' && trimmed.endsWith('"') && !trimmed.slice(1, -1).includes('"')) {
+    return trimmed.slice(1, -1);
+  }
+  const lowerValue = trimmed.toLowerCase();
+  if (lowerValue.length <= 9 && lowerValue in SPECIAL_VALUES) {
+    return SPECIAL_VALUES[lowerValue];
+  }
+  if (!JSON_SIGNATURE.test(trimmed)) {
+    if (strict) {
+      throw new SyntaxError("[better-json] Invalid JSON");
+    }
+    return value;
+  }
+  const hasProtoPattern = Object.entries(PROTO_POLLUTION_PATTERNS).some(
+    ([key, pattern]) => {
+      const matches = pattern.test(trimmed);
+      if (matches && warnings) {
+        console.warn(
+          `[better-json] Detected potential prototype pollution attempt using ${key} pattern`
+        );
+      }
+      return matches;
+    }
+  );
+  if (hasProtoPattern && strict) {
+    throw new Error(
+      "[better-json] Potential prototype pollution attempt detected"
+    );
+  }
+  try {
+    const secureReviver = /* @__PURE__ */ __name((key, value2) => {
+      if (key === "__proto__" || key === "constructor" && value2 && typeof value2 === "object" && "prototype" in value2) {
+        if (warnings) {
+          console.warn(
+            `[better-json] Dropping "${key}" key to prevent prototype pollution`
+          );
+        }
+        return void 0;
+      }
+      if (parseDates && typeof value2 === "string") {
+        const date = parseISODate(value2);
+        if (date) {
+          return date;
+        }
+      }
+      return reviver ? reviver(key, value2) : value2;
+    }, "secureReviver");
+    return JSON.parse(trimmed, secureReviver);
+  } catch (error4) {
+    if (strict) {
+      throw error4;
+    }
+    return value;
+  }
+}
+__name(betterJSONParse, "betterJSONParse");
+function parseJSON(value, options = { strict: true }) {
+  return betterJSONParse(value, options);
+}
+__name(parseJSON, "parseJSON");
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/organization/access/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/access/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+function role(statements) {
+  return {
+    authorize(request, connector = "AND") {
+      let success = false;
+      for (const [requestedResource, requestedActions] of Object.entries(
+        request
+      )) {
+        const allowedActions = statements[requestedResource];
+        if (!allowedActions) {
+          return {
+            success: false,
+            error: `You are not allowed to access resource: ${requestedResource}`
+          };
+        }
+        if (Array.isArray(requestedActions)) {
+          success = requestedActions.every(
+            (requestedAction) => allowedActions.includes(requestedAction)
+          );
+        } else {
+          if (typeof requestedActions === "object") {
+            const actions = requestedActions;
+            if (actions.connector === "OR") {
+              success = actions.actions.some(
+                (requestedAction) => allowedActions.includes(requestedAction)
+              );
+            } else {
+              success = actions.actions.every(
+                (requestedAction) => allowedActions.includes(requestedAction)
+              );
+            }
+          } else {
+            throw new BetterAuthError("Invalid access control request");
+          }
+        }
+        if (success && connector === "OR") {
+          return { success };
+        }
+        if (!success && connector === "AND") {
+          return {
+            success: false,
+            error: `unauthorized to access resource "${requestedResource}"`
+          };
+        }
+      }
+      if (success) {
+        return {
+          success
+        };
+      }
+      return {
+        success: false,
+        error: "Not authorized"
+      };
+    },
+    statements
+  };
+}
+__name(role, "role");
+function createAccessControl(s) {
+  return {
+    newRole(statements) {
+      return role(statements);
+    },
+    statements: s
+  };
+}
+__name(createAccessControl, "createAccessControl");
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/organization/access/index.mjs
+var defaultStatements = {
+  organization: ["update", "delete"],
+  member: ["create", "update", "delete"],
+  invitation: ["create", "cancel"],
+  team: ["create", "update", "delete"]
+};
+var defaultAc = createAccessControl(defaultStatements);
+var adminAc = defaultAc.newRole({
+  organization: ["update"],
+  invitation: ["create", "cancel"],
+  member: ["create", "update", "delete"],
+  team: ["create", "update", "delete"]
+});
+var ownerAc = defaultAc.newRole({
+  organization: ["update", "delete"],
+  member: ["create", "update", "delete"],
+  invitation: ["create", "cancel"],
+  team: ["create", "update", "delete"]
+});
+var memberAc = defaultAc.newRole({
+  organization: [],
+  member: [],
+  invitation: [],
+  team: []
+});
+var defaultRoles = {
+  admin: adminAc,
+  owner: ownerAc,
+  member: memberAc
+};
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.9knM1kR4.mjs
+var getOrgAdapter = /* @__PURE__ */ __name((context2, options) => {
+  const adapter = context2.adapter;
+  return {
+    findOrganizationBySlug: /* @__PURE__ */ __name(async (slug) => {
+      const organization2 = await adapter.findOne({
+        model: "organization",
+        where: [
+          {
+            field: "slug",
+            value: slug
+          }
+        ]
+      });
+      return organization2;
+    }, "findOrganizationBySlug"),
+    createOrganization: /* @__PURE__ */ __name(async (data) => {
+      const organization2 = await adapter.create({
+        model: "organization",
+        data: {
+          ...data.organization,
+          metadata: data.organization.metadata ? JSON.stringify(data.organization.metadata) : void 0
+        }
+      });
+      return {
+        ...organization2,
+        metadata: organization2.metadata ? JSON.parse(organization2.metadata) : void 0
+      };
+    }, "createOrganization"),
+    findMemberByEmail: /* @__PURE__ */ __name(async (data) => {
+      const user2 = await adapter.findOne({
+        model: "user",
+        where: [
+          {
+            field: "email",
+            value: data.email
+          }
+        ]
+      });
+      if (!user2) {
+        return null;
+      }
+      const member = await adapter.findOne({
+        model: "member",
+        where: [
+          {
+            field: "organizationId",
+            value: data.organizationId
+          },
+          {
+            field: "userId",
+            value: user2.id
+          }
+        ]
+      });
+      if (!member) {
+        return null;
+      }
+      return {
+        ...member,
+        user: {
+          id: user2.id,
+          name: user2.name,
+          email: user2.email,
+          image: user2.image
+        }
+      };
+    }, "findMemberByEmail"),
+    listMembers: /* @__PURE__ */ __name(async (data) => {
+      const members = await adapter.findMany({
+        model: "member",
+        where: [
+          {
+            field: "organizationId",
+            value: data.organizationId
+          }
+        ],
+        limit: options?.membershipLimit || 100
+      });
+      return members;
+    }, "listMembers"),
+    findMemberByOrgId: /* @__PURE__ */ __name(async (data) => {
+      const [member, user2] = await Promise.all([
+        await adapter.findOne({
+          model: "member",
+          where: [
+            {
+              field: "userId",
+              value: data.userId
+            },
+            {
+              field: "organizationId",
+              value: data.organizationId
+            }
+          ]
+        }),
+        await adapter.findOne({
+          model: "user",
+          where: [
+            {
+              field: "id",
+              value: data.userId
+            }
+          ]
+        })
+      ]);
+      if (!user2 || !member) {
+        return null;
+      }
+      return {
+        ...member,
+        user: {
+          id: user2.id,
+          name: user2.name,
+          email: user2.email,
+          image: user2.image
+        }
+      };
+    }, "findMemberByOrgId"),
+    findMemberById: /* @__PURE__ */ __name(async (memberId) => {
+      const member = await adapter.findOne({
+        model: "member",
+        where: [
+          {
+            field: "id",
+            value: memberId
+          }
+        ]
+      });
+      if (!member) {
+        return null;
+      }
+      const user2 = await adapter.findOne({
+        model: "user",
+        where: [
+          {
+            field: "id",
+            value: member.userId
+          }
+        ]
+      });
+      if (!user2) {
+        return null;
+      }
+      return {
+        ...member,
+        user: {
+          id: user2.id,
+          name: user2.name,
+          email: user2.email,
+          image: user2.image
+        }
+      };
+    }, "findMemberById"),
+    createMember: /* @__PURE__ */ __name(async (data) => {
+      const member = await adapter.create({
+        model: "member",
+        data: {
+          ...data,
+          createdAt: /* @__PURE__ */ new Date()
+        }
+      });
+      return member;
+    }, "createMember"),
+    updateMember: /* @__PURE__ */ __name(async (memberId, role3) => {
+      const member = await adapter.update({
+        model: "member",
+        where: [
+          {
+            field: "id",
+            value: memberId
+          }
+        ],
+        update: {
+          role: role3
+        }
+      });
+      return member;
+    }, "updateMember"),
+    deleteMember: /* @__PURE__ */ __name(async (memberId) => {
+      const member = await adapter.delete({
+        model: "member",
+        where: [
+          {
+            field: "id",
+            value: memberId
+          }
+        ]
+      });
+      return member;
+    }, "deleteMember"),
+    updateOrganization: /* @__PURE__ */ __name(async (organizationId, data) => {
+      const organization2 = await adapter.update({
+        model: "organization",
+        where: [
+          {
+            field: "id",
+            value: organizationId
+          }
+        ],
+        update: {
+          ...data,
+          metadata: typeof data.metadata === "object" ? JSON.stringify(data.metadata) : data.metadata
+        }
+      });
+      if (!organization2) {
+        return null;
+      }
+      return {
+        ...organization2,
+        metadata: organization2.metadata ? parseJSON(organization2.metadata) : void 0
+      };
+    }, "updateOrganization"),
+    deleteOrganization: /* @__PURE__ */ __name(async (organizationId) => {
+      await adapter.delete({
+        model: "member",
+        where: [
+          {
+            field: "organizationId",
+            value: organizationId
+          }
+        ]
+      });
+      await adapter.delete({
+        model: "invitation",
+        where: [
+          {
+            field: "organizationId",
+            value: organizationId
+          }
+        ]
+      });
+      await adapter.delete({
+        model: "organization",
+        where: [
+          {
+            field: "id",
+            value: organizationId
+          }
+        ]
+      });
+      return organizationId;
+    }, "deleteOrganization"),
+    setActiveOrganization: /* @__PURE__ */ __name(async (sessionToken, organizationId) => {
+      const session2 = await context2.internalAdapter.updateSession(
+        sessionToken,
+        {
+          activeOrganizationId: organizationId
+        }
+      );
+      return session2;
+    }, "setActiveOrganization"),
+    findOrganizationById: /* @__PURE__ */ __name(async (organizationId) => {
+      const organization2 = await adapter.findOne({
+        model: "organization",
+        where: [
+          {
+            field: "id",
+            value: organizationId
+          }
+        ]
+      });
+      return organization2;
+    }, "findOrganizationById"),
+    /**
+     * @requires db
+     */
+    findFullOrganization: /* @__PURE__ */ __name(async ({
+      organizationId,
+      isSlug,
+      includeTeams
+    }) => {
+      const org = await adapter.findOne({
+        model: "organization",
+        where: [{ field: isSlug ? "slug" : "id", value: organizationId }]
+      });
+      if (!org) {
+        return null;
+      }
+      const [invitations, members, teams] = await Promise.all([
+        adapter.findMany({
+          model: "invitation",
+          where: [{ field: "organizationId", value: org.id }]
+        }),
+        adapter.findMany({
+          model: "member",
+          where: [{ field: "organizationId", value: org.id }],
+          limit: options?.membershipLimit || 100
+        }),
+        includeTeams ? adapter.findMany({
+          model: "team",
+          where: [{ field: "organizationId", value: org.id }]
+        }) : null
+      ]);
+      if (!org) return null;
+      const userIds = members.map((member) => member.userId);
+      const users = await adapter.findMany({
+        model: "user",
+        where: [{ field: "id", value: userIds, operator: "in" }],
+        limit: options?.membershipLimit || 100
+      });
+      const userMap = new Map(users.map((user2) => [user2.id, user2]));
+      const membersWithUsers = members.map((member) => {
+        const user2 = userMap.get(member.userId);
+        if (!user2) {
+          throw new BetterAuthError(
+            "Unexpected error: User not found for member"
+          );
+        }
+        return {
+          ...member,
+          user: {
+            id: user2.id,
+            name: user2.name,
+            email: user2.email,
+            image: user2.image
+          }
+        };
+      });
+      return {
+        ...org,
+        invitations,
+        members: membersWithUsers,
+        teams
+      };
+    }, "findFullOrganization"),
+    listOrganizations: /* @__PURE__ */ __name(async (userId) => {
+      const members = await adapter.findMany({
+        model: "member",
+        where: [
+          {
+            field: "userId",
+            value: userId
+          }
+        ]
+      });
+      if (!members || members.length === 0) {
+        return [];
+      }
+      const organizationIds = members.map((member) => member.organizationId);
+      const organizations = await adapter.findMany({
+        model: "organization",
+        where: [
+          {
+            field: "id",
+            value: organizationIds,
+            operator: "in"
+          }
+        ]
+      });
+      return organizations;
+    }, "listOrganizations"),
+    createTeam: /* @__PURE__ */ __name(async (data) => {
+      const team = await adapter.create({
+        model: "team",
+        data
+      });
+      return team;
+    }, "createTeam"),
+    findTeamById: /* @__PURE__ */ __name(async ({
+      teamId,
+      organizationId,
+      includeTeamMembers
+    }) => {
+      const team = await adapter.findOne({
+        model: "team",
+        where: [
+          {
+            field: "id",
+            value: teamId
+          },
+          ...organizationId ? [
+            {
+              field: "organizationId",
+              value: organizationId
+            }
+          ] : []
+        ]
+      });
+      if (!team) {
+        return null;
+      }
+      let members = [];
+      if (includeTeamMembers) {
+        members = await adapter.findMany({
+          model: "member",
+          where: [
+            {
+              field: "teamId",
+              value: teamId
+            }
+          ],
+          limit: options?.membershipLimit || 100
+        });
+        return {
+          ...team,
+          members
+        };
+      }
+      return team;
+    }, "findTeamById"),
+    updateTeam: /* @__PURE__ */ __name(async (teamId, data) => {
+      const team = await adapter.update({
+        model: "team",
+        where: [
+          {
+            field: "id",
+            value: teamId
+          }
+        ],
+        update: {
+          ...data
+        }
+      });
+      return team;
+    }, "updateTeam"),
+    deleteTeam: /* @__PURE__ */ __name(async (teamId) => {
+      const team = await adapter.delete({
+        model: "team",
+        where: [
+          {
+            field: "id",
+            value: teamId
+          }
+        ]
+      });
+      return team;
+    }, "deleteTeam"),
+    listTeams: /* @__PURE__ */ __name(async (organizationId) => {
+      const teams = await adapter.findMany({
+        model: "team",
+        where: [
+          {
+            field: "organizationId",
+            value: organizationId
+          }
+        ]
+      });
+      return teams;
+    }, "listTeams"),
+    createTeamInvitation: /* @__PURE__ */ __name(async ({
+      email,
+      role: role3,
+      teamId,
+      organizationId,
+      inviterId,
+      expiresIn = 1e3 * 60 * 60 * 48
+      // Default expiration: 48 hours
+    }) => {
+      const expiresAt = getDate(expiresIn);
+      const invitation = await adapter.create({
+        model: "invitation",
+        data: {
+          email,
+          role: role3,
+          organizationId,
+          teamId,
+          inviterId,
+          status: "pending",
+          expiresAt
+        }
+      });
+      return invitation;
+    }, "createTeamInvitation"),
+    findInvitationsByTeamId: /* @__PURE__ */ __name(async (teamId) => {
+      const invitations = await adapter.findMany({
+        model: "invitation",
+        where: [
+          {
+            field: "teamId",
+            value: teamId
+          }
+        ]
+      });
+      return invitations;
+    }, "findInvitationsByTeamId"),
+    createInvitation: /* @__PURE__ */ __name(async ({
+      invitation,
+      user: user2
+    }) => {
+      const defaultExpiration = 1e3 * 60 * 60 * 48;
+      const expiresAt = getDate(
+        options?.invitationExpiresIn || defaultExpiration
+      );
+      const invite = await adapter.create({
+        model: "invitation",
+        data: {
+          status: "pending",
+          expiresAt,
+          inviterId: user2.id,
+          ...invitation
+        }
+      });
+      return invite;
+    }, "createInvitation"),
+    findInvitationById: /* @__PURE__ */ __name(async (id) => {
+      const invitation = await adapter.findOne({
+        model: "invitation",
+        where: [
+          {
+            field: "id",
+            value: id
+          }
+        ]
+      });
+      return invitation;
+    }, "findInvitationById"),
+    findPendingInvitation: /* @__PURE__ */ __name(async (data) => {
+      const invitation = await adapter.findMany({
+        model: "invitation",
+        where: [
+          {
+            field: "email",
+            value: data.email
+          },
+          {
+            field: "organizationId",
+            value: data.organizationId
+          },
+          {
+            field: "status",
+            value: "pending"
+          }
+        ]
+      });
+      return invitation.filter(
+        (invite) => new Date(invite.expiresAt) > /* @__PURE__ */ new Date()
+      );
+    }, "findPendingInvitation"),
+    updateInvitation: /* @__PURE__ */ __name(async (data) => {
+      const invitation = await adapter.update({
+        model: "invitation",
+        where: [
+          {
+            field: "id",
+            value: data.invitationId
+          }
+        ],
+        update: {
+          status: data.status
+        }
+      });
+      return invitation;
+    }, "updateInvitation")
+  };
+}, "getOrgAdapter");
+var orgMiddleware = createAuthMiddleware(async (ctx) => {
+  return {};
+});
+var orgSessionMiddleware = createAuthMiddleware(
+  {
+    use: [sessionMiddleware]
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    return {
+      session: session2
+    };
+  }
+);
+var ORGANIZATION_ERROR_CODES = {
+  YOU_ARE_NOT_ALLOWED_TO_CREATE_A_NEW_ORGANIZATION: "You are not allowed to create a new organization",
+  YOU_HAVE_REACHED_THE_MAXIMUM_NUMBER_OF_ORGANIZATIONS: "You have reached the maximum number of organizations",
+  ORGANIZATION_ALREADY_EXISTS: "Organization already exists",
+  ORGANIZATION_NOT_FOUND: "Organization not found",
+  USER_IS_NOT_A_MEMBER_OF_THE_ORGANIZATION: "User is not a member of the organization",
+  YOU_ARE_NOT_ALLOWED_TO_UPDATE_THIS_ORGANIZATION: "You are not allowed to update this organization",
+  YOU_ARE_NOT_ALLOWED_TO_DELETE_THIS_ORGANIZATION: "You are not allowed to delete this organization",
+  NO_ACTIVE_ORGANIZATION: "No active organization",
+  USER_IS_ALREADY_A_MEMBER_OF_THIS_ORGANIZATION: "User is already a member of this organization",
+  MEMBER_NOT_FOUND: "Member not found",
+  ROLE_NOT_FOUND: "Role not found",
+  YOU_ARE_NOT_ALLOWED_TO_CREATE_A_NEW_TEAM: "You are not allowed to create a new team",
+  TEAM_ALREADY_EXISTS: "Team already exists",
+  TEAM_NOT_FOUND: "Team not found",
+  YOU_CANNOT_LEAVE_THE_ORGANIZATION_AS_THE_ONLY_OWNER: "You cannot leave the organization as the only owner",
+  YOU_ARE_NOT_ALLOWED_TO_DELETE_THIS_MEMBER: "You are not allowed to delete this member",
+  YOU_ARE_NOT_ALLOWED_TO_INVITE_USERS_TO_THIS_ORGANIZATION: "You are not allowed to invite users to this organization",
+  USER_IS_ALREADY_INVITED_TO_THIS_ORGANIZATION: "User is already invited to this organization",
+  INVITATION_NOT_FOUND: "Invitation not found",
+  YOU_ARE_NOT_THE_RECIPIENT_OF_THE_INVITATION: "You are not the recipient of the invitation",
+  YOU_ARE_NOT_ALLOWED_TO_CANCEL_THIS_INVITATION: "You are not allowed to cancel this invitation",
+  INVITER_IS_NO_LONGER_A_MEMBER_OF_THE_ORGANIZATION: "Inviter is no longer a member of the organization",
+  YOU_ARE_NOT_ALLOWED_TO_INVITE_USER_WITH_THIS_ROLE: "you are not allowed to invite user with this role",
+  FAILED_TO_RETRIEVE_INVITATION: "Failed to retrieve invitation",
+  YOU_HAVE_REACHED_THE_MAXIMUM_NUMBER_OF_TEAMS: "You have reached the maximum number of teams",
+  UNABLE_TO_REMOVE_LAST_TEAM: "Unable to remove last team",
+  YOU_ARE_NOT_ALLOWED_TO_UPDATE_THIS_MEMBER: "You are not allowed to update this member",
+  ORGANIZATION_MEMBERSHIP_LIMIT_REACHED: "Organization membership limit reached",
+  YOU_ARE_NOT_ALLOWED_TO_CREATE_TEAMS_IN_THIS_ORGANIZATION: "You are not allowed to create teams in this organization",
+  YOU_ARE_NOT_ALLOWED_TO_DELETE_TEAMS_IN_THIS_ORGANIZATION: "You are not allowed to delete teams in this organization",
+  YOU_ARE_NOT_ALLOWED_TO_UPDATE_THIS_TEAM: "You are not allowed to update this team"
+};
+var hasPermission = /* @__PURE__ */ __name((input) => {
+  const roles = input.role.split(",");
+  const acRoles = input.options.roles || defaultRoles;
+  for (const role3 of roles) {
+    const _role = acRoles[role3];
+    const result = _role?.authorize(input.permission);
+    if (result?.success) {
+      return true;
+    }
+  }
+  return false;
+}, "hasPermission");
+var acceptInvitation = createAuthEndpoint(
+  "/organization/accept-invitation",
+  {
+    method: "POST",
+    body: z.object({
+      invitationId: z.string({
+        description: "The ID of the invitation to accept"
+      })
+    }),
+    use: [orgMiddleware, orgSessionMiddleware],
+    metadata: {
+      openapi: {
+        description: "Accept an invitation to an organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    invitation: {
+                      type: "object"
+                    },
+                    member: {
+                      type: "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const invitation = await adapter.findInvitationById(ctx.body.invitationId);
+    if (!invitation || invitation.expiresAt < /* @__PURE__ */ new Date() || invitation.status !== "pending") {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.INVITATION_NOT_FOUND
+      });
+    }
+    if (invitation.email !== session2.user.email) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_THE_RECIPIENT_OF_THE_INVITATION
+      });
+    }
+    const membershipLimit = ctx.context.orgOptions?.membershipLimit || 100;
+    const members = await adapter.listMembers({
+      organizationId: invitation.organizationId
+    });
+    if (members.length >= membershipLimit) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.ORGANIZATION_MEMBERSHIP_LIMIT_REACHED
+      });
+    }
+    const acceptedI = await adapter.updateInvitation({
+      invitationId: ctx.body.invitationId,
+      status: "accepted"
+    });
+    if (!acceptedI) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.FAILED_TO_RETRIEVE_INVITATION
+      });
+    }
+    const member = await adapter.createMember({
+      organizationId: invitation.organizationId,
+      userId: session2.user.id,
+      role: invitation.role,
+      createdAt: /* @__PURE__ */ new Date(),
+      ..."teamId" in acceptedI ? {
+        teamId: acceptedI.teamId
+      } : {}
+    });
+    await adapter.setActiveOrganization(
+      session2.session.token,
+      invitation.organizationId
+    );
+    if (!acceptedI) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.INVITATION_NOT_FOUND
+        }
+      });
+    }
+    return ctx.json({
+      invitation: acceptedI,
+      member
+    });
+  }
+);
+var rejectInvitation = createAuthEndpoint(
+  "/organization/reject-invitation",
+  {
+    method: "POST",
+    body: z.object({
+      invitationId: z.string({
+        description: "The ID of the invitation to reject"
+      })
+    }),
+    use: [orgMiddleware, orgSessionMiddleware],
+    metadata: {
+      openapi: {
+        description: "Reject an invitation to an organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    invitation: {
+                      type: "object"
+                    },
+                    member: {
+                      type: "null"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const invitation = await adapter.findInvitationById(ctx.body.invitationId);
+    if (!invitation || invitation.expiresAt < /* @__PURE__ */ new Date() || invitation.status !== "pending") {
+      throw new APIError("BAD_REQUEST", {
+        message: "Invitation not found!"
+      });
+    }
+    if (invitation.email !== session2.user.email) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_THE_RECIPIENT_OF_THE_INVITATION
+      });
+    }
+    const rejectedI = await adapter.updateInvitation({
+      invitationId: ctx.body.invitationId,
+      status: "rejected"
+    });
+    return ctx.json({
+      invitation: rejectedI,
+      member: null
+    });
+  }
+);
+var cancelInvitation = createAuthEndpoint(
+  "/organization/cancel-invitation",
+  {
+    method: "POST",
+    body: z.object({
+      invitationId: z.string({
+        description: "The ID of the invitation to cancel"
+      })
+    }),
+    use: [orgMiddleware, orgSessionMiddleware],
+    openapi: {
+      description: "Cancel an invitation to an organization",
+      responses: {
+        "200": {
+          description: "Success",
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  invitation: {
+                    type: "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const invitation = await adapter.findInvitationById(ctx.body.invitationId);
+    if (!invitation) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.INVITATION_NOT_FOUND
+      });
+    }
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId: invitation.organizationId
+    });
+    if (!member) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.MEMBER_NOT_FOUND
+      });
+    }
+    const canCancel = hasPermission({
+      role: member.role,
+      options: ctx.context.orgOptions,
+      permission: {
+        invitation: ["cancel"]
+      }
+    });
+    if (!canCancel) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_CANCEL_THIS_INVITATION
+      });
+    }
+    const canceledI = await adapter.updateInvitation({
+      invitationId: ctx.body.invitationId,
+      status: "canceled"
+    });
+    return ctx.json(canceledI);
+  }
+);
+var getInvitation = createAuthEndpoint(
+  "/organization/get-invitation",
+  {
+    method: "GET",
+    use: [orgMiddleware],
+    requireHeaders: true,
+    query: z.object({
+      id: z.string({
+        description: "The ID of the invitation to get"
+      })
+    }),
+    metadata: {
+      openapi: {
+        description: "Get an invitation by ID",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    id: {
+                      type: "string"
+                    },
+                    email: {
+                      type: "string"
+                    },
+                    role: {
+                      type: "string"
+                    },
+                    organizationId: {
+                      type: "string"
+                    },
+                    inviterId: {
+                      type: "string"
+                    },
+                    status: {
+                      type: "string"
+                    },
+                    expiresAt: {
+                      type: "string"
+                    },
+                    organizationName: {
+                      type: "string"
+                    },
+                    organizationSlug: {
+                      type: "string"
+                    },
+                    inviterEmail: {
+                      type: "string"
+                    }
+                  },
+                  required: [
+                    "id",
+                    "email",
+                    "role",
+                    "organizationId",
+                    "inviterId",
+                    "status",
+                    "expiresAt",
+                    "organizationName",
+                    "organizationSlug",
+                    "inviterEmail"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = await getSessionFromCtx(ctx);
+    if (!session2) {
+      throw new APIError("UNAUTHORIZED", {
+        message: "Not authenticated"
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const invitation = await adapter.findInvitationById(ctx.query.id);
+    if (!invitation || invitation.status !== "pending" || invitation.expiresAt < /* @__PURE__ */ new Date()) {
+      throw new APIError("BAD_REQUEST", {
+        message: "Invitation not found!"
+      });
+    }
+    if (invitation.email !== session2.user.email) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_THE_RECIPIENT_OF_THE_INVITATION
+      });
+    }
+    const organization2 = await adapter.findOrganizationById(
+      invitation.organizationId
+    );
+    if (!organization2) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.ORGANIZATION_NOT_FOUND
+      });
+    }
+    const member = await adapter.findMemberByOrgId({
+      userId: invitation.inviterId,
+      organizationId: invitation.organizationId
+    });
+    if (!member) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.INVITER_IS_NO_LONGER_A_MEMBER_OF_THE_ORGANIZATION
+      });
+    }
+    return ctx.json({
+      ...invitation,
+      organizationName: organization2.name,
+      organizationSlug: organization2.slug,
+      inviterEmail: member.user.email
+    });
+  }
+);
+var removeMember = createAuthEndpoint(
+  "/organization/remove-member",
+  {
+    method: "POST",
+    body: z.object({
+      memberIdOrEmail: z.string({
+        description: "The ID or email of the member to remove"
+      }),
+      /**
+       * If not provided, the active organization will be used
+       */
+      organizationId: z.string({
+        description: "The ID of the organization to remove the member from. If not provided, the active organization will be used"
+      }).optional()
+    }),
+    use: [orgMiddleware, orgSessionMiddleware],
+    metadata: {
+      openapi: {
+        description: "Remove a member from an organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    member: {
+                      type: "object",
+                      properties: {
+                        id: {
+                          type: "string"
+                        },
+                        userId: {
+                          type: "string"
+                        },
+                        organizationId: {
+                          type: "string"
+                        },
+                        role: {
+                          type: "string"
+                        }
+                      },
+                      required: ["id", "userId", "organizationId", "role"]
+                    }
+                  },
+                  required: ["member"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const organizationId = ctx.body.organizationId || session2.session.activeOrganizationId;
+    if (!organizationId) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.NO_ACTIVE_ORGANIZATION
+        }
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId
+    });
+    if (!member) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.MEMBER_NOT_FOUND
+      });
+    }
+    let toBeRemovedMember = null;
+    if (ctx.body.memberIdOrEmail.includes("@")) {
+      toBeRemovedMember = await adapter.findMemberByEmail({
+        email: ctx.body.memberIdOrEmail,
+        organizationId
+      });
+    } else {
+      toBeRemovedMember = await adapter.findMemberById(
+        ctx.body.memberIdOrEmail
+      );
+    }
+    if (!toBeRemovedMember) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.MEMBER_NOT_FOUND
+      });
+    }
+    const role3 = ctx.context.roles[member.role];
+    if (!role3) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.ROLE_NOT_FOUND
+      });
+    }
+    const roles = toBeRemovedMember.role.split(",");
+    const creatorRole = ctx.context.orgOptions?.creatorRole || "owner";
+    const isOwner = roles.includes(creatorRole);
+    if (isOwner) {
+      if (member.role !== creatorRole) {
+        throw new APIError("BAD_REQUEST", {
+          message: ORGANIZATION_ERROR_CODES.YOU_CANNOT_LEAVE_THE_ORGANIZATION_AS_THE_ONLY_OWNER
+        });
+      }
+      const members = await adapter.listMembers({
+        organizationId
+      });
+      const owners = members.filter((member2) => {
+        const roles2 = member2.role.split(",");
+        return roles2.includes(creatorRole);
+      });
+      if (owners.length <= 1) {
+        throw new APIError("BAD_REQUEST", {
+          message: ORGANIZATION_ERROR_CODES.YOU_CANNOT_LEAVE_THE_ORGANIZATION_AS_THE_ONLY_OWNER
+        });
+      }
+    }
+    const canDeleteMember = hasPermission({
+      role: member.role,
+      options: ctx.context.orgOptions,
+      permission: {
+        member: ["delete"]
+      }
+    });
+    if (!canDeleteMember) {
+      throw new APIError("UNAUTHORIZED", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_DELETE_THIS_MEMBER
+      });
+    }
+    if (toBeRemovedMember?.organizationId !== organizationId) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.MEMBER_NOT_FOUND
+      });
+    }
+    await adapter.deleteMember(toBeRemovedMember.id);
+    if (session2.user.id === toBeRemovedMember.userId && session2.session.activeOrganizationId === toBeRemovedMember.organizationId) {
+      await adapter.setActiveOrganization(session2.session.token, null);
+    }
+    return ctx.json({
+      member: toBeRemovedMember
+    });
+  }
+);
+var getActiveMember = createAuthEndpoint(
+  "/organization/get-active-member",
+  {
+    method: "GET",
+    use: [orgMiddleware, orgSessionMiddleware],
+    metadata: {
+      openapi: {
+        description: "Get the active member in the organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    id: {
+                      type: "string"
+                    },
+                    userId: {
+                      type: "string"
+                    },
+                    organizationId: {
+                      type: "string"
+                    },
+                    role: {
+                      type: "string"
+                    }
+                  },
+                  required: ["id", "userId", "organizationId", "role"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const organizationId = session2.session.activeOrganizationId;
+    if (!organizationId) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.NO_ACTIVE_ORGANIZATION
+        }
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId
+    });
+    if (!member) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.MEMBER_NOT_FOUND
+        }
+      });
+    }
+    return ctx.json(member);
+  }
+);
+var leaveOrganization = createAuthEndpoint(
+  "/organization/leave",
+  {
+    method: "POST",
+    body: z.object({
+      organizationId: z.string()
+    }),
+    use: [sessionMiddleware, orgMiddleware]
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const adapter = getOrgAdapter(ctx.context);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId: ctx.body.organizationId
+    });
+    if (!member) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.MEMBER_NOT_FOUND
+      });
+    }
+    const isOwnerLeaving = member.role === (ctx.context.orgOptions?.creatorRole || "owner");
+    if (isOwnerLeaving) {
+      const members = await ctx.context.adapter.findMany({
+        model: "member",
+        where: [
+          {
+            field: "organizationId",
+            value: ctx.body.organizationId
+          }
+        ]
+      });
+      const owners = members.filter(
+        (member2) => member2.role === (ctx.context.orgOptions?.creatorRole || "owner")
+      );
+      if (owners.length <= 1) {
+        throw new APIError("BAD_REQUEST", {
+          message: ORGANIZATION_ERROR_CODES.YOU_CANNOT_LEAVE_THE_ORGANIZATION_AS_THE_ONLY_OWNER
+        });
+      }
+    }
+    await adapter.deleteMember(member.id);
+    if (session2.session.activeOrganizationId === ctx.body.organizationId) {
+      await adapter.setActiveOrganization(session2.session.token, null);
+    }
+    return ctx.json(member);
+  }
+);
+var createOrganization = createAuthEndpoint(
+  "/organization/create",
+  {
+    method: "POST",
+    body: z.object({
+      name: z.string({
+        description: "The name of the organization"
+      }),
+      slug: z.string({
+        description: "The slug of the organization"
+      }),
+      userId: z.coerce.string({
+        description: "The user id of the organization creator. If not provided, the current user will be used. Should only be used by admins or when called by the server."
+      }).optional(),
+      logo: z.string({
+        description: "The logo of the organization"
+      }).optional(),
+      metadata: z.record(z.string(), z.any(), {
+        description: "The metadata of the organization"
+      }).optional(),
+      keepCurrentActiveOrganization: z.boolean({
+        description: "Whether to keep the current active organization active after creating a new one"
+      }).optional()
+    }),
+    use: [orgMiddleware],
+    metadata: {
+      openapi: {
+        description: "Create an organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  description: "The organization that was created",
+                  $ref: "#/components/schemas/Organization"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = await getSessionFromCtx(ctx);
+    if (!session2 && (ctx.request || ctx.headers)) {
+      throw new APIError("UNAUTHORIZED");
+    }
+    let user2 = session2?.user || null;
+    if (!user2) {
+      if (!ctx.body.userId) {
+        throw new APIError("UNAUTHORIZED");
+      }
+      user2 = await ctx.context.internalAdapter.findUserById(ctx.body.userId);
+    }
+    if (!user2) {
+      return ctx.json(null, {
+        status: 401
+      });
+    }
+    const options = ctx.context.orgOptions;
+    const canCreateOrg = typeof options?.allowUserToCreateOrganization === "function" ? await options.allowUserToCreateOrganization(user2) : options?.allowUserToCreateOrganization === void 0 ? true : options.allowUserToCreateOrganization;
+    if (!canCreateOrg) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_CREATE_A_NEW_ORGANIZATION
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, options);
+    const userOrganizations = await adapter.listOrganizations(user2.id);
+    const hasReachedOrgLimit = typeof options.organizationLimit === "number" ? userOrganizations.length >= options.organizationLimit : typeof options.organizationLimit === "function" ? await options.organizationLimit(user2) : false;
+    if (hasReachedOrgLimit) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_HAVE_REACHED_THE_MAXIMUM_NUMBER_OF_ORGANIZATIONS
+      });
+    }
+    const existingOrganization = await adapter.findOrganizationBySlug(
+      ctx.body.slug
+    );
+    if (existingOrganization) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.ORGANIZATION_ALREADY_EXISTS
+      });
+    }
+    let hookResponse = void 0;
+    if (options.organizationCreation?.beforeCreate) {
+      const response = await options.organizationCreation.beforeCreate(
+        {
+          organization: {
+            slug: ctx.body.slug,
+            name: ctx.body.name,
+            logo: ctx.body.logo,
+            createdAt: /* @__PURE__ */ new Date(),
+            metadata: ctx.body.metadata
+          },
+          user: user2
+        },
+        ctx.request
+      );
+      if (response && typeof response === "object" && "data" in response) {
+        hookResponse = response;
+      }
+    }
+    const organization2 = await adapter.createOrganization({
+      organization: {
+        id: generateId(),
+        slug: ctx.body.slug,
+        name: ctx.body.name,
+        logo: ctx.body.logo,
+        createdAt: /* @__PURE__ */ new Date(),
+        metadata: ctx.body.metadata,
+        ...hookResponse?.data || {}
+      }
+    });
+    let member;
+    if (options?.teams?.enabled && options.teams.defaultTeam?.enabled !== false) {
+      const defaultTeam = await options.teams.defaultTeam?.customCreateDefaultTeam?.(
+        organization2,
+        ctx.request
+      ) || await adapter.createTeam({
+        id: generateId(),
+        organizationId: organization2.id,
+        name: `${organization2.name}`,
+        createdAt: /* @__PURE__ */ new Date()
+      });
+      member = await adapter.createMember({
+        teamId: defaultTeam.id,
+        userId: user2.id,
+        organizationId: organization2.id,
+        role: ctx.context.orgOptions.creatorRole || "owner"
+      });
+    } else {
+      member = await adapter.createMember({
+        userId: user2.id,
+        organizationId: organization2.id,
+        role: ctx.context.orgOptions.creatorRole || "owner"
+      });
+    }
+    if (options.organizationCreation?.afterCreate) {
+      await options.organizationCreation.afterCreate(
+        {
+          organization: organization2,
+          user: user2,
+          member
+        },
+        ctx.request
+      );
+    }
+    if (ctx.context.session && !ctx.body.keepCurrentActiveOrganization) {
+      await adapter.setActiveOrganization(
+        ctx.context.session.session.token,
+        organization2.id
+      );
+    }
+    return ctx.json({
+      ...organization2,
+      metadata: ctx.body.metadata,
+      members: [member]
+    });
+  }
+);
+var checkOrganizationSlug = createAuthEndpoint(
+  "/organization/check-slug",
+  {
+    method: "POST",
+    body: z.object({
+      slug: z.string()
+    }),
+    use: [requestOnlySessionMiddleware, orgMiddleware]
+  },
+  async (ctx) => {
+    const orgAdapter = getOrgAdapter(ctx.context);
+    const org = await orgAdapter.findOrganizationBySlug(ctx.body.slug);
+    if (!org) {
+      return ctx.json({
+        status: true
+      });
+    }
+    throw new APIError("BAD_REQUEST", {
+      message: "slug is taken"
+    });
+  }
+);
+var updateOrganization = createAuthEndpoint(
+  "/organization/update",
+  {
+    method: "POST",
+    body: z.object({
+      data: z.object({
+        name: z.string({
+          description: "The name of the organization"
+        }).optional(),
+        slug: z.string({
+          description: "The slug of the organization"
+        }).optional(),
+        logo: z.string({
+          description: "The logo of the organization"
+        }).optional(),
+        metadata: z.record(z.string(), z.any(), {
+          description: "The metadata of the organization"
+        }).optional()
+      }).partial(),
+      organizationId: z.string().optional()
+    }),
+    requireHeaders: true,
+    use: [orgMiddleware],
+    metadata: {
+      openapi: {
+        description: "Update an organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  description: "The updated organization",
+                  $ref: "#/components/schemas/Organization"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = await ctx.context.getSession(ctx);
+    if (!session2) {
+      throw new APIError("UNAUTHORIZED", {
+        message: "User not found"
+      });
+    }
+    const organizationId = ctx.body.organizationId || session2.session.activeOrganizationId;
+    if (!organizationId) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.ORGANIZATION_NOT_FOUND
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId
+    });
+    if (!member) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.USER_IS_NOT_A_MEMBER_OF_THE_ORGANIZATION
+      });
+    }
+    const canUpdateOrg = hasPermission({
+      permission: {
+        organization: ["update"]
+      },
+      role: member.role,
+      options: ctx.context.orgOptions
+    });
+    if (!canUpdateOrg) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_UPDATE_THIS_ORGANIZATION
+      });
+    }
+    const updatedOrg = await adapter.updateOrganization(
+      organizationId,
+      ctx.body.data
+    );
+    return ctx.json(updatedOrg);
+  }
+);
+var deleteOrganization = createAuthEndpoint(
+  "/organization/delete",
+  {
+    method: "POST",
+    body: z.object({
+      organizationId: z.string({
+        description: "The organization id to delete"
+      })
+    }),
+    requireHeaders: true,
+    use: [orgMiddleware],
+    metadata: {
+      openapi: {
+        description: "Delete an organization",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "string",
+                  description: "The organization id that was deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const session2 = await ctx.context.getSession(ctx);
+    if (!session2) {
+      return ctx.json(null, {
+        status: 401
+      });
+    }
+    const organizationId = ctx.body.organizationId;
+    if (!organizationId) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.ORGANIZATION_NOT_FOUND
+        }
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId
+    });
+    if (!member) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.USER_IS_NOT_A_MEMBER_OF_THE_ORGANIZATION
+        }
+      });
+    }
+    const canDeleteOrg = hasPermission({
+      role: member.role,
+      permission: {
+        organization: ["delete"]
+      },
+      options: ctx.context.orgOptions
+    });
+    if (!canDeleteOrg) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_DELETE_THIS_ORGANIZATION
+      });
+    }
+    if (organizationId === session2.session.activeOrganizationId) {
+      await adapter.setActiveOrganization(session2.session.token, null);
+    }
+    const option = ctx.context.orgOptions.organizationDeletion;
+    if (option?.disabled) {
+      throw new APIError("FORBIDDEN");
+    }
+    const org = await adapter.findOrganizationById(organizationId);
+    if (!org) {
+      throw new APIError("BAD_REQUEST");
+    }
+    if (option?.beforeDelete) {
+      await option.beforeDelete({
+        organization: org,
+        user: session2.user
+      });
+    }
+    await adapter.deleteOrganization(organizationId);
+    if (option?.afterDelete) {
+      await option.afterDelete({
+        organization: org,
+        user: session2.user
+      });
+    }
+    return ctx.json(org);
+  }
+);
+var listOrganizations = createAuthEndpoint(
+  "/organization/list",
+  {
+    method: "GET",
+    use: [orgMiddleware, orgSessionMiddleware],
+    metadata: {
+      openapi: {
+        description: "List all organizations",
+        responses: {
+          "200": {
+            description: "Success",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "array",
+                  items: {
+                    $ref: "#/components/schemas/Organization"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  async (ctx) => {
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const organizations = await adapter.listOrganizations(
+      ctx.context.session.user.id
+    );
+    return ctx.json(organizations);
+  }
+);
+var role2 = z.string();
+var invitationStatus = z.enum(["pending", "accepted", "rejected", "canceled"]).default("pending");
+z.object({
+  id: z.string().default(generateId),
+  name: z.string(),
+  slug: z.string(),
+  logo: z.string().nullish(),
+  metadata: z.record(z.string()).or(z.string().transform((v) => JSON.parse(v))).nullish(),
+  createdAt: z.date()
+});
+z.object({
+  id: z.string().default(generateId),
+  organizationId: z.string(),
+  userId: z.coerce.string(),
+  role: role2,
+  createdAt: z.date().default(() => /* @__PURE__ */ new Date()),
+  teamId: z.string().optional()
+});
+z.object({
+  id: z.string().default(generateId),
+  organizationId: z.string(),
+  email: z.string(),
+  role: role2,
+  status: invitationStatus,
+  teamId: z.string().optional(),
+  inviterId: z.string(),
+  expiresAt: z.date()
+});
+var teamSchema = z.object({
+  id: z.string().default(generateId),
+  name: z.string().min(1),
+  organizationId: z.string(),
+  createdAt: z.date(),
+  updatedAt: z.date().optional()
+});
+var removeTeam = createAuthEndpoint(
+  "/organization/remove-team",
+  {
+    method: "POST",
+    body: z.object({
+      teamId: z.string(),
+      organizationId: z.string().optional()
+    }),
+    use: [orgMiddleware]
+  },
+  async (ctx) => {
+    const session2 = await getSessionFromCtx(ctx);
+    const organizationId = ctx.body.organizationId || session2?.session.activeOrganizationId;
+    if (!organizationId) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.NO_ACTIVE_ORGANIZATION
+        }
+      });
+    }
+    if (!session2 && (ctx.request || ctx.headers)) {
+      throw new APIError("UNAUTHORIZED");
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    if (session2) {
+      const member = await adapter.findMemberByOrgId({
+        userId: session2.user.id,
+        organizationId
+      });
+      if (!member || member.teamId === ctx.body.teamId) {
+        throw new APIError("FORBIDDEN", {
+          message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_INVITE_USERS_TO_THIS_ORGANIZATION
+        });
+      }
+      const canRemove = hasPermission({
+        role: member.role,
+        options: ctx.context.orgOptions,
+        permission: {
+          team: ["delete"]
+        }
+      });
+      if (!canRemove) {
+        throw new APIError("FORBIDDEN", {
+          message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_DELETE_TEAMS_IN_THIS_ORGANIZATION
+        });
+      }
+    }
+    const team = await adapter.findTeamById({
+      teamId: ctx.body.teamId,
+      organizationId
+    });
+    if (!team || team.organizationId !== organizationId) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.TEAM_NOT_FOUND
+      });
+    }
+    if (!ctx.context.orgOptions.teams?.allowRemovingAllTeams) {
+      const teams = await adapter.listTeams(organizationId);
+      if (teams.length <= 1) {
+        throw new APIError("BAD_REQUEST", {
+          message: ORGANIZATION_ERROR_CODES.UNABLE_TO_REMOVE_LAST_TEAM
+        });
+      }
+    }
+    await adapter.deleteTeam(team.id);
+    return ctx.json({ message: "Team removed successfully." });
+  }
+);
+var updateTeam = createAuthEndpoint(
+  "/organization/update-team",
+  {
+    method: "POST",
+    body: z.object({
+      teamId: z.string(),
+      data: teamSchema.partial()
+    }),
+    use: [orgMiddleware, orgSessionMiddleware]
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const organizationId = ctx.body.data.organizationId || session2.session.activeOrganizationId;
+    if (!organizationId) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.NO_ACTIVE_ORGANIZATION
+        }
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2.user.id,
+      organizationId
+    });
+    if (!member) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_UPDATE_THIS_TEAM
+      });
+    }
+    const canUpdate = hasPermission({
+      role: member.role,
+      options: ctx.context.orgOptions,
+      permission: {
+        team: ["update"]
+      }
+    });
+    if (!canUpdate) {
+      throw new APIError("FORBIDDEN", {
+        message: ORGANIZATION_ERROR_CODES.YOU_ARE_NOT_ALLOWED_TO_UPDATE_THIS_TEAM
+      });
+    }
+    const team = await adapter.findTeamById({
+      teamId: ctx.body.teamId,
+      organizationId
+    });
+    if (!team || team.organizationId !== organizationId) {
+      throw new APIError("BAD_REQUEST", {
+        message: ORGANIZATION_ERROR_CODES.TEAM_NOT_FOUND
+      });
+    }
+    const updatedTeam = await adapter.updateTeam(team.id, {
+      name: ctx.body.data.name
+    });
+    return ctx.json(updatedTeam);
+  }
+);
+var listOrganizationTeams = createAuthEndpoint(
+  "/organization/list-teams",
+  {
+    method: "GET",
+    query: z.optional(
+      z.object({
+        organizationId: z.string().optional()
+      })
+    ),
+    use: [orgMiddleware, orgSessionMiddleware]
+  },
+  async (ctx) => {
+    const session2 = ctx.context.session;
+    const organizationId = session2.session.activeOrganizationId || ctx.query?.organizationId;
+    if (!organizationId) {
+      return ctx.json(null, {
+        status: 400,
+        body: {
+          message: ORGANIZATION_ERROR_CODES.NO_ACTIVE_ORGANIZATION
+        }
+      });
+    }
+    const adapter = getOrgAdapter(ctx.context, ctx.context.orgOptions);
+    const member = await adapter.findMemberByOrgId({
+      userId: session2?.user.id,
+      organizationId: organizationId || ""
+    });
+    if (!member) {
+      throw new APIError("FORBIDDEN");
+    }
+    const teams = await adapter.listTeams(organizationId);
+    return ctx.json(teams);
+  }
+);
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/two-factor/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/crypto/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.2rfXmCNS.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var TWO_FACTOR_COOKIE_NAME = "two_factor";
+var TRUST_DEVICE_COOKIE_NAME = "trust_device";
+var verifyTwoFactorMiddleware = createAuthMiddleware(
+  {
+    body: z.object({
+      /**
+       * if true, the device will be trusted
+       * for 30 days. It'll be refreshed on
+       * every sign in request within this time.
+       */
+      trustDevice: z.boolean().optional()
+    })
+  },
+  async (ctx) => {
+    const session2 = await getSessionFromCtx(ctx);
+    if (!session2) {
+      const cookieName = ctx.context.createAuthCookie(TWO_FACTOR_COOKIE_NAME);
+      const userId = await ctx.getSignedCookie(
+        cookieName.name,
+        ctx.context.secret
+      );
+      if (!userId) {
+        throw new APIError("UNAUTHORIZED", {
+          message: "invalid two factor cookie"
+        });
+      }
+      const user2 = await ctx.context.internalAdapter.findUserById(
+        userId
+      );
+      if (!user2) {
+        throw new APIError("UNAUTHORIZED", {
+          message: "invalid two factor cookie"
+        });
+      }
+      const dontRememberMe = await ctx.getSignedCookie(
+        ctx.context.authCookies.dontRememberToken.name,
+        ctx.context.secret
+      );
+      const session22 = await ctx.context.internalAdapter.createSession(
+        userId,
+        ctx.request,
+        !!dontRememberMe
+      );
+      if (!session22) {
+        throw new APIError("INTERNAL_SERVER_ERROR", {
+          message: "failed to create session"
+        });
+      }
+      return {
+        valid: /* @__PURE__ */ __name(async (ctx2) => {
+          await setSessionCookie(ctx2, {
+            session: session22,
+            user: user2
+          });
+          if (ctx2.body.trustDevice) {
+            const trustDeviceCookie = ctx2.context.createAuthCookie(
+              TRUST_DEVICE_COOKIE_NAME,
+              {
+                maxAge: 30 * 24 * 60 * 60
+                // 30 days, it'll be refreshed on sign in requests
+              }
+            );
+            const token = await createHMAC("SHA-256", "base64urlnopad").sign(
+              ctx2.context.secret,
+              `${user2.id}!${session22.token}`
+            );
+            await ctx2.setSignedCookie(
+              trustDeviceCookie.name,
+              `${token}!${session22.token}`,
+              ctx2.context.secret,
+              trustDeviceCookie.attributes
+            );
+            ctx2.setCookie(ctx2.context.authCookies.dontRememberToken.name, "", {
+              maxAge: 0
+            });
+            ctx2.setCookie(cookieName.name, "", {
+              maxAge: 0
+            });
+          }
+          return ctx2.json({
+            token: session22.token,
+            user: {
+              id: user2.id,
+              email: user2.email,
+              emailVerified: user2.emailVerified,
+              name: user2.name,
+              image: user2.image,
+              createdAt: user2.createdAt,
+              updatedAt: user2.updatedAt
+            }
+          });
+        }, "valid"),
+        invalid: /* @__PURE__ */ __name(async () => {
+          throw new APIError("UNAUTHORIZED", {
+            message: "invalid two factor authentication"
+          });
+        }, "invalid"),
+        session: {
+          session: session22,
+          user: user2
+        }
+      };
+    }
+    return {
+      valid: /* @__PURE__ */ __name(async (ctx2) => {
+        return ctx2.json({
+          token: session2.session.token,
+          user: {
+            id: session2.user.id,
+            email: session2.user.email,
+            emailVerified: session2.user.emailVerified,
+            name: session2.user.name,
+            image: session2.user.image,
+            createdAt: session2.user.createdAt,
+            updatedAt: session2.user.updatedAt
+          }
+        });
+      }, "valid"),
+      invalid: /* @__PURE__ */ __name(async () => {
+        throw new APIError("UNAUTHORIZED", {
+          message: "invalid two factor authentication"
+        });
+      }, "invalid"),
+      session: session2
+    };
+  }
+);
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.BcoSd9tC.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/@better-auth+utils@0.2.4/node_modules/@better-auth/utils/dist/otp.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/@better-auth+utils@0.2.4/node_modules/@better-auth/utils/dist/base32.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.Ddw8bVyV.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/username/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/bearer/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/magic-link/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/phone-number/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/anonymous/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.cN4sTcuQ.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.DQI8AD7d.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/admin/access/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var defaultStatements2 = {
+  user: [
+    "create",
+    "list",
+    "set-role",
+    "ban",
+    "impersonate",
+    "delete",
+    "set-password"
+  ],
+  session: ["list", "revoke", "delete"]
+};
+var defaultAc2 = createAccessControl(defaultStatements2);
+var adminAc2 = defaultAc2.newRole({
+  user: [
+    "create",
+    "list",
+    "set-role",
+    "ban",
+    "impersonate",
+    "delete",
+    "set-password"
+  ],
+  session: ["list", "revoke", "delete"]
+});
+var userAc = defaultAc2.newRole({
+  user: [],
+  session: []
+});
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/generic-oauth/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/jwt/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/shared/better-auth.fsvwNeUx.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+z.object({
+  id: z.string(),
+  publicKey: z.string(),
+  privateKey: z.string(),
+  createdAt: z.date()
+});
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/multi-session/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/email-otp/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/one-tap/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/oauth-proxy/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/custom-session/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/open-api/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var paths2 = {};
+function getTypeFromZodType2(zodType) {
+  switch (zodType.constructor.name) {
+    case "ZodString":
+      return "string";
+    case "ZodNumber":
+      return "number";
+    case "ZodBoolean":
+      return "boolean";
+    case "ZodObject":
+      return "object";
+    case "ZodArray":
+      return "array";
+    default:
+      return "string";
+  }
+}
+__name(getTypeFromZodType2, "getTypeFromZodType");
+function getParameters2(options) {
+  const parameters = [];
+  if (options.metadata?.openapi?.parameters) {
+    parameters.push(...options.metadata.openapi.parameters);
+    return parameters;
+  }
+  if (options.query instanceof ZodObject) {
+    Object.entries(options.query.shape).forEach(([key, value]) => {
+      if (value instanceof ZodType) {
+        parameters.push({
+          name: key,
+          in: "query",
+          schema: {
+            type: getTypeFromZodType2(value),
+            ..."minLength" in value && value.minLength ? {
+              minLength: value.minLength
+            } : {},
+            description: value.description
+          }
+        });
+      }
+    });
+  }
+  return parameters;
+}
+__name(getParameters2, "getParameters");
+function getRequestBody2(options) {
+  if (options.metadata?.openapi?.requestBody) {
+    return options.metadata.openapi.requestBody;
+  }
+  if (!options.body) return void 0;
+  if (options.body instanceof ZodObject || options.body instanceof ZodOptional) {
+    const shape = options.body.shape;
+    if (!shape) return void 0;
+    const properties = {};
+    const required = [];
+    Object.entries(shape).forEach(([key, value]) => {
+      if (value instanceof ZodType) {
+        properties[key] = {
+          type: getTypeFromZodType2(value),
+          description: value.description
+        };
+        if (!(value instanceof ZodOptional)) {
+          required.push(key);
+        }
+      }
+    });
+    return {
+      required: options.body instanceof ZodOptional ? false : options.body ? true : false,
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties,
+            required
+          }
+        }
+      }
+    };
+  }
+  return void 0;
+}
+__name(getRequestBody2, "getRequestBody");
+function getResponse2(responses) {
+  return {
+    "400": {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              message: {
+                type: "string"
+              }
+            },
+            required: ["message"]
+          }
+        }
+      },
+      description: "Bad Request. Usually due to missing parameters, or invalid parameters."
+    },
+    "401": {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              message: {
+                type: "string"
+              }
+            },
+            required: ["message"]
+          }
+        }
+      },
+      description: "Unauthorized. Due to missing or invalid authentication."
+    },
+    "403": {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              message: {
+                type: "string"
+              }
+            }
+          }
+        }
+      },
+      description: "Forbidden. You do not have permission to access this resource or to perform this action."
+    },
+    "404": {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              message: {
+                type: "string"
+              }
+            }
+          }
+        }
+      },
+      description: "Not Found. The requested resource was not found."
+    },
+    "429": {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              message: {
+                type: "string"
+              }
+            }
+          }
+        }
+      },
+      description: "Too Many Requests. You have exceeded the rate limit. Try again later."
+    },
+    "500": {
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              message: {
+                type: "string"
+              }
+            }
+          }
+        }
+      },
+      description: "Internal Server Error. This is a problem with the server that you cannot fix."
+    },
+    ...responses
+  };
+}
+__name(getResponse2, "getResponse");
+function toOpenApiPath(path) {
+  return path.split("/").map((part) => part.startsWith(":") ? `{${part.slice(1)}}` : part).join("/");
+}
+__name(toOpenApiPath, "toOpenApiPath");
+async function generator2(ctx, options) {
+  const baseEndpoints = getEndpoints(ctx, {
+    ...options,
+    plugins: []
+  });
+  const tables = getAuthTables(options);
+  const models = Object.entries(tables).reduce((acc, [key, value]) => {
+    const modelName = key.charAt(0).toUpperCase() + key.slice(1);
+    acc[modelName] = {
+      type: "object",
+      properties: Object.entries(value.fields).reduce(
+        (acc2, [key2, value2]) => {
+          acc2[key2] = {
+            type: value2.type
+          };
+          return acc2;
+        },
+        { id: { type: "string" } }
+      )
+    };
+    return acc;
+  }, {});
+  const components = {
+    schemas: {
+      ...models
+    }
+  };
+  Object.entries(baseEndpoints.api).forEach(([_, value]) => {
+    const options2 = value.options;
+    if (options2.metadata?.SERVER_ONLY) return;
+    const path = toOpenApiPath(value.path);
+    if (options2.method === "GET") {
+      paths2[path] = {
+        get: {
+          tags: ["Default", ...options2.metadata?.openapi?.tags || []],
+          description: options2.metadata?.openapi?.description,
+          operationId: options2.metadata?.openapi?.operationId,
+          security: [
+            {
+              bearerAuth: []
+            }
+          ],
+          parameters: getParameters2(options2),
+          responses: getResponse2(options2.metadata?.openapi?.responses)
+        }
+      };
+    }
+    if (options2.method === "POST") {
+      const body = getRequestBody2(options2);
+      paths2[path] = {
+        post: {
+          tags: ["Default", ...options2.metadata?.openapi?.tags || []],
+          description: options2.metadata?.openapi?.description,
+          operationId: options2.metadata?.openapi?.operationId,
+          security: [
+            {
+              bearerAuth: []
+            }
+          ],
+          parameters: getParameters2(options2),
+          ...body ? { requestBody: body } : {
+            requestBody: {
+              //set body none
+              content: {
+                "application/json": {
+                  schema: {
+                    type: "object",
+                    properties: {}
+                  }
+                }
+              }
+            }
+          },
+          responses: getResponse2(options2.metadata?.openapi?.responses)
+        }
+      };
+    }
+  });
+  for (const plugin of options.plugins || []) {
+    if (plugin.id === "open-api") {
+      continue;
+    }
+    const pluginEndpoints = getEndpoints(ctx, {
+      ...options,
+      plugins: [plugin]
+    });
+    const api = Object.keys(pluginEndpoints.api).map((key) => {
+      if (baseEndpoints.api[key] === void 0) {
+        return pluginEndpoints.api[key];
+      }
+      return null;
+    }).filter((x) => x !== null);
+    Object.entries(api).forEach(([key, value]) => {
+      const options2 = value.options;
+      if (options2.metadata?.SERVER_ONLY) return;
+      const path = toOpenApiPath(value.path);
+      if (options2.method === "GET") {
+        paths2[path] = {
+          get: {
+            tags: options2.metadata?.openapi?.tags || [
+              plugin.id.charAt(0).toUpperCase() + plugin.id.slice(1)
+            ],
+            description: options2.metadata?.openapi?.description,
+            operationId: options2.metadata?.openapi?.operationId,
+            security: [
+              {
+                bearerAuth: []
+              }
+            ],
+            parameters: getParameters2(options2),
+            responses: getResponse2(options2.metadata?.openapi?.responses)
+          }
+        };
+      }
+      if (options2.method === "POST") {
+        paths2[path] = {
+          post: {
+            tags: options2.metadata?.openapi?.tags || [
+              plugin.id.charAt(0).toUpperCase() + plugin.id.slice(1)
+            ],
+            description: options2.metadata?.openapi?.description,
+            operationId: options2.metadata?.openapi?.operationId,
+            security: [
+              {
+                bearerAuth: []
+              }
+            ],
+            parameters: getParameters2(options2),
+            requestBody: getRequestBody2(options2),
+            responses: getResponse2(options2.metadata?.openapi?.responses)
+          }
+        };
+      }
+    });
+  }
+  const res = {
+    openapi: "3.1.1",
+    info: {
+      title: "Better Auth",
+      description: "API Reference for your Better Auth Instance",
+      version: "1.1.0"
+    },
+    components: {
+      ...components,
+      securitySchemes: {
+        apiKeyCookie: {
+          type: "apiKey",
+          in: "cookie",
+          name: "apiKeyCookie",
+          description: "API Key authentication via cookie"
+        },
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          description: "Bearer token authentication"
+        }
+      }
+    },
+    security: [
+      {
+        apiKeyCookie: [],
+        bearerAuth: []
+      }
+    ],
+    servers: [
+      {
+        url: ctx.baseURL
+      }
+    ],
+    tags: [
+      {
+        name: "Default",
+        description: "Default endpoints that are included with Better Auth by default. These endpoints are not part of any plugin."
+      }
+    ],
+    paths: paths2
+  };
+  return res;
+}
+__name(generator2, "generator");
+var logo = `<svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="75" height="75" fill="url(#pattern0_21_12)"/>
+<defs>
+<pattern id="pattern0_21_12" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_21_12" transform="scale(0.00094697)"/>
+</pattern>
+<image id="image0_21_12" width="1056" height="1056" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAEIKADAAQAAAABAAAEIAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICKElDQ19QUk9GSUxFAAEBAAACGGFwcGwEAAAAbW50clJHQiBYWVogB+YAAQABAAAAAAAAYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBs7P2jjjiFR8NttL1PetoYLwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAAAwY3BydAAAASwAAABQd3RwdAAAAXwAAAAUclhZWgAAAZAAAAAUZ1hZWgAAAaQAAAAUYlhZWgAAAbgAAAAUclRSQwAAAcwAAAAgY2hhZAAAAewAAAAsYlRSQwAAAcwAAAAgZ1RSQwAAAcwAAAAgbWx1YwAAAAAAAAABAAAADGVuVVMAAAAUAAAAHABEAGkAcwBwAGwAYQB5ACAAUAAzbWx1YwAAAAAAAAABAAAADGVuVVMAAAA0AAAAHABDAG8AcAB5AHIAaQBnAGgAdAAgAEEAcABwAGwAZQAgAEkAbgBjAC4ALAAgADIAMAAyADJYWVogAAAAAAAA9tUAAQAAAADTLFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7/wAARCAQgBCADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwACAgICAgIDAgIDBAMDAwQFBAQEBAUHBQUFBQUHCAcHBwcHBwgICAgICAgICgoKCgoKCwsLCwsNDQ0NDQ0NDQ0N/9sAQwECAgIDAwMGAwMGDQkHCQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0N/90ABABC/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Q/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0f38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9L9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//T/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1P38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9X9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//W/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1/38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9D9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//R/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9P9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//U/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1f38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9b9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//X/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0P38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9H9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//S/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0/38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9T9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//V/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Ln/gq38a/in8Dvgp4T8R/CfxFdeG9SvvFMdlcXFoELyW5srqQxnzEcY3op4Gciv1Gr8Z/+C2X/JvXgj/sc4v/AE33lAH4z/8ADwv9tD/oq2tf9823/wAZo/4eF/tof9FW1r/vm2/+M18Z0UAfZn/Dwv8AbQ/6KtrX/fNt/wDGaP8Ah4X+2h/0VbWv++bb/wCM18Z0UAfZn/Dwv9tD/oq2tf8AfNt/8Zo/4eF/tof9FW1r/vm2/wDjNfGdFAH2Z/w8L/bQ/wCira1/3zbf/GaP+Hhf7aH/AEVbWv8Avm2/+M18Z0UAfZn/AA8L/bQ/6KtrX/fNt/8AGaP+Hhf7aH/RVta/75tv/jNfGdFAH2Z/w8L/AG0P+ira1/3zbf8Axmj/AIeF/tof9FW1r/vm2/8AjNfGdFAH63/sVftq/tTfEb9qb4deCfG3xF1TVtD1bVGgvbKdYBHPGIJW2ttiVsblB4I6V/UbX8Z//BPT/k9D4U/9hpv/AEmmr+zCgAooooAKKKKACiiigAooooAKKKKACiiigD+M/wD4eF/tof8ARVta/wC+bb/4zR/w8L/bQ/6KtrX/AHzbf/Ga+M6KAPsz/h4X+2h/0VbWv++bb/4zR/w8L/bQ/wCira1/3zbf/Ga+M6KAPsz/AIeF/tof9FW1r/vm2/8AjNH/AA8L/bQ/6KtrX/fNt/8AGa+M6KAPsz/h4X+2h/0VbWv++bb/AOM0f8PC/wBtD/oq2tf9823/AMZr4zooA+zP+Hhf7aH/AEVbWv8Avm2/+M0f8PC/20P+ira1/wB823/xmvjOigD7M/4eF/tof9FW1r/vm2/+M0f8PC/20P8Aoq2tf9823/xmvjOigD7M/wCHhf7aH/RVta/75tv/AIzR/wAPC/20P+ira1/3zbf/ABmvjOigD7M/4eF/tof9FW1r/vm2/wDjNH/Dwv8AbQ/6KtrX/fNt/wDGa+M6KAPsz/h4X+2h/wBFW1r/AL5tv/jNH/Dwv9tD/oq2tf8AfNt/8Zr4zooA+zP+Hhf7aH/RVta/75tv/jNH/Dwv9tD/AKKtrX/fNt/8Zr4zooA+zP8Ah4X+2h/0VbWv++bb/wCM0f8ADwv9tD/oq2tf9823/wAZr4zooA+zP+Hhf7aH/RVta/75tv8A4zR/w8L/AG0P+ira1/3zbf8AxmvjOigD7M/4eF/tof8ARVta/wC+bb/4zR/w8L/bQ/6KtrX/AHzbf/Ga+M6KAP6tv+CUnxr+Kfxx+CnizxH8WPEV14k1Kx8UyWVvcXYQPHbiytZBGPLRBje7HkZya/Uavxn/AOCJv/JvXjf/ALHOX/032dfsxQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf//X/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr8Z/+C2X/JvXgj/sc4v/AE33lfsxX4z/APBbL/k3rwR/2OcX/pvvKAP5m6KKKACiiigAooooAKKKKACiiigAooooA+zP+Cen/J6Hwp/7DTf+k01f2YV/Gf8A8E9P+T0PhT/2Gm/9Jpq/swoAKKKKACiiigAooooAKKKKACiiigAooooA/gDooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/pk/4Im/8m9eN/8Asc5f/TfZ1+zFfjP/AMETf+TevG//AGOcv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9D9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigD7M/4J6f8nofCn/sNN/6TTV/ZhX8Z/wDwT0/5PQ+FP/Yab/0mmr+zCgAooooAKKKKACiiigAooooAKKKKACiiigD+AOiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/wCxzl/9N9nX7MV+M/8AwRN/5N68b/8AY5y/+m+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0f38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Gf/gtl/yb14I/7HOL/wBN95X7MV+M/wDwWy/5N68Ef9jnF/6b7ygD+ZuiiigAooooAKKKKACiiigAooooAKKKKAPsz/gnp/yeh8Kf+w03/pNNX9mFfxn/APBPT/k9D4U/9hpv/Saav7MKACiiigAooooAKKKKACiiigAooooAKKKKAP4A6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP6ZP+CJv/JvXjf/ALHOX/032dfsxX4z/wDBE3/k3rxv/wBjnL/6b7Ov2YoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/S/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr8Z/+C2X/JvXgj/sc4v/AE33lfsxX4z/APBbL/k3rwR/2OcX/pvvKAP5m6KKKACiiigAooooAKKKKACiiigAooooA+zP+Cen/J6Hwp/7DTf+k01f2YV/Gf8A8E9P+T0PhT/2Gm/9Jpq/swoAKKKKACiiigAooooAKKKKACiiigAooooA/gDooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/pk/4Im/8m9eN/8Asc5f/TfZ1+zFfjP/AMETf+TevG//AGOcv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9P9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigD7M/4J6f8nofCn/sNN/6TTV/ZhX8Z/wDwT0/5PQ+FP/Yab/0mmr+zCgAooooAKKKKACiiigAooooAKKKKACiiigD+AOiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/wCxzl/9N9nX7MV+M/8AwRN/5N68b/8AY5y/+m+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/1P38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Gf/gtl/yb14I/7HOL/wBN95X7MV+M/wDwWy/5N68Ef9jnF/6b7ygD+ZuiiigAooooAKKKKACiiigAooooAKKKKAPsz/gnp/yeh8Kf+w03/pNNX9mFfwq/BT4r638Dvin4d+LHhy0tb7UvDd0bu3t70ObeRzG0eJBGyPjDnowOa/Ub/h9l+0L/ANCR4M/79ah/8m0Af0yUV/M3/wAPsv2hf+hI8Gf9+tQ/+TaP+H2X7Qv/AEJHgz/v1qH/AMm0Af0yUV/M3/w+y/aF/wChI8Gf9+tQ/wDk2j/h9l+0L/0JHgz/AL9ah/8AJtAH9MlFfzN/8Psv2hf+hI8Gf9+tQ/8Ak2j/AIfZftC/9CR4M/79ah/8m0Af0yUV/M3/AMPsv2hf+hI8Gf8AfrUP/k2j/h9l+0L/ANCR4M/79ah/8m0Af0yUV/M3/wAPsv2hf+hI8Gf9+tQ/+TaP+H2X7Qv/AEJHgz/v1qH/AMm0Af0yUV/M3/w+y/aF/wChI8Gf9+tQ/wDk2j/h9l+0L/0JHgz/AL9ah/8AJtAH4z0V/TJ/w5N/Z6/6Hfxn/wB/dP8A/kKj/hyb+z1/0O/jP/v7p/8A8hUAfzN0V/TJ/wAOTf2ev+h38Z/9/dP/APkKj/hyb+z1/wBDv4z/AO/un/8AyFQB/M3RX9Mn/Dk39nr/AKHfxn/390//AOQqP+HJv7PX/Q7+M/8Av7p//wAhUAfzN0V/TJ/w5N/Z6/6Hfxn/AN/dP/8AkKj/AIcm/s9f9Dv4z/7+6f8A/IVAH8zdFf0yf8OTf2ev+h38Z/8Af3T/AP5Co/4cm/s9f9Dv4z/7+6f/APIVAH8zdFf0yf8ADk39nr/od/Gf/f3T/wD5Co/4cm/s9f8AQ7+M/wDv7p//AMhUAfzN0V/TJ/w5N/Z6/wCh38Z/9/dP/wDkKvwV/ag+FGifA74++M/hP4cu7q+03w3fi0t7i9KG4kQxRyZkMaomcueigYoA8FooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/AOxzl/8ATfZ1+zFfjP8A8ETf+TevG/8A2Ocv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9X9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/v8ooooAKKKKACiiigAooooAKKKKACiiigAr+M//goX/wAnofFb/sNL/wCk0Nf2YV/Gf/wUL/5PQ+K3/YaX/wBJoaAPjOiiigAooooAKKKKACiiigAooooAKKKKAP6ZP+CJv/JvXjf/ALHOX/032dfsxX4z/wDBE3/k3rxv/wBjnL/6b7Ov2YoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/W/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr8Z/+C2X/JvXgj/sc4v/AE33lfsxX4z/APBbL/k3rwR/2OcX/pvvKAP5m6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP7/KKKKACiiigAooooAKKKKACiiigAooooAK/jP/4KF/8AJ6HxW/7DS/8ApNDX9mFfxn/8FC/+T0Pit/2Gl/8ASaGgD4zooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/wCxzl/9N9nX7MV+M/8AwRN/5N68b/8AY5y/+m+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/1/38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Gf/gtl/yb14I/7HOL/wBN95X7MV+M/wDwWy/5N68Ef9jnF/6b7ygD+ZuiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD+/yiiigAooooAKKKKACiiigAooooAKKKKACv4z/+Chf/ACeh8Vv+w0v/AKTQ1/ZhX8Z//BQv/k9D4rf9hpf/AEmhoA+M6KKKACiiigAooooAKKKKACiiigAooooA/pk/4Im/8m9eN/8Asc5f/TfZ1+zFfjP/AMETf+TevG//AGOcv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9D9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/v8ooooAKKKKACiiigAooooAKKKKACiiigAr+M//goX/wAnofFb/sNL/wCk0Nf2YV/Gf/wUL/5PQ+K3/YaX/wBJoaAPjOiiigAooooAKKKKACiiigAooooAKKKKAP6ZP+CJv/JvXjf/ALHOX/032dfsxX4z/wDBE3/k3rxv/wBjnL/6b7Ov2YoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/R/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr8Z/+C2X/JvXgj/sc4v/AE33lfsxX4z/APBbL/k3rwR/2OcX/pvvKAP5m6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP7/KKKKACiiigAooooAKKKKACiiigAooooAK/jP/4KF/8AJ6HxW/7DS/8ApNDX9mFfxn/8FC/+T0Pit/2Gl/8ASaGgD4zooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/wCxzl/9N9nX7MV+M/8AwRN/5N68b/8AY5y/+m+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Gf/gtl/yb14I/7HOL/wBN95X7MV+M/wDwWy/5N68Ef9jnF/6b7ygD+ZuiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD+/yiiigAooooAKKKKACiiigAooooAKKKKACv4z/+Chf/ACeh8Vv+w0v/AKTQ1/ZhX8Z//BQv/k9D4rf9hpf/AEmhoA+M6KKKACiiigAooooAKKKKACiiigAooooA/pk/4Im/8m9eN/8Asc5f/TfZ1+zFfjP/AMETf+TevG//AGOcv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9P9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigD1L4KfCjW/jj8U/Dvwn8OXdrY6l4kujaW9xelxbxuI2kzIY1d8YQ9FJzX6jf8OTf2hf8Aod/Bn/f3UP8A5Cr4z/4J6f8AJ6Hwp/7DTf8ApNNX9mFAH8zf/Dk39oX/AKHfwZ/391D/AOQqP+HJv7Qv/Q7+DP8Av7qH/wAhV/TJRQB/M3/w5N/aF/6HfwZ/391D/wCQqP8Ahyb+0L/0O/gz/v7qH/yFX9MlFAH8zf8Aw5N/aF/6HfwZ/wB/dQ/+QqP+HJv7Qv8A0O/gz/v7qH/yFX9MlFAH8zf/AA5N/aF/6HfwZ/391D/5Co/4cm/tC/8AQ7+DP+/uof8AyFX9MlFAH8zf/Dk39oX/AKHfwZ/391D/AOQqP+HJv7Qv/Q7+DP8Av7qH/wAhV/TJRQB/M3/w5N/aF/6HfwZ/391D/wCQqP8Ahyb+0L/0O/gz/v7qH/yFX9MlFAH4z/8AD7L9nr/oSPGf/frT/wD5No/4fZfs9f8AQkeM/wDv1p//AMm1/M3RQB/TJ/w+y/Z6/wChI8Z/9+tP/wDk2j/h9l+z1/0JHjP/AL9af/8AJtfzN0UAf0yf8Psv2ev+hI8Z/wDfrT//AJNo/wCH2X7PX/QkeM/+/Wn/APybX8zdFAH9Mn/D7L9nr/oSPGf/AH60/wD+TaP+H2X7PX/QkeM/+/Wn/wDybX8zdFAH9Mn/AA+y/Z6/6Ejxn/360/8A+TaP+H2X7PX/AEJHjP8A79af/wDJtfzN0UAf0yf8Psv2ev8AoSPGf/frT/8A5No/4fZfs9f9CR4z/wC/Wn//ACbX8zdFAH9Mn/D7L9nr/oSPGf8A360//wCTa/BX9qD4r6J8cfj74z+LHhy0urHTfEl+Lu3t70ILiNBFHHiQRs6Zyh6MRivBaKACiiigAooooAKKKKACiiigAooooAKKKKAP6ZP+CJv/ACb143/7HOX/ANN9nX7MV+M//BE3/k3rxv8A9jnL/wCm+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//U/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr8Z/+C2X/JvXgj/sc4v/AE33lfsxX4z/APBbL/k3rwR/2OcX/pvvKAP5m6KKKACiiigAooooAKKKKACiiigAooooA+zP+Cen/J6Hwp/7DTf+k01f2YV/Gf8A8E9P+T0PhT/2Gm/9Jpq/swoAKKKKACiiigAooooAKKKKACiiigAooooA/gDooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/pk/4Im/8m9eN/8Asc5f/TfZ1+zFfjP/AMETf+TevG//AGOcv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9X9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigD7M/4J6f8nofCn/sNN/6TTV/ZhX8Z/wDwT0/5PQ+FP/Yab/0mmr+zCgAooooAKKKKACiiigAooooAKKKKACiiigD+AOiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/wCxzl/9N9nX7MV+M/8AwRN/5N68b/8AY5y/+m+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/1v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Gf/gtl/yb14I/7HOL/wBN95X7MV+M/wDwWy/5N68Ef9jnF/6b7ygD+ZuiiigAooooAKKKKACiiigAooooAKKKKAPsz/gnp/yeh8Kf+w03/pNNX9mFfxn/APBPT/k9D4U/9hpv/Saav7MKACiiigAooooAKKKKACiiigAooooAKKKKAP4A6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP6ZP+CJv/JvXjf/ALHOX/032dfsxX4z/wDBE3/k3rxv/wBjnL/6b7Ov2YoAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/X/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAr8Z/+C2X/JvXgj/sc4v/AE33lfsxX4z/APBbL/k3rwR/2OcX/pvvKAP5m6KKKACiiigAooooAKKKKACiiigAooooA+zP+Cen/J6Hwp/7DTf+k01f2YV/Gf8A8E9P+T0PhT/2Gm/9Jpq/swoAKKKKACiiigAooooAKKKKACiiigAooooA/gDooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/pk/4Im/8m9eN/8Asc5f/TfZ1+zFfjP/AMETf+TevG//AGOcv/pvs6/ZigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9D9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACvxn/4LZf8m9eCP+xzi/8ATfeV+zFfjP8A8Fsv+TevBH/Y5xf+m+8oA/mbooooAKKKKACiiigAooooAKKKKACiiigD7M/4J6f8nofCn/sNN/6TTV/ZhX8Z/wDwT0/5PQ+FP/Yab/0mmr+zCgAooooAKKKKACiiigAooooAKKKKACiiigD+AOiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD+mT/gib/yb143/wCxzl/9N9nX7MV+M/8AwRN/5N68b/8AY5y/+m+zr9mKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0f38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK/Gf/gtl/yb14I/7HOL/wBN95X7MV+XP/BVv4KfFP44/BTwn4c+E/h268SalY+KY724t7QoHjtxZXUZkPmOgxvdRwc5NAH8pNFfZn/DvT9tD/olOtf99W3/AMeo/wCHen7aH/RKda/76tv/AI9QB8Z0V9mf8O9P20P+iU61/wB9W3/x6j/h3p+2h/0SnWv++rb/AOPUAfGdFfZn/DvT9tD/AKJTrX/fVt/8eo/4d6ftof8ARKda/wC+rb/49QB8Z0V9mf8ADvT9tD/olOtf99W3/wAeo/4d6ftof9Ep1r/vq2/+PUAfGdFfZn/DvT9tD/olOtf99W3/AMeo/wCHen7aH/RKda/76tv/AI9QB8Z0V9mf8O9P20P+iU61/wB9W3/x6j/h3p+2h/0SnWv++rb/AOPUAH/BPT/k9D4U/wDYab/0mmr+zCv5cv2Kv2Kv2pvhz+1N8OvG3jb4dappOh6TqjT3t7O0BjgjMEq7m2ys2NzAcA9a/qNoAKKKKACiiigAooooAKKKKACiiigAooooA/gDor7M/wCHen7aH/RKda/76tv/AI9R/wAO9P20P+iU61/31bf/AB6gD4zor7M/4d6ftof9Ep1r/vq2/wDj1H/DvT9tD/olOtf99W3/AMeoA+M6K+zP+Hen7aH/AESnWv8Avq2/+PUf8O9P20P+iU61/wB9W3/x6gD4zor7M/4d6ftof9Ep1r/vq2/+PUf8O9P20P8AolOtf99W3/x6gD4zor7M/wCHen7aH/RKda/76tv/AI9R/wAO9P20P+iU61/31bf/AB6gD4zor7M/4d6ftof9Ep1r/vq2/wDj1H/DvT9tD/olOtf99W3/AMeoA+M6K+zP+Hen7aH/AESnWv8Avq2/+PUf8O9P20P+iU61/wB9W3/x6gD4zor7M/4d6ftof9Ep1r/vq2/+PUf8O9P20P8AolOtf99W3/x6gD4zor7M/wCHen7aH/RKda/76tv/AI9R/wAO9P20P+iU61/31bf/AB6gD4zor7M/4d6ftof9Ep1r/vq2/wDj1H/DvT9tD/olOtf99W3/AMeoA+M6K+zP+Hen7aH/AESnWv8Avq2/+PUf8O9P20P+iU61/wB9W3/x6gD4zor7M/4d6ftof9Ep1r/vq2/+PUf8O9P20P8AolOtf99W3/x6gD4zor7M/wCHen7aH/RKda/76tv/AI9R/wAO9P20P+iU61/31bf/AB6gD9mP+CJv/JvXjf8A7HOX/wBN9nX7MV+XP/BKT4KfFP4HfBTxZ4c+LHh268N6lfeKZL23t7soXktzZWsYkHlu4xvRhyc5FfqNQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/9L9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//T/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1P38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9X9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//W/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1/38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9D9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//R/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9P9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//U/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1f38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9b9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//X/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0P38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9H9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//S/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/0/38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9T9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//V/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/1v38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9f9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Q/fyiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/2Q=="/>
+</defs>
+</svg>
+`;
+var getHTML2 = /* @__PURE__ */ __name((apiReference2) => `<!doctype html>
+<html>
+  <head>
+    <title>Scalar API Reference</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script
+      id="api-reference"
+      type="application/json">
+    ${JSON.stringify(apiReference2)}
+    <\/script>
+	 <script>
+      var configuration = {
+	  	favicon: "data:image/svg+xml;utf8,${encodeURIComponent(logo)}",
+	   	theme: "saturn",
+        metaData: {
+			title: "Better Auth API",
+			description: "API Reference for your Better Auth Instance",
+		}
+      }
+
+      document.getElementById('api-reference').dataset.configuration =
+        JSON.stringify(configuration)
+    <\/script>
+	  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"><\/script>
+  </body>
+</html>`, "getHTML");
+var openAPI = /* @__PURE__ */ __name((options) => {
+  const path = options?.path ?? "/reference";
+  return {
+    id: "open-api",
+    endpoints: {
+      generateOpenAPISchema: createAuthEndpoint(
+        "/open-api/generate-schema",
+        {
+          method: "GET"
+        },
+        async (ctx) => {
+          const schema3 = await generator2(ctx.context, ctx.context.options);
+          return ctx.json(schema3);
+        }
+      ),
+      openAPIReference: createAuthEndpoint(
+        path,
+        {
+          method: "GET",
+          metadata: {
+            isAction: false
+          }
+        },
+        async (ctx) => {
+          if (options?.disableDefaultReference) {
+            throw new APIError("NOT_FOUND");
+          }
+          const schema3 = await generator2(ctx.context, ctx.context.options);
+          return new Response(getHTML2(schema3), {
+            headers: {
+              "Content-Type": "text/html"
+            }
+          });
+        }
+      )
+    }
+  };
+}, "openAPI");
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/oidc-provider/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/plugins/captcha/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var Providers = {
+  CLOUDFLARE_TURNSTILE: "cloudflare-turnstile",
+  GOOGLE_RECAPTCHA: "google-recaptcha"
+};
+var siteVerifyMap = {
+  [Providers.CLOUDFLARE_TURNSTILE]: "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+  [Providers.GOOGLE_RECAPTCHA]: "https://www.google.com/recaptcha/api/siteverify"
+};
 
 // src/db/index.ts
 init_modules_watch_stub();
@@ -50566,8 +54931,8 @@ var SelectionProxyHandler = class _SelectionProxyHandler {
   }
   static [entityKind] = "SelectionProxyHandler";
   config;
-  constructor(config4) {
-    this.config = { ...config4 };
+  constructor(config3) {
+    this.config = { ...config3 };
   }
   get(subquery, prop) {
     if (prop === "_") {
@@ -50676,9 +55041,9 @@ var ForeignKeyBuilder2 = class {
   _onUpdate;
   /** @internal */
   _onDelete;
-  constructor(config4, actions) {
+  constructor(config3, actions) {
     this.reference = () => {
-      const { name, columns, foreignColumns } = config4();
+      const { name, columns, foreignColumns } = config3();
       return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
     };
     if (actions) {
@@ -50799,11 +55164,11 @@ var SQLiteColumnBuilder = class extends ColumnBuilder {
     this.config.uniqueName = name;
     return this;
   }
-  generatedAlwaysAs(as, config4) {
+  generatedAlwaysAs(as, config3) {
     this.config.generated = {
       as,
       type: "always",
-      mode: config4?.mode ?? "virtual"
+      mode: config3?.mode ?? "virtual"
     };
     return this;
   }
@@ -50830,11 +55195,11 @@ var SQLiteColumn = class extends Column {
   static {
     __name(this, "SQLiteColumn");
   }
-  constructor(table3, config4) {
-    if (!config4.uniqueName) {
-      config4.uniqueName = uniqueKeyName2(table3, [config4.name]);
+  constructor(table3, config3) {
+    if (!config3.uniqueName) {
+      config3.uniqueName = uniqueKeyName2(table3, [config3.name]);
     }
-    super(table3, config4);
+    super(table3, config3);
     this.table = table3;
   }
   static [entityKind] = "SQLiteColumn";
@@ -50937,11 +55302,11 @@ var SQLiteBlobBuffer = class extends SQLiteColumn {
   }
 };
 function blob(a, b) {
-  const { name, config: config4 } = getColumnNameAndConfig(a, b);
-  if (config4?.mode === "json") {
+  const { name, config: config3 } = getColumnNameAndConfig(a, b);
+  if (config3?.mode === "json") {
     return new SQLiteBlobJsonBuilder(name);
   }
-  if (config4?.mode === "bigint") {
+  if (config3?.mode === "bigint") {
     return new SQLiteBigIntBuilder(name);
   }
   return new SQLiteBlobBufferBuilder(name);
@@ -50979,11 +55344,11 @@ var SQLiteCustomColumn = class extends SQLiteColumn {
   sqlName;
   mapTo;
   mapFrom;
-  constructor(table3, config4) {
-    super(table3, config4);
-    this.sqlName = config4.customTypeParams.dataType(config4.fieldConfig);
-    this.mapTo = config4.customTypeParams.toDriver;
-    this.mapFrom = config4.customTypeParams.fromDriver;
+  constructor(table3, config3) {
+    super(table3, config3);
+    this.sqlName = config3.customTypeParams.dataType(config3.fieldConfig);
+    this.mapTo = config3.customTypeParams.toDriver;
+    this.mapFrom = config3.customTypeParams.fromDriver;
   }
   getSQLType() {
     return this.sqlName;
@@ -50997,10 +55362,10 @@ var SQLiteCustomColumn = class extends SQLiteColumn {
 };
 function customType(customTypeParams) {
   return (a, b) => {
-    const { name, config: config4 } = getColumnNameAndConfig(a, b);
+    const { name, config: config3 } = getColumnNameAndConfig(a, b);
     return new SQLiteCustomColumnBuilder(
       name,
-      config4,
+      config3,
       customTypeParams
     );
   };
@@ -51021,8 +55386,8 @@ var SQLiteBaseIntegerBuilder = class extends SQLiteColumnBuilder {
     super(name, dataType, columnType);
     this.config.autoIncrement = false;
   }
-  primaryKey(config4) {
-    if (config4?.autoIncrement) {
+  primaryKey(config3) {
+    if (config3?.autoIncrement) {
       this.config.autoIncrement = true;
     }
     this.config.hasDefault = true;
@@ -51134,12 +55499,12 @@ var SQLiteBoolean = class extends SQLiteBaseInteger {
   }
 };
 function integer(a, b) {
-  const { name, config: config4 } = getColumnNameAndConfig(a, b);
-  if (config4?.mode === "timestamp" || config4?.mode === "timestamp_ms") {
-    return new SQLiteTimestampBuilder(name, config4.mode);
+  const { name, config: config3 } = getColumnNameAndConfig(a, b);
+  if (config3?.mode === "timestamp" || config3?.mode === "timestamp_ms") {
+    return new SQLiteTimestampBuilder(name, config3.mode);
   }
-  if (config4?.mode === "boolean") {
-    return new SQLiteBooleanBuilder(name, config4.mode);
+  if (config3?.mode === "boolean") {
+    return new SQLiteBooleanBuilder(name, config3.mode);
   }
   return new SQLiteIntegerBuilder(name);
 }
@@ -51222,10 +55587,10 @@ var SQLiteTextBuilder = class extends SQLiteColumnBuilder {
     __name(this, "SQLiteTextBuilder");
   }
   static [entityKind] = "SQLiteTextBuilder";
-  constructor(name, config4) {
+  constructor(name, config3) {
     super(name, "string", "SQLiteText");
-    this.config.enumValues = config4.enum;
-    this.config.length = config4.length;
+    this.config.enumValues = config3.enum;
+    this.config.length = config3.length;
   }
   /** @internal */
   build(table3) {
@@ -51242,8 +55607,8 @@ var SQLiteText = class extends SQLiteColumn {
   static [entityKind] = "SQLiteText";
   enumValues = this.config.enumValues;
   length = this.config.length;
-  constructor(table3, config4) {
-    super(table3, config4);
+  constructor(table3, config3) {
+    super(table3, config3);
   }
   getSQLType() {
     return `text${this.config.length ? `(${this.config.length})` : ""}`;
@@ -51281,11 +55646,11 @@ var SQLiteTextJson = class extends SQLiteColumn {
   }
 };
 function text(a, b = {}) {
-  const { name, config: config4 } = getColumnNameAndConfig(a, b);
-  if (config4.mode === "json") {
+  const { name, config: config3 } = getColumnNameAndConfig(a, b);
+  if (config3.mode === "json") {
     return new SQLiteTextJsonBuilder(name);
   }
-  return new SQLiteTextBuilder(name, config4);
+  return new SQLiteTextBuilder(name, config3);
 }
 __name(text, "text");
 
@@ -51320,8 +55685,8 @@ var SQLiteTable = class extends Table {
   /** @internal */
   [Table.Symbol.ExtraConfigBuilder] = void 0;
 };
-function sqliteTableBase(name, columns, extraConfig, schema2, baseName = name) {
-  const rawTable = new SQLiteTable(name, schema2, baseName);
+function sqliteTableBase(name, columns, extraConfig, schema3, baseName = name) {
+  const rawTable = new SQLiteTable(name, schema3, baseName);
   const parsedColumns = typeof columns === "function" ? columns(getSQLiteColumnBuilders()) : columns;
   const builtColumns = Object.fromEntries(
     Object.entries(parsedColumns).map(([name2, colBuilderBase]) => {
@@ -51512,18 +55877,18 @@ var CasingCache = class {
   getColumnCasing(column) {
     if (!column.keyAsName)
       return column.name;
-    const schema2 = column.table[Table.Symbol.Schema] ?? "public";
+    const schema3 = column.table[Table.Symbol.Schema] ?? "public";
     const tableName = column.table[Table.Symbol.OriginalName];
-    const key = `${schema2}.${tableName}.${column.name}`;
+    const key = `${schema3}.${tableName}.${column.name}`;
     if (!this.cache[key]) {
       this.cacheTable(column.table);
     }
     return this.cache[key];
   }
   cacheTable(table3) {
-    const schema2 = table3[Table.Symbol.Schema] ?? "public";
+    const schema3 = table3[Table.Symbol.Schema] ?? "public";
     const tableName = table3[Table.Symbol.OriginalName];
-    const tableKey = `${schema2}.${tableName}`;
+    const tableKey = `${schema3}.${tableName}`;
     if (!this.cachedTables[tableKey]) {
       for (const column of Object.values(table3[Table.Symbol.Columns])) {
         const columnKey = `${tableKey}.${column.name}`;
@@ -51558,8 +55923,8 @@ var SQLiteDialect = class {
   static [entityKind] = "SQLiteDialect";
   /** @internal */
   casing;
-  constructor(config4) {
-    this.casing = new CasingCache(config4?.casing);
+  constructor(config3) {
+    this.casing = new CasingCache(config3?.casing);
   }
   escapeName(name) {
     return `"${name}"`;
@@ -51789,7 +56154,7 @@ var SQLiteDialect = class {
   }
   buildSetOperationQuery({
     leftSelect,
-    setOperator: { type: type2, isAll, rightSelect, limit, orderBy, offset }
+    setOperator: { type, isAll, rightSelect, limit, orderBy, offset }
   }) {
     const leftChunk = sql2`${leftSelect.getSQL()} `;
     const rightChunk = sql2`${rightSelect.getSQL()}`;
@@ -51814,7 +56179,7 @@ var SQLiteDialect = class {
       orderBySql = sql2` order by ${sql2.join(orderByValues, sql2`, `)}`;
     }
     const limitSql = typeof limit === "object" || typeof limit === "number" && limit >= 0 ? sql2` limit ${limit}` : void 0;
-    const operatorChunk = sql2.raw(`${type2} ${isAll ? "all " : ""}`);
+    const operatorChunk = sql2.raw(`${type} ${isAll ? "all " : ""}`);
     const offsetSql = offset ? sql2` offset ${offset}` : void 0;
     return sql2`${leftChunk}${operatorChunk}${rightChunk}${orderBySql}${limitSql}${offsetSql}`;
   }
@@ -51880,11 +56245,11 @@ var SQLiteDialect = class {
   }
   buildRelationalQuery({
     fullSchema,
-    schema: schema2,
+    schema: schema3,
     tableNamesMap,
     table: table3,
     tableConfig,
-    queryConfig: config4,
+    queryConfig: config3,
     tableAlias,
     nestedQueryRelation,
     joinOn
@@ -51892,7 +56257,7 @@ var SQLiteDialect = class {
     let selection = [];
     let limit, offset, orderBy = [], where;
     const joins = [];
-    if (config4 === true) {
+    if (config3 === true) {
       const selectionEntries = Object.entries(tableConfig.columns);
       selection = selectionEntries.map(([key, value]) => ({
         dbKey: value.name,
@@ -51906,15 +56271,15 @@ var SQLiteDialect = class {
       const aliasedColumns = Object.fromEntries(
         Object.entries(tableConfig.columns).map(([key, value]) => [key, aliasedTableColumn(value, tableAlias)])
       );
-      if (config4.where) {
-        const whereSql = typeof config4.where === "function" ? config4.where(aliasedColumns, getOperators()) : config4.where;
+      if (config3.where) {
+        const whereSql = typeof config3.where === "function" ? config3.where(aliasedColumns, getOperators()) : config3.where;
         where = whereSql && mapColumnsInSQLToAlias(whereSql, tableAlias);
       }
       const fieldsSelection = [];
       let selectedColumns = [];
-      if (config4.columns) {
+      if (config3.columns) {
         let isIncludeMode = false;
-        for (const [field, value] of Object.entries(config4.columns)) {
+        for (const [field, value] of Object.entries(config3.columns)) {
           if (value === void 0) {
             continue;
           }
@@ -51926,7 +56291,7 @@ var SQLiteDialect = class {
           }
         }
         if (selectedColumns.length > 0) {
-          selectedColumns = isIncludeMode ? selectedColumns.filter((c) => config4.columns?.[c] === true) : Object.keys(tableConfig.columns).filter((key) => !selectedColumns.includes(key));
+          selectedColumns = isIncludeMode ? selectedColumns.filter((c) => config3.columns?.[c] === true) : Object.keys(tableConfig.columns).filter((key) => !selectedColumns.includes(key));
         }
       } else {
         selectedColumns = Object.keys(tableConfig.columns);
@@ -51936,12 +56301,12 @@ var SQLiteDialect = class {
         fieldsSelection.push({ tsKey: field, value: column });
       }
       let selectedRelations = [];
-      if (config4.with) {
-        selectedRelations = Object.entries(config4.with).filter((entry) => !!entry[1]).map(([tsKey, queryConfig]) => ({ tsKey, queryConfig, relation: tableConfig.relations[tsKey] }));
+      if (config3.with) {
+        selectedRelations = Object.entries(config3.with).filter((entry) => !!entry[1]).map(([tsKey, queryConfig]) => ({ tsKey, queryConfig, relation: tableConfig.relations[tsKey] }));
       }
       let extras;
-      if (config4.extras) {
-        extras = typeof config4.extras === "function" ? config4.extras(aliasedColumns, { sql: sql2 }) : config4.extras;
+      if (config3.extras) {
+        extras = typeof config3.extras === "function" ? config3.extras(aliasedColumns, { sql: sql2 }) : config3.extras;
         for (const [tsKey, value] of Object.entries(extras)) {
           fieldsSelection.push({
             tsKey,
@@ -51959,7 +56324,7 @@ var SQLiteDialect = class {
           selection: []
         });
       }
-      let orderByOrig = typeof config4.orderBy === "function" ? config4.orderBy(aliasedColumns, getOrderByOperators()) : config4.orderBy ?? [];
+      let orderByOrig = typeof config3.orderBy === "function" ? config3.orderBy(aliasedColumns, getOrderByOperators()) : config3.orderBy ?? [];
       if (!Array.isArray(orderByOrig)) {
         orderByOrig = [orderByOrig];
       }
@@ -51969,14 +56334,14 @@ var SQLiteDialect = class {
         }
         return mapColumnsInSQLToAlias(orderByValue, tableAlias);
       });
-      limit = config4.limit;
-      offset = config4.offset;
+      limit = config3.limit;
+      offset = config3.offset;
       for (const {
         tsKey: selectedRelationTsKey,
         queryConfig: selectedRelationConfigValue,
         relation
       } of selectedRelations) {
-        const normalizedRelation = normalizeRelation(schema2, tableNamesMap, relation);
+        const normalizedRelation = normalizeRelation(schema3, tableNamesMap, relation);
         const relationTableName = getTableUniqueName(relation.referencedTable);
         const relationTableTsName = tableNamesMap[relationTableName];
         const relationTableAlias = `${tableAlias}_${selectedRelationTsKey}`;
@@ -51990,10 +56355,10 @@ var SQLiteDialect = class {
         );
         const builtRelation = this.buildRelationalQuery({
           fullSchema,
-          schema: schema2,
+          schema: schema3,
           tableNamesMap,
           table: fullSchema[relationTableTsName],
-          tableConfig: schema2[relationTableTsName],
+          tableConfig: schema3[relationTableTsName],
           queryConfig: is(relation, One) ? selectedRelationConfigValue === true ? { limit: 1 } : { ...selectedRelationConfigValue, limit: 1 } : selectedRelationConfigValue,
           tableAlias: relationTableAlias,
           joinOn: joinOn2,
@@ -52101,8 +56466,8 @@ var SQLiteSyncDialect = class extends SQLiteDialect {
     __name(this, "SQLiteSyncDialect");
   }
   static [entityKind] = "SQLiteSyncDialect";
-  migrate(migrations, session2, config4) {
-    const migrationsTable = config4 === void 0 ? "__drizzle_migrations" : typeof config4 === "string" ? "__drizzle_migrations" : config4.migrationsTable ?? "__drizzle_migrations";
+  migrate(migrations, session2, config3) {
+    const migrationsTable = config3 === void 0 ? "__drizzle_migrations" : typeof config3 === "string" ? "__drizzle_migrations" : config3.migrationsTable ?? "__drizzle_migrations";
     const migrationTableCreate = sql2`
 			CREATE TABLE IF NOT EXISTS ${sql2.identifier(migrationsTable)} (
 				id SERIAL PRIMARY KEY,
@@ -52139,8 +56504,8 @@ var SQLiteAsyncDialect = class extends SQLiteDialect {
     __name(this, "SQLiteAsyncDialect");
   }
   static [entityKind] = "SQLiteAsyncDialect";
-  async migrate(migrations, session2, config4) {
-    const migrationsTable = config4 === void 0 ? "__drizzle_migrations" : typeof config4 === "string" ? "__drizzle_migrations" : config4.migrationsTable ?? "__drizzle_migrations";
+  async migrate(migrations, session2, config3) {
+    const migrationsTable = config3 === void 0 ? "__drizzle_migrations" : typeof config3 === "string" ? "__drizzle_migrations" : config3.migrationsTable ?? "__drizzle_migrations";
     const migrationTableCreate = sql2`
 			CREATE TABLE IF NOT EXISTS ${sql2.identifier(migrationsTable)} (
 				id SERIAL PRIMARY KEY,
@@ -52201,12 +56566,12 @@ var SQLiteSelectBuilder = class {
   dialect;
   withList;
   distinct;
-  constructor(config4) {
-    this.fields = config4.fields;
-    this.session = config4.session;
-    this.dialect = config4.dialect;
-    this.withList = config4.withList;
-    this.distinct = config4.distinct;
+  constructor(config3) {
+    this.fields = config3.fields;
+    this.session = config3.session;
+    this.dialect = config3.dialect;
+    this.withList = config3.withList;
+    this.distinct = config3.distinct;
   }
   from(source) {
     const isPartialSelect = !!this.fields;
@@ -52437,7 +56802,7 @@ var SQLiteSelectQueryBuilderBase = class extends TypedQueryBuilder {
    * ```
    */
   fullJoin = this.createJoin("full");
-  createSetOperator(type2, isAll) {
+  createSetOperator(type, isAll) {
     return (rightSelection) => {
       const rightSelect = typeof rightSelection === "function" ? rightSelection(getSQLiteSetOperators()) : rightSelection;
       if (!haveSameKeys(this.getSelectedFields(), rightSelect.getSelectedFields())) {
@@ -52445,7 +56810,7 @@ var SQLiteSelectQueryBuilderBase = class extends TypedQueryBuilder {
           "Set operator error (union / intersect / except): selected fields are not the same or are in a different order"
         );
       }
-      this.config.setOperators.push({ type: type2, isAll, rightSelect });
+      this.config.setOperators.push({ type, isAll, rightSelect });
       return this;
     };
   }
@@ -52784,10 +57149,10 @@ var SQLiteSelectBase = class extends SQLiteSelectQueryBuilderBase {
   }
 };
 applyMixins(SQLiteSelectBase, [QueryPromise]);
-function createSetOperator(type2, isAll) {
+function createSetOperator(type, isAll) {
   return (leftSelect, rightSelect, ...restSelects) => {
     const setOperators = [rightSelect, ...restSelects].map((select) => ({
-      type: type2,
+      type,
       isAll,
       rightSelect: select
     }));
@@ -52959,12 +57324,12 @@ var SQLiteInsertBase = class extends QueryPromise {
    *   .onConflictDoNothing({ target: cars.id });
    * ```
    */
-  onConflictDoNothing(config4 = {}) {
-    if (config4.target === void 0) {
+  onConflictDoNothing(config3 = {}) {
+    if (config3.target === void 0) {
       this.config.onConflict = sql2`do nothing`;
     } else {
-      const targetSql = Array.isArray(config4.target) ? sql2`${config4.target}` : sql2`${[config4.target]}`;
-      const whereSql = config4.where ? sql2` where ${config4.where}` : sql2``;
+      const targetSql = Array.isArray(config3.target) ? sql2`${config3.target}` : sql2`${[config3.target]}`;
+      const whereSql = config3.where ? sql2` where ${config3.where}` : sql2``;
       this.config.onConflict = sql2`${targetSql} do nothing${whereSql}`;
     }
     return this;
@@ -52998,17 +57363,17 @@ var SQLiteInsertBase = class extends QueryPromise {
    *   });
    * ```
    */
-  onConflictDoUpdate(config4) {
-    if (config4.where && (config4.targetWhere || config4.setWhere)) {
+  onConflictDoUpdate(config3) {
+    if (config3.where && (config3.targetWhere || config3.setWhere)) {
       throw new Error(
         'You cannot use both "where" and "targetWhere"/"setWhere" at the same time - "where" is deprecated, use "targetWhere" or "setWhere" instead.'
       );
     }
-    const whereSql = config4.where ? sql2` where ${config4.where}` : void 0;
-    const targetWhereSql = config4.targetWhere ? sql2` where ${config4.targetWhere}` : void 0;
-    const setWhereSql = config4.setWhere ? sql2` where ${config4.setWhere}` : void 0;
-    const targetSql = Array.isArray(config4.target) ? sql2`${config4.target}` : sql2`${[config4.target]}`;
-    const setSql = this.dialect.buildUpdateSet(this.config.table, mapUpdateSet(this.config.table, config4.set));
+    const whereSql = config3.where ? sql2` where ${config3.where}` : void 0;
+    const targetWhereSql = config3.targetWhere ? sql2` where ${config3.targetWhere}` : void 0;
+    const setWhereSql = config3.setWhere ? sql2` where ${config3.setWhere}` : void 0;
+    const targetSql = Array.isArray(config3.target) ? sql2`${config3.target}` : sql2`${[config3.target]}`;
+    const setSql = this.dialect.buildUpdateSet(this.config.table, mapUpdateSet(this.config.table, config3.set));
     this.config.onConflict = sql2`${targetSql}${targetWhereSql} do update set ${setSql}${whereSql}${setWhereSql}`;
     return this;
   }
@@ -53283,10 +57648,10 @@ var RelationalQueryBuilder = class {
   static {
     __name(this, "RelationalQueryBuilder");
   }
-  constructor(mode, fullSchema, schema2, tableNamesMap, table3, tableConfig, dialect, session2) {
+  constructor(mode, fullSchema, schema3, tableNamesMap, table3, tableConfig, dialect, session2) {
     this.mode = mode;
     this.fullSchema = fullSchema;
-    this.schema = schema2;
+    this.schema = schema3;
     this.tableNamesMap = tableNamesMap;
     this.table = table3;
     this.tableConfig = tableConfig;
@@ -53294,7 +57659,7 @@ var RelationalQueryBuilder = class {
     this.session = session2;
   }
   static [entityKind] = "SQLiteAsyncRelationalQueryBuilder";
-  findMany(config4) {
+  findMany(config3) {
     return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
       this.fullSchema,
       this.schema,
@@ -53303,7 +57668,7 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config4 ? config4 : {},
+      config3 ? config3 : {},
       "many"
     ) : new SQLiteRelationalQuery(
       this.fullSchema,
@@ -53313,11 +57678,11 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config4 ? config4 : {},
+      config3 ? config3 : {},
       "many"
     );
   }
-  findFirst(config4) {
+  findFirst(config3) {
     return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
       this.fullSchema,
       this.schema,
@@ -53326,7 +57691,7 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config4 ? { ...config4, limit: 1 } : { limit: 1 },
+      config3 ? { ...config3, limit: 1 } : { limit: 1 },
       "first"
     ) : new SQLiteRelationalQuery(
       this.fullSchema,
@@ -53336,7 +57701,7 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config4 ? { ...config4, limit: 1 } : { limit: 1 },
+      config3 ? { ...config3, limit: 1 } : { limit: 1 },
       "first"
     );
   }
@@ -53345,16 +57710,16 @@ var SQLiteRelationalQuery = class extends QueryPromise {
   static {
     __name(this, "SQLiteRelationalQuery");
   }
-  constructor(fullSchema, schema2, tableNamesMap, table3, tableConfig, dialect, session2, config4, mode) {
+  constructor(fullSchema, schema3, tableNamesMap, table3, tableConfig, dialect, session2, config3, mode) {
     super();
     this.fullSchema = fullSchema;
-    this.schema = schema2;
+    this.schema = schema3;
     this.tableNamesMap = tableNamesMap;
     this.table = table3;
     this.tableConfig = tableConfig;
     this.dialect = dialect;
     this.session = session2;
-    this.config = config4;
+    this.config = config3;
     this.mode = mode;
   }
   static [entityKind] = "SQLiteAsyncRelationalQuery";
@@ -53471,14 +57836,14 @@ var BaseSQLiteDatabase = class {
   static {
     __name(this, "BaseSQLiteDatabase");
   }
-  constructor(resultKind, dialect, session2, schema2) {
+  constructor(resultKind, dialect, session2, schema3) {
     this.resultKind = resultKind;
     this.dialect = dialect;
     this.session = session2;
-    this._ = schema2 ? {
-      schema: schema2.schema,
-      fullSchema: schema2.fullSchema,
-      tableNamesMap: schema2.tableNamesMap
+    this._ = schema3 ? {
+      schema: schema3.schema,
+      fullSchema: schema3.fullSchema,
+      tableNamesMap: schema3.tableNamesMap
     } : {
       schema: void 0,
       fullSchema: {},
@@ -53490,10 +57855,10 @@ var BaseSQLiteDatabase = class {
       for (const [tableName, columns] of Object.entries(this._.schema)) {
         query[tableName] = new RelationalQueryBuilder(
           resultKind,
-          schema2.fullSchema,
+          schema3.fullSchema,
           this._.schema,
           this._.tableNamesMap,
-          schema2.fullSchema[tableName],
+          schema3.fullSchema[tableName],
           columns,
           dialect,
           session2
@@ -53753,8 +58118,8 @@ var BaseSQLiteDatabase = class {
     }
     return this.session.values(sequel);
   }
-  transaction(transaction, config4) {
-    return this.session.transaction(transaction, config4);
+  transaction(transaction, config3) {
+    return this.session.transaction(transaction, config3);
   }
 };
 
@@ -53882,9 +58247,9 @@ var SQLiteTransaction = class extends BaseSQLiteDatabase {
   static {
     __name(this, "SQLiteTransaction");
   }
-  constructor(resultType, dialect, session2, schema2, nestedIndex = 0) {
-    super(resultType, dialect, session2, schema2);
-    this.schema = schema2;
+  constructor(resultType, dialect, session2, schema3, nestedIndex = 0) {
+    super(resultType, dialect, session2, schema3);
+    this.schema = schema3;
     this.nestedIndex = nestedIndex;
   }
   static [entityKind] = "SQLiteTransaction";
@@ -53898,10 +58263,10 @@ var SQLiteD1Session = class extends SQLiteSession {
   static {
     __name(this, "SQLiteD1Session");
   }
-  constructor(client, dialect, schema2, options = {}) {
+  constructor(client, dialect, schema3, options = {}) {
     super(dialect);
     this.client = client;
-    this.schema = schema2;
+    this.schema = schema3;
     this.options = options;
     this.logger = options.logger ?? new NoopLogger();
   }
@@ -53947,9 +58312,9 @@ var SQLiteD1Session = class extends SQLiteSession {
   extractRawValuesValueFromBatchResult(result) {
     return d1ToRawMapping(result.results);
   }
-  async transaction(transaction, config4) {
+  async transaction(transaction, config3) {
     const tx = new D1Transaction("async", this.dialect, this, this.schema);
-    await this.run(sql2.raw(`begin${config4?.behavior ? " " + config4.behavior : ""}`));
+    await this.run(sql2.raw(`begin${config3?.behavior ? " " + config3.behavior : ""}`));
     try {
       const result = await transaction(tx);
       await this.run(sql2`commit`);
@@ -54083,30 +58448,30 @@ var DrizzleD1Database = class extends BaseSQLiteDatabase {
     return this.session.batch(batch);
   }
 };
-function drizzle(client, config4 = {}) {
-  const dialect = new SQLiteAsyncDialect({ casing: config4.casing });
+function drizzle(client, config3 = {}) {
+  const dialect = new SQLiteAsyncDialect({ casing: config3.casing });
   let logger2;
-  if (config4.logger === true) {
+  if (config3.logger === true) {
     logger2 = new DefaultLogger();
-  } else if (config4.logger !== false) {
-    logger2 = config4.logger;
+  } else if (config3.logger !== false) {
+    logger2 = config3.logger;
   }
-  let schema2;
-  if (config4.schema) {
+  let schema3;
+  if (config3.schema) {
     const tablesConfig = extractTablesRelationalConfig(
-      config4.schema,
+      config3.schema,
       createTableRelationsHelpers
     );
-    schema2 = {
-      fullSchema: config4.schema,
+    schema3 = {
+      fullSchema: config3.schema,
       schema: tablesConfig.tables,
       tableNamesMap: tablesConfig.tableNamesMap
     };
   }
-  const session2 = new SQLiteD1Session(client, dialect, schema2, { logger: logger2 });
-  const db2 = new DrizzleD1Database("async", dialect, session2, schema2);
-  db2.$client = client;
-  return db2;
+  const session2 = new SQLiteD1Session(client, dialect, schema3, { logger: logger2 });
+  const db = new DrizzleD1Database("async", dialect, session2, schema3);
+  db.$client = client;
+  return db;
 }
 __name(drizzle, "drizzle");
 
@@ -54139,7 +58504,8 @@ var user = sqliteTable("user", {
   emailVerified: integer("email_verified", { mode: "boolean" }).notNull(),
   image: text("image"),
   createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
-  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull()
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
+  stripeCustomerId: text("stripe_customer_id")
 });
 var session = sqliteTable("session", {
   id: text("id").primaryKey(),
@@ -54219,53 +58585,53 @@ var literalSchema = z.union([z.string(), z.number(), z.boolean(), z.null()]);
 var jsonSchema = z.lazy(() => z.union([literalSchema, z.array(jsonSchema), z.record(jsonSchema)]));
 var bufferSchema = z.custom((v) => v instanceof Buffer);
 function columnToSchema(column, z2) {
-  let schema2;
+  let schema3;
   if (isWithEnum(column)) {
-    schema2 = column.enumValues.length ? z2.enum(column.enumValues) : z2.string();
+    schema3 = column.enumValues.length ? z2.enum(column.enumValues) : z2.string();
   }
-  if (!schema2) {
+  if (!schema3) {
     if (isColumnType(column, ["PgGeometry", "PgPointTuple"])) {
-      schema2 = z2.tuple([z2.number(), z2.number()]);
+      schema3 = z2.tuple([z2.number(), z2.number()]);
     } else if (isColumnType(column, ["PgGeometryObject", "PgPointObject"])) {
-      schema2 = z2.object({ x: z2.number(), y: z2.number() });
+      schema3 = z2.object({ x: z2.number(), y: z2.number() });
     } else if (isColumnType(column, ["PgHalfVector", "PgVector"])) {
-      schema2 = z2.array(z2.number());
-      schema2 = column.dimensions ? schema2.length(column.dimensions) : schema2;
+      schema3 = z2.array(z2.number());
+      schema3 = column.dimensions ? schema3.length(column.dimensions) : schema3;
     } else if (isColumnType(column, ["PgLine"])) {
-      schema2 = z2.tuple([z2.number(), z2.number(), z2.number()]);
+      schema3 = z2.tuple([z2.number(), z2.number(), z2.number()]);
     } else if (isColumnType(column, ["PgLineABC"])) {
-      schema2 = z2.object({
+      schema3 = z2.object({
         a: z2.number(),
         b: z2.number(),
         c: z2.number()
       });
     } else if (isColumnType(column, ["PgArray"])) {
-      schema2 = z2.array(columnToSchema(column.baseColumn, z2));
-      schema2 = column.size ? schema2.length(column.size) : schema2;
+      schema3 = z2.array(columnToSchema(column.baseColumn, z2));
+      schema3 = column.size ? schema3.length(column.size) : schema3;
     } else if (column.dataType === "array") {
-      schema2 = z2.array(z2.any());
+      schema3 = z2.array(z2.any());
     } else if (column.dataType === "number") {
-      schema2 = numberColumnToSchema(column, z2);
+      schema3 = numberColumnToSchema(column, z2);
     } else if (column.dataType === "bigint") {
-      schema2 = bigintColumnToSchema(column, z2);
+      schema3 = bigintColumnToSchema(column, z2);
     } else if (column.dataType === "boolean") {
-      schema2 = z2.boolean();
+      schema3 = z2.boolean();
     } else if (column.dataType === "date") {
-      schema2 = z2.date();
+      schema3 = z2.date();
     } else if (column.dataType === "string") {
-      schema2 = stringColumnToSchema(column, z2);
+      schema3 = stringColumnToSchema(column, z2);
     } else if (column.dataType === "json") {
-      schema2 = jsonSchema;
+      schema3 = jsonSchema;
     } else if (column.dataType === "custom") {
-      schema2 = z2.any();
+      schema3 = z2.any();
     } else if (column.dataType === "buffer") {
-      schema2 = bufferSchema;
+      schema3 = bufferSchema;
     }
   }
-  if (!schema2) {
-    schema2 = z2.any();
+  if (!schema3) {
+    schema3 = z2.any();
   }
-  return schema2;
+  return schema3;
 }
 __name(columnToSchema, "columnToSchema");
 function numberColumnToSchema(column, z2) {
@@ -54336,8 +58702,8 @@ function numberColumnToSchema(column, z2) {
     min = Number.MIN_SAFE_INTEGER;
     max = Number.MAX_SAFE_INTEGER;
   }
-  const schema2 = z2.number().min(min).max(max);
-  return integer2 ? schema2.int() : schema2;
+  const schema3 = z2.number().min(min).max(max);
+  return integer2 ? schema3.int() : schema3;
 }
 __name(numberColumnToSchema, "numberColumnToSchema");
 function bigintColumnToSchema(column, z2) {
@@ -54381,9 +58747,9 @@ function stringColumnToSchema(column, z2) {
     regex = /^[01]+$/;
     max = column.dimensions;
   }
-  let schema2 = z2.string();
-  schema2 = regex ? schema2.regex(regex) : schema2;
-  return max && fixed ? schema2.length(max) : max ? schema2.max(max) : schema2;
+  let schema3 = z2.string();
+  schema3 = regex ? schema3.regex(regex) : schema3;
+  return max && fixed ? schema3.length(max) : max ? schema3.max(max) : schema3;
 }
 __name(stringColumnToSchema, "stringColumnToSchema");
 function getColumns(tableLike) {
@@ -54404,8 +58770,8 @@ function handleColumns(columns, refinements, conditions, factory) {
       continue;
     }
     const column = is(selected, Column) ? selected : void 0;
-    const schema2 = column ? columnToSchema(column, factory?.zodInstance ?? z) : z.any();
-    const refined = typeof refinement === "function" ? refinement(schema2) : schema2;
+    const schema3 = column ? columnToSchema(column, factory?.zodInstance ?? z) : z.any();
+    const refined = typeof refinement === "function" ? refinement(schema3) : schema3;
     if (conditions.never(column)) {
       continue;
     } else {
@@ -54462,7 +58828,7 @@ var selectTasksSchema = createSelectSchema(tasks);
 var insertTasksSchema = createInsertSchema(
   tasks,
   {
-    name: /* @__PURE__ */ __name((schema2) => schema2.min(1).max(500), "name")
+    name: /* @__PURE__ */ __name((schema3) => schema3.min(1).max(500), "name")
   }
 ).required({
   done: true
@@ -54473,33 +58839,6692 @@ var insertTasksSchema = createInsertSchema(
 });
 var patchTasksSchema = insertTasksSchema.partial();
 
+// src/env.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+init_process2();
+var EnvSchema = z.object({
+  PORT: z.coerce.number().default(9999),
+  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
+  DB: z.any(),
+  CLOUDFLARE_BINDING_NAME: z.string().default("DB"),
+  CLOUDFLARE_DATABASE_ID: z.string().default(""),
+  CLOUDFLARE_ACCOUNT_ID: z.string().default(""),
+  CLOUDFLARE_TOKEN: z.string().default(""),
+  STRIPE_SECRET_KEY: z.string().default(""),
+  STRIPE_WEBHOOK_SECRET: z.string().default("")
+});
+var { data: env3 } = EnvSchema.safeParse(env);
+var env_default = env3;
+
 // src/db/index.ts
 var dbInstance = null;
-function initDb(env4) {
-  if (!dbInstance) {
-    if (!env4.DB) {
-      throw new Error("Missing D1 binding in environment (expected 'DB')");
-    }
-    dbInstance = drizzle(env4.DB, { schema: schema_exports, casing: "snake_case" });
-  }
-  return { db: dbInstance };
-}
-__name(initDb, "initDb");
 function getDb() {
-  if (!dbInstance) {
-    throw new Error("Database not initialized. Call initDb first.");
+  if (dbInstance) {
+    return { db: dbInstance };
   }
+  dbInstance = drizzle(env_default.DB, { schema: schema_exports, casing: "snake_case" });
   return { db: dbInstance };
 }
 __name(getDb, "getDb");
 
+// src/modules/auth/auth-stripe-config.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/@better-auth+stripe@1.2.5_typescript@5.7.2/node_modules/@better-auth/stripe/dist/index.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+async function getPlans(options) {
+  return typeof options?.subscription?.plans === "function" ? await options.subscription?.plans() : options.subscription?.plans;
+}
+__name(getPlans, "getPlans");
+async function getPlanByPriceId(options, priceId) {
+  return await getPlans(options).then(
+    (res) => res?.find(
+      (plan) => plan.priceId === priceId || plan.annualDiscountPriceId === priceId
+    )
+  );
+}
+__name(getPlanByPriceId, "getPlanByPriceId");
+async function getPlanByName(options, name) {
+  return await getPlans(options).then(
+    (res) => res?.find((plan) => plan.name.toLowerCase() === name.toLowerCase())
+  );
+}
+__name(getPlanByName, "getPlanByName");
+async function onCheckoutSessionCompleted(ctx, options, event) {
+  try {
+    const client = options.stripeClient;
+    const checkoutSession = event.data.object;
+    if (checkoutSession.mode === "setup" || !options.subscription?.enabled) {
+      return;
+    }
+    const subscription = await client.subscriptions.retrieve(
+      checkoutSession.subscription
+    );
+    const priceId = subscription.items.data[0]?.price.id;
+    const plan = await getPlanByPriceId(options, priceId);
+    if (plan) {
+      const referenceId = checkoutSession?.metadata?.referenceId;
+      const subscriptionId = checkoutSession?.metadata?.subscriptionId;
+      const seats = subscription.items.data[0].quantity;
+      if (referenceId && subscriptionId) {
+        const trial = subscription.trial_start && subscription.trial_end ? {
+          trialStart: new Date(subscription.trial_start * 1e3),
+          trialEnd: new Date(subscription.trial_end * 1e3)
+        } : {};
+        let dbSubscription = await ctx.context.adapter.update({
+          model: "subscription",
+          update: {
+            plan: plan.name.toLowerCase(),
+            status: subscription.status,
+            updatedAt: /* @__PURE__ */ new Date(),
+            periodStart: new Date(subscription.current_period_start * 1e3),
+            periodEnd: new Date(subscription.current_period_end * 1e3),
+            stripeSubscriptionId: checkoutSession.subscription,
+            seats,
+            ...trial
+          },
+          where: [
+            {
+              field: "id",
+              value: subscriptionId
+            }
+          ]
+        });
+        if (trial.trialStart && plan.freeTrial?.onTrialStart) {
+          await plan.freeTrial.onTrialStart(dbSubscription);
+        }
+        if (!dbSubscription) {
+          dbSubscription = await ctx.context.adapter.findOne({
+            model: "subscription",
+            where: [
+              {
+                field: "id",
+                value: subscriptionId
+              }
+            ]
+          });
+        }
+        await options.subscription?.onSubscriptionComplete?.({
+          event,
+          subscription: dbSubscription,
+          stripeSubscription: subscription,
+          plan
+        });
+        return;
+      }
+    }
+  } catch (e) {
+    logger.error(`Stripe webhook failed. Error: ${e.message}`);
+  }
+}
+__name(onCheckoutSessionCompleted, "onCheckoutSessionCompleted");
+async function onSubscriptionUpdated(ctx, options, event) {
+  try {
+    if (!options.subscription?.enabled) {
+      return;
+    }
+    const subscriptionUpdated = event.data.object;
+    const priceId = subscriptionUpdated.items.data[0].price.id;
+    const plan = await getPlanByPriceId(options, priceId);
+    const subscriptionId = subscriptionUpdated.metadata?.subscriptionId;
+    const customerId = subscriptionUpdated.customer?.toString();
+    let subscription = await ctx.context.adapter.findOne({
+      model: "subscription",
+      where: subscriptionId ? [{ field: "id", value: subscriptionId }] : [{ field: "stripeSubscriptionId", value: subscriptionUpdated.id }]
+    });
+    if (!subscription) {
+      const subs = await ctx.context.adapter.findMany({
+        model: "subscription",
+        where: [{ field: "stripeCustomerId", value: customerId }]
+      });
+      if (subs.length > 1) {
+        const activeSub = subs.find(
+          (sub) => sub.status === "active" || sub.status === "trialing"
+        );
+        if (!activeSub) {
+          logger.warn(
+            `Stripe webhook error: Multiple subscriptions found for customerId: ${customerId} and no active subscription is found`
+          );
+          return;
+        }
+        subscription = activeSub;
+      } else {
+        subscription = subs[0];
+      }
+    }
+    const seats = subscriptionUpdated.items.data[0].quantity;
+    await ctx.context.adapter.update({
+      model: "subscription",
+      update: {
+        ...plan ? {
+          plan: plan.name.toLowerCase(),
+          limits: plan.limits
+        } : {},
+        updatedAt: /* @__PURE__ */ new Date(),
+        status: subscriptionUpdated.status,
+        periodStart: new Date(subscriptionUpdated.current_period_start * 1e3),
+        periodEnd: new Date(subscriptionUpdated.current_period_end * 1e3),
+        cancelAtPeriodEnd: subscriptionUpdated.cancel_at_period_end,
+        seats,
+        stripeSubscriptionId: subscriptionUpdated.id
+      },
+      where: [
+        {
+          field: "id",
+          value: subscription.id
+        }
+      ]
+    });
+    const subscriptionCanceled = subscriptionUpdated.status === "active" && subscriptionUpdated.cancel_at_period_end && !subscription.cancelAtPeriodEnd;
+    if (subscriptionCanceled) {
+      await options.subscription.onSubscriptionCancel?.({
+        subscription,
+        cancellationDetails: subscriptionUpdated.cancellation_details || void 0,
+        stripeSubscription: subscriptionUpdated,
+        event
+      });
+    }
+    await options.subscription.onSubscriptionUpdate?.({
+      event,
+      subscription
+    });
+    if (plan) {
+      if (subscriptionUpdated.status === "active" && subscription.status === "trialing" && plan.freeTrial?.onTrialEnd) {
+        await plan.freeTrial.onTrialEnd({ subscription }, ctx.request);
+      }
+      if (subscriptionUpdated.status === "incomplete_expired" && subscription.status === "trialing" && plan.freeTrial?.onTrialExpired) {
+        await plan.freeTrial.onTrialExpired(subscription, ctx.request);
+      }
+    }
+  } catch (error4) {
+    logger.error(`Stripe webhook failed. Error: ${error4}`);
+  }
+}
+__name(onSubscriptionUpdated, "onSubscriptionUpdated");
+async function onSubscriptionDeleted(ctx, options, event) {
+  if (!options.subscription?.enabled) {
+    return;
+  }
+  try {
+    const subscriptionDeleted = event.data.object;
+    const subscriptionId = subscriptionDeleted.id;
+    const subscription = await ctx.context.adapter.findOne({
+      model: "subscription",
+      where: [
+        {
+          field: "stripeSubscriptionId",
+          value: subscriptionId
+        }
+      ]
+    });
+    if (subscription) {
+      await ctx.context.adapter.update({
+        model: "subscription",
+        where: [
+          {
+            field: "id",
+            value: subscription.id
+          }
+        ],
+        update: {
+          status: "canceled",
+          updatedAt: /* @__PURE__ */ new Date()
+        }
+      });
+      await options.subscription.onSubscriptionDeleted?.({
+        event,
+        stripeSubscription: subscriptionDeleted,
+        subscription
+      });
+    } else {
+      logger.warn(
+        `Stripe webhook error: Subscription not found for subscriptionId: ${subscriptionId}`
+      );
+    }
+  } catch (error4) {
+    logger.error(`Stripe webhook failed. Error: ${error4}`);
+  }
+}
+__name(onSubscriptionDeleted, "onSubscriptionDeleted");
+var getSchema2 = /* @__PURE__ */ __name((options) => {
+  const subscriptions = {
+    subscription: {
+      fields: {
+        plan: {
+          type: "string",
+          required: true
+        },
+        referenceId: {
+          type: "string",
+          required: true
+        },
+        stripeCustomerId: {
+          type: "string",
+          required: false
+        },
+        stripeSubscriptionId: {
+          type: "string",
+          required: false
+        },
+        status: {
+          type: "string",
+          defaultValue: "incomplete"
+        },
+        periodStart: {
+          type: "date",
+          required: false
+        },
+        periodEnd: {
+          type: "date",
+          required: false
+        },
+        cancelAtPeriodEnd: {
+          type: "boolean",
+          required: false,
+          defaultValue: false
+        },
+        seats: {
+          type: "number",
+          required: false
+        }
+      }
+    }
+  };
+  const user2 = {
+    user: {
+      fields: {
+        stripeCustomerId: {
+          type: "string",
+          required: false
+        }
+      }
+    }
+  };
+  return {
+    ...options.subscription?.enabled ? subscriptions : {},
+    ...user2
+  };
+}, "getSchema");
+var STRIPE_ERROR_CODES = {
+  SUBSCRIPTION_NOT_FOUND: "Subscription not found",
+  SUBSCRIPTION_PLAN_NOT_FOUND: "Subscription plan not found",
+  ALREADY_SUBSCRIBED_PLAN: "You're already subscribed to this plan",
+  UNABLE_TO_CREATE_CUSTOMER: "Unable to create customer",
+  EMAIL_VERIFICATION_REQUIRED: "Email verification is required before you can subscribe to a plan"
+};
+var getUrl = /* @__PURE__ */ __name((ctx, url) => {
+  if (url.startsWith("http")) {
+    return url;
+  }
+  return `${ctx.context.options.baseURL}${url.startsWith("/") ? url : `/${url}`}`;
+}, "getUrl");
+var stripe = /* @__PURE__ */ __name((options) => {
+  const client = options.stripeClient;
+  const referenceMiddleware = /* @__PURE__ */ __name((action) => createAuthMiddleware(async (ctx) => {
+    const session2 = ctx.context.session;
+    if (!session2) {
+      throw new APIError("UNAUTHORIZED");
+    }
+    const referenceId = ctx.body?.referenceId || ctx.query?.referenceId || session2.user.id;
+    const isAuthorized = ctx.body?.referenceId ? await options.subscription?.authorizeReference?.({
+      user: session2.user,
+      session: session2.session,
+      referenceId,
+      action
+    }) : true;
+    if (!isAuthorized) {
+      throw new APIError("UNAUTHORIZED", {
+        message: "Unauthorized"
+      });
+    }
+  }), "referenceMiddleware");
+  const subscriptionEndpoints = {
+    upgradeSubscription: createAuthEndpoint(
+      "/subscription/upgrade",
+      {
+        method: "POST",
+        body: z.object({
+          /**
+           * The name of the plan to subscribe
+           */
+          plan: z.string({
+            description: "The name of the plan to upgrade to"
+          }),
+          /**
+           * If annual plan should be applied.
+           */
+          annual: z.boolean({
+            description: "Whether to upgrade to an annual plan"
+          }).optional(),
+          /**
+           * Reference id of the subscription to upgrade
+           * This is used to identify the subscription to upgrade
+           * If not provided, the user's id will be used
+           */
+          referenceId: z.string({
+            description: "Reference id of the subscription to upgrade"
+          }).optional(),
+          /**
+           * This is to allow a specific subscription to be upgrade.
+           * If subscription id is provided, and subscription isn't found,
+           * it'll throw an error.
+           */
+          subscriptionId: z.string({
+            description: "The id of the subscription to upgrade"
+          }).optional(),
+          /**
+           * Any additional data you want to store in your database
+           * subscriptions
+           */
+          metadata: z.record(z.string(), z.any()).optional(),
+          /**
+           * If a subscription
+           */
+          seats: z.number({
+            description: "Number of seats to upgrade to (if applicable)"
+          }).optional(),
+          /**
+           * Success url to redirect back after successful subscription
+           */
+          successUrl: z.string({
+            description: "callback url to redirect back after successful subscription"
+          }).default("/"),
+          /**
+           * Cancel URL
+           */
+          cancelUrl: z.string({
+            description: "callback url to redirect back after successful subscription"
+          }).default("/"),
+          /**
+           * Return URL
+           */
+          returnUrl: z.string().optional(),
+          /**
+           * Disable Redirect
+           */
+          disableRedirect: z.boolean().default(false)
+        }),
+        use: [
+          sessionMiddleware,
+          originCheck((c) => {
+            return [c.body.successURL, c.body.cancelURL];
+          }),
+          referenceMiddleware("upgrade-subscription")
+        ]
+      },
+      async (ctx) => {
+        const { user: user2, session: session2 } = ctx.context.session;
+        if (!user2.emailVerified && options.subscription?.requireEmailVerification) {
+          throw new APIError("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.EMAIL_VERIFICATION_REQUIRED
+          });
+        }
+        const referenceId = ctx.body.referenceId || user2.id;
+        const plan = await getPlanByName(options, ctx.body.plan);
+        if (!plan) {
+          throw new APIError("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.SUBSCRIPTION_PLAN_NOT_FOUND
+          });
+        }
+        const subscriptionToUpdate = ctx.body.subscriptionId ? await ctx.context.adapter.findOne({
+          model: "subscription",
+          where: [{ field: "id", value: ctx.body.subscriptionId }]
+        }) : null;
+        if (ctx.body.subscriptionId && !subscriptionToUpdate) {
+          throw new APIError("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.SUBSCRIPTION_NOT_FOUND
+          });
+        }
+        let customerId = subscriptionToUpdate?.stripeCustomerId || user2.stripeCustomerId;
+        if (!customerId) {
+          try {
+            const stripeCustomer = await client.customers.create(
+              {
+                email: user2.email,
+                name: user2.name,
+                metadata: {
+                  ...ctx.body.metadata,
+                  userId: user2.id
+                }
+              },
+              {
+                idempotencyKey: generateRandomString(32, "a-z", "0-9")
+              }
+            );
+            await ctx.context.adapter.update({
+              model: "user",
+              update: {
+                stripeCustomerId: stripeCustomer.id
+              },
+              where: [
+                {
+                  field: "id",
+                  value: user2.id
+                }
+              ]
+            });
+            customerId = stripeCustomer.id;
+          } catch (e) {
+            ctx.context.logger.error(e);
+            throw new APIError("BAD_REQUEST", {
+              message: STRIPE_ERROR_CODES.UNABLE_TO_CREATE_CUSTOMER
+            });
+          }
+        }
+        const activeSubscription = customerId ? await client.subscriptions.list({
+          customer: customerId,
+          status: "active"
+        }).then(
+          (res) => res.data.find(
+            (subscription2) => subscription2.id === ctx.body.subscriptionId
+          )
+        ).catch((e) => null) : null;
+        const subscriptions = subscriptionToUpdate ? [subscriptionToUpdate] : await ctx.context.adapter.findMany({
+          model: "subscription",
+          where: [
+            {
+              field: "referenceId",
+              value: ctx.body.referenceId || user2.id
+            }
+          ]
+        });
+        const existingSubscription = subscriptions.find(
+          (sub) => sub.status === "active" || sub.status === "trialing"
+        );
+        if (existingSubscription && existingSubscription.status === "active" && existingSubscription.plan === ctx.body.plan) {
+          throw new APIError("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.ALREADY_SUBSCRIBED_PLAN
+          });
+        }
+        if (activeSubscription && customerId) {
+          const { url } = await client.billingPortal.sessions.create({
+            customer: customerId,
+            return_url: getUrl(ctx, ctx.body.returnUrl || "/"),
+            flow_data: {
+              type: "subscription_update_confirm",
+              subscription_update_confirm: {
+                subscription: activeSubscription.id,
+                items: [
+                  {
+                    id: activeSubscription.items.data[0]?.id,
+                    quantity: 1,
+                    price: ctx.body.annual ? plan.annualDiscountPriceId : plan.priceId
+                  }
+                ]
+              }
+            }
+          }).catch(async (e) => {
+            throw ctx.error("BAD_REQUEST", {
+              message: e.message,
+              code: e.code
+            });
+          });
+          return ctx.json({
+            url,
+            redirect: true
+          });
+        }
+        let subscription = existingSubscription;
+        if (!subscription) {
+          const newSubscription = await ctx.context.adapter.create({
+            model: "subscription",
+            data: {
+              plan: plan.name.toLowerCase(),
+              stripeCustomerId: customerId,
+              status: "incomplete",
+              referenceId,
+              seats: ctx.body.seats || 1
+            }
+          });
+          subscription = newSubscription;
+        }
+        if (!subscription) {
+          ctx.context.logger.error("Subscription ID not found");
+          throw new APIError("INTERNAL_SERVER_ERROR");
+        }
+        const params = await options.subscription?.getCheckoutSessionParams?.(
+          {
+            user: user2,
+            session: session2,
+            plan,
+            subscription
+          },
+          ctx.request
+        );
+        const freeTrail = plan.freeTrial ? {
+          trial_period_days: plan.freeTrial.days
+        } : void 0;
+        const checkoutSession = await client.checkout.sessions.create(
+          {
+            ...customerId ? {
+              customer: customerId,
+              customer_update: {
+                name: "auto",
+                address: "auto"
+              }
+            } : {
+              customer_email: session2.user.email
+            },
+            success_url: getUrl(
+              ctx,
+              `${ctx.context.baseURL}/subscription/success?callbackURL=${encodeURIComponent(
+                ctx.body.successUrl
+              )}&subscriptionId=${encodeURIComponent(subscription.id)}`
+            ),
+            cancel_url: getUrl(ctx, ctx.body.cancelUrl),
+            line_items: [
+              {
+                price: ctx.body.annual ? plan.annualDiscountPriceId : plan.priceId,
+                quantity: ctx.body.seats || 1
+              }
+            ],
+            subscription_data: {
+              ...freeTrail
+            },
+            mode: "subscription",
+            client_reference_id: referenceId,
+            ...params?.params,
+            metadata: {
+              userId: user2.id,
+              subscriptionId: subscription.id,
+              referenceId,
+              ...params?.params?.metadata
+            }
+          },
+          params?.options
+        ).catch(async (e) => {
+          throw ctx.error("BAD_REQUEST", {
+            message: e.message,
+            code: e.code
+          });
+        });
+        return ctx.json({
+          ...checkoutSession,
+          redirect: !ctx.body.disableRedirect
+        });
+      }
+    ),
+    cancelSubscriptionCallback: createAuthEndpoint(
+      "/subscription/cancel/callback",
+      {
+        method: "GET",
+        query: z.record(z.string(), z.any()).optional(),
+        use: [originCheck((ctx) => ctx.query.callbackURL)]
+      },
+      async (ctx) => {
+        if (!ctx.query || !ctx.query.callbackURL || !ctx.query.subscriptionId) {
+          throw ctx.redirect(getUrl(ctx, ctx.query?.callbackURL || "/"));
+        }
+        const session2 = await getSessionFromCtx(
+          ctx
+        );
+        if (!session2) {
+          throw ctx.redirect(getUrl(ctx, ctx.query?.callbackURL || "/"));
+        }
+        const { user: user2 } = session2;
+        const { callbackURL, subscriptionId } = ctx.query;
+        if (user2?.stripeCustomerId) {
+          try {
+            const subscription = await ctx.context.adapter.findOne({
+              model: "subscription",
+              where: [
+                {
+                  field: "id",
+                  value: subscriptionId
+                }
+              ]
+            });
+            if (!subscription || subscription.cancelAtPeriodEnd || subscription.status === "canceled") {
+              throw ctx.redirect(getUrl(ctx, callbackURL));
+            }
+            const stripeSubscription = await client.subscriptions.list({
+              customer: user2.stripeCustomerId,
+              status: "active"
+            });
+            const currentSubscription = stripeSubscription.data.find(
+              (sub) => sub.id === subscription.stripeSubscriptionId
+            );
+            if (currentSubscription?.cancel_at_period_end === true) {
+              await ctx.context.adapter.update({
+                model: "subscription",
+                update: {
+                  status: currentSubscription?.status,
+                  cancelAtPeriodEnd: true
+                },
+                where: [
+                  {
+                    field: "id",
+                    value: subscription.id
+                  }
+                ]
+              });
+              await options.subscription?.onSubscriptionCancel?.({
+                subscription,
+                cancellationDetails: currentSubscription.cancellation_details,
+                stripeSubscription: currentSubscription,
+                event: void 0
+              });
+            }
+          } catch (error4) {
+            ctx.context.logger.error(
+              "Error checking subscription status from Stripe",
+              error4
+            );
+          }
+        }
+        throw ctx.redirect(getUrl(ctx, callbackURL));
+      }
+    ),
+    cancelSubscription: createAuthEndpoint(
+      "/subscription/cancel",
+      {
+        method: "POST",
+        body: z.object({
+          referenceId: z.string().optional(),
+          subscriptionId: z.string().optional(),
+          returnUrl: z.string()
+        }),
+        use: [
+          sessionMiddleware,
+          originCheck((ctx) => ctx.body.returnUrl),
+          referenceMiddleware("cancel-subscription")
+        ]
+      },
+      async (ctx) => {
+        const referenceId = ctx.body?.referenceId || ctx.context.session.user.id;
+        const subscription = ctx.body.subscriptionId ? await ctx.context.adapter.findOne({
+          model: "subscription",
+          where: [
+            {
+              field: "id",
+              value: ctx.body.subscriptionId
+            }
+          ]
+        }) : await ctx.context.adapter.findMany({
+          model: "subscription",
+          where: [{ field: "referenceId", value: referenceId }]
+        }).then(
+          (subs) => subs.find(
+            (sub) => sub.status === "active" || sub.status === "trialing"
+          )
+        );
+        if (!subscription || !subscription.stripeCustomerId) {
+          throw ctx.error("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.SUBSCRIPTION_NOT_FOUND
+          });
+        }
+        const activeSubscriptions = await client.subscriptions.list({
+          customer: subscription.stripeCustomerId
+        }).then(
+          (res) => res.data.filter(
+            (sub) => sub.status === "active" || sub.status === "trialing"
+          )
+        );
+        if (!activeSubscriptions.length) {
+          await ctx.context.adapter.deleteMany({
+            model: "subscription",
+            where: [
+              {
+                field: "referenceId",
+                value: referenceId
+              }
+            ]
+          });
+          throw ctx.error("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.SUBSCRIPTION_NOT_FOUND
+          });
+        }
+        const activeSubscription = activeSubscriptions.find(
+          (sub) => sub.id === subscription.stripeSubscriptionId
+        );
+        if (!activeSubscription) {
+          throw ctx.error("BAD_REQUEST", {
+            message: STRIPE_ERROR_CODES.SUBSCRIPTION_NOT_FOUND
+          });
+        }
+        const { url } = await client.billingPortal.sessions.create({
+          customer: subscription.stripeCustomerId,
+          return_url: getUrl(
+            ctx,
+            `${ctx.context.baseURL}/subscription/cancel/callback?callbackURL=${encodeURIComponent(
+              ctx.body?.returnUrl || "/"
+            )}&subscriptionId=${encodeURIComponent(subscription.id)}`
+          ),
+          flow_data: {
+            type: "subscription_cancel",
+            subscription_cancel: {
+              subscription: activeSubscription.id
+            }
+          }
+        }).catch(async (e) => {
+          if (e.message.includes("already set to be cancel")) {
+            if (!subscription.cancelAtPeriodEnd) {
+              await ctx.context.adapter.update({
+                model: "subscription",
+                update: {
+                  cancelAtPeriodEnd: true
+                },
+                where: [
+                  {
+                    field: "referenceId",
+                    value: referenceId
+                  }
+                ]
+              });
+            }
+          }
+          throw ctx.error("BAD_REQUEST", {
+            message: e.message,
+            code: e.code
+          });
+        });
+        return {
+          url,
+          redirect: true
+        };
+      }
+    ),
+    listActiveSubscriptions: createAuthEndpoint(
+      "/subscription/list",
+      {
+        method: "GET",
+        query: z.optional(
+          z.object({
+            referenceId: z.string().optional()
+          })
+        ),
+        use: [sessionMiddleware, referenceMiddleware("list-subscription")]
+      },
+      async (ctx) => {
+        const subscriptions = await ctx.context.adapter.findMany({
+          model: "subscription",
+          where: [
+            {
+              field: "referenceId",
+              value: ctx.query?.referenceId || ctx.context.session.user.id
+            }
+          ]
+        });
+        if (!subscriptions.length) {
+          return [];
+        }
+        const plans = await getPlans(options);
+        if (!plans) {
+          return [];
+        }
+        const subs = subscriptions.map((sub) => {
+          const plan = plans.find(
+            (p) => p.name.toLowerCase() === sub.plan.toLowerCase()
+          );
+          return {
+            ...sub,
+            limits: plan?.limits
+          };
+        }).filter((sub) => {
+          return sub.status === "active" || sub.status === "trialing";
+        });
+        return ctx.json(subs);
+      }
+    ),
+    subscriptionSuccess: createAuthEndpoint(
+      "/subscription/success",
+      {
+        method: "GET",
+        query: z.record(z.string(), z.any()).optional(),
+        use: [originCheck((ctx) => ctx.query.callbackURL)]
+      },
+      async (ctx) => {
+        if (!ctx.query || !ctx.query.callbackURL || !ctx.query.subscriptionId) {
+          throw ctx.redirect(getUrl(ctx, ctx.query?.callbackURL || "/"));
+        }
+        const session2 = await getSessionFromCtx(
+          ctx
+        );
+        if (!session2) {
+          throw ctx.redirect(getUrl(ctx, ctx.query?.callbackURL || "/"));
+        }
+        const { user: user2 } = session2;
+        const { callbackURL, subscriptionId } = ctx.query;
+        const subscription = await ctx.context.adapter.findOne({
+          model: "subscription",
+          where: [
+            {
+              field: "id",
+              value: subscriptionId
+            }
+          ]
+        });
+        if (subscription?.status === "active" || subscription?.status === "trialing") {
+          return ctx.redirect(getUrl(ctx, callbackURL));
+        }
+        const customerId = subscription?.stripeCustomerId || user2.stripeCustomerId;
+        if (customerId) {
+          try {
+            const stripeSubscription = await client.subscriptions.list({
+              customer: customerId,
+              status: "active"
+            }).then((res) => res.data[0]);
+            if (stripeSubscription) {
+              const plan = await getPlanByPriceId(
+                options,
+                stripeSubscription.items.data[0]?.plan.id
+              );
+              if (plan && subscription) {
+                await ctx.context.adapter.update({
+                  model: "subscription",
+                  update: {
+                    status: stripeSubscription.status,
+                    seats: stripeSubscription.items.data[0]?.quantity || 1,
+                    plan: plan.name.toLowerCase(),
+                    periodEnd: new Date(
+                      stripeSubscription.current_period_end * 1e3
+                    ),
+                    periodStart: new Date(
+                      stripeSubscription.current_period_start * 1e3
+                    ),
+                    stripeSubscriptionId: stripeSubscription.id,
+                    ...stripeSubscription.trial_start && stripeSubscription.trial_end ? {
+                      trialStart: new Date(
+                        stripeSubscription.trial_start * 1e3
+                      ),
+                      trialEnd: new Date(
+                        stripeSubscription.trial_end * 1e3
+                      )
+                    } : {}
+                  },
+                  where: [
+                    {
+                      field: "id",
+                      value: subscription.id
+                    }
+                  ]
+                });
+              }
+            }
+          } catch (error4) {
+            ctx.context.logger.error(
+              "Error fetching subscription from Stripe",
+              error4
+            );
+          }
+        }
+        throw ctx.redirect(getUrl(ctx, callbackURL));
+      }
+    )
+  };
+  return {
+    id: "stripe",
+    endpoints: {
+      stripeWebhook: createAuthEndpoint(
+        "/stripe/webhook",
+        {
+          method: "POST",
+          metadata: {
+            isAction: false
+          },
+          cloneRequest: true
+        },
+        async (ctx) => {
+          if (!ctx.request?.body) {
+            throw new APIError("INTERNAL_SERVER_ERROR");
+          }
+          const buf = await ctx.request.text();
+          const sig = ctx.request.headers.get("stripe-signature");
+          const webhookSecret = options.stripeWebhookSecret;
+          let event;
+          try {
+            if (!sig || !webhookSecret) {
+              throw new APIError("BAD_REQUEST", {
+                message: "Stripe webhook secret not found"
+              });
+            }
+            event = await client.webhooks.constructEventAsync(
+              buf,
+              sig,
+              webhookSecret
+            );
+          } catch (err) {
+            ctx.context.logger.error(`${err.message}`);
+            throw new APIError("BAD_REQUEST", {
+              message: `Webhook Error: ${err.message}`
+            });
+          }
+          try {
+            switch (event.type) {
+              case "checkout.session.completed":
+                await onCheckoutSessionCompleted(ctx, options, event);
+                await options.onEvent?.(event);
+                break;
+              case "customer.subscription.updated":
+                await onSubscriptionUpdated(ctx, options, event);
+                await options.onEvent?.(event);
+                break;
+              case "customer.subscription.deleted":
+                await onSubscriptionDeleted(ctx, options, event);
+                await options.onEvent?.(event);
+                break;
+              default:
+                await options.onEvent?.(event);
+                break;
+            }
+          } catch (e) {
+            ctx.context.logger.error(
+              `Stripe webhook failed. Error: ${e.message}`
+            );
+            throw new APIError("BAD_REQUEST", {
+              message: "Webhook error: See server logs for more information."
+            });
+          }
+          return ctx.json({ success: true });
+        }
+      ),
+      ...options.subscription?.enabled ? subscriptionEndpoints : {}
+    },
+    init(ctx) {
+      return {
+        options: {
+          databaseHooks: {
+            user: {
+              create: {
+                async after(user2, ctx2) {
+                  if (ctx2 && options.createCustomerOnSignUp) {
+                    const stripeCustomer = await client.customers.create({
+                      email: user2.email,
+                      name: user2.name,
+                      metadata: {
+                        userId: user2.id
+                      }
+                    });
+                    const customer = await ctx2.context.adapter.update(
+                      {
+                        model: "user",
+                        update: {
+                          stripeCustomerId: stripeCustomer.id
+                        },
+                        where: [
+                          {
+                            field: "id",
+                            value: user2.id
+                          }
+                        ]
+                      }
+                    );
+                    if (!customer) {
+                      logger.error("#BETTER_AUTH: Failed to create  customer");
+                    } else {
+                      await options.onCustomerCreate?.({
+                        customer,
+                        stripeCustomer,
+                        user: user2
+                      });
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      };
+    },
+    schema: getSchema2(options)
+  };
+}, "stripe");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/stripe.esm.worker.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/platform/WebPlatformFunctions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/platform/PlatformFunctions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/net/FetchHttpClient.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/net/HttpClient.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var HttpClient = class _HttpClient {
+  static {
+    __name(this, "HttpClient");
+  }
+  /** The client name used for diagnostics. */
+  getClientName() {
+    throw new Error("getClientName not implemented.");
+  }
+  makeRequest(host, port, path, method, headers, requestData, protocol, timeout) {
+    throw new Error("makeRequest not implemented.");
+  }
+  /** Helper to make a consistent timeout error across implementations. */
+  static makeTimeoutError() {
+    const timeoutErr = new TypeError(_HttpClient.TIMEOUT_ERROR_CODE);
+    timeoutErr.code = _HttpClient.TIMEOUT_ERROR_CODE;
+    return timeoutErr;
+  }
+};
+HttpClient.CONNECTION_CLOSED_ERROR_CODES = ["ECONNRESET", "EPIPE"];
+HttpClient.TIMEOUT_ERROR_CODE = "ETIMEDOUT";
+var HttpClientResponse = class {
+  static {
+    __name(this, "HttpClientResponse");
+  }
+  constructor(statusCode, headers) {
+    this._statusCode = statusCode;
+    this._headers = headers;
+  }
+  getStatusCode() {
+    return this._statusCode;
+  }
+  getHeaders() {
+    return this._headers;
+  }
+  getRawResponse() {
+    throw new Error("getRawResponse not implemented.");
+  }
+  toStream(streamCompleteCallback) {
+    throw new Error("toStream not implemented.");
+  }
+  toJSON() {
+    throw new Error("toJSON not implemented.");
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/net/FetchHttpClient.js
+var FetchHttpClient = class _FetchHttpClient extends HttpClient {
+  static {
+    __name(this, "FetchHttpClient");
+  }
+  constructor(fetchFn) {
+    super();
+    if (!fetchFn) {
+      if (!globalThis.fetch) {
+        throw new Error("fetch() function not provided and is not defined in the global scope. You must provide a fetch implementation.");
+      }
+      fetchFn = globalThis.fetch;
+    }
+    if (globalThis.AbortController) {
+      this._fetchFn = _FetchHttpClient.makeFetchWithAbortTimeout(fetchFn);
+    } else {
+      this._fetchFn = _FetchHttpClient.makeFetchWithRaceTimeout(fetchFn);
+    }
+  }
+  static makeFetchWithRaceTimeout(fetchFn) {
+    return (url, init2, timeout) => {
+      let pendingTimeoutId;
+      const timeoutPromise = new Promise((_, reject) => {
+        pendingTimeoutId = setTimeout(() => {
+          pendingTimeoutId = null;
+          reject(HttpClient.makeTimeoutError());
+        }, timeout);
+      });
+      const fetchPromise = fetchFn(url, init2);
+      return Promise.race([fetchPromise, timeoutPromise]).finally(() => {
+        if (pendingTimeoutId) {
+          clearTimeout(pendingTimeoutId);
+        }
+      });
+    };
+  }
+  static makeFetchWithAbortTimeout(fetchFn) {
+    return async (url, init2, timeout) => {
+      const abort2 = new AbortController();
+      let timeoutId = setTimeout(() => {
+        timeoutId = null;
+        abort2.abort(HttpClient.makeTimeoutError());
+      }, timeout);
+      try {
+        return await fetchFn(url, Object.assign(Object.assign({}, init2), { signal: abort2.signal }));
+      } catch (err) {
+        if (err.name === "AbortError") {
+          throw HttpClient.makeTimeoutError();
+        } else {
+          throw err;
+        }
+      } finally {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+      }
+    };
+  }
+  /** @override. */
+  getClientName() {
+    return "fetch";
+  }
+  async makeRequest(host, port, path, method, headers, requestData, protocol, timeout) {
+    const isInsecureConnection = protocol === "http";
+    const url = new URL(path, `${isInsecureConnection ? "http" : "https"}://${host}`);
+    url.port = port;
+    const methodHasPayload = method == "POST" || method == "PUT" || method == "PATCH";
+    const body = requestData || (methodHasPayload ? "" : void 0);
+    const res = await this._fetchFn(url.toString(), {
+      method,
+      // @ts-ignore
+      headers,
+      // @ts-ignore
+      body
+    }, timeout);
+    return new FetchHttpClientResponse(res);
+  }
+};
+var FetchHttpClientResponse = class _FetchHttpClientResponse extends HttpClientResponse {
+  static {
+    __name(this, "FetchHttpClientResponse");
+  }
+  constructor(res) {
+    super(res.status, _FetchHttpClientResponse._transformHeadersToObject(res.headers));
+    this._res = res;
+  }
+  getRawResponse() {
+    return this._res;
+  }
+  toStream(streamCompleteCallback) {
+    streamCompleteCallback();
+    return this._res.body;
+  }
+  toJSON() {
+    return this._res.json();
+  }
+  static _transformHeadersToObject(headers) {
+    const headersObj = {};
+    for (const entry of headers) {
+      if (!Array.isArray(entry) || entry.length != 2) {
+        throw new Error("Response objects produced by the fetch function given to FetchHttpClient do not have an iterable headers map. Response#headers should be an iterable object.");
+      }
+      headersObj[entry[0]] = entry[1];
+    }
+    return headersObj;
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/crypto/SubtleCryptoProvider.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/crypto/CryptoProvider.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var CryptoProvider = class {
+  static {
+    __name(this, "CryptoProvider");
+  }
+  /**
+   * Computes a SHA-256 HMAC given a secret and a payload (encoded in UTF-8).
+   * The output HMAC should be encoded in hexadecimal.
+   *
+   * Sample values for implementations:
+   * - computeHMACSignature('', 'test_secret') => 'f7f9bd47fb987337b5796fdc1fdb9ba221d0d5396814bfcaf9521f43fd8927fd'
+   * - computeHMACSignature('\ud83d\ude00', 'test_secret') => '837da296d05c4fe31f61d5d7ead035099d9585a5bcde87de952012a78f0b0c43
+   */
+  computeHMACSignature(payload, secret) {
+    throw new Error("computeHMACSignature not implemented.");
+  }
+  /**
+   * Asynchronous version of `computeHMACSignature`. Some implementations may
+   * only allow support async signature computation.
+   *
+   * Computes a SHA-256 HMAC given a secret and a payload (encoded in UTF-8).
+   * The output HMAC should be encoded in hexadecimal.
+   *
+   * Sample values for implementations:
+   * - computeHMACSignature('', 'test_secret') => 'f7f9bd47fb987337b5796fdc1fdb9ba221d0d5396814bfcaf9521f43fd8927fd'
+   * - computeHMACSignature('\ud83d\ude00', 'test_secret') => '837da296d05c4fe31f61d5d7ead035099d9585a5bcde87de952012a78f0b0c43
+   */
+  computeHMACSignatureAsync(payload, secret) {
+    throw new Error("computeHMACSignatureAsync not implemented.");
+  }
+  /**
+   * Computes a SHA-256 hash of the data.
+   */
+  computeSHA256Async(data) {
+    throw new Error("computeSHA256 not implemented.");
+  }
+};
+var CryptoProviderOnlySupportsAsyncError = class extends Error {
+  static {
+    __name(this, "CryptoProviderOnlySupportsAsyncError");
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/crypto/SubtleCryptoProvider.js
+var SubtleCryptoProvider = class extends CryptoProvider {
+  static {
+    __name(this, "SubtleCryptoProvider");
+  }
+  constructor(subtleCrypto) {
+    super();
+    this.subtleCrypto = subtleCrypto || crypto.subtle;
+  }
+  /** @override */
+  computeHMACSignature(payload, secret) {
+    throw new CryptoProviderOnlySupportsAsyncError("SubtleCryptoProvider cannot be used in a synchronous context.");
+  }
+  /** @override */
+  async computeHMACSignatureAsync(payload, secret) {
+    const encoder3 = new TextEncoder();
+    const key = await this.subtleCrypto.importKey("raw", encoder3.encode(secret), {
+      name: "HMAC",
+      hash: { name: "SHA-256" }
+    }, false, ["sign"]);
+    const signatureBuffer = await this.subtleCrypto.sign("hmac", key, encoder3.encode(payload));
+    const signatureBytes = new Uint8Array(signatureBuffer);
+    const signatureHexCodes = new Array(signatureBytes.length);
+    for (let i = 0; i < signatureBytes.length; i++) {
+      signatureHexCodes[i] = byteHexMapping[signatureBytes[i]];
+    }
+    return signatureHexCodes.join("");
+  }
+  /** @override */
+  async computeSHA256Async(data) {
+    return new Uint8Array(await this.subtleCrypto.digest("SHA-256", data));
+  }
+};
+var byteHexMapping = new Array(256);
+for (let i = 0; i < byteHexMapping.length; i++) {
+  byteHexMapping[i] = i.toString(16).padStart(2, "0");
+}
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/platform/PlatformFunctions.js
+var PlatformFunctions = class {
+  static {
+    __name(this, "PlatformFunctions");
+  }
+  constructor() {
+    this._fetchFn = null;
+    this._agent = null;
+  }
+  /**
+   * Gets uname with Node's built-in `exec` function, if available.
+   */
+  getUname() {
+    throw new Error("getUname not implemented.");
+  }
+  /**
+   * Generates a v4 UUID. See https://stackoverflow.com/a/2117523
+   */
+  uuid4() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+      const r = Math.random() * 16 | 0;
+      const v = c === "x" ? r : r & 3 | 8;
+      return v.toString(16);
+    });
+  }
+  /**
+   * Compares strings in constant time.
+   */
+  secureCompare(a, b) {
+    if (a.length !== b.length) {
+      return false;
+    }
+    const len = a.length;
+    let result = 0;
+    for (let i = 0; i < len; ++i) {
+      result |= a.charCodeAt(i) ^ b.charCodeAt(i);
+    }
+    return result === 0;
+  }
+  /**
+   * Creates an event emitter.
+   */
+  createEmitter() {
+    throw new Error("createEmitter not implemented.");
+  }
+  /**
+   * Checks if the request data is a stream. If so, read the entire stream
+   * to a buffer and return the buffer.
+   */
+  tryBufferData(data) {
+    throw new Error("tryBufferData not implemented.");
+  }
+  /**
+   * Creates an HTTP client which uses the Node `http` and `https` packages
+   * to issue requests.
+   */
+  createNodeHttpClient(agent) {
+    throw new Error("createNodeHttpClient not implemented.");
+  }
+  /**
+   * Creates an HTTP client for issuing Stripe API requests which uses the Web
+   * Fetch API.
+   *
+   * A fetch function can optionally be passed in as a parameter. If none is
+   * passed, will default to the default `fetch` function in the global scope.
+   */
+  createFetchHttpClient(fetchFn) {
+    return new FetchHttpClient(fetchFn);
+  }
+  /**
+   * Creates an HTTP client using runtime-specific APIs.
+   */
+  createDefaultHttpClient() {
+    throw new Error("createDefaultHttpClient not implemented.");
+  }
+  /**
+   * Creates a CryptoProvider which uses the Node `crypto` package for its computations.
+   */
+  createNodeCryptoProvider() {
+    throw new Error("createNodeCryptoProvider not implemented.");
+  }
+  /**
+   * Creates a CryptoProvider which uses the SubtleCrypto interface of the Web Crypto API.
+   */
+  createSubtleCryptoProvider(subtleCrypto) {
+    return new SubtleCryptoProvider(subtleCrypto);
+  }
+  createDefaultCryptoProvider() {
+    throw new Error("createDefaultCryptoProvider not implemented.");
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/StripeEmitter.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var _StripeEvent = class extends Event {
+  static {
+    __name(this, "_StripeEvent");
+  }
+  constructor(eventName, data) {
+    super(eventName);
+    this.data = data;
+  }
+};
+var StripeEmitter = class {
+  static {
+    __name(this, "StripeEmitter");
+  }
+  constructor() {
+    this.eventTarget = new EventTarget();
+    this.listenerMapping = /* @__PURE__ */ new Map();
+  }
+  on(eventName, listener) {
+    const listenerWrapper = /* @__PURE__ */ __name((event) => {
+      listener(event.data);
+    }, "listenerWrapper");
+    this.listenerMapping.set(listener, listenerWrapper);
+    return this.eventTarget.addEventListener(eventName, listenerWrapper);
+  }
+  removeListener(eventName, listener) {
+    const listenerWrapper = this.listenerMapping.get(listener);
+    this.listenerMapping.delete(listener);
+    return this.eventTarget.removeEventListener(eventName, listenerWrapper);
+  }
+  once(eventName, listener) {
+    const listenerWrapper = /* @__PURE__ */ __name((event) => {
+      listener(event.data);
+    }, "listenerWrapper");
+    this.listenerMapping.set(listener, listenerWrapper);
+    return this.eventTarget.addEventListener(eventName, listenerWrapper, {
+      once: true
+    });
+  }
+  emit(eventName, data) {
+    return this.eventTarget.dispatchEvent(new _StripeEvent(eventName, data));
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/platform/WebPlatformFunctions.js
+var WebPlatformFunctions = class extends PlatformFunctions {
+  static {
+    __name(this, "WebPlatformFunctions");
+  }
+  /** @override */
+  getUname() {
+    return Promise.resolve(null);
+  }
+  /** @override */
+  createEmitter() {
+    return new StripeEmitter();
+  }
+  /** @override */
+  tryBufferData(data) {
+    if (data.file.data instanceof ReadableStream) {
+      throw new Error("Uploading a file as a stream is not supported in non-Node environments. Please open or upvote an issue at github.com/stripe/stripe-node if you use this, detailing your use-case.");
+    }
+    return Promise.resolve(data);
+  }
+  /** @override */
+  createNodeHttpClient() {
+    throw new Error("Stripe: `createNodeHttpClient()` is not available in non-Node environments. Please use `createFetchHttpClient()` instead.");
+  }
+  /** @override */
+  createDefaultHttpClient() {
+    return super.createFetchHttpClient();
+  }
+  /** @override */
+  createNodeCryptoProvider() {
+    throw new Error("Stripe: `createNodeCryptoProvider()` is not available in non-Node environments. Please use `createSubtleCryptoProvider()` instead.");
+  }
+  /** @override */
+  createDefaultCryptoProvider() {
+    return this.createSubtleCryptoProvider();
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/stripe.core.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/Error.js
+var Error_exports = {};
+__export(Error_exports, {
+  StripeAPIError: () => StripeAPIError,
+  StripeAuthenticationError: () => StripeAuthenticationError,
+  StripeCardError: () => StripeCardError,
+  StripeConnectionError: () => StripeConnectionError,
+  StripeError: () => StripeError,
+  StripeIdempotencyError: () => StripeIdempotencyError,
+  StripeInvalidGrantError: () => StripeInvalidGrantError,
+  StripeInvalidRequestError: () => StripeInvalidRequestError,
+  StripePermissionError: () => StripePermissionError,
+  StripeRateLimitError: () => StripeRateLimitError,
+  StripeSignatureVerificationError: () => StripeSignatureVerificationError,
+  StripeUnknownError: () => StripeUnknownError,
+  TemporarySessionExpiredError: () => TemporarySessionExpiredError,
+  generateV1Error: () => generateV1Error,
+  generateV2Error: () => generateV2Error
+});
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var generateV1Error = /* @__PURE__ */ __name((rawStripeError) => {
+  switch (rawStripeError.type) {
+    case "card_error":
+      return new StripeCardError(rawStripeError);
+    case "invalid_request_error":
+      return new StripeInvalidRequestError(rawStripeError);
+    case "api_error":
+      return new StripeAPIError(rawStripeError);
+    case "authentication_error":
+      return new StripeAuthenticationError(rawStripeError);
+    case "rate_limit_error":
+      return new StripeRateLimitError(rawStripeError);
+    case "idempotency_error":
+      return new StripeIdempotencyError(rawStripeError);
+    case "invalid_grant":
+      return new StripeInvalidGrantError(rawStripeError);
+    default:
+      return new StripeUnknownError(rawStripeError);
+  }
+}, "generateV1Error");
+var generateV2Error = /* @__PURE__ */ __name((rawStripeError) => {
+  switch (rawStripeError.type) {
+    // switchCases: The beginning of the section generated from our OpenAPI spec
+    case "temporary_session_expired":
+      return new TemporarySessionExpiredError(rawStripeError);
+  }
+  switch (rawStripeError.code) {
+    case "invalid_fields":
+      return new StripeInvalidRequestError(rawStripeError);
+  }
+  return generateV1Error(rawStripeError);
+}, "generateV2Error");
+var StripeError = class extends Error {
+  static {
+    __name(this, "StripeError");
+  }
+  constructor(raw2 = {}, type = null) {
+    super(raw2.message);
+    this.type = type || this.constructor.name;
+    this.raw = raw2;
+    this.rawType = raw2.type;
+    this.code = raw2.code;
+    this.doc_url = raw2.doc_url;
+    this.param = raw2.param;
+    this.detail = raw2.detail;
+    this.headers = raw2.headers;
+    this.requestId = raw2.requestId;
+    this.statusCode = raw2.statusCode;
+    this.message = raw2.message;
+    this.userMessage = raw2.user_message;
+    this.charge = raw2.charge;
+    this.decline_code = raw2.decline_code;
+    this.payment_intent = raw2.payment_intent;
+    this.payment_method = raw2.payment_method;
+    this.payment_method_type = raw2.payment_method_type;
+    this.setup_intent = raw2.setup_intent;
+    this.source = raw2.source;
+  }
+};
+StripeError.generate = generateV1Error;
+var StripeCardError = class extends StripeError {
+  static {
+    __name(this, "StripeCardError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeCardError");
+  }
+};
+var StripeInvalidRequestError = class extends StripeError {
+  static {
+    __name(this, "StripeInvalidRequestError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeInvalidRequestError");
+  }
+};
+var StripeAPIError = class extends StripeError {
+  static {
+    __name(this, "StripeAPIError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeAPIError");
+  }
+};
+var StripeAuthenticationError = class extends StripeError {
+  static {
+    __name(this, "StripeAuthenticationError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeAuthenticationError");
+  }
+};
+var StripePermissionError = class extends StripeError {
+  static {
+    __name(this, "StripePermissionError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripePermissionError");
+  }
+};
+var StripeRateLimitError = class extends StripeError {
+  static {
+    __name(this, "StripeRateLimitError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeRateLimitError");
+  }
+};
+var StripeConnectionError = class extends StripeError {
+  static {
+    __name(this, "StripeConnectionError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeConnectionError");
+  }
+};
+var StripeSignatureVerificationError = class extends StripeError {
+  static {
+    __name(this, "StripeSignatureVerificationError");
+  }
+  constructor(header, payload, raw2 = {}) {
+    super(raw2, "StripeSignatureVerificationError");
+    this.header = header;
+    this.payload = payload;
+  }
+};
+var StripeIdempotencyError = class extends StripeError {
+  static {
+    __name(this, "StripeIdempotencyError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeIdempotencyError");
+  }
+};
+var StripeInvalidGrantError = class extends StripeError {
+  static {
+    __name(this, "StripeInvalidGrantError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeInvalidGrantError");
+  }
+};
+var StripeUnknownError = class extends StripeError {
+  static {
+    __name(this, "StripeUnknownError");
+  }
+  constructor(raw2 = {}) {
+    super(raw2, "StripeUnknownError");
+  }
+};
+var TemporarySessionExpiredError = class extends StripeError {
+  static {
+    __name(this, "TemporarySessionExpiredError");
+  }
+  constructor(rawStripeError = {}) {
+    super(rawStripeError, "TemporarySessionExpiredError");
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/RequestSender.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/utils.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var qs = __toESM(require_lib(), 1);
+var OPTIONS_KEYS = [
+  "apiKey",
+  "idempotencyKey",
+  "stripeAccount",
+  "apiVersion",
+  "maxNetworkRetries",
+  "timeout",
+  "host",
+  "authenticator",
+  "stripeContext",
+  "additionalHeaders"
+];
+function isOptionsHash(o) {
+  return o && typeof o === "object" && OPTIONS_KEYS.some((prop) => Object.prototype.hasOwnProperty.call(o, prop));
+}
+__name(isOptionsHash, "isOptionsHash");
+function queryStringifyRequestData(data, apiMode) {
+  return qs.stringify(data, {
+    serializeDate: /* @__PURE__ */ __name((d) => Math.floor(d.getTime() / 1e3).toString(), "serializeDate"),
+    arrayFormat: apiMode == "v2" ? "repeat" : "indices"
+  }).replace(/%5B/g, "[").replace(/%5D/g, "]");
+}
+__name(queryStringifyRequestData, "queryStringifyRequestData");
+var makeURLInterpolator = /* @__PURE__ */ (() => {
+  const rc = {
+    "\n": "\\n",
+    '"': '\\"',
+    "\u2028": "\\u2028",
+    "\u2029": "\\u2029"
+  };
+  return (str) => {
+    const cleanString = str.replace(/["\n\r\u2028\u2029]/g, ($0) => rc[$0]);
+    return (outputs) => {
+      return cleanString.replace(/\{([\s\S]+?)\}/g, ($0, $1) => (
+        // @ts-ignore
+        encodeURIComponent(outputs[$1] || "")
+      ));
+    };
+  };
+})();
+function extractUrlParams(path) {
+  const params = path.match(/\{\w+\}/g);
+  if (!params) {
+    return [];
+  }
+  return params.map((param) => param.replace(/[{}]/g, ""));
+}
+__name(extractUrlParams, "extractUrlParams");
+function getDataFromArgs(args) {
+  if (!Array.isArray(args) || !args[0] || typeof args[0] !== "object") {
+    return {};
+  }
+  if (!isOptionsHash(args[0])) {
+    return args.shift();
+  }
+  const argKeys = Object.keys(args[0]);
+  const optionKeysInArgs = argKeys.filter((key) => OPTIONS_KEYS.includes(key));
+  if (optionKeysInArgs.length > 0 && optionKeysInArgs.length !== argKeys.length) {
+    emitWarning2(`Options found in arguments (${optionKeysInArgs.join(", ")}). Did you mean to pass an options object? See https://github.com/stripe/stripe-node/wiki/Passing-Options.`);
+  }
+  return {};
+}
+__name(getDataFromArgs, "getDataFromArgs");
+function getOptionsFromArgs(args) {
+  const opts = {
+    host: null,
+    headers: {},
+    settings: {}
+  };
+  if (args.length > 0) {
+    const arg = args[args.length - 1];
+    if (typeof arg === "string") {
+      opts.authenticator = createApiKeyAuthenticator(args.pop());
+    } else if (isOptionsHash(arg)) {
+      const params = Object.assign({}, args.pop());
+      const extraKeys = Object.keys(params).filter((key) => !OPTIONS_KEYS.includes(key));
+      if (extraKeys.length) {
+        emitWarning2(`Invalid options found (${extraKeys.join(", ")}); ignoring.`);
+      }
+      if (params.apiKey) {
+        opts.authenticator = createApiKeyAuthenticator(params.apiKey);
+      }
+      if (params.idempotencyKey) {
+        opts.headers["Idempotency-Key"] = params.idempotencyKey;
+      }
+      if (params.stripeAccount) {
+        opts.headers["Stripe-Account"] = params.stripeAccount;
+      }
+      if (params.stripeContext) {
+        if (opts.headers["Stripe-Account"]) {
+          throw new Error("Can't specify both stripeAccount and stripeContext.");
+        }
+        opts.headers["Stripe-Context"] = params.stripeContext;
+      }
+      if (params.apiVersion) {
+        opts.headers["Stripe-Version"] = params.apiVersion;
+      }
+      if (Number.isInteger(params.maxNetworkRetries)) {
+        opts.settings.maxNetworkRetries = params.maxNetworkRetries;
+      }
+      if (Number.isInteger(params.timeout)) {
+        opts.settings.timeout = params.timeout;
+      }
+      if (params.host) {
+        opts.host = params.host;
+      }
+      if (params.authenticator) {
+        if (params.apiKey) {
+          throw new Error("Can't specify both apiKey and authenticator.");
+        }
+        if (typeof params.authenticator !== "function") {
+          throw new Error("The authenticator must be a function receiving a request as the first parameter.");
+        }
+        opts.authenticator = params.authenticator;
+      }
+      if (params.additionalHeaders) {
+        opts.headers = params.additionalHeaders;
+      }
+    }
+  }
+  return opts;
+}
+__name(getOptionsFromArgs, "getOptionsFromArgs");
+function protoExtend(sub) {
+  const Super = this;
+  const Constructor = Object.prototype.hasOwnProperty.call(sub, "constructor") ? sub.constructor : function(...args) {
+    Super.apply(this, args);
+  };
+  Object.assign(Constructor, Super);
+  Constructor.prototype = Object.create(Super.prototype);
+  Object.assign(Constructor.prototype, sub);
+  return Constructor;
+}
+__name(protoExtend, "protoExtend");
+function removeNullish(obj) {
+  if (typeof obj !== "object") {
+    throw new Error("Argument must be an object");
+  }
+  return Object.keys(obj).reduce((result, key) => {
+    if (obj[key] != null) {
+      result[key] = obj[key];
+    }
+    return result;
+  }, {});
+}
+__name(removeNullish, "removeNullish");
+function normalizeHeaders(obj) {
+  if (!(obj && typeof obj === "object")) {
+    return obj;
+  }
+  return Object.keys(obj).reduce((result, header) => {
+    result[normalizeHeader(header)] = obj[header];
+    return result;
+  }, {});
+}
+__name(normalizeHeaders, "normalizeHeaders");
+function normalizeHeader(header) {
+  return header.split("-").map((text2) => text2.charAt(0).toUpperCase() + text2.substr(1).toLowerCase()).join("-");
+}
+__name(normalizeHeader, "normalizeHeader");
+function callbackifyPromiseWithTimeout(promise, callback) {
+  if (callback) {
+    return promise.then((res) => {
+      setTimeout(() => {
+        callback(null, res);
+      }, 0);
+    }, (err) => {
+      setTimeout(() => {
+        callback(err, null);
+      }, 0);
+    });
+  }
+  return promise;
+}
+__name(callbackifyPromiseWithTimeout, "callbackifyPromiseWithTimeout");
+function pascalToCamelCase(name) {
+  if (name === "OAuth") {
+    return "oauth";
+  } else {
+    return name[0].toLowerCase() + name.substring(1);
+  }
+}
+__name(pascalToCamelCase, "pascalToCamelCase");
+function emitWarning2(warning) {
+  if (typeof process.emitWarning !== "function") {
+    return console.warn(`Stripe: ${warning}`);
+  }
+  return process.emitWarning(warning, "Stripe");
+}
+__name(emitWarning2, "emitWarning");
+function isObject3(obj) {
+  const type = typeof obj;
+  return (type === "function" || type === "object") && !!obj;
+}
+__name(isObject3, "isObject");
+function flattenAndStringify(data) {
+  const result = {};
+  const step = /* @__PURE__ */ __name((obj, prevKey) => {
+    Object.entries(obj).forEach(([key, value]) => {
+      const newKey = prevKey ? `${prevKey}[${key}]` : key;
+      if (isObject3(value)) {
+        if (!(value instanceof Uint8Array) && !Object.prototype.hasOwnProperty.call(value, "data")) {
+          return step(value, newKey);
+        } else {
+          result[newKey] = value;
+        }
+      } else {
+        result[newKey] = String(value);
+      }
+    });
+  }, "step");
+  step(data, null);
+  return result;
+}
+__name(flattenAndStringify, "flattenAndStringify");
+function validateInteger(name, n, defaultVal) {
+  if (!Number.isInteger(n)) {
+    if (defaultVal !== void 0) {
+      return defaultVal;
+    } else {
+      throw new Error(`${name} must be an integer`);
+    }
+  }
+  return n;
+}
+__name(validateInteger, "validateInteger");
+function determineProcessUserAgentProperties() {
+  return typeof process === "undefined" ? {} : {
+    lang_version: process.version,
+    platform: process.platform
+  };
+}
+__name(determineProcessUserAgentProperties, "determineProcessUserAgentProperties");
+function createApiKeyAuthenticator(apiKey) {
+  const authenticator = /* @__PURE__ */ __name((request) => {
+    request.headers.Authorization = "Bearer " + apiKey;
+    return Promise.resolve();
+  }, "authenticator");
+  authenticator._apiKey = apiKey;
+  return authenticator;
+}
+__name(createApiKeyAuthenticator, "createApiKeyAuthenticator");
+function dateTimeReplacer(key, value) {
+  if (this[key] instanceof Date) {
+    return Math.floor(this[key].getTime() / 1e3).toString();
+  }
+  return value;
+}
+__name(dateTimeReplacer, "dateTimeReplacer");
+function jsonStringifyRequestData(data) {
+  return JSON.stringify(data, dateTimeReplacer);
+}
+__name(jsonStringifyRequestData, "jsonStringifyRequestData");
+function getAPIMode(path) {
+  if (!path) {
+    return "v1";
+  }
+  return path.startsWith("/v2") ? "v2" : "v1";
+}
+__name(getAPIMode, "getAPIMode");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/RequestSender.js
+var MAX_RETRY_AFTER_WAIT = 60;
+var RequestSender = class _RequestSender {
+  static {
+    __name(this, "RequestSender");
+  }
+  constructor(stripe2, maxBufferedRequestMetric) {
+    this._stripe = stripe2;
+    this._maxBufferedRequestMetric = maxBufferedRequestMetric;
+  }
+  _addHeadersDirectlyToObject(obj, headers) {
+    obj.requestId = headers["request-id"];
+    obj.stripeAccount = obj.stripeAccount || headers["stripe-account"];
+    obj.apiVersion = obj.apiVersion || headers["stripe-version"];
+    obj.idempotencyKey = obj.idempotencyKey || headers["idempotency-key"];
+  }
+  _makeResponseEvent(requestEvent, statusCode, headers) {
+    const requestEndTime = Date.now();
+    const requestDurationMs = requestEndTime - requestEvent.request_start_time;
+    return removeNullish({
+      api_version: headers["stripe-version"],
+      account: headers["stripe-account"],
+      idempotency_key: headers["idempotency-key"],
+      method: requestEvent.method,
+      path: requestEvent.path,
+      status: statusCode,
+      request_id: this._getRequestId(headers),
+      elapsed: requestDurationMs,
+      request_start_time: requestEvent.request_start_time,
+      request_end_time: requestEndTime
+    });
+  }
+  _getRequestId(headers) {
+    return headers["request-id"];
+  }
+  /**
+   * Used by methods with spec.streaming === true. For these methods, we do not
+   * buffer successful responses into memory or do parse them into stripe
+   * objects, we delegate that all of that to the user and pass back the raw
+   * http.Response object to the callback.
+   *
+   * (Unsuccessful responses shouldn't make it here, they should
+   * still be buffered/parsed and handled by _jsonResponseHandler -- see
+   * makeRequest)
+   */
+  _streamingResponseHandler(requestEvent, usage, callback) {
+    return (res) => {
+      const headers = res.getHeaders();
+      const streamCompleteCallback = /* @__PURE__ */ __name(() => {
+        const responseEvent = this._makeResponseEvent(requestEvent, res.getStatusCode(), headers);
+        this._stripe._emitter.emit("response", responseEvent);
+        this._recordRequestMetrics(this._getRequestId(headers), responseEvent.elapsed, usage);
+      }, "streamCompleteCallback");
+      const stream = res.toStream(streamCompleteCallback);
+      this._addHeadersDirectlyToObject(stream, headers);
+      return callback(null, stream);
+    };
+  }
+  /**
+   * Default handler for Stripe responses. Buffers the response into memory,
+   * parses the JSON and returns it (i.e. passes it to the callback) if there
+   * is no "error" field. Otherwise constructs/passes an appropriate Error.
+   */
+  _jsonResponseHandler(requestEvent, apiMode, usage, callback) {
+    return (res) => {
+      const headers = res.getHeaders();
+      const requestId = this._getRequestId(headers);
+      const statusCode = res.getStatusCode();
+      const responseEvent = this._makeResponseEvent(requestEvent, statusCode, headers);
+      this._stripe._emitter.emit("response", responseEvent);
+      res.toJSON().then((jsonResponse) => {
+        if (jsonResponse.error) {
+          let err;
+          if (typeof jsonResponse.error === "string") {
+            jsonResponse.error = {
+              type: jsonResponse.error,
+              message: jsonResponse.error_description
+            };
+          }
+          jsonResponse.error.headers = headers;
+          jsonResponse.error.statusCode = statusCode;
+          jsonResponse.error.requestId = requestId;
+          if (statusCode === 401) {
+            err = new StripeAuthenticationError(jsonResponse.error);
+          } else if (statusCode === 403) {
+            err = new StripePermissionError(jsonResponse.error);
+          } else if (statusCode === 429) {
+            err = new StripeRateLimitError(jsonResponse.error);
+          } else if (apiMode === "v2") {
+            err = generateV2Error(jsonResponse.error);
+          } else {
+            err = generateV1Error(jsonResponse.error);
+          }
+          throw err;
+        }
+        return jsonResponse;
+      }, (e) => {
+        throw new StripeAPIError({
+          message: "Invalid JSON received from the Stripe API",
+          exception: e,
+          requestId: headers["request-id"]
+        });
+      }).then((jsonResponse) => {
+        this._recordRequestMetrics(requestId, responseEvent.elapsed, usage);
+        const rawResponse = res.getRawResponse();
+        this._addHeadersDirectlyToObject(rawResponse, headers);
+        Object.defineProperty(jsonResponse, "lastResponse", {
+          enumerable: false,
+          writable: false,
+          value: rawResponse
+        });
+        callback(null, jsonResponse);
+      }, (e) => callback(e, null));
+    };
+  }
+  static _generateConnectionErrorMessage(requestRetries) {
+    return `An error occurred with our connection to Stripe.${requestRetries > 0 ? ` Request was retried ${requestRetries} times.` : ""}`;
+  }
+  // For more on when and how to retry API requests, see https://stripe.com/docs/error-handling#safely-retrying-requests-with-idempotency
+  static _shouldRetry(res, numRetries, maxRetries, error4) {
+    if (error4 && numRetries === 0 && HttpClient.CONNECTION_CLOSED_ERROR_CODES.includes(error4.code)) {
+      return true;
+    }
+    if (numRetries >= maxRetries) {
+      return false;
+    }
+    if (!res) {
+      return true;
+    }
+    if (res.getHeaders()["stripe-should-retry"] === "false") {
+      return false;
+    }
+    if (res.getHeaders()["stripe-should-retry"] === "true") {
+      return true;
+    }
+    if (res.getStatusCode() === 409) {
+      return true;
+    }
+    if (res.getStatusCode() >= 500) {
+      return true;
+    }
+    return false;
+  }
+  _getSleepTimeInMS(numRetries, retryAfter = null) {
+    const initialNetworkRetryDelay = this._stripe.getInitialNetworkRetryDelay();
+    const maxNetworkRetryDelay = this._stripe.getMaxNetworkRetryDelay();
+    let sleepSeconds = Math.min(initialNetworkRetryDelay * Math.pow(2, numRetries - 1), maxNetworkRetryDelay);
+    sleepSeconds *= 0.5 * (1 + Math.random());
+    sleepSeconds = Math.max(initialNetworkRetryDelay, sleepSeconds);
+    if (Number.isInteger(retryAfter) && retryAfter <= MAX_RETRY_AFTER_WAIT) {
+      sleepSeconds = Math.max(sleepSeconds, retryAfter);
+    }
+    return sleepSeconds * 1e3;
+  }
+  // Max retries can be set on a per request basis. Favor those over the global setting
+  _getMaxNetworkRetries(settings = {}) {
+    return settings.maxNetworkRetries !== void 0 && Number.isInteger(settings.maxNetworkRetries) ? settings.maxNetworkRetries : this._stripe.getMaxNetworkRetries();
+  }
+  _defaultIdempotencyKey(method, settings, apiMode) {
+    const maxRetries = this._getMaxNetworkRetries(settings);
+    const genKey = /* @__PURE__ */ __name(() => `stripe-node-retry-${this._stripe._platformFunctions.uuid4()}`, "genKey");
+    if (apiMode === "v2") {
+      if (method === "POST" || method === "DELETE") {
+        return genKey();
+      }
+    } else if (apiMode === "v1") {
+      if (method === "POST" && maxRetries > 0) {
+        return genKey();
+      }
+    }
+    return null;
+  }
+  _makeHeaders({ contentType, contentLength, apiVersion, clientUserAgent, method, userSuppliedHeaders, userSuppliedSettings, stripeAccount, stripeContext, apiMode }) {
+    const defaultHeaders = {
+      Accept: "application/json",
+      "Content-Type": contentType,
+      "User-Agent": this._getUserAgentString(apiMode),
+      "X-Stripe-Client-User-Agent": clientUserAgent,
+      "X-Stripe-Client-Telemetry": this._getTelemetryHeader(),
+      "Stripe-Version": apiVersion,
+      "Stripe-Account": stripeAccount,
+      "Stripe-Context": stripeContext,
+      "Idempotency-Key": this._defaultIdempotencyKey(method, userSuppliedSettings, apiMode)
+    };
+    const methodHasPayload = method == "POST" || method == "PUT" || method == "PATCH";
+    if (methodHasPayload || contentLength) {
+      if (!methodHasPayload) {
+        emitWarning2(`${method} method had non-zero contentLength but no payload is expected for this verb`);
+      }
+      defaultHeaders["Content-Length"] = contentLength;
+    }
+    return Object.assign(
+      removeNullish(defaultHeaders),
+      // If the user supplied, say 'idempotency-key', override instead of appending by ensuring caps are the same.
+      normalizeHeaders(userSuppliedHeaders)
+    );
+  }
+  _getUserAgentString(apiMode) {
+    const packageVersion = this._stripe.getConstant("PACKAGE_VERSION");
+    const appInfo = this._stripe._appInfo ? this._stripe.getAppInfoAsString() : "";
+    return `Stripe/${apiMode} NodeBindings/${packageVersion} ${appInfo}`.trim();
+  }
+  _getTelemetryHeader() {
+    if (this._stripe.getTelemetryEnabled() && this._stripe._prevRequestMetrics.length > 0) {
+      const metrics = this._stripe._prevRequestMetrics.shift();
+      return JSON.stringify({
+        last_request_metrics: metrics
+      });
+    }
+  }
+  _recordRequestMetrics(requestId, requestDurationMs, usage) {
+    if (this._stripe.getTelemetryEnabled() && requestId) {
+      if (this._stripe._prevRequestMetrics.length > this._maxBufferedRequestMetric) {
+        emitWarning2("Request metrics buffer is full, dropping telemetry message.");
+      } else {
+        const m = {
+          request_id: requestId,
+          request_duration_ms: requestDurationMs
+        };
+        if (usage && usage.length > 0) {
+          m.usage = usage;
+        }
+        this._stripe._prevRequestMetrics.push(m);
+      }
+    }
+  }
+  _rawRequest(method, path, params, options) {
+    const requestPromise = new Promise((resolve, reject) => {
+      let opts;
+      try {
+        const requestMethod = method.toUpperCase();
+        if (requestMethod !== "POST" && params && Object.keys(params).length !== 0) {
+          throw new Error("rawRequest only supports params on POST requests. Please pass null and add your parameters to path.");
+        }
+        const args = [].slice.call([params, options]);
+        const dataFromArgs = getDataFromArgs(args);
+        const data = Object.assign({}, dataFromArgs);
+        const calculatedOptions = getOptionsFromArgs(args);
+        const headers2 = calculatedOptions.headers;
+        const authenticator2 = calculatedOptions.authenticator;
+        opts = {
+          requestMethod,
+          requestPath: path,
+          bodyData: data,
+          queryData: {},
+          authenticator: authenticator2,
+          headers: headers2,
+          host: null,
+          streaming: false,
+          settings: {},
+          usage: ["raw_request"]
+        };
+      } catch (err) {
+        reject(err);
+        return;
+      }
+      function requestCallback(err, response) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(response);
+        }
+      }
+      __name(requestCallback, "requestCallback");
+      const { headers, settings } = opts;
+      const authenticator = opts.authenticator;
+      this._request(opts.requestMethod, opts.host, path, opts.bodyData, authenticator, { headers, settings, streaming: opts.streaming }, opts.usage, requestCallback);
+    });
+    return requestPromise;
+  }
+  _request(method, host, path, data, authenticator, options, usage = [], callback, requestDataProcessor = null) {
+    var _a2;
+    let requestData;
+    authenticator = (_a2 = authenticator !== null && authenticator !== void 0 ? authenticator : this._stripe._authenticator) !== null && _a2 !== void 0 ? _a2 : null;
+    const apiMode = getAPIMode(path);
+    const retryRequest = /* @__PURE__ */ __name((requestFn, apiVersion, headers, requestRetries, retryAfter) => {
+      return setTimeout(requestFn, this._getSleepTimeInMS(requestRetries, retryAfter), apiVersion, headers, requestRetries + 1);
+    }, "retryRequest");
+    const makeRequest = /* @__PURE__ */ __name((apiVersion, headers, numRetries) => {
+      const timeout = options.settings && options.settings.timeout && Number.isInteger(options.settings.timeout) && options.settings.timeout >= 0 ? options.settings.timeout : this._stripe.getApiField("timeout");
+      const request = {
+        host: host || this._stripe.getApiField("host"),
+        port: this._stripe.getApiField("port"),
+        path,
+        method,
+        headers: Object.assign({}, headers),
+        body: requestData,
+        protocol: this._stripe.getApiField("protocol")
+      };
+      authenticator(request).then(() => {
+        const req = this._stripe.getApiField("httpClient").makeRequest(request.host, request.port, request.path, request.method, request.headers, request.body, request.protocol, timeout);
+        const requestStartTime = Date.now();
+        const requestEvent = removeNullish({
+          api_version: apiVersion,
+          account: headers["Stripe-Account"],
+          idempotency_key: headers["Idempotency-Key"],
+          method,
+          path,
+          request_start_time: requestStartTime
+        });
+        const requestRetries = numRetries || 0;
+        const maxRetries = this._getMaxNetworkRetries(options.settings || {});
+        this._stripe._emitter.emit("request", requestEvent);
+        req.then((res) => {
+          if (_RequestSender._shouldRetry(res, requestRetries, maxRetries)) {
+            return retryRequest(
+              makeRequest,
+              apiVersion,
+              headers,
+              requestRetries,
+              // @ts-ignore
+              res.getHeaders()["retry-after"]
+            );
+          } else if (options.streaming && res.getStatusCode() < 400) {
+            return this._streamingResponseHandler(requestEvent, usage, callback)(res);
+          } else {
+            return this._jsonResponseHandler(requestEvent, apiMode, usage, callback)(res);
+          }
+        }).catch((error4) => {
+          if (_RequestSender._shouldRetry(null, requestRetries, maxRetries, error4)) {
+            return retryRequest(makeRequest, apiVersion, headers, requestRetries, null);
+          } else {
+            const isTimeoutError = error4.code && error4.code === HttpClient.TIMEOUT_ERROR_CODE;
+            return callback(new StripeConnectionError({
+              message: isTimeoutError ? `Request aborted due to timeout being reached (${timeout}ms)` : _RequestSender._generateConnectionErrorMessage(requestRetries),
+              // @ts-ignore
+              detail: error4
+            }));
+          }
+        });
+      }).catch((e) => {
+        throw new StripeError({
+          message: "Unable to authenticate the request",
+          exception: e
+        });
+      });
+    }, "makeRequest");
+    const prepareAndMakeRequest = /* @__PURE__ */ __name((error4, data2) => {
+      if (error4) {
+        return callback(error4);
+      }
+      requestData = data2;
+      this._stripe.getClientUserAgent((clientUserAgent) => {
+        const apiVersion = this._stripe.getApiField("version");
+        const headers = this._makeHeaders({
+          contentType: apiMode == "v2" ? "application/json" : "application/x-www-form-urlencoded",
+          contentLength: requestData.length,
+          apiVersion,
+          clientUserAgent,
+          method,
+          userSuppliedHeaders: options.headers,
+          userSuppliedSettings: options.settings,
+          stripeAccount: apiMode == "v2" ? null : this._stripe.getApiField("stripeAccount"),
+          stripeContext: apiMode == "v2" ? this._stripe.getApiField("stripeContext") : null,
+          apiMode
+        });
+        makeRequest(apiVersion, headers, 0);
+      });
+    }, "prepareAndMakeRequest");
+    if (requestDataProcessor) {
+      requestDataProcessor(method, data, options.headers, prepareAndMakeRequest);
+    } else {
+      let stringifiedData;
+      if (apiMode == "v2") {
+        stringifiedData = data ? jsonStringifyRequestData(data) : "";
+      } else {
+        stringifiedData = queryStringifyRequestData(data || {}, apiMode);
+      }
+      prepareAndMakeRequest(null, stringifiedData);
+    }
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/StripeResource.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/StripeMethod.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/autoPagination.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var V1Iterator = class {
+  static {
+    __name(this, "V1Iterator");
+  }
+  constructor(firstPagePromise, requestArgs, spec, stripeResource) {
+    this.index = 0;
+    this.pagePromise = firstPagePromise;
+    this.promiseCache = { currentPromise: null };
+    this.requestArgs = requestArgs;
+    this.spec = spec;
+    this.stripeResource = stripeResource;
+  }
+  async iterate(pageResult) {
+    if (!(pageResult && pageResult.data && typeof pageResult.data.length === "number")) {
+      throw Error("Unexpected: Stripe API response does not have a well-formed `data` array.");
+    }
+    const reverseIteration = isReverseIteration(this.requestArgs);
+    if (this.index < pageResult.data.length) {
+      const idx = reverseIteration ? pageResult.data.length - 1 - this.index : this.index;
+      const value = pageResult.data[idx];
+      this.index += 1;
+      return { value, done: false };
+    } else if (pageResult.has_more) {
+      this.index = 0;
+      this.pagePromise = this.getNextPage(pageResult);
+      const nextPageResult = await this.pagePromise;
+      return this.iterate(nextPageResult);
+    }
+    return { done: true, value: void 0 };
+  }
+  /** @abstract */
+  getNextPage(_pageResult) {
+    throw new Error("Unimplemented");
+  }
+  async _next() {
+    return this.iterate(await this.pagePromise);
+  }
+  next() {
+    if (this.promiseCache.currentPromise) {
+      return this.promiseCache.currentPromise;
+    }
+    const nextPromise = (async () => {
+      const ret = await this._next();
+      this.promiseCache.currentPromise = null;
+      return ret;
+    })();
+    this.promiseCache.currentPromise = nextPromise;
+    return nextPromise;
+  }
+};
+var V1ListIterator = class extends V1Iterator {
+  static {
+    __name(this, "V1ListIterator");
+  }
+  getNextPage(pageResult) {
+    const reverseIteration = isReverseIteration(this.requestArgs);
+    const lastId = getLastId(pageResult, reverseIteration);
+    return this.stripeResource._makeRequest(this.requestArgs, this.spec, {
+      [reverseIteration ? "ending_before" : "starting_after"]: lastId
+    });
+  }
+};
+var V1SearchIterator = class extends V1Iterator {
+  static {
+    __name(this, "V1SearchIterator");
+  }
+  getNextPage(pageResult) {
+    if (!pageResult.next_page) {
+      throw Error("Unexpected: Stripe API response does not have a well-formed `next_page` field, but `has_more` was true.");
+    }
+    return this.stripeResource._makeRequest(this.requestArgs, this.spec, {
+      page: pageResult.next_page
+    });
+  }
+};
+var V2ListIterator = class {
+  static {
+    __name(this, "V2ListIterator");
+  }
+  constructor(firstPagePromise, requestArgs, spec, stripeResource) {
+    this.currentPageIterator = (async () => {
+      const page = await firstPagePromise;
+      return page.data[Symbol.iterator]();
+    })();
+    this.nextPageUrl = (async () => {
+      const page = await firstPagePromise;
+      return page.next_page_url || null;
+    })();
+    this.requestArgs = requestArgs;
+    this.spec = spec;
+    this.stripeResource = stripeResource;
+  }
+  async turnPage() {
+    const nextPageUrl = await this.nextPageUrl;
+    if (!nextPageUrl)
+      return null;
+    this.spec.fullPath = nextPageUrl;
+    const page = await this.stripeResource._makeRequest([], this.spec, {});
+    this.nextPageUrl = Promise.resolve(page.next_page_url);
+    this.currentPageIterator = Promise.resolve(page.data[Symbol.iterator]());
+    return this.currentPageIterator;
+  }
+  async next() {
+    {
+      const result2 = (await this.currentPageIterator).next();
+      if (!result2.done)
+        return { done: false, value: result2.value };
+    }
+    const nextPageIterator = await this.turnPage();
+    if (!nextPageIterator) {
+      return { done: true, value: void 0 };
+    }
+    const result = nextPageIterator.next();
+    if (!result.done)
+      return { done: false, value: result.value };
+    return { done: true, value: void 0 };
+  }
+};
+var makeAutoPaginationMethods = /* @__PURE__ */ __name((stripeResource, requestArgs, spec, firstPagePromise) => {
+  const apiMode = getAPIMode(spec.fullPath || spec.path);
+  if (apiMode !== "v2" && spec.methodType === "search") {
+    return makeAutoPaginationMethodsFromIterator(new V1SearchIterator(firstPagePromise, requestArgs, spec, stripeResource));
+  }
+  if (apiMode !== "v2" && spec.methodType === "list") {
+    return makeAutoPaginationMethodsFromIterator(new V1ListIterator(firstPagePromise, requestArgs, spec, stripeResource));
+  }
+  if (apiMode === "v2" && spec.methodType === "list") {
+    return makeAutoPaginationMethodsFromIterator(new V2ListIterator(firstPagePromise, requestArgs, spec, stripeResource));
+  }
+  return null;
+}, "makeAutoPaginationMethods");
+var makeAutoPaginationMethodsFromIterator = /* @__PURE__ */ __name((iterator) => {
+  const autoPagingEach = makeAutoPagingEach((...args) => iterator.next(...args));
+  const autoPagingToArray = makeAutoPagingToArray(autoPagingEach);
+  const autoPaginationMethods = {
+    autoPagingEach,
+    autoPagingToArray,
+    // Async iterator functions:
+    next: /* @__PURE__ */ __name(() => iterator.next(), "next"),
+    return: /* @__PURE__ */ __name(() => {
+      return {};
+    }, "return"),
+    [getAsyncIteratorSymbol()]: () => {
+      return autoPaginationMethods;
+    }
+  };
+  return autoPaginationMethods;
+}, "makeAutoPaginationMethodsFromIterator");
+function getAsyncIteratorSymbol() {
+  if (typeof Symbol !== "undefined" && Symbol.asyncIterator) {
+    return Symbol.asyncIterator;
+  }
+  return "@@asyncIterator";
+}
+__name(getAsyncIteratorSymbol, "getAsyncIteratorSymbol");
+function getDoneCallback(args) {
+  if (args.length < 2) {
+    return null;
+  }
+  const onDone = args[1];
+  if (typeof onDone !== "function") {
+    throw Error(`The second argument to autoPagingEach, if present, must be a callback function; received ${typeof onDone}`);
+  }
+  return onDone;
+}
+__name(getDoneCallback, "getDoneCallback");
+function getItemCallback(args) {
+  if (args.length === 0) {
+    return void 0;
+  }
+  const onItem = args[0];
+  if (typeof onItem !== "function") {
+    throw Error(`The first argument to autoPagingEach, if present, must be a callback function; received ${typeof onItem}`);
+  }
+  if (onItem.length === 2) {
+    return onItem;
+  }
+  if (onItem.length > 2) {
+    throw Error(`The \`onItem\` callback function passed to autoPagingEach must accept at most two arguments; got ${onItem}`);
+  }
+  return /* @__PURE__ */ __name(function _onItem(item, next) {
+    const shouldContinue = onItem(item);
+    next(shouldContinue);
+  }, "_onItem");
+}
+__name(getItemCallback, "getItemCallback");
+function getLastId(listResult, reverseIteration) {
+  const lastIdx = reverseIteration ? 0 : listResult.data.length - 1;
+  const lastItem = listResult.data[lastIdx];
+  const lastId = lastItem && lastItem.id;
+  if (!lastId) {
+    throw Error("Unexpected: No `id` found on the last item while auto-paging a list.");
+  }
+  return lastId;
+}
+__name(getLastId, "getLastId");
+function makeAutoPagingEach(asyncIteratorNext) {
+  return /* @__PURE__ */ __name(function autoPagingEach() {
+    const args = [].slice.call(arguments);
+    const onItem = getItemCallback(args);
+    const onDone = getDoneCallback(args);
+    if (args.length > 2) {
+      throw Error(`autoPagingEach takes up to two arguments; received ${args}`);
+    }
+    const autoPagePromise = wrapAsyncIteratorWithCallback(
+      asyncIteratorNext,
+      // @ts-ignore we might need a null check
+      onItem
+    );
+    return callbackifyPromiseWithTimeout(autoPagePromise, onDone);
+  }, "autoPagingEach");
+}
+__name(makeAutoPagingEach, "makeAutoPagingEach");
+function makeAutoPagingToArray(autoPagingEach) {
+  return /* @__PURE__ */ __name(function autoPagingToArray(opts, onDone) {
+    const limit = opts && opts.limit;
+    if (!limit) {
+      throw Error("You must pass a `limit` option to autoPagingToArray, e.g., `autoPagingToArray({limit: 1000});`.");
+    }
+    if (limit > 1e4) {
+      throw Error("You cannot specify a limit of more than 10,000 items to fetch in `autoPagingToArray`; use `autoPagingEach` to iterate through longer lists.");
+    }
+    const promise = new Promise((resolve, reject) => {
+      const items = [];
+      autoPagingEach((item) => {
+        items.push(item);
+        if (items.length >= limit) {
+          return false;
+        }
+      }).then(() => {
+        resolve(items);
+      }).catch(reject);
+    });
+    return callbackifyPromiseWithTimeout(promise, onDone);
+  }, "autoPagingToArray");
+}
+__name(makeAutoPagingToArray, "makeAutoPagingToArray");
+function wrapAsyncIteratorWithCallback(asyncIteratorNext, onItem) {
+  return new Promise((resolve, reject) => {
+    function handleIteration(iterResult) {
+      if (iterResult.done) {
+        resolve();
+        return;
+      }
+      const item = iterResult.value;
+      return new Promise((next) => {
+        onItem(item, next);
+      }).then((shouldContinue) => {
+        if (shouldContinue === false) {
+          return handleIteration({ done: true, value: void 0 });
+        } else {
+          return asyncIteratorNext().then(handleIteration);
+        }
+      });
+    }
+    __name(handleIteration, "handleIteration");
+    asyncIteratorNext().then(handleIteration).catch(reject);
+  });
+}
+__name(wrapAsyncIteratorWithCallback, "wrapAsyncIteratorWithCallback");
+function isReverseIteration(requestArgs) {
+  const args = [].slice.call(requestArgs);
+  const dataFromArgs = getDataFromArgs(args);
+  return !!dataFromArgs.ending_before;
+}
+__name(isReverseIteration, "isReverseIteration");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/StripeMethod.js
+function stripeMethod(spec) {
+  if (spec.path !== void 0 && spec.fullPath !== void 0) {
+    throw new Error(`Method spec specified both a 'path' (${spec.path}) and a 'fullPath' (${spec.fullPath}).`);
+  }
+  return function(...args) {
+    const callback = typeof args[args.length - 1] == "function" && args.pop();
+    spec.urlParams = extractUrlParams(spec.fullPath || this.createResourcePathWithSymbols(spec.path || ""));
+    const requestPromise = callbackifyPromiseWithTimeout(this._makeRequest(args, spec, {}), callback);
+    Object.assign(requestPromise, makeAutoPaginationMethods(this, args, spec, requestPromise));
+    return requestPromise;
+  };
+}
+__name(stripeMethod, "stripeMethod");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/StripeResource.js
+StripeResource.extend = protoExtend;
+StripeResource.method = stripeMethod;
+StripeResource.MAX_BUFFERED_REQUEST_METRICS = 100;
+function StripeResource(stripe2, deprecatedUrlData) {
+  this._stripe = stripe2;
+  if (deprecatedUrlData) {
+    throw new Error("Support for curried url params was dropped in stripe-node v7.0.0. Instead, pass two ids.");
+  }
+  this.basePath = makeURLInterpolator(
+    // @ts-ignore changing type of basePath
+    this.basePath || stripe2.getApiField("basePath")
+  );
+  this.resourcePath = this.path;
+  this.path = makeURLInterpolator(this.path);
+  this.initialize(...arguments);
+}
+__name(StripeResource, "StripeResource");
+StripeResource.prototype = {
+  _stripe: null,
+  // @ts-ignore the type of path changes in ctor
+  path: "",
+  resourcePath: "",
+  // Methods that don't use the API's default '/v1' path can override it with this setting.
+  basePath: null,
+  initialize() {
+  },
+  // Function to override the default data processor. This allows full control
+  // over how a StripeResource's request data will get converted into an HTTP
+  // body. This is useful for non-standard HTTP requests. The function should
+  // take method name, data, and headers as arguments.
+  requestDataProcessor: null,
+  // Function to add a validation checks before sending the request, errors should
+  // be thrown, and they will be passed to the callback/promise.
+  validateRequest: null,
+  createFullPath(commandPath, urlData) {
+    const urlParts = [this.basePath(urlData), this.path(urlData)];
+    if (typeof commandPath === "function") {
+      const computedCommandPath = commandPath(urlData);
+      if (computedCommandPath) {
+        urlParts.push(computedCommandPath);
+      }
+    } else {
+      urlParts.push(commandPath);
+    }
+    return this._joinUrlParts(urlParts);
+  },
+  // Creates a relative resource path with symbols left in (unlike
+  // createFullPath which takes some data to replace them with). For example it
+  // might produce: /invoices/{id}
+  createResourcePathWithSymbols(pathWithSymbols) {
+    if (pathWithSymbols) {
+      return `/${this._joinUrlParts([this.resourcePath, pathWithSymbols])}`;
+    } else {
+      return `/${this.resourcePath}`;
+    }
+  },
+  _joinUrlParts(parts) {
+    return parts.join("/").replace(/\/{2,}/g, "/");
+  },
+  _getRequestOpts(requestArgs, spec, overrideData) {
+    var _a2;
+    const requestMethod = (spec.method || "GET").toUpperCase();
+    const usage = spec.usage || [];
+    const urlParams = spec.urlParams || [];
+    const encode2 = spec.encode || ((data2) => data2);
+    const isUsingFullPath = !!spec.fullPath;
+    const commandPath = makeURLInterpolator(isUsingFullPath ? spec.fullPath : spec.path || "");
+    const path = isUsingFullPath ? spec.fullPath : this.createResourcePathWithSymbols(spec.path);
+    const args = [].slice.call(requestArgs);
+    const urlData = urlParams.reduce((urlData2, param) => {
+      const arg = args.shift();
+      if (typeof arg !== "string") {
+        throw new Error(`Stripe: Argument "${param}" must be a string, but got: ${arg} (on API request to \`${requestMethod} ${path}\`)`);
+      }
+      urlData2[param] = arg;
+      return urlData2;
+    }, {});
+    const dataFromArgs = getDataFromArgs(args);
+    const data = encode2(Object.assign({}, dataFromArgs, overrideData));
+    const options = getOptionsFromArgs(args);
+    const host = options.host || spec.host;
+    const streaming = !!spec.streaming;
+    if (args.filter((x) => x != null).length) {
+      throw new Error(`Stripe: Unknown arguments (${args}). Did you mean to pass an options object? See https://github.com/stripe/stripe-node/wiki/Passing-Options. (on API request to ${requestMethod} \`${path}\`)`);
+    }
+    const requestPath = isUsingFullPath ? commandPath(urlData) : this.createFullPath(commandPath, urlData);
+    const headers = Object.assign(options.headers, spec.headers);
+    if (spec.validator) {
+      spec.validator(data, { headers });
+    }
+    const dataInQuery = spec.method === "GET" || spec.method === "DELETE";
+    const bodyData = dataInQuery ? null : data;
+    const queryData = dataInQuery ? data : {};
+    return {
+      requestMethod,
+      requestPath,
+      bodyData,
+      queryData,
+      authenticator: (_a2 = options.authenticator) !== null && _a2 !== void 0 ? _a2 : null,
+      headers,
+      host: host !== null && host !== void 0 ? host : null,
+      streaming,
+      settings: options.settings,
+      usage
+    };
+  },
+  _makeRequest(requestArgs, spec, overrideData) {
+    return new Promise((resolve, reject) => {
+      var _a2;
+      let opts;
+      try {
+        opts = this._getRequestOpts(requestArgs, spec, overrideData);
+      } catch (err) {
+        reject(err);
+        return;
+      }
+      function requestCallback(err, response) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(spec.transformResponseData ? spec.transformResponseData(response) : response);
+        }
+      }
+      __name(requestCallback, "requestCallback");
+      const emptyQuery = Object.keys(opts.queryData).length === 0;
+      const path = [
+        opts.requestPath,
+        emptyQuery ? "" : "?",
+        queryStringifyRequestData(opts.queryData, getAPIMode(opts.requestPath))
+      ].join("");
+      const { headers, settings } = opts;
+      this._stripe._requestSender._request(opts.requestMethod, opts.host, path, opts.bodyData, opts.authenticator, {
+        headers,
+        settings,
+        streaming: opts.streaming
+      }, opts.usage, requestCallback, (_a2 = this.requestDataProcessor) === null || _a2 === void 0 ? void 0 : _a2.bind(this));
+    });
+  }
+};
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/Webhooks.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+function createWebhooks(platformFunctions) {
+  const Webhook = {
+    DEFAULT_TOLERANCE: 300,
+    // @ts-ignore
+    signature: null,
+    constructEvent(payload, header, secret, tolerance, cryptoProvider, receivedAt) {
+      try {
+        this.signature.verifyHeader(payload, header, secret, tolerance || Webhook.DEFAULT_TOLERANCE, cryptoProvider, receivedAt);
+      } catch (e) {
+        if (e instanceof CryptoProviderOnlySupportsAsyncError) {
+          e.message += "\nUse `await constructEventAsync(...)` instead of `constructEvent(...)`";
+        }
+        throw e;
+      }
+      const jsonPayload = payload instanceof Uint8Array ? JSON.parse(new TextDecoder("utf8").decode(payload)) : JSON.parse(payload);
+      return jsonPayload;
+    },
+    async constructEventAsync(payload, header, secret, tolerance, cryptoProvider, receivedAt) {
+      await this.signature.verifyHeaderAsync(payload, header, secret, tolerance || Webhook.DEFAULT_TOLERANCE, cryptoProvider, receivedAt);
+      const jsonPayload = payload instanceof Uint8Array ? JSON.parse(new TextDecoder("utf8").decode(payload)) : JSON.parse(payload);
+      return jsonPayload;
+    },
+    /**
+     * Generates a header to be used for webhook mocking
+     *
+     * @typedef {object} opts
+     * @property {number} timestamp - Timestamp of the header. Defaults to Date.now()
+     * @property {string} payload - JSON stringified payload object, containing the 'id' and 'object' parameters
+     * @property {string} secret - Stripe webhook secret 'whsec_...'
+     * @property {string} scheme - Version of API to hit. Defaults to 'v1'.
+     * @property {string} signature - Computed webhook signature
+     * @property {CryptoProvider} cryptoProvider - Crypto provider to use for computing the signature if none was provided. Defaults to NodeCryptoProvider.
+     */
+    generateTestHeaderString: /* @__PURE__ */ __name(function(opts) {
+      const preparedOpts = prepareOptions(opts);
+      const signature2 = preparedOpts.signature || preparedOpts.cryptoProvider.computeHMACSignature(preparedOpts.payloadString, preparedOpts.secret);
+      return preparedOpts.generateHeaderString(signature2);
+    }, "generateTestHeaderString"),
+    generateTestHeaderStringAsync: /* @__PURE__ */ __name(async function(opts) {
+      const preparedOpts = prepareOptions(opts);
+      const signature2 = preparedOpts.signature || await preparedOpts.cryptoProvider.computeHMACSignatureAsync(preparedOpts.payloadString, preparedOpts.secret);
+      return preparedOpts.generateHeaderString(signature2);
+    }, "generateTestHeaderStringAsync")
+  };
+  const signature = {
+    EXPECTED_SCHEME: "v1",
+    verifyHeader(encodedPayload, encodedHeader, secret, tolerance, cryptoProvider, receivedAt) {
+      const { decodedHeader: header, decodedPayload: payload, details, suspectPayloadType } = parseEventDetails(encodedPayload, encodedHeader, this.EXPECTED_SCHEME);
+      const secretContainsWhitespace = /\s/.test(secret);
+      cryptoProvider = cryptoProvider || getCryptoProvider();
+      const expectedSignature = cryptoProvider.computeHMACSignature(makeHMACContent(payload, details), secret);
+      validateComputedSignature(payload, header, details, expectedSignature, tolerance, suspectPayloadType, secretContainsWhitespace, receivedAt);
+      return true;
+    },
+    async verifyHeaderAsync(encodedPayload, encodedHeader, secret, tolerance, cryptoProvider, receivedAt) {
+      const { decodedHeader: header, decodedPayload: payload, details, suspectPayloadType } = parseEventDetails(encodedPayload, encodedHeader, this.EXPECTED_SCHEME);
+      const secretContainsWhitespace = /\s/.test(secret);
+      cryptoProvider = cryptoProvider || getCryptoProvider();
+      const expectedSignature = await cryptoProvider.computeHMACSignatureAsync(makeHMACContent(payload, details), secret);
+      return validateComputedSignature(payload, header, details, expectedSignature, tolerance, suspectPayloadType, secretContainsWhitespace, receivedAt);
+    }
+  };
+  function makeHMACContent(payload, details) {
+    return `${details.timestamp}.${payload}`;
+  }
+  __name(makeHMACContent, "makeHMACContent");
+  function parseEventDetails(encodedPayload, encodedHeader, expectedScheme) {
+    if (!encodedPayload) {
+      throw new StripeSignatureVerificationError(encodedHeader, encodedPayload, {
+        message: "No webhook payload was provided."
+      });
+    }
+    const suspectPayloadType = typeof encodedPayload != "string" && !(encodedPayload instanceof Uint8Array);
+    const textDecoder = new TextDecoder("utf8");
+    const decodedPayload = encodedPayload instanceof Uint8Array ? textDecoder.decode(encodedPayload) : encodedPayload;
+    if (Array.isArray(encodedHeader)) {
+      throw new Error("Unexpected: An array was passed as a header, which should not be possible for the stripe-signature header.");
+    }
+    if (encodedHeader == null || encodedHeader == "") {
+      throw new StripeSignatureVerificationError(encodedHeader, encodedPayload, {
+        message: "No stripe-signature header value was provided."
+      });
+    }
+    const decodedHeader = encodedHeader instanceof Uint8Array ? textDecoder.decode(encodedHeader) : encodedHeader;
+    const details = parseHeader(decodedHeader, expectedScheme);
+    if (!details || details.timestamp === -1) {
+      throw new StripeSignatureVerificationError(decodedHeader, decodedPayload, {
+        message: "Unable to extract timestamp and signatures from header"
+      });
+    }
+    if (!details.signatures.length) {
+      throw new StripeSignatureVerificationError(decodedHeader, decodedPayload, {
+        message: "No signatures found with expected scheme"
+      });
+    }
+    return {
+      decodedPayload,
+      decodedHeader,
+      details,
+      suspectPayloadType
+    };
+  }
+  __name(parseEventDetails, "parseEventDetails");
+  function validateComputedSignature(payload, header, details, expectedSignature, tolerance, suspectPayloadType, secretContainsWhitespace, receivedAt) {
+    const signatureFound = !!details.signatures.filter(platformFunctions.secureCompare.bind(platformFunctions, expectedSignature)).length;
+    const docsLocation = "\nLearn more about webhook signing and explore webhook integration examples for various frameworks at https://docs.stripe.com/webhooks/signature";
+    const whitespaceMessage = secretContainsWhitespace ? "\n\nNote: The provided signing secret contains whitespace. This often indicates an extra newline or space is in the value" : "";
+    if (!signatureFound) {
+      if (suspectPayloadType) {
+        throw new StripeSignatureVerificationError(header, payload, {
+          message: "Webhook payload must be provided as a string or a Buffer (https://nodejs.org/api/buffer.html) instance representing the _raw_ request body.Payload was provided as a parsed JavaScript object instead. \nSignature verification is impossible without access to the original signed material. \n" + docsLocation + "\n" + whitespaceMessage
+        });
+      }
+      throw new StripeSignatureVerificationError(header, payload, {
+        message: "No signatures found matching the expected signature for payload. Are you passing the raw request body you received from Stripe? \n If a webhook request is being forwarded by a third-party tool, ensure that the exact request body, including JSON formatting and new line style, is preserved.\n" + docsLocation + "\n" + whitespaceMessage
+      });
+    }
+    const timestampAge = Math.floor((typeof receivedAt === "number" ? receivedAt : Date.now()) / 1e3) - details.timestamp;
+    if (tolerance > 0 && timestampAge > tolerance) {
+      throw new StripeSignatureVerificationError(header, payload, {
+        message: "Timestamp outside the tolerance zone"
+      });
+    }
+    return true;
+  }
+  __name(validateComputedSignature, "validateComputedSignature");
+  function parseHeader(header, scheme) {
+    if (typeof header !== "string") {
+      return null;
+    }
+    return header.split(",").reduce((accum, item) => {
+      const kv = item.split("=");
+      if (kv[0] === "t") {
+        accum.timestamp = parseInt(kv[1], 10);
+      }
+      if (kv[0] === scheme) {
+        accum.signatures.push(kv[1]);
+      }
+      return accum;
+    }, {
+      timestamp: -1,
+      signatures: []
+    });
+  }
+  __name(parseHeader, "parseHeader");
+  let webhooksCryptoProviderInstance = null;
+  function getCryptoProvider() {
+    if (!webhooksCryptoProviderInstance) {
+      webhooksCryptoProviderInstance = platformFunctions.createDefaultCryptoProvider();
+    }
+    return webhooksCryptoProviderInstance;
+  }
+  __name(getCryptoProvider, "getCryptoProvider");
+  function prepareOptions(opts) {
+    if (!opts) {
+      throw new StripeError({
+        message: "Options are required"
+      });
+    }
+    const timestamp = Math.floor(opts.timestamp) || Math.floor(Date.now() / 1e3);
+    const scheme = opts.scheme || signature.EXPECTED_SCHEME;
+    const cryptoProvider = opts.cryptoProvider || getCryptoProvider();
+    const payloadString = `${timestamp}.${opts.payload}`;
+    const generateHeaderString = /* @__PURE__ */ __name((signature2) => {
+      return `t=${timestamp},${scheme}=${signature2}`;
+    }, "generateHeaderString");
+    return Object.assign(Object.assign({}, opts), {
+      timestamp,
+      scheme,
+      cryptoProvider,
+      payloadString,
+      generateHeaderString
+    });
+  }
+  __name(prepareOptions, "prepareOptions");
+  Webhook.signature = signature;
+  return Webhook;
+}
+__name(createWebhooks, "createWebhooks");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/apiVersion.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var ApiVersion = "2025-03-31.basil";
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources.js
+var resources_exports = {};
+__export(resources_exports, {
+  Account: () => Accounts2,
+  AccountLinks: () => AccountLinks,
+  AccountSessions: () => AccountSessions,
+  Accounts: () => Accounts2,
+  ApplePayDomains: () => ApplePayDomains,
+  ApplicationFees: () => ApplicationFees,
+  Apps: () => Apps,
+  Balance: () => Balance,
+  BalanceTransactions: () => BalanceTransactions,
+  Billing: () => Billing,
+  BillingPortal: () => BillingPortal,
+  Charges: () => Charges,
+  Checkout: () => Checkout,
+  Climate: () => Climate,
+  ConfirmationTokens: () => ConfirmationTokens2,
+  CountrySpecs: () => CountrySpecs,
+  Coupons: () => Coupons,
+  CreditNotes: () => CreditNotes,
+  CustomerSessions: () => CustomerSessions,
+  Customers: () => Customers2,
+  Disputes: () => Disputes2,
+  Entitlements: () => Entitlements,
+  EphemeralKeys: () => EphemeralKeys,
+  Events: () => Events2,
+  ExchangeRates: () => ExchangeRates,
+  FileLinks: () => FileLinks,
+  Files: () => Files,
+  FinancialConnections: () => FinancialConnections,
+  Forwarding: () => Forwarding,
+  Identity: () => Identity,
+  InvoiceItems: () => InvoiceItems,
+  InvoicePayments: () => InvoicePayments,
+  InvoiceRenderingTemplates: () => InvoiceRenderingTemplates,
+  Invoices: () => Invoices,
+  Issuing: () => Issuing,
+  Mandates: () => Mandates,
+  OAuth: () => OAuth,
+  PaymentIntents: () => PaymentIntents,
+  PaymentLinks: () => PaymentLinks,
+  PaymentMethodConfigurations: () => PaymentMethodConfigurations,
+  PaymentMethodDomains: () => PaymentMethodDomains,
+  PaymentMethods: () => PaymentMethods,
+  Payouts: () => Payouts,
+  Plans: () => Plans,
+  Prices: () => Prices,
+  Products: () => Products2,
+  PromotionCodes: () => PromotionCodes,
+  Quotes: () => Quotes,
+  Radar: () => Radar,
+  Refunds: () => Refunds2,
+  Reporting: () => Reporting,
+  Reviews: () => Reviews,
+  SetupAttempts: () => SetupAttempts,
+  SetupIntents: () => SetupIntents,
+  ShippingRates: () => ShippingRates,
+  Sigma: () => Sigma,
+  Sources: () => Sources,
+  SubscriptionItems: () => SubscriptionItems,
+  SubscriptionSchedules: () => SubscriptionSchedules,
+  Subscriptions: () => Subscriptions,
+  Tax: () => Tax,
+  TaxCodes: () => TaxCodes,
+  TaxIds: () => TaxIds,
+  TaxRates: () => TaxRates,
+  Terminal: () => Terminal,
+  TestHelpers: () => TestHelpers,
+  Tokens: () => Tokens2,
+  Topups: () => Topups,
+  Transfers: () => Transfers,
+  Treasury: () => Treasury,
+  V2: () => V2,
+  WebhookEndpoints: () => WebhookEndpoints
+});
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/ResourceNamespace.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+function ResourceNamespace(stripe2, resources) {
+  for (const name in resources) {
+    if (!Object.prototype.hasOwnProperty.call(resources, name)) {
+      continue;
+    }
+    const camelCaseName = name[0].toLowerCase() + name.substring(1);
+    const resource = new resources[name](stripe2);
+    this[camelCaseName] = resource;
+  }
+}
+__name(ResourceNamespace, "ResourceNamespace");
+function resourceNamespace(namespace, resources) {
+  return function(stripe2) {
+    return new ResourceNamespace(stripe2, resources);
+  };
+}
+__name(resourceNamespace, "resourceNamespace");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/FinancialConnections/Accounts.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod2 = StripeResource.method;
+var Accounts = StripeResource.extend({
+  retrieve: stripeMethod2({
+    method: "GET",
+    fullPath: "/v1/financial_connections/accounts/{account}"
+  }),
+  list: stripeMethod2({
+    method: "GET",
+    fullPath: "/v1/financial_connections/accounts",
+    methodType: "list"
+  }),
+  disconnect: stripeMethod2({
+    method: "POST",
+    fullPath: "/v1/financial_connections/accounts/{account}/disconnect"
+  }),
+  listOwners: stripeMethod2({
+    method: "GET",
+    fullPath: "/v1/financial_connections/accounts/{account}/owners",
+    methodType: "list"
+  }),
+  refresh: stripeMethod2({
+    method: "POST",
+    fullPath: "/v1/financial_connections/accounts/{account}/refresh"
+  }),
+  subscribe: stripeMethod2({
+    method: "POST",
+    fullPath: "/v1/financial_connections/accounts/{account}/subscribe"
+  }),
+  unsubscribe: stripeMethod2({
+    method: "POST",
+    fullPath: "/v1/financial_connections/accounts/{account}/unsubscribe"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Entitlements/ActiveEntitlements.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod3 = StripeResource.method;
+var ActiveEntitlements = StripeResource.extend({
+  retrieve: stripeMethod3({
+    method: "GET",
+    fullPath: "/v1/entitlements/active_entitlements/{id}"
+  }),
+  list: stripeMethod3({
+    method: "GET",
+    fullPath: "/v1/entitlements/active_entitlements",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/Alerts.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod4 = StripeResource.method;
+var Alerts = StripeResource.extend({
+  create: stripeMethod4({ method: "POST", fullPath: "/v1/billing/alerts" }),
+  retrieve: stripeMethod4({ method: "GET", fullPath: "/v1/billing/alerts/{id}" }),
+  list: stripeMethod4({
+    method: "GET",
+    fullPath: "/v1/billing/alerts",
+    methodType: "list"
+  }),
+  activate: stripeMethod4({
+    method: "POST",
+    fullPath: "/v1/billing/alerts/{id}/activate"
+  }),
+  archive: stripeMethod4({
+    method: "POST",
+    fullPath: "/v1/billing/alerts/{id}/archive"
+  }),
+  deactivate: stripeMethod4({
+    method: "POST",
+    fullPath: "/v1/billing/alerts/{id}/deactivate"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Issuing/Authorizations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod5 = StripeResource.method;
+var Authorizations = StripeResource.extend({
+  create: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations"
+  }),
+  capture: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations/{authorization}/capture"
+  }),
+  expire: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations/{authorization}/expire"
+  }),
+  finalizeAmount: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount"
+  }),
+  increment: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations/{authorization}/increment"
+  }),
+  respond: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond"
+  }),
+  reverse: stripeMethod5({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/authorizations/{authorization}/reverse"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/Authorizations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod6 = StripeResource.method;
+var Authorizations2 = StripeResource.extend({
+  retrieve: stripeMethod6({
+    method: "GET",
+    fullPath: "/v1/issuing/authorizations/{authorization}"
+  }),
+  update: stripeMethod6({
+    method: "POST",
+    fullPath: "/v1/issuing/authorizations/{authorization}"
+  }),
+  list: stripeMethod6({
+    method: "GET",
+    fullPath: "/v1/issuing/authorizations",
+    methodType: "list"
+  }),
+  approve: stripeMethod6({
+    method: "POST",
+    fullPath: "/v1/issuing/authorizations/{authorization}/approve"
+  }),
+  decline: stripeMethod6({
+    method: "POST",
+    fullPath: "/v1/issuing/authorizations/{authorization}/decline"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Tax/Calculations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod7 = StripeResource.method;
+var Calculations = StripeResource.extend({
+  create: stripeMethod7({ method: "POST", fullPath: "/v1/tax/calculations" }),
+  retrieve: stripeMethod7({
+    method: "GET",
+    fullPath: "/v1/tax/calculations/{calculation}"
+  }),
+  listLineItems: stripeMethod7({
+    method: "GET",
+    fullPath: "/v1/tax/calculations/{calculation}/line_items",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/Cardholders.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod8 = StripeResource.method;
+var Cardholders = StripeResource.extend({
+  create: stripeMethod8({ method: "POST", fullPath: "/v1/issuing/cardholders" }),
+  retrieve: stripeMethod8({
+    method: "GET",
+    fullPath: "/v1/issuing/cardholders/{cardholder}"
+  }),
+  update: stripeMethod8({
+    method: "POST",
+    fullPath: "/v1/issuing/cardholders/{cardholder}"
+  }),
+  list: stripeMethod8({
+    method: "GET",
+    fullPath: "/v1/issuing/cardholders",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Issuing/Cards.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod9 = StripeResource.method;
+var Cards = StripeResource.extend({
+  deliverCard: stripeMethod9({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/cards/{card}/shipping/deliver"
+  }),
+  failCard: stripeMethod9({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/cards/{card}/shipping/fail"
+  }),
+  returnCard: stripeMethod9({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/cards/{card}/shipping/return"
+  }),
+  shipCard: stripeMethod9({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/cards/{card}/shipping/ship"
+  }),
+  submitCard: stripeMethod9({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/cards/{card}/shipping/submit"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/Cards.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod10 = StripeResource.method;
+var Cards2 = StripeResource.extend({
+  create: stripeMethod10({ method: "POST", fullPath: "/v1/issuing/cards" }),
+  retrieve: stripeMethod10({ method: "GET", fullPath: "/v1/issuing/cards/{card}" }),
+  update: stripeMethod10({ method: "POST", fullPath: "/v1/issuing/cards/{card}" }),
+  list: stripeMethod10({
+    method: "GET",
+    fullPath: "/v1/issuing/cards",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/BillingPortal/Configurations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod11 = StripeResource.method;
+var Configurations = StripeResource.extend({
+  create: stripeMethod11({
+    method: "POST",
+    fullPath: "/v1/billing_portal/configurations"
+  }),
+  retrieve: stripeMethod11({
+    method: "GET",
+    fullPath: "/v1/billing_portal/configurations/{configuration}"
+  }),
+  update: stripeMethod11({
+    method: "POST",
+    fullPath: "/v1/billing_portal/configurations/{configuration}"
+  }),
+  list: stripeMethod11({
+    method: "GET",
+    fullPath: "/v1/billing_portal/configurations",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Terminal/Configurations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod12 = StripeResource.method;
+var Configurations2 = StripeResource.extend({
+  create: stripeMethod12({
+    method: "POST",
+    fullPath: "/v1/terminal/configurations"
+  }),
+  retrieve: stripeMethod12({
+    method: "GET",
+    fullPath: "/v1/terminal/configurations/{configuration}"
+  }),
+  update: stripeMethod12({
+    method: "POST",
+    fullPath: "/v1/terminal/configurations/{configuration}"
+  }),
+  list: stripeMethod12({
+    method: "GET",
+    fullPath: "/v1/terminal/configurations",
+    methodType: "list"
+  }),
+  del: stripeMethod12({
+    method: "DELETE",
+    fullPath: "/v1/terminal/configurations/{configuration}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/ConfirmationTokens.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod13 = StripeResource.method;
+var ConfirmationTokens = StripeResource.extend({
+  create: stripeMethod13({
+    method: "POST",
+    fullPath: "/v1/test_helpers/confirmation_tokens"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Terminal/ConnectionTokens.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod14 = StripeResource.method;
+var ConnectionTokens = StripeResource.extend({
+  create: stripeMethod14({
+    method: "POST",
+    fullPath: "/v1/terminal/connection_tokens"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/CreditBalanceSummary.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod15 = StripeResource.method;
+var CreditBalanceSummary = StripeResource.extend({
+  retrieve: stripeMethod15({
+    method: "GET",
+    fullPath: "/v1/billing/credit_balance_summary"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/CreditBalanceTransactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod16 = StripeResource.method;
+var CreditBalanceTransactions = StripeResource.extend({
+  retrieve: stripeMethod16({
+    method: "GET",
+    fullPath: "/v1/billing/credit_balance_transactions/{id}"
+  }),
+  list: stripeMethod16({
+    method: "GET",
+    fullPath: "/v1/billing/credit_balance_transactions",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/CreditGrants.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod17 = StripeResource.method;
+var CreditGrants = StripeResource.extend({
+  create: stripeMethod17({ method: "POST", fullPath: "/v1/billing/credit_grants" }),
+  retrieve: stripeMethod17({
+    method: "GET",
+    fullPath: "/v1/billing/credit_grants/{id}"
+  }),
+  update: stripeMethod17({
+    method: "POST",
+    fullPath: "/v1/billing/credit_grants/{id}"
+  }),
+  list: stripeMethod17({
+    method: "GET",
+    fullPath: "/v1/billing/credit_grants",
+    methodType: "list"
+  }),
+  expire: stripeMethod17({
+    method: "POST",
+    fullPath: "/v1/billing/credit_grants/{id}/expire"
+  }),
+  voidGrant: stripeMethod17({
+    method: "POST",
+    fullPath: "/v1/billing/credit_grants/{id}/void"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/CreditReversals.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod18 = StripeResource.method;
+var CreditReversals = StripeResource.extend({
+  create: stripeMethod18({
+    method: "POST",
+    fullPath: "/v1/treasury/credit_reversals"
+  }),
+  retrieve: stripeMethod18({
+    method: "GET",
+    fullPath: "/v1/treasury/credit_reversals/{credit_reversal}"
+  }),
+  list: stripeMethod18({
+    method: "GET",
+    fullPath: "/v1/treasury/credit_reversals",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Customers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod19 = StripeResource.method;
+var Customers = StripeResource.extend({
+  fundCashBalance: stripeMethod19({
+    method: "POST",
+    fullPath: "/v1/test_helpers/customers/{customer}/fund_cash_balance"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/DebitReversals.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod20 = StripeResource.method;
+var DebitReversals = StripeResource.extend({
+  create: stripeMethod20({
+    method: "POST",
+    fullPath: "/v1/treasury/debit_reversals"
+  }),
+  retrieve: stripeMethod20({
+    method: "GET",
+    fullPath: "/v1/treasury/debit_reversals/{debit_reversal}"
+  }),
+  list: stripeMethod20({
+    method: "GET",
+    fullPath: "/v1/treasury/debit_reversals",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/Disputes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod21 = StripeResource.method;
+var Disputes = StripeResource.extend({
+  create: stripeMethod21({ method: "POST", fullPath: "/v1/issuing/disputes" }),
+  retrieve: stripeMethod21({
+    method: "GET",
+    fullPath: "/v1/issuing/disputes/{dispute}"
+  }),
+  update: stripeMethod21({
+    method: "POST",
+    fullPath: "/v1/issuing/disputes/{dispute}"
+  }),
+  list: stripeMethod21({
+    method: "GET",
+    fullPath: "/v1/issuing/disputes",
+    methodType: "list"
+  }),
+  submit: stripeMethod21({
+    method: "POST",
+    fullPath: "/v1/issuing/disputes/{dispute}/submit"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Radar/EarlyFraudWarnings.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod22 = StripeResource.method;
+var EarlyFraudWarnings = StripeResource.extend({
+  retrieve: stripeMethod22({
+    method: "GET",
+    fullPath: "/v1/radar/early_fraud_warnings/{early_fraud_warning}"
+  }),
+  list: stripeMethod22({
+    method: "GET",
+    fullPath: "/v1/radar/early_fraud_warnings",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/V2/Core/EventDestinations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod23 = StripeResource.method;
+var EventDestinations = StripeResource.extend({
+  create: stripeMethod23({
+    method: "POST",
+    fullPath: "/v2/core/event_destinations"
+  }),
+  retrieve: stripeMethod23({
+    method: "GET",
+    fullPath: "/v2/core/event_destinations/{id}"
+  }),
+  update: stripeMethod23({
+    method: "POST",
+    fullPath: "/v2/core/event_destinations/{id}"
+  }),
+  list: stripeMethod23({
+    method: "GET",
+    fullPath: "/v2/core/event_destinations",
+    methodType: "list"
+  }),
+  del: stripeMethod23({
+    method: "DELETE",
+    fullPath: "/v2/core/event_destinations/{id}"
+  }),
+  disable: stripeMethod23({
+    method: "POST",
+    fullPath: "/v2/core/event_destinations/{id}/disable"
+  }),
+  enable: stripeMethod23({
+    method: "POST",
+    fullPath: "/v2/core/event_destinations/{id}/enable"
+  }),
+  ping: stripeMethod23({
+    method: "POST",
+    fullPath: "/v2/core/event_destinations/{id}/ping"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/V2/Core/Events.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod24 = StripeResource.method;
+var Events = StripeResource.extend({
+  retrieve(...args) {
+    const transformResponseData = /* @__PURE__ */ __name((response) => {
+      return this.addFetchRelatedObjectIfNeeded(response);
+    }, "transformResponseData");
+    return stripeMethod24({
+      method: "GET",
+      fullPath: "/v2/core/events/{id}",
+      transformResponseData
+    }).apply(this, args);
+  },
+  list(...args) {
+    const transformResponseData = /* @__PURE__ */ __name((response) => {
+      return Object.assign(Object.assign({}, response), { data: response.data.map(this.addFetchRelatedObjectIfNeeded.bind(this)) });
+    }, "transformResponseData");
+    return stripeMethod24({
+      method: "GET",
+      fullPath: "/v2/core/events",
+      methodType: "list",
+      transformResponseData
+    }).apply(this, args);
+  },
+  /**
+   * @private
+   *
+   * For internal use in stripe-node.
+   *
+   * @param pulledEvent The retrieved event object
+   * @returns The retrieved event object with a fetchRelatedObject method,
+   * if pulledEvent.related_object is valid (non-null and has a url)
+   */
+  addFetchRelatedObjectIfNeeded(pulledEvent) {
+    if (!pulledEvent.related_object || !pulledEvent.related_object.url) {
+      return pulledEvent;
+    }
+    return Object.assign(Object.assign({}, pulledEvent), { fetchRelatedObject: /* @__PURE__ */ __name(() => (
+      // call stripeMethod with 'this' resource to fetch
+      // the related object. 'this' is needed to construct
+      // and send the request, but the method spec controls
+      // the url endpoint and method, so it doesn't matter
+      // that 'this' is an Events resource object here
+      stripeMethod24({
+        method: "GET",
+        fullPath: pulledEvent.related_object.url
+      }).apply(this, [
+        {
+          stripeAccount: pulledEvent.context
+        }
+      ])
+    ), "fetchRelatedObject") });
+  }
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Entitlements/Features.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod25 = StripeResource.method;
+var Features = StripeResource.extend({
+  create: stripeMethod25({ method: "POST", fullPath: "/v1/entitlements/features" }),
+  retrieve: stripeMethod25({
+    method: "GET",
+    fullPath: "/v1/entitlements/features/{id}"
+  }),
+  update: stripeMethod25({
+    method: "POST",
+    fullPath: "/v1/entitlements/features/{id}"
+  }),
+  list: stripeMethod25({
+    method: "GET",
+    fullPath: "/v1/entitlements/features",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/FinancialAccounts.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod26 = StripeResource.method;
+var FinancialAccounts = StripeResource.extend({
+  create: stripeMethod26({
+    method: "POST",
+    fullPath: "/v1/treasury/financial_accounts"
+  }),
+  retrieve: stripeMethod26({
+    method: "GET",
+    fullPath: "/v1/treasury/financial_accounts/{financial_account}"
+  }),
+  update: stripeMethod26({
+    method: "POST",
+    fullPath: "/v1/treasury/financial_accounts/{financial_account}"
+  }),
+  list: stripeMethod26({
+    method: "GET",
+    fullPath: "/v1/treasury/financial_accounts",
+    methodType: "list"
+  }),
+  close: stripeMethod26({
+    method: "POST",
+    fullPath: "/v1/treasury/financial_accounts/{financial_account}/close"
+  }),
+  retrieveFeatures: stripeMethod26({
+    method: "GET",
+    fullPath: "/v1/treasury/financial_accounts/{financial_account}/features"
+  }),
+  updateFeatures: stripeMethod26({
+    method: "POST",
+    fullPath: "/v1/treasury/financial_accounts/{financial_account}/features"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Treasury/InboundTransfers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod27 = StripeResource.method;
+var InboundTransfers = StripeResource.extend({
+  fail: stripeMethod27({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/inbound_transfers/{id}/fail"
+  }),
+  returnInboundTransfer: stripeMethod27({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/inbound_transfers/{id}/return"
+  }),
+  succeed: stripeMethod27({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/inbound_transfers/{id}/succeed"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/InboundTransfers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod28 = StripeResource.method;
+var InboundTransfers2 = StripeResource.extend({
+  create: stripeMethod28({
+    method: "POST",
+    fullPath: "/v1/treasury/inbound_transfers"
+  }),
+  retrieve: stripeMethod28({
+    method: "GET",
+    fullPath: "/v1/treasury/inbound_transfers/{id}"
+  }),
+  list: stripeMethod28({
+    method: "GET",
+    fullPath: "/v1/treasury/inbound_transfers",
+    methodType: "list"
+  }),
+  cancel: stripeMethod28({
+    method: "POST",
+    fullPath: "/v1/treasury/inbound_transfers/{inbound_transfer}/cancel"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Terminal/Locations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod29 = StripeResource.method;
+var Locations = StripeResource.extend({
+  create: stripeMethod29({ method: "POST", fullPath: "/v1/terminal/locations" }),
+  retrieve: stripeMethod29({
+    method: "GET",
+    fullPath: "/v1/terminal/locations/{location}"
+  }),
+  update: stripeMethod29({
+    method: "POST",
+    fullPath: "/v1/terminal/locations/{location}"
+  }),
+  list: stripeMethod29({
+    method: "GET",
+    fullPath: "/v1/terminal/locations",
+    methodType: "list"
+  }),
+  del: stripeMethod29({
+    method: "DELETE",
+    fullPath: "/v1/terminal/locations/{location}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/MeterEventAdjustments.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod30 = StripeResource.method;
+var MeterEventAdjustments = StripeResource.extend({
+  create: stripeMethod30({
+    method: "POST",
+    fullPath: "/v1/billing/meter_event_adjustments"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/V2/Billing/MeterEventAdjustments.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod31 = StripeResource.method;
+var MeterEventAdjustments2 = StripeResource.extend({
+  create: stripeMethod31({
+    method: "POST",
+    fullPath: "/v2/billing/meter_event_adjustments"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/V2/Billing/MeterEventSession.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod32 = StripeResource.method;
+var MeterEventSession = StripeResource.extend({
+  create: stripeMethod32({
+    method: "POST",
+    fullPath: "/v2/billing/meter_event_session"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/V2/Billing/MeterEventStream.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod33 = StripeResource.method;
+var MeterEventStream = StripeResource.extend({
+  create: stripeMethod33({
+    method: "POST",
+    fullPath: "/v2/billing/meter_event_stream",
+    host: "meter-events.stripe.com"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/MeterEvents.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod34 = StripeResource.method;
+var MeterEvents = StripeResource.extend({
+  create: stripeMethod34({ method: "POST", fullPath: "/v1/billing/meter_events" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/V2/Billing/MeterEvents.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod35 = StripeResource.method;
+var MeterEvents2 = StripeResource.extend({
+  create: stripeMethod35({ method: "POST", fullPath: "/v2/billing/meter_events" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Billing/Meters.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod36 = StripeResource.method;
+var Meters = StripeResource.extend({
+  create: stripeMethod36({ method: "POST", fullPath: "/v1/billing/meters" }),
+  retrieve: stripeMethod36({ method: "GET", fullPath: "/v1/billing/meters/{id}" }),
+  update: stripeMethod36({ method: "POST", fullPath: "/v1/billing/meters/{id}" }),
+  list: stripeMethod36({
+    method: "GET",
+    fullPath: "/v1/billing/meters",
+    methodType: "list"
+  }),
+  deactivate: stripeMethod36({
+    method: "POST",
+    fullPath: "/v1/billing/meters/{id}/deactivate"
+  }),
+  listEventSummaries: stripeMethod36({
+    method: "GET",
+    fullPath: "/v1/billing/meters/{id}/event_summaries",
+    methodType: "list"
+  }),
+  reactivate: stripeMethod36({
+    method: "POST",
+    fullPath: "/v1/billing/meters/{id}/reactivate"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Climate/Orders.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod37 = StripeResource.method;
+var Orders = StripeResource.extend({
+  create: stripeMethod37({ method: "POST", fullPath: "/v1/climate/orders" }),
+  retrieve: stripeMethod37({
+    method: "GET",
+    fullPath: "/v1/climate/orders/{order}"
+  }),
+  update: stripeMethod37({
+    method: "POST",
+    fullPath: "/v1/climate/orders/{order}"
+  }),
+  list: stripeMethod37({
+    method: "GET",
+    fullPath: "/v1/climate/orders",
+    methodType: "list"
+  }),
+  cancel: stripeMethod37({
+    method: "POST",
+    fullPath: "/v1/climate/orders/{order}/cancel"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Treasury/OutboundPayments.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod38 = StripeResource.method;
+var OutboundPayments = StripeResource.extend({
+  update: stripeMethod38({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_payments/{id}"
+  }),
+  fail: stripeMethod38({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_payments/{id}/fail"
+  }),
+  post: stripeMethod38({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_payments/{id}/post"
+  }),
+  returnOutboundPayment: stripeMethod38({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_payments/{id}/return"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/OutboundPayments.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod39 = StripeResource.method;
+var OutboundPayments2 = StripeResource.extend({
+  create: stripeMethod39({
+    method: "POST",
+    fullPath: "/v1/treasury/outbound_payments"
+  }),
+  retrieve: stripeMethod39({
+    method: "GET",
+    fullPath: "/v1/treasury/outbound_payments/{id}"
+  }),
+  list: stripeMethod39({
+    method: "GET",
+    fullPath: "/v1/treasury/outbound_payments",
+    methodType: "list"
+  }),
+  cancel: stripeMethod39({
+    method: "POST",
+    fullPath: "/v1/treasury/outbound_payments/{id}/cancel"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Treasury/OutboundTransfers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod40 = StripeResource.method;
+var OutboundTransfers = StripeResource.extend({
+  update: stripeMethod40({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}"
+  }),
+  fail: stripeMethod40({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail"
+  }),
+  post: stripeMethod40({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post"
+  }),
+  returnOutboundTransfer: stripeMethod40({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/OutboundTransfers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod41 = StripeResource.method;
+var OutboundTransfers2 = StripeResource.extend({
+  create: stripeMethod41({
+    method: "POST",
+    fullPath: "/v1/treasury/outbound_transfers"
+  }),
+  retrieve: stripeMethod41({
+    method: "GET",
+    fullPath: "/v1/treasury/outbound_transfers/{outbound_transfer}"
+  }),
+  list: stripeMethod41({
+    method: "GET",
+    fullPath: "/v1/treasury/outbound_transfers",
+    methodType: "list"
+  }),
+  cancel: stripeMethod41({
+    method: "POST",
+    fullPath: "/v1/treasury/outbound_transfers/{outbound_transfer}/cancel"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Issuing/PersonalizationDesigns.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod42 = StripeResource.method;
+var PersonalizationDesigns = StripeResource.extend({
+  activate: stripeMethod42({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate"
+  }),
+  deactivate: stripeMethod42({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate"
+  }),
+  reject: stripeMethod42({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/PersonalizationDesigns.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod43 = StripeResource.method;
+var PersonalizationDesigns2 = StripeResource.extend({
+  create: stripeMethod43({
+    method: "POST",
+    fullPath: "/v1/issuing/personalization_designs"
+  }),
+  retrieve: stripeMethod43({
+    method: "GET",
+    fullPath: "/v1/issuing/personalization_designs/{personalization_design}"
+  }),
+  update: stripeMethod43({
+    method: "POST",
+    fullPath: "/v1/issuing/personalization_designs/{personalization_design}"
+  }),
+  list: stripeMethod43({
+    method: "GET",
+    fullPath: "/v1/issuing/personalization_designs",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/PhysicalBundles.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod44 = StripeResource.method;
+var PhysicalBundles = StripeResource.extend({
+  retrieve: stripeMethod44({
+    method: "GET",
+    fullPath: "/v1/issuing/physical_bundles/{physical_bundle}"
+  }),
+  list: stripeMethod44({
+    method: "GET",
+    fullPath: "/v1/issuing/physical_bundles",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Climate/Products.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod45 = StripeResource.method;
+var Products = StripeResource.extend({
+  retrieve: stripeMethod45({
+    method: "GET",
+    fullPath: "/v1/climate/products/{product}"
+  }),
+  list: stripeMethod45({
+    method: "GET",
+    fullPath: "/v1/climate/products",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Terminal/Readers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod46 = StripeResource.method;
+var Readers = StripeResource.extend({
+  presentPaymentMethod: stripeMethod46({
+    method: "POST",
+    fullPath: "/v1/test_helpers/terminal/readers/{reader}/present_payment_method"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Terminal/Readers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod47 = StripeResource.method;
+var Readers2 = StripeResource.extend({
+  create: stripeMethod47({ method: "POST", fullPath: "/v1/terminal/readers" }),
+  retrieve: stripeMethod47({
+    method: "GET",
+    fullPath: "/v1/terminal/readers/{reader}"
+  }),
+  update: stripeMethod47({
+    method: "POST",
+    fullPath: "/v1/terminal/readers/{reader}"
+  }),
+  list: stripeMethod47({
+    method: "GET",
+    fullPath: "/v1/terminal/readers",
+    methodType: "list"
+  }),
+  del: stripeMethod47({
+    method: "DELETE",
+    fullPath: "/v1/terminal/readers/{reader}"
+  }),
+  cancelAction: stripeMethod47({
+    method: "POST",
+    fullPath: "/v1/terminal/readers/{reader}/cancel_action"
+  }),
+  processPaymentIntent: stripeMethod47({
+    method: "POST",
+    fullPath: "/v1/terminal/readers/{reader}/process_payment_intent"
+  }),
+  processSetupIntent: stripeMethod47({
+    method: "POST",
+    fullPath: "/v1/terminal/readers/{reader}/process_setup_intent"
+  }),
+  refundPayment: stripeMethod47({
+    method: "POST",
+    fullPath: "/v1/terminal/readers/{reader}/refund_payment"
+  }),
+  setReaderDisplay: stripeMethod47({
+    method: "POST",
+    fullPath: "/v1/terminal/readers/{reader}/set_reader_display"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Treasury/ReceivedCredits.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod48 = StripeResource.method;
+var ReceivedCredits = StripeResource.extend({
+  create: stripeMethod48({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/received_credits"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/ReceivedCredits.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod49 = StripeResource.method;
+var ReceivedCredits2 = StripeResource.extend({
+  retrieve: stripeMethod49({
+    method: "GET",
+    fullPath: "/v1/treasury/received_credits/{id}"
+  }),
+  list: stripeMethod49({
+    method: "GET",
+    fullPath: "/v1/treasury/received_credits",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Treasury/ReceivedDebits.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod50 = StripeResource.method;
+var ReceivedDebits = StripeResource.extend({
+  create: stripeMethod50({
+    method: "POST",
+    fullPath: "/v1/test_helpers/treasury/received_debits"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/ReceivedDebits.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod51 = StripeResource.method;
+var ReceivedDebits2 = StripeResource.extend({
+  retrieve: stripeMethod51({
+    method: "GET",
+    fullPath: "/v1/treasury/received_debits/{id}"
+  }),
+  list: stripeMethod51({
+    method: "GET",
+    fullPath: "/v1/treasury/received_debits",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Refunds.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod52 = StripeResource.method;
+var Refunds = StripeResource.extend({
+  expire: stripeMethod52({
+    method: "POST",
+    fullPath: "/v1/test_helpers/refunds/{refund}/expire"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Tax/Registrations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod53 = StripeResource.method;
+var Registrations = StripeResource.extend({
+  create: stripeMethod53({ method: "POST", fullPath: "/v1/tax/registrations" }),
+  retrieve: stripeMethod53({
+    method: "GET",
+    fullPath: "/v1/tax/registrations/{id}"
+  }),
+  update: stripeMethod53({
+    method: "POST",
+    fullPath: "/v1/tax/registrations/{id}"
+  }),
+  list: stripeMethod53({
+    method: "GET",
+    fullPath: "/v1/tax/registrations",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Reporting/ReportRuns.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod54 = StripeResource.method;
+var ReportRuns = StripeResource.extend({
+  create: stripeMethod54({ method: "POST", fullPath: "/v1/reporting/report_runs" }),
+  retrieve: stripeMethod54({
+    method: "GET",
+    fullPath: "/v1/reporting/report_runs/{report_run}"
+  }),
+  list: stripeMethod54({
+    method: "GET",
+    fullPath: "/v1/reporting/report_runs",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Reporting/ReportTypes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod55 = StripeResource.method;
+var ReportTypes = StripeResource.extend({
+  retrieve: stripeMethod55({
+    method: "GET",
+    fullPath: "/v1/reporting/report_types/{report_type}"
+  }),
+  list: stripeMethod55({
+    method: "GET",
+    fullPath: "/v1/reporting/report_types",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Forwarding/Requests.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod56 = StripeResource.method;
+var Requests = StripeResource.extend({
+  create: stripeMethod56({ method: "POST", fullPath: "/v1/forwarding/requests" }),
+  retrieve: stripeMethod56({
+    method: "GET",
+    fullPath: "/v1/forwarding/requests/{id}"
+  }),
+  list: stripeMethod56({
+    method: "GET",
+    fullPath: "/v1/forwarding/requests",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Sigma/ScheduledQueryRuns.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod57 = StripeResource.method;
+var ScheduledQueryRuns = StripeResource.extend({
+  retrieve: stripeMethod57({
+    method: "GET",
+    fullPath: "/v1/sigma/scheduled_query_runs/{scheduled_query_run}"
+  }),
+  list: stripeMethod57({
+    method: "GET",
+    fullPath: "/v1/sigma/scheduled_query_runs",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Apps/Secrets.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod58 = StripeResource.method;
+var Secrets = StripeResource.extend({
+  create: stripeMethod58({ method: "POST", fullPath: "/v1/apps/secrets" }),
+  list: stripeMethod58({
+    method: "GET",
+    fullPath: "/v1/apps/secrets",
+    methodType: "list"
+  }),
+  deleteWhere: stripeMethod58({
+    method: "POST",
+    fullPath: "/v1/apps/secrets/delete"
+  }),
+  find: stripeMethod58({ method: "GET", fullPath: "/v1/apps/secrets/find" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/BillingPortal/Sessions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod59 = StripeResource.method;
+var Sessions = StripeResource.extend({
+  create: stripeMethod59({
+    method: "POST",
+    fullPath: "/v1/billing_portal/sessions"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Checkout/Sessions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod60 = StripeResource.method;
+var Sessions2 = StripeResource.extend({
+  create: stripeMethod60({ method: "POST", fullPath: "/v1/checkout/sessions" }),
+  retrieve: stripeMethod60({
+    method: "GET",
+    fullPath: "/v1/checkout/sessions/{session}"
+  }),
+  update: stripeMethod60({
+    method: "POST",
+    fullPath: "/v1/checkout/sessions/{session}"
+  }),
+  list: stripeMethod60({
+    method: "GET",
+    fullPath: "/v1/checkout/sessions",
+    methodType: "list"
+  }),
+  expire: stripeMethod60({
+    method: "POST",
+    fullPath: "/v1/checkout/sessions/{session}/expire"
+  }),
+  listLineItems: stripeMethod60({
+    method: "GET",
+    fullPath: "/v1/checkout/sessions/{session}/line_items",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/FinancialConnections/Sessions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod61 = StripeResource.method;
+var Sessions3 = StripeResource.extend({
+  create: stripeMethod61({
+    method: "POST",
+    fullPath: "/v1/financial_connections/sessions"
+  }),
+  retrieve: stripeMethod61({
+    method: "GET",
+    fullPath: "/v1/financial_connections/sessions/{session}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Tax/Settings.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod62 = StripeResource.method;
+var Settings = StripeResource.extend({
+  retrieve: stripeMethod62({ method: "GET", fullPath: "/v1/tax/settings" }),
+  update: stripeMethod62({ method: "POST", fullPath: "/v1/tax/settings" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Climate/Suppliers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod63 = StripeResource.method;
+var Suppliers = StripeResource.extend({
+  retrieve: stripeMethod63({
+    method: "GET",
+    fullPath: "/v1/climate/suppliers/{supplier}"
+  }),
+  list: stripeMethod63({
+    method: "GET",
+    fullPath: "/v1/climate/suppliers",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/TestClocks.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod64 = StripeResource.method;
+var TestClocks = StripeResource.extend({
+  create: stripeMethod64({
+    method: "POST",
+    fullPath: "/v1/test_helpers/test_clocks"
+  }),
+  retrieve: stripeMethod64({
+    method: "GET",
+    fullPath: "/v1/test_helpers/test_clocks/{test_clock}"
+  }),
+  list: stripeMethod64({
+    method: "GET",
+    fullPath: "/v1/test_helpers/test_clocks",
+    methodType: "list"
+  }),
+  del: stripeMethod64({
+    method: "DELETE",
+    fullPath: "/v1/test_helpers/test_clocks/{test_clock}"
+  }),
+  advance: stripeMethod64({
+    method: "POST",
+    fullPath: "/v1/test_helpers/test_clocks/{test_clock}/advance"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/Tokens.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod65 = StripeResource.method;
+var Tokens = StripeResource.extend({
+  retrieve: stripeMethod65({
+    method: "GET",
+    fullPath: "/v1/issuing/tokens/{token}"
+  }),
+  update: stripeMethod65({
+    method: "POST",
+    fullPath: "/v1/issuing/tokens/{token}"
+  }),
+  list: stripeMethod65({
+    method: "GET",
+    fullPath: "/v1/issuing/tokens",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/TransactionEntries.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod66 = StripeResource.method;
+var TransactionEntries = StripeResource.extend({
+  retrieve: stripeMethod66({
+    method: "GET",
+    fullPath: "/v1/treasury/transaction_entries/{id}"
+  }),
+  list: stripeMethod66({
+    method: "GET",
+    fullPath: "/v1/treasury/transaction_entries",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TestHelpers/Issuing/Transactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod67 = StripeResource.method;
+var Transactions = StripeResource.extend({
+  createForceCapture: stripeMethod67({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/transactions/create_force_capture"
+  }),
+  createUnlinkedRefund: stripeMethod67({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/transactions/create_unlinked_refund"
+  }),
+  refund: stripeMethod67({
+    method: "POST",
+    fullPath: "/v1/test_helpers/issuing/transactions/{transaction}/refund"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/FinancialConnections/Transactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod68 = StripeResource.method;
+var Transactions2 = StripeResource.extend({
+  retrieve: stripeMethod68({
+    method: "GET",
+    fullPath: "/v1/financial_connections/transactions/{transaction}"
+  }),
+  list: stripeMethod68({
+    method: "GET",
+    fullPath: "/v1/financial_connections/transactions",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Issuing/Transactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod69 = StripeResource.method;
+var Transactions3 = StripeResource.extend({
+  retrieve: stripeMethod69({
+    method: "GET",
+    fullPath: "/v1/issuing/transactions/{transaction}"
+  }),
+  update: stripeMethod69({
+    method: "POST",
+    fullPath: "/v1/issuing/transactions/{transaction}"
+  }),
+  list: stripeMethod69({
+    method: "GET",
+    fullPath: "/v1/issuing/transactions",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Tax/Transactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod70 = StripeResource.method;
+var Transactions4 = StripeResource.extend({
+  retrieve: stripeMethod70({
+    method: "GET",
+    fullPath: "/v1/tax/transactions/{transaction}"
+  }),
+  createFromCalculation: stripeMethod70({
+    method: "POST",
+    fullPath: "/v1/tax/transactions/create_from_calculation"
+  }),
+  createReversal: stripeMethod70({
+    method: "POST",
+    fullPath: "/v1/tax/transactions/create_reversal"
+  }),
+  listLineItems: stripeMethod70({
+    method: "GET",
+    fullPath: "/v1/tax/transactions/{transaction}/line_items",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Treasury/Transactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod71 = StripeResource.method;
+var Transactions5 = StripeResource.extend({
+  retrieve: stripeMethod71({
+    method: "GET",
+    fullPath: "/v1/treasury/transactions/{id}"
+  }),
+  list: stripeMethod71({
+    method: "GET",
+    fullPath: "/v1/treasury/transactions",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Radar/ValueListItems.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod72 = StripeResource.method;
+var ValueListItems = StripeResource.extend({
+  create: stripeMethod72({
+    method: "POST",
+    fullPath: "/v1/radar/value_list_items"
+  }),
+  retrieve: stripeMethod72({
+    method: "GET",
+    fullPath: "/v1/radar/value_list_items/{item}"
+  }),
+  list: stripeMethod72({
+    method: "GET",
+    fullPath: "/v1/radar/value_list_items",
+    methodType: "list"
+  }),
+  del: stripeMethod72({
+    method: "DELETE",
+    fullPath: "/v1/radar/value_list_items/{item}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Radar/ValueLists.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod73 = StripeResource.method;
+var ValueLists = StripeResource.extend({
+  create: stripeMethod73({ method: "POST", fullPath: "/v1/radar/value_lists" }),
+  retrieve: stripeMethod73({
+    method: "GET",
+    fullPath: "/v1/radar/value_lists/{value_list}"
+  }),
+  update: stripeMethod73({
+    method: "POST",
+    fullPath: "/v1/radar/value_lists/{value_list}"
+  }),
+  list: stripeMethod73({
+    method: "GET",
+    fullPath: "/v1/radar/value_lists",
+    methodType: "list"
+  }),
+  del: stripeMethod73({
+    method: "DELETE",
+    fullPath: "/v1/radar/value_lists/{value_list}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Identity/VerificationReports.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod74 = StripeResource.method;
+var VerificationReports = StripeResource.extend({
+  retrieve: stripeMethod74({
+    method: "GET",
+    fullPath: "/v1/identity/verification_reports/{report}"
+  }),
+  list: stripeMethod74({
+    method: "GET",
+    fullPath: "/v1/identity/verification_reports",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Identity/VerificationSessions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod75 = StripeResource.method;
+var VerificationSessions = StripeResource.extend({
+  create: stripeMethod75({
+    method: "POST",
+    fullPath: "/v1/identity/verification_sessions"
+  }),
+  retrieve: stripeMethod75({
+    method: "GET",
+    fullPath: "/v1/identity/verification_sessions/{session}"
+  }),
+  update: stripeMethod75({
+    method: "POST",
+    fullPath: "/v1/identity/verification_sessions/{session}"
+  }),
+  list: stripeMethod75({
+    method: "GET",
+    fullPath: "/v1/identity/verification_sessions",
+    methodType: "list"
+  }),
+  cancel: stripeMethod75({
+    method: "POST",
+    fullPath: "/v1/identity/verification_sessions/{session}/cancel"
+  }),
+  redact: stripeMethod75({
+    method: "POST",
+    fullPath: "/v1/identity/verification_sessions/{session}/redact"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Accounts.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod76 = StripeResource.method;
+var Accounts2 = StripeResource.extend({
+  create: stripeMethod76({ method: "POST", fullPath: "/v1/accounts" }),
+  retrieve(id, ...args) {
+    if (typeof id === "string") {
+      return stripeMethod76({
+        method: "GET",
+        fullPath: "/v1/accounts/{id}"
+      }).apply(this, [id, ...args]);
+    } else {
+      if (id === null || id === void 0) {
+        [].shift.apply([id, ...args]);
+      }
+      return stripeMethod76({
+        method: "GET",
+        fullPath: "/v1/account"
+      }).apply(this, [id, ...args]);
+    }
+  },
+  update: stripeMethod76({ method: "POST", fullPath: "/v1/accounts/{account}" }),
+  list: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts",
+    methodType: "list"
+  }),
+  del: stripeMethod76({ method: "DELETE", fullPath: "/v1/accounts/{account}" }),
+  createExternalAccount: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/external_accounts"
+  }),
+  createLoginLink: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/login_links"
+  }),
+  createPerson: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/persons"
+  }),
+  deleteExternalAccount: stripeMethod76({
+    method: "DELETE",
+    fullPath: "/v1/accounts/{account}/external_accounts/{id}"
+  }),
+  deletePerson: stripeMethod76({
+    method: "DELETE",
+    fullPath: "/v1/accounts/{account}/persons/{person}"
+  }),
+  listCapabilities: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts/{account}/capabilities",
+    methodType: "list"
+  }),
+  listExternalAccounts: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts/{account}/external_accounts",
+    methodType: "list"
+  }),
+  listPersons: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts/{account}/persons",
+    methodType: "list"
+  }),
+  reject: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/reject"
+  }),
+  retrieveCurrent: stripeMethod76({ method: "GET", fullPath: "/v1/account" }),
+  retrieveCapability: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts/{account}/capabilities/{capability}"
+  }),
+  retrieveExternalAccount: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts/{account}/external_accounts/{id}"
+  }),
+  retrievePerson: stripeMethod76({
+    method: "GET",
+    fullPath: "/v1/accounts/{account}/persons/{person}"
+  }),
+  updateCapability: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/capabilities/{capability}"
+  }),
+  updateExternalAccount: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/external_accounts/{id}"
+  }),
+  updatePerson: stripeMethod76({
+    method: "POST",
+    fullPath: "/v1/accounts/{account}/persons/{person}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/AccountLinks.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod77 = StripeResource.method;
+var AccountLinks = StripeResource.extend({
+  create: stripeMethod77({ method: "POST", fullPath: "/v1/account_links" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/AccountSessions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod78 = StripeResource.method;
+var AccountSessions = StripeResource.extend({
+  create: stripeMethod78({ method: "POST", fullPath: "/v1/account_sessions" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/ApplePayDomains.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod79 = StripeResource.method;
+var ApplePayDomains = StripeResource.extend({
+  create: stripeMethod79({ method: "POST", fullPath: "/v1/apple_pay/domains" }),
+  retrieve: stripeMethod79({
+    method: "GET",
+    fullPath: "/v1/apple_pay/domains/{domain}"
+  }),
+  list: stripeMethod79({
+    method: "GET",
+    fullPath: "/v1/apple_pay/domains",
+    methodType: "list"
+  }),
+  del: stripeMethod79({
+    method: "DELETE",
+    fullPath: "/v1/apple_pay/domains/{domain}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/ApplicationFees.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod80 = StripeResource.method;
+var ApplicationFees = StripeResource.extend({
+  retrieve: stripeMethod80({
+    method: "GET",
+    fullPath: "/v1/application_fees/{id}"
+  }),
+  list: stripeMethod80({
+    method: "GET",
+    fullPath: "/v1/application_fees",
+    methodType: "list"
+  }),
+  createRefund: stripeMethod80({
+    method: "POST",
+    fullPath: "/v1/application_fees/{id}/refunds"
+  }),
+  listRefunds: stripeMethod80({
+    method: "GET",
+    fullPath: "/v1/application_fees/{id}/refunds",
+    methodType: "list"
+  }),
+  retrieveRefund: stripeMethod80({
+    method: "GET",
+    fullPath: "/v1/application_fees/{fee}/refunds/{id}"
+  }),
+  updateRefund: stripeMethod80({
+    method: "POST",
+    fullPath: "/v1/application_fees/{fee}/refunds/{id}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Balance.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod81 = StripeResource.method;
+var Balance = StripeResource.extend({
+  retrieve: stripeMethod81({ method: "GET", fullPath: "/v1/balance" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/BalanceTransactions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod82 = StripeResource.method;
+var BalanceTransactions = StripeResource.extend({
+  retrieve: stripeMethod82({
+    method: "GET",
+    fullPath: "/v1/balance_transactions/{id}"
+  }),
+  list: stripeMethod82({
+    method: "GET",
+    fullPath: "/v1/balance_transactions",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Charges.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod83 = StripeResource.method;
+var Charges = StripeResource.extend({
+  create: stripeMethod83({ method: "POST", fullPath: "/v1/charges" }),
+  retrieve: stripeMethod83({ method: "GET", fullPath: "/v1/charges/{charge}" }),
+  update: stripeMethod83({ method: "POST", fullPath: "/v1/charges/{charge}" }),
+  list: stripeMethod83({
+    method: "GET",
+    fullPath: "/v1/charges",
+    methodType: "list"
+  }),
+  capture: stripeMethod83({
+    method: "POST",
+    fullPath: "/v1/charges/{charge}/capture"
+  }),
+  search: stripeMethod83({
+    method: "GET",
+    fullPath: "/v1/charges/search",
+    methodType: "search"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/ConfirmationTokens.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod84 = StripeResource.method;
+var ConfirmationTokens2 = StripeResource.extend({
+  retrieve: stripeMethod84({
+    method: "GET",
+    fullPath: "/v1/confirmation_tokens/{confirmation_token}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/CountrySpecs.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod85 = StripeResource.method;
+var CountrySpecs = StripeResource.extend({
+  retrieve: stripeMethod85({
+    method: "GET",
+    fullPath: "/v1/country_specs/{country}"
+  }),
+  list: stripeMethod85({
+    method: "GET",
+    fullPath: "/v1/country_specs",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Coupons.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod86 = StripeResource.method;
+var Coupons = StripeResource.extend({
+  create: stripeMethod86({ method: "POST", fullPath: "/v1/coupons" }),
+  retrieve: stripeMethod86({ method: "GET", fullPath: "/v1/coupons/{coupon}" }),
+  update: stripeMethod86({ method: "POST", fullPath: "/v1/coupons/{coupon}" }),
+  list: stripeMethod86({
+    method: "GET",
+    fullPath: "/v1/coupons",
+    methodType: "list"
+  }),
+  del: stripeMethod86({ method: "DELETE", fullPath: "/v1/coupons/{coupon}" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/CreditNotes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod87 = StripeResource.method;
+var CreditNotes = StripeResource.extend({
+  create: stripeMethod87({ method: "POST", fullPath: "/v1/credit_notes" }),
+  retrieve: stripeMethod87({ method: "GET", fullPath: "/v1/credit_notes/{id}" }),
+  update: stripeMethod87({ method: "POST", fullPath: "/v1/credit_notes/{id}" }),
+  list: stripeMethod87({
+    method: "GET",
+    fullPath: "/v1/credit_notes",
+    methodType: "list"
+  }),
+  listLineItems: stripeMethod87({
+    method: "GET",
+    fullPath: "/v1/credit_notes/{credit_note}/lines",
+    methodType: "list"
+  }),
+  listPreviewLineItems: stripeMethod87({
+    method: "GET",
+    fullPath: "/v1/credit_notes/preview/lines",
+    methodType: "list"
+  }),
+  preview: stripeMethod87({ method: "GET", fullPath: "/v1/credit_notes/preview" }),
+  voidCreditNote: stripeMethod87({
+    method: "POST",
+    fullPath: "/v1/credit_notes/{id}/void"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/CustomerSessions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod88 = StripeResource.method;
+var CustomerSessions = StripeResource.extend({
+  create: stripeMethod88({ method: "POST", fullPath: "/v1/customer_sessions" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Customers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod89 = StripeResource.method;
+var Customers2 = StripeResource.extend({
+  create: stripeMethod89({ method: "POST", fullPath: "/v1/customers" }),
+  retrieve: stripeMethod89({ method: "GET", fullPath: "/v1/customers/{customer}" }),
+  update: stripeMethod89({ method: "POST", fullPath: "/v1/customers/{customer}" }),
+  list: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers",
+    methodType: "list"
+  }),
+  del: stripeMethod89({ method: "DELETE", fullPath: "/v1/customers/{customer}" }),
+  createBalanceTransaction: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/balance_transactions"
+  }),
+  createFundingInstructions: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/funding_instructions"
+  }),
+  createSource: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/sources"
+  }),
+  createTaxId: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/tax_ids"
+  }),
+  deleteDiscount: stripeMethod89({
+    method: "DELETE",
+    fullPath: "/v1/customers/{customer}/discount"
+  }),
+  deleteSource: stripeMethod89({
+    method: "DELETE",
+    fullPath: "/v1/customers/{customer}/sources/{id}"
+  }),
+  deleteTaxId: stripeMethod89({
+    method: "DELETE",
+    fullPath: "/v1/customers/{customer}/tax_ids/{id}"
+  }),
+  listBalanceTransactions: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/balance_transactions",
+    methodType: "list"
+  }),
+  listCashBalanceTransactions: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/cash_balance_transactions",
+    methodType: "list"
+  }),
+  listPaymentMethods: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/payment_methods",
+    methodType: "list"
+  }),
+  listSources: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/sources",
+    methodType: "list"
+  }),
+  listTaxIds: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/tax_ids",
+    methodType: "list"
+  }),
+  retrieveBalanceTransaction: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/balance_transactions/{transaction}"
+  }),
+  retrieveCashBalance: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/cash_balance"
+  }),
+  retrieveCashBalanceTransaction: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/cash_balance_transactions/{transaction}"
+  }),
+  retrievePaymentMethod: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/payment_methods/{payment_method}"
+  }),
+  retrieveSource: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/sources/{id}"
+  }),
+  retrieveTaxId: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/{customer}/tax_ids/{id}"
+  }),
+  search: stripeMethod89({
+    method: "GET",
+    fullPath: "/v1/customers/search",
+    methodType: "search"
+  }),
+  updateBalanceTransaction: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/balance_transactions/{transaction}"
+  }),
+  updateCashBalance: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/cash_balance"
+  }),
+  updateSource: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/sources/{id}"
+  }),
+  verifySource: stripeMethod89({
+    method: "POST",
+    fullPath: "/v1/customers/{customer}/sources/{id}/verify"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Disputes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod90 = StripeResource.method;
+var Disputes2 = StripeResource.extend({
+  retrieve: stripeMethod90({ method: "GET", fullPath: "/v1/disputes/{dispute}" }),
+  update: stripeMethod90({ method: "POST", fullPath: "/v1/disputes/{dispute}" }),
+  list: stripeMethod90({
+    method: "GET",
+    fullPath: "/v1/disputes",
+    methodType: "list"
+  }),
+  close: stripeMethod90({
+    method: "POST",
+    fullPath: "/v1/disputes/{dispute}/close"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/EphemeralKeys.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod91 = StripeResource.method;
+var EphemeralKeys = StripeResource.extend({
+  create: stripeMethod91({
+    method: "POST",
+    fullPath: "/v1/ephemeral_keys",
+    validator: /* @__PURE__ */ __name((data, options) => {
+      if (!options.headers || !options.headers["Stripe-Version"]) {
+        throw new Error("Passing apiVersion in a separate options hash is required to create an ephemeral key. See https://stripe.com/docs/api/versioning?lang=node");
+      }
+    }, "validator")
+  }),
+  del: stripeMethod91({ method: "DELETE", fullPath: "/v1/ephemeral_keys/{key}" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Events.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod92 = StripeResource.method;
+var Events2 = StripeResource.extend({
+  retrieve: stripeMethod92({ method: "GET", fullPath: "/v1/events/{id}" }),
+  list: stripeMethod92({
+    method: "GET",
+    fullPath: "/v1/events",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/ExchangeRates.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod93 = StripeResource.method;
+var ExchangeRates = StripeResource.extend({
+  retrieve: stripeMethod93({
+    method: "GET",
+    fullPath: "/v1/exchange_rates/{rate_id}"
+  }),
+  list: stripeMethod93({
+    method: "GET",
+    fullPath: "/v1/exchange_rates",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/FileLinks.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod94 = StripeResource.method;
+var FileLinks = StripeResource.extend({
+  create: stripeMethod94({ method: "POST", fullPath: "/v1/file_links" }),
+  retrieve: stripeMethod94({ method: "GET", fullPath: "/v1/file_links/{link}" }),
+  update: stripeMethod94({ method: "POST", fullPath: "/v1/file_links/{link}" }),
+  list: stripeMethod94({
+    method: "GET",
+    fullPath: "/v1/file_links",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Files.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/multipart.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var multipartDataGenerator = /* @__PURE__ */ __name((method, data, headers) => {
+  const segno = (Math.round(Math.random() * 1e16) + Math.round(Math.random() * 1e16)).toString();
+  headers["Content-Type"] = `multipart/form-data; boundary=${segno}`;
+  const textEncoder = new TextEncoder();
+  let buffer = new Uint8Array(0);
+  const endBuffer = textEncoder.encode("\r\n");
+  function push(l) {
+    const prevBuffer = buffer;
+    const newBuffer = l instanceof Uint8Array ? l : new Uint8Array(textEncoder.encode(l));
+    buffer = new Uint8Array(prevBuffer.length + newBuffer.length + 2);
+    buffer.set(prevBuffer);
+    buffer.set(newBuffer, prevBuffer.length);
+    buffer.set(endBuffer, buffer.length - 2);
+  }
+  __name(push, "push");
+  function q(s) {
+    return `"${s.replace(/"|"/g, "%22").replace(/\r\n|\r|\n/g, " ")}"`;
+  }
+  __name(q, "q");
+  const flattenedData = flattenAndStringify(data);
+  for (const k in flattenedData) {
+    if (!Object.prototype.hasOwnProperty.call(flattenedData, k)) {
+      continue;
+    }
+    const v = flattenedData[k];
+    push(`--${segno}`);
+    if (Object.prototype.hasOwnProperty.call(v, "data")) {
+      const typedEntry = v;
+      push(`Content-Disposition: form-data; name=${q(k)}; filename=${q(typedEntry.name || "blob")}`);
+      push(`Content-Type: ${typedEntry.type || "application/octet-stream"}`);
+      push("");
+      push(typedEntry.data);
+    } else {
+      push(`Content-Disposition: form-data; name=${q(k)}`);
+      push("");
+      push(v);
+    }
+  }
+  push(`--${segno}--`);
+  return buffer;
+}, "multipartDataGenerator");
+function multipartRequestDataProcessor(method, data, headers, callback) {
+  data = data || {};
+  if (method !== "POST") {
+    return callback(null, queryStringifyRequestData(data));
+  }
+  this._stripe._platformFunctions.tryBufferData(data).then((bufferedData) => {
+    const buffer = multipartDataGenerator(method, bufferedData, headers);
+    return callback(null, buffer);
+  }).catch((err) => callback(err, null));
+}
+__name(multipartRequestDataProcessor, "multipartRequestDataProcessor");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Files.js
+var stripeMethod95 = StripeResource.method;
+var Files = StripeResource.extend({
+  create: stripeMethod95({
+    method: "POST",
+    fullPath: "/v1/files",
+    headers: {
+      "Content-Type": "multipart/form-data"
+    },
+    host: "files.stripe.com"
+  }),
+  retrieve: stripeMethod95({ method: "GET", fullPath: "/v1/files/{file}" }),
+  list: stripeMethod95({
+    method: "GET",
+    fullPath: "/v1/files",
+    methodType: "list"
+  }),
+  requestDataProcessor: multipartRequestDataProcessor
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/InvoiceItems.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod96 = StripeResource.method;
+var InvoiceItems = StripeResource.extend({
+  create: stripeMethod96({ method: "POST", fullPath: "/v1/invoiceitems" }),
+  retrieve: stripeMethod96({
+    method: "GET",
+    fullPath: "/v1/invoiceitems/{invoiceitem}"
+  }),
+  update: stripeMethod96({
+    method: "POST",
+    fullPath: "/v1/invoiceitems/{invoiceitem}"
+  }),
+  list: stripeMethod96({
+    method: "GET",
+    fullPath: "/v1/invoiceitems",
+    methodType: "list"
+  }),
+  del: stripeMethod96({
+    method: "DELETE",
+    fullPath: "/v1/invoiceitems/{invoiceitem}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/InvoicePayments.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod97 = StripeResource.method;
+var InvoicePayments = StripeResource.extend({
+  retrieve: stripeMethod97({
+    method: "GET",
+    fullPath: "/v1/invoice_payments/{invoice_payment}"
+  }),
+  list: stripeMethod97({
+    method: "GET",
+    fullPath: "/v1/invoice_payments",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/InvoiceRenderingTemplates.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod98 = StripeResource.method;
+var InvoiceRenderingTemplates = StripeResource.extend({
+  retrieve: stripeMethod98({
+    method: "GET",
+    fullPath: "/v1/invoice_rendering_templates/{template}"
+  }),
+  list: stripeMethod98({
+    method: "GET",
+    fullPath: "/v1/invoice_rendering_templates",
+    methodType: "list"
+  }),
+  archive: stripeMethod98({
+    method: "POST",
+    fullPath: "/v1/invoice_rendering_templates/{template}/archive"
+  }),
+  unarchive: stripeMethod98({
+    method: "POST",
+    fullPath: "/v1/invoice_rendering_templates/{template}/unarchive"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Invoices.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod99 = StripeResource.method;
+var Invoices = StripeResource.extend({
+  create: stripeMethod99({ method: "POST", fullPath: "/v1/invoices" }),
+  retrieve: stripeMethod99({ method: "GET", fullPath: "/v1/invoices/{invoice}" }),
+  update: stripeMethod99({ method: "POST", fullPath: "/v1/invoices/{invoice}" }),
+  list: stripeMethod99({
+    method: "GET",
+    fullPath: "/v1/invoices",
+    methodType: "list"
+  }),
+  del: stripeMethod99({ method: "DELETE", fullPath: "/v1/invoices/{invoice}" }),
+  addLines: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/add_lines"
+  }),
+  createPreview: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/create_preview"
+  }),
+  finalizeInvoice: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/finalize"
+  }),
+  listLineItems: stripeMethod99({
+    method: "GET",
+    fullPath: "/v1/invoices/{invoice}/lines",
+    methodType: "list"
+  }),
+  markUncollectible: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/mark_uncollectible"
+  }),
+  pay: stripeMethod99({ method: "POST", fullPath: "/v1/invoices/{invoice}/pay" }),
+  removeLines: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/remove_lines"
+  }),
+  search: stripeMethod99({
+    method: "GET",
+    fullPath: "/v1/invoices/search",
+    methodType: "search"
+  }),
+  sendInvoice: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/send"
+  }),
+  updateLines: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/update_lines"
+  }),
+  updateLineItem: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/lines/{line_item_id}"
+  }),
+  voidInvoice: stripeMethod99({
+    method: "POST",
+    fullPath: "/v1/invoices/{invoice}/void"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Mandates.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod100 = StripeResource.method;
+var Mandates = StripeResource.extend({
+  retrieve: stripeMethod100({ method: "GET", fullPath: "/v1/mandates/{mandate}" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/OAuth.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod101 = StripeResource.method;
+var oAuthHost = "connect.stripe.com";
+var OAuth = StripeResource.extend({
+  basePath: "/",
+  authorizeUrl(params, options) {
+    params = params || {};
+    options = options || {};
+    let path = "oauth/authorize";
+    if (options.express) {
+      path = `express/${path}`;
+    }
+    if (!params.response_type) {
+      params.response_type = "code";
+    }
+    if (!params.client_id) {
+      params.client_id = this._stripe.getClientId();
+    }
+    if (!params.scope) {
+      params.scope = "read_write";
+    }
+    return `https://${oAuthHost}/${path}?${queryStringifyRequestData(params)}`;
+  },
+  token: stripeMethod101({
+    method: "POST",
+    path: "oauth/token",
+    host: oAuthHost
+  }),
+  deauthorize(spec, ...args) {
+    if (!spec.client_id) {
+      spec.client_id = this._stripe.getClientId();
+    }
+    return stripeMethod101({
+      method: "POST",
+      path: "oauth/deauthorize",
+      host: oAuthHost
+    }).apply(this, [spec, ...args]);
+  }
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/PaymentIntents.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod102 = StripeResource.method;
+var PaymentIntents = StripeResource.extend({
+  create: stripeMethod102({ method: "POST", fullPath: "/v1/payment_intents" }),
+  retrieve: stripeMethod102({
+    method: "GET",
+    fullPath: "/v1/payment_intents/{intent}"
+  }),
+  update: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}"
+  }),
+  list: stripeMethod102({
+    method: "GET",
+    fullPath: "/v1/payment_intents",
+    methodType: "list"
+  }),
+  applyCustomerBalance: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}/apply_customer_balance"
+  }),
+  cancel: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}/cancel"
+  }),
+  capture: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}/capture"
+  }),
+  confirm: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}/confirm"
+  }),
+  incrementAuthorization: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}/increment_authorization"
+  }),
+  search: stripeMethod102({
+    method: "GET",
+    fullPath: "/v1/payment_intents/search",
+    methodType: "search"
+  }),
+  verifyMicrodeposits: stripeMethod102({
+    method: "POST",
+    fullPath: "/v1/payment_intents/{intent}/verify_microdeposits"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/PaymentLinks.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod103 = StripeResource.method;
+var PaymentLinks = StripeResource.extend({
+  create: stripeMethod103({ method: "POST", fullPath: "/v1/payment_links" }),
+  retrieve: stripeMethod103({
+    method: "GET",
+    fullPath: "/v1/payment_links/{payment_link}"
+  }),
+  update: stripeMethod103({
+    method: "POST",
+    fullPath: "/v1/payment_links/{payment_link}"
+  }),
+  list: stripeMethod103({
+    method: "GET",
+    fullPath: "/v1/payment_links",
+    methodType: "list"
+  }),
+  listLineItems: stripeMethod103({
+    method: "GET",
+    fullPath: "/v1/payment_links/{payment_link}/line_items",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/PaymentMethodConfigurations.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod104 = StripeResource.method;
+var PaymentMethodConfigurations = StripeResource.extend({
+  create: stripeMethod104({
+    method: "POST",
+    fullPath: "/v1/payment_method_configurations"
+  }),
+  retrieve: stripeMethod104({
+    method: "GET",
+    fullPath: "/v1/payment_method_configurations/{configuration}"
+  }),
+  update: stripeMethod104({
+    method: "POST",
+    fullPath: "/v1/payment_method_configurations/{configuration}"
+  }),
+  list: stripeMethod104({
+    method: "GET",
+    fullPath: "/v1/payment_method_configurations",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/PaymentMethodDomains.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod105 = StripeResource.method;
+var PaymentMethodDomains = StripeResource.extend({
+  create: stripeMethod105({
+    method: "POST",
+    fullPath: "/v1/payment_method_domains"
+  }),
+  retrieve: stripeMethod105({
+    method: "GET",
+    fullPath: "/v1/payment_method_domains/{payment_method_domain}"
+  }),
+  update: stripeMethod105({
+    method: "POST",
+    fullPath: "/v1/payment_method_domains/{payment_method_domain}"
+  }),
+  list: stripeMethod105({
+    method: "GET",
+    fullPath: "/v1/payment_method_domains",
+    methodType: "list"
+  }),
+  validate: stripeMethod105({
+    method: "POST",
+    fullPath: "/v1/payment_method_domains/{payment_method_domain}/validate"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/PaymentMethods.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod106 = StripeResource.method;
+var PaymentMethods = StripeResource.extend({
+  create: stripeMethod106({ method: "POST", fullPath: "/v1/payment_methods" }),
+  retrieve: stripeMethod106({
+    method: "GET",
+    fullPath: "/v1/payment_methods/{payment_method}"
+  }),
+  update: stripeMethod106({
+    method: "POST",
+    fullPath: "/v1/payment_methods/{payment_method}"
+  }),
+  list: stripeMethod106({
+    method: "GET",
+    fullPath: "/v1/payment_methods",
+    methodType: "list"
+  }),
+  attach: stripeMethod106({
+    method: "POST",
+    fullPath: "/v1/payment_methods/{payment_method}/attach"
+  }),
+  detach: stripeMethod106({
+    method: "POST",
+    fullPath: "/v1/payment_methods/{payment_method}/detach"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Payouts.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod107 = StripeResource.method;
+var Payouts = StripeResource.extend({
+  create: stripeMethod107({ method: "POST", fullPath: "/v1/payouts" }),
+  retrieve: stripeMethod107({ method: "GET", fullPath: "/v1/payouts/{payout}" }),
+  update: stripeMethod107({ method: "POST", fullPath: "/v1/payouts/{payout}" }),
+  list: stripeMethod107({
+    method: "GET",
+    fullPath: "/v1/payouts",
+    methodType: "list"
+  }),
+  cancel: stripeMethod107({
+    method: "POST",
+    fullPath: "/v1/payouts/{payout}/cancel"
+  }),
+  reverse: stripeMethod107({
+    method: "POST",
+    fullPath: "/v1/payouts/{payout}/reverse"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Plans.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod108 = StripeResource.method;
+var Plans = StripeResource.extend({
+  create: stripeMethod108({ method: "POST", fullPath: "/v1/plans" }),
+  retrieve: stripeMethod108({ method: "GET", fullPath: "/v1/plans/{plan}" }),
+  update: stripeMethod108({ method: "POST", fullPath: "/v1/plans/{plan}" }),
+  list: stripeMethod108({
+    method: "GET",
+    fullPath: "/v1/plans",
+    methodType: "list"
+  }),
+  del: stripeMethod108({ method: "DELETE", fullPath: "/v1/plans/{plan}" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Prices.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod109 = StripeResource.method;
+var Prices = StripeResource.extend({
+  create: stripeMethod109({ method: "POST", fullPath: "/v1/prices" }),
+  retrieve: stripeMethod109({ method: "GET", fullPath: "/v1/prices/{price}" }),
+  update: stripeMethod109({ method: "POST", fullPath: "/v1/prices/{price}" }),
+  list: stripeMethod109({
+    method: "GET",
+    fullPath: "/v1/prices",
+    methodType: "list"
+  }),
+  search: stripeMethod109({
+    method: "GET",
+    fullPath: "/v1/prices/search",
+    methodType: "search"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Products.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod110 = StripeResource.method;
+var Products2 = StripeResource.extend({
+  create: stripeMethod110({ method: "POST", fullPath: "/v1/products" }),
+  retrieve: stripeMethod110({ method: "GET", fullPath: "/v1/products/{id}" }),
+  update: stripeMethod110({ method: "POST", fullPath: "/v1/products/{id}" }),
+  list: stripeMethod110({
+    method: "GET",
+    fullPath: "/v1/products",
+    methodType: "list"
+  }),
+  del: stripeMethod110({ method: "DELETE", fullPath: "/v1/products/{id}" }),
+  createFeature: stripeMethod110({
+    method: "POST",
+    fullPath: "/v1/products/{product}/features"
+  }),
+  deleteFeature: stripeMethod110({
+    method: "DELETE",
+    fullPath: "/v1/products/{product}/features/{id}"
+  }),
+  listFeatures: stripeMethod110({
+    method: "GET",
+    fullPath: "/v1/products/{product}/features",
+    methodType: "list"
+  }),
+  retrieveFeature: stripeMethod110({
+    method: "GET",
+    fullPath: "/v1/products/{product}/features/{id}"
+  }),
+  search: stripeMethod110({
+    method: "GET",
+    fullPath: "/v1/products/search",
+    methodType: "search"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/PromotionCodes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod111 = StripeResource.method;
+var PromotionCodes = StripeResource.extend({
+  create: stripeMethod111({ method: "POST", fullPath: "/v1/promotion_codes" }),
+  retrieve: stripeMethod111({
+    method: "GET",
+    fullPath: "/v1/promotion_codes/{promotion_code}"
+  }),
+  update: stripeMethod111({
+    method: "POST",
+    fullPath: "/v1/promotion_codes/{promotion_code}"
+  }),
+  list: stripeMethod111({
+    method: "GET",
+    fullPath: "/v1/promotion_codes",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Quotes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod112 = StripeResource.method;
+var Quotes = StripeResource.extend({
+  create: stripeMethod112({ method: "POST", fullPath: "/v1/quotes" }),
+  retrieve: stripeMethod112({ method: "GET", fullPath: "/v1/quotes/{quote}" }),
+  update: stripeMethod112({ method: "POST", fullPath: "/v1/quotes/{quote}" }),
+  list: stripeMethod112({
+    method: "GET",
+    fullPath: "/v1/quotes",
+    methodType: "list"
+  }),
+  accept: stripeMethod112({ method: "POST", fullPath: "/v1/quotes/{quote}/accept" }),
+  cancel: stripeMethod112({ method: "POST", fullPath: "/v1/quotes/{quote}/cancel" }),
+  finalizeQuote: stripeMethod112({
+    method: "POST",
+    fullPath: "/v1/quotes/{quote}/finalize"
+  }),
+  listComputedUpfrontLineItems: stripeMethod112({
+    method: "GET",
+    fullPath: "/v1/quotes/{quote}/computed_upfront_line_items",
+    methodType: "list"
+  }),
+  listLineItems: stripeMethod112({
+    method: "GET",
+    fullPath: "/v1/quotes/{quote}/line_items",
+    methodType: "list"
+  }),
+  pdf: stripeMethod112({
+    method: "GET",
+    fullPath: "/v1/quotes/{quote}/pdf",
+    host: "files.stripe.com",
+    streaming: true
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Refunds.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod113 = StripeResource.method;
+var Refunds2 = StripeResource.extend({
+  create: stripeMethod113({ method: "POST", fullPath: "/v1/refunds" }),
+  retrieve: stripeMethod113({ method: "GET", fullPath: "/v1/refunds/{refund}" }),
+  update: stripeMethod113({ method: "POST", fullPath: "/v1/refunds/{refund}" }),
+  list: stripeMethod113({
+    method: "GET",
+    fullPath: "/v1/refunds",
+    methodType: "list"
+  }),
+  cancel: stripeMethod113({
+    method: "POST",
+    fullPath: "/v1/refunds/{refund}/cancel"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Reviews.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod114 = StripeResource.method;
+var Reviews = StripeResource.extend({
+  retrieve: stripeMethod114({ method: "GET", fullPath: "/v1/reviews/{review}" }),
+  list: stripeMethod114({
+    method: "GET",
+    fullPath: "/v1/reviews",
+    methodType: "list"
+  }),
+  approve: stripeMethod114({
+    method: "POST",
+    fullPath: "/v1/reviews/{review}/approve"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/SetupAttempts.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod115 = StripeResource.method;
+var SetupAttempts = StripeResource.extend({
+  list: stripeMethod115({
+    method: "GET",
+    fullPath: "/v1/setup_attempts",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/SetupIntents.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod116 = StripeResource.method;
+var SetupIntents = StripeResource.extend({
+  create: stripeMethod116({ method: "POST", fullPath: "/v1/setup_intents" }),
+  retrieve: stripeMethod116({
+    method: "GET",
+    fullPath: "/v1/setup_intents/{intent}"
+  }),
+  update: stripeMethod116({
+    method: "POST",
+    fullPath: "/v1/setup_intents/{intent}"
+  }),
+  list: stripeMethod116({
+    method: "GET",
+    fullPath: "/v1/setup_intents",
+    methodType: "list"
+  }),
+  cancel: stripeMethod116({
+    method: "POST",
+    fullPath: "/v1/setup_intents/{intent}/cancel"
+  }),
+  confirm: stripeMethod116({
+    method: "POST",
+    fullPath: "/v1/setup_intents/{intent}/confirm"
+  }),
+  verifyMicrodeposits: stripeMethod116({
+    method: "POST",
+    fullPath: "/v1/setup_intents/{intent}/verify_microdeposits"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/ShippingRates.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod117 = StripeResource.method;
+var ShippingRates = StripeResource.extend({
+  create: stripeMethod117({ method: "POST", fullPath: "/v1/shipping_rates" }),
+  retrieve: stripeMethod117({
+    method: "GET",
+    fullPath: "/v1/shipping_rates/{shipping_rate_token}"
+  }),
+  update: stripeMethod117({
+    method: "POST",
+    fullPath: "/v1/shipping_rates/{shipping_rate_token}"
+  }),
+  list: stripeMethod117({
+    method: "GET",
+    fullPath: "/v1/shipping_rates",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Sources.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod118 = StripeResource.method;
+var Sources = StripeResource.extend({
+  create: stripeMethod118({ method: "POST", fullPath: "/v1/sources" }),
+  retrieve: stripeMethod118({ method: "GET", fullPath: "/v1/sources/{source}" }),
+  update: stripeMethod118({ method: "POST", fullPath: "/v1/sources/{source}" }),
+  listSourceTransactions: stripeMethod118({
+    method: "GET",
+    fullPath: "/v1/sources/{source}/source_transactions",
+    methodType: "list"
+  }),
+  verify: stripeMethod118({
+    method: "POST",
+    fullPath: "/v1/sources/{source}/verify"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/SubscriptionItems.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod119 = StripeResource.method;
+var SubscriptionItems = StripeResource.extend({
+  create: stripeMethod119({ method: "POST", fullPath: "/v1/subscription_items" }),
+  retrieve: stripeMethod119({
+    method: "GET",
+    fullPath: "/v1/subscription_items/{item}"
+  }),
+  update: stripeMethod119({
+    method: "POST",
+    fullPath: "/v1/subscription_items/{item}"
+  }),
+  list: stripeMethod119({
+    method: "GET",
+    fullPath: "/v1/subscription_items",
+    methodType: "list"
+  }),
+  del: stripeMethod119({
+    method: "DELETE",
+    fullPath: "/v1/subscription_items/{item}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/SubscriptionSchedules.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod120 = StripeResource.method;
+var SubscriptionSchedules = StripeResource.extend({
+  create: stripeMethod120({
+    method: "POST",
+    fullPath: "/v1/subscription_schedules"
+  }),
+  retrieve: stripeMethod120({
+    method: "GET",
+    fullPath: "/v1/subscription_schedules/{schedule}"
+  }),
+  update: stripeMethod120({
+    method: "POST",
+    fullPath: "/v1/subscription_schedules/{schedule}"
+  }),
+  list: stripeMethod120({
+    method: "GET",
+    fullPath: "/v1/subscription_schedules",
+    methodType: "list"
+  }),
+  cancel: stripeMethod120({
+    method: "POST",
+    fullPath: "/v1/subscription_schedules/{schedule}/cancel"
+  }),
+  release: stripeMethod120({
+    method: "POST",
+    fullPath: "/v1/subscription_schedules/{schedule}/release"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Subscriptions.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod121 = StripeResource.method;
+var Subscriptions = StripeResource.extend({
+  create: stripeMethod121({ method: "POST", fullPath: "/v1/subscriptions" }),
+  retrieve: stripeMethod121({
+    method: "GET",
+    fullPath: "/v1/subscriptions/{subscription_exposed_id}"
+  }),
+  update: stripeMethod121({
+    method: "POST",
+    fullPath: "/v1/subscriptions/{subscription_exposed_id}"
+  }),
+  list: stripeMethod121({
+    method: "GET",
+    fullPath: "/v1/subscriptions",
+    methodType: "list"
+  }),
+  cancel: stripeMethod121({
+    method: "DELETE",
+    fullPath: "/v1/subscriptions/{subscription_exposed_id}"
+  }),
+  deleteDiscount: stripeMethod121({
+    method: "DELETE",
+    fullPath: "/v1/subscriptions/{subscription_exposed_id}/discount"
+  }),
+  resume: stripeMethod121({
+    method: "POST",
+    fullPath: "/v1/subscriptions/{subscription}/resume"
+  }),
+  search: stripeMethod121({
+    method: "GET",
+    fullPath: "/v1/subscriptions/search",
+    methodType: "search"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TaxCodes.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod122 = StripeResource.method;
+var TaxCodes = StripeResource.extend({
+  retrieve: stripeMethod122({ method: "GET", fullPath: "/v1/tax_codes/{id}" }),
+  list: stripeMethod122({
+    method: "GET",
+    fullPath: "/v1/tax_codes",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TaxIds.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod123 = StripeResource.method;
+var TaxIds = StripeResource.extend({
+  create: stripeMethod123({ method: "POST", fullPath: "/v1/tax_ids" }),
+  retrieve: stripeMethod123({ method: "GET", fullPath: "/v1/tax_ids/{id}" }),
+  list: stripeMethod123({
+    method: "GET",
+    fullPath: "/v1/tax_ids",
+    methodType: "list"
+  }),
+  del: stripeMethod123({ method: "DELETE", fullPath: "/v1/tax_ids/{id}" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/TaxRates.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod124 = StripeResource.method;
+var TaxRates = StripeResource.extend({
+  create: stripeMethod124({ method: "POST", fullPath: "/v1/tax_rates" }),
+  retrieve: stripeMethod124({ method: "GET", fullPath: "/v1/tax_rates/{tax_rate}" }),
+  update: stripeMethod124({ method: "POST", fullPath: "/v1/tax_rates/{tax_rate}" }),
+  list: stripeMethod124({
+    method: "GET",
+    fullPath: "/v1/tax_rates",
+    methodType: "list"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Tokens.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod125 = StripeResource.method;
+var Tokens2 = StripeResource.extend({
+  create: stripeMethod125({ method: "POST", fullPath: "/v1/tokens" }),
+  retrieve: stripeMethod125({ method: "GET", fullPath: "/v1/tokens/{token}" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Topups.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod126 = StripeResource.method;
+var Topups = StripeResource.extend({
+  create: stripeMethod126({ method: "POST", fullPath: "/v1/topups" }),
+  retrieve: stripeMethod126({ method: "GET", fullPath: "/v1/topups/{topup}" }),
+  update: stripeMethod126({ method: "POST", fullPath: "/v1/topups/{topup}" }),
+  list: stripeMethod126({
+    method: "GET",
+    fullPath: "/v1/topups",
+    methodType: "list"
+  }),
+  cancel: stripeMethod126({ method: "POST", fullPath: "/v1/topups/{topup}/cancel" })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/Transfers.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod127 = StripeResource.method;
+var Transfers = StripeResource.extend({
+  create: stripeMethod127({ method: "POST", fullPath: "/v1/transfers" }),
+  retrieve: stripeMethod127({ method: "GET", fullPath: "/v1/transfers/{transfer}" }),
+  update: stripeMethod127({ method: "POST", fullPath: "/v1/transfers/{transfer}" }),
+  list: stripeMethod127({
+    method: "GET",
+    fullPath: "/v1/transfers",
+    methodType: "list"
+  }),
+  createReversal: stripeMethod127({
+    method: "POST",
+    fullPath: "/v1/transfers/{id}/reversals"
+  }),
+  listReversals: stripeMethod127({
+    method: "GET",
+    fullPath: "/v1/transfers/{id}/reversals",
+    methodType: "list"
+  }),
+  retrieveReversal: stripeMethod127({
+    method: "GET",
+    fullPath: "/v1/transfers/{transfer}/reversals/{id}"
+  }),
+  updateReversal: stripeMethod127({
+    method: "POST",
+    fullPath: "/v1/transfers/{transfer}/reversals/{id}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources/WebhookEndpoints.js
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var stripeMethod128 = StripeResource.method;
+var WebhookEndpoints = StripeResource.extend({
+  create: stripeMethod128({ method: "POST", fullPath: "/v1/webhook_endpoints" }),
+  retrieve: stripeMethod128({
+    method: "GET",
+    fullPath: "/v1/webhook_endpoints/{webhook_endpoint}"
+  }),
+  update: stripeMethod128({
+    method: "POST",
+    fullPath: "/v1/webhook_endpoints/{webhook_endpoint}"
+  }),
+  list: stripeMethod128({
+    method: "GET",
+    fullPath: "/v1/webhook_endpoints",
+    methodType: "list"
+  }),
+  del: stripeMethod128({
+    method: "DELETE",
+    fullPath: "/v1/webhook_endpoints/{webhook_endpoint}"
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/resources.js
+var Apps = resourceNamespace("apps", { Secrets });
+var Billing = resourceNamespace("billing", {
+  Alerts,
+  CreditBalanceSummary,
+  CreditBalanceTransactions,
+  CreditGrants,
+  MeterEventAdjustments,
+  MeterEvents,
+  Meters
+});
+var BillingPortal = resourceNamespace("billingPortal", {
+  Configurations,
+  Sessions
+});
+var Checkout = resourceNamespace("checkout", {
+  Sessions: Sessions2
+});
+var Climate = resourceNamespace("climate", {
+  Orders,
+  Products,
+  Suppliers
+});
+var Entitlements = resourceNamespace("entitlements", {
+  ActiveEntitlements,
+  Features
+});
+var FinancialConnections = resourceNamespace("financialConnections", {
+  Accounts,
+  Sessions: Sessions3,
+  Transactions: Transactions2
+});
+var Forwarding = resourceNamespace("forwarding", {
+  Requests
+});
+var Identity = resourceNamespace("identity", {
+  VerificationReports,
+  VerificationSessions
+});
+var Issuing = resourceNamespace("issuing", {
+  Authorizations: Authorizations2,
+  Cardholders,
+  Cards: Cards2,
+  Disputes,
+  PersonalizationDesigns: PersonalizationDesigns2,
+  PhysicalBundles,
+  Tokens,
+  Transactions: Transactions3
+});
+var Radar = resourceNamespace("radar", {
+  EarlyFraudWarnings,
+  ValueListItems,
+  ValueLists
+});
+var Reporting = resourceNamespace("reporting", {
+  ReportRuns,
+  ReportTypes
+});
+var Sigma = resourceNamespace("sigma", {
+  ScheduledQueryRuns
+});
+var Tax = resourceNamespace("tax", {
+  Calculations,
+  Registrations,
+  Settings,
+  Transactions: Transactions4
+});
+var Terminal = resourceNamespace("terminal", {
+  Configurations: Configurations2,
+  ConnectionTokens,
+  Locations,
+  Readers: Readers2
+});
+var TestHelpers = resourceNamespace("testHelpers", {
+  ConfirmationTokens,
+  Customers,
+  Refunds,
+  TestClocks,
+  Issuing: resourceNamespace("issuing", {
+    Authorizations,
+    Cards,
+    PersonalizationDesigns,
+    Transactions
+  }),
+  Terminal: resourceNamespace("terminal", {
+    Readers
+  }),
+  Treasury: resourceNamespace("treasury", {
+    InboundTransfers,
+    OutboundPayments,
+    OutboundTransfers,
+    ReceivedCredits,
+    ReceivedDebits
+  })
+});
+var Treasury = resourceNamespace("treasury", {
+  CreditReversals,
+  DebitReversals,
+  FinancialAccounts,
+  InboundTransfers: InboundTransfers2,
+  OutboundPayments: OutboundPayments2,
+  OutboundTransfers: OutboundTransfers2,
+  ReceivedCredits: ReceivedCredits2,
+  ReceivedDebits: ReceivedDebits2,
+  TransactionEntries,
+  Transactions: Transactions5
+});
+var V2 = resourceNamespace("v2", {
+  Billing: resourceNamespace("billing", {
+    MeterEventAdjustments: MeterEventAdjustments2,
+    MeterEventSession,
+    MeterEventStream,
+    MeterEvents: MeterEvents2
+  }),
+  Core: resourceNamespace("core", {
+    EventDestinations,
+    Events
+  })
+});
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/stripe.core.js
+var DEFAULT_HOST = "api.stripe.com";
+var DEFAULT_PORT = "443";
+var DEFAULT_BASE_PATH = "/v1/";
+var DEFAULT_API_VERSION = ApiVersion;
+var DEFAULT_TIMEOUT = 8e4;
+var MAX_NETWORK_RETRY_DELAY_SEC = 5;
+var INITIAL_NETWORK_RETRY_DELAY_SEC = 0.5;
+var APP_INFO_PROPERTIES = ["name", "version", "url", "partner_id"];
+var ALLOWED_CONFIG_PROPERTIES = [
+  "authenticator",
+  "apiVersion",
+  "typescript",
+  "maxNetworkRetries",
+  "httpAgent",
+  "httpClient",
+  "timeout",
+  "host",
+  "port",
+  "protocol",
+  "telemetry",
+  "appInfo",
+  "stripeAccount",
+  "stripeContext"
+];
+var defaultRequestSenderFactory = /* @__PURE__ */ __name((stripe2) => new RequestSender(stripe2, StripeResource.MAX_BUFFERED_REQUEST_METRICS), "defaultRequestSenderFactory");
+function createStripe(platformFunctions, requestSender = defaultRequestSenderFactory) {
+  Stripe2.PACKAGE_VERSION = "18.0.0";
+  Stripe2.USER_AGENT = Object.assign({ bindings_version: Stripe2.PACKAGE_VERSION, lang: "node", publisher: "stripe", uname: null, typescript: false }, determineProcessUserAgentProperties());
+  Stripe2.StripeResource = StripeResource;
+  Stripe2.resources = resources_exports;
+  Stripe2.HttpClient = HttpClient;
+  Stripe2.HttpClientResponse = HttpClientResponse;
+  Stripe2.CryptoProvider = CryptoProvider;
+  Stripe2.webhooks = createWebhooks(platformFunctions);
+  function Stripe2(key, config3 = {}) {
+    if (!(this instanceof Stripe2)) {
+      return new Stripe2(key, config3);
+    }
+    const props = this._getPropsFromConfig(config3);
+    this._platformFunctions = platformFunctions;
+    Object.defineProperty(this, "_emitter", {
+      value: this._platformFunctions.createEmitter(),
+      enumerable: false,
+      configurable: false,
+      writable: false
+    });
+    this.VERSION = Stripe2.PACKAGE_VERSION;
+    this.on = this._emitter.on.bind(this._emitter);
+    this.once = this._emitter.once.bind(this._emitter);
+    this.off = this._emitter.removeListener.bind(this._emitter);
+    const agent = props.httpAgent || null;
+    this._api = {
+      host: props.host || DEFAULT_HOST,
+      port: props.port || DEFAULT_PORT,
+      protocol: props.protocol || "https",
+      basePath: DEFAULT_BASE_PATH,
+      version: props.apiVersion || DEFAULT_API_VERSION,
+      timeout: validateInteger("timeout", props.timeout, DEFAULT_TIMEOUT),
+      maxNetworkRetries: validateInteger("maxNetworkRetries", props.maxNetworkRetries, 2),
+      agent,
+      httpClient: props.httpClient || (agent ? this._platformFunctions.createNodeHttpClient(agent) : this._platformFunctions.createDefaultHttpClient()),
+      dev: false,
+      stripeAccount: props.stripeAccount || null,
+      stripeContext: props.stripeContext || null
+    };
+    const typescript = props.typescript || false;
+    if (typescript !== Stripe2.USER_AGENT.typescript) {
+      Stripe2.USER_AGENT.typescript = typescript;
+    }
+    if (props.appInfo) {
+      this._setAppInfo(props.appInfo);
+    }
+    this._prepResources();
+    this._setAuthenticator(key, props.authenticator);
+    this.errors = Error_exports;
+    this.webhooks = Stripe2.webhooks;
+    this._prevRequestMetrics = [];
+    this._enableTelemetry = props.telemetry !== false;
+    this._requestSender = requestSender(this);
+    this.StripeResource = Stripe2.StripeResource;
+  }
+  __name(Stripe2, "Stripe");
+  Stripe2.errors = Error_exports;
+  Stripe2.createNodeHttpClient = platformFunctions.createNodeHttpClient;
+  Stripe2.createFetchHttpClient = platformFunctions.createFetchHttpClient;
+  Stripe2.createNodeCryptoProvider = platformFunctions.createNodeCryptoProvider;
+  Stripe2.createSubtleCryptoProvider = platformFunctions.createSubtleCryptoProvider;
+  Stripe2.prototype = {
+    // Properties are set in the constructor above
+    _appInfo: void 0,
+    on: null,
+    off: null,
+    once: null,
+    VERSION: null,
+    StripeResource: null,
+    webhooks: null,
+    errors: null,
+    _api: null,
+    _prevRequestMetrics: null,
+    _emitter: null,
+    _enableTelemetry: null,
+    _requestSender: null,
+    _platformFunctions: null,
+    rawRequest(method, path, params, options) {
+      return this._requestSender._rawRequest(method, path, params, options);
+    },
+    /**
+     * @private
+     */
+    _setAuthenticator(key, authenticator) {
+      if (key && authenticator) {
+        throw new Error("Can't specify both apiKey and authenticator");
+      }
+      if (!key && !authenticator) {
+        throw new Error("Neither apiKey nor config.authenticator provided");
+      }
+      this._authenticator = key ? createApiKeyAuthenticator(key) : authenticator;
+    },
+    /**
+     * @private
+     * This may be removed in the future.
+     */
+    _setAppInfo(info3) {
+      if (info3 && typeof info3 !== "object") {
+        throw new Error("AppInfo must be an object.");
+      }
+      if (info3 && !info3.name) {
+        throw new Error("AppInfo.name is required");
+      }
+      info3 = info3 || {};
+      this._appInfo = APP_INFO_PROPERTIES.reduce(
+        (accum, prop) => {
+          if (typeof info3[prop] == "string") {
+            accum = accum || {};
+            accum[prop] = info3[prop];
+          }
+          return accum;
+        },
+        // @ts-ignore
+        void 0
+      );
+    },
+    /**
+     * @private
+     * This may be removed in the future.
+     */
+    _setApiField(key, value) {
+      this._api[key] = value;
+    },
+    /**
+     * @private
+     * Please open or upvote an issue at github.com/stripe/stripe-node
+     * if you use this, detailing your use-case.
+     *
+     * It may be deprecated and removed in the future.
+     */
+    getApiField(key) {
+      return this._api[key];
+    },
+    setClientId(clientId) {
+      this._clientId = clientId;
+    },
+    getClientId() {
+      return this._clientId;
+    },
+    /**
+     * @private
+     * Please open or upvote an issue at github.com/stripe/stripe-node
+     * if you use this, detailing your use-case.
+     *
+     * It may be deprecated and removed in the future.
+     */
+    getConstant: /* @__PURE__ */ __name((c) => {
+      switch (c) {
+        case "DEFAULT_HOST":
+          return DEFAULT_HOST;
+        case "DEFAULT_PORT":
+          return DEFAULT_PORT;
+        case "DEFAULT_BASE_PATH":
+          return DEFAULT_BASE_PATH;
+        case "DEFAULT_API_VERSION":
+          return DEFAULT_API_VERSION;
+        case "DEFAULT_TIMEOUT":
+          return DEFAULT_TIMEOUT;
+        case "MAX_NETWORK_RETRY_DELAY_SEC":
+          return MAX_NETWORK_RETRY_DELAY_SEC;
+        case "INITIAL_NETWORK_RETRY_DELAY_SEC":
+          return INITIAL_NETWORK_RETRY_DELAY_SEC;
+      }
+      return Stripe2[c];
+    }, "getConstant"),
+    getMaxNetworkRetries() {
+      return this.getApiField("maxNetworkRetries");
+    },
+    /**
+     * @private
+     * This may be removed in the future.
+     */
+    _setApiNumberField(prop, n, defaultVal) {
+      const val = validateInteger(prop, n, defaultVal);
+      this._setApiField(prop, val);
+    },
+    getMaxNetworkRetryDelay() {
+      return MAX_NETWORK_RETRY_DELAY_SEC;
+    },
+    getInitialNetworkRetryDelay() {
+      return INITIAL_NETWORK_RETRY_DELAY_SEC;
+    },
+    /**
+     * @private
+     * Please open or upvote an issue at github.com/stripe/stripe-node
+     * if you use this, detailing your use-case.
+     *
+     * It may be deprecated and removed in the future.
+     *
+     * Gets a JSON version of a User-Agent and uses a cached version for a slight
+     * speed advantage.
+     */
+    getClientUserAgent(cb) {
+      return this.getClientUserAgentSeeded(Stripe2.USER_AGENT, cb);
+    },
+    /**
+     * @private
+     * Please open or upvote an issue at github.com/stripe/stripe-node
+     * if you use this, detailing your use-case.
+     *
+     * It may be deprecated and removed in the future.
+     *
+     * Gets a JSON version of a User-Agent by encoding a seeded object and
+     * fetching a uname from the system.
+     */
+    getClientUserAgentSeeded(seed, cb) {
+      this._platformFunctions.getUname().then((uname) => {
+        var _a2;
+        const userAgent = {};
+        for (const field in seed) {
+          if (!Object.prototype.hasOwnProperty.call(seed, field)) {
+            continue;
+          }
+          userAgent[field] = encodeURIComponent((_a2 = seed[field]) !== null && _a2 !== void 0 ? _a2 : "null");
+        }
+        userAgent.uname = encodeURIComponent(uname || "UNKNOWN");
+        const client = this.getApiField("httpClient");
+        if (client) {
+          userAgent.httplib = encodeURIComponent(client.getClientName());
+        }
+        if (this._appInfo) {
+          userAgent.application = this._appInfo;
+        }
+        cb(JSON.stringify(userAgent));
+      });
+    },
+    /**
+     * @private
+     * Please open or upvote an issue at github.com/stripe/stripe-node
+     * if you use this, detailing your use-case.
+     *
+     * It may be deprecated and removed in the future.
+     */
+    getAppInfoAsString() {
+      if (!this._appInfo) {
+        return "";
+      }
+      let formatted = this._appInfo.name;
+      if (this._appInfo.version) {
+        formatted += `/${this._appInfo.version}`;
+      }
+      if (this._appInfo.url) {
+        formatted += ` (${this._appInfo.url})`;
+      }
+      return formatted;
+    },
+    getTelemetryEnabled() {
+      return this._enableTelemetry;
+    },
+    /**
+     * @private
+     * This may be removed in the future.
+     */
+    _prepResources() {
+      for (const name in resources_exports) {
+        if (!Object.prototype.hasOwnProperty.call(resources_exports, name)) {
+          continue;
+        }
+        this[pascalToCamelCase(name)] = new resources_exports[name](this);
+      }
+    },
+    /**
+     * @private
+     * This may be removed in the future.
+     */
+    _getPropsFromConfig(config3) {
+      if (!config3) {
+        return {};
+      }
+      const isString4 = typeof config3 === "string";
+      const isObject5 = config3 === Object(config3) && !Array.isArray(config3);
+      if (!isObject5 && !isString4) {
+        throw new Error("Config must either be an object or a string");
+      }
+      if (isString4) {
+        return {
+          apiVersion: config3
+        };
+      }
+      const values = Object.keys(config3).filter((value) => !ALLOWED_CONFIG_PROPERTIES.includes(value));
+      if (values.length > 0) {
+        throw new Error(`Config object may only contain the following: ${ALLOWED_CONFIG_PROPERTIES.join(", ")}`);
+      }
+      return config3;
+    },
+    parseThinEvent(payload, header, secret, tolerance, cryptoProvider, receivedAt) {
+      return this.webhooks.constructEvent(payload, header, secret, tolerance, cryptoProvider, receivedAt);
+    }
+  };
+  return Stripe2;
+}
+__name(createStripe, "createStripe");
+
+// node_modules/.pnpm/stripe@18.0.0/node_modules/stripe/esm/stripe.esm.worker.js
+var Stripe = createStripe(new WebPlatformFunctions());
+
+// src/modules/auth/auth-stripe-config.ts
+var stripeClient = new Stripe(env_default.STRIPE_SECRET_KEY);
+var stripePlugin = stripe({
+  stripeClient,
+  stripeWebhookSecret: env_default.STRIPE_WEBHOOK_SECRET,
+  createCustomerOnSignUp: true
+});
+
 // src/modules/auth/auth.ts
-initDb(process.env);
-var { db } = getDb();
 var auth = betterAuth({
-  database: drizzleAdapter(db, {
+  database: drizzleAdapter(() => getDb().db, {
     provider: "sqlite"
   }),
+  emailAndPassword: {
+    enabled: true
+  },
   advanced: {
     defaultCookieAttributes: {
       sameSite: "none",
@@ -54507,7 +65532,11 @@ var auth = betterAuth({
       partitioned: true
       // Recommended for new browser standards
     }
-  }
+  },
+  plugins: [
+    stripePlugin,
+    openAPI()
+  ]
 });
 
 // src/modules/auth/index.ts
@@ -54729,10 +65758,15 @@ var package_default = {
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:migrate": "drizzle-kit migrate",
     "drizzle:studio": "drizzle-kit studio",
-    "cloudflare:deploy": "wrangler deploy --minify"
+    "auth:generate": "npx @better-auth/cli generate --config src/modules/auth/auth.ts --output src/modules/auth/auth-schema.ts",
+    "cloudflare:deploy": "wrangler deploy --minify",
+    "stripe:login": "stripe login",
+    "stripe:listen": "stripe listen --forward-to localhost:8080/api/auth/stripe/webhook",
+    "stripe:trigger": "stripe trigger --help"
   },
   dependencies: {
     "@asteasolutions/zod-to-openapi": "^7.3.0",
+    "@better-auth/stripe": "^1.2.5",
     "@hono/node-server": "^1.13.7",
     "@hono/zod-openapi": "^0.18.3",
     "@libsql/client": "^0.14.0",
@@ -54746,6 +65780,7 @@ var package_default = {
     "hono-pino": "^0.7.0",
     pino: "^9.6.0",
     "pino-pretty": "^13.0.0",
+    stripe: "^18.0.0",
     zod: "^3.24.1"
   },
   devDependencies: {
@@ -54796,40 +65831,6 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-
-// src/env.ts
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var import_dotenv = __toESM(require_main(), 1);
-var import_dotenv_expand = __toESM(require_main2(), 1);
-import path from "node:path";
-(0, import_dotenv_expand.expand)((0, import_dotenv.config)({
-  path: path.resolve(
-    process.cwd(),
-    false ? ".env.test" : ".env"
-  )
-}));
-var EnvSchema = z.object({
-  NODE_ENV: z.string().default("development"),
-  PORT: z.coerce.number().default(9999),
-  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
-  DB: z.any(),
-  BINDING_NAME: z.string().default("DB"),
-  CLOUDFLARE_DATABASE_ID: z.string().default(""),
-  CLOUDFLARE_ACCOUNT_ID: z.string().default(""),
-  CLOUDFLARE_TOKEN: z.string().default("")
-});
-function parseEnv(data) {
-  const { data: env4, error: error4 } = EnvSchema.safeParse(data);
-  if (error4) {
-    const errorMessage = `\u274C Invalid env - ${Object.entries(error4.flatten().fieldErrors).map(([key, errors]) => `${key}: ${errors.join(",")}`).join(" | ")}`;
-    throw new Error(errorMessage);
-  }
-  return env4;
-}
-__name(parseEnv, "parseEnv");
 
 // src/lib/stoker/middlewares/not-found.ts
 init_modules_watch_stub();
@@ -55103,11 +66104,11 @@ init_performance2();
 var onError = /* @__PURE__ */ __name((err, c) => {
   const currentStatus = "status" in err ? err.status : c.newResponse(null).status;
   const statusCode = currentStatus !== OK3 ? currentStatus : INTERNAL_SERVER_ERROR;
-  const env4 = c.env?.NODE_ENV || "development";
+  const env5 = c.env?.NODE_ENV || "development";
   return c.json(
     {
       message: err.message,
-      stack: env4 === "production" ? void 0 : err.stack
+      stack: env5 === "production" ? void 0 : err.stack
     },
     // eslint-disable-next-line ts/ban-ts-comment
     // @ts-expect-error
@@ -55192,7 +66193,7 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var env3 = /* @__PURE__ */ __name((c, runtime) => {
+var env4 = /* @__PURE__ */ __name((c, runtime) => {
   const global2 = globalThis;
   const globalEnv = global2?.process?.env;
   runtime ??= getRuntimeKey();
@@ -55236,9 +66237,9 @@ var getRuntimeKey = /* @__PURE__ */ __name(() => {
   }
   return "other";
 }, "getRuntimeKey");
-var checkUserAgentEquals = /* @__PURE__ */ __name((platform3) => {
+var checkUserAgentEquals = /* @__PURE__ */ __name((platform2) => {
   const userAgent = "Cloudflare-Workers";
-  return userAgent.startsWith(platform3);
+  return userAgent.startsWith(platform2);
 }, "checkUserAgentEquals");
 
 // node_modules/.pnpm/hono-pino@0.7.0_hono@4.6.15_pino@9.6.0/node_modules/hono-pino/dist/index.js
@@ -55391,7 +66392,7 @@ var createStaticRootLogger = /* @__PURE__ */ __name((opt) => {
 }, "createStaticRootLogger");
 var parseDynamicRootLogger = /* @__PURE__ */ __name((opt, c) => {
   if (opt === void 0) {
-    const { LOG_LEVEL } = env3(c);
+    const { LOG_LEVEL } = env4(c);
     return [
       void 0,
       {
@@ -55407,8 +66408,106 @@ var parseDynamicRootLogger = /* @__PURE__ */ __name((opt, c) => {
 var getDefaultRootLogger = /* @__PURE__ */ __name(() => _defaultRootLogger ??= (0, import_pino.pino)(), "getDefaultRootLogger");
 var _defaultRootLogger = void 0;
 
+// node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/node.mjs
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var webcrypto = new Proxy(globalThis.crypto, { get(_, key) {
+  if (key === "CryptoKey") {
+    return globalThis.CryptoKey;
+  }
+  if (typeof globalThis.crypto[key] === "function") {
+    return globalThis.crypto[key].bind(globalThis.crypto);
+  }
+  return globalThis.crypto[key];
+} });
+
+// node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs
+var workerdCrypto = process.getBuiltinModule("node:crypto");
+var {
+  Certificate,
+  checkPrime,
+  checkPrimeSync,
+  // @ts-expect-error
+  Cipheriv,
+  createCipheriv,
+  createDecipheriv,
+  createDiffieHellman,
+  createDiffieHellmanGroup,
+  createECDH,
+  createHash: createHash2,
+  createHmac,
+  createPrivateKey,
+  createPublicKey,
+  createSecretKey,
+  createSign,
+  createVerify,
+  // @ts-expect-error
+  Decipheriv,
+  diffieHellman,
+  DiffieHellman,
+  DiffieHellmanGroup,
+  ECDH,
+  fips,
+  generateKey: generateKey2,
+  generateKeyPair,
+  generateKeyPairSync,
+  generateKeySync,
+  generatePrime,
+  generatePrimeSync,
+  getCipherInfo,
+  getCiphers,
+  getCurves,
+  getDiffieHellman,
+  getFips,
+  getHashes,
+  getRandomValues: getRandomValues2,
+  hash,
+  Hash: Hash2,
+  hkdf,
+  hkdfSync,
+  Hmac,
+  KeyObject,
+  pbkdf2: pbkdf22,
+  pbkdf2Sync,
+  privateDecrypt,
+  privateEncrypt,
+  publicDecrypt,
+  publicEncrypt,
+  randomBytes,
+  randomFill,
+  randomFillSync,
+  randomInt,
+  randomUUID,
+  scrypt,
+  scryptSync,
+  secureHeapUsed,
+  setEngine,
+  setFips,
+  sign: sign2,
+  Sign,
+  subtle: subtle2,
+  timingSafeEqual,
+  verify: verify2,
+  Verify,
+  X509Certificate
+} = workerdCrypto;
+var webcrypto2 = {
+  // @ts-expect-error
+  CryptoKey: webcrypto.CryptoKey,
+  getRandomValues: getRandomValues2,
+  randomUUID,
+  subtle: subtle2
+};
+
 // src/modules/base/middlewares/pino-logger.ts
-init_crypto2();
 var import_pino2 = __toESM(require_browser(), 1);
 var import_pino_pretty = __toESM(require_pino_pretty(), 1);
 function pinoLogger2() {
@@ -55433,9 +66532,7 @@ function createRouter3() {
 __name(createRouter3, "createRouter");
 function createApp() {
   const app2 = createRouter3();
-  app2.use((c, next) => {
-    c.env = parseEnv(Object.assign(c.env || {}, process.env));
-    initDb(c.env);
+  app2.use("*", (c, next) => {
     return next();
   });
   app2.use("*", authMiddleware);
@@ -55466,11 +66563,11 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-function jsonContent(schema2, description) {
+function jsonContent(schema3, description) {
   return {
     content: {
       "application/json": {
-        schema: schema2
+        schema: schema3
       }
     },
     description
@@ -55544,22 +66641,47 @@ var ZOD_ERROR_CODES = {
 };
 var notFoundSchema = create_message_object_default(HttpStatusPhrases.NOT_FOUND);
 
+// src/modules/base/errors/no-updates.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var noUpdatesErrorHandler = /* @__PURE__ */ __name((_err, c) => {
+  return c.json(
+    {
+      success: false,
+      error: {
+        issues: [
+          {
+            code: ZOD_ERROR_CODES.INVALID_UPDATES,
+            path: [],
+            message: ZOD_ERROR_MESSAGES.NO_UPDATES
+          }
+        ],
+        name: "ZodError"
+      }
+    },
+    HttpStatusCodes.UNPROCESSABLE_ENTITY
+  );
+}, "noUpdatesErrorHandler");
+var no_updates_default = noUpdatesErrorHandler;
+
 // src/modules/tasks/handlers.ts
 var list = /* @__PURE__ */ __name(async (c) => {
-  const { db: db2 } = getDb();
-  const tasksList = await db2.query.tasks.findMany();
+  const { db } = getDb();
+  const tasksList = await db.query.tasks.findMany();
   return c.json(tasksList);
 }, "list");
 var create = /* @__PURE__ */ __name(async (c) => {
-  const { db: db2 } = getDb();
+  const { db } = getDb();
   const task = c.req.valid("json");
-  const [inserted] = await db2.insert(tasks).values(task).returning();
+  const [inserted] = await db.insert(tasks).values(task).returning();
   return c.json(inserted, HttpStatusCodes.OK);
 }, "create");
 var getOne = /* @__PURE__ */ __name(async (c) => {
-  const { db: db2 } = getDb();
+  const { db } = getDb();
   const { id } = c.req.valid("param");
-  const task = await db2.query.tasks.findFirst({
+  const task = await db.query.tasks.findFirst({
     where: eq(tasks.id, id)
   });
   if (!task) {
@@ -55568,37 +66690,22 @@ var getOne = /* @__PURE__ */ __name(async (c) => {
   return c.json(task);
 }, "getOne");
 var patch = /* @__PURE__ */ __name(async (c) => {
-  const { db: db2 } = getDb();
+  const { db } = getDb();
   const { id } = c.req.valid("param");
   const updates = c.req.valid("json");
   if (Object.keys(updates).length === 0) {
-    return c.json(
-      {
-        success: false,
-        error: {
-          issues: [
-            {
-              code: ZOD_ERROR_CODES.INVALID_UPDATES,
-              path: [],
-              message: ZOD_ERROR_MESSAGES.NO_UPDATES
-            }
-          ],
-          name: "ZodError"
-        }
-      },
-      HttpStatusCodes.UNPROCESSABLE_ENTITY
-    );
+    return no_updates_default(new Error(ZOD_ERROR_MESSAGES.NO_UPDATES), c);
   }
-  const [task] = await db2.update(tasks).set(updates).where(eq(tasks.id, id)).returning();
+  const [task] = await db.update(tasks).set(updates).where(eq(tasks.id, id)).returning();
   if (!task) {
     return not_found_default(c);
   }
   return c.json(task, HttpStatusCodes.OK);
 }, "patch");
 var remove = /* @__PURE__ */ __name(async (c) => {
-  const { db: db2 } = getDb();
+  const { db } = getDb();
   const { id } = c.req.valid("param");
-  const deleted = await db2.delete(tasks).where(eq(tasks.id, id)).returning();
+  const deleted = await db.delete(tasks).where(eq(tasks.id, id)).returning();
   if (deleted.length === 0) {
     return not_found_default(c);
   }
@@ -55616,9 +66723,9 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-function jsonContentRequired(schema2, description) {
+function jsonContentRequired(schema3, description) {
   return {
-    ...json_content_default(schema2, description),
+    ...json_content_default(schema3, description),
     required: true
   };
 }
@@ -55630,9 +66737,9 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-function createErrorSchema(schema2) {
-  const { error: error4 } = schema2.safeParse(
-    schema2._def.typeName === z.ZodFirstPartyTypeKind.ZodArray ? [] : {}
+function createErrorSchema(schema3) {
+  const { error: error4 } = schema3.safeParse(
+    schema3._def.typeName === z.ZodFirstPartyTypeKind.ZodArray ? [] : {}
   );
   return z.object({
     success: z.boolean().openapi({
@@ -55801,9 +66908,9 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var drainBody = /* @__PURE__ */ __name(async (request, env4, _ctx, middlewareCtx) => {
+var drainBody = /* @__PURE__ */ __name(async (request, env5, _ctx, middlewareCtx) => {
   try {
-    return await middlewareCtx.next(request, env4);
+    return await middlewareCtx.next(request, env5);
   } finally {
     try {
       if (request.body !== null && !request.bodyUsed) {
@@ -55832,9 +66939,9 @@ function reduceError(e) {
   };
 }
 __name(reduceError, "reduceError");
-var jsonError = /* @__PURE__ */ __name(async (request, env4, _ctx, middlewareCtx) => {
+var jsonError = /* @__PURE__ */ __name(async (request, env5, _ctx, middlewareCtx) => {
   try {
-    return await middlewareCtx.next(request, env4);
+    return await middlewareCtx.next(request, env5);
   } catch (e) {
     const error4 = reduceError(e);
     return Response.json(error4, {
@@ -55845,7 +66952,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env4, _ctx, middlewareCtx
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// .wrangler/tmp/bundle-7rzM61/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-LSo1T3/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -55862,7 +66969,7 @@ function __facade_register__(...args) {
   __facade_middleware__.push(...args.flat());
 }
 __name(__facade_register__, "__facade_register__");
-function __facade_invokeChain__(request, env4, ctx, dispatch, middlewareChain) {
+function __facade_invokeChain__(request, env5, ctx, dispatch, middlewareChain) {
   const [head, ...tail] = middlewareChain;
   const middlewareCtx = {
     dispatch,
@@ -55870,18 +66977,18 @@ function __facade_invokeChain__(request, env4, ctx, dispatch, middlewareChain) {
       return __facade_invokeChain__(newRequest, newEnv, ctx, dispatch, tail);
     }
   };
-  return head(request, env4, ctx, middlewareCtx);
+  return head(request, env5, ctx, middlewareCtx);
 }
 __name(__facade_invokeChain__, "__facade_invokeChain__");
-function __facade_invoke__(request, env4, ctx, dispatch, finalMiddleware) {
-  return __facade_invokeChain__(request, env4, ctx, dispatch, [
+function __facade_invoke__(request, env5, ctx, dispatch, finalMiddleware) {
+  return __facade_invokeChain__(request, env5, ctx, dispatch, [
     ...__facade_middleware__,
     finalMiddleware
   ]);
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// .wrangler/tmp/bundle-7rzM61/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-LSo1T3/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
@@ -55906,27 +67013,27 @@ function wrapExportedHandler(worker) {
   for (const middleware of __INTERNAL_WRANGLER_MIDDLEWARE__) {
     __facade_register__(middleware);
   }
-  const fetchDispatcher = /* @__PURE__ */ __name(function(request, env4, ctx) {
+  const fetchDispatcher = /* @__PURE__ */ __name(function(request, env5, ctx) {
     if (worker.fetch === void 0) {
       throw new Error("Handler does not export a fetch() function.");
     }
-    return worker.fetch(request, env4, ctx);
+    return worker.fetch(request, env5, ctx);
   }, "fetchDispatcher");
   return {
     ...worker,
-    fetch(request, env4, ctx) {
-      const dispatcher = /* @__PURE__ */ __name(function(type2, init2) {
-        if (type2 === "scheduled" && worker.scheduled !== void 0) {
+    fetch(request, env5, ctx) {
+      const dispatcher = /* @__PURE__ */ __name(function(type, init2) {
+        if (type === "scheduled" && worker.scheduled !== void 0) {
           const controller = new __Facade_ScheduledController__(
             Date.now(),
             init2.cron ?? "",
             () => {
             }
           );
-          return worker.scheduled(controller, env4, ctx);
+          return worker.scheduled(controller, env5, ctx);
         }
       }, "dispatcher");
-      return __facade_invoke__(request, env4, ctx, dispatcher, fetchDispatcher);
+      return __facade_invoke__(request, env5, ctx, dispatcher, fetchDispatcher);
     }
   };
 }
@@ -55939,16 +67046,16 @@ function wrapWorkerEntrypoint(klass) {
     __facade_register__(middleware);
   }
   return class extends klass {
-    #fetchDispatcher = /* @__PURE__ */ __name((request, env4, ctx) => {
-      this.env = env4;
+    #fetchDispatcher = /* @__PURE__ */ __name((request, env5, ctx) => {
+      this.env = env5;
       this.ctx = ctx;
       if (super.fetch === void 0) {
         throw new Error("Entrypoint class does not define a fetch() function.");
       }
       return super.fetch(request);
     }, "#fetchDispatcher");
-    #dispatcher = /* @__PURE__ */ __name((type2, init2) => {
-      if (type2 === "scheduled" && super.scheduled !== void 0) {
+    #dispatcher = /* @__PURE__ */ __name((type, init2) => {
+      if (type === "scheduled" && super.scheduled !== void 0) {
         const controller = new __Facade_ScheduledController__(
           Date.now(),
           init2.cron ?? "",

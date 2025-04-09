@@ -2,12 +2,12 @@
 import { testClient } from 'hono/testing';
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
-import * as HttpStatusPhrases from 'stoker/http-status-phrases';
 import { afterAll, beforeAll, describe, expect, expectTypeOf, it } from 'vitest';
 import { ZodIssueCode } from 'zod';
 
 import env from '@/env-runtime';
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@/lib/constants';
+import { HttpStatusPhrases } from '@/lib/hono-helpers/http-status-codes';
 import createApp from '@/modules/base/create-app';
 
 import router from './index';
@@ -16,6 +16,7 @@ if (env.NODE_ENV !== 'test') {
   throw new Error('NODE_ENV must be \'test\'');
 }
 
+// @ts-ignore
 const client = testClient(createApp().route('/', router));
 
 describe('tasks routes', () => {
@@ -29,7 +30,6 @@ describe('tasks routes', () => {
 
   it('post /tasks validates the body when creating', async () => {
     const response = await client.tasks.$post({
-      // @ts-expect-error
       json: {
         done: false,
       },
@@ -65,6 +65,7 @@ describe('tasks routes', () => {
     expect(response.status).toBe(200);
     if (response.status === 200) {
       const json = await response.json();
+      // @ts-ignore
       expectTypeOf(json).toBeArray();
       expect(json.length).toBe(1);
     }
@@ -73,7 +74,6 @@ describe('tasks routes', () => {
   it('get /tasks/{id} validates the id param', async () => {
     const response = await client.tasks[':id'].$get({
       param: {
-        // @ts-expect-error
         id: 'wat',
       },
     });
@@ -132,7 +132,6 @@ describe('tasks routes', () => {
   it('patch /tasks/{id} validates the id param', async () => {
     const response = await client.tasks[':id'].$patch({
       param: {
-        // @ts-expect-error
         id: 'wat',
       },
       json: {},
@@ -179,7 +178,6 @@ describe('tasks routes', () => {
   it('delete /tasks/{id} validates the id when deleting', async () => {
     const response = await client.tasks[':id'].$delete({
       param: {
-        // @ts-expect-error
         id: 'wat',
       },
     });
