@@ -2,6 +2,8 @@ import { OpenAPIHono } from '@hono/zod-openapi';
 
 import type { AppBindings, AppOpenAPI } from '@/modules/base/types';
 
+import { initDb } from '@/db';
+import { parseEnv } from '@/env';
 import notFound from '@/lib/stoker/middlewares/not-found';
 import onError from '@/lib/stoker/middlewares/on-error';
 import serveEmojiFavicon from '@/lib/stoker/middlewares/serve-emoji-favicon';
@@ -20,6 +22,9 @@ export default function createApp() {
   const app = createRouter();
   app.use('*', (c, next) => {
     // Parse environment from context
+    c.env = parseEnv(c.env);
+
+    initDb(c.env);
 
     return next();
   });

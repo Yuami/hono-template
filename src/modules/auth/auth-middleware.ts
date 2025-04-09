@@ -1,13 +1,11 @@
 import type { MiddlewareHandler } from 'hono';
 
-import { auth } from './auth';
+import type { AppBindings } from '@/modules/base/types';
 
-export const authMiddleware: MiddlewareHandler<{
-  Variables: {
-    user: typeof auth.$Infer.Session.user | null;
-    session: typeof auth.$Infer.Session.session | null;
-  };
-}> = async (c, next) => {
+import { getAuth } from './auth';
+
+export const authMiddleware: MiddlewareHandler<AppBindings> = async (c, next) => {
+  const auth = getAuth(c.env);
   const session = await auth.api.getSession({ headers: c.req.raw.headers });
 
   if (!session) {

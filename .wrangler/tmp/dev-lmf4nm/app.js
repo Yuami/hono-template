@@ -191,7 +191,7 @@ var init_performance = __esm({
       getEntriesByName(_name, _type) {
         return [];
       }
-      getEntriesByType(type) {
+      getEntriesByType(type2) {
         return [];
       }
     };
@@ -237,11 +237,11 @@ var init_performance = __esm({
       getEntries() {
         return this._entries;
       }
-      getEntriesByName(name, type) {
-        return this._entries.filter((e) => e.name === name && (!type || e.entryType === type));
+      getEntriesByName(name, type2) {
+        return this._entries.filter((e) => e.name === name && (!type2 || e.entryType === type2));
       }
-      getEntriesByType(type) {
-        return this._entries.filter((e) => e.entryType === type);
+      getEntriesByType(type2) {
+        return this._entries.filter((e) => e.entryType === type2);
       }
       mark(name, options) {
         const entry = new PerformanceMark(name, options);
@@ -271,10 +271,10 @@ var init_performance = __esm({
       setResourceTimingBufferSize(maxSize) {
         this._resourceTimingBufferSize = maxSize;
       }
-      addEventListener(type, listener, options) {
+      addEventListener(type2, listener, options) {
         throw createNotImplementedError("Performance.addEventListener");
       }
-      removeEventListener(type, listener, options) {
+      removeEventListener(type2, listener, options) {
         throw createNotImplementedError("Performance.removeEventListener");
       }
       dispatchEvent(event) {
@@ -532,10 +532,10 @@ var init_write_stream = __esm({
         callback && callback();
         return false;
       }
-      getColorDepth(env5) {
+      getColorDepth(env4) {
         return 1;
       }
-      hasColors(count4, env5) {
+      hasColors(count4, env4) {
         return false;
       }
       getWindowSize() {
@@ -634,8 +634,8 @@ var init_process = __esm({
           }
         }
       }
-      emitWarning(warning, type, code) {
-        console.warn(`${code ? `[${code}] ` : ""}${type ? `${type}: ` : ""}${warning}`);
+      emitWarning(warning, type2, code) {
+        console.warn(`${code ? `[${code}] ` : ""}${type2 ? `${type2}: ` : ""}${warning}`);
       }
       emit(...args) {
         return super.emit(...args);
@@ -1609,13 +1609,13 @@ var require_object_inspect = __commonJS({
       return "Object(" + str + ")";
     }
     __name(markBoxed, "markBoxed");
-    function weakCollectionOf(type) {
-      return type + " { ? }";
+    function weakCollectionOf(type2) {
+      return type2 + " { ? }";
     }
     __name(weakCollectionOf, "weakCollectionOf");
-    function collectionOf(type, size, entries, indent) {
+    function collectionOf(type2, size, entries, indent) {
       var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ", ");
-      return type + " (" + size + ") {" + joinedEntries + "}";
+      return type2 + " (" + size + ") {" + joinedEntries + "}";
     }
     __name(collectionOf, "collectionOf");
     function singleLineValues(xs) {
@@ -3727,6 +3727,1594 @@ var require_lib = __commonJS({
   }
 });
 
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs
+var access, copyFile, cp, open, opendir, rename, truncate, rm, rmdir, mkdir, readdir, readlink, symlink, lstat, stat, link, unlink, chmod, lchmod, lchown, chown, utimes, lutimes, realpath, mkdtemp, writeFile, appendFile, readFile, watch, statfs, glob;
+var init_promises = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    access = /* @__PURE__ */ notImplemented("fs.access");
+    copyFile = /* @__PURE__ */ notImplemented("fs.copyFile");
+    cp = /* @__PURE__ */ notImplemented("fs.cp");
+    open = /* @__PURE__ */ notImplemented("fs.open");
+    opendir = /* @__PURE__ */ notImplemented("fs.opendir");
+    rename = /* @__PURE__ */ notImplemented("fs.rename");
+    truncate = /* @__PURE__ */ notImplemented("fs.truncate");
+    rm = /* @__PURE__ */ notImplemented("fs.rm");
+    rmdir = /* @__PURE__ */ notImplemented("fs.rmdir");
+    mkdir = /* @__PURE__ */ notImplemented("fs.mkdir");
+    readdir = /* @__PURE__ */ notImplemented("fs.readdir");
+    readlink = /* @__PURE__ */ notImplemented("fs.readlink");
+    symlink = /* @__PURE__ */ notImplemented("fs.symlink");
+    lstat = /* @__PURE__ */ notImplemented("fs.lstat");
+    stat = /* @__PURE__ */ notImplemented("fs.stat");
+    link = /* @__PURE__ */ notImplemented("fs.link");
+    unlink = /* @__PURE__ */ notImplemented("fs.unlink");
+    chmod = /* @__PURE__ */ notImplemented("fs.chmod");
+    lchmod = /* @__PURE__ */ notImplemented("fs.lchmod");
+    lchown = /* @__PURE__ */ notImplemented("fs.lchown");
+    chown = /* @__PURE__ */ notImplemented("fs.chown");
+    utimes = /* @__PURE__ */ notImplemented("fs.utimes");
+    lutimes = /* @__PURE__ */ notImplemented("fs.lutimes");
+    realpath = /* @__PURE__ */ notImplemented("fs.realpath");
+    mkdtemp = /* @__PURE__ */ notImplemented("fs.mkdtemp");
+    writeFile = /* @__PURE__ */ notImplemented("fs.writeFile");
+    appendFile = /* @__PURE__ */ notImplemented("fs.appendFile");
+    readFile = /* @__PURE__ */ notImplemented("fs.readFile");
+    watch = /* @__PURE__ */ notImplemented("fs.watch");
+    statfs = /* @__PURE__ */ notImplemented("fs.statfs");
+    glob = /* @__PURE__ */ notImplemented("fs.glob");
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs
+var constants_exports = {};
+__export(constants_exports, {
+  COPYFILE_EXCL: () => COPYFILE_EXCL,
+  COPYFILE_FICLONE: () => COPYFILE_FICLONE,
+  COPYFILE_FICLONE_FORCE: () => COPYFILE_FICLONE_FORCE,
+  EXTENSIONLESS_FORMAT_JAVASCRIPT: () => EXTENSIONLESS_FORMAT_JAVASCRIPT,
+  EXTENSIONLESS_FORMAT_WASM: () => EXTENSIONLESS_FORMAT_WASM,
+  F_OK: () => F_OK,
+  O_APPEND: () => O_APPEND,
+  O_CREAT: () => O_CREAT,
+  O_DIRECT: () => O_DIRECT,
+  O_DIRECTORY: () => O_DIRECTORY,
+  O_DSYNC: () => O_DSYNC,
+  O_EXCL: () => O_EXCL,
+  O_NOATIME: () => O_NOATIME,
+  O_NOCTTY: () => O_NOCTTY,
+  O_NOFOLLOW: () => O_NOFOLLOW,
+  O_NONBLOCK: () => O_NONBLOCK,
+  O_RDONLY: () => O_RDONLY,
+  O_RDWR: () => O_RDWR,
+  O_SYNC: () => O_SYNC,
+  O_TRUNC: () => O_TRUNC,
+  O_WRONLY: () => O_WRONLY,
+  R_OK: () => R_OK,
+  S_IFBLK: () => S_IFBLK,
+  S_IFCHR: () => S_IFCHR,
+  S_IFDIR: () => S_IFDIR,
+  S_IFIFO: () => S_IFIFO,
+  S_IFLNK: () => S_IFLNK,
+  S_IFMT: () => S_IFMT,
+  S_IFREG: () => S_IFREG,
+  S_IFSOCK: () => S_IFSOCK,
+  S_IRGRP: () => S_IRGRP,
+  S_IROTH: () => S_IROTH,
+  S_IRUSR: () => S_IRUSR,
+  S_IRWXG: () => S_IRWXG,
+  S_IRWXO: () => S_IRWXO,
+  S_IRWXU: () => S_IRWXU,
+  S_IWGRP: () => S_IWGRP,
+  S_IWOTH: () => S_IWOTH,
+  S_IWUSR: () => S_IWUSR,
+  S_IXGRP: () => S_IXGRP,
+  S_IXOTH: () => S_IXOTH,
+  S_IXUSR: () => S_IXUSR,
+  UV_DIRENT_BLOCK: () => UV_DIRENT_BLOCK,
+  UV_DIRENT_CHAR: () => UV_DIRENT_CHAR,
+  UV_DIRENT_DIR: () => UV_DIRENT_DIR,
+  UV_DIRENT_FIFO: () => UV_DIRENT_FIFO,
+  UV_DIRENT_FILE: () => UV_DIRENT_FILE,
+  UV_DIRENT_LINK: () => UV_DIRENT_LINK,
+  UV_DIRENT_SOCKET: () => UV_DIRENT_SOCKET,
+  UV_DIRENT_UNKNOWN: () => UV_DIRENT_UNKNOWN,
+  UV_FS_COPYFILE_EXCL: () => UV_FS_COPYFILE_EXCL,
+  UV_FS_COPYFILE_FICLONE: () => UV_FS_COPYFILE_FICLONE,
+  UV_FS_COPYFILE_FICLONE_FORCE: () => UV_FS_COPYFILE_FICLONE_FORCE,
+  UV_FS_O_FILEMAP: () => UV_FS_O_FILEMAP,
+  UV_FS_SYMLINK_DIR: () => UV_FS_SYMLINK_DIR,
+  UV_FS_SYMLINK_JUNCTION: () => UV_FS_SYMLINK_JUNCTION,
+  W_OK: () => W_OK,
+  X_OK: () => X_OK
+});
+var UV_FS_SYMLINK_DIR, UV_FS_SYMLINK_JUNCTION, O_RDONLY, O_WRONLY, O_RDWR, UV_DIRENT_UNKNOWN, UV_DIRENT_FILE, UV_DIRENT_DIR, UV_DIRENT_LINK, UV_DIRENT_FIFO, UV_DIRENT_SOCKET, UV_DIRENT_CHAR, UV_DIRENT_BLOCK, EXTENSIONLESS_FORMAT_JAVASCRIPT, EXTENSIONLESS_FORMAT_WASM, S_IFMT, S_IFREG, S_IFDIR, S_IFCHR, S_IFBLK, S_IFIFO, S_IFLNK, S_IFSOCK, O_CREAT, O_EXCL, UV_FS_O_FILEMAP, O_NOCTTY, O_TRUNC, O_APPEND, O_DIRECTORY, O_NOATIME, O_NOFOLLOW, O_SYNC, O_DSYNC, O_DIRECT, O_NONBLOCK, S_IRWXU, S_IRUSR, S_IWUSR, S_IXUSR, S_IRWXG, S_IRGRP, S_IWGRP, S_IXGRP, S_IRWXO, S_IROTH, S_IWOTH, S_IXOTH, F_OK, R_OK, W_OK, X_OK, UV_FS_COPYFILE_EXCL, COPYFILE_EXCL, UV_FS_COPYFILE_FICLONE, COPYFILE_FICLONE, UV_FS_COPYFILE_FICLONE_FORCE, COPYFILE_FICLONE_FORCE;
+var init_constants = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    UV_FS_SYMLINK_DIR = 1;
+    UV_FS_SYMLINK_JUNCTION = 2;
+    O_RDONLY = 0;
+    O_WRONLY = 1;
+    O_RDWR = 2;
+    UV_DIRENT_UNKNOWN = 0;
+    UV_DIRENT_FILE = 1;
+    UV_DIRENT_DIR = 2;
+    UV_DIRENT_LINK = 3;
+    UV_DIRENT_FIFO = 4;
+    UV_DIRENT_SOCKET = 5;
+    UV_DIRENT_CHAR = 6;
+    UV_DIRENT_BLOCK = 7;
+    EXTENSIONLESS_FORMAT_JAVASCRIPT = 0;
+    EXTENSIONLESS_FORMAT_WASM = 1;
+    S_IFMT = 61440;
+    S_IFREG = 32768;
+    S_IFDIR = 16384;
+    S_IFCHR = 8192;
+    S_IFBLK = 24576;
+    S_IFIFO = 4096;
+    S_IFLNK = 40960;
+    S_IFSOCK = 49152;
+    O_CREAT = 64;
+    O_EXCL = 128;
+    UV_FS_O_FILEMAP = 0;
+    O_NOCTTY = 256;
+    O_TRUNC = 512;
+    O_APPEND = 1024;
+    O_DIRECTORY = 65536;
+    O_NOATIME = 262144;
+    O_NOFOLLOW = 131072;
+    O_SYNC = 1052672;
+    O_DSYNC = 4096;
+    O_DIRECT = 16384;
+    O_NONBLOCK = 2048;
+    S_IRWXU = 448;
+    S_IRUSR = 256;
+    S_IWUSR = 128;
+    S_IXUSR = 64;
+    S_IRWXG = 56;
+    S_IRGRP = 32;
+    S_IWGRP = 16;
+    S_IXGRP = 8;
+    S_IRWXO = 7;
+    S_IROTH = 4;
+    S_IWOTH = 2;
+    S_IXOTH = 1;
+    F_OK = 0;
+    R_OK = 4;
+    W_OK = 2;
+    X_OK = 1;
+    UV_FS_COPYFILE_EXCL = 1;
+    COPYFILE_EXCL = 1;
+    UV_FS_COPYFILE_FICLONE = 2;
+    COPYFILE_FICLONE = 2;
+    UV_FS_COPYFILE_FICLONE_FORCE = 4;
+    COPYFILE_FICLONE_FORCE = 4;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs
+var promises_default;
+var init_promises2 = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_promises();
+    init_constants();
+    init_promises();
+    promises_default = {
+      constants: constants_exports,
+      access,
+      appendFile,
+      chmod,
+      chown,
+      copyFile,
+      cp,
+      glob,
+      lchmod,
+      lchown,
+      link,
+      lstat,
+      lutimes,
+      mkdir,
+      mkdtemp,
+      open,
+      opendir,
+      readFile,
+      readdir,
+      readlink,
+      realpath,
+      rename,
+      rm,
+      rmdir,
+      stat,
+      statfs,
+      symlink,
+      truncate,
+      unlink,
+      utimes,
+      watch,
+      writeFile
+    };
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs
+var Dir, Dirent, Stats, ReadStream2, WriteStream2, FileReadStream, FileWriteStream;
+var init_classes = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    Dir = /* @__PURE__ */ notImplementedClass("fs.Dir");
+    Dirent = /* @__PURE__ */ notImplementedClass("fs.Dirent");
+    Stats = /* @__PURE__ */ notImplementedClass("fs.Stats");
+    ReadStream2 = /* @__PURE__ */ notImplementedClass("fs.ReadStream");
+    WriteStream2 = /* @__PURE__ */ notImplementedClass("fs.WriteStream");
+    FileReadStream = ReadStream2;
+    FileWriteStream = WriteStream2;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs
+function callbackify(fn) {
+  const fnc = /* @__PURE__ */ __name(function(...args) {
+    const cb = args.pop();
+    fn().catch((error4) => cb(error4)).then((val) => cb(void 0, val));
+  }, "fnc");
+  fnc.__promisify__ = fn;
+  fnc.native = fnc;
+  return fnc;
+}
+var access2, appendFile2, chown2, chmod2, copyFile2, cp2, lchown2, lchmod2, link2, lstat2, lutimes2, mkdir2, mkdtemp2, realpath2, open2, opendir2, readdir2, readFile2, readlink2, rename2, rm2, rmdir2, stat2, symlink2, truncate2, unlink2, utimes2, writeFile2, statfs2, close, createReadStream, createWriteStream, exists2, fchown, fchmod, fdatasync, fstat, fsync, ftruncate, futimes, lstatSync, read, readv, realpathSync, statSync, unwatchFile, watch2, watchFile, write, writev, _toUnixTimestamp, openAsBlob, glob2, appendFileSync, accessSync, chownSync, chmodSync, closeSync, copyFileSync, cpSync, existsSync, fchownSync, fchmodSync, fdatasyncSync, fstatSync, fsyncSync, ftruncateSync, futimesSync, lchownSync, lchmodSync, linkSync, lutimesSync, mkdirSync, mkdtempSync, openSync, opendirSync, readdirSync, readSync, readvSync, readFileSync, readlinkSync, renameSync, rmSync, rmdirSync, symlinkSync, truncateSync, unlinkSync, utimesSync, writeFileSync, writeSync, writevSync, statfsSync, globSync;
+var init_fs = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    init_promises();
+    __name(callbackify, "callbackify");
+    access2 = callbackify(access);
+    appendFile2 = callbackify(appendFile);
+    chown2 = callbackify(chown);
+    chmod2 = callbackify(chmod);
+    copyFile2 = callbackify(copyFile);
+    cp2 = callbackify(cp);
+    lchown2 = callbackify(lchown);
+    lchmod2 = callbackify(lchmod);
+    link2 = callbackify(link);
+    lstat2 = callbackify(lstat);
+    lutimes2 = callbackify(lutimes);
+    mkdir2 = callbackify(mkdir);
+    mkdtemp2 = callbackify(mkdtemp);
+    realpath2 = callbackify(realpath);
+    open2 = callbackify(open);
+    opendir2 = callbackify(opendir);
+    readdir2 = callbackify(readdir);
+    readFile2 = callbackify(readFile);
+    readlink2 = callbackify(readlink);
+    rename2 = callbackify(rename);
+    rm2 = callbackify(rm);
+    rmdir2 = callbackify(rmdir);
+    stat2 = callbackify(stat);
+    symlink2 = callbackify(symlink);
+    truncate2 = callbackify(truncate);
+    unlink2 = callbackify(unlink);
+    utimes2 = callbackify(utimes);
+    writeFile2 = callbackify(writeFile);
+    statfs2 = callbackify(statfs);
+    close = /* @__PURE__ */ notImplementedAsync("fs.close");
+    createReadStream = /* @__PURE__ */ notImplementedAsync("fs.createReadStream");
+    createWriteStream = /* @__PURE__ */ notImplementedAsync("fs.createWriteStream");
+    exists2 = /* @__PURE__ */ notImplementedAsync("fs.exists");
+    fchown = /* @__PURE__ */ notImplementedAsync("fs.fchown");
+    fchmod = /* @__PURE__ */ notImplementedAsync("fs.fchmod");
+    fdatasync = /* @__PURE__ */ notImplementedAsync("fs.fdatasync");
+    fstat = /* @__PURE__ */ notImplementedAsync("fs.fstat");
+    fsync = /* @__PURE__ */ notImplementedAsync("fs.fsync");
+    ftruncate = /* @__PURE__ */ notImplementedAsync("fs.ftruncate");
+    futimes = /* @__PURE__ */ notImplementedAsync("fs.futimes");
+    lstatSync = /* @__PURE__ */ notImplementedAsync("fs.lstatSync");
+    read = /* @__PURE__ */ notImplementedAsync("fs.read");
+    readv = /* @__PURE__ */ notImplementedAsync("fs.readv");
+    realpathSync = /* @__PURE__ */ notImplementedAsync("fs.realpathSync");
+    statSync = /* @__PURE__ */ notImplementedAsync("fs.statSync");
+    unwatchFile = /* @__PURE__ */ notImplementedAsync("fs.unwatchFile");
+    watch2 = /* @__PURE__ */ notImplementedAsync("fs.watch");
+    watchFile = /* @__PURE__ */ notImplementedAsync("fs.watchFile");
+    write = /* @__PURE__ */ notImplementedAsync("fs.write");
+    writev = /* @__PURE__ */ notImplementedAsync("fs.writev");
+    _toUnixTimestamp = /* @__PURE__ */ notImplementedAsync("fs._toUnixTimestamp");
+    openAsBlob = /* @__PURE__ */ notImplementedAsync("fs.openAsBlob");
+    glob2 = /* @__PURE__ */ notImplementedAsync("fs.glob");
+    appendFileSync = /* @__PURE__ */ notImplemented("fs.appendFileSync");
+    accessSync = /* @__PURE__ */ notImplemented("fs.accessSync");
+    chownSync = /* @__PURE__ */ notImplemented("fs.chownSync");
+    chmodSync = /* @__PURE__ */ notImplemented("fs.chmodSync");
+    closeSync = /* @__PURE__ */ notImplemented("fs.closeSync");
+    copyFileSync = /* @__PURE__ */ notImplemented("fs.copyFileSync");
+    cpSync = /* @__PURE__ */ notImplemented("fs.cpSync");
+    existsSync = /* @__PURE__ */ __name(() => false, "existsSync");
+    fchownSync = /* @__PURE__ */ notImplemented("fs.fchownSync");
+    fchmodSync = /* @__PURE__ */ notImplemented("fs.fchmodSync");
+    fdatasyncSync = /* @__PURE__ */ notImplemented("fs.fdatasyncSync");
+    fstatSync = /* @__PURE__ */ notImplemented("fs.fstatSync");
+    fsyncSync = /* @__PURE__ */ notImplemented("fs.fsyncSync");
+    ftruncateSync = /* @__PURE__ */ notImplemented("fs.ftruncateSync");
+    futimesSync = /* @__PURE__ */ notImplemented("fs.futimesSync");
+    lchownSync = /* @__PURE__ */ notImplemented("fs.lchownSync");
+    lchmodSync = /* @__PURE__ */ notImplemented("fs.lchmodSync");
+    linkSync = /* @__PURE__ */ notImplemented("fs.linkSync");
+    lutimesSync = /* @__PURE__ */ notImplemented("fs.lutimesSync");
+    mkdirSync = /* @__PURE__ */ notImplemented("fs.mkdirSync");
+    mkdtempSync = /* @__PURE__ */ notImplemented("fs.mkdtempSync");
+    openSync = /* @__PURE__ */ notImplemented("fs.openSync");
+    opendirSync = /* @__PURE__ */ notImplemented("fs.opendirSync");
+    readdirSync = /* @__PURE__ */ notImplemented("fs.readdirSync");
+    readSync = /* @__PURE__ */ notImplemented("fs.readSync");
+    readvSync = /* @__PURE__ */ notImplemented("fs.readvSync");
+    readFileSync = /* @__PURE__ */ notImplemented("fs.readFileSync");
+    readlinkSync = /* @__PURE__ */ notImplemented("fs.readlinkSync");
+    renameSync = /* @__PURE__ */ notImplemented("fs.renameSync");
+    rmSync = /* @__PURE__ */ notImplemented("fs.rmSync");
+    rmdirSync = /* @__PURE__ */ notImplemented("fs.rmdirSync");
+    symlinkSync = /* @__PURE__ */ notImplemented("fs.symlinkSync");
+    truncateSync = /* @__PURE__ */ notImplemented("fs.truncateSync");
+    unlinkSync = /* @__PURE__ */ notImplemented("fs.unlinkSync");
+    utimesSync = /* @__PURE__ */ notImplemented("fs.utimesSync");
+    writeFileSync = /* @__PURE__ */ notImplemented("fs.writeFileSync");
+    writeSync = /* @__PURE__ */ notImplemented("fs.writeSync");
+    writevSync = /* @__PURE__ */ notImplemented("fs.writevSync");
+    statfsSync = /* @__PURE__ */ notImplemented("fs.statfsSync");
+    globSync = /* @__PURE__ */ notImplemented("fs.globSync");
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs
+var fs_default;
+var init_fs2 = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_promises2();
+    init_classes();
+    init_fs();
+    init_constants();
+    init_constants();
+    init_fs();
+    init_classes();
+    fs_default = {
+      F_OK,
+      R_OK,
+      W_OK,
+      X_OK,
+      constants: constants_exports,
+      promises: promises_default,
+      Dir,
+      Dirent,
+      FileReadStream,
+      FileWriteStream,
+      ReadStream: ReadStream2,
+      Stats,
+      WriteStream: WriteStream2,
+      _toUnixTimestamp,
+      access: access2,
+      accessSync,
+      appendFile: appendFile2,
+      appendFileSync,
+      chmod: chmod2,
+      chmodSync,
+      chown: chown2,
+      chownSync,
+      close,
+      closeSync,
+      copyFile: copyFile2,
+      copyFileSync,
+      cp: cp2,
+      cpSync,
+      createReadStream,
+      createWriteStream,
+      exists: exists2,
+      existsSync,
+      fchmod,
+      fchmodSync,
+      fchown,
+      fchownSync,
+      fdatasync,
+      fdatasyncSync,
+      fstat,
+      fstatSync,
+      fsync,
+      fsyncSync,
+      ftruncate,
+      ftruncateSync,
+      futimes,
+      futimesSync,
+      glob: glob2,
+      lchmod: lchmod2,
+      globSync,
+      lchmodSync,
+      lchown: lchown2,
+      lchownSync,
+      link: link2,
+      linkSync,
+      lstat: lstat2,
+      lstatSync,
+      lutimes: lutimes2,
+      lutimesSync,
+      mkdir: mkdir2,
+      mkdirSync,
+      mkdtemp: mkdtemp2,
+      mkdtempSync,
+      open: open2,
+      openAsBlob,
+      openSync,
+      opendir: opendir2,
+      opendirSync,
+      read,
+      readFile: readFile2,
+      readFileSync,
+      readSync,
+      readdir: readdir2,
+      readdirSync,
+      readlink: readlink2,
+      readlinkSync,
+      readv,
+      readvSync,
+      realpath: realpath2,
+      realpathSync,
+      rename: rename2,
+      renameSync,
+      rm: rm2,
+      rmSync,
+      rmdir: rmdir2,
+      rmdirSync,
+      stat: stat2,
+      statSync,
+      statfs: statfs2,
+      statfsSync,
+      symlink: symlink2,
+      symlinkSync,
+      truncate: truncate2,
+      truncateSync,
+      unlink: unlink2,
+      unlinkSync,
+      unwatchFile,
+      utimes: utimes2,
+      utimesSync,
+      watch: watch2,
+      watchFile,
+      write,
+      writeFile: writeFile2,
+      writeFileSync,
+      writeSync,
+      writev,
+      writevSync
+    };
+  }
+});
+
+// node-built-in-modules:fs
+var require_fs = __commonJS({
+  "node-built-in-modules:fs"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_fs2();
+    module.exports = fs_default;
+  }
+});
+
+// node-built-in-modules:path
+import libDefault from "path";
+var require_path = __commonJS({
+  "node-built-in-modules:path"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    module.exports = libDefault;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/os/constants.mjs
+var UV_UDP_REUSEADDR, dlopen2, errno, signals, priority;
+var init_constants2 = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/os/constants.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    UV_UDP_REUSEADDR = 4;
+    dlopen2 = {
+      RTLD_LAZY: 1,
+      RTLD_NOW: 2,
+      RTLD_GLOBAL: 256,
+      RTLD_LOCAL: 0,
+      RTLD_DEEPBIND: 8
+    };
+    errno = {
+      E2BIG: 7,
+      EACCES: 13,
+      EADDRINUSE: 98,
+      EADDRNOTAVAIL: 99,
+      EAFNOSUPPORT: 97,
+      EAGAIN: 11,
+      EALREADY: 114,
+      EBADF: 9,
+      EBADMSG: 74,
+      EBUSY: 16,
+      ECANCELED: 125,
+      ECHILD: 10,
+      ECONNABORTED: 103,
+      ECONNREFUSED: 111,
+      ECONNRESET: 104,
+      EDEADLK: 35,
+      EDESTADDRREQ: 89,
+      EDOM: 33,
+      EDQUOT: 122,
+      EEXIST: 17,
+      EFAULT: 14,
+      EFBIG: 27,
+      EHOSTUNREACH: 113,
+      EIDRM: 43,
+      EILSEQ: 84,
+      EINPROGRESS: 115,
+      EINTR: 4,
+      EINVAL: 22,
+      EIO: 5,
+      EISCONN: 106,
+      EISDIR: 21,
+      ELOOP: 40,
+      EMFILE: 24,
+      EMLINK: 31,
+      EMSGSIZE: 90,
+      EMULTIHOP: 72,
+      ENAMETOOLONG: 36,
+      ENETDOWN: 100,
+      ENETRESET: 102,
+      ENETUNREACH: 101,
+      ENFILE: 23,
+      ENOBUFS: 105,
+      ENODATA: 61,
+      ENODEV: 19,
+      ENOENT: 2,
+      ENOEXEC: 8,
+      ENOLCK: 37,
+      ENOLINK: 67,
+      ENOMEM: 12,
+      ENOMSG: 42,
+      ENOPROTOOPT: 92,
+      ENOSPC: 28,
+      ENOSR: 63,
+      ENOSTR: 60,
+      ENOSYS: 38,
+      ENOTCONN: 107,
+      ENOTDIR: 20,
+      ENOTEMPTY: 39,
+      ENOTSOCK: 88,
+      ENOTSUP: 95,
+      ENOTTY: 25,
+      ENXIO: 6,
+      EOPNOTSUPP: 95,
+      EOVERFLOW: 75,
+      EPERM: 1,
+      EPIPE: 32,
+      EPROTO: 71,
+      EPROTONOSUPPORT: 93,
+      EPROTOTYPE: 91,
+      ERANGE: 34,
+      EROFS: 30,
+      ESPIPE: 29,
+      ESRCH: 3,
+      ESTALE: 116,
+      ETIME: 62,
+      ETIMEDOUT: 110,
+      ETXTBSY: 26,
+      EWOULDBLOCK: 11,
+      EXDEV: 18
+    };
+    signals = {
+      SIGHUP: 1,
+      SIGINT: 2,
+      SIGQUIT: 3,
+      SIGILL: 4,
+      SIGTRAP: 5,
+      SIGABRT: 6,
+      SIGIOT: 6,
+      SIGBUS: 7,
+      SIGFPE: 8,
+      SIGKILL: 9,
+      SIGUSR1: 10,
+      SIGSEGV: 11,
+      SIGUSR2: 12,
+      SIGPIPE: 13,
+      SIGALRM: 14,
+      SIGTERM: 15,
+      SIGCHLD: 17,
+      SIGSTKFLT: 16,
+      SIGCONT: 18,
+      SIGSTOP: 19,
+      SIGTSTP: 20,
+      SIGTTIN: 21,
+      SIGTTOU: 22,
+      SIGURG: 23,
+      SIGXCPU: 24,
+      SIGXFSZ: 25,
+      SIGVTALRM: 26,
+      SIGPROF: 27,
+      SIGWINCH: 28,
+      SIGIO: 29,
+      SIGPOLL: 29,
+      SIGPWR: 30,
+      SIGSYS: 31
+    };
+    priority = {
+      PRIORITY_LOW: 19,
+      PRIORITY_BELOW_NORMAL: 10,
+      PRIORITY_NORMAL: 0,
+      PRIORITY_ABOVE_NORMAL: -7,
+      PRIORITY_HIGH: -14,
+      PRIORITY_HIGHEST: -20
+    };
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/os.mjs
+var constants, NUM_CPUS, availableParallelism, arch2, machine, endianness, cpus, getPriority, setPriority, homedir, tmpdir, devNull, freemem, totalmem, loadavg, uptime2, hostname, networkInterfaces, platform2, type, release2, version3, userInfo, EOL, os_default;
+var init_os = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/os.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    init_constants2();
+    constants = {
+      UV_UDP_REUSEADDR,
+      dlopen: dlopen2,
+      errno,
+      signals,
+      priority
+    };
+    NUM_CPUS = 8;
+    availableParallelism = /* @__PURE__ */ __name(() => NUM_CPUS, "availableParallelism");
+    arch2 = /* @__PURE__ */ __name(() => "", "arch");
+    machine = /* @__PURE__ */ __name(() => "", "machine");
+    endianness = /* @__PURE__ */ __name(() => "LE", "endianness");
+    cpus = /* @__PURE__ */ __name(() => {
+      const info3 = {
+        model: "",
+        speed: 0,
+        times: {
+          user: 0,
+          nice: 0,
+          sys: 0,
+          idle: 0,
+          irq: 0
+        }
+      };
+      return Array.from({ length: NUM_CPUS }, () => info3);
+    }, "cpus");
+    getPriority = /* @__PURE__ */ __name(() => 0, "getPriority");
+    setPriority = /* @__PURE__ */ notImplemented("os.setPriority");
+    homedir = /* @__PURE__ */ __name(() => "/", "homedir");
+    tmpdir = /* @__PURE__ */ __name(() => "/tmp", "tmpdir");
+    devNull = "/dev/null";
+    freemem = /* @__PURE__ */ __name(() => 0, "freemem");
+    totalmem = /* @__PURE__ */ __name(() => 0, "totalmem");
+    loadavg = /* @__PURE__ */ __name(() => [
+      0,
+      0,
+      0
+    ], "loadavg");
+    uptime2 = /* @__PURE__ */ __name(() => 0, "uptime");
+    hostname = /* @__PURE__ */ __name(() => "", "hostname");
+    networkInterfaces = /* @__PURE__ */ __name(() => {
+      return { lo0: [
+        {
+          address: "127.0.0.1",
+          netmask: "255.0.0.0",
+          family: "IPv4",
+          mac: "00:00:00:00:00:00",
+          internal: true,
+          cidr: "127.0.0.1/8"
+        },
+        {
+          address: "::1",
+          netmask: "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+          family: "IPv6",
+          mac: "00:00:00:00:00:00",
+          internal: true,
+          cidr: "::1/128",
+          scopeid: 0
+        },
+        {
+          address: "fe80::1",
+          netmask: "ffff:ffff:ffff:ffff::",
+          family: "IPv6",
+          mac: "00:00:00:00:00:00",
+          internal: true,
+          cidr: "fe80::1/64",
+          scopeid: 1
+        }
+      ] };
+    }, "networkInterfaces");
+    platform2 = /* @__PURE__ */ __name(() => "linux", "platform");
+    type = /* @__PURE__ */ __name(() => "Linux", "type");
+    release2 = /* @__PURE__ */ __name(() => "", "release");
+    version3 = /* @__PURE__ */ __name(() => "", "version");
+    userInfo = /* @__PURE__ */ __name((opts) => {
+      const encode2 = /* @__PURE__ */ __name((str) => {
+        if (opts?.encoding) {
+          const buff = Buffer.from(str);
+          return opts.encoding === "buffer" ? buff : buff.toString(opts.encoding);
+        }
+        return str;
+      }, "encode");
+      return {
+        gid: 1e3,
+        uid: 1e3,
+        homedir: encode2("/"),
+        shell: encode2("/bin/sh"),
+        username: encode2("root")
+      };
+    }, "userInfo");
+    EOL = "\n";
+    os_default = {
+      arch: arch2,
+      availableParallelism,
+      constants,
+      cpus,
+      EOL,
+      endianness,
+      devNull,
+      freemem,
+      getPriority,
+      homedir,
+      hostname,
+      loadavg,
+      machine,
+      networkInterfaces,
+      platform: platform2,
+      release: release2,
+      setPriority,
+      tmpdir,
+      totalmem,
+      type,
+      uptime: uptime2,
+      userInfo,
+      version: version3
+    };
+  }
+});
+
+// node-built-in-modules:os
+var require_os = __commonJS({
+  "node-built-in-modules:os"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_os();
+    module.exports = os_default;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/web.mjs
+var subtle2;
+var init_web = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/web.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    subtle2 = globalThis.crypto?.subtle;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/node.mjs
+var webcrypto, createCipher, createDecipher, pseudoRandomBytes, Cipher, Decipher;
+var init_node = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/node.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_utils();
+    webcrypto = new Proxy(globalThis.crypto, { get(_, key) {
+      if (key === "CryptoKey") {
+        return globalThis.CryptoKey;
+      }
+      if (typeof globalThis.crypto[key] === "function") {
+        return globalThis.crypto[key].bind(globalThis.crypto);
+      }
+      return globalThis.crypto[key];
+    } });
+    createCipher = /* @__PURE__ */ notImplemented("crypto.createCipher");
+    createDecipher = /* @__PURE__ */ notImplemented("crypto.createDecipher");
+    pseudoRandomBytes = /* @__PURE__ */ notImplemented("crypto.pseudoRandomBytes");
+    Cipher = /* @__PURE__ */ notImplementedClass("crypto.Cipher");
+    Decipher = /* @__PURE__ */ notImplementedClass("crypto.Decipher");
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/constants.mjs
+var SSL_OP_ALL, SSL_OP_ALLOW_NO_DHE_KEX, SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION, SSL_OP_CIPHER_SERVER_PREFERENCE, SSL_OP_CISCO_ANYCONNECT, SSL_OP_COOKIE_EXCHANGE, SSL_OP_CRYPTOPRO_TLSEXT_BUG, SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS, SSL_OP_LEGACY_SERVER_CONNECT, SSL_OP_NO_COMPRESSION, SSL_OP_NO_ENCRYPT_THEN_MAC, SSL_OP_NO_QUERY_MTU, SSL_OP_NO_RENEGOTIATION, SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION, SSL_OP_NO_SSLv2, SSL_OP_NO_SSLv3, SSL_OP_NO_TICKET, SSL_OP_NO_TLSv1, SSL_OP_NO_TLSv1_1, SSL_OP_NO_TLSv1_2, SSL_OP_NO_TLSv1_3, SSL_OP_PRIORITIZE_CHACHA, SSL_OP_TLS_ROLLBACK_BUG, ENGINE_METHOD_RSA, ENGINE_METHOD_DSA, ENGINE_METHOD_DH, ENGINE_METHOD_RAND, ENGINE_METHOD_EC, ENGINE_METHOD_CIPHERS, ENGINE_METHOD_DIGESTS, ENGINE_METHOD_PKEY_METHS, ENGINE_METHOD_PKEY_ASN1_METHS, ENGINE_METHOD_ALL, ENGINE_METHOD_NONE, DH_CHECK_P_NOT_SAFE_PRIME, DH_CHECK_P_NOT_PRIME, DH_UNABLE_TO_CHECK_GENERATOR, DH_NOT_SUITABLE_GENERATOR, RSA_PKCS1_PADDING, RSA_NO_PADDING, RSA_PKCS1_OAEP_PADDING, RSA_X931_PADDING, RSA_PKCS1_PSS_PADDING, RSA_PSS_SALTLEN_DIGEST, RSA_PSS_SALTLEN_MAX_SIGN, RSA_PSS_SALTLEN_AUTO, POINT_CONVERSION_COMPRESSED, POINT_CONVERSION_UNCOMPRESSED, POINT_CONVERSION_HYBRID, defaultCoreCipherList, defaultCipherList, OPENSSL_VERSION_NUMBER, TLS1_VERSION, TLS1_1_VERSION, TLS1_2_VERSION, TLS1_3_VERSION;
+var init_constants3 = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/constants.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    SSL_OP_ALL = 2147485776;
+    SSL_OP_ALLOW_NO_DHE_KEX = 1024;
+    SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION = 262144;
+    SSL_OP_CIPHER_SERVER_PREFERENCE = 4194304;
+    SSL_OP_CISCO_ANYCONNECT = 32768;
+    SSL_OP_COOKIE_EXCHANGE = 8192;
+    SSL_OP_CRYPTOPRO_TLSEXT_BUG = 2147483648;
+    SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS = 2048;
+    SSL_OP_LEGACY_SERVER_CONNECT = 4;
+    SSL_OP_NO_COMPRESSION = 131072;
+    SSL_OP_NO_ENCRYPT_THEN_MAC = 524288;
+    SSL_OP_NO_QUERY_MTU = 4096;
+    SSL_OP_NO_RENEGOTIATION = 1073741824;
+    SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION = 65536;
+    SSL_OP_NO_SSLv2 = 0;
+    SSL_OP_NO_SSLv3 = 33554432;
+    SSL_OP_NO_TICKET = 16384;
+    SSL_OP_NO_TLSv1 = 67108864;
+    SSL_OP_NO_TLSv1_1 = 268435456;
+    SSL_OP_NO_TLSv1_2 = 134217728;
+    SSL_OP_NO_TLSv1_3 = 536870912;
+    SSL_OP_PRIORITIZE_CHACHA = 2097152;
+    SSL_OP_TLS_ROLLBACK_BUG = 8388608;
+    ENGINE_METHOD_RSA = 1;
+    ENGINE_METHOD_DSA = 2;
+    ENGINE_METHOD_DH = 4;
+    ENGINE_METHOD_RAND = 8;
+    ENGINE_METHOD_EC = 2048;
+    ENGINE_METHOD_CIPHERS = 64;
+    ENGINE_METHOD_DIGESTS = 128;
+    ENGINE_METHOD_PKEY_METHS = 512;
+    ENGINE_METHOD_PKEY_ASN1_METHS = 1024;
+    ENGINE_METHOD_ALL = 65535;
+    ENGINE_METHOD_NONE = 0;
+    DH_CHECK_P_NOT_SAFE_PRIME = 2;
+    DH_CHECK_P_NOT_PRIME = 1;
+    DH_UNABLE_TO_CHECK_GENERATOR = 4;
+    DH_NOT_SUITABLE_GENERATOR = 8;
+    RSA_PKCS1_PADDING = 1;
+    RSA_NO_PADDING = 3;
+    RSA_PKCS1_OAEP_PADDING = 4;
+    RSA_X931_PADDING = 5;
+    RSA_PKCS1_PSS_PADDING = 6;
+    RSA_PSS_SALTLEN_DIGEST = -1;
+    RSA_PSS_SALTLEN_MAX_SIGN = -2;
+    RSA_PSS_SALTLEN_AUTO = -2;
+    POINT_CONVERSION_COMPRESSED = 2;
+    POINT_CONVERSION_UNCOMPRESSED = 4;
+    POINT_CONVERSION_HYBRID = 6;
+    defaultCoreCipherList = "";
+    defaultCipherList = "";
+    OPENSSL_VERSION_NUMBER = 0;
+    TLS1_VERSION = 0;
+    TLS1_1_VERSION = 0;
+    TLS1_2_VERSION = 0;
+    TLS1_3_VERSION = 0;
+  }
+});
+
+// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/crypto.mjs
+var constants2;
+var init_crypto = __esm({
+  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/crypto.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_constants3();
+    init_web();
+    init_node();
+    constants2 = {
+      OPENSSL_VERSION_NUMBER,
+      SSL_OP_ALL,
+      SSL_OP_ALLOW_NO_DHE_KEX,
+      SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION,
+      SSL_OP_CIPHER_SERVER_PREFERENCE,
+      SSL_OP_CISCO_ANYCONNECT,
+      SSL_OP_COOKIE_EXCHANGE,
+      SSL_OP_CRYPTOPRO_TLSEXT_BUG,
+      SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS,
+      SSL_OP_LEGACY_SERVER_CONNECT,
+      SSL_OP_NO_COMPRESSION,
+      SSL_OP_NO_ENCRYPT_THEN_MAC,
+      SSL_OP_NO_QUERY_MTU,
+      SSL_OP_NO_RENEGOTIATION,
+      SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION,
+      SSL_OP_NO_SSLv2,
+      SSL_OP_NO_SSLv3,
+      SSL_OP_NO_TICKET,
+      SSL_OP_NO_TLSv1,
+      SSL_OP_NO_TLSv1_1,
+      SSL_OP_NO_TLSv1_2,
+      SSL_OP_NO_TLSv1_3,
+      SSL_OP_PRIORITIZE_CHACHA,
+      SSL_OP_TLS_ROLLBACK_BUG,
+      ENGINE_METHOD_RSA,
+      ENGINE_METHOD_DSA,
+      ENGINE_METHOD_DH,
+      ENGINE_METHOD_RAND,
+      ENGINE_METHOD_EC,
+      ENGINE_METHOD_CIPHERS,
+      ENGINE_METHOD_DIGESTS,
+      ENGINE_METHOD_PKEY_METHS,
+      ENGINE_METHOD_PKEY_ASN1_METHS,
+      ENGINE_METHOD_ALL,
+      ENGINE_METHOD_NONE,
+      DH_CHECK_P_NOT_SAFE_PRIME,
+      DH_CHECK_P_NOT_PRIME,
+      DH_UNABLE_TO_CHECK_GENERATOR,
+      DH_NOT_SUITABLE_GENERATOR,
+      RSA_PKCS1_PADDING,
+      RSA_NO_PADDING,
+      RSA_PKCS1_OAEP_PADDING,
+      RSA_X931_PADDING,
+      RSA_PKCS1_PSS_PADDING,
+      RSA_PSS_SALTLEN_DIGEST,
+      RSA_PSS_SALTLEN_MAX_SIGN,
+      RSA_PSS_SALTLEN_AUTO,
+      defaultCoreCipherList,
+      TLS1_VERSION,
+      TLS1_1_VERSION,
+      TLS1_2_VERSION,
+      TLS1_3_VERSION,
+      POINT_CONVERSION_COMPRESSED,
+      POINT_CONVERSION_UNCOMPRESSED,
+      POINT_CONVERSION_HYBRID,
+      defaultCipherList
+    };
+  }
+});
+
+// node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs
+var workerdCrypto, Certificate, checkPrime, checkPrimeSync, Cipheriv, createCipheriv, createDecipheriv, createDiffieHellman, createDiffieHellmanGroup, createECDH, createHash2, createHmac, createPrivateKey, createPublicKey, createSecretKey, createSign, createVerify, Decipheriv, diffieHellman, DiffieHellman, DiffieHellmanGroup, ECDH, fips, generateKey2, generateKeyPair, generateKeyPairSync, generateKeySync, generatePrime, generatePrimeSync, getCipherInfo, getCiphers, getCurves, getDiffieHellman, getFips, getHashes, getRandomValues2, hash, Hash2, hkdf, hkdfSync, Hmac, KeyObject, pbkdf22, pbkdf2Sync, privateDecrypt, privateEncrypt, publicDecrypt, publicEncrypt, randomBytes, randomFill, randomFillSync, randomInt, randomUUID, scrypt, scryptSync, secureHeapUsed, setEngine, setFips, sign2, Sign, subtle3, timingSafeEqual, verify2, Verify, X509Certificate, webcrypto2, crypto_default;
+var init_crypto2 = __esm({
+  "node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs"() {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_crypto();
+    workerdCrypto = process.getBuiltinModule("node:crypto");
+    ({
+      Certificate,
+      checkPrime,
+      checkPrimeSync,
+      Cipheriv: (
+        // @ts-expect-error
+        Cipheriv
+      ),
+      createCipheriv,
+      createDecipheriv,
+      createDiffieHellman,
+      createDiffieHellmanGroup,
+      createECDH,
+      createHash: createHash2,
+      createHmac,
+      createPrivateKey,
+      createPublicKey,
+      createSecretKey,
+      createSign,
+      createVerify,
+      Decipheriv: (
+        // @ts-expect-error
+        Decipheriv
+      ),
+      diffieHellman,
+      DiffieHellman,
+      DiffieHellmanGroup,
+      ECDH,
+      fips,
+      generateKey: generateKey2,
+      generateKeyPair,
+      generateKeyPairSync,
+      generateKeySync,
+      generatePrime,
+      generatePrimeSync,
+      getCipherInfo,
+      getCiphers,
+      getCurves,
+      getDiffieHellman,
+      getFips,
+      getHashes,
+      getRandomValues: getRandomValues2,
+      hash,
+      Hash: Hash2,
+      hkdf,
+      hkdfSync,
+      Hmac,
+      KeyObject,
+      pbkdf2: pbkdf22,
+      pbkdf2Sync,
+      privateDecrypt,
+      privateEncrypt,
+      publicDecrypt,
+      publicEncrypt,
+      randomBytes,
+      randomFill,
+      randomFillSync,
+      randomInt,
+      randomUUID,
+      scrypt,
+      scryptSync,
+      secureHeapUsed,
+      setEngine,
+      setFips,
+      sign: sign2,
+      Sign,
+      subtle: subtle3,
+      timingSafeEqual,
+      verify: verify2,
+      Verify,
+      X509Certificate
+    } = workerdCrypto);
+    webcrypto2 = {
+      // @ts-expect-error
+      CryptoKey: webcrypto.CryptoKey,
+      getRandomValues: getRandomValues2,
+      randomUUID,
+      subtle: subtle3
+    };
+    crypto_default = {
+      /**
+       * manually unroll unenv-polyfilled-symbols to make it tree-shakeable
+       */
+      Certificate,
+      Cipher,
+      Cipheriv,
+      Decipher,
+      Decipheriv,
+      ECDH,
+      Sign,
+      Verify,
+      X509Certificate,
+      // @ts-expect-error @types/node is out of date - this is a bug in typings
+      constants: constants2,
+      createCipheriv,
+      createDecipheriv,
+      createECDH,
+      createSign,
+      createVerify,
+      diffieHellman,
+      getCipherInfo,
+      hash,
+      privateDecrypt,
+      privateEncrypt,
+      publicDecrypt,
+      publicEncrypt,
+      scrypt,
+      scryptSync,
+      sign: sign2,
+      verify: verify2,
+      // default-only export from unenv
+      // @ts-expect-error unenv has unknown type
+      createCipher,
+      // @ts-expect-error unenv has unknown type
+      createDecipher,
+      // @ts-expect-error unenv has unknown type
+      pseudoRandomBytes,
+      /**
+       * manually unroll workerd-polyfilled-symbols to make it tree-shakeable
+       */
+      DiffieHellman,
+      DiffieHellmanGroup,
+      Hash: Hash2,
+      Hmac,
+      KeyObject,
+      checkPrime,
+      checkPrimeSync,
+      createDiffieHellman,
+      createDiffieHellmanGroup,
+      createHash: createHash2,
+      createHmac,
+      createPrivateKey,
+      createPublicKey,
+      createSecretKey,
+      generateKey: generateKey2,
+      generateKeyPair,
+      generateKeyPairSync,
+      generateKeySync,
+      generatePrime,
+      generatePrimeSync,
+      getCiphers,
+      getCurves,
+      getDiffieHellman,
+      getFips,
+      getHashes,
+      getRandomValues: getRandomValues2,
+      hkdf,
+      hkdfSync,
+      pbkdf2: pbkdf22,
+      pbkdf2Sync,
+      randomBytes,
+      randomFill,
+      randomFillSync,
+      randomInt,
+      randomUUID,
+      secureHeapUsed,
+      setEngine,
+      setFips,
+      subtle: subtle3,
+      timingSafeEqual,
+      // default-only export from workerd
+      fips,
+      // special-cased deep merged symbols
+      webcrypto: webcrypto2
+    };
+  }
+});
+
+// node-built-in-modules:crypto
+var require_crypto = __commonJS({
+  "node-built-in-modules:crypto"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    init_crypto2();
+    module.exports = crypto_default;
+  }
+});
+
+// node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/package.json
+var require_package = __commonJS({
+  "node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/package.json"(exports, module) {
+    module.exports = {
+      name: "dotenv",
+      version: "16.4.7",
+      description: "Loads environment variables from .env file",
+      main: "lib/main.js",
+      types: "lib/main.d.ts",
+      exports: {
+        ".": {
+          types: "./lib/main.d.ts",
+          require: "./lib/main.js",
+          default: "./lib/main.js"
+        },
+        "./config": "./config.js",
+        "./config.js": "./config.js",
+        "./lib/env-options": "./lib/env-options.js",
+        "./lib/env-options.js": "./lib/env-options.js",
+        "./lib/cli-options": "./lib/cli-options.js",
+        "./lib/cli-options.js": "./lib/cli-options.js",
+        "./package.json": "./package.json"
+      },
+      scripts: {
+        "dts-check": "tsc --project tests/types/tsconfig.json",
+        lint: "standard",
+        pretest: "npm run lint && npm run dts-check",
+        test: "tap run --allow-empty-coverage --disable-coverage --timeout=60000",
+        "test:coverage": "tap run --show-full-coverage --timeout=60000 --coverage-report=lcov",
+        prerelease: "npm test",
+        release: "standard-version"
+      },
+      repository: {
+        type: "git",
+        url: "git://github.com/motdotla/dotenv.git"
+      },
+      funding: "https://dotenvx.com",
+      keywords: [
+        "dotenv",
+        "env",
+        ".env",
+        "environment",
+        "variables",
+        "config",
+        "settings"
+      ],
+      readmeFilename: "README.md",
+      license: "BSD-2-Clause",
+      devDependencies: {
+        "@types/node": "^18.11.3",
+        decache: "^4.6.2",
+        sinon: "^14.0.1",
+        standard: "^17.0.0",
+        "standard-version": "^9.5.0",
+        tap: "^19.2.0",
+        typescript: "^4.8.4"
+      },
+      engines: {
+        node: ">=12"
+      },
+      browser: {
+        fs: false
+      }
+    };
+  }
+});
+
+// node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/lib/main.js
+var require_main = __commonJS({
+  "node_modules/.pnpm/dotenv@16.4.7/node_modules/dotenv/lib/main.js"(exports, module) {
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    var fs = require_fs();
+    var path2 = require_path();
+    var os = require_os();
+    var crypto2 = require_crypto();
+    var packageJson = require_package();
+    var version4 = packageJson.version;
+    var LINE = /(?:^|^)\s*(?:export\s+)?([\w.-]+)(?:\s*=\s*?|:\s+?)(\s*'(?:\\'|[^'])*'|\s*"(?:\\"|[^"])*"|\s*`(?:\\`|[^`])*`|[^#\r\n]+)?\s*(?:#.*)?(?:$|$)/mg;
+    function parse3(src) {
+      const obj = {};
+      let lines = src.toString();
+      lines = lines.replace(/\r\n?/mg, "\n");
+      let match;
+      while ((match = LINE.exec(lines)) != null) {
+        const key = match[1];
+        let value = match[2] || "";
+        value = value.trim();
+        const maybeQuote = value[0];
+        value = value.replace(/^(['"`])([\s\S]*)\1$/mg, "$2");
+        if (maybeQuote === '"') {
+          value = value.replace(/\\n/g, "\n");
+          value = value.replace(/\\r/g, "\r");
+        }
+        obj[key] = value;
+      }
+      return obj;
+    }
+    __name(parse3, "parse");
+    function _parseVault(options) {
+      const vaultPath = _vaultPath(options);
+      const result = DotenvModule.configDotenv({ path: vaultPath });
+      if (!result.parsed) {
+        const err = new Error(`MISSING_DATA: Cannot parse ${vaultPath} for an unknown reason`);
+        err.code = "MISSING_DATA";
+        throw err;
+      }
+      const keys = _dotenvKey(options).split(",");
+      const length = keys.length;
+      let decrypted;
+      for (let i = 0; i < length; i++) {
+        try {
+          const key = keys[i].trim();
+          const attrs = _instructions(result, key);
+          decrypted = DotenvModule.decrypt(attrs.ciphertext, attrs.key);
+          break;
+        } catch (error4) {
+          if (i + 1 >= length) {
+            throw error4;
+          }
+        }
+      }
+      return DotenvModule.parse(decrypted);
+    }
+    __name(_parseVault, "_parseVault");
+    function _log(message2) {
+      console.log(`[dotenv@${version4}][INFO] ${message2}`);
+    }
+    __name(_log, "_log");
+    function _warn(message2) {
+      console.log(`[dotenv@${version4}][WARN] ${message2}`);
+    }
+    __name(_warn, "_warn");
+    function _debug(message2) {
+      console.log(`[dotenv@${version4}][DEBUG] ${message2}`);
+    }
+    __name(_debug, "_debug");
+    function _dotenvKey(options) {
+      if (options && options.DOTENV_KEY && options.DOTENV_KEY.length > 0) {
+        return options.DOTENV_KEY;
+      }
+      if (process.env.DOTENV_KEY && process.env.DOTENV_KEY.length > 0) {
+        return process.env.DOTENV_KEY;
+      }
+      return "";
+    }
+    __name(_dotenvKey, "_dotenvKey");
+    function _instructions(result, dotenvKey) {
+      let uri;
+      try {
+        uri = new URL(dotenvKey);
+      } catch (error4) {
+        if (error4.code === "ERR_INVALID_URL") {
+          const err = new Error("INVALID_DOTENV_KEY: Wrong format. Must be in valid uri format like dotenv://:key_1234@dotenvx.com/vault/.env.vault?environment=development");
+          err.code = "INVALID_DOTENV_KEY";
+          throw err;
+        }
+        throw error4;
+      }
+      const key = uri.password;
+      if (!key) {
+        const err = new Error("INVALID_DOTENV_KEY: Missing key part");
+        err.code = "INVALID_DOTENV_KEY";
+        throw err;
+      }
+      const environment = uri.searchParams.get("environment");
+      if (!environment) {
+        const err = new Error("INVALID_DOTENV_KEY: Missing environment part");
+        err.code = "INVALID_DOTENV_KEY";
+        throw err;
+      }
+      const environmentKey = `DOTENV_VAULT_${environment.toUpperCase()}`;
+      const ciphertext = result.parsed[environmentKey];
+      if (!ciphertext) {
+        const err = new Error(`NOT_FOUND_DOTENV_ENVIRONMENT: Cannot locate environment ${environmentKey} in your .env.vault file.`);
+        err.code = "NOT_FOUND_DOTENV_ENVIRONMENT";
+        throw err;
+      }
+      return { ciphertext, key };
+    }
+    __name(_instructions, "_instructions");
+    function _vaultPath(options) {
+      let possibleVaultPath = null;
+      if (options && options.path && options.path.length > 0) {
+        if (Array.isArray(options.path)) {
+          for (const filepath of options.path) {
+            if (fs.existsSync(filepath)) {
+              possibleVaultPath = filepath.endsWith(".vault") ? filepath : `${filepath}.vault`;
+            }
+          }
+        } else {
+          possibleVaultPath = options.path.endsWith(".vault") ? options.path : `${options.path}.vault`;
+        }
+      } else {
+        possibleVaultPath = path2.resolve(process.cwd(), ".env.vault");
+      }
+      if (fs.existsSync(possibleVaultPath)) {
+        return possibleVaultPath;
+      }
+      return null;
+    }
+    __name(_vaultPath, "_vaultPath");
+    function _resolveHome(envPath) {
+      return envPath[0] === "~" ? path2.join(os.homedir(), envPath.slice(1)) : envPath;
+    }
+    __name(_resolveHome, "_resolveHome");
+    function _configVault(options) {
+      _log("Loading env from encrypted .env.vault");
+      const parsed = DotenvModule._parseVault(options);
+      let processEnv = process.env;
+      if (options && options.processEnv != null) {
+        processEnv = options.processEnv;
+      }
+      DotenvModule.populate(processEnv, parsed, options);
+      return { parsed };
+    }
+    __name(_configVault, "_configVault");
+    function configDotenv(options) {
+      const dotenvPath = path2.resolve(process.cwd(), ".env");
+      let encoding = "utf8";
+      const debug4 = Boolean(options && options.debug);
+      if (options && options.encoding) {
+        encoding = options.encoding;
+      } else {
+        if (debug4) {
+          _debug("No encoding is specified. UTF-8 is used by default");
+        }
+      }
+      let optionPaths = [dotenvPath];
+      if (options && options.path) {
+        if (!Array.isArray(options.path)) {
+          optionPaths = [_resolveHome(options.path)];
+        } else {
+          optionPaths = [];
+          for (const filepath of options.path) {
+            optionPaths.push(_resolveHome(filepath));
+          }
+        }
+      }
+      let lastError;
+      const parsedAll = {};
+      for (const path3 of optionPaths) {
+        try {
+          const parsed = DotenvModule.parse(fs.readFileSync(path3, { encoding }));
+          DotenvModule.populate(parsedAll, parsed, options);
+        } catch (e) {
+          if (debug4) {
+            _debug(`Failed to load ${path3} ${e.message}`);
+          }
+          lastError = e;
+        }
+      }
+      let processEnv = process.env;
+      if (options && options.processEnv != null) {
+        processEnv = options.processEnv;
+      }
+      DotenvModule.populate(processEnv, parsedAll, options);
+      if (lastError) {
+        return { parsed: parsedAll, error: lastError };
+      } else {
+        return { parsed: parsedAll };
+      }
+    }
+    __name(configDotenv, "configDotenv");
+    function config4(options) {
+      if (_dotenvKey(options).length === 0) {
+        return DotenvModule.configDotenv(options);
+      }
+      const vaultPath = _vaultPath(options);
+      if (!vaultPath) {
+        _warn(`You set DOTENV_KEY but you are missing a .env.vault file at ${vaultPath}. Did you forget to build it?`);
+        return DotenvModule.configDotenv(options);
+      }
+      return DotenvModule._configVault(options);
+    }
+    __name(config4, "config");
+    function decrypt(encrypted, keyStr) {
+      const key = Buffer.from(keyStr.slice(-64), "hex");
+      let ciphertext = Buffer.from(encrypted, "base64");
+      const nonce = ciphertext.subarray(0, 12);
+      const authTag = ciphertext.subarray(-16);
+      ciphertext = ciphertext.subarray(12, -16);
+      try {
+        const aesgcm = crypto2.createDecipheriv("aes-256-gcm", key, nonce);
+        aesgcm.setAuthTag(authTag);
+        return `${aesgcm.update(ciphertext)}${aesgcm.final()}`;
+      } catch (error4) {
+        const isRange = error4 instanceof RangeError;
+        const invalidKeyLength = error4.message === "Invalid key length";
+        const decryptionFailed = error4.message === "Unsupported state or unable to authenticate data";
+        if (isRange || invalidKeyLength) {
+          const err = new Error("INVALID_DOTENV_KEY: It must be 64 characters long (or more)");
+          err.code = "INVALID_DOTENV_KEY";
+          throw err;
+        } else if (decryptionFailed) {
+          const err = new Error("DECRYPTION_FAILED: Please check your DOTENV_KEY");
+          err.code = "DECRYPTION_FAILED";
+          throw err;
+        } else {
+          throw error4;
+        }
+      }
+    }
+    __name(decrypt, "decrypt");
+    function populate(processEnv, parsed, options = {}) {
+      const debug4 = Boolean(options && options.debug);
+      const override = Boolean(options && options.override);
+      if (typeof parsed !== "object") {
+        const err = new Error("OBJECT_REQUIRED: Please check the processEnv argument being passed to populate");
+        err.code = "OBJECT_REQUIRED";
+        throw err;
+      }
+      for (const key of Object.keys(parsed)) {
+        if (Object.prototype.hasOwnProperty.call(processEnv, key)) {
+          if (override === true) {
+            processEnv[key] = parsed[key];
+          }
+          if (debug4) {
+            if (override === true) {
+              _debug(`"${key}" is already defined and WAS overwritten`);
+            } else {
+              _debug(`"${key}" is already defined and was NOT overwritten`);
+            }
+          }
+        } else {
+          processEnv[key] = parsed[key];
+        }
+      }
+    }
+    __name(populate, "populate");
+    var DotenvModule = {
+      configDotenv,
+      _configVault,
+      _parseVault,
+      config: config4,
+      decrypt,
+      parse: parse3,
+      populate
+    };
+    module.exports.configDotenv = DotenvModule.configDotenv;
+    module.exports._configVault = DotenvModule._configVault;
+    module.exports._parseVault = DotenvModule._parseVault;
+    module.exports.config = DotenvModule.config;
+    module.exports.decrypt = DotenvModule.decrypt;
+    module.exports.parse = DotenvModule.parse;
+    module.exports.populate = DotenvModule.populate;
+    module.exports = DotenvModule;
+  }
+});
+
+// node_modules/.pnpm/dotenv-expand@12.0.1/node_modules/dotenv-expand/lib/main.js
+var require_main2 = __commonJS({
+  "node_modules/.pnpm/dotenv-expand@12.0.1/node_modules/dotenv-expand/lib/main.js"(exports, module) {
+    "use strict";
+    init_modules_watch_stub();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+    init_performance2();
+    function _resolveEscapeSequences(value) {
+      return value.replace(/\\\$/g, "$");
+    }
+    __name(_resolveEscapeSequences, "_resolveEscapeSequences");
+    function expandValue(value, processEnv, runningParsed) {
+      const env4 = { ...runningParsed, ...processEnv };
+      const regex = /(?<!\\)\${([^{}]+)}|(?<!\\)\$([A-Za-z_][A-Za-z0-9_]*)/g;
+      let result = value;
+      let match;
+      const seen = /* @__PURE__ */ new Set();
+      while ((match = regex.exec(result)) !== null) {
+        seen.add(result);
+        const [template, bracedExpression, unbracedExpression] = match;
+        const expression = bracedExpression || unbracedExpression;
+        const opRegex = /(:\+|\+|:-|-)/;
+        const opMatch = expression.match(opRegex);
+        const splitter = opMatch ? opMatch[0] : null;
+        const r = expression.split(splitter);
+        let defaultValue;
+        let value2;
+        const key = r.shift();
+        if ([":+", "+"].includes(splitter)) {
+          defaultValue = env4[key] ? r.join(splitter) : "";
+          value2 = null;
+        } else {
+          defaultValue = r.join(splitter);
+          value2 = env4[key];
+        }
+        if (value2) {
+          if (seen.has(value2)) {
+            result = result.replace(template, defaultValue);
+          } else {
+            result = result.replace(template, value2);
+          }
+        } else {
+          result = result.replace(template, defaultValue);
+        }
+        if (result === runningParsed[key]) {
+          break;
+        }
+        regex.lastIndex = 0;
+      }
+      return result;
+    }
+    __name(expandValue, "expandValue");
+    function expand2(options) {
+      const runningParsed = {};
+      let processEnv = process.env;
+      if (options && options.processEnv != null) {
+        processEnv = options.processEnv;
+      }
+      for (const key in options.parsed) {
+        let value = options.parsed[key];
+        if (processEnv[key] && processEnv[key] !== value) {
+          value = processEnv[key];
+        } else {
+          value = expandValue(value, processEnv, runningParsed);
+        }
+        options.parsed[key] = _resolveEscapeSequences(value);
+        runningParsed[key] = _resolveEscapeSequences(value);
+      }
+      for (const processKey in options.parsed) {
+        processEnv[processKey] = options.parsed[processKey];
+      }
+      return options;
+    }
+    __name(expand2, "expand");
+    module.exports.expand = expand2;
+  }
+});
+
 // node_modules/.pnpm/quick-format-unescaped@4.0.4/node_modules/quick-format-unescaped/index.js
 var require_quick_format_unescaped = __commonJS({
   "node_modules/.pnpm/quick-format-unescaped@4.0.4/node_modules/quick-format-unescaped/index.js"(exports, module) {
@@ -3802,14 +5390,14 @@ var require_quick_format_unescaped = __commonJS({
               if (args[a] === void 0) break;
               if (lastPos < i)
                 str += f.slice(lastPos, i);
-              var type = typeof args[a];
-              if (type === "string") {
+              var type2 = typeof args[a];
+              if (type2 === "string") {
                 str += "'" + args[a] + "'";
                 lastPos = i + 2;
                 i++;
                 break;
               }
-              if (type === "function") {
+              if (type2 === "function") {
                 str += args[a].name || "<anonymous>";
                 lastPos = i + 2;
                 i++;
@@ -4349,16 +5937,16 @@ var require_colorette = __commonJS({
     __name(_interopNamespace, "_interopNamespace");
     var tty__namespace = /* @__PURE__ */ _interopNamespace(tty);
     var {
-      env: env5 = {},
+      env: env4 = {},
       argv: argv2 = [],
-      platform: platform2 = ""
+      platform: platform3 = ""
     } = typeof process === "undefined" ? {} : process;
-    var isDisabled = "NO_COLOR" in env5 || argv2.includes("--no-color");
-    var isForced = "FORCE_COLOR" in env5 || argv2.includes("--color");
-    var isWindows = platform2 === "win32";
-    var isDumbTerminal = env5.TERM === "dumb";
-    var isCompatibleTerminal = tty__namespace && tty__namespace.isatty && tty__namespace.isatty(1) && env5.TERM && !isDumbTerminal;
-    var isCI = "CI" in env5 && ("GITHUB_ACTIONS" in env5 || "GITLAB_CI" in env5 || "CIRCLECI" in env5);
+    var isDisabled = "NO_COLOR" in env4 || argv2.includes("--no-color");
+    var isForced = "FORCE_COLOR" in env4 || argv2.includes("--color");
+    var isWindows = platform3 === "win32";
+    var isDumbTerminal = env4.TERM === "dumb";
+    var isCompatibleTerminal = tty__namespace && tty__namespace.isatty && tty__namespace.isatty(1) && env4.TERM && !isDumbTerminal;
+    var isCI = "CI" in env4 && ("GITHUB_ACTIONS" in env4 || "GITLAB_CI" in env4 || "CIRCLECI" in env4);
     var isColorSupported = !isDisabled && (isForced || isWindows && !isDumbTerminal || isCompatibleTerminal || isCI);
     var replaceClose = /* @__PURE__ */ __name((index, string, close2, replace, head = string.substring(0, index) + replace, tail = string.substring(index + close2.length), next = tail.indexOf(close2)) => head + (next < 0 ? tail : replaceClose(next, tail, close2, replace)), "replaceClose");
     var clearBleed = /* @__PURE__ */ __name((index, string, open3, close2, replace) => index < 0 ? open3 + string + close2 : open3 + replaceClose(index, string, close2, replace) + close2, "clearBleed");
@@ -4678,500 +6266,6 @@ var require_end_of_stream = __commonJS({
   }
 });
 
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs
-var access, copyFile, cp, open, opendir, rename, truncate, rm, rmdir, mkdir, readdir, readlink, symlink, lstat, stat, link, unlink, chmod, lchmod, lchown, chown, utimes, lutimes, realpath, mkdtemp, writeFile, appendFile, readFile, watch, statfs, glob;
-var init_promises = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/promises.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    access = /* @__PURE__ */ notImplemented("fs.access");
-    copyFile = /* @__PURE__ */ notImplemented("fs.copyFile");
-    cp = /* @__PURE__ */ notImplemented("fs.cp");
-    open = /* @__PURE__ */ notImplemented("fs.open");
-    opendir = /* @__PURE__ */ notImplemented("fs.opendir");
-    rename = /* @__PURE__ */ notImplemented("fs.rename");
-    truncate = /* @__PURE__ */ notImplemented("fs.truncate");
-    rm = /* @__PURE__ */ notImplemented("fs.rm");
-    rmdir = /* @__PURE__ */ notImplemented("fs.rmdir");
-    mkdir = /* @__PURE__ */ notImplemented("fs.mkdir");
-    readdir = /* @__PURE__ */ notImplemented("fs.readdir");
-    readlink = /* @__PURE__ */ notImplemented("fs.readlink");
-    symlink = /* @__PURE__ */ notImplemented("fs.symlink");
-    lstat = /* @__PURE__ */ notImplemented("fs.lstat");
-    stat = /* @__PURE__ */ notImplemented("fs.stat");
-    link = /* @__PURE__ */ notImplemented("fs.link");
-    unlink = /* @__PURE__ */ notImplemented("fs.unlink");
-    chmod = /* @__PURE__ */ notImplemented("fs.chmod");
-    lchmod = /* @__PURE__ */ notImplemented("fs.lchmod");
-    lchown = /* @__PURE__ */ notImplemented("fs.lchown");
-    chown = /* @__PURE__ */ notImplemented("fs.chown");
-    utimes = /* @__PURE__ */ notImplemented("fs.utimes");
-    lutimes = /* @__PURE__ */ notImplemented("fs.lutimes");
-    realpath = /* @__PURE__ */ notImplemented("fs.realpath");
-    mkdtemp = /* @__PURE__ */ notImplemented("fs.mkdtemp");
-    writeFile = /* @__PURE__ */ notImplemented("fs.writeFile");
-    appendFile = /* @__PURE__ */ notImplemented("fs.appendFile");
-    readFile = /* @__PURE__ */ notImplemented("fs.readFile");
-    watch = /* @__PURE__ */ notImplemented("fs.watch");
-    statfs = /* @__PURE__ */ notImplemented("fs.statfs");
-    glob = /* @__PURE__ */ notImplemented("fs.glob");
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs
-var constants_exports = {};
-__export(constants_exports, {
-  COPYFILE_EXCL: () => COPYFILE_EXCL,
-  COPYFILE_FICLONE: () => COPYFILE_FICLONE,
-  COPYFILE_FICLONE_FORCE: () => COPYFILE_FICLONE_FORCE,
-  EXTENSIONLESS_FORMAT_JAVASCRIPT: () => EXTENSIONLESS_FORMAT_JAVASCRIPT,
-  EXTENSIONLESS_FORMAT_WASM: () => EXTENSIONLESS_FORMAT_WASM,
-  F_OK: () => F_OK,
-  O_APPEND: () => O_APPEND,
-  O_CREAT: () => O_CREAT,
-  O_DIRECT: () => O_DIRECT,
-  O_DIRECTORY: () => O_DIRECTORY,
-  O_DSYNC: () => O_DSYNC,
-  O_EXCL: () => O_EXCL,
-  O_NOATIME: () => O_NOATIME,
-  O_NOCTTY: () => O_NOCTTY,
-  O_NOFOLLOW: () => O_NOFOLLOW,
-  O_NONBLOCK: () => O_NONBLOCK,
-  O_RDONLY: () => O_RDONLY,
-  O_RDWR: () => O_RDWR,
-  O_SYNC: () => O_SYNC,
-  O_TRUNC: () => O_TRUNC,
-  O_WRONLY: () => O_WRONLY,
-  R_OK: () => R_OK,
-  S_IFBLK: () => S_IFBLK,
-  S_IFCHR: () => S_IFCHR,
-  S_IFDIR: () => S_IFDIR,
-  S_IFIFO: () => S_IFIFO,
-  S_IFLNK: () => S_IFLNK,
-  S_IFMT: () => S_IFMT,
-  S_IFREG: () => S_IFREG,
-  S_IFSOCK: () => S_IFSOCK,
-  S_IRGRP: () => S_IRGRP,
-  S_IROTH: () => S_IROTH,
-  S_IRUSR: () => S_IRUSR,
-  S_IRWXG: () => S_IRWXG,
-  S_IRWXO: () => S_IRWXO,
-  S_IRWXU: () => S_IRWXU,
-  S_IWGRP: () => S_IWGRP,
-  S_IWOTH: () => S_IWOTH,
-  S_IWUSR: () => S_IWUSR,
-  S_IXGRP: () => S_IXGRP,
-  S_IXOTH: () => S_IXOTH,
-  S_IXUSR: () => S_IXUSR,
-  UV_DIRENT_BLOCK: () => UV_DIRENT_BLOCK,
-  UV_DIRENT_CHAR: () => UV_DIRENT_CHAR,
-  UV_DIRENT_DIR: () => UV_DIRENT_DIR,
-  UV_DIRENT_FIFO: () => UV_DIRENT_FIFO,
-  UV_DIRENT_FILE: () => UV_DIRENT_FILE,
-  UV_DIRENT_LINK: () => UV_DIRENT_LINK,
-  UV_DIRENT_SOCKET: () => UV_DIRENT_SOCKET,
-  UV_DIRENT_UNKNOWN: () => UV_DIRENT_UNKNOWN,
-  UV_FS_COPYFILE_EXCL: () => UV_FS_COPYFILE_EXCL,
-  UV_FS_COPYFILE_FICLONE: () => UV_FS_COPYFILE_FICLONE,
-  UV_FS_COPYFILE_FICLONE_FORCE: () => UV_FS_COPYFILE_FICLONE_FORCE,
-  UV_FS_O_FILEMAP: () => UV_FS_O_FILEMAP,
-  UV_FS_SYMLINK_DIR: () => UV_FS_SYMLINK_DIR,
-  UV_FS_SYMLINK_JUNCTION: () => UV_FS_SYMLINK_JUNCTION,
-  W_OK: () => W_OK,
-  X_OK: () => X_OK
-});
-var UV_FS_SYMLINK_DIR, UV_FS_SYMLINK_JUNCTION, O_RDONLY, O_WRONLY, O_RDWR, UV_DIRENT_UNKNOWN, UV_DIRENT_FILE, UV_DIRENT_DIR, UV_DIRENT_LINK, UV_DIRENT_FIFO, UV_DIRENT_SOCKET, UV_DIRENT_CHAR, UV_DIRENT_BLOCK, EXTENSIONLESS_FORMAT_JAVASCRIPT, EXTENSIONLESS_FORMAT_WASM, S_IFMT, S_IFREG, S_IFDIR, S_IFCHR, S_IFBLK, S_IFIFO, S_IFLNK, S_IFSOCK, O_CREAT, O_EXCL, UV_FS_O_FILEMAP, O_NOCTTY, O_TRUNC, O_APPEND, O_DIRECTORY, O_NOATIME, O_NOFOLLOW, O_SYNC, O_DSYNC, O_DIRECT, O_NONBLOCK, S_IRWXU, S_IRUSR, S_IWUSR, S_IXUSR, S_IRWXG, S_IRGRP, S_IWGRP, S_IXGRP, S_IRWXO, S_IROTH, S_IWOTH, S_IXOTH, F_OK, R_OK, W_OK, X_OK, UV_FS_COPYFILE_EXCL, COPYFILE_EXCL, UV_FS_COPYFILE_FICLONE, COPYFILE_FICLONE, UV_FS_COPYFILE_FICLONE_FORCE, COPYFILE_FICLONE_FORCE;
-var init_constants = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/constants.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    UV_FS_SYMLINK_DIR = 1;
-    UV_FS_SYMLINK_JUNCTION = 2;
-    O_RDONLY = 0;
-    O_WRONLY = 1;
-    O_RDWR = 2;
-    UV_DIRENT_UNKNOWN = 0;
-    UV_DIRENT_FILE = 1;
-    UV_DIRENT_DIR = 2;
-    UV_DIRENT_LINK = 3;
-    UV_DIRENT_FIFO = 4;
-    UV_DIRENT_SOCKET = 5;
-    UV_DIRENT_CHAR = 6;
-    UV_DIRENT_BLOCK = 7;
-    EXTENSIONLESS_FORMAT_JAVASCRIPT = 0;
-    EXTENSIONLESS_FORMAT_WASM = 1;
-    S_IFMT = 61440;
-    S_IFREG = 32768;
-    S_IFDIR = 16384;
-    S_IFCHR = 8192;
-    S_IFBLK = 24576;
-    S_IFIFO = 4096;
-    S_IFLNK = 40960;
-    S_IFSOCK = 49152;
-    O_CREAT = 64;
-    O_EXCL = 128;
-    UV_FS_O_FILEMAP = 0;
-    O_NOCTTY = 256;
-    O_TRUNC = 512;
-    O_APPEND = 1024;
-    O_DIRECTORY = 65536;
-    O_NOATIME = 262144;
-    O_NOFOLLOW = 131072;
-    O_SYNC = 1052672;
-    O_DSYNC = 4096;
-    O_DIRECT = 16384;
-    O_NONBLOCK = 2048;
-    S_IRWXU = 448;
-    S_IRUSR = 256;
-    S_IWUSR = 128;
-    S_IXUSR = 64;
-    S_IRWXG = 56;
-    S_IRGRP = 32;
-    S_IWGRP = 16;
-    S_IXGRP = 8;
-    S_IRWXO = 7;
-    S_IROTH = 4;
-    S_IWOTH = 2;
-    S_IXOTH = 1;
-    F_OK = 0;
-    R_OK = 4;
-    W_OK = 2;
-    X_OK = 1;
-    UV_FS_COPYFILE_EXCL = 1;
-    COPYFILE_EXCL = 1;
-    UV_FS_COPYFILE_FICLONE = 2;
-    COPYFILE_FICLONE = 2;
-    UV_FS_COPYFILE_FICLONE_FORCE = 4;
-    COPYFILE_FICLONE_FORCE = 4;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs
-var promises_default;
-var init_promises2 = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs/promises.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_promises();
-    init_constants();
-    init_promises();
-    promises_default = {
-      constants: constants_exports,
-      access,
-      appendFile,
-      chmod,
-      chown,
-      copyFile,
-      cp,
-      glob,
-      lchmod,
-      lchown,
-      link,
-      lstat,
-      lutimes,
-      mkdir,
-      mkdtemp,
-      open,
-      opendir,
-      readFile,
-      readdir,
-      readlink,
-      realpath,
-      rename,
-      rm,
-      rmdir,
-      stat,
-      statfs,
-      symlink,
-      truncate,
-      unlink,
-      utimes,
-      watch,
-      writeFile
-    };
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs
-var Dir, Dirent, Stats, ReadStream2, WriteStream2, FileReadStream, FileWriteStream;
-var init_classes = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/classes.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    Dir = /* @__PURE__ */ notImplementedClass("fs.Dir");
-    Dirent = /* @__PURE__ */ notImplementedClass("fs.Dirent");
-    Stats = /* @__PURE__ */ notImplementedClass("fs.Stats");
-    ReadStream2 = /* @__PURE__ */ notImplementedClass("fs.ReadStream");
-    WriteStream2 = /* @__PURE__ */ notImplementedClass("fs.WriteStream");
-    FileReadStream = ReadStream2;
-    FileWriteStream = WriteStream2;
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs
-function callbackify(fn) {
-  const fnc = /* @__PURE__ */ __name(function(...args) {
-    const cb = args.pop();
-    fn().catch((error4) => cb(error4)).then((val) => cb(void 0, val));
-  }, "fnc");
-  fnc.__promisify__ = fn;
-  fnc.native = fnc;
-  return fnc;
-}
-var access2, appendFile2, chown2, chmod2, copyFile2, cp2, lchown2, lchmod2, link2, lstat2, lutimes2, mkdir2, mkdtemp2, realpath2, open2, opendir2, readdir2, readFile2, readlink2, rename2, rm2, rmdir2, stat2, symlink2, truncate2, unlink2, utimes2, writeFile2, statfs2, close, createReadStream, createWriteStream, exists2, fchown, fchmod, fdatasync, fstat, fsync, ftruncate, futimes, lstatSync, read, readv, realpathSync, statSync, unwatchFile, watch2, watchFile, write, writev, _toUnixTimestamp, openAsBlob, glob2, appendFileSync, accessSync, chownSync, chmodSync, closeSync, copyFileSync, cpSync, existsSync, fchownSync, fchmodSync, fdatasyncSync, fstatSync, fsyncSync, ftruncateSync, futimesSync, lchownSync, lchmodSync, linkSync, lutimesSync, mkdirSync, mkdtempSync, openSync, opendirSync, readdirSync, readSync, readvSync, readFileSync, readlinkSync, renameSync, rmSync, rmdirSync, symlinkSync, truncateSync, unlinkSync, utimesSync, writeFileSync, writeSync, writevSync, statfsSync, globSync;
-var init_fs = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/fs/fs.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_utils();
-    init_promises();
-    __name(callbackify, "callbackify");
-    access2 = callbackify(access);
-    appendFile2 = callbackify(appendFile);
-    chown2 = callbackify(chown);
-    chmod2 = callbackify(chmod);
-    copyFile2 = callbackify(copyFile);
-    cp2 = callbackify(cp);
-    lchown2 = callbackify(lchown);
-    lchmod2 = callbackify(lchmod);
-    link2 = callbackify(link);
-    lstat2 = callbackify(lstat);
-    lutimes2 = callbackify(lutimes);
-    mkdir2 = callbackify(mkdir);
-    mkdtemp2 = callbackify(mkdtemp);
-    realpath2 = callbackify(realpath);
-    open2 = callbackify(open);
-    opendir2 = callbackify(opendir);
-    readdir2 = callbackify(readdir);
-    readFile2 = callbackify(readFile);
-    readlink2 = callbackify(readlink);
-    rename2 = callbackify(rename);
-    rm2 = callbackify(rm);
-    rmdir2 = callbackify(rmdir);
-    stat2 = callbackify(stat);
-    symlink2 = callbackify(symlink);
-    truncate2 = callbackify(truncate);
-    unlink2 = callbackify(unlink);
-    utimes2 = callbackify(utimes);
-    writeFile2 = callbackify(writeFile);
-    statfs2 = callbackify(statfs);
-    close = /* @__PURE__ */ notImplementedAsync("fs.close");
-    createReadStream = /* @__PURE__ */ notImplementedAsync("fs.createReadStream");
-    createWriteStream = /* @__PURE__ */ notImplementedAsync("fs.createWriteStream");
-    exists2 = /* @__PURE__ */ notImplementedAsync("fs.exists");
-    fchown = /* @__PURE__ */ notImplementedAsync("fs.fchown");
-    fchmod = /* @__PURE__ */ notImplementedAsync("fs.fchmod");
-    fdatasync = /* @__PURE__ */ notImplementedAsync("fs.fdatasync");
-    fstat = /* @__PURE__ */ notImplementedAsync("fs.fstat");
-    fsync = /* @__PURE__ */ notImplementedAsync("fs.fsync");
-    ftruncate = /* @__PURE__ */ notImplementedAsync("fs.ftruncate");
-    futimes = /* @__PURE__ */ notImplementedAsync("fs.futimes");
-    lstatSync = /* @__PURE__ */ notImplementedAsync("fs.lstatSync");
-    read = /* @__PURE__ */ notImplementedAsync("fs.read");
-    readv = /* @__PURE__ */ notImplementedAsync("fs.readv");
-    realpathSync = /* @__PURE__ */ notImplementedAsync("fs.realpathSync");
-    statSync = /* @__PURE__ */ notImplementedAsync("fs.statSync");
-    unwatchFile = /* @__PURE__ */ notImplementedAsync("fs.unwatchFile");
-    watch2 = /* @__PURE__ */ notImplementedAsync("fs.watch");
-    watchFile = /* @__PURE__ */ notImplementedAsync("fs.watchFile");
-    write = /* @__PURE__ */ notImplementedAsync("fs.write");
-    writev = /* @__PURE__ */ notImplementedAsync("fs.writev");
-    _toUnixTimestamp = /* @__PURE__ */ notImplementedAsync("fs._toUnixTimestamp");
-    openAsBlob = /* @__PURE__ */ notImplementedAsync("fs.openAsBlob");
-    glob2 = /* @__PURE__ */ notImplementedAsync("fs.glob");
-    appendFileSync = /* @__PURE__ */ notImplemented("fs.appendFileSync");
-    accessSync = /* @__PURE__ */ notImplemented("fs.accessSync");
-    chownSync = /* @__PURE__ */ notImplemented("fs.chownSync");
-    chmodSync = /* @__PURE__ */ notImplemented("fs.chmodSync");
-    closeSync = /* @__PURE__ */ notImplemented("fs.closeSync");
-    copyFileSync = /* @__PURE__ */ notImplemented("fs.copyFileSync");
-    cpSync = /* @__PURE__ */ notImplemented("fs.cpSync");
-    existsSync = /* @__PURE__ */ __name(() => false, "existsSync");
-    fchownSync = /* @__PURE__ */ notImplemented("fs.fchownSync");
-    fchmodSync = /* @__PURE__ */ notImplemented("fs.fchmodSync");
-    fdatasyncSync = /* @__PURE__ */ notImplemented("fs.fdatasyncSync");
-    fstatSync = /* @__PURE__ */ notImplemented("fs.fstatSync");
-    fsyncSync = /* @__PURE__ */ notImplemented("fs.fsyncSync");
-    ftruncateSync = /* @__PURE__ */ notImplemented("fs.ftruncateSync");
-    futimesSync = /* @__PURE__ */ notImplemented("fs.futimesSync");
-    lchownSync = /* @__PURE__ */ notImplemented("fs.lchownSync");
-    lchmodSync = /* @__PURE__ */ notImplemented("fs.lchmodSync");
-    linkSync = /* @__PURE__ */ notImplemented("fs.linkSync");
-    lutimesSync = /* @__PURE__ */ notImplemented("fs.lutimesSync");
-    mkdirSync = /* @__PURE__ */ notImplemented("fs.mkdirSync");
-    mkdtempSync = /* @__PURE__ */ notImplemented("fs.mkdtempSync");
-    openSync = /* @__PURE__ */ notImplemented("fs.openSync");
-    opendirSync = /* @__PURE__ */ notImplemented("fs.opendirSync");
-    readdirSync = /* @__PURE__ */ notImplemented("fs.readdirSync");
-    readSync = /* @__PURE__ */ notImplemented("fs.readSync");
-    readvSync = /* @__PURE__ */ notImplemented("fs.readvSync");
-    readFileSync = /* @__PURE__ */ notImplemented("fs.readFileSync");
-    readlinkSync = /* @__PURE__ */ notImplemented("fs.readlinkSync");
-    renameSync = /* @__PURE__ */ notImplemented("fs.renameSync");
-    rmSync = /* @__PURE__ */ notImplemented("fs.rmSync");
-    rmdirSync = /* @__PURE__ */ notImplemented("fs.rmdirSync");
-    symlinkSync = /* @__PURE__ */ notImplemented("fs.symlinkSync");
-    truncateSync = /* @__PURE__ */ notImplemented("fs.truncateSync");
-    unlinkSync = /* @__PURE__ */ notImplemented("fs.unlinkSync");
-    utimesSync = /* @__PURE__ */ notImplemented("fs.utimesSync");
-    writeFileSync = /* @__PURE__ */ notImplemented("fs.writeFileSync");
-    writeSync = /* @__PURE__ */ notImplemented("fs.writeSync");
-    writevSync = /* @__PURE__ */ notImplemented("fs.writevSync");
-    statfsSync = /* @__PURE__ */ notImplemented("fs.statfsSync");
-    globSync = /* @__PURE__ */ notImplemented("fs.globSync");
-  }
-});
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs
-var fs_default;
-var init_fs2 = __esm({
-  "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/fs.mjs"() {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_promises2();
-    init_classes();
-    init_fs();
-    init_constants();
-    init_constants();
-    init_fs();
-    init_classes();
-    fs_default = {
-      F_OK,
-      R_OK,
-      W_OK,
-      X_OK,
-      constants: constants_exports,
-      promises: promises_default,
-      Dir,
-      Dirent,
-      FileReadStream,
-      FileWriteStream,
-      ReadStream: ReadStream2,
-      Stats,
-      WriteStream: WriteStream2,
-      _toUnixTimestamp,
-      access: access2,
-      accessSync,
-      appendFile: appendFile2,
-      appendFileSync,
-      chmod: chmod2,
-      chmodSync,
-      chown: chown2,
-      chownSync,
-      close,
-      closeSync,
-      copyFile: copyFile2,
-      copyFileSync,
-      cp: cp2,
-      cpSync,
-      createReadStream,
-      createWriteStream,
-      exists: exists2,
-      existsSync,
-      fchmod,
-      fchmodSync,
-      fchown,
-      fchownSync,
-      fdatasync,
-      fdatasyncSync,
-      fstat,
-      fstatSync,
-      fsync,
-      fsyncSync,
-      ftruncate,
-      ftruncateSync,
-      futimes,
-      futimesSync,
-      glob: glob2,
-      lchmod: lchmod2,
-      globSync,
-      lchmodSync,
-      lchown: lchown2,
-      lchownSync,
-      link: link2,
-      linkSync,
-      lstat: lstat2,
-      lstatSync,
-      lutimes: lutimes2,
-      lutimesSync,
-      mkdir: mkdir2,
-      mkdirSync,
-      mkdtemp: mkdtemp2,
-      mkdtempSync,
-      open: open2,
-      openAsBlob,
-      openSync,
-      opendir: opendir2,
-      opendirSync,
-      read,
-      readFile: readFile2,
-      readFileSync,
-      readSync,
-      readdir: readdir2,
-      readdirSync,
-      readlink: readlink2,
-      readlinkSync,
-      readv,
-      readvSync,
-      realpath: realpath2,
-      realpathSync,
-      rename: rename2,
-      renameSync,
-      rm: rm2,
-      rmSync,
-      rmdir: rmdir2,
-      rmdirSync,
-      stat: stat2,
-      statSync,
-      statfs: statfs2,
-      statfsSync,
-      symlink: symlink2,
-      symlinkSync,
-      truncate: truncate2,
-      truncateSync,
-      unlink: unlink2,
-      unlinkSync,
-      unwatchFile,
-      utimes: utimes2,
-      utimesSync,
-      watch: watch2,
-      watchFile,
-      write,
-      writeFile: writeFile2,
-      writeFileSync,
-      writeSync,
-      writev,
-      writevSync
-    };
-  }
-});
-
-// node-built-in-modules:fs
-var require_fs = __commonJS({
-  "node-built-in-modules:fs"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    init_fs2();
-    module.exports = fs_default;
-  }
-});
-
 // node_modules/.pnpm/pump@3.0.2/node_modules/pump/index.js
 var require_pump = __commonJS({
   "node_modules/.pnpm/pump@3.0.2/node_modules/pump/index.js"(exports, module) {
@@ -5252,26 +6346,26 @@ var require_pump = __commonJS({
 });
 
 // node-built-in-modules:stream
-import libDefault from "stream";
+import libDefault2 from "stream";
 var require_stream = __commonJS({
   "node-built-in-modules:stream"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = libDefault;
+    module.exports = libDefault2;
   }
 });
 
 // node-built-in-modules:string_decoder
-import libDefault2 from "string_decoder";
+import libDefault3 from "string_decoder";
 var require_string_decoder = __commonJS({
   "node-built-in-modules:string_decoder"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = libDefault2;
+    module.exports = libDefault3;
   }
 });
 
@@ -5439,11 +6533,11 @@ var init_message_port = __esm({
       }
       start() {
       }
-      addEventListener(type, listener) {
-        this.on(type, listener);
+      addEventListener(type2, listener) {
+        this.on(type2, listener);
       }
-      removeEventListener(type, listener) {
-        this.off(type, listener);
+      removeEventListener(type2, listener) {
+        this.off(type2, listener);
       }
       dispatchEvent(event) {
         return this.emit(event.type, event);
@@ -5885,14 +6979,14 @@ var require_colors = __commonJS({
 });
 
 // node-built-in-modules:events
-import libDefault3 from "events";
+import libDefault4 from "events";
 var require_events = __commonJS({
   "node-built-in-modules:events"(exports, module) {
     init_modules_watch_stub();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
     init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
     init_performance2();
-    module.exports = libDefault3;
+    module.exports = libDefault4;
   }
 });
 
@@ -5941,7 +7035,7 @@ var init_log = __esm({
 // node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/util.mjs
 import types2 from "node:util/types";
 import { default as default2 } from "node:util/types";
-var TextDecoder2, TextEncoder2, _errnoException, _exceptionWithHostPort, getSystemErrorMap, getSystemErrorName, parseEnv, styleText;
+var TextDecoder2, TextEncoder2, _errnoException, _exceptionWithHostPort, getSystemErrorMap, getSystemErrorName, parseEnv2, styleText;
 var init_util = __esm({
   "node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/util.mjs"() {
     init_modules_watch_stub();
@@ -5957,7 +7051,7 @@ var init_util = __esm({
     _exceptionWithHostPort = /* @__PURE__ */ notImplemented("util._exceptionWithHostPort");
     getSystemErrorMap = /* @__PURE__ */ notImplemented("util.getSystemErrorMap");
     getSystemErrorName = /* @__PURE__ */ notImplemented("util.getSystemErrorName");
-    parseEnv = /* @__PURE__ */ notImplemented("util.parseEnv");
+    parseEnv2 = /* @__PURE__ */ notImplemented("util.parseEnv");
     styleText = /* @__PURE__ */ notImplemented("util.styleText");
   }
 });
@@ -6030,7 +7124,7 @@ var init_util2 = __esm({
       isSymbol,
       isUndefined: isUndefined2,
       // @ts-expect-error unenv has unknown type
-      parseEnv,
+      parseEnv: parseEnv2,
       // @ts-expect-error unenv has unknown type
       styleText,
       /**
@@ -6075,18 +7169,6 @@ var require_util2 = __commonJS({
     init_performance2();
     init_util2();
     module.exports = util_default;
-  }
-});
-
-// node-built-in-modules:path
-import libDefault4 from "path";
-var require_path = __commonJS({
-  "node-built-in-modules:path"(exports, module) {
-    init_modules_watch_stub();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-    init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-    init_performance2();
-    module.exports = libDefault4;
   }
 });
 
@@ -6154,7 +7236,7 @@ var require_sonic_boom = __commonJS({
     var fs = require_fs();
     var EventEmitter4 = require_events();
     var inherits2 = require_util2().inherits;
-    var path = require_path();
+    var path2 = require_path();
     var sleep = require_atomic_sleep();
     var assert3 = require_assert();
     var BUSY_WRITE_TIMEOUT = 100;
@@ -6209,7 +7291,7 @@ var require_sonic_boom = __commonJS({
       const mode = sonic.mode;
       if (sonic.sync) {
         try {
-          if (sonic.mkdir) fs.mkdirSync(path.dirname(file), { recursive: true });
+          if (sonic.mkdir) fs.mkdirSync(path2.dirname(file), { recursive: true });
           const fd = fs.openSync(file, flags, mode);
           fileOpened(null, fd);
         } catch (err) {
@@ -6217,7 +7299,7 @@ var require_sonic_boom = __commonJS({
           throw err;
         }
       } else if (sonic.mkdir) {
-        fs.mkdir(path.dirname(file), { recursive: true }, (err) => {
+        fs.mkdir(path2.dirname(file), { recursive: true }, (err) => {
           if (err) return fileOpened(err);
           fs.open(file, flags, mode, fileOpened);
         });
@@ -6663,37 +7745,37 @@ var require_sonic_boom = __commonJS({
       actualClose(this);
     };
     function actualWrite() {
-      const release2 = this.release;
+      const release3 = this.release;
       this._writing = true;
       this._writingBuf = this._writingBuf || this._bufs.shift() || "";
       if (this.sync) {
         try {
           const written = fs.writeSync(this.fd, this._writingBuf, "utf8");
-          release2(null, written);
+          release3(null, written);
         } catch (err) {
-          release2(err);
+          release3(err);
         }
       } else {
-        fs.write(this.fd, this._writingBuf, "utf8", release2);
+        fs.write(this.fd, this._writingBuf, "utf8", release3);
       }
     }
     __name(actualWrite, "actualWrite");
     function actualWriteBuffer() {
-      const release2 = this.release;
+      const release3 = this.release;
       this._writing = true;
       this._writingBuf = this._writingBuf.length ? this._writingBuf : mergeBuf(this._bufs.shift(), this._lens.shift());
       if (this.sync) {
         try {
           const written = fs.writeSync(this.fd, this._writingBuf);
-          release2(null, written);
+          release3(null, written);
         } catch (err) {
-          release2(err);
+          release3(err);
         }
       } else {
         if (kCopyBuffer) {
           this._writingBuf = Buffer.from(this._writingBuf);
         }
-        fs.write(this.fd, this._writingBuf, release2);
+        fs.write(this.fd, this._writingBuf, release3);
       }
     }
     __name(actualWriteBuffer, "actualWriteBuffer");
@@ -7131,8 +8213,8 @@ var require_cjs = __commonJS({
     __name(getRegExpFlagsModern, "getRegExpFlagsModern");
     var getRegExpFlags = /test/g.flags === "g" ? getRegExpFlagsModern : getRegExpFlagsLegacy;
     function getTagLegacy(value) {
-      var type = toStringObject.call(value);
-      return type.substring(8, type.length - 1);
+      var type2 = toStringObject.call(value);
+      return type2.substring(8, type2.length - 1);
     }
     __name(getTagLegacy, "getTagLegacy");
     function getTagModern(value) {
@@ -7867,7 +8949,7 @@ var require_parse_factory_options = __commonJS({
     var handleCustomLevelsNamesOpts = require_handle_custom_levels_names_opts();
     var handleLevelLabelData = require_get_level_label_data();
     function parseFactoryOptions(options) {
-      const EOL = options.crlf ? "\r\n" : "\n";
+      const EOL2 = options.crlf ? "\r\n" : "\n";
       const IDENT = "    ";
       const {
         customPrettifiers,
@@ -7922,7 +9004,7 @@ var require_parse_factory_options = __commonJS({
       const colorizer = colors2(options.colorize, customColors, useOnlyCustomProps);
       const objectColorizer = options.colorizeObjects ? colorizer : colors2(false, [], false);
       return {
-        EOL,
+        EOL: EOL2,
         IDENT,
         colorizer,
         customColors,
@@ -8881,13 +9963,13 @@ var require_pino_pretty = __commonJS({
   }
 });
 
-// .wrangler/tmp/bundle-LSo1T3/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-macSxN/middleware-loader.entry.ts
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
-// .wrangler/tmp/bundle-LSo1T3/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-macSxN/middleware-insertion-facade.js
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
@@ -9205,16 +10287,16 @@ var OpenAPIRegistry = class {
    *             type in the resulting OpenAPI document
    * @param component The actual object to put there
    */
-  registerComponent(type, name, component) {
+  registerComponent(type2, name, component) {
     this._definitions.push({
       type: "component",
-      componentType: type,
+      componentType: type2,
       name,
       component
     });
     return {
       name,
-      ref: { $ref: `#/components/${type}/${name}` }
+      ref: { $ref: `#/components/${type2}/${name}` }
     };
   }
   schemaWithRefId(refId, zodSchema) {
@@ -9453,8 +10535,8 @@ function enumInfo(enumObject) {
   const keysExceptReverseMappings = Object.keys(enumObject).filter((key) => typeof enumObject[enumObject[key]] !== "number");
   const values = keysExceptReverseMappings.map((key) => enumObject[key]);
   const numericCount = values.filter((_) => typeof _ === "number").length;
-  const type = numericCount === 0 ? "string" : numericCount === values.length ? "numeric" : "mixed";
-  return { values, type };
+  const type2 = numericCount === 0 ? "string" : numericCount === values.length ? "numeric" : "mixed";
+  return { values, type: type2 };
 }
 __name(enumInfo, "enumInfo");
 var NativeEnumTransformer = class {
@@ -9462,11 +10544,11 @@ var NativeEnumTransformer = class {
     __name(this, "NativeEnumTransformer");
   }
   transform(zodSchema, mapNullableType) {
-    const { type, values } = enumInfo(zodSchema._def.values);
-    if (type === "mixed") {
+    const { type: type2, values } = enumInfo(zodSchema._def.values);
+    if (type2 === "mixed") {
       throw new ZodToOpenAPIError("Enum has mixed string and number values, please specify the OpenAPI type manually");
     }
-    return Object.assign(Object.assign({}, mapNullableType(type === "numeric" ? "integer" : "string")), { enum: values });
+    return Object.assign(Object.assign({}, mapNullableType(type2 === "numeric" ? "integer" : "string")), { enum: values });
   }
 };
 var NumberTransformer = class {
@@ -9493,8 +10575,8 @@ var ObjectTransformer = class {
     mapItem(parent);
     const keysRequiredByParent = this.requiredKeysOf(parent);
     const propsOfParent = mapValues(parent === null || parent === void 0 ? void 0 : parent._def.shape(), mapItem);
-    const propertiesToAdd = Object.fromEntries(Object.entries(properties).filter(([key, type]) => {
-      return !objectEquals(propsOfParent[key], type);
+    const propertiesToAdd = Object.fromEntries(Object.entries(properties).filter(([key, type2]) => {
+      return !objectEquals(propsOfParent[key], type2);
     }));
     const additionallyRequired = required.filter((prop) => !keysRequiredByParent.includes(prop));
     const objectData = Object.assign(Object.assign(Object.assign(Object.assign({}, mapNullableType("object")), { default: defaultValue, properties: propertiesToAdd }), additionallyRequired.length > 0 ? { required: additionallyRequired } : {}), this.generateAdditionalProperties(zodSchema, mapItem));
@@ -9517,7 +10599,7 @@ var ObjectTransformer = class {
     return { additionalProperties: mapItem(catchallSchema) };
   }
   requiredKeysOf(objectSchema) {
-    return Object.entries(objectSchema._def.shape()).filter(([_key, type]) => !Metadata.isOptionalSchema(type)).map(([key, _type]) => key);
+    return Object.entries(objectSchema._def.shape()).filter(([_key, type2]) => !Metadata.isOptionalSchema(type2)).map(([key, _type]) => key);
   }
 };
 var RecordTransformer = class {
@@ -9775,8 +10857,8 @@ var OpenAPIGenerator = class {
       if (!("type" in right)) {
         return 1;
       }
-      const leftIndex = generationOrder.findIndex((type) => type === left.type);
-      const rightIndex = generationOrder.findIndex((type) => type === right.type);
+      const leftIndex = generationOrder.findIndex((type2) => type2 === left.type);
+      const rightIndex = generationOrder.findIndex((type2) => type2 === right.type);
       return leftIndex - rightIndex;
     });
   }
@@ -10025,11 +11107,11 @@ var OpenAPIGenerator = class {
     return isZodType(schema3, "ZodEffects") ? this.cleanParameter(schema3._def.schema) : schema3;
   }
   generatePath(route) {
-    const { method, path, request, responses } = route, pathItemConfig = __rest(route, ["method", "path", "request", "responses"]);
+    const { method, path: path2, request, responses } = route, pathItemConfig = __rest(route, ["method", "path", "request", "responses"]);
     const generatedResponses = mapValues(responses, (response) => {
       return this.getResponse(response);
     });
-    const parameters = enhanceMissingParametersError(() => this.getParameters(request), { route: `${method} ${path}` });
+    const parameters = enhanceMissingParametersError(() => this.getParameters(request), { route: `${method} ${path2}` });
     const requestBody = this.getRequestBody(request === null || request === void 0 ? void 0 : request.body);
     const routeDoc = {
       [method]: Object.assign(Object.assign(Object.assign(Object.assign({}, pathItemConfig), parameters.length > 0 ? {
@@ -10068,11 +11150,11 @@ var OpenAPIGenerator = class {
     return responseHeaders;
   }
   getBodyContent(content) {
-    return mapValues(content, (config3) => {
-      if (!config3 || !isAnyZodType(config3.schema)) {
-        return config3;
+    return mapValues(content, (config4) => {
+      if (!config4 || !isAnyZodType(config4.schema)) {
+        return config4;
       }
-      const { schema: configSchema } = config3, rest = __rest(config3, ["schema"]);
+      const { schema: configSchema } = config4, rest = __rest(config4, ["schema"]);
       const schema3 = this.generateSchemaWithRef(configSchema);
       return Object.assign({ schema: schema3 }, rest);
     });
@@ -10094,8 +11176,8 @@ var OpenApiGeneratorV30Specifics = class {
     }
     return objects;
   }
-  mapNullableType(type, isNullable) {
-    return Object.assign(Object.assign({}, type ? { type } : void 0), isNullable ? this.nullType : void 0);
+  mapNullableType(type2, isNullable) {
+    return Object.assign(Object.assign({}, type2 ? { type: type2 } : void 0), isNullable ? this.nullType : void 0);
   }
   mapTupleItems(schemas) {
     const uniqueSchemas = uniq(schemas);
@@ -10126,9 +11208,9 @@ var OpenApiGeneratorV3 = class {
     const specifics = new OpenApiGeneratorV30Specifics();
     this.generator = new OpenAPIGenerator(definitions, specifics);
   }
-  generateDocument(config3) {
+  generateDocument(config4) {
     const baseData = this.generator.generateDocumentData();
-    return Object.assign(Object.assign({}, config3), baseData);
+    return Object.assign(Object.assign({}, config4), baseData);
   }
   generateComponents() {
     return this.generator.generateComponents();
@@ -10147,17 +11229,17 @@ var OpenApiGeneratorV31Specifics = class {
     }
     return objects;
   }
-  mapNullableType(type, isNullable) {
-    if (!type) {
+  mapNullableType(type2, isNullable) {
+    if (!type2) {
       return {};
     }
     if (isNullable) {
       return {
-        type: Array.isArray(type) ? [...type, "null"] : [type, "null"]
+        type: Array.isArray(type2) ? [...type2, "null"] : [type2, "null"]
       };
     }
     return {
-      type
+      type: type2
     };
   }
   mapTupleItems(schemas) {
@@ -10192,10 +11274,10 @@ var OpenApiGeneratorV31 = class {
     const specifics = new OpenApiGeneratorV31Specifics();
     this.generator = new OpenAPIGenerator(this.definitions, specifics);
   }
-  generateDocument(config3) {
+  generateDocument(config4) {
     const baseDocument = this.generator.generateDocumentData();
     this.definitions.filter(isWebhookDefinition).forEach((definition) => this.generateSingleWebhook(definition.webhook));
-    return Object.assign(Object.assign(Object.assign({}, config3), baseDocument), { webhooks: this.webhookRefs });
+    return Object.assign(Object.assign(Object.assign({}, config4), baseDocument), { webhooks: this.webhookRefs });
   }
   generateComponents() {
     return this.generator.generateComponents();
@@ -10242,26 +11324,26 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var splitPath = /* @__PURE__ */ __name((path) => {
-  const paths3 = path.split("/");
+var splitPath = /* @__PURE__ */ __name((path2) => {
+  const paths3 = path2.split("/");
   if (paths3[0] === "") {
     paths3.shift();
   }
   return paths3;
 }, "splitPath");
 var splitRoutingPath = /* @__PURE__ */ __name((routePath) => {
-  const { groups, path } = extractGroupsFromPath(routePath);
-  const paths3 = splitPath(path);
+  const { groups, path: path2 } = extractGroupsFromPath(routePath);
+  const paths3 = splitPath(path2);
   return replaceGroupMarks(paths3, groups);
 }, "splitRoutingPath");
-var extractGroupsFromPath = /* @__PURE__ */ __name((path) => {
+var extractGroupsFromPath = /* @__PURE__ */ __name((path2) => {
   const groups = [];
-  path = path.replace(/\{[^}]+\}/g, (match, index) => {
+  path2 = path2.replace(/\{[^}]+\}/g, (match, index) => {
     const mark = `@${index}`;
     groups.push([mark, match]);
     return mark;
   });
-  return { groups, path };
+  return { groups, path: path2 };
 }, "extractGroupsFromPath");
 var replaceGroupMarks = /* @__PURE__ */ __name((paths3, groups) => {
   for (let i = groups.length - 1; i >= 0; i--) {
@@ -10315,8 +11397,8 @@ var getPath = /* @__PURE__ */ __name((request) => {
     const charCode = url.charCodeAt(i);
     if (charCode === 37) {
       const queryIndex = url.indexOf("?", i);
-      const path = url.slice(start, queryIndex === -1 ? void 0 : queryIndex);
-      return tryDecodeURI(path.includes("%25") ? path.replace(/%25/g, "%2525") : path);
+      const path2 = url.slice(start, queryIndex === -1 ? void 0 : queryIndex);
+      return tryDecodeURI(path2.includes("%25") ? path2.replace(/%25/g, "%2525") : path2);
     } else if (charCode === 63) {
       break;
     }
@@ -10330,30 +11412,30 @@ var getPathNoStrict = /* @__PURE__ */ __name((request) => {
 var mergePath = /* @__PURE__ */ __name((...paths3) => {
   let p = "";
   let endsWithSlash = false;
-  for (let path of paths3) {
+  for (let path2 of paths3) {
     if (p.at(-1) === "/") {
       p = p.slice(0, -1);
       endsWithSlash = true;
     }
-    if (path[0] !== "/") {
-      path = `/${path}`;
+    if (path2[0] !== "/") {
+      path2 = `/${path2}`;
     }
-    if (path === "/" && endsWithSlash) {
+    if (path2 === "/" && endsWithSlash) {
       p = `${p}/`;
-    } else if (path !== "/") {
-      p = `${p}${path}`;
+    } else if (path2 !== "/") {
+      p = `${p}${path2}`;
     }
-    if (path === "/" && p === "") {
+    if (path2 === "/" && p === "") {
       p = "/";
     }
   }
   return p;
 }, "mergePath");
-var checkOptionalParameter = /* @__PURE__ */ __name((path) => {
-  if (!path.match(/\:.+\?$/)) {
+var checkOptionalParameter = /* @__PURE__ */ __name((path2) => {
+  if (!path2.match(/\:.+\?$/)) {
     return null;
   }
-  const segments = path.split("/");
+  const segments = path2.split("/");
   const results = [];
   let basePath = "";
   segments.forEach((segment) => {
@@ -11009,8 +12091,8 @@ function getErrorMap() {
 }
 __name(getErrorMap, "getErrorMap");
 var makeIssue = /* @__PURE__ */ __name((params) => {
-  const { data, path, errorMaps, issueData } = params;
-  const fullPath = [...path, ...issueData.path || []];
+  const { data, path: path2, errorMaps, issueData } = params;
+  const fullPath = [...path2, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -11144,11 +12226,11 @@ var ParseInputLazyPath = class {
   static {
     __name(this, "ParseInputLazyPath");
   }
-  constructor(parent, value, path, key) {
+  constructor(parent, value, path2, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path;
+    this._path = path2;
     this._key = key;
   }
   get path() {
@@ -11536,11 +12618,11 @@ function datetimeRegex(args) {
   return new RegExp(`^${regex}$`);
 }
 __name(datetimeRegex, "datetimeRegex");
-function isValidIP(ip, version3) {
-  if ((version3 === "v4" || !version3) && ipv4Regex.test(ip)) {
+function isValidIP(ip, version4) {
+  if ((version4 === "v4" || !version4) && ipv4Regex.test(ip)) {
     return true;
   }
-  if ((version3 === "v6" || !version3) && ipv6Regex.test(ip)) {
+  if ((version4 === "v6" || !version4) && ipv6Regex.test(ip)) {
     return true;
   }
   return false;
@@ -11565,11 +12647,11 @@ function isValidJWT(jwt2, alg) {
   }
 }
 __name(isValidJWT, "isValidJWT");
-function isValidCidr(ip, version3) {
-  if ((version3 === "v4" || !version3) && ipv4CidrRegex.test(ip)) {
+function isValidCidr(ip, version4) {
+  if ((version4 === "v4" || !version4) && ipv4CidrRegex.test(ip)) {
     return true;
   }
-  if ((version3 === "v6" || !version3) && ipv6CidrRegex.test(ip)) {
+  if ((version4 === "v6" || !version4) && ipv6CidrRegex.test(ip)) {
     return true;
   }
   return false;
@@ -13404,33 +14486,33 @@ ZodUnion.create = (types4, params) => {
     ...processCreateParams(params)
   });
 };
-var getDiscriminator = /* @__PURE__ */ __name((type) => {
-  if (type instanceof ZodLazy) {
-    return getDiscriminator(type.schema);
-  } else if (type instanceof ZodEffects) {
-    return getDiscriminator(type.innerType());
-  } else if (type instanceof ZodLiteral) {
-    return [type.value];
-  } else if (type instanceof ZodEnum) {
-    return type.options;
-  } else if (type instanceof ZodNativeEnum) {
-    return util.objectValues(type.enum);
-  } else if (type instanceof ZodDefault) {
-    return getDiscriminator(type._def.innerType);
-  } else if (type instanceof ZodUndefined) {
+var getDiscriminator = /* @__PURE__ */ __name((type2) => {
+  if (type2 instanceof ZodLazy) {
+    return getDiscriminator(type2.schema);
+  } else if (type2 instanceof ZodEffects) {
+    return getDiscriminator(type2.innerType());
+  } else if (type2 instanceof ZodLiteral) {
+    return [type2.value];
+  } else if (type2 instanceof ZodEnum) {
+    return type2.options;
+  } else if (type2 instanceof ZodNativeEnum) {
+    return util.objectValues(type2.enum);
+  } else if (type2 instanceof ZodDefault) {
+    return getDiscriminator(type2._def.innerType);
+  } else if (type2 instanceof ZodUndefined) {
     return [void 0];
-  } else if (type instanceof ZodNull) {
+  } else if (type2 instanceof ZodNull) {
     return [null];
-  } else if (type instanceof ZodOptional) {
-    return [void 0, ...getDiscriminator(type.unwrap())];
-  } else if (type instanceof ZodNullable) {
-    return [null, ...getDiscriminator(type.unwrap())];
-  } else if (type instanceof ZodBranded) {
-    return getDiscriminator(type.unwrap());
-  } else if (type instanceof ZodReadonly) {
-    return getDiscriminator(type.unwrap());
-  } else if (type instanceof ZodCatch) {
-    return getDiscriminator(type._def.innerType);
+  } else if (type2 instanceof ZodOptional) {
+    return [void 0, ...getDiscriminator(type2.unwrap())];
+  } else if (type2 instanceof ZodNullable) {
+    return [null, ...getDiscriminator(type2.unwrap())];
+  } else if (type2 instanceof ZodBranded) {
+    return getDiscriminator(type2.unwrap());
+  } else if (type2 instanceof ZodReadonly) {
+    return getDiscriminator(type2.unwrap());
+  } else if (type2 instanceof ZodCatch) {
+    return getDiscriminator(type2._def.innerType);
   } else {
     return [];
   }
@@ -13493,8 +14575,8 @@ var ZodDiscriminatedUnion = class _ZodDiscriminatedUnion2 extends ZodType {
    */
   static create(discriminator, options, params) {
     const optionsMap = /* @__PURE__ */ new Map();
-    for (const type of options) {
-      const discriminatorValues = getDiscriminator(type.shape[discriminator]);
+    for (const type2 of options) {
+      const discriminatorValues = getDiscriminator(type2.shape[discriminator]);
       if (!discriminatorValues.length) {
         throw new Error(`A discriminator value for key \`${discriminator}\` could not be extracted from all schema options`);
       }
@@ -13502,7 +14584,7 @@ var ZodDiscriminatedUnion = class _ZodDiscriminatedUnion2 extends ZodType {
         if (optionsMap.has(value)) {
           throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value)}`);
         }
-        optionsMap.set(value, type);
+        optionsMap.set(value, type2);
       }
     }
     return new _ZodDiscriminatedUnion2({
@@ -14374,9 +15456,9 @@ var ZodOptional = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodOptional.create = (type, params) => {
+ZodOptional.create = (type2, params) => {
   return new ZodOptional({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind.ZodOptional,
     ...processCreateParams(params)
   });
@@ -14396,9 +15478,9 @@ var ZodNullable = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodNullable.create = (type, params) => {
+ZodNullable.create = (type2, params) => {
   return new ZodNullable({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind.ZodNullable,
     ...processCreateParams(params)
   });
@@ -14423,9 +15505,9 @@ var ZodDefault = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodDefault.create = (type, params) => {
+ZodDefault.create = (type2, params) => {
   return new ZodDefault({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind.ZodDefault,
     defaultValue: typeof params.default === "function" ? params.default : () => params.default,
     ...processCreateParams(params)
@@ -14479,9 +15561,9 @@ var ZodCatch = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodCatch.create = (type, params) => {
+ZodCatch.create = (type2, params) => {
   return new ZodCatch({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind.ZodCatch,
     catchValue: typeof params.catch === "function" ? params.catch : () => params.catch,
     ...processCreateParams(params)
@@ -14605,9 +15687,9 @@ var ZodReadonly = class extends ZodType {
     return this._def.innerType;
   }
 };
-ZodReadonly.create = (type, params) => {
+ZodReadonly.create = (type2, params) => {
   return new ZodReadonly({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind.ZodReadonly,
     ...processCreateParams(params)
   });
@@ -14988,9 +16070,9 @@ var HonoRequest = class {
   routeIndex = 0;
   path;
   bodyCache = {};
-  constructor(request, path = "/", matchResult = [[]]) {
+  constructor(request, path2 = "/", matchResult = [[]]) {
     this.raw = request;
-    this.path = path;
+    this.path = path2;
     this.#matchResult = matchResult;
     this.#validatedData = {};
   }
@@ -15575,8 +16657,8 @@ var Hono = class {
         return this;
       };
     });
-    this.on = (method, path, ...handlers) => {
-      for (const p of [path].flat()) {
+    this.on = (method, path2, ...handlers) => {
+      for (const p of [path2].flat()) {
         this.#path = p;
         for (const m of [method].flat()) {
           handlers.map((handler) => {
@@ -15613,8 +16695,8 @@ var Hono = class {
   }
   #notFoundHandler = notFoundHandler;
   errorHandler = errorHandler;
-  route(path, app2) {
-    const subApp = this.basePath(path);
+  route(path2, app2) {
+    const subApp = this.basePath(path2);
     app2.routes.map((r) => {
       let handler;
       if (app2.errorHandler === errorHandler) {
@@ -15627,9 +16709,9 @@ var Hono = class {
     });
     return this;
   }
-  basePath(path) {
+  basePath(path2) {
     const subApp = this.#clone();
-    subApp._basePath = mergePath(this._basePath, path);
+    subApp._basePath = mergePath(this._basePath, path2);
     return subApp;
   }
   onError = /* @__PURE__ */ __name((handler) => {
@@ -15640,7 +16722,7 @@ var Hono = class {
     this.#notFoundHandler = handler;
     return this;
   }, "notFound");
-  mount(path, applicationHandler, options) {
+  mount(path2, applicationHandler, options) {
     let replaceRequest;
     let optionHandler;
     if (options) {
@@ -15663,7 +16745,7 @@ var Hono = class {
       return [c.env, executionContext];
     };
     replaceRequest ||= (() => {
-      const mergedPath = mergePath(this._basePath, path);
+      const mergedPath = mergePath(this._basePath, path2);
       const pathPrefixLength = mergedPath === "/" ? 0 : mergedPath.length;
       return (request) => {
         const url = new URL(request.url);
@@ -15678,14 +16760,14 @@ var Hono = class {
       }
       await next();
     }, "handler");
-    this.#addRoute(METHOD_NAME_ALL, mergePath(path, "*"), handler);
+    this.#addRoute(METHOD_NAME_ALL, mergePath(path2, "*"), handler);
     return this;
   }
-  #addRoute(method, path, handler) {
+  #addRoute(method, path2, handler) {
     method = method.toUpperCase();
-    path = mergePath(this._basePath, path);
-    const r = { path, method, handler };
-    this.router.add(method, path, [handler, r]);
+    path2 = mergePath(this._basePath, path2);
+    const r = { path: path2, method, handler };
+    this.router.add(method, path2, [handler, r]);
     this.routes.push(r);
   }
   #handleError(err, c) {
@@ -15694,16 +16776,16 @@ var Hono = class {
     }
     throw err;
   }
-  #dispatch(request, executionCtx, env5, method) {
+  #dispatch(request, executionCtx, env4, method) {
     if (method === "HEAD") {
-      return (async () => new Response(null, await this.#dispatch(request, executionCtx, env5, "GET")))();
+      return (async () => new Response(null, await this.#dispatch(request, executionCtx, env4, "GET")))();
     }
-    const path = this.getPath(request, { env: env5 });
-    const matchResult = this.router.match(method, path);
+    const path2 = this.getPath(request, { env: env4 });
+    const matchResult = this.router.match(method, path2);
     const c = new Context(request, {
-      path,
+      path: path2,
       matchResult,
-      env: env5,
+      env: env4,
       executionCtx,
       notFoundHandler: this.#notFoundHandler
     });
@@ -15895,12 +16977,12 @@ var Trie = class {
   }
   #context = { varIndex: 0 };
   #root = new Node();
-  insert(path, index, pathErrorCheckOnly) {
+  insert(path2, index, pathErrorCheckOnly) {
     const paramAssoc = [];
     const groups = [];
     for (let i = 0; ; ) {
       let replaced = false;
-      path = path.replace(/\{[^}]+\}/g, (m) => {
+      path2 = path2.replace(/\{[^}]+\}/g, (m) => {
         const mark = `@\\${i}`;
         groups[i] = [mark, m];
         i++;
@@ -15911,7 +16993,7 @@ var Trie = class {
         break;
       }
     }
-    const tokens = path.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
+    const tokens = path2.match(/(?::[^\/]+)|(?:\/\*$)|./g) || [];
     for (let i = groups.length - 1; i >= 0; i--) {
       const [mark] = groups[i];
       for (let j = tokens.length - 1; j >= 0; j--) {
@@ -15951,9 +17033,9 @@ var Trie = class {
 var emptyParam = [];
 var nullMatcher = [/^$/, [], /* @__PURE__ */ Object.create(null)];
 var wildcardRegExpCache = /* @__PURE__ */ Object.create(null);
-function buildWildcardRegExp(path) {
-  return wildcardRegExpCache[path] ??= new RegExp(
-    path === "*" ? "" : `^${path.replace(
+function buildWildcardRegExp(path2) {
+  return wildcardRegExpCache[path2] ??= new RegExp(
+    path2 === "*" ? "" : `^${path2.replace(
       /\/\*$|([.\\+*[^\]$()])/g,
       (_, metaChar) => metaChar ? `\\${metaChar}` : "(?:|/.*)"
     )}$`
@@ -15977,17 +17059,17 @@ function buildMatcherFromPreprocessedRoutes(routes2) {
   );
   const staticMap = /* @__PURE__ */ Object.create(null);
   for (let i = 0, j = -1, len = routesWithStaticPathFlag.length; i < len; i++) {
-    const [pathErrorCheckOnly, path, handlers] = routesWithStaticPathFlag[i];
+    const [pathErrorCheckOnly, path2, handlers] = routesWithStaticPathFlag[i];
     if (pathErrorCheckOnly) {
-      staticMap[path] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
+      staticMap[path2] = [handlers.map(([h]) => [h, /* @__PURE__ */ Object.create(null)]), emptyParam];
     } else {
       j++;
     }
     let paramAssoc;
     try {
-      paramAssoc = trie.insert(path, j, pathErrorCheckOnly);
+      paramAssoc = trie.insert(path2, j, pathErrorCheckOnly);
     } catch (e) {
-      throw e === PATH_ERROR ? new UnsupportedPathError(path) : e;
+      throw e === PATH_ERROR ? new UnsupportedPathError(path2) : e;
     }
     if (pathErrorCheckOnly) {
       continue;
@@ -16022,12 +17104,12 @@ function buildMatcherFromPreprocessedRoutes(routes2) {
   return [regexp, handlerMap, staticMap];
 }
 __name(buildMatcherFromPreprocessedRoutes, "buildMatcherFromPreprocessedRoutes");
-function findMiddleware(middleware, path) {
+function findMiddleware(middleware, path2) {
   if (!middleware) {
     return void 0;
   }
   for (const k of Object.keys(middleware).sort((a, b) => b.length - a.length)) {
-    if (buildWildcardRegExp(k).test(path)) {
+    if (buildWildcardRegExp(k).test(path2)) {
       return [...middleware[k]];
     }
   }
@@ -16045,7 +17127,7 @@ var RegExpRouter = class {
     this.#middleware = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
     this.#routes = { [METHOD_NAME_ALL]: /* @__PURE__ */ Object.create(null) };
   }
-  add(method, path, handler) {
+  add(method, path2, handler) {
     const middleware = this.#middleware;
     const routes2 = this.#routes;
     if (!middleware || !routes2) {
@@ -16060,18 +17142,18 @@ var RegExpRouter = class {
         });
       });
     }
-    if (path === "/*") {
-      path = "*";
+    if (path2 === "/*") {
+      path2 = "*";
     }
-    const paramCount = (path.match(/\/:/g) || []).length;
-    if (/\*$/.test(path)) {
-      const re = buildWildcardRegExp(path);
+    const paramCount = (path2.match(/\/:/g) || []).length;
+    if (/\*$/.test(path2)) {
+      const re = buildWildcardRegExp(path2);
       if (method === METHOD_NAME_ALL) {
         Object.keys(middleware).forEach((m) => {
-          middleware[m][path] ||= findMiddleware(middleware[m], path) || findMiddleware(middleware[METHOD_NAME_ALL], path) || [];
+          middleware[m][path2] ||= findMiddleware(middleware[m], path2) || findMiddleware(middleware[METHOD_NAME_ALL], path2) || [];
         });
       } else {
-        middleware[method][path] ||= findMiddleware(middleware[method], path) || findMiddleware(middleware[METHOD_NAME_ALL], path) || [];
+        middleware[method][path2] ||= findMiddleware(middleware[method], path2) || findMiddleware(middleware[METHOD_NAME_ALL], path2) || [];
       }
       Object.keys(middleware).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
@@ -16089,36 +17171,36 @@ var RegExpRouter = class {
       });
       return;
     }
-    const paths3 = checkOptionalParameter(path) || [path];
+    const paths3 = checkOptionalParameter(path2) || [path2];
     for (let i = 0, len = paths3.length; i < len; i++) {
-      const path2 = paths3[i];
+      const path22 = paths3[i];
       Object.keys(routes2).forEach((m) => {
         if (method === METHOD_NAME_ALL || method === m) {
-          routes2[m][path2] ||= [
-            ...findMiddleware(middleware[m], path2) || findMiddleware(middleware[METHOD_NAME_ALL], path2) || []
+          routes2[m][path22] ||= [
+            ...findMiddleware(middleware[m], path22) || findMiddleware(middleware[METHOD_NAME_ALL], path22) || []
           ];
-          routes2[m][path2].push([handler, paramCount - len + i + 1]);
+          routes2[m][path22].push([handler, paramCount - len + i + 1]);
         }
       });
     }
   }
-  match(method, path) {
+  match(method, path2) {
     clearWildcardRegExpCache();
     const matchers = this.#buildAllMatchers();
-    this.match = (method2, path2) => {
+    this.match = (method2, path22) => {
       const matcher = matchers[method2] || matchers[METHOD_NAME_ALL];
-      const staticMatch = matcher[2][path2];
+      const staticMatch = matcher[2][path22];
       if (staticMatch) {
         return staticMatch;
       }
-      const match = path2.match(matcher[0]);
+      const match = path22.match(matcher[0]);
       if (!match) {
         return [[], emptyParam];
       }
       const index = match.indexOf("", 1);
       return [matcher[1][index], match];
     };
-    return this.match(method, path);
+    return this.match(method, path2);
   }
   #buildAllMatchers() {
     const matchers = /* @__PURE__ */ Object.create(null);
@@ -16132,13 +17214,13 @@ var RegExpRouter = class {
     const routes2 = [];
     let hasOwnRoute = method === METHOD_NAME_ALL;
     [this.#middleware, this.#routes].forEach((r) => {
-      const ownRoute = r[method] ? Object.keys(r[method]).map((path) => [path, r[method][path]]) : [];
+      const ownRoute = r[method] ? Object.keys(r[method]).map((path2) => [path2, r[method][path2]]) : [];
       if (ownRoute.length !== 0) {
         hasOwnRoute ||= true;
         routes2.push(...ownRoute);
       } else if (method !== METHOD_NAME_ALL) {
         routes2.push(
-          ...Object.keys(r[METHOD_NAME_ALL]).map((path) => [path, r[METHOD_NAME_ALL][path]])
+          ...Object.keys(r[METHOD_NAME_ALL]).map((path2) => [path2, r[METHOD_NAME_ALL][path2]])
         );
       }
     });
@@ -16171,13 +17253,13 @@ var SmartRouter = class {
   constructor(init2) {
     this.#routers = init2.routers;
   }
-  add(method, path, handler) {
+  add(method, path2, handler) {
     if (!this.#routes) {
       throw new Error(MESSAGE_MATCHER_IS_ALREADY_BUILT);
     }
-    this.#routes.push([method, path, handler]);
+    this.#routes.push([method, path2, handler]);
   }
-  match(method, path) {
+  match(method, path2) {
     if (!this.#routes) {
       throw new Error("Fatal error");
     }
@@ -16192,7 +17274,7 @@ var SmartRouter = class {
         for (let i2 = 0, len2 = routes2.length; i2 < len2; i2++) {
           router4.add(...routes2[i2]);
         }
-        res = router4.match(method, path);
+        res = router4.match(method, path2);
       } catch (e) {
         if (e instanceof UnsupportedPathError) {
           continue;
@@ -16255,10 +17337,10 @@ var Node2 = class {
     }
     this.#patterns = [];
   }
-  insert(method, path, handler) {
+  insert(method, path2, handler) {
     this.#order = ++this.#order;
     let curNode = this;
-    const parts = splitRoutingPath(path);
+    const parts = splitRoutingPath(path2);
     const possibleKeys = [];
     for (let i = 0, len = parts.length; i < len; i++) {
       const p = parts[i];
@@ -16309,12 +17391,12 @@ var Node2 = class {
     }
     return handlerSets;
   }
-  search(method, path) {
+  search(method, path2) {
     const handlerSets = [];
     this.#params = emptyParams;
     const curNode = this;
     let curNodes = [curNode];
-    const parts = splitPath(path);
+    const parts = splitPath(path2);
     for (let i = 0, len = parts.length; i < len; i++) {
       const part = parts[i];
       const isLast = i === len - 1;
@@ -16394,18 +17476,18 @@ var TrieRouter = class {
   constructor() {
     this.#node = new Node2();
   }
-  add(method, path, handler) {
-    const results = checkOptionalParameter(path);
+  add(method, path2, handler) {
+    const results = checkOptionalParameter(path2);
     if (results) {
       for (let i = 0, len = results.length; i < len; i++) {
         this.#node.insert(method, results[i], handler);
       }
       return;
     }
-    this.#node.insert(method, path, handler);
+    this.#node.insert(method, path2, handler);
   }
-  match(method, path) {
-    return this.#node.search(method, path);
+  match(method, path2) {
+    return this.#node.search(method, path2);
   }
 };
 
@@ -16540,41 +17622,41 @@ var OpenAPIHono = class _OpenAPIHono extends Hono2 {
     );
     return this;
   }, "openapi");
-  getOpenAPIDocument = /* @__PURE__ */ __name((config3) => {
+  getOpenAPIDocument = /* @__PURE__ */ __name((config4) => {
     const generator3 = new OpenApiGeneratorV3(this.openAPIRegistry.definitions);
-    const document = generator3.generateDocument(config3);
+    const document = generator3.generateDocument(config4);
     return this._basePath ? addBasePathToDocument(document, this._basePath) : document;
   }, "getOpenAPIDocument");
-  getOpenAPI31Document = /* @__PURE__ */ __name((config3) => {
+  getOpenAPI31Document = /* @__PURE__ */ __name((config4) => {
     const generator3 = new OpenApiGeneratorV31(this.openAPIRegistry.definitions);
-    const document = generator3.generateDocument(config3);
+    const document = generator3.generateDocument(config4);
     return this._basePath ? addBasePathToDocument(document, this._basePath) : document;
   }, "getOpenAPI31Document");
-  doc = /* @__PURE__ */ __name((path, configure) => {
-    return this.get(path, (c) => {
-      const config3 = typeof configure === "function" ? configure(c) : configure;
+  doc = /* @__PURE__ */ __name((path2, configure) => {
+    return this.get(path2, (c) => {
+      const config4 = typeof configure === "function" ? configure(c) : configure;
       try {
-        const document = this.getOpenAPIDocument(config3);
+        const document = this.getOpenAPIDocument(config4);
         return c.json(document);
       } catch (e) {
         return c.json(e, 500);
       }
     });
   }, "doc");
-  doc31 = /* @__PURE__ */ __name((path, configure) => {
-    return this.get(path, (c) => {
-      const config3 = typeof configure === "function" ? configure(c) : configure;
+  doc31 = /* @__PURE__ */ __name((path2, configure) => {
+    return this.get(path2, (c) => {
+      const config4 = typeof configure === "function" ? configure(c) : configure;
       try {
-        const document = this.getOpenAPI31Document(config3);
+        const document = this.getOpenAPI31Document(config4);
         return c.json(document);
       } catch (e) {
         return c.json(e, 500);
       }
     });
   }, "doc31");
-  route(path, app2) {
-    const pathForOpenAPI = path.replaceAll(/:([^\/]+)/g, "{$1}");
-    super.route(path, app2);
+  route(path2, app2) {
+    const pathForOpenAPI = path2.replaceAll(/:([^\/]+)/g, "{$1}");
+    super.route(path2, app2);
     if (!(app2 instanceof _OpenAPIHono)) {
       return this;
     }
@@ -16607,8 +17689,8 @@ var OpenAPIHono = class _OpenAPIHono extends Hono2 {
     });
     return this;
   }
-  basePath(path) {
-    return new _OpenAPIHono({ ...super.basePath(path), defaultHook: this.defaultHook });
+  basePath(path2) {
+    return new _OpenAPIHono({ ...super.basePath(path2), defaultHook: this.defaultHook });
   }
 };
 var createRoute = /* @__PURE__ */ __name((routeConfig) => {
@@ -16623,8 +17705,8 @@ var createRoute = /* @__PURE__ */ __name((routeConfig) => {
 extendZodWithOpenApi(z);
 function addBasePathToDocument(document, basePath) {
   const updatedPaths = {};
-  Object.keys(document.paths).forEach((path) => {
-    updatedPaths[mergePath(basePath, path)] = document.paths[path];
+  Object.keys(document.paths).forEach((path2) => {
+    updatedPaths[mergePath(basePath, path2)] = document.paths[path2];
   });
   return {
     ...document,
@@ -16695,8 +17777,8 @@ function createRouter() {
   return ctx;
 }
 __name(createRouter, "createRouter");
-function splitPath2(path) {
-  return path.split("/").filter(Boolean);
+function splitPath2(path2) {
+  return path2.split("/").filter(Boolean);
 }
 __name(splitPath2, "splitPath");
 function getMatchParams(segments, paramsMap) {
@@ -16717,8 +17799,8 @@ function getMatchParams(segments, paramsMap) {
   return params;
 }
 __name(getMatchParams, "getMatchParams");
-function addRoute(ctx, method = "", path, data) {
-  const segments = splitPath2(path);
+function addRoute(ctx, method = "", path2, data) {
+  const segments = splitPath2(path2);
   let node = ctx.root;
   let _unnamedParamIndex = 0;
   const paramsMap = [];
@@ -16773,7 +17855,7 @@ function addRoute(ctx, method = "", path, data) {
     paramsMap: hasParams ? paramsMap : void 0
   });
   if (!hasParams) {
-    ctx.static[path] = node;
+    ctx.static[path2] = node;
   }
 }
 __name(addRoute, "addRoute");
@@ -16785,18 +17867,18 @@ function _getParamMatcher(segment) {
   return new RegExp(`^${regex}$`);
 }
 __name(_getParamMatcher, "_getParamMatcher");
-function findRoute(ctx, method = "", path, opts) {
-  if (path[path.length - 1] === "/") {
-    path = path.slice(0, -1);
+function findRoute(ctx, method = "", path2, opts) {
+  if (path2[path2.length - 1] === "/") {
+    path2 = path2.slice(0, -1);
   }
-  const staticNode = ctx.static[path];
+  const staticNode = ctx.static[path2];
   if (staticNode && staticNode.methods) {
     const staticMatch = staticNode.methods[method] || staticNode.methods[""];
     if (staticMatch !== void 0) {
       return staticMatch[0];
     }
   }
-  const segments = splitPath2(path);
+  const segments = splitPath2(path2);
   const match = _lookupTree(ctx, ctx.root, method, segments, 0)?.[0];
   if (match === void 0) {
     return;
@@ -16860,11 +17942,11 @@ function _lookupTree(ctx, node, method, segments, index) {
   return;
 }
 __name(_lookupTree, "_lookupTree");
-function findAllRoutes(ctx, method = "", path, opts) {
-  if (path[path.length - 1] === "/") {
-    path = path.slice(0, -1);
+function findAllRoutes(ctx, method = "", path2, opts) {
+  if (path2[path2.length - 1] === "/") {
+    path2 = path2.slice(0, -1);
   }
-  const segments = splitPath2(path);
+  const segments = splitPath2(path2);
   const matches = _findAll(ctx, ctx.root, method, segments, 0);
   if (opts?.params === false) {
     return matches;
@@ -17309,7 +18391,7 @@ var serializeSignedCookie = /* @__PURE__ */ __name(async (key, value, secret, op
 }, "serializeSignedCookie");
 var createInternalContext = /* @__PURE__ */ __name(async (context2, {
   options,
-  path
+  path: path2
 }) => {
   const headers = new Headers();
   const { data, error: error4 } = await runValidation(options, context2);
@@ -17326,7 +18408,7 @@ var createInternalContext = /* @__PURE__ */ __name(async (context2, {
     ...context2,
     body: data.body,
     query: data.query,
-    path: context2.path || path,
+    path: context2.path || path2,
     context: "context" in context2 && context2.context ? context2.context : {},
     returned: void 0,
     headers: context2?.headers,
@@ -17464,12 +18546,12 @@ createMiddleware.create = (opts) => {
   __name(fn, "fn");
   return fn;
 };
-var createEndpoint2 = /* @__PURE__ */ __name((path, options, handler) => {
+var createEndpoint2 = /* @__PURE__ */ __name((path2, options, handler) => {
   const internalHandler = /* @__PURE__ */ __name(async (...inputCtx) => {
     const context2 = inputCtx[0] || {};
     const internalContext = await createInternalContext(context2, {
       options,
-      path
+      path: path2
     });
     const response = await handler(internalContext).catch((e) => {
       if (isAPIError(e) && context2.asResponse) {
@@ -17486,13 +18568,13 @@ var createEndpoint2 = /* @__PURE__ */ __name((path, options, handler) => {
     } : response;
   }, "internalHandler");
   internalHandler.options = options;
-  internalHandler.path = path;
+  internalHandler.path = path2;
   return internalHandler;
 }, "createEndpoint2");
 createEndpoint2.create = (opts) => {
-  return (path, options, handler) => {
+  return (path2, options, handler) => {
     return createEndpoint2(
-      path,
+      path2,
       {
         ...options,
         use: [...options?.use || [], ...opts?.use || []]
@@ -17853,8 +18935,8 @@ function getErrorMap2() {
 }
 __name(getErrorMap2, "getErrorMap");
 var makeIssue2 = /* @__PURE__ */ __name((params) => {
-  const { data, path, errorMaps, issueData } = params;
-  const fullPath = [...path, ...issueData.path || []];
+  const { data, path: path2, errorMaps, issueData } = params;
+  const fullPath = [...path2, ...issueData.path || []];
   const fullIssue = {
     ...issueData,
     path: fullPath
@@ -17987,11 +19069,11 @@ var ParseInputLazyPath2 = class {
   static {
     __name(this, "ParseInputLazyPath");
   }
-  constructor(parent, value, path, key) {
+  constructor(parent, value, path2, key) {
     this._cachedPath = [];
     this.parent = parent;
     this.data = value;
-    this._path = path;
+    this._path = path2;
     this._key = key;
   }
   get path() {
@@ -18379,11 +19461,11 @@ function datetimeRegex2(args) {
   return new RegExp(`^${regex}$`);
 }
 __name(datetimeRegex2, "datetimeRegex");
-function isValidIP2(ip, version3) {
-  if ((version3 === "v4" || !version3) && ipv4Regex2.test(ip)) {
+function isValidIP2(ip, version4) {
+  if ((version4 === "v4" || !version4) && ipv4Regex2.test(ip)) {
     return true;
   }
-  if ((version3 === "v6" || !version3) && ipv6Regex2.test(ip)) {
+  if ((version4 === "v6" || !version4) && ipv6Regex2.test(ip)) {
     return true;
   }
   return false;
@@ -18408,11 +19490,11 @@ function isValidJWT2(jwt2, alg) {
   }
 }
 __name(isValidJWT2, "isValidJWT");
-function isValidCidr2(ip, version3) {
-  if ((version3 === "v4" || !version3) && ipv4CidrRegex2.test(ip)) {
+function isValidCidr2(ip, version4) {
+  if ((version4 === "v4" || !version4) && ipv4CidrRegex2.test(ip)) {
     return true;
   }
-  if ((version3 === "v6" || !version3) && ipv6CidrRegex2.test(ip)) {
+  if ((version4 === "v6" || !version4) && ipv6CidrRegex2.test(ip)) {
     return true;
   }
   return false;
@@ -20247,33 +21329,33 @@ ZodUnion2.create = (types4, params) => {
     ...processCreateParams2(params)
   });
 };
-var getDiscriminator2 = /* @__PURE__ */ __name((type) => {
-  if (type instanceof ZodLazy2) {
-    return getDiscriminator2(type.schema);
-  } else if (type instanceof ZodEffects2) {
-    return getDiscriminator2(type.innerType());
-  } else if (type instanceof ZodLiteral2) {
-    return [type.value];
-  } else if (type instanceof ZodEnum2) {
-    return type.options;
-  } else if (type instanceof ZodNativeEnum2) {
-    return util2.objectValues(type.enum);
-  } else if (type instanceof ZodDefault2) {
-    return getDiscriminator2(type._def.innerType);
-  } else if (type instanceof ZodUndefined2) {
+var getDiscriminator2 = /* @__PURE__ */ __name((type2) => {
+  if (type2 instanceof ZodLazy2) {
+    return getDiscriminator2(type2.schema);
+  } else if (type2 instanceof ZodEffects2) {
+    return getDiscriminator2(type2.innerType());
+  } else if (type2 instanceof ZodLiteral2) {
+    return [type2.value];
+  } else if (type2 instanceof ZodEnum2) {
+    return type2.options;
+  } else if (type2 instanceof ZodNativeEnum2) {
+    return util2.objectValues(type2.enum);
+  } else if (type2 instanceof ZodDefault2) {
+    return getDiscriminator2(type2._def.innerType);
+  } else if (type2 instanceof ZodUndefined2) {
     return [void 0];
-  } else if (type instanceof ZodNull2) {
+  } else if (type2 instanceof ZodNull2) {
     return [null];
-  } else if (type instanceof ZodOptional2) {
-    return [void 0, ...getDiscriminator2(type.unwrap())];
-  } else if (type instanceof ZodNullable2) {
-    return [null, ...getDiscriminator2(type.unwrap())];
-  } else if (type instanceof ZodBranded2) {
-    return getDiscriminator2(type.unwrap());
-  } else if (type instanceof ZodReadonly2) {
-    return getDiscriminator2(type.unwrap());
-  } else if (type instanceof ZodCatch2) {
-    return getDiscriminator2(type._def.innerType);
+  } else if (type2 instanceof ZodOptional2) {
+    return [void 0, ...getDiscriminator2(type2.unwrap())];
+  } else if (type2 instanceof ZodNullable2) {
+    return [null, ...getDiscriminator2(type2.unwrap())];
+  } else if (type2 instanceof ZodBranded2) {
+    return getDiscriminator2(type2.unwrap());
+  } else if (type2 instanceof ZodReadonly2) {
+    return getDiscriminator2(type2.unwrap());
+  } else if (type2 instanceof ZodCatch2) {
+    return getDiscriminator2(type2._def.innerType);
   } else {
     return [];
   }
@@ -20336,8 +21418,8 @@ var ZodDiscriminatedUnion2 = class _ZodDiscriminatedUnion extends ZodType2 {
    */
   static create(discriminator, options, params) {
     const optionsMap = /* @__PURE__ */ new Map();
-    for (const type of options) {
-      const discriminatorValues = getDiscriminator2(type.shape[discriminator]);
+    for (const type2 of options) {
+      const discriminatorValues = getDiscriminator2(type2.shape[discriminator]);
       if (!discriminatorValues.length) {
         throw new Error(`A discriminator value for key \`${discriminator}\` could not be extracted from all schema options`);
       }
@@ -20345,7 +21427,7 @@ var ZodDiscriminatedUnion2 = class _ZodDiscriminatedUnion extends ZodType2 {
         if (optionsMap.has(value)) {
           throw new Error(`Discriminator property ${String(discriminator)} has duplicate value ${String(value)}`);
         }
-        optionsMap.set(value, type);
+        optionsMap.set(value, type2);
       }
     }
     return new _ZodDiscriminatedUnion({
@@ -21217,9 +22299,9 @@ var ZodOptional2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodOptional2.create = (type, params) => {
+ZodOptional2.create = (type2, params) => {
   return new ZodOptional2({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind2.ZodOptional,
     ...processCreateParams2(params)
   });
@@ -21239,9 +22321,9 @@ var ZodNullable2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodNullable2.create = (type, params) => {
+ZodNullable2.create = (type2, params) => {
   return new ZodNullable2({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind2.ZodNullable,
     ...processCreateParams2(params)
   });
@@ -21266,9 +22348,9 @@ var ZodDefault2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodDefault2.create = (type, params) => {
+ZodDefault2.create = (type2, params) => {
   return new ZodDefault2({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind2.ZodDefault,
     defaultValue: typeof params.default === "function" ? params.default : () => params.default,
     ...processCreateParams2(params)
@@ -21322,9 +22404,9 @@ var ZodCatch2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodCatch2.create = (type, params) => {
+ZodCatch2.create = (type2, params) => {
   return new ZodCatch2({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind2.ZodCatch,
     catchValue: typeof params.catch === "function" ? params.catch : () => params.catch,
     ...processCreateParams2(params)
@@ -21448,9 +22530,9 @@ var ZodReadonly2 = class extends ZodType2 {
     return this._def.innerType;
   }
 };
-ZodReadonly2.create = (type, params) => {
+ZodReadonly2.create = (type2, params) => {
   return new ZodReadonly2({
-    innerType: type,
+    innerType: type2,
     typeName: ZodFirstPartyTypeKind2.ZodReadonly,
     ...processCreateParams2(params)
   });
@@ -21710,7 +22792,7 @@ function getResponse(responses) {
   };
 }
 __name(getResponse, "getResponse");
-async function generator(endpoints, config3) {
+async function generator(endpoints, config4) {
   const components = {
     schemas: {}
   };
@@ -21779,7 +22861,7 @@ async function generator(endpoints, config3) {
     ],
     servers: [
       {
-        url: config3?.url
+        url: config4?.url
       }
     ],
     tags: [
@@ -21793,7 +22875,7 @@ async function generator(endpoints, config3) {
   return res;
 }
 __name(generator, "generator");
-var getHTML = /* @__PURE__ */ __name((apiReference2, config3) => `<!doctype html>
+var getHTML = /* @__PURE__ */ __name((apiReference2, config4) => `<!doctype html>
 <html>
   <head>
     <title>Scalar API Reference</title>
@@ -21810,11 +22892,11 @@ var getHTML = /* @__PURE__ */ __name((apiReference2, config3) => `<!doctype html
     <\/script>
 	 <script>
       var configuration = {
-	  	favicon: ${config3?.logo ? `data:image/svg+xml;utf8,${encodeURIComponent(config3.logo)}` : void 0} ,
-	   	theme: ${config3?.theme || "saturn"},
+	  	favicon: ${config4?.logo ? `data:image/svg+xml;utf8,${encodeURIComponent(config4.logo)}` : void 0} ,
+	   	theme: ${config4?.theme || "saturn"},
         metaData: {
-			title: ${config3?.title || "Open API Reference"},
-			description: ${config3?.description || "Better Call Open API"},
+			title: ${config4?.title || "Open API Reference"},
+			description: ${config4?.description || "Better Call Open API"},
 		}
       }
       document.getElementById('api-reference').dataset.configuration =
@@ -21823,11 +22905,11 @@ var getHTML = /* @__PURE__ */ __name((apiReference2, config3) => `<!doctype html
 	  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"><\/script>
   </body>
 </html>`, "getHTML");
-var createRouter2 = /* @__PURE__ */ __name((endpoints, config3) => {
-  if (!config3?.openapi?.disabled) {
+var createRouter2 = /* @__PURE__ */ __name((endpoints, config4) => {
+  if (!config4?.openapi?.disabled) {
     const openapi = {
       path: "/api/reference",
-      ...config3?.openapi
+      ...config4?.openapi
     };
     endpoints["openapi"] = createEndpoint2(
       openapi.path,
@@ -21856,25 +22938,25 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config3) => {
       addRoute(router4, method, endpoint.path, endpoint);
     }
   }
-  if (config3?.routerMiddleware?.length) {
-    for (const { path, middleware } of config3.routerMiddleware) {
-      addRoute(middlewareRouter, "*", path, middleware);
+  if (config4?.routerMiddleware?.length) {
+    for (const { path: path2, middleware } of config4.routerMiddleware) {
+      addRoute(middlewareRouter, "*", path2, middleware);
     }
   }
   const processRequest = /* @__PURE__ */ __name(async (request) => {
     const url = new URL(request.url);
-    const path = config3?.basePath ? url.pathname.split(config3.basePath)[1] : url.pathname;
-    if (!path?.length) {
-      config3?.onError?.(new Error("NOT_FOUND"));
+    const path2 = config4?.basePath ? url.pathname.split(config4.basePath)[1] : url.pathname;
+    if (!path2?.length) {
+      config4?.onError?.(new Error("NOT_FOUND"));
       return new Response(null, { status: 404, statusText: "Not Found" });
     }
-    const route = findRoute(router4, request.method, path);
+    const route = findRoute(router4, request.method, path2);
     if (!route?.data) {
       return new Response(null, { status: 404, statusText: "Not Found" });
     }
     const handler = route.data;
     const context2 = {
-      path,
+      path: path2,
       method: request.method,
       headers: request.headers,
       params: route.params ? JSON.parse(JSON.stringify(route.params)) : {},
@@ -21883,10 +22965,10 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config3) => {
       query: Object.fromEntries(url.searchParams),
       _flag: "router",
       asResponse: true,
-      context: config3?.routerContext
+      context: config4?.routerContext
     };
     try {
-      const middlewareRoutes = findAllRoutes(middlewareRouter, "*", path);
+      const middlewareRoutes = findAllRoutes(middlewareRouter, "*", path2);
       if (middlewareRoutes?.length) {
         for (const { data: middleware, params } of middlewareRoutes) {
           const res = await middleware({
@@ -21912,13 +22994,13 @@ var createRouter2 = /* @__PURE__ */ __name((endpoints, config3) => {
   }, "processRequest");
   return {
     handler: /* @__PURE__ */ __name(async (request) => {
-      const onReq = await config3?.onRequest?.(request);
+      const onReq = await config4?.onRequest?.(request);
       if (onReq instanceof Response) {
         return onReq;
       }
       const req = onReq instanceof Request ? onReq : request;
       const res = await processRequest(req);
-      const onRes = await config3?.onResponse?.(res);
+      const onRes = await config4?.onResponse?.(res);
       if (onRes instanceof Response) {
         return onRes;
       }
@@ -22007,7 +23089,7 @@ function toBoolean(val) {
   return val ? val !== "false" : false;
 }
 __name(toBoolean, "toBoolean");
-var nodeENV = typeof process !== "undefined" && process.env && "development" || "";
+var nodeENV = typeof process !== "undefined" && process.env && "undefined" || "";
 var isProduction = nodeENV === "production";
 var isDevelopment = nodeENV === "dev" || nodeENV === "development";
 var isTest = nodeENV === "test" || toBoolean(env2.TEST);
@@ -22239,27 +23321,27 @@ function checkHasPath(url) {
   }
 }
 __name(checkHasPath, "checkHasPath");
-function withPath(url, path = "/api/auth") {
+function withPath(url, path2 = "/api/auth") {
   const hasPath = checkHasPath(url);
   if (hasPath) {
     return url;
   }
-  path = path.startsWith("/") ? path : `/${path}`;
-  return `${url.replace(/\/+$/, "")}${path}`;
+  path2 = path2.startsWith("/") ? path2 : `/${path2}`;
+  return `${url.replace(/\/+$/, "")}${path2}`;
 }
 __name(withPath, "withPath");
-function getBaseURL(url, path, request) {
+function getBaseURL(url, path2, request) {
   if (url) {
-    return withPath(url, path);
+    return withPath(url, path2);
   }
   const fromEnv = env2.BETTER_AUTH_URL || env2.NEXT_PUBLIC_BETTER_AUTH_URL || env2.PUBLIC_BETTER_AUTH_URL || env2.NUXT_PUBLIC_BETTER_AUTH_URL || env2.NUXT_PUBLIC_AUTH_URL || (env2.BASE_URL !== "/" ? env2.BASE_URL : void 0);
   if (fromEnv) {
-    return withPath(fromEnv, path);
+    return withPath(fromEnv, path2);
   }
   const fromRequest = request?.headers.get("x-forwarded-host");
   const fromRequestProto = request?.headers.get("x-forwarded-proto");
   if (fromRequest && fromRequestProto) {
-    return withPath(`${fromRequestProto}://${fromRequest}`, path);
+    return withPath(`${fromRequestProto}://${fromRequest}`, path2);
   }
   if (request) {
     const url2 = getOrigin(request.url);
@@ -22268,10 +23350,10 @@ function getBaseURL(url, path, request) {
         "Could not get origin from request. Please provide a valid base URL."
       );
     }
-    return withPath(url2, path);
+    return withPath(url2, path2);
   }
   if (typeof window !== "undefined" && window.location) {
-    return withPath(window.location.origin, path);
+    return withPath(window.location.origin, path2);
   }
   return void 0;
 }
@@ -22913,7 +23995,7 @@ function getURL2(url, option) {
     }
   }
   if (!basePath.endsWith("/")) basePath += "/";
-  let [path, urlQuery] = url.replace(basePath, "").split("?");
+  let [path2, urlQuery] = url.replace(basePath, "").split("?");
   const queryParams = new URLSearchParams(urlQuery);
   for (const [key, value] of Object.entries(query || {})) {
     if (value == null) continue;
@@ -22921,25 +24003,25 @@ function getURL2(url, option) {
   }
   if (params) {
     if (Array.isArray(params)) {
-      const paramPaths = path.split("/").filter((p) => p.startsWith(":"));
+      const paramPaths = path2.split("/").filter((p) => p.startsWith(":"));
       for (const [index, key] of paramPaths.entries()) {
         const value = params[index];
-        path = path.replace(key, value);
+        path2 = path2.replace(key, value);
       }
     } else {
       for (const [key, value] of Object.entries(params)) {
-        path = path.replace(`:${key}`, String(value));
+        path2 = path2.replace(`:${key}`, String(value));
       }
     }
   }
-  path = path.split("/").map(encodeURIComponent).join("/");
-  if (path.startsWith("/")) path = path.slice(1);
+  path2 = path2.split("/").map(encodeURIComponent).join("/");
+  if (path2.startsWith("/")) path2 = path2.slice(1);
   let queryParamString = queryParams.toString();
   queryParamString = queryParamString.length > 0 ? `?${queryParamString}`.replace(/\+/g, "%20") : "";
   if (!basePath.startsWith("http")) {
-    return `${basePath}${path}${queryParamString}`;
+    return `${basePath}${path2}${queryParamString}`;
   }
-  const _url = new URL(`${path}${queryParamString}`, basePath);
+  const _url = new URL(`${path2}${queryParamString}`, basePath);
   return _url;
 }
 __name(getURL2, "getURL2");
@@ -28196,7 +29278,7 @@ var getSession = /* @__PURE__ */ __name(() => createAuthEndpoint(
     }
   }
 ), "getSession");
-var getSessionFromCtx = /* @__PURE__ */ __name(async (ctx, config3) => {
+var getSessionFromCtx = /* @__PURE__ */ __name(async (ctx, config4) => {
   if (ctx.context.session) {
     return ctx.context.session;
   }
@@ -28206,7 +29288,7 @@ var getSessionFromCtx = /* @__PURE__ */ __name(async (ctx, config3) => {
     headers: ctx.headers,
     returnHeaders: false,
     query: {
-      ...config3,
+      ...config4,
       ...ctx.query
     }
   }).catch((e) => {
@@ -28768,13 +29850,13 @@ var verifyEmail = createAuthEndpoint(
   }
 );
 async function handleOAuthUserInfo(c, {
-  userInfo,
+  userInfo: userInfo2,
   account: account2,
   callbackURL,
   disableSignUp
 }) {
   const dbUser = await c.context.internalAdapter.findOAuthUser(
-    userInfo.email.toLowerCase(),
+    userInfo2.email.toLowerCase(),
     account2.accountId,
     account2.providerId
   ).catch((e) => {
@@ -28797,7 +29879,7 @@ async function handleOAuthUserInfo(c, {
       const isTrustedProvider = trustedProviders?.includes(
         account2.providerId
       );
-      if (!isTrustedProvider && !userInfo.emailVerified || c.context.options.account?.accountLinking?.enabled === false) {
+      if (!isTrustedProvider && !userInfo2.emailVerified || c.context.options.account?.accountLinking?.enabled === false) {
         if (isDevelopment) {
           logger.warn(
             `User already exist but account isn't linked to ${account2.providerId}. To read more about how account linking works in Better Auth see https://www.better-auth.com/docs/concepts/users-accounts#account-linking.`
@@ -28812,7 +29894,7 @@ async function handleOAuthUserInfo(c, {
         await c.context.internalAdapter.linkAccount(
           {
             providerId: account2.providerId,
-            accountId: userInfo.id.toString(),
+            accountId: userInfo2.id.toString(),
             userId: dbUser.user.id,
             accessToken: account2.accessToken,
             idToken: account2.idToken,
@@ -28860,8 +29942,8 @@ async function handleOAuthUserInfo(c, {
     try {
       user2 = await c.context.internalAdapter.createOAuthUser(
         {
-          ...userInfo,
-          email: userInfo.email.toLowerCase(),
+          ...userInfo2,
+          email: userInfo2.email.toLowerCase(),
           id: void 0
         },
         {
@@ -28872,11 +29954,11 @@ async function handleOAuthUserInfo(c, {
           refreshTokenExpiresAt: account2.refreshTokenExpiresAt,
           scope: account2.scope,
           providerId: account2.providerId,
-          accountId: userInfo.id.toString()
+          accountId: userInfo2.id.toString()
         },
         c
       ).then((res) => res?.user);
-      if (!userInfo.emailVerified && user2 && c.context.options.emailVerification?.sendOnSignUp) {
+      if (!userInfo2.emailVerified && user2 && c.context.options.emailVerification?.sendOnSignUp) {
         const token = await createEmailVerificationToken(
           c.context.secret,
           user2.email,
@@ -29116,12 +30198,12 @@ var signInSocial = createAuthEndpoint(
           message: BASE_ERROR_CODES.INVALID_TOKEN
         });
       }
-      const userInfo = await provider.getUserInfo({
+      const userInfo2 = await provider.getUserInfo({
         idToken: token,
         accessToken: c.body.idToken.accessToken,
         refreshToken: c.body.idToken.refreshToken
       });
-      if (!userInfo || !userInfo?.user) {
+      if (!userInfo2 || !userInfo2?.user) {
         c.context.logger.error("Failed to get user info", {
           provider: c.body.provider
         });
@@ -29129,7 +30211,7 @@ var signInSocial = createAuthEndpoint(
           message: BASE_ERROR_CODES.FAILED_TO_GET_USER_INFO
         });
       }
-      if (!userInfo.user.email) {
+      if (!userInfo2.user.email) {
         c.context.logger.error("User email not found", {
           provider: c.body.provider
         });
@@ -29139,15 +30221,15 @@ var signInSocial = createAuthEndpoint(
       }
       const data = await handleOAuthUserInfo(c, {
         userInfo: {
-          email: userInfo.user.email,
-          id: userInfo.user.id,
-          name: userInfo.user.name || "",
-          image: userInfo.user.image,
-          emailVerified: userInfo.user.emailVerified || false
+          email: userInfo2.user.email,
+          id: userInfo2.user.id,
+          name: userInfo2.user.name || "",
+          image: userInfo2.user.image,
+          emailVerified: userInfo2.user.emailVerified || false
         },
         account: {
           providerId: provider.id,
-          accountId: userInfo.user.id,
+          accountId: userInfo2.user.id,
           accessToken: c.body.idToken.accessToken
         },
         disableSignUp: provider.disableImplicitSignUp && !c.body.requestSignUp || provider.disableSignUp
@@ -29450,12 +30532,12 @@ var callbackOAuth = createAuthEndpoint(
       c.context.logger.error("", e);
       throw redirectOnError("invalid_code");
     }
-    const userInfo = await provider.getUserInfo(tokens).then((res) => res?.user);
-    if (!userInfo) {
+    const userInfo2 = await provider.getUserInfo(tokens).then((res) => res?.user);
+    if (!userInfo2) {
       c.context.logger.error("Unable to get user info");
       return redirectOnError("unable_to_get_user_info");
     }
-    if (!userInfo.email) {
+    if (!userInfo2.email) {
       c.context.logger.error(
         "Provider did not return email. This could be due to misconfiguration in the provider settings."
       );
@@ -29467,7 +30549,7 @@ var callbackOAuth = createAuthEndpoint(
     }
     if (link3) {
       const existingAccount = await c.context.internalAdapter.findAccount(
-        userInfo.id
+        userInfo2.id
       );
       if (existingAccount) {
         if (existingAccount.userId.toString() !== link3.userId.toString()) {
@@ -29478,7 +30560,7 @@ var callbackOAuth = createAuthEndpoint(
         {
           userId: link3.userId,
           providerId: provider.id,
-          accountId: userInfo.id,
+          accountId: userInfo2.id,
           ...tokens,
           scope: tokens.scopes?.join(",")
         },
@@ -29498,13 +30580,13 @@ var callbackOAuth = createAuthEndpoint(
     }
     const result = await handleOAuthUserInfo(c, {
       userInfo: {
-        ...userInfo,
-        email: userInfo.email,
-        name: userInfo.name || userInfo.email
+        ...userInfo2,
+        email: userInfo2.email,
+        name: userInfo2.name || userInfo2.email
       },
       account: {
         providerId: provider.id,
-        accountId: userInfo.id,
+        accountId: userInfo2.id,
         ...tokens,
         scope: tokens.scopes?.join(",")
       },
@@ -31220,7 +32302,7 @@ async function onRequestRateLimit(req, ctx) {
   if (!ctx.rateLimit.enabled) {
     return;
   }
-  const path = new URL(req.url).pathname.replace(
+  const path2 = new URL(req.url).pathname.replace(
     ctx.options.basePath || "/api/auth",
     ""
   );
@@ -31230,9 +32312,9 @@ async function onRequestRateLimit(req, ctx) {
   if (!ip) {
     return;
   }
-  const key = ip + path;
+  const key = ip + path2;
   const specialRules = getDefaultSpecialRules();
-  const specialRule = specialRules.find((rule) => rule.pathMatcher(path));
+  const specialRule = specialRules.find((rule) => rule.pathMatcher(path2));
   if (specialRule) {
     window2 = specialRule.window;
     max = specialRule.max;
@@ -31240,7 +32322,7 @@ async function onRequestRateLimit(req, ctx) {
   for (const plugin of ctx.options.plugins || []) {
     if (plugin.rateLimit) {
       const matchedRule = plugin.rateLimit.find(
-        (rule) => rule.pathMatcher(path)
+        (rule) => rule.pathMatcher(path2)
       );
       if (matchedRule) {
         window2 = matchedRule.window;
@@ -31252,10 +32334,10 @@ async function onRequestRateLimit(req, ctx) {
   if (ctx.rateLimit.customRules) {
     const _path = Object.keys(ctx.rateLimit.customRules).find((p) => {
       if (p.includes("*")) {
-        const isMatch2 = wildcardMatch(p)(path);
+        const isMatch2 = wildcardMatch(p)(path2);
         return isMatch2;
       }
-      return p === path;
+      return p === path2;
     });
     if (_path) {
       const customRule = ctx.rateLimit.customRules[_path];
@@ -31307,8 +32389,8 @@ __name(onRequestRateLimit, "onRequestRateLimit");
 function getDefaultSpecialRules() {
   const specialRules = [
     {
-      pathMatcher(path) {
-        return path.startsWith("/sign-in") || path.startsWith("/sign-up") || path.startsWith("/change-password") || path.startsWith("/change-email");
+      pathMatcher(path2) {
+        return path2.startsWith("/sign-in") || path2.startsWith("/sign-up") || path2.startsWith("/change-password") || path2.startsWith("/change-email");
       },
       window: 10,
       max: 3
@@ -31568,8 +32650,8 @@ var router = /* @__PURE__ */ __name((ctx, options) => {
     ],
     async onRequest(req) {
       const disabledPaths = ctx.options.disabledPaths || [];
-      const path = new URL(req.url).pathname.replace(basePath, "");
-      if (disabledPaths.includes(path)) {
+      const path2 = new URL(req.url).pathname.replace(basePath, "");
+      if (disabledPaths.includes(path2)) {
         return new Response("Not Found", { status: 404 });
       }
       for (const plugin of ctx.options.plugins || []) {
@@ -38002,9 +39084,9 @@ var MatchedNode = freeze({
 });
 
 // node_modules/.pnpm/kysely@0.27.6/node_modules/kysely/dist/esm/parser/merge-parser.js
-function parseMergeWhen(type, args, refRight) {
+function parseMergeWhen(type2, args, refRight) {
   return WhenNode.create(parseFilterList([
-    MatchedNode.create(!type.isMatched, type.bySource),
+    MatchedNode.create(!type2.isMatched, type2.bySource),
     ...args && args.length > 0 ? [
       args.length === 3 && refRight ? parseReferentialBinaryOperation(args[0], args[1], args[2]) : parseValueBinaryOperationOrExpression(args)
     ] : []
@@ -40319,10 +41401,10 @@ var JSONPathLegNode = freeze({
   is(node) {
     return node.kind === "JSONPathLegNode";
   },
-  create(type, value) {
+  create(type2, value) {
     return freeze({
       kind: "JSONPathLegNode",
-      type,
+      type: type2,
       value
     });
   }
@@ -44305,9 +45387,9 @@ var Log = class {
   }
   #levels;
   #logger;
-  constructor(config3) {
-    if (isFunction2(config3)) {
-      this.#logger = config3;
+  constructor(config4) {
+    if (isFunction2(config4)) {
+      this.#logger = config4;
       this.#levels = freeze({
         query: true,
         error: true
@@ -44315,8 +45397,8 @@ var Log = class {
     } else {
       this.#logger = defaultLogger;
       this.#levels = freeze({
-        query: config3.includes("query"),
-        error: config3.includes("error")
+        query: config4.includes("query"),
+        error: config4.includes("error")
       });
     }
   }
@@ -46381,8 +47463,8 @@ var SqliteDriver = class {
   #connectionMutex = new ConnectionMutex();
   #db;
   #connection;
-  constructor(config3) {
-    this.#config = freeze({ ...config3 });
+  constructor(config4) {
+    this.#config = freeze({ ...config4 });
   }
   async init() {
     this.#db = isFunction2(this.#config.database) ? await this.#config.database() : this.#config.database;
@@ -46572,7 +47654,7 @@ var SqliteIntrospector = class {
       columnsByTable[row.table] ??= [];
       columnsByTable[row.table].push(row);
     }
-    return tablesResult.map(({ name, sql: sql3, type }) => {
+    return tablesResult.map(({ name, sql: sql3, type: type2 }) => {
       let autoIncrementCol = sql3?.split(/[\(\),]/)?.find((it) => it.toLowerCase().includes("autoincrement"))?.trimStart()?.split(/\s+/)?.[0]?.replace(/["`]/g, "");
       const columns = columnsByTable[name] ?? [];
       if (!autoIncrementCol) {
@@ -46583,7 +47665,7 @@ var SqliteIntrospector = class {
       }
       return {
         name,
-        isView: type === "view",
+        isView: type2 === "view",
         columns: columns.map((col) => ({
           name: col.name,
           dataType: col.type,
@@ -46624,8 +47706,8 @@ var SqliteDialect = class {
     __name(this, "SqliteDialect");
   }
   #config;
-  constructor(config3) {
-    this.#config = freeze({ ...config3 });
+  constructor(config4) {
+    this.#config = freeze({ ...config4 });
   }
   createDriver() {
     return new SqliteDriver(this.#config);
@@ -47085,8 +48167,8 @@ var MysqlDialect = class {
     __name(this, "MysqlDialect");
   }
   #config;
-  constructor(config3) {
-    this.#config = config3;
+  constructor(config4) {
+    this.#config = config4;
   }
   createDriver() {
     return new MysqlDriver(this.#config);
@@ -47115,8 +48197,8 @@ var PostgresDriver = class {
   #config;
   #connections = /* @__PURE__ */ new WeakMap();
   #pool;
-  constructor(config3) {
-    this.#config = freeze({ ...config3 });
+  constructor(config4) {
+    this.#config = freeze({ ...config4 });
   }
   async init() {
     this.#pool = isFunction2(this.#config.pool) ? await this.#config.pool() : this.#config.pool;
@@ -47230,8 +48312,8 @@ var PostgresDialect = class {
     __name(this, "PostgresDialect");
   }
   #config;
-  constructor(config3) {
-    this.#config = config3;
+  constructor(config4) {
+    this.#config = config4;
   }
   createDriver() {
     return new PostgresDriver(this.#config);
@@ -47291,8 +48373,8 @@ var MssqlDriver = class {
   }
   #config;
   #pool;
-  constructor(config3) {
-    this.#config = freeze({ ...config3 });
+  constructor(config4) {
+    this.#config = freeze({ ...config4 });
     const { tarn, tedious } = this.#config;
     const { validateConnections, ...poolOptions } = tarn.options;
     this.#pool = new tarn.Pool({
@@ -47757,8 +48839,8 @@ var MssqlDialect = class {
     __name(this, "MssqlDialect");
   }
   #config;
-  constructor(config3) {
-    this.#config = config3;
+  constructor(config4) {
+    this.#config = config4;
   }
   createDriver() {
     return new MssqlDriver(this.#config);
@@ -47829,8 +48911,8 @@ function getDatabaseType(db) {
   return null;
 }
 __name(getDatabaseType, "getDatabaseType");
-var createKyselyAdapter = /* @__PURE__ */ __name(async (config3) => {
-  const db = config3.database;
+var createKyselyAdapter = /* @__PURE__ */ __name(async (config4) => {
+  const db = config4.database;
   if (!db) {
     return {
       kysely: null,
@@ -47872,7 +48954,7 @@ var createKyselyAdapter = /* @__PURE__ */ __name(async (config3) => {
     databaseType
   };
 }, "createKyselyAdapter");
-var createTransform = /* @__PURE__ */ __name((db, options, config3) => {
+var createTransform = /* @__PURE__ */ __name((db, options, config4) => {
   const schema3 = getAuthTables(options);
   function getField(model, field) {
     if (field === "id") {
@@ -47889,21 +48971,21 @@ var createTransform = /* @__PURE__ */ __name((db, options, config3) => {
     if (field === "id") {
       return value;
     }
-    const { type = "sqlite" } = config3 || {};
+    const { type: type2 = "sqlite" } = config4 || {};
     const f = schema3[model].fields[field];
-    if (f.type === "boolean" && (type === "sqlite" || type === "mssql") && value !== null && value !== void 0) {
+    if (f.type === "boolean" && (type2 === "sqlite" || type2 === "mssql") && value !== null && value !== void 0) {
       return value ? 1 : 0;
     }
     if (f.type === "date" && value && value instanceof Date) {
-      return type === "sqlite" ? value.toISOString() : value;
+      return type2 === "sqlite" ? value.toISOString() : value;
     }
     return value;
   }
   __name(transformValueToDB, "transformValueToDB");
   function transformValueFromDB(value, model, field) {
-    const { type = "sqlite" } = config3 || {};
+    const { type: type2 = "sqlite" } = config4 || {};
     const f = schema3[model].fields[field];
-    if (f.type === "boolean" && (type === "sqlite" || type === "mssql") && value !== null) {
+    if (f.type === "boolean" && (type2 === "sqlite" || type2 === "mssql") && value !== null) {
       return value === 1;
     }
     if (f.type === "date" && value) {
@@ -48021,14 +49103,14 @@ var createTransform = /* @__PURE__ */ __name((db, options, config3) => {
     },
     async withReturning(values, builder, model, where) {
       let res;
-      if (config3?.type === "mysql") {
+      if (config4?.type === "mysql") {
         await builder.execute();
         const field = values.id ? "id" : where[0].field ? where[0].field : "id";
         const value = values[field] || where[0].value;
         res = await db.selectFrom(getModelName(model)).selectAll().where(getField(model, field), "=", value).executeTakeFirst();
         return res;
       }
-      if (config3?.type === "mssql") {
+      if (config4?.type === "mssql") {
         res = await builder.outputAll("inserted").executeTakeFirst();
         return res;
       }
@@ -48039,7 +49121,7 @@ var createTransform = /* @__PURE__ */ __name((db, options, config3) => {
     getField
   };
 }, "createTransform");
-var kyselyAdapter = /* @__PURE__ */ __name((db, config3) => (opts) => {
+var kyselyAdapter = /* @__PURE__ */ __name((db, config4) => (opts) => {
   const {
     transformInput,
     withReturning,
@@ -48047,7 +49129,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db, config3) => (opts) => {
     convertWhereClause,
     getModelName,
     getField
-  } = createTransform(db, opts, config3);
+  } = createTransform(db, opts, config4);
   return {
     id: "kysely",
     async create(data) {
@@ -48084,7 +49166,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db, config3) => (opts) => {
       if (or2) {
         query = query.where((eb) => eb.or(or2.map((expr) => expr(eb))));
       }
-      if (config3?.type === "mssql") {
+      if (config4?.type === "mssql") {
         if (!offset) {
           query = query.top(limit || 100);
         }
@@ -48098,7 +49180,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db, config3) => (opts) => {
         );
       }
       if (offset) {
-        if (config3?.type === "mssql") {
+        if (config4?.type === "mssql") {
           if (!sortBy) {
             query = query.orderBy(getField(model, "id"));
           }
@@ -48179,7 +49261,7 @@ var kyselyAdapter = /* @__PURE__ */ __name((db, config3) => (opts) => {
       }
       return (await query.execute()).length;
     },
-    options: config3
+    options: config4
   };
 }, "kyselyAdapter");
 
@@ -49156,8 +50238,8 @@ async function getAdapter(options) {
   })(options);
 }
 __name(getAdapter, "getAdapter");
-function getSchema(config3) {
-  const tables = getAuthTables(config3);
+function getSchema(config4) {
+  const tables = getAuthTables(config4);
   let schema3 = {};
   for (const key in tables) {
     const table3 = tables[key];
@@ -49242,15 +50324,15 @@ function matchType(columnDataType, fieldType, dbType) {
     return columnDataType.toLowerCase().includes("json");
   }
   const types4 = map[dbType];
-  const type = Array.isArray(fieldType) ? types4["string"].map((t) => t.toLowerCase()) : types4[fieldType].map((t) => t.toLowerCase());
-  const matches = type.includes(columnDataType.toLowerCase());
+  const type2 = Array.isArray(fieldType) ? types4["string"].map((t) => t.toLowerCase()) : types4[fieldType].map((t) => t.toLowerCase());
+  const matches = type2.includes(columnDataType.toLowerCase());
   return matches;
 }
 __name(matchType, "matchType");
-async function getMigrations(config3) {
-  const betterAuthSchema = getSchema(config3);
-  const logger2 = createLogger(config3.logger);
-  let { kysely: db, databaseType: dbType } = await createKyselyAdapter(config3);
+async function getMigrations(config4) {
+  const betterAuthSchema = getSchema(config4);
+  const logger2 = createLogger(config4.logger);
+  let { kysely: db, databaseType: dbType } = await createKyselyAdapter(config4);
   if (!dbType) {
     logger2.warn(
       "Could not determine database type, defaulting to sqlite. Please provide a type in the database options to avoid this."
@@ -49317,7 +50399,7 @@ async function getMigrations(config3) {
   }
   const migrations = [];
   function getType(field) {
-    const type = field.type;
+    const type2 = field.type;
     const typeMap = {
       string: {
         sqlite: "text",
@@ -49344,23 +50426,23 @@ async function getMigrations(config3) {
         mssql: "datetime"
       }
     };
-    if (dbType === "sqlite" && (type === "string[]" || type === "number[]")) {
+    if (dbType === "sqlite" && (type2 === "string[]" || type2 === "number[]")) {
       return "text";
     }
-    if (type === "string[]" || type === "number[]") {
+    if (type2 === "string[]" || type2 === "number[]") {
       return "jsonb";
     }
-    if (Array.isArray(type)) {
+    if (Array.isArray(type2)) {
       return "text";
     }
-    return typeMap[type][dbType || "sqlite"];
+    return typeMap[type2][dbType || "sqlite"];
   }
   __name(getType, "getType");
   if (toBeAdded.length) {
     for (const table3 of toBeAdded) {
       for (const [fieldName, field] of Object.entries(table3.fields)) {
-        const type = getType(field);
-        const exec = db.schema.alterTable(table3.table).addColumn(fieldName, type, (col) => {
+        const type2 = getType(field);
+        const exec = db.schema.alterTable(table3.table).addColumn(fieldName, type2, (col) => {
           col = field.required !== false ? col.notNull() : col;
           if (field.references) {
             col = col.references(
@@ -49384,8 +50466,8 @@ async function getMigrations(config3) {
         (col) => col.primaryKey().notNull()
       );
       for (const [fieldName, field] of Object.entries(table3.fields)) {
-        const type = getType(field);
-        dbT = dbT.addColumn(fieldName, type, (col) => {
+        const type2 = getType(field);
+        dbT = dbT.addColumn(fieldName, type2, (col) => {
           col = field.required !== false ? col.notNull() : col;
           if (field.references) {
             col = col.references(
@@ -49685,22 +50767,22 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 var entityKind = Symbol.for("drizzle:entityKind");
 var hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
-function is(value, type) {
+function is(value, type2) {
   if (!value || typeof value !== "object") {
     return false;
   }
-  if (value instanceof type) {
+  if (value instanceof type2) {
     return true;
   }
-  if (!Object.prototype.hasOwnProperty.call(type, entityKind)) {
+  if (!Object.prototype.hasOwnProperty.call(type2, entityKind)) {
     throw new Error(
-      `Class "${type.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`
+      `Class "${type2.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`
     );
   }
   let cls = Object.getPrototypeOf(value).constructor;
   if (cls) {
     while (cls) {
-      if (entityKind in cls && cls[entityKind] === type[entityKind]) {
+      if (entityKind in cls && cls[entityKind] === type2[entityKind]) {
         return true;
       }
       cls = Object.getPrototypeOf(cls);
@@ -49715,24 +50797,24 @@ var Column = class {
   static {
     __name(this, "Column");
   }
-  constructor(table3, config3) {
+  constructor(table3, config4) {
     this.table = table3;
-    this.config = config3;
-    this.name = config3.name;
-    this.keyAsName = config3.keyAsName;
-    this.notNull = config3.notNull;
-    this.default = config3.default;
-    this.defaultFn = config3.defaultFn;
-    this.onUpdateFn = config3.onUpdateFn;
-    this.hasDefault = config3.hasDefault;
-    this.primary = config3.primaryKey;
-    this.isUnique = config3.isUnique;
-    this.uniqueName = config3.uniqueName;
-    this.uniqueType = config3.uniqueType;
-    this.dataType = config3.dataType;
-    this.columnType = config3.columnType;
-    this.generated = config3.generated;
-    this.generatedIdentity = config3.generatedIdentity;
+    this.config = config4;
+    this.name = config4.name;
+    this.keyAsName = config4.keyAsName;
+    this.notNull = config4.notNull;
+    this.default = config4.default;
+    this.defaultFn = config4.defaultFn;
+    this.onUpdateFn = config4.onUpdateFn;
+    this.hasDefault = config4.hasDefault;
+    this.primary = config4.primaryKey;
+    this.isUnique = config4.isUnique;
+    this.uniqueName = config4.uniqueName;
+    this.uniqueType = config4.uniqueType;
+    this.dataType = config4.dataType;
+    this.columnType = config4.columnType;
+    this.generated = config4.generated;
+    this.generatedIdentity = config4.generatedIdentity;
   }
   static [entityKind] = "Column";
   name;
@@ -49918,9 +51000,9 @@ var ForeignKeyBuilder = class {
   _onUpdate = "no action";
   /** @internal */
   _onDelete = "no action";
-  constructor(config3, actions) {
+  constructor(config4, actions) {
     this.reference = () => {
-      const { name, columns, foreignColumns } = config3();
+      const { name, columns, foreignColumns } = config4();
       return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
     };
     if (actions) {
@@ -50141,10 +51223,10 @@ var PgColumnBuilder = class extends ColumnBuilder {
     this.foreignKeyConfigs.push({ ref, actions });
     return this;
   }
-  unique(name, config3) {
+  unique(name, config4) {
     this.config.isUnique = true;
     this.config.uniqueName = name;
-    this.config.uniqueType = config3?.nulls;
+    this.config.uniqueType = config4?.nulls;
     return this;
   }
   generatedAlwaysAs(as) {
@@ -50186,11 +51268,11 @@ var PgColumn = class extends Column {
   static {
     __name(this, "PgColumn");
   }
-  constructor(table3, config3) {
-    if (!config3.uniqueName) {
-      config3.uniqueName = uniqueKeyName(table3, [config3.name]);
+  constructor(table3, config4) {
+    if (!config4.uniqueName) {
+      config4.uniqueName = uniqueKeyName(table3, [config4.name]);
     }
-    super(table3, config3);
+    super(table3, config4);
     this.table = table3;
   }
   static [entityKind] = "PgColumn";
@@ -50268,10 +51350,10 @@ var IndexedColumn = class {
     __name(this, "IndexedColumn");
   }
   static [entityKind] = "IndexedColumn";
-  constructor(name, keyAsName, type, indexConfig) {
+  constructor(name, keyAsName, type2, indexConfig) {
     this.name = name;
     this.keyAsName = keyAsName;
-    this.type = type;
+    this.type = type2;
     this.indexConfig = indexConfig;
   }
   name;
@@ -50303,11 +51385,11 @@ var PgArray = class _PgArray extends PgColumn {
   static {
     __name(this, "PgArray");
   }
-  constructor(table3, config3, baseColumn, range) {
-    super(table3, config3);
+  constructor(table3, config4, baseColumn, range) {
+    super(table3, config4);
     this.baseColumn = baseColumn;
     this.range = range;
-    this.size = config3.size;
+    this.size = config4.size;
   }
   size;
   static [entityKind] = "PgArray";
@@ -50360,9 +51442,9 @@ var PgEnumColumn = class extends PgColumn {
   static [entityKind] = "PgEnumColumn";
   enum = this.config.enum;
   enumValues = this.config.enum.enumValues;
-  constructor(table3, config3) {
-    super(table3, config3);
-    this.enum = config3.enum;
+  constructor(table3, config4) {
+    super(table3, config4);
+    this.enum = config4.enum;
   }
   getSQLType() {
     return this.enum.enumName;
@@ -50583,9 +51665,9 @@ var SQL = class _SQL {
     this.queryChunks.push(...query.queryChunks);
     return this;
   }
-  toQuery(config3) {
+  toQuery(config4) {
     return tracer.startActiveSpan("drizzle.buildSQL", (span) => {
-      const query = this.buildQueryFromSourceParams(this.queryChunks, config3);
+      const query = this.buildQueryFromSourceParams(this.queryChunks, config4);
       span?.setAttributes({
         "drizzle.query.text": query.sql,
         "drizzle.query.params": JSON.stringify(query.params)
@@ -50594,7 +51676,7 @@ var SQL = class _SQL {
     });
   }
   buildQueryFromSourceParams(chunks, _config) {
-    const config3 = Object.assign({}, _config, {
+    const config4 = Object.assign({}, _config, {
       inlineParams: _config.inlineParams || this.shouldInlineParams,
       paramStartIndex: _config.paramStartIndex || { value: 0 }
     });
@@ -50605,7 +51687,7 @@ var SQL = class _SQL {
       prepareTyping,
       inlineParams,
       paramStartIndex
-    } = config3;
+    } = config4;
     return mergeQueries(chunks.map((chunk) => {
       if (is(chunk, StringChunk)) {
         return { sql: chunk.value.join(""), params: [] };
@@ -50625,11 +51707,11 @@ var SQL = class _SQL {
           }
         }
         result.push(new StringChunk(")"));
-        return this.buildQueryFromSourceParams(result, config3);
+        return this.buildQueryFromSourceParams(result, config4);
       }
       if (is(chunk, _SQL)) {
         return this.buildQueryFromSourceParams(chunk.queryChunks, {
-          ...config3,
+          ...config4,
           inlineParams: inlineParams || chunk.shouldInlineParams
         });
       }
@@ -50666,10 +51748,10 @@ var SQL = class _SQL {
         }
         const mappedValue = chunk.value === null ? null : chunk.encoder.mapToDriverValue(chunk.value);
         if (is(mappedValue, _SQL)) {
-          return this.buildQueryFromSourceParams([mappedValue], config3);
+          return this.buildQueryFromSourceParams([mappedValue], config4);
         }
         if (inlineParams) {
-          return { sql: this.mapInlineParam(mappedValue, config3), params: [] };
+          return { sql: this.mapInlineParam(mappedValue, config4), params: [] };
         }
         let typings = ["none"];
         if (prepareTyping) {
@@ -50692,7 +51774,7 @@ var SQL = class _SQL {
           chunk._.sql,
           new StringChunk(") "),
           new Name(chunk._.alias)
-        ], config3);
+        ], config4);
       }
       if (isPgEnum(chunk)) {
         if (chunk.schema) {
@@ -50702,16 +51784,16 @@ var SQL = class _SQL {
       }
       if (isSQLWrapper(chunk)) {
         if (chunk.shouldOmitSQLParens?.()) {
-          return this.buildQueryFromSourceParams([chunk.getSQL()], config3);
+          return this.buildQueryFromSourceParams([chunk.getSQL()], config4);
         }
         return this.buildQueryFromSourceParams([
           new StringChunk("("),
           chunk.getSQL(),
           new StringChunk(")")
-        ], config3);
+        ], config4);
       }
       if (inlineParams) {
-        return { sql: this.mapInlineParam(chunk, config3), params: [] };
+        return { sql: this.mapInlineParam(chunk, config4), params: [] };
       }
       return { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk], typings: ["none"] };
     }));
@@ -51257,8 +52339,8 @@ var DefaultLogger = class {
   }
   static [entityKind] = "DefaultLogger";
   writer;
-  constructor(config3) {
-    this.writer = config3?.writer ?? new ConsoleLogWriter();
+  constructor(config4) {
+    this.writer = config4?.writer ?? new ConsoleLogWriter();
   }
   logQuery(query, params) {
     const stringifiedParams = params.map((p) => {
@@ -51338,7 +52420,7 @@ init_performance2();
 function mapResultRow(columns, row, joinsNotNullableMap) {
   const nullifyMap = {};
   const result = columns.reduce(
-    (result2, { path, field }, columnIndex) => {
+    (result2, { path: path2, field }, columnIndex) => {
       let decoder2;
       if (is(field, Column)) {
         decoder2 = field;
@@ -51348,8 +52430,8 @@ function mapResultRow(columns, row, joinsNotNullableMap) {
         decoder2 = field.sql.decoder;
       }
       let node = result2;
-      for (const [pathChunkIndex, pathChunk] of path.entries()) {
-        if (pathChunkIndex < path.length - 1) {
+      for (const [pathChunkIndex, pathChunk] of path2.entries()) {
+        if (pathChunkIndex < path2.length - 1) {
           if (!(pathChunk in node)) {
             node[pathChunk] = {};
           }
@@ -51357,8 +52439,8 @@ function mapResultRow(columns, row, joinsNotNullableMap) {
         } else {
           const rawValue = row[columnIndex];
           const value = node[pathChunk] = rawValue === null ? null : decoder2.mapFromDriverValue(rawValue);
-          if (joinsNotNullableMap && is(field, Column) && path.length === 2) {
-            const objectName = path[0];
+          if (joinsNotNullableMap && is(field, Column) && path2.length === 2) {
+            const objectName = path2[0];
             if (!(objectName in nullifyMap)) {
               nullifyMap[objectName] = value === null ? getTableName(field.table) : false;
             } else if (typeof nullifyMap[objectName] === "string" && nullifyMap[objectName] !== getTableName(field.table)) {
@@ -51536,9 +52618,9 @@ var Relations = class {
   static {
     __name(this, "Relations");
   }
-  constructor(table3, config3) {
+  constructor(table3, config4) {
     this.table = table3;
-    this.config = config3;
+    this.config = config4;
   }
   static [entityKind] = "Relations";
 };
@@ -51546,9 +52628,9 @@ var One = class _One extends Relation {
   static {
     __name(this, "One");
   }
-  constructor(sourceTable, referencedTable, config3, isNullable) {
-    super(sourceTable, referencedTable, config3?.relationName);
-    this.config = config3;
+  constructor(sourceTable, referencedTable, config4, isNullable) {
+    super(sourceTable, referencedTable, config4?.relationName);
+    this.config = config4;
     this.isNullable = isNullable;
   }
   static [entityKind] = "One";
@@ -51567,9 +52649,9 @@ var Many = class _Many extends Relation {
   static {
     __name(this, "Many");
   }
-  constructor(sourceTable, referencedTable, config3) {
-    super(sourceTable, referencedTable, config3?.relationName);
-    this.config = config3;
+  constructor(sourceTable, referencedTable, config4) {
+    super(sourceTable, referencedTable, config4?.relationName);
+    this.config = config4;
   }
   static [entityKind] = "Many";
   withFieldName(fieldName) {
@@ -51682,19 +52764,19 @@ function extractTablesRelationalConfig(schema3, configHelpers) {
 }
 __name(extractTablesRelationalConfig, "extractTablesRelationalConfig");
 function createOne(sourceTable) {
-  return /* @__PURE__ */ __name(function one(table3, config3) {
+  return /* @__PURE__ */ __name(function one(table3, config4) {
     return new One(
       sourceTable,
       table3,
-      config3,
-      config3?.fields.reduce((res, f) => res && f.notNull, true) ?? false
+      config4,
+      config4?.fields.reduce((res, f) => res && f.notNull, true) ?? false
     );
   }, "one");
 }
 __name(createOne, "createOne");
 function createMany(sourceTable) {
-  return /* @__PURE__ */ __name(function many(referencedTable, config3) {
-    return new Many(sourceTable, referencedTable, config3);
+  return /* @__PURE__ */ __name(function many(referencedTable, config4) {
+    return new Many(sourceTable, referencedTable, config4);
   }, "many");
 }
 __name(createMany, "createMany");
@@ -51809,7 +52891,7 @@ function count3(expression) {
 __name(count3, "count");
 
 // node_modules/.pnpm/better-auth@1.2.5_typescript@5.7.2/node_modules/better-auth/dist/adapters/drizzle-adapter/index.mjs
-var createTransform3 = /* @__PURE__ */ __name((db, config3, options) => {
+var createTransform3 = /* @__PURE__ */ __name((db, config4, options) => {
   const schema3 = getAuthTables(options);
   function getField(model, field) {
     if (field === "id") {
@@ -51820,7 +52902,7 @@ var createTransform3 = /* @__PURE__ */ __name((db, config3, options) => {
   }
   __name(getField, "getField");
   function getSchema3(modelName) {
-    const schema22 = config3.schema || db._.fullSchema;
+    const schema22 = config4.schema || db._.fullSchema;
     if (!schema22) {
       throw new BetterAuthError(
         "Drizzle adapter failed to initialize. Schema not found. Please provide a schema object in the adapter options object."
@@ -51837,7 +52919,7 @@ var createTransform3 = /* @__PURE__ */ __name((db, config3, options) => {
   }
   __name(getSchema3, "getSchema");
   const getModelName = /* @__PURE__ */ __name((model) => {
-    return schema3[model].modelName !== model ? schema3[model].modelName : config3.usePlural ? `${model}s` : model;
+    return schema3[model].modelName !== model ? schema3[model].modelName : config4.usePlural ? `${model}s` : model;
   }, "getModelName");
   function convertWhereClause(where, model) {
     const schemaModel = getSchema3(model);
@@ -51948,7 +53030,7 @@ var createTransform3 = /* @__PURE__ */ __name((db, config3, options) => {
     },
     convertWhereClause,
     withReturning: /* @__PURE__ */ __name(async (model, builder, data, where) => {
-      if (config3.provider !== "mysql") {
+      if (config4.provider !== "mysql") {
         const c = await builder.returning();
         return c[0];
       }
@@ -51987,7 +53069,7 @@ function checkMissingFields(schema3, model, values) {
   }
 }
 __name(checkMissingFields, "checkMissingFields");
-var drizzleAdapter = /* @__PURE__ */ __name((db, config3) => (options) => {
+var drizzleAdapter = /* @__PURE__ */ __name((db, config4) => (options) => {
   const {
     transformInput,
     transformOutput,
@@ -51996,7 +53078,7 @@ var drizzleAdapter = /* @__PURE__ */ __name((db, config3) => (options) => {
     withReturning,
     getField,
     getModelName
-  } = createTransform3(db, config3, options);
+  } = createTransform3(db, config4, options);
   return {
     id: "drizzle",
     async create(data) {
@@ -52073,7 +53155,7 @@ var drizzleAdapter = /* @__PURE__ */ __name((db, config3) => (options) => {
       const res = await builder;
       return res ? res.length : 0;
     },
-    options: config3
+    options: config4
   };
 }, "drizzleAdapter");
 
@@ -54618,8 +55700,8 @@ function getResponse2(responses) {
   };
 }
 __name(getResponse2, "getResponse");
-function toOpenApiPath(path) {
-  return path.split("/").map((part) => part.startsWith(":") ? `{${part.slice(1)}}` : part).join("/");
+function toOpenApiPath(path2) {
+  return path2.split("/").map((part) => part.startsWith(":") ? `{${part.slice(1)}}` : part).join("/");
 }
 __name(toOpenApiPath, "toOpenApiPath");
 async function generator2(ctx, options) {
@@ -54652,9 +55734,9 @@ async function generator2(ctx, options) {
   Object.entries(baseEndpoints.api).forEach(([_, value]) => {
     const options2 = value.options;
     if (options2.metadata?.SERVER_ONLY) return;
-    const path = toOpenApiPath(value.path);
+    const path2 = toOpenApiPath(value.path);
     if (options2.method === "GET") {
-      paths2[path] = {
+      paths2[path2] = {
         get: {
           tags: ["Default", ...options2.metadata?.openapi?.tags || []],
           description: options2.metadata?.openapi?.description,
@@ -54671,7 +55753,7 @@ async function generator2(ctx, options) {
     }
     if (options2.method === "POST") {
       const body = getRequestBody2(options2);
-      paths2[path] = {
+      paths2[path2] = {
         post: {
           tags: ["Default", ...options2.metadata?.openapi?.tags || []],
           description: options2.metadata?.openapi?.description,
@@ -54717,9 +55799,9 @@ async function generator2(ctx, options) {
     Object.entries(api).forEach(([key, value]) => {
       const options2 = value.options;
       if (options2.metadata?.SERVER_ONLY) return;
-      const path = toOpenApiPath(value.path);
+      const path2 = toOpenApiPath(value.path);
       if (options2.method === "GET") {
-        paths2[path] = {
+        paths2[path2] = {
           get: {
             tags: options2.metadata?.openapi?.tags || [
               plugin.id.charAt(0).toUpperCase() + plugin.id.slice(1)
@@ -54737,7 +55819,7 @@ async function generator2(ctx, options) {
         };
       }
       if (options2.method === "POST") {
-        paths2[path] = {
+        paths2[path2] = {
           post: {
             tags: options2.metadata?.openapi?.tags || [
               plugin.id.charAt(0).toUpperCase() + plugin.id.slice(1)
@@ -54844,7 +55926,7 @@ var getHTML2 = /* @__PURE__ */ __name((apiReference2) => `<!doctype html>
   </body>
 </html>`, "getHTML");
 var openAPI = /* @__PURE__ */ __name((options) => {
-  const path = options?.path ?? "/reference";
+  const path2 = options?.path ?? "/reference";
   return {
     id: "open-api",
     endpoints: {
@@ -54859,7 +55941,7 @@ var openAPI = /* @__PURE__ */ __name((options) => {
         }
       ),
       openAPIReference: createAuthEndpoint(
-        path,
+        path2,
         {
           method: "GET",
           metadata: {
@@ -54931,8 +56013,8 @@ var SelectionProxyHandler = class _SelectionProxyHandler {
   }
   static [entityKind] = "SelectionProxyHandler";
   config;
-  constructor(config3) {
-    this.config = { ...config3 };
+  constructor(config4) {
+    this.config = { ...config4 };
   }
   get(subquery, prop) {
     if (prop === "_") {
@@ -55041,9 +56123,9 @@ var ForeignKeyBuilder2 = class {
   _onUpdate;
   /** @internal */
   _onDelete;
-  constructor(config3, actions) {
+  constructor(config4, actions) {
     this.reference = () => {
-      const { name, columns, foreignColumns } = config3();
+      const { name, columns, foreignColumns } = config4();
       return { name, columns, foreignTable: foreignColumns[0].table, foreignColumns };
     };
     if (actions) {
@@ -55164,11 +56246,11 @@ var SQLiteColumnBuilder = class extends ColumnBuilder {
     this.config.uniqueName = name;
     return this;
   }
-  generatedAlwaysAs(as, config3) {
+  generatedAlwaysAs(as, config4) {
     this.config.generated = {
       as,
       type: "always",
-      mode: config3?.mode ?? "virtual"
+      mode: config4?.mode ?? "virtual"
     };
     return this;
   }
@@ -55195,11 +56277,11 @@ var SQLiteColumn = class extends Column {
   static {
     __name(this, "SQLiteColumn");
   }
-  constructor(table3, config3) {
-    if (!config3.uniqueName) {
-      config3.uniqueName = uniqueKeyName2(table3, [config3.name]);
+  constructor(table3, config4) {
+    if (!config4.uniqueName) {
+      config4.uniqueName = uniqueKeyName2(table3, [config4.name]);
     }
-    super(table3, config3);
+    super(table3, config4);
     this.table = table3;
   }
   static [entityKind] = "SQLiteColumn";
@@ -55302,11 +56384,11 @@ var SQLiteBlobBuffer = class extends SQLiteColumn {
   }
 };
 function blob(a, b) {
-  const { name, config: config3 } = getColumnNameAndConfig(a, b);
-  if (config3?.mode === "json") {
+  const { name, config: config4 } = getColumnNameAndConfig(a, b);
+  if (config4?.mode === "json") {
     return new SQLiteBlobJsonBuilder(name);
   }
-  if (config3?.mode === "bigint") {
+  if (config4?.mode === "bigint") {
     return new SQLiteBigIntBuilder(name);
   }
   return new SQLiteBlobBufferBuilder(name);
@@ -55344,11 +56426,11 @@ var SQLiteCustomColumn = class extends SQLiteColumn {
   sqlName;
   mapTo;
   mapFrom;
-  constructor(table3, config3) {
-    super(table3, config3);
-    this.sqlName = config3.customTypeParams.dataType(config3.fieldConfig);
-    this.mapTo = config3.customTypeParams.toDriver;
-    this.mapFrom = config3.customTypeParams.fromDriver;
+  constructor(table3, config4) {
+    super(table3, config4);
+    this.sqlName = config4.customTypeParams.dataType(config4.fieldConfig);
+    this.mapTo = config4.customTypeParams.toDriver;
+    this.mapFrom = config4.customTypeParams.fromDriver;
   }
   getSQLType() {
     return this.sqlName;
@@ -55362,10 +56444,10 @@ var SQLiteCustomColumn = class extends SQLiteColumn {
 };
 function customType(customTypeParams) {
   return (a, b) => {
-    const { name, config: config3 } = getColumnNameAndConfig(a, b);
+    const { name, config: config4 } = getColumnNameAndConfig(a, b);
     return new SQLiteCustomColumnBuilder(
       name,
-      config3,
+      config4,
       customTypeParams
     );
   };
@@ -55386,8 +56468,8 @@ var SQLiteBaseIntegerBuilder = class extends SQLiteColumnBuilder {
     super(name, dataType, columnType);
     this.config.autoIncrement = false;
   }
-  primaryKey(config3) {
-    if (config3?.autoIncrement) {
+  primaryKey(config4) {
+    if (config4?.autoIncrement) {
       this.config.autoIncrement = true;
     }
     this.config.hasDefault = true;
@@ -55499,12 +56581,12 @@ var SQLiteBoolean = class extends SQLiteBaseInteger {
   }
 };
 function integer(a, b) {
-  const { name, config: config3 } = getColumnNameAndConfig(a, b);
-  if (config3?.mode === "timestamp" || config3?.mode === "timestamp_ms") {
-    return new SQLiteTimestampBuilder(name, config3.mode);
+  const { name, config: config4 } = getColumnNameAndConfig(a, b);
+  if (config4?.mode === "timestamp" || config4?.mode === "timestamp_ms") {
+    return new SQLiteTimestampBuilder(name, config4.mode);
   }
-  if (config3?.mode === "boolean") {
-    return new SQLiteBooleanBuilder(name, config3.mode);
+  if (config4?.mode === "boolean") {
+    return new SQLiteBooleanBuilder(name, config4.mode);
   }
   return new SQLiteIntegerBuilder(name);
 }
@@ -55587,10 +56669,10 @@ var SQLiteTextBuilder = class extends SQLiteColumnBuilder {
     __name(this, "SQLiteTextBuilder");
   }
   static [entityKind] = "SQLiteTextBuilder";
-  constructor(name, config3) {
+  constructor(name, config4) {
     super(name, "string", "SQLiteText");
-    this.config.enumValues = config3.enum;
-    this.config.length = config3.length;
+    this.config.enumValues = config4.enum;
+    this.config.length = config4.length;
   }
   /** @internal */
   build(table3) {
@@ -55607,8 +56689,8 @@ var SQLiteText = class extends SQLiteColumn {
   static [entityKind] = "SQLiteText";
   enumValues = this.config.enumValues;
   length = this.config.length;
-  constructor(table3, config3) {
-    super(table3, config3);
+  constructor(table3, config4) {
+    super(table3, config4);
   }
   getSQLType() {
     return `text${this.config.length ? `(${this.config.length})` : ""}`;
@@ -55646,11 +56728,11 @@ var SQLiteTextJson = class extends SQLiteColumn {
   }
 };
 function text(a, b = {}) {
-  const { name, config: config3 } = getColumnNameAndConfig(a, b);
-  if (config3.mode === "json") {
+  const { name, config: config4 } = getColumnNameAndConfig(a, b);
+  if (config4.mode === "json") {
     return new SQLiteTextJsonBuilder(name);
   }
-  return new SQLiteTextBuilder(name, config3);
+  return new SQLiteTextBuilder(name, config4);
 }
 __name(text, "text");
 
@@ -55923,8 +57005,8 @@ var SQLiteDialect = class {
   static [entityKind] = "SQLiteDialect";
   /** @internal */
   casing;
-  constructor(config3) {
-    this.casing = new CasingCache(config3?.casing);
+  constructor(config4) {
+    this.casing = new CasingCache(config4?.casing);
   }
   escapeName(name) {
     return `"${name}"`;
@@ -56154,7 +57236,7 @@ var SQLiteDialect = class {
   }
   buildSetOperationQuery({
     leftSelect,
-    setOperator: { type, isAll, rightSelect, limit, orderBy, offset }
+    setOperator: { type: type2, isAll, rightSelect, limit, orderBy, offset }
   }) {
     const leftChunk = sql2`${leftSelect.getSQL()} `;
     const rightChunk = sql2`${rightSelect.getSQL()}`;
@@ -56179,7 +57261,7 @@ var SQLiteDialect = class {
       orderBySql = sql2` order by ${sql2.join(orderByValues, sql2`, `)}`;
     }
     const limitSql = typeof limit === "object" || typeof limit === "number" && limit >= 0 ? sql2` limit ${limit}` : void 0;
-    const operatorChunk = sql2.raw(`${type} ${isAll ? "all " : ""}`);
+    const operatorChunk = sql2.raw(`${type2} ${isAll ? "all " : ""}`);
     const offsetSql = offset ? sql2` offset ${offset}` : void 0;
     return sql2`${leftChunk}${operatorChunk}${rightChunk}${orderBySql}${limitSql}${offsetSql}`;
   }
@@ -56249,7 +57331,7 @@ var SQLiteDialect = class {
     tableNamesMap,
     table: table3,
     tableConfig,
-    queryConfig: config3,
+    queryConfig: config4,
     tableAlias,
     nestedQueryRelation,
     joinOn
@@ -56257,7 +57339,7 @@ var SQLiteDialect = class {
     let selection = [];
     let limit, offset, orderBy = [], where;
     const joins = [];
-    if (config3 === true) {
+    if (config4 === true) {
       const selectionEntries = Object.entries(tableConfig.columns);
       selection = selectionEntries.map(([key, value]) => ({
         dbKey: value.name,
@@ -56271,15 +57353,15 @@ var SQLiteDialect = class {
       const aliasedColumns = Object.fromEntries(
         Object.entries(tableConfig.columns).map(([key, value]) => [key, aliasedTableColumn(value, tableAlias)])
       );
-      if (config3.where) {
-        const whereSql = typeof config3.where === "function" ? config3.where(aliasedColumns, getOperators()) : config3.where;
+      if (config4.where) {
+        const whereSql = typeof config4.where === "function" ? config4.where(aliasedColumns, getOperators()) : config4.where;
         where = whereSql && mapColumnsInSQLToAlias(whereSql, tableAlias);
       }
       const fieldsSelection = [];
       let selectedColumns = [];
-      if (config3.columns) {
+      if (config4.columns) {
         let isIncludeMode = false;
-        for (const [field, value] of Object.entries(config3.columns)) {
+        for (const [field, value] of Object.entries(config4.columns)) {
           if (value === void 0) {
             continue;
           }
@@ -56291,7 +57373,7 @@ var SQLiteDialect = class {
           }
         }
         if (selectedColumns.length > 0) {
-          selectedColumns = isIncludeMode ? selectedColumns.filter((c) => config3.columns?.[c] === true) : Object.keys(tableConfig.columns).filter((key) => !selectedColumns.includes(key));
+          selectedColumns = isIncludeMode ? selectedColumns.filter((c) => config4.columns?.[c] === true) : Object.keys(tableConfig.columns).filter((key) => !selectedColumns.includes(key));
         }
       } else {
         selectedColumns = Object.keys(tableConfig.columns);
@@ -56301,12 +57383,12 @@ var SQLiteDialect = class {
         fieldsSelection.push({ tsKey: field, value: column });
       }
       let selectedRelations = [];
-      if (config3.with) {
-        selectedRelations = Object.entries(config3.with).filter((entry) => !!entry[1]).map(([tsKey, queryConfig]) => ({ tsKey, queryConfig, relation: tableConfig.relations[tsKey] }));
+      if (config4.with) {
+        selectedRelations = Object.entries(config4.with).filter((entry) => !!entry[1]).map(([tsKey, queryConfig]) => ({ tsKey, queryConfig, relation: tableConfig.relations[tsKey] }));
       }
       let extras;
-      if (config3.extras) {
-        extras = typeof config3.extras === "function" ? config3.extras(aliasedColumns, { sql: sql2 }) : config3.extras;
+      if (config4.extras) {
+        extras = typeof config4.extras === "function" ? config4.extras(aliasedColumns, { sql: sql2 }) : config4.extras;
         for (const [tsKey, value] of Object.entries(extras)) {
           fieldsSelection.push({
             tsKey,
@@ -56324,7 +57406,7 @@ var SQLiteDialect = class {
           selection: []
         });
       }
-      let orderByOrig = typeof config3.orderBy === "function" ? config3.orderBy(aliasedColumns, getOrderByOperators()) : config3.orderBy ?? [];
+      let orderByOrig = typeof config4.orderBy === "function" ? config4.orderBy(aliasedColumns, getOrderByOperators()) : config4.orderBy ?? [];
       if (!Array.isArray(orderByOrig)) {
         orderByOrig = [orderByOrig];
       }
@@ -56334,8 +57416,8 @@ var SQLiteDialect = class {
         }
         return mapColumnsInSQLToAlias(orderByValue, tableAlias);
       });
-      limit = config3.limit;
-      offset = config3.offset;
+      limit = config4.limit;
+      offset = config4.offset;
       for (const {
         tsKey: selectedRelationTsKey,
         queryConfig: selectedRelationConfigValue,
@@ -56466,8 +57548,8 @@ var SQLiteSyncDialect = class extends SQLiteDialect {
     __name(this, "SQLiteSyncDialect");
   }
   static [entityKind] = "SQLiteSyncDialect";
-  migrate(migrations, session2, config3) {
-    const migrationsTable = config3 === void 0 ? "__drizzle_migrations" : typeof config3 === "string" ? "__drizzle_migrations" : config3.migrationsTable ?? "__drizzle_migrations";
+  migrate(migrations, session2, config4) {
+    const migrationsTable = config4 === void 0 ? "__drizzle_migrations" : typeof config4 === "string" ? "__drizzle_migrations" : config4.migrationsTable ?? "__drizzle_migrations";
     const migrationTableCreate = sql2`
 			CREATE TABLE IF NOT EXISTS ${sql2.identifier(migrationsTable)} (
 				id SERIAL PRIMARY KEY,
@@ -56504,8 +57586,8 @@ var SQLiteAsyncDialect = class extends SQLiteDialect {
     __name(this, "SQLiteAsyncDialect");
   }
   static [entityKind] = "SQLiteAsyncDialect";
-  async migrate(migrations, session2, config3) {
-    const migrationsTable = config3 === void 0 ? "__drizzle_migrations" : typeof config3 === "string" ? "__drizzle_migrations" : config3.migrationsTable ?? "__drizzle_migrations";
+  async migrate(migrations, session2, config4) {
+    const migrationsTable = config4 === void 0 ? "__drizzle_migrations" : typeof config4 === "string" ? "__drizzle_migrations" : config4.migrationsTable ?? "__drizzle_migrations";
     const migrationTableCreate = sql2`
 			CREATE TABLE IF NOT EXISTS ${sql2.identifier(migrationsTable)} (
 				id SERIAL PRIMARY KEY,
@@ -56566,12 +57648,12 @@ var SQLiteSelectBuilder = class {
   dialect;
   withList;
   distinct;
-  constructor(config3) {
-    this.fields = config3.fields;
-    this.session = config3.session;
-    this.dialect = config3.dialect;
-    this.withList = config3.withList;
-    this.distinct = config3.distinct;
+  constructor(config4) {
+    this.fields = config4.fields;
+    this.session = config4.session;
+    this.dialect = config4.dialect;
+    this.withList = config4.withList;
+    this.distinct = config4.distinct;
   }
   from(source) {
     const isPartialSelect = !!this.fields;
@@ -56802,7 +57884,7 @@ var SQLiteSelectQueryBuilderBase = class extends TypedQueryBuilder {
    * ```
    */
   fullJoin = this.createJoin("full");
-  createSetOperator(type, isAll) {
+  createSetOperator(type2, isAll) {
     return (rightSelection) => {
       const rightSelect = typeof rightSelection === "function" ? rightSelection(getSQLiteSetOperators()) : rightSelection;
       if (!haveSameKeys(this.getSelectedFields(), rightSelect.getSelectedFields())) {
@@ -56810,7 +57892,7 @@ var SQLiteSelectQueryBuilderBase = class extends TypedQueryBuilder {
           "Set operator error (union / intersect / except): selected fields are not the same or are in a different order"
         );
       }
-      this.config.setOperators.push({ type, isAll, rightSelect });
+      this.config.setOperators.push({ type: type2, isAll, rightSelect });
       return this;
     };
   }
@@ -57149,10 +58231,10 @@ var SQLiteSelectBase = class extends SQLiteSelectQueryBuilderBase {
   }
 };
 applyMixins(SQLiteSelectBase, [QueryPromise]);
-function createSetOperator(type, isAll) {
+function createSetOperator(type2, isAll) {
   return (leftSelect, rightSelect, ...restSelects) => {
     const setOperators = [rightSelect, ...restSelects].map((select) => ({
-      type,
+      type: type2,
       isAll,
       rightSelect: select
     }));
@@ -57324,12 +58406,12 @@ var SQLiteInsertBase = class extends QueryPromise {
    *   .onConflictDoNothing({ target: cars.id });
    * ```
    */
-  onConflictDoNothing(config3 = {}) {
-    if (config3.target === void 0) {
+  onConflictDoNothing(config4 = {}) {
+    if (config4.target === void 0) {
       this.config.onConflict = sql2`do nothing`;
     } else {
-      const targetSql = Array.isArray(config3.target) ? sql2`${config3.target}` : sql2`${[config3.target]}`;
-      const whereSql = config3.where ? sql2` where ${config3.where}` : sql2``;
+      const targetSql = Array.isArray(config4.target) ? sql2`${config4.target}` : sql2`${[config4.target]}`;
+      const whereSql = config4.where ? sql2` where ${config4.where}` : sql2``;
       this.config.onConflict = sql2`${targetSql} do nothing${whereSql}`;
     }
     return this;
@@ -57363,17 +58445,17 @@ var SQLiteInsertBase = class extends QueryPromise {
    *   });
    * ```
    */
-  onConflictDoUpdate(config3) {
-    if (config3.where && (config3.targetWhere || config3.setWhere)) {
+  onConflictDoUpdate(config4) {
+    if (config4.where && (config4.targetWhere || config4.setWhere)) {
       throw new Error(
         'You cannot use both "where" and "targetWhere"/"setWhere" at the same time - "where" is deprecated, use "targetWhere" or "setWhere" instead.'
       );
     }
-    const whereSql = config3.where ? sql2` where ${config3.where}` : void 0;
-    const targetWhereSql = config3.targetWhere ? sql2` where ${config3.targetWhere}` : void 0;
-    const setWhereSql = config3.setWhere ? sql2` where ${config3.setWhere}` : void 0;
-    const targetSql = Array.isArray(config3.target) ? sql2`${config3.target}` : sql2`${[config3.target]}`;
-    const setSql = this.dialect.buildUpdateSet(this.config.table, mapUpdateSet(this.config.table, config3.set));
+    const whereSql = config4.where ? sql2` where ${config4.where}` : void 0;
+    const targetWhereSql = config4.targetWhere ? sql2` where ${config4.targetWhere}` : void 0;
+    const setWhereSql = config4.setWhere ? sql2` where ${config4.setWhere}` : void 0;
+    const targetSql = Array.isArray(config4.target) ? sql2`${config4.target}` : sql2`${[config4.target]}`;
+    const setSql = this.dialect.buildUpdateSet(this.config.table, mapUpdateSet(this.config.table, config4.set));
     this.config.onConflict = sql2`${targetSql}${targetWhereSql} do update set ${setSql}${whereSql}${setWhereSql}`;
     return this;
   }
@@ -57659,7 +58741,7 @@ var RelationalQueryBuilder = class {
     this.session = session2;
   }
   static [entityKind] = "SQLiteAsyncRelationalQueryBuilder";
-  findMany(config3) {
+  findMany(config4) {
     return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
       this.fullSchema,
       this.schema,
@@ -57668,7 +58750,7 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config3 ? config3 : {},
+      config4 ? config4 : {},
       "many"
     ) : new SQLiteRelationalQuery(
       this.fullSchema,
@@ -57678,11 +58760,11 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config3 ? config3 : {},
+      config4 ? config4 : {},
       "many"
     );
   }
-  findFirst(config3) {
+  findFirst(config4) {
     return this.mode === "sync" ? new SQLiteSyncRelationalQuery(
       this.fullSchema,
       this.schema,
@@ -57691,7 +58773,7 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config3 ? { ...config3, limit: 1 } : { limit: 1 },
+      config4 ? { ...config4, limit: 1 } : { limit: 1 },
       "first"
     ) : new SQLiteRelationalQuery(
       this.fullSchema,
@@ -57701,7 +58783,7 @@ var RelationalQueryBuilder = class {
       this.tableConfig,
       this.dialect,
       this.session,
-      config3 ? { ...config3, limit: 1 } : { limit: 1 },
+      config4 ? { ...config4, limit: 1 } : { limit: 1 },
       "first"
     );
   }
@@ -57710,7 +58792,7 @@ var SQLiteRelationalQuery = class extends QueryPromise {
   static {
     __name(this, "SQLiteRelationalQuery");
   }
-  constructor(fullSchema, schema3, tableNamesMap, table3, tableConfig, dialect, session2, config3, mode) {
+  constructor(fullSchema, schema3, tableNamesMap, table3, tableConfig, dialect, session2, config4, mode) {
     super();
     this.fullSchema = fullSchema;
     this.schema = schema3;
@@ -57719,7 +58801,7 @@ var SQLiteRelationalQuery = class extends QueryPromise {
     this.tableConfig = tableConfig;
     this.dialect = dialect;
     this.session = session2;
-    this.config = config3;
+    this.config = config4;
     this.mode = mode;
   }
   static [entityKind] = "SQLiteAsyncRelationalQuery";
@@ -58118,8 +59200,8 @@ var BaseSQLiteDatabase = class {
     }
     return this.session.values(sequel);
   }
-  transaction(transaction, config3) {
-    return this.session.transaction(transaction, config3);
+  transaction(transaction, config4) {
+    return this.session.transaction(transaction, config4);
   }
 };
 
@@ -58312,9 +59394,9 @@ var SQLiteD1Session = class extends SQLiteSession {
   extractRawValuesValueFromBatchResult(result) {
     return d1ToRawMapping(result.results);
   }
-  async transaction(transaction, config3) {
+  async transaction(transaction, config4) {
     const tx = new D1Transaction("async", this.dialect, this, this.schema);
-    await this.run(sql2.raw(`begin${config3?.behavior ? " " + config3.behavior : ""}`));
+    await this.run(sql2.raw(`begin${config4?.behavior ? " " + config4.behavior : ""}`));
     try {
       const result = await transaction(tx);
       await this.run(sql2`commit`);
@@ -58448,22 +59530,22 @@ var DrizzleD1Database = class extends BaseSQLiteDatabase {
     return this.session.batch(batch);
   }
 };
-function drizzle(client, config3 = {}) {
-  const dialect = new SQLiteAsyncDialect({ casing: config3.casing });
+function drizzle(client, config4 = {}) {
+  const dialect = new SQLiteAsyncDialect({ casing: config4.casing });
   let logger2;
-  if (config3.logger === true) {
+  if (config4.logger === true) {
     logger2 = new DefaultLogger();
-  } else if (config3.logger !== false) {
-    logger2 = config3.logger;
+  } else if (config4.logger !== false) {
+    logger2 = config4.logger;
   }
   let schema3;
-  if (config3.schema) {
+  if (config4.schema) {
     const tablesConfig = extractTablesRelationalConfig(
-      config3.schema,
+      config4.schema,
       createTableRelationsHelpers
     );
     schema3 = {
-      fullSchema: config3.schema,
+      fullSchema: config4.schema,
       schema: tablesConfig.tables,
       tableNamesMap: tablesConfig.tableNamesMap
     };
@@ -58839,33 +59921,22 @@ var insertTasksSchema = createInsertSchema(
 });
 var patchTasksSchema = insertTasksSchema.partial();
 
-// src/env.ts
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-init_process2();
-var EnvSchema = z.object({
-  PORT: z.coerce.number().default(9999),
-  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
-  DB: z.any(),
-  CLOUDFLARE_BINDING_NAME: z.string().default("DB"),
-  CLOUDFLARE_DATABASE_ID: z.string().default(""),
-  CLOUDFLARE_ACCOUNT_ID: z.string().default(""),
-  CLOUDFLARE_TOKEN: z.string().default(""),
-  STRIPE_SECRET_KEY: z.string().default(""),
-  STRIPE_WEBHOOK_SECRET: z.string().default("")
-});
-var { data: env3 } = EnvSchema.safeParse(env);
-var env_default = env3;
-
 // src/db/index.ts
 var dbInstance = null;
-function getDb() {
-  if (dbInstance) {
-    return { db: dbInstance };
+function initDb(env4) {
+  if (!dbInstance) {
+    if (!env4.DB) {
+      throw new Error("Missing D1 binding in environment (expected 'DB')");
+    }
+    dbInstance = drizzle(env4.DB, { schema: schema_exports, casing: "snake_case" });
   }
-  dbInstance = drizzle(env_default.DB, { schema: schema_exports, casing: "snake_case" });
+  return { db: dbInstance };
+}
+__name(initDb, "initDb");
+function getDb() {
+  if (!dbInstance) {
+    throw new Error("Database not initialized. Call initDb first.");
+  }
   return { db: dbInstance };
 }
 __name(getDb, "getDb");
@@ -59916,7 +60987,7 @@ var HttpClient = class _HttpClient {
   getClientName() {
     throw new Error("getClientName not implemented.");
   }
-  makeRequest(host, port, path, method, headers, requestData, protocol, timeout) {
+  makeRequest(host, port, path2, method, headers, requestData, protocol, timeout) {
     throw new Error("makeRequest not implemented.");
   }
   /** Helper to make a consistent timeout error across implementations. */
@@ -60015,9 +61086,9 @@ var FetchHttpClient = class _FetchHttpClient extends HttpClient {
   getClientName() {
     return "fetch";
   }
-  async makeRequest(host, port, path, method, headers, requestData, protocol, timeout) {
+  async makeRequest(host, port, path2, method, headers, requestData, protocol, timeout) {
     const isInsecureConnection = protocol === "http";
-    const url = new URL(path, `${isInsecureConnection ? "http" : "https"}://${host}`);
+    const url = new URL(path2, `${isInsecureConnection ? "http" : "https"}://${host}`);
     url.port = port;
     const methodHasPayload = method == "POST" || method == "PUT" || method == "PATCH";
     const body = requestData || (methodHasPayload ? "" : void 0);
@@ -60395,9 +61466,9 @@ var StripeError = class extends Error {
   static {
     __name(this, "StripeError");
   }
-  constructor(raw2 = {}, type = null) {
+  constructor(raw2 = {}, type2 = null) {
     super(raw2.message);
-    this.type = type || this.constructor.name;
+    this.type = type2 || this.constructor.name;
     this.raw = raw2;
     this.rawType = raw2.type;
     this.code = raw2.code;
@@ -60570,8 +61641,8 @@ var makeURLInterpolator = /* @__PURE__ */ (() => {
     };
   };
 })();
-function extractUrlParams(path) {
-  const params = path.match(/\{\w+\}/g);
+function extractUrlParams(path2) {
+  const params = path2.match(/\{\w+\}/g);
   if (!params) {
     return [];
   }
@@ -60721,8 +61792,8 @@ function emitWarning2(warning) {
 }
 __name(emitWarning2, "emitWarning");
 function isObject3(obj) {
-  const type = typeof obj;
-  return (type === "function" || type === "object") && !!obj;
+  const type2 = typeof obj;
+  return (type2 === "function" || type2 === "object") && !!obj;
 }
 __name(isObject3, "isObject");
 function flattenAndStringify(data) {
@@ -60783,11 +61854,11 @@ function jsonStringifyRequestData(data) {
   return JSON.stringify(data, dateTimeReplacer);
 }
 __name(jsonStringifyRequestData, "jsonStringifyRequestData");
-function getAPIMode(path) {
-  if (!path) {
+function getAPIMode(path2) {
+  if (!path2) {
     return "v1";
   }
-  return path.startsWith("/v2") ? "v2" : "v1";
+  return path2.startsWith("/v2") ? "v2" : "v1";
 }
 __name(getAPIMode, "getAPIMode");
 
@@ -61017,7 +62088,7 @@ var RequestSender = class _RequestSender {
       }
     }
   }
-  _rawRequest(method, path, params, options) {
+  _rawRequest(method, path2, params, options) {
     const requestPromise = new Promise((resolve, reject) => {
       let opts;
       try {
@@ -61033,7 +62104,7 @@ var RequestSender = class _RequestSender {
         const authenticator2 = calculatedOptions.authenticator;
         opts = {
           requestMethod,
-          requestPath: path,
+          requestPath: path2,
           bodyData: data,
           queryData: {},
           authenticator: authenticator2,
@@ -61057,15 +62128,15 @@ var RequestSender = class _RequestSender {
       __name(requestCallback, "requestCallback");
       const { headers, settings } = opts;
       const authenticator = opts.authenticator;
-      this._request(opts.requestMethod, opts.host, path, opts.bodyData, authenticator, { headers, settings, streaming: opts.streaming }, opts.usage, requestCallback);
+      this._request(opts.requestMethod, opts.host, path2, opts.bodyData, authenticator, { headers, settings, streaming: opts.streaming }, opts.usage, requestCallback);
     });
     return requestPromise;
   }
-  _request(method, host, path, data, authenticator, options, usage = [], callback, requestDataProcessor = null) {
+  _request(method, host, path2, data, authenticator, options, usage = [], callback, requestDataProcessor = null) {
     var _a2;
     let requestData;
     authenticator = (_a2 = authenticator !== null && authenticator !== void 0 ? authenticator : this._stripe._authenticator) !== null && _a2 !== void 0 ? _a2 : null;
-    const apiMode = getAPIMode(path);
+    const apiMode = getAPIMode(path2);
     const retryRequest = /* @__PURE__ */ __name((requestFn, apiVersion, headers, requestRetries, retryAfter) => {
       return setTimeout(requestFn, this._getSleepTimeInMS(requestRetries, retryAfter), apiVersion, headers, requestRetries + 1);
     }, "retryRequest");
@@ -61074,7 +62145,7 @@ var RequestSender = class _RequestSender {
       const request = {
         host: host || this._stripe.getApiField("host"),
         port: this._stripe.getApiField("port"),
-        path,
+        path: path2,
         method,
         headers: Object.assign({}, headers),
         body: requestData,
@@ -61088,7 +62159,7 @@ var RequestSender = class _RequestSender {
           account: headers["Stripe-Account"],
           idempotency_key: headers["Idempotency-Key"],
           method,
-          path,
+          path: path2,
           request_start_time: requestStartTime
         });
         const requestRetries = numRetries || 0;
@@ -61531,12 +62602,12 @@ StripeResource.prototype = {
     const encode2 = spec.encode || ((data2) => data2);
     const isUsingFullPath = !!spec.fullPath;
     const commandPath = makeURLInterpolator(isUsingFullPath ? spec.fullPath : spec.path || "");
-    const path = isUsingFullPath ? spec.fullPath : this.createResourcePathWithSymbols(spec.path);
+    const path2 = isUsingFullPath ? spec.fullPath : this.createResourcePathWithSymbols(spec.path);
     const args = [].slice.call(requestArgs);
     const urlData = urlParams.reduce((urlData2, param) => {
       const arg = args.shift();
       if (typeof arg !== "string") {
-        throw new Error(`Stripe: Argument "${param}" must be a string, but got: ${arg} (on API request to \`${requestMethod} ${path}\`)`);
+        throw new Error(`Stripe: Argument "${param}" must be a string, but got: ${arg} (on API request to \`${requestMethod} ${path2}\`)`);
       }
       urlData2[param] = arg;
       return urlData2;
@@ -61547,7 +62618,7 @@ StripeResource.prototype = {
     const host = options.host || spec.host;
     const streaming = !!spec.streaming;
     if (args.filter((x) => x != null).length) {
-      throw new Error(`Stripe: Unknown arguments (${args}). Did you mean to pass an options object? See https://github.com/stripe/stripe-node/wiki/Passing-Options. (on API request to ${requestMethod} \`${path}\`)`);
+      throw new Error(`Stripe: Unknown arguments (${args}). Did you mean to pass an options object? See https://github.com/stripe/stripe-node/wiki/Passing-Options. (on API request to ${requestMethod} \`${path2}\`)`);
     }
     const requestPath = isUsingFullPath ? commandPath(urlData) : this.createFullPath(commandPath, urlData);
     const headers = Object.assign(options.headers, spec.headers);
@@ -61589,13 +62660,13 @@ StripeResource.prototype = {
       }
       __name(requestCallback, "requestCallback");
       const emptyQuery = Object.keys(opts.queryData).length === 0;
-      const path = [
+      const path2 = [
         opts.requestPath,
         emptyQuery ? "" : "?",
         queryStringifyRequestData(opts.queryData, getAPIMode(opts.requestPath))
       ].join("");
       const { headers, settings } = opts;
-      this._stripe._requestSender._request(opts.requestMethod, opts.host, path, opts.bodyData, opts.authenticator, {
+      this._stripe._requestSender._request(opts.requestMethod, opts.host, path2, opts.bodyData, opts.authenticator, {
         headers,
         settings,
         streaming: opts.streaming
@@ -64327,9 +65398,9 @@ var OAuth = StripeResource.extend({
   authorizeUrl(params, options) {
     params = params || {};
     options = options || {};
-    let path = "oauth/authorize";
+    let path2 = "oauth/authorize";
     if (options.express) {
-      path = `express/${path}`;
+      path2 = `express/${path2}`;
     }
     if (!params.response_type) {
       params.response_type = "code";
@@ -64340,7 +65411,7 @@ var OAuth = StripeResource.extend({
     if (!params.scope) {
       params.scope = "read_write";
     }
-    return `https://${oAuthHost}/${path}?${queryStringifyRequestData(params)}`;
+    return `https://${oAuthHost}/${path2}?${queryStringifyRequestData(params)}`;
   },
   token: stripeMethod101({
     method: "POST",
@@ -65221,11 +66292,11 @@ function createStripe(platformFunctions, requestSender = defaultRequestSenderFac
   Stripe2.HttpClientResponse = HttpClientResponse;
   Stripe2.CryptoProvider = CryptoProvider;
   Stripe2.webhooks = createWebhooks(platformFunctions);
-  function Stripe2(key, config3 = {}) {
+  function Stripe2(key, config4 = {}) {
     if (!(this instanceof Stripe2)) {
-      return new Stripe2(key, config3);
+      return new Stripe2(key, config4);
     }
-    const props = this._getPropsFromConfig(config3);
+    const props = this._getPropsFromConfig(config4);
     this._platformFunctions = platformFunctions;
     Object.defineProperty(this, "_emitter", {
       value: this._platformFunctions.createEmitter(),
@@ -65290,8 +66361,8 @@ function createStripe(platformFunctions, requestSender = defaultRequestSenderFac
     _enableTelemetry: null,
     _requestSender: null,
     _platformFunctions: null,
-    rawRequest(method, path, params, options) {
-      return this._requestSender._rawRequest(method, path, params, options);
+    rawRequest(method, path2, params, options) {
+      return this._requestSender._rawRequest(method, path2, params, options);
     },
     /**
      * @private
@@ -65478,25 +66549,25 @@ function createStripe(platformFunctions, requestSender = defaultRequestSenderFac
      * @private
      * This may be removed in the future.
      */
-    _getPropsFromConfig(config3) {
-      if (!config3) {
+    _getPropsFromConfig(config4) {
+      if (!config4) {
         return {};
       }
-      const isString4 = typeof config3 === "string";
-      const isObject5 = config3 === Object(config3) && !Array.isArray(config3);
+      const isString4 = typeof config4 === "string";
+      const isObject5 = config4 === Object(config4) && !Array.isArray(config4);
       if (!isObject5 && !isString4) {
         throw new Error("Config must either be an object or a string");
       }
       if (isString4) {
         return {
-          apiVersion: config3
+          apiVersion: config4
         };
       }
-      const values = Object.keys(config3).filter((value) => !ALLOWED_CONFIG_PROPERTIES.includes(value));
+      const values = Object.keys(config4).filter((value) => !ALLOWED_CONFIG_PROPERTIES.includes(value));
       if (values.length > 0) {
         throw new Error(`Config object may only contain the following: ${ALLOWED_CONFIG_PROPERTIES.join(", ")}`);
       }
-      return config3;
+      return config4;
     },
     parseThinEvent(payload, header, secret, tolerance, cryptoProvider, receivedAt) {
       return this.webhooks.constructEvent(payload, header, secret, tolerance, cryptoProvider, receivedAt);
@@ -65510,38 +66581,45 @@ __name(createStripe, "createStripe");
 var Stripe = createStripe(new WebPlatformFunctions());
 
 // src/modules/auth/auth-stripe-config.ts
-var stripeClient = new Stripe(env_default.STRIPE_SECRET_KEY);
-var stripePlugin = stripe({
-  stripeClient,
-  stripeWebhookSecret: env_default.STRIPE_WEBHOOK_SECRET,
-  createCustomerOnSignUp: true
-});
+function stripePlugin(env4) {
+  const stripeClient = new Stripe(env4.STRIPE_SECRET_KEY);
+  return stripe({
+    stripeClient,
+    stripeWebhookSecret: env4.STRIPE_WEBHOOK_SECRET,
+    createCustomerOnSignUp: true
+  });
+}
+__name(stripePlugin, "stripePlugin");
 
 // src/modules/auth/auth.ts
-var auth = betterAuth({
-  database: drizzleAdapter(() => getDb().db, {
-    provider: "sqlite"
-  }),
-  emailAndPassword: {
-    enabled: true
-  },
-  advanced: {
-    defaultCookieAttributes: {
-      sameSite: "none",
-      secure: true,
-      partitioned: true
-      // Recommended for new browser standards
-    }
-  },
-  plugins: [
-    stripePlugin,
-    openAPI()
-  ]
-});
+function getAuth(env4) {
+  return betterAuth({
+    database: drizzleAdapter(() => getDb().db, {
+      provider: "sqlite"
+    }),
+    emailAndPassword: {
+      enabled: true
+    },
+    advanced: {
+      defaultCookieAttributes: {
+        sameSite: "none",
+        secure: true,
+        partitioned: true
+        // Recommended for new browser standards
+      }
+    },
+    plugins: [
+      stripePlugin(env4),
+      openAPI()
+    ]
+  });
+}
+__name(getAuth, "getAuth");
 
 // src/modules/auth/index.ts
 var authRoutes = new OpenAPIHono();
 authRoutes.on(["GET", "POST"], "/auth/*", (c) => {
+  const auth = getAuth(c.env);
   return auth.handler(c.req.raw);
 });
 var auth_default = authRoutes;
@@ -65832,6 +66910,43 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 
+// src/env.ts
+init_modules_watch_stub();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
+init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
+init_performance2();
+var import_dotenv = __toESM(require_main(), 1);
+var import_dotenv_expand = __toESM(require_main2(), 1);
+init_process2();
+import path from "node:path";
+(0, import_dotenv_expand.expand)((0, import_dotenv.config)({
+  path: path.resolve(
+    cwd(),
+    env.NODE_ENV === "test" ? ".env.test" : ".env"
+  )
+}));
+var EnvSchema = z.object({
+  ENV: z.enum(["development", "production"]).default("development"),
+  PORT: z.coerce.number().default(9999),
+  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
+  DB: z.any(),
+  CLOUDFLARE_BINDING_NAME: z.string().default("DB"),
+  CLOUDFLARE_DATABASE_ID: z.string().default(""),
+  CLOUDFLARE_ACCOUNT_ID: z.string().default(""),
+  CLOUDFLARE_TOKEN: z.string().default(""),
+  STRIPE_SECRET_KEY: z.string().default(""),
+  STRIPE_WEBHOOK_SECRET: z.string().default("")
+});
+function parseEnv(data) {
+  const { data: env4, error: error4 } = EnvSchema.safeParse(data);
+  if (error4) {
+    const errorMessage = `\u274C Invalid env - ${Object.entries(error4.flatten().fieldErrors).map(([key, errors]) => `${key}: ${errors.join(",")}`).join(" | ")}`;
+    throw new Error(errorMessage);
+  }
+  return env4;
+}
+__name(parseEnv, "parseEnv");
+
 // src/lib/stoker/middlewares/not-found.ts
 init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
@@ -66104,11 +67219,11 @@ init_performance2();
 var onError = /* @__PURE__ */ __name((err, c) => {
   const currentStatus = "status" in err ? err.status : c.newResponse(null).status;
   const statusCode = currentStatus !== OK3 ? currentStatus : INTERNAL_SERVER_ERROR;
-  const env5 = c.env?.NODE_ENV || "development";
+  const env4 = c.env?.NODE_ENV || "undefined";
   return c.json(
     {
       message: err.message,
-      stack: env5 === "production" ? void 0 : err.stack
+      stack: env4 === "production" ? void 0 : err.stack
     },
     // eslint-disable-next-line ts/ban-ts-comment
     // @ts-expect-error
@@ -66164,6 +67279,7 @@ init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
 var authMiddleware = /* @__PURE__ */ __name(async (c, next) => {
+  const auth = getAuth(c.env);
   const session2 = await auth.api.getSession({ headers: c.req.raw.headers });
   if (!session2) {
     c.set("user", null);
@@ -66193,7 +67309,7 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var env4 = /* @__PURE__ */ __name((c, runtime) => {
+var env3 = /* @__PURE__ */ __name((c, runtime) => {
   const global2 = globalThis;
   const globalEnv = global2?.process?.env;
   runtime ??= getRuntimeKey();
@@ -66237,9 +67353,9 @@ var getRuntimeKey = /* @__PURE__ */ __name(() => {
   }
   return "other";
 }, "getRuntimeKey");
-var checkUserAgentEquals = /* @__PURE__ */ __name((platform2) => {
+var checkUserAgentEquals = /* @__PURE__ */ __name((platform3) => {
   const userAgent = "Cloudflare-Workers";
-  return userAgent.startsWith(platform2);
+  return userAgent.startsWith(platform3);
 }, "checkUserAgentEquals");
 
 // node_modules/.pnpm/hono-pino@0.7.0_hono@4.6.15_pino@9.6.0/node_modules/hono-pino/dist/index.js
@@ -66392,7 +67508,7 @@ var createStaticRootLogger = /* @__PURE__ */ __name((opt) => {
 }, "createStaticRootLogger");
 var parseDynamicRootLogger = /* @__PURE__ */ __name((opt, c) => {
   if (opt === void 0) {
-    const { LOG_LEVEL } = env4(c);
+    const { LOG_LEVEL } = env3(c);
     return [
       void 0,
       {
@@ -66408,113 +67524,15 @@ var parseDynamicRootLogger = /* @__PURE__ */ __name((opt, c) => {
 var getDefaultRootLogger = /* @__PURE__ */ __name(() => _defaultRootLogger ??= (0, import_pino.pino)(), "getDefaultRootLogger");
 var _defaultRootLogger = void 0;
 
-// node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-
-// node_modules/.pnpm/unenv@2.0.0-rc.15/node_modules/unenv/dist/runtime/node/internal/crypto/node.mjs
-init_modules_watch_stub();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
-init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
-init_performance2();
-var webcrypto = new Proxy(globalThis.crypto, { get(_, key) {
-  if (key === "CryptoKey") {
-    return globalThis.CryptoKey;
-  }
-  if (typeof globalThis.crypto[key] === "function") {
-    return globalThis.crypto[key].bind(globalThis.crypto);
-  }
-  return globalThis.crypto[key];
-} });
-
-// node_modules/.pnpm/@cloudflare+unenv-preset@2.3.1_unenv@2.0.0-rc.15_workerd@1.20250321.0/node_modules/@cloudflare/unenv-preset/dist/runtime/node/crypto.mjs
-var workerdCrypto = process.getBuiltinModule("node:crypto");
-var {
-  Certificate,
-  checkPrime,
-  checkPrimeSync,
-  // @ts-expect-error
-  Cipheriv,
-  createCipheriv,
-  createDecipheriv,
-  createDiffieHellman,
-  createDiffieHellmanGroup,
-  createECDH,
-  createHash: createHash2,
-  createHmac,
-  createPrivateKey,
-  createPublicKey,
-  createSecretKey,
-  createSign,
-  createVerify,
-  // @ts-expect-error
-  Decipheriv,
-  diffieHellman,
-  DiffieHellman,
-  DiffieHellmanGroup,
-  ECDH,
-  fips,
-  generateKey: generateKey2,
-  generateKeyPair,
-  generateKeyPairSync,
-  generateKeySync,
-  generatePrime,
-  generatePrimeSync,
-  getCipherInfo,
-  getCiphers,
-  getCurves,
-  getDiffieHellman,
-  getFips,
-  getHashes,
-  getRandomValues: getRandomValues2,
-  hash,
-  Hash: Hash2,
-  hkdf,
-  hkdfSync,
-  Hmac,
-  KeyObject,
-  pbkdf2: pbkdf22,
-  pbkdf2Sync,
-  privateDecrypt,
-  privateEncrypt,
-  publicDecrypt,
-  publicEncrypt,
-  randomBytes,
-  randomFill,
-  randomFillSync,
-  randomInt,
-  randomUUID,
-  scrypt,
-  scryptSync,
-  secureHeapUsed,
-  setEngine,
-  setFips,
-  sign: sign2,
-  Sign,
-  subtle: subtle2,
-  timingSafeEqual,
-  verify: verify2,
-  Verify,
-  X509Certificate
-} = workerdCrypto;
-var webcrypto2 = {
-  // @ts-expect-error
-  CryptoKey: webcrypto.CryptoKey,
-  getRandomValues: getRandomValues2,
-  randomUUID,
-  subtle: subtle2
-};
-
 // src/modules/base/middlewares/pino-logger.ts
+init_crypto2();
 var import_pino2 = __toESM(require_browser(), 1);
 var import_pino_pretty = __toESM(require_pino_pretty(), 1);
 function pinoLogger2() {
   return (c, next) => pinoLogger({
     pino: (0, import_pino2.default)({
       level: c.env.LOG_LEVEL || "info"
-    }, c.env.NODE_ENV === "production" ? void 0 : (0, import_pino_pretty.default)()),
+    }, c.env.ENV === "production" ? void 0 : (0, import_pino_pretty.default)()),
     http: {
       reqId: /* @__PURE__ */ __name(() => randomUUID(), "reqId")
     }
@@ -66533,6 +67551,8 @@ __name(createRouter3, "createRouter");
 function createApp() {
   const app2 = createRouter3();
   app2.use("*", (c, next) => {
+    c.env = parseEnv(c.env);
+    initDb(c.env);
     return next();
   });
   app2.use("*", authMiddleware);
@@ -66908,9 +67928,9 @@ init_modules_watch_stub();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_process();
 init_virtual_unenv_global_polyfill_cloudflare_unenv_preset_node_console();
 init_performance2();
-var drainBody = /* @__PURE__ */ __name(async (request, env5, _ctx, middlewareCtx) => {
+var drainBody = /* @__PURE__ */ __name(async (request, env4, _ctx, middlewareCtx) => {
   try {
-    return await middlewareCtx.next(request, env5);
+    return await middlewareCtx.next(request, env4);
   } finally {
     try {
       if (request.body !== null && !request.bodyUsed) {
@@ -66939,9 +67959,9 @@ function reduceError(e) {
   };
 }
 __name(reduceError, "reduceError");
-var jsonError = /* @__PURE__ */ __name(async (request, env5, _ctx, middlewareCtx) => {
+var jsonError = /* @__PURE__ */ __name(async (request, env4, _ctx, middlewareCtx) => {
   try {
-    return await middlewareCtx.next(request, env5);
+    return await middlewareCtx.next(request, env4);
   } catch (e) {
     const error4 = reduceError(e);
     return Response.json(error4, {
@@ -66952,7 +67972,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env5, _ctx, middlewareCtx
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// .wrangler/tmp/bundle-LSo1T3/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-macSxN/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -66969,7 +67989,7 @@ function __facade_register__(...args) {
   __facade_middleware__.push(...args.flat());
 }
 __name(__facade_register__, "__facade_register__");
-function __facade_invokeChain__(request, env5, ctx, dispatch, middlewareChain) {
+function __facade_invokeChain__(request, env4, ctx, dispatch, middlewareChain) {
   const [head, ...tail] = middlewareChain;
   const middlewareCtx = {
     dispatch,
@@ -66977,18 +67997,18 @@ function __facade_invokeChain__(request, env5, ctx, dispatch, middlewareChain) {
       return __facade_invokeChain__(newRequest, newEnv, ctx, dispatch, tail);
     }
   };
-  return head(request, env5, ctx, middlewareCtx);
+  return head(request, env4, ctx, middlewareCtx);
 }
 __name(__facade_invokeChain__, "__facade_invokeChain__");
-function __facade_invoke__(request, env5, ctx, dispatch, finalMiddleware) {
-  return __facade_invokeChain__(request, env5, ctx, dispatch, [
+function __facade_invoke__(request, env4, ctx, dispatch, finalMiddleware) {
+  return __facade_invokeChain__(request, env4, ctx, dispatch, [
     ...__facade_middleware__,
     finalMiddleware
   ]);
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// .wrangler/tmp/bundle-LSo1T3/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-macSxN/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
@@ -67013,27 +68033,27 @@ function wrapExportedHandler(worker) {
   for (const middleware of __INTERNAL_WRANGLER_MIDDLEWARE__) {
     __facade_register__(middleware);
   }
-  const fetchDispatcher = /* @__PURE__ */ __name(function(request, env5, ctx) {
+  const fetchDispatcher = /* @__PURE__ */ __name(function(request, env4, ctx) {
     if (worker.fetch === void 0) {
       throw new Error("Handler does not export a fetch() function.");
     }
-    return worker.fetch(request, env5, ctx);
+    return worker.fetch(request, env4, ctx);
   }, "fetchDispatcher");
   return {
     ...worker,
-    fetch(request, env5, ctx) {
-      const dispatcher = /* @__PURE__ */ __name(function(type, init2) {
-        if (type === "scheduled" && worker.scheduled !== void 0) {
+    fetch(request, env4, ctx) {
+      const dispatcher = /* @__PURE__ */ __name(function(type2, init2) {
+        if (type2 === "scheduled" && worker.scheduled !== void 0) {
           const controller = new __Facade_ScheduledController__(
             Date.now(),
             init2.cron ?? "",
             () => {
             }
           );
-          return worker.scheduled(controller, env5, ctx);
+          return worker.scheduled(controller, env4, ctx);
         }
       }, "dispatcher");
-      return __facade_invoke__(request, env5, ctx, dispatcher, fetchDispatcher);
+      return __facade_invoke__(request, env4, ctx, dispatcher, fetchDispatcher);
     }
   };
 }
@@ -67046,16 +68066,16 @@ function wrapWorkerEntrypoint(klass) {
     __facade_register__(middleware);
   }
   return class extends klass {
-    #fetchDispatcher = /* @__PURE__ */ __name((request, env5, ctx) => {
-      this.env = env5;
+    #fetchDispatcher = /* @__PURE__ */ __name((request, env4, ctx) => {
+      this.env = env4;
       this.ctx = ctx;
       if (super.fetch === void 0) {
         throw new Error("Entrypoint class does not define a fetch() function.");
       }
       return super.fetch(request);
     }, "#fetchDispatcher");
-    #dispatcher = /* @__PURE__ */ __name((type, init2) => {
-      if (type === "scheduled" && super.scheduled !== void 0) {
+    #dispatcher = /* @__PURE__ */ __name((type2, init2) => {
+      if (type2 === "scheduled" && super.scheduled !== void 0) {
         const controller = new __Facade_ScheduledController__(
           Date.now(),
           init2.cron ?? "",
