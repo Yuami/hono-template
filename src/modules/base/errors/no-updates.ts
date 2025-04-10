@@ -1,9 +1,9 @@
-import type { ErrorHandler } from 'hono';
+import type { Context } from 'hono';
 
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@/lib/constants';
 import { HttpStatusCodes } from '@/lib/hono-helpers/http-status-codes';
 
-const noUpdatesErrorHandler: ErrorHandler = (_err, c) => {
+export function noUpdatesErrorResponse(c: Context) {
   return c.json(
     {
       success: false,
@@ -20,6 +20,4 @@ const noUpdatesErrorHandler: ErrorHandler = (_err, c) => {
     },
     HttpStatusCodes.UNPROCESSABLE_ENTITY,
   );
-};
-
-export default noUpdatesErrorHandler;
+}

@@ -5,19 +5,14 @@ import fs from 'node:fs';
 import { afterAll, beforeAll, describe, expect, expectTypeOf, it } from 'vitest';
 import { ZodIssueCode } from 'zod';
 
-import env from '@/env-runtime';
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@/lib/constants';
 import { HttpStatusPhrases } from '@/lib/hono-helpers/http-status-codes';
 import createApp from '@/modules/base/create-app';
 
-import router from './index';
-
-if (env.NODE_ENV !== 'test') {
-  throw new Error('NODE_ENV must be \'test\'');
-}
+import tasksRouter from './tasks-router';
 
 // @ts-ignore
-const client = testClient(createApp().route('/', router));
+const client = testClient(createApp().route('/', tasksRouter));
 
 describe('tasks routes', () => {
   beforeAll(async () => {

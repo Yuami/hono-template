@@ -8,7 +8,7 @@ import notFound from '@/lib/stoker/middlewares/not-found';
 import onError from '@/lib/stoker/middlewares/on-error';
 import serveEmojiFavicon from '@/lib/stoker/middlewares/serve-emoji-favicon';
 import { defaultHook } from '@/lib/stoker/openapi';
-import { authMiddleware } from '@/modules/auth/auth-middleware';
+import { authMiddleware } from '@/modules/auth/middlewares/auth-middleware';
 import { pinoLogger } from '@/modules/base/middlewares/pino-logger';
 
 export function createRouter() {

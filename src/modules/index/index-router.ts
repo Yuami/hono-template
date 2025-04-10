@@ -5,7 +5,7 @@ import jsonContent from '@/lib/stoker/openapi/helpers/json-content';
 import createMessageObjectSchema from '@/lib/stoker/openapi/schemas/create-message-object';
 import { createRouter } from '@/modules/base/create-app';
 
-const router = createRouter()
+const indexRouter = createRouter()
   .openapi(
     createRoute({
       tags: ['Index'],
@@ -25,4 +25,4 @@ const router = createRouter()
     },
   );
 
-export default router;
+export default indexRouter;

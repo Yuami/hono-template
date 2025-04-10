@@ -2,7 +2,7 @@ import type { MiddlewareHandler } from 'hono';
 
 import type { AppBindings } from '@/modules/base/types';
 
-import { getAuth } from './auth';
+import { getAuth } from '../auth';
 
 export const authMiddleware: MiddlewareHandler<AppBindings> = async (c, next) => {
   const auth = getAuth(c.env);

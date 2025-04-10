@@ -10,6 +10,7 @@ export default function configureOpenAPI(app: AppOpenAPI) {
     info: {
       version: packageJSON.version,
       title: 'Tasks API',
+      description: 'API for managing tasks with authentication support',
     },
   });
 

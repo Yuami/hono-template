@@ -5,7 +5,7 @@ import { openAPI } from 'better-auth/plugins';
 import type { Environment } from '@/env';
 
 import { getDb } from '@/db';
-import { stripePlugin } from '@/modules/auth/auth-stripe-config';
+import { stripePlugin } from '@/modules/auth/plugins/auth-stripe-config';
 
 export function getAuth(env: Environment) {
   return betterAuth({

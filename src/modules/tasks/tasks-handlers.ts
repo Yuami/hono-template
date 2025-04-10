@@ -1,15 +1,16 @@
+import type { RouteConfigToTypedResponse } from '@hono/zod-openapi';
+
 import { eq } from 'drizzle-orm';
 
 import type { AppRouteHandler } from '@/modules/base/types';
 
 import { getDb } from '@/db';
-import { ZOD_ERROR_MESSAGES } from '@/lib/constants';
 import { HttpStatusCodes } from '@/lib/hono-helpers/http-status-codes';
 import notFound from '@/lib/stoker/middlewares/not-found';
-import noUpdatesErrorHandler from '@/modules/base/errors/no-updates';
-import { tasks } from '@/modules/tasks/schema';
+import { noUpdatesErrorResponse } from '@/modules/base/errors/no-updates';
+import { tasks } from '@/modules/tasks/tasks-schema';
 
-import type { CreateRoute, GetOneRoute, ListRoute, PatchRoute, RemoveRoute } from './routes';
+import type { CreateRoute, GetOneRoute, ListRoute, PatchRoute, RemoveRoute } from './tasks-routes';
 
 export const list: AppRouteHandler<ListRoute> = async (c) => {
   const { db } = getDb();
@@ -32,10 +33,10 @@ export const getOne: AppRouteHandler<GetOneRoute> = async (c) => {
   });
 
   if (!task) {
-    return notFound(c);
+    return notFound(c) as unknown as RouteConfigToTypedResponse<GetOneRoute>;
   }
 
-  return c.json(task);
+  return c.json(task) as RouteConfigToTypedResponse<GetOneRoute>;
 };
 
 export const patch: AppRouteHandler<PatchRoute> = async (c) => {
@@ -44,7 +45,7 @@ export const patch: AppRouteHandler<PatchRoute> = async (c) => {
   const updates = c.req.valid('json');
 
   if (Object.keys(updates).length === 0) {
-    return noUpdatesErrorHandler(new Error(ZOD_ERROR_MESSAGES.NO_UPDATES), c);
+    return noUpdatesErrorResponse(c);
   }
 
   const [task] = await db.update(tasks)
@@ -56,7 +57,7 @@ export const patch: AppRouteHandler<PatchRoute> = async (c) => {
     return notFound(c);
   }
 
-  return c.json(task, HttpStatusCodes.OK);
+  return c.json(task) as RouteConfigToTypedResponse<PatchRoute>;
 };
 
 export const remove: AppRouteHandler<RemoveRoute> = async (c) => {

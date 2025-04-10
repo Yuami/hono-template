@@ -1,23 +1,14 @@
-import authModule from '@/modules/auth';
+import type { routers } from '@/router';
+
 import configureOpenAPI from '@/modules/base/configure-open-api';
 import createApp from '@/modules/base/create-app';
-import indexModule from '@/modules/index';
-import tasksModule from '@/modules/tasks';
+import { registerRoutes } from '@/router';
 
 const app = createApp();
 
 configureOpenAPI(app);
+registerRoutes(app);
 
-const routes = [
-  indexModule,
-  authModule,
-  tasksModule,
-] as const;
-
-routes.forEach((route) => {
-  app.route('/api', route);
-});
-
-export type AppType = typeof routes[number];
+export type AppType = typeof routers[number];
 
 export default app;

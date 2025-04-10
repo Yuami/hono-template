@@ -6,7 +6,7 @@ import jsonContent from '@/lib/stoker/openapi/helpers/json-content';
 import jsonContentRequired from '@/lib/stoker/openapi/helpers/json-content-required';
 import createErrorSchema from '@/lib/stoker/openapi/schemas/create-error-schema';
 import IdParamsSchema from '@/lib/stoker/openapi/schemas/id-params';
-import { insertTasksSchema, patchTasksSchema, selectTasksSchema } from '@/modules/tasks/schema';
+import { insertTasksSchema, patchTasksSchema, selectTasksSchema } from '@/modules/tasks/tasks-schema';
 
 const tags = ['Tasks'];
 
