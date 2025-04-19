@@ -1,13 +1,8 @@
 name = "hono-starter-cloudflare-test"
-main = "src/index.js"
+main = "src/app.ts"
 compatibility_date = "2024-09-25"
 compatibility_flags = [ "nodejs_compat" ]
 keep_vars = true
-
-
-[[rules]]
-type = "ESModule"
-globs = ["**/*.js"]
 
 [vars]
 LOG_LEVEL = "info"
