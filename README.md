@@ -1,99 +1,158 @@
-# Hono Open API Starter
+# Hono Template Monorepo
 
-A starter template for building fully documented type-safe JSON APIs with Hono and Open API.
+A modern monorepo template for building full-stack applications with Hono, React, TanStack Router, and TanStack Query.
 
-- [Hono Open API Starter](#hono-open-api-starter)
-  - [Included](#included)
+- [Hono Template Monorepo](#hono-template-monorepo)
+  - [Features](#features)
+  - [Project Structure](#project-structure)
   - [Setup](#setup)
-  - [Code Tour](#code-tour)
-  - [Endpoints](#endpoints)
+  - [Development](#development)
+  - [Building](#building)
+  - [Linting and Formatting](#linting-and-formatting)
+  - [API Documentation](#api-documentation)
   - [References](#references)
 
-## Included
+## Features
 
+### Backend (Hono API)
 - Structured logging with [pino](https://getpino.io/) / [hono-pino](https://www.npmjs.com/package/hono-pino)
 - Documented / type-safe routes with [@hono/zod-openapi](https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
 - Interactive API documentation with [scalar](https://scalar.com/#api-docs) / [@scalar/hono-api-reference](https://github.com/scalar/scalar/tree/main/packages/hono-api-reference)
 - Convenience methods / helpers to reduce boilerplate with [stoker](https://www.npmjs.com/package/stoker)
 - Type-safe schemas and environment variables with [zod](https://zod.dev/)
 - Single source of truth database schemas with [drizzle](https://orm.drizzle.team/docs/overview) and [drizzle-zod](https://orm.drizzle.team/docs/zod)
+
+### Frontend (React + Vite)
+- Modern React application with [Vite](https://vitejs.dev/)
+- Type-safe routing with [TanStack Router](https://tanstack.com/router)
+- Data fetching and caching with [TanStack Query](https://tanstack.com/query)
+
+### Monorepo
+- Monorepo management with [Turborepo](https://turbo.build/)
+- Shared TypeScript configurations
+- Fast and modern linting and formatting with [Biome](https://biomejs.dev/)
+- Git hooks for code quality with [Husky](https://typicode.github.io/husky/)
 - Testing with [vitest](https://vitest.dev/)
-- Sensible editor, formatting and linting settings with [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+
+## Project Structure
+
+```
+hono-template/
+├── apps/
+│   ├── api/           # Hono API backend
+│   └── web/           # React frontend
+├── packages/
+│   └── typescript-config/ # Shared TypeScript configuration
+├── package.json       # Root package.json
+└── turbo.json         # Turborepo configuration
+```
 
 ## Setup
 
-Clone this template without git history
+### Prerequisites
+
+- Node.js 18+
+- pnpm 8+
+
+### Installation
 
 ```sh
-npx degit w3cj/hono-open-api-starter my-api
-cd my-api
-```
+# Clone the repository
+git clone https://github.com/yourusername/hono-template.git
+cd hono-template
 
-Create `.env` file
-
-```sh
-cp .env.sample .env
-```
-
-Create sqlite db / push schema
-
-```sh
-pnpm drizzle-kit push
-```
-
-Install dependencies
-
-```sh
+# Install dependencies
 pnpm install
+
+# Create .env file for the API
+cp apps/api/.env.sample apps/api/.env
+
+# Create sqlite db / push schema
+pnpm --filter api drizzle:push
 ```
 
-Run
+## Development
 
 ```sh
+# Start both frontend and backend in development mode
 pnpm dev
+
+# Start only the backend
+pnpm --filter api dev
+
+# Start only the frontend
+pnpm --filter web dev
 ```
 
-Lint
+## Building
 
 ```sh
+# Build all packages
+pnpm build
+
+# Build specific package
+pnpm --filter api build
+pnpm --filter web build
+```
+
+## Linting and Formatting
+
+```sh
+# Lint all packages
 pnpm lint
-```
 
-Test
+# Format all packages
+pnpm format
 
-```sh
+# Run tests
 pnpm test
 ```
 
+## API Documentation
+
+The API documentation is available at `/api/v1/reference` when the API is running. This provides an interactive documentation of all available endpoints.
+
+### API Endpoints
+
+| Path                    | Description              |
+| ----------------------- | ------------------------ |
+| GET /api/v1/doc         | Open API Specification   |
+| GET /api/v1/reference   | Scalar API Documentation |
+| GET /api/v1/tasks       | List all tasks           |
+| POST /api/v1/tasks      | Create a task            |
+| GET /api/v1/tasks/{id}  | Get one task by id       |
+| PATCH /api/v1/tasks/{id}| Patch one task by id     |
+| DELETE /api/v1/tasks/{id}| Delete one task by id    |
+
 ## Code Tour
 
-Base hono app exported from [app.ts](./src/app.ts). Local development uses [@hono/node-server](https://hono.dev/docs/getting-started/nodejs) defined in [tasksRouter.ts](./src/index.ts) - update this file or create a new entry point to use your preferred runtime.
+### Backend (API)
 
-Typesafe env defined in [env.ts](./src/env.ts) - add any other required environment variables here. The application will not start if any required environment variables are missing
+Base hono app exported from [apps/api/src/app.ts](./apps/api/src/app.ts). Local development uses [@hono/node-server](https://hono.dev/docs/getting-started/nodejs).
 
-See [src/routes/tasks](./src/routes/tasks/) for an example Open API group. Copy this folder / use as an example for your route groups.
+Typesafe env defined in [apps/api/src/env.ts](./apps/api/src/env.ts) - add any other required environment variables here. The application will not start if any required environment variables are missing.
 
-- Router created in [tasks.tasksRouter.ts](./src/routes/tasks/tasks.index.ts)
-- Route definitions defined in [tasks.tasks-auth-indexRouter.ts](./src/routes/tasks/tasks.routes.ts)
-- Hono request handlers defined in [tasks.tasks-handlers.ts](./src/routes/tasks/tasks.handlers.ts)
-- Group unit tests defined in [tasks.test.ts](src/modules/tasks/tasks.test.ts)
+The API is organized into modules:
 
-All app routes are grouped together and exported into single type as `AppType` in [app.ts](./src/app.ts) for use in [RPC / hono/client](https://hono.dev/docs/guides/rpc).
+- `auth` - Authentication and authorization
+- `base` - Base configuration and middleware
+- `index` - Index routes
+- `tasks` - Task management
 
-## Endpoints
+All app routes are grouped together and exported into single type as `AppType` in [apps/api/src/app.ts](./apps/api/src/app.ts) for use in [RPC / hono/client](https://hono.dev/docs/guides/rpc).
 
-| Path               | Description              |
-| ------------------ | ------------------------ |
-| GET /doc           | Open API Specification   |
-| GET /reference     | Scalar API Documentation |
-| GET /tasks         | List all tasks           |
-| POST /tasks        | Create a task            |
-| GET /tasks/{id}    | Get one task by id       |
-| PATCH /tasks/{id}  | Patch one task by id     |
-| DELETE /tasks/{id} | Delete one task by id    |
+### Frontend (Web)
+
+The React frontend is built with Vite and uses TanStack Router for routing and TanStack Query for data fetching.
+
+- Entry point: [apps/web/src/main.tsx](./apps/web/src/main.tsx)
+- Routes defined in [apps/web/src/routes/index.ts](./apps/web/src/routes/index.ts)
+- Pages in [apps/web/src/pages](./apps/web/src/pages)
+- Components in [apps/web/src/components](./apps/web/src/components)
 
 ## References
 
+### Backend
 - [What is Open API?](https://swagger.io/docs/specification/v3_0/about/)
 - [Hono](https://hono.dev/)
   - [Zod OpenAPI Example](https://hono.dev/examples/zod-openapi)
@@ -103,3 +162,15 @@ All app routes are grouped together and exported into single type as `AppType` i
 - [Scalar Documentation](https://github.com/scalar/scalar/tree/main/?tab=readme-ov-file#documentation)
   - [Themes / Layout](https://github.com/scalar/scalar/blob/main/documentation/themes.md)
   - [Configuration](https://github.com/scalar/scalar/blob/main/documentation/configuration.md)
+
+### Frontend
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TanStack Router](https://tanstack.com/router/latest)
+- [TanStack Query](https://tanstack.com/query/latest)
+
+### Monorepo
+- [Turborepo](https://turbo.build/repo)
+- [Biome](https://biomejs.dev/)
+- [Husky](https://typicode.github.io/husky/)
+- [pnpm Workspaces](https://pnpm.io/workspaces)
