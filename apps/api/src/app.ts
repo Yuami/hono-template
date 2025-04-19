@@ -12,3 +12,5 @@ registerRoutes(app);
 export type AppType = typeof routers[number];
 
 export default app;
+
+export const fetch = app.fetch;
